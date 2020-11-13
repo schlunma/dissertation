@@ -1,0 +1,82 @@
+%=============================================================================%
+%                                Dissertation                                 %
+%                               Manuel Schlund                                %
+%                                  (c) 2020                                   %
+%=============================================================================%
+%                                Main Document                                %
+%                  [To be compiled with PdfLaTeX and Biber]                   %
+%=============================================================================%
+
+
+
+%=============================================================================%
+% Header
+%=============================================================================%
+
+% Document class
+\documentclass[
+  english,
+  a4paper,
+  fontsize=12pt,
+  listof=totoc,
+  bibliography=totoc,
+]{scrbook}
+
+% Packages, makros and settings
+\input{00_header/packages}
+\input{00_header/makros}
+\input{00_header/settings}
+
+% Literature file
+\addbibresource{../literature/lit.bib}
+
+
+%=============================================================================%
+% Document
+%=============================================================================%
+
+\begin{document}
+  \selectlanguage{english}
+
+  % Title page
+  \frontmatter
+  \include{01_title_page/title_page}
+  \pagebreak
+
+  % Empty page
+  \thispagestyle{empty}
+  \quad
+  \pagebreak
+
+  % Abstracts
+  \include{02_abstract/abstract_english}
+  \include{02_abstract/abstract_german}
+
+  % Table of contents
+  \tableofcontents
+  \pagebreak
+
+  % List of figures
+  \listoffigures
+  \pagebreak
+
+  % List of figures
+  \listoftables
+  \pagebreak
+
+  % Chapters
+  \mainmatter
+  \include{ch1_introduction/introduction}
+
+  % Appendix
+  \appendix
+  \include{end_appendix/appendix}
+
+  % References
+  \backmatter
+  \printbibliography[title=References]
+  \pagebreak
+
+  % Statutory Declaration
+  \include{end_statutory_declaration/statutory_declaration}
+\end{document}

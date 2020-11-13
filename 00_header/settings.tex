@@ -1,0 +1,72 @@
+%=============================================================================%
+%                                Dissertation                                 %
+%                               Manuel Schlund                                %
+%                                  (c) 2020                                   %
+%=============================================================================%
+%                                  Settings                                   %
+%=============================================================================%
+
+
+
+% Widows and orphans
+\clubpenalty = 10000
+\displaywidowpenalty = 10000
+\widowpenalty = 10000
+
+% Headers and footers
+\clearpairofpagestyles
+\ihead{\headmark}
+\cfoot*{\pagemark}
+
+% New theorem
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+
+% Footnotes
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+% Biblatex
+\newbibmacro{string+doiurlisbn}[1]{%
+  \iffieldundef{doi}{%
+    \iffieldundef{url}{%
+      \iffieldundef{isbn}{%
+        \iffieldundef{issn}{%
+          #1%
+        }{%
+          \href{http://books.google.com/books?vid=ISSN\thefield{issn}}{#1}%
+        }%
+      }{%
+        \href{http://books.google.com/books?vid=ISBN\thefield{isbn}}{#1}%
+      }%
+    }{%
+      \href{\thefield{url}}{#1}%
+    }%
+  }{%
+    \href{http://dx.doi.org/\thefield{doi}}{#1}%
+  }%
+}
+\DeclareFieldFormat{title}{\usebibmacro{string+doiurlisbn}{\mkbibemph{#1}}}
+
+% Geometry
+\geometry{a4paper}
+
+% Hyperref
+\hypersetup{
+  linktocpage=true,
+  colorlinks=true,
+  allcolors=\crossrefColor,
+  pdftitle=\theTitle{},
+  pdfsubject=\theThesis{},
+  pdfauthor=\theAuthor{},
+  pdfkeywords={
+    \theThesis{},
+    Climate Modelling,
+    Climate Sensitivity,
+    Machine Learning
+  },
+  pdfcreator=pdfLaTeX,
+}
+
+% Cleveref
+\crefname{enumi}{step}{steps}
+\newcommand{\crefrangeconjunction}{--}
