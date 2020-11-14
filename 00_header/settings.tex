@@ -47,8 +47,17 @@
 }
 \DeclareFieldFormat{title}{\usebibmacro{string+doiurlisbn}{\mkbibemph{#1}}}
 
-% Geometry
-\geometry{a4paper}
+% Acronyms
+\makeatletter
+\AtBeginDocument{%
+  \renewcommand*{\AC@hyperlink}[2]{%
+    \begingroup%
+    \hypersetup{hidelinks}%
+    \hyperlink{#1}{#2}%
+    \endgroup%
+  }%
+}
+\makeatother
 
 % Hyperref
 \hypersetup{
@@ -70,3 +79,6 @@
 % Cleveref
 \crefname{enumi}{step}{steps}
 \newcommand{\crefrangeconjunction}{--}
+
+% Geometry
+\geometry{a4paper}

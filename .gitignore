@@ -278,3 +278,5 @@ TSWLatexianTemp*
 # Microsoft Word files
 *.doc
 *.docx
+*.doc#
+*.docx#

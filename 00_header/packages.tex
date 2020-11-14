@@ -44,14 +44,19 @@
   backend=biber,
   maxbibnames=100,
   giveninits=true,
+  uniquename=init,
 ]{biblatex}
 
 % Appearance
 \usepackage[onehalfspacing]{setspace}
 \usepackage[automark, headsepline]{scrlayer-scrpage}
-\usepackage{geometry}
 
-% References
+% Referencing
+\usepackage[printonlyused, withpage]{acronym}
 \usepackage{varioref}
 \usepackage{hyperref}
+\usepackage{bookmark}
 \usepackage[noabbrev]{cleveref}
+
+% Geometry
+\usepackage{geometry}
