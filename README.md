@@ -1,2 +1,2 @@
 # Dissertation
-This repository contains my dissertation (PhD thesis).
+This repository contains my dissertation (doctoral thesis).

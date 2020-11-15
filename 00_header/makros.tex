@@ -8,21 +8,19 @@
 
 
 
-% Dissertation settings
-\ifdefined\isPrintVersion \def\crossrefColor{black}
-\else \def\crossrefColor{blue}
-\fi
-
 % Dissertation information
-\newcommand{\theUniversity}{Universität Bremen}
-\newcommand{\theFaculty}{Fachbereich 1}
-\newcommand{\theDepartment}{Physik / Elektrotechnik}
-\newcommand{\theTitle}{Constraining uncertainties in multi-model projections of future climate with observations}
+\newcommand{\theUniversity}{University of Bremen}
+\newcommand{\theInstitute}{Institute of Environmental Physics (IUP)}
+\newcommand{\theTitle}{
+  Constraining uncertainties in multi-model projections of future climate with
+  observations}
 \newcommand{\theThesis}{Dissertation}
-\newcommand{\theAuthor}{Manuel Schlund}
-\newcommand{\theFirstSupervisor}{Prof.\@ Dr.\@ Veronika Eyring}
-\newcommand{\theSecondSupervisor}{Prof.\@ Dr.\@ Pierre Gentine}
-\newcommand{\theDate}{April 2021}
+\newcommand{\theDegree}{\foreignlanguage{ngerman}{
+  Doktor der Naturwissenschaften (Dr.\@ rer.\@ nat.\@)}}
+\newcommand{\theAuthor}{Manuel \textsc{Schlund}}
+\newcommand{\theFirstSupervisor}{Prof.\@ Dr.\@ Veronika \textsc{Eyring}}
+\newcommand{\theSecondSupervisor}{Prof.\@ Dr.\@ Pierre \textsc{Gentine}}
+\newcommand{\theDate}{March 2021}
 \newcommand{\thePlace}{Oberpfaffenhofen}
 
 % Figure scales
@@ -40,3 +38,6 @@
 % Math commands
 \newcommand{\unit}[1]{\ensuremath{\,\text{#1}}}
 \newcommand{\df}{\ensuremath{\!\text{d}f\;}}
+
+% Other commands
+\newcommand{\tabhead}[1]{\textbf{#1}}

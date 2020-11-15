@@ -12,36 +12,35 @@
   \thispagestyle{empty}
 
   \begin{center}
-    {\large \theUniversity{}}
-    \par {\large \theFaculty{}}
-    \par {\large \theDepartment{}}
+    {\color{BrownRed} \LARGE \textsc{\theUniversity{}}}
+    \par \vspace{3mm}
+    \par {\color{BrownRed} \Large \textsc{\theInstitute{}}}
 
+    \vspace{20mm}
 
-    \begin{figure}[h]
-      \centering
-      \includegraphics[width=0.35\linewidth]{01_title_page/figs/logo.pdf}
-    \end{figure}
+    \hrule
+    \par \vspace{8mm}
+    \par {\huge \textbf{\theTitle{}}}
+    \par \vspace{8mm}
+    \par \hrule
 
-    {\huge \textsf{\textbf{\theTitle{}}}}
+    \vspace{18mm}
 
-    \vspace{10mm}
+    {\Large \textsc{\theThesis{}}}
 
-    {\Large \textsf{\textbf{\theThesis{}}}}
+    \vspace{18mm}
 
-    \vspace{15mm}
+    {\large \textit{Author:} \hfill \textit{Supervisors:}}
+    \par {\color{BrownRed} \large \theAuthor{} \hfill \theFirstSupervisor{}}
+    \par {\color{BrownRed} \large \hfill \theSecondSupervisor{}}
 
-    \textit{Author:} \hfill \textit{Supervisors:}
-    \par {\large \theAuthor{} \hfill \theFirstSupervisor{}}
-    \par {\large \hfill \theSecondSupervisor{}}
+    \vfill
 
-    \vspace{15mm}
+    {\large \textit{This dissertation is submitted for the degree}}
+    \par {\large \textit{\theDegree{}}}
 
-    \textit{This thesis is submitted for the degree}
-    \par \textit{\foreignlanguage{ngerman}{
-      Doktor der Naturwissenschaften (Dr. rer. nat.)}}
+    \vfill
 
-    \vspace{15mm}
-
-    \theDate{}
+    {\large \theDate{}}
   \end{center}
 \end{titlepage}

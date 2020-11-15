@@ -8,6 +8,9 @@
 
 
 
+% Use roman font for headings
+\setkomafont{disposition}{\bfseries}
+
 % Widows and orphans
 \clubpenalty = 10000
 \displaywidowpenalty = 10000
@@ -24,6 +27,9 @@
 
 % Footnotes
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+% Colors
+\colorlet{BrownRed}{red!50!black}
 
 % Biblatex
 \newbibmacro{string+doiurlisbn}[1]{%
@@ -58,12 +64,13 @@
   }%
 }
 \makeatother
+\renewcommand{\aclabelfont}[1]{\textrm{#1}}
 
 % Hyperref
 \hypersetup{
   linktocpage=true,
   colorlinks=true,
-  allcolors=\crossrefColor,
+  allcolors=BrownRed,
   pdftitle=\theTitle{},
   pdfsubject=\theThesis{},
   pdfauthor=\theAuthor{},
