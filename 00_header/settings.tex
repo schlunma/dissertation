@@ -32,26 +32,26 @@
 \colorlet{BrownRed}{red!50!black}
 
 % Biblatex
-\newbibmacro{string+doiurlisbn}[1]{%
-  \iffieldundef{doi}{%
-    \iffieldundef{url}{%
-      \iffieldundef{isbn}{%
-        \iffieldundef{issn}{%
-          #1%
-        }{%
-          \href{http://books.google.com/books?vid=ISSN\thefield{issn}}{#1}%
-        }%
-      }{%
-        \href{http://books.google.com/books?vid=ISBN\thefield{isbn}}{#1}%
-      }%
-    }{%
-      \href{\thefield{url}}{#1}%
-    }%
-  }{%
-    \href{http://dx.doi.org/\thefield{doi}}{#1}%
-  }%
+\newcommand*{\boldname}[3]{%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}%
 }
-\DeclareFieldFormat{title}{\usebibmacro{string+doiurlisbn}{\mkbibemph{#1}}}
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{
+    (test {\ifdefequal{\firstname}{\namepartgiven}} or
+     test {\ifdefequal{\firstinit}{\namepartgiven}}) and
+    test {\ifdefequal{\lastname}{\namepartfamily}}
+  }{\mkbibbold{#1}}{#1}%
+}
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{
+    (test {\ifdefequal{\firstname}{\namepartgiven}} or
+     test {\ifdefequal{\firstinit}{\namepartgiven}}) and
+    test {\ifdefequal{\lastname}{\namepartfamily}}
+  }{\mkbibbold{#1}}{#1}%
+}
+\boldname{Schlund}{Manuel}{M.}
 
 % Acronyms
 \makeatletter
