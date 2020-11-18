@@ -41,32 +41,34 @@
   % Title page
   \frontmatter
   \include{01_title_page/title_page}
-  \pagebreak
+  \cleardoublepage
 
   % Empty page
   \thispagestyle{empty}
-  \quad
-  \pagebreak
+  \cleardoublepage
 
   % Abstracts
   \include{02_abstract/abstract_english}
+  \acresetall
   \include{02_abstract/abstract_german}
+  \acresetall
 
   % Table of contents
   \tableofcontents
-  \pagebreak
+  \cleardoublepage
 
   % List of figures
   \listoffigures
-  \pagebreak
+  \cleardoublepage
 
   % List of figures
   \listoftables
-  \pagebreak
+  \cleardoublepage
 
   % Chapters
   \mainmatter
   \include{ch01_introduction/introduction}
+  \acresetall
   \include{ch02_scientific_background/scientific_background}
   \include{ch03_esmvaltool/esmvaltool}
   \include{ch04_assessment_climate_metrics/assessment_climate_metrics}
@@ -82,9 +84,12 @@
   \include{end_acronyms/acronyms}
 
   % References
-  \printbibliography[keyword=own, title=References of the Author]
-  \printbibliography[notkeyword=own, title=References]
-  \pagebreak
+  \boldname{Schlund}{Manuel}{M.}
+
+  % Print list of references
+  \printbibliography[keyword=own, title=Integrated Author's References]
+  \printbibliography[title=References]
+  \cleardoublepage
 
   % Declaration of authorship
   \include{end_declaration_authorship/declaration_authorship}

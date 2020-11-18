@@ -280,3 +280,6 @@ TSWLatexianTemp*
 *.docx
 *.doc#
 *.docx#
+
+# SVG files
+*.svg
