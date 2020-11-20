@@ -11,28 +11,80 @@
 \chapter{Scientific Background}
 \label{ch:02:scientific_background}
 
+This chapter introduces the scientific background necessary for the work
+presented in this thesis. After a brief introduction to climate model
+simulations and associated uncertainties, we present state-of-the art
+techniques used to evaluate climate model simulations and reduce uncertainties
+in projections of the future climate. These methods form the basis for the new
+techniques developed in this thesis.
 
-\section{Earth System Models: Simulations and Analysis}
+
+\section{\aclp{ESM}: Simulations and Analysis}
 \label{sec:02:esms}
 
-An \ac{ESM} is really cool! Yes, \acp{ESM}!!
+In contrast to other fields of science, researching the future evolution of the
+Earth's climate cannot be purely done by performing experiments in a
+laboratory. Due to the immense complexity of the Earth system (including
+physical, biological and chemical processes on various temporal and spatial
+scales), we do not have access to a mini version of the Earth that we can
+expose to varying external conditions and analyze its response to it
+\autocite{Flato2011}. While observing the current state of the Earth System is
+(relatively) straightforward, gaining evidence about the future climate by only
+considering present-day observations is rather difficult. A possible way out is
+given by numerical climate models, which offer the possibility to simulate the
+Earth's climate on a computer. The first numerical climate models came up in
+the 1960s and were based on weather prediction models \autocite{Flato2011}.
+Early models from the 1970s simulated only the physical components of the
+climate system: atmosphere, land surface, ocean and sea ice (see
+\cref{fig:02:esms_historical_evolution}). The main aim of these so-called
+\acp{AOGCM} \autocite{Flato2013} is to numerically solve the differential
+equations that describe the exchange of energy and matter between these
+physical components.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\figureWidth{}]{
     ch02_scientific_background/figs/esms_historical_evolution.pdf}
   \caption{Historical evolution of coupled climate models over the last 45
-  years. In early days, these models were \acfp{AOGCM} and only included three
-  components: the atmosphere, the land surface and the ocean. Over the time,
-  the individual components grew in complexity and included a wider range of
-  processes (illustrated by the growing cylinders). Eventually, more and more
-  components (aerosols, carbon cycle, \etc{}) were added to the coupled system,
-  forming the modern \acfp{ESM}. Taken from \textcite{Cubasch2013}.}
+    years. In early days, these models were so-called \acfp{AOGCM} and only
+    included three components: the atmosphere, the land surface and the ocean.
+    Over the time, the individual components grew in complexity and included a
+    wider range of processes (illustrated by the growing cylinders). Eventually,
+    more and more components (aerosols, carbon cycle, \etc{}) were added to the
+    coupled system, forming the modern \acfp{ESM}. Taken from
+    \textcite{Cubasch2013}.}
   \label{fig:02:esms_historical_evolution}
 \end{figure}
 
-TBA.
+Over the course of the years, climate models became more and more complex by
+including a wider range of processes within the components, but also by
+introducing new components to the coupled system. Examples of these are
+aerosols, the carbon cycle, a dynamic vegetation, atmospheric chemistry and
+land ice (see \cref{fig:02:esms_historical_evolution}). \acp{AOGCM} coupled to
+these additional components are called \acfp{ESM}, which are the current
+state-of-the-art models that allow the most sophisticated simulations of the
+Earth's climate. In contrast to \acp{AOGCM}, \acp{ESM} enable the simulation of
+biological and chemical processes in addition to the dynamics of the physical
+components of the Earth system. Especially in the context of anthropogenic
+climate change, these additional processes are of uttermost importance for
+realistic climate model simulations, since the anthropogenic interference with
+the Earth system directly influences the various biogeochemical cycles of the
+Earth. For example, the emission of the most prominent \ac{GHG}, \ac{CO2},
+immediately impacts the global carbon cycle by introducing an additional carbon
+source to the cycle (for details see \cref{sec:02:carbon_cycle}). Due to the
+global carbon cycle, only about \pct{50} of the emitted \ac{CO2} remains in the
+atmosphere, where it can act as \ac{GHG} by introducing an additional radiative
+forcing to the Earth System, which eventually leads to increasing surface
+temperatures. Thus, this uptake of \ac{CO2} by the global carbon cycle slows
+down global warming. Further examples include land use changes like the
+deforestation of tropical rainforests, which also directly influences several
+biogeochemical cycles (\eg{} carbon cycle, nitrogen cycle, phosphorus cycle,
+\etc{}) by altering respective sinks and sources.
 
 
 \section{Techniques to reduce uncertainties in climate model projections}
 \label{sec:02:techniques}
+
+
+\section{The global Carbon Cycle}
+\label{sec:02:carbon_cycle}
