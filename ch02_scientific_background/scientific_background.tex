@@ -11,35 +11,41 @@
 \chapter{Scientific Background}
 \label{ch:02:scientific_background}
 
-This chapter introduces the scientific background necessary for the work
-presented in this thesis. After a brief introduction to climate model
-simulations and associated uncertainties, we present state-of-the art
-techniques used to evaluate climate model simulations and reduce uncertainties
-in projections of the future climate. These methods form the basis for the new
-techniques developed in this thesis.
+This chapter introduces the scientific background of this thesis. First, basic
+concepts of climate model simulations and associated uncertainties are
+introduced. Next, the fundamental biogeochemical processes of the global carbon
+cycle and important metrics describing climate change are presented. Finally,
+state-of-the art techniques used reduce uncertainties in projections of the
+future climate are shown. These methods form the basis for the new techniques
+developed in this thesis.
 
 
 \section{\aclp{ESM}: Simulations and Analysis}
 \label{sec:02:esms}
 
+
+\subsection{Numerical Climate Modeling}
+\label{subsec:02:climate_modeling}
+
 In contrast to other fields of science, researching the future evolution of the
 Earth's climate cannot be purely done by performing experiments in a
 laboratory. Due to the immense complexity of the Earth system (including
 physical, biological and chemical processes on various temporal and spatial
-scales), we do not have access to a mini version of the Earth that we can
-expose to varying external conditions and analyze its response to it
+scales and their mutual interactions), we do not have access to a tiny replica
+of the Earth that we can analyze when exposed to different external conditions
 \autocite{Flato2011}. While observing the current state of the Earth System is
-(relatively) straightforward, gaining evidence about the future climate by only
-considering present-day observations is rather difficult. A possible way out is
-given by numerical climate models, which offer the possibility to simulate the
-Earth's climate on a computer. The first numerical climate models came up in
-the 1960s and were based on weather prediction models \autocite{Flato2011}.
-Early models from the 1970s simulated only the physical components of the
-climate system: atmosphere, land surface, ocean and sea ice (see
-\cref{fig:02:esms_historical_evolution}). The main aim of these so-called
-\acp{AOGCM} \autocite{Flato2013} is to numerically solve the differential
-equations that describe the exchange of energy and matter between these
-physical components.
+(relatively) straightforward, gaining evidence about the future evolution of
+the climate by only considering present-day observations is rather difficult.
+
+A possible way out is given by numerical climate models, which offer the
+possibility to simulate the Earth's climate on a computer. The first numerical
+climate models came up in the 1960s and were based on weather prediction models
+\autocite{Flato2011}. Early models from the 1970s simulated only the physical
+components of the climate system: atmosphere, land surface, ocean and sea ice
+(see \cref{fig:02:esms_historical_evolution}). The basis of these so-called
+\acp{AOGCM} \autocite{Flato2013} is the numerical solving of the differential
+equations describing the exchange of energy and matter between these physical
+components.
 
 \begin{figure}[t]
   \centering
@@ -49,9 +55,9 @@ physical components.
     years. In early days, these models were so-called \acfp{AOGCM} and only
     included three components: the atmosphere, the land surface and the ocean.
     Over the time, the individual components grew in complexity and included a
-    wider range of processes (illustrated by the growing cylinders). Eventually,
-    more and more components (aerosols, carbon cycle, \etc{}) were added to the
-    coupled system, forming the modern \acfp{ESM}. Taken from
+    wider range of processes (illustrated by the growing cylinders).
+    Eventually, more and more components (aerosols, carbon cycle, \etc{}) were
+    added to the coupled system, forming the modern \acfp{ESM}. Taken from
     \textcite{Cubasch2013}.}
   \label{fig:02:esms_historical_evolution}
 \end{figure}
@@ -70,21 +76,108 @@ climate change, these additional processes are of uttermost importance for
 realistic climate model simulations, since the anthropogenic interference with
 the Earth system directly influences the various biogeochemical cycles of the
 Earth. For example, the emission of the most prominent \ac{GHG}, \ac{CO2},
-immediately impacts the global carbon cycle by introducing an additional carbon
-source to the cycle (for details see \cref{sec:02:carbon_cycle}). Due to the
-global carbon cycle, only about \pct{50} of the emitted \ac{CO2} remains in the
-atmosphere, where it can act as \ac{GHG} by introducing an additional radiative
-forcing to the Earth System, which eventually leads to increasing surface
-temperatures. Thus, this uptake of \ac{CO2} by the global carbon cycle slows
-down global warming. Further examples include land use changes like the
-deforestation of tropical rainforests, which also directly influences several
-biogeochemical cycles (\eg{} carbon cycle, nitrogen cycle, phosphorus cycle,
-\etc{}) by altering respective sinks and sources.
+immediately impacts the global carbon cycle by inserting additional carbon into
+the system (for details see \cref{sec:02:carbon_cycle}). Further examples
+include land use changes like the deforestation of tropical rainforests, which
+also directly influences several biogeochemical cycles (\eg{} carbon cycle,
+nitrogen cycle, phosphorus cycle, \etc{}) by altering respective sinks and
+sources.
+
+Due to the complex interactions between the different components of the Earth
+system, these changes in the biogeochemical processes also affect the physical
+properties of the climate system. For example, due to the global carbon cycle,
+only about \pct{50} of the emitted \ac{CO2} by humankind remains in the
+atmosphere \autocite{Friedlingstein2019}. The residual part is absorbed by the
+two main carbon sinks of the planet, the terrestrial biosphere and the ocean.
+Since only atmospheric \ac{CO2} can act as \ac{GHG} by introducing an
+additional radiative forcing to the Earth System leading to increasing surface
+temperatures, this uptake of \ac{CO2} by the carbon cycle slows down global
+warming.
 
 
-\section{Techniques to reduce uncertainties in climate model projections}
-\label{sec:02:techniques}
+\subsection{\acs{CMIP}}
+\label{subsec:02:cmip}
+
+Due to the complex nature of the Earth system itself, numerical models of it
+consist of hundreds of thousands of lines of computer code. Thus, a
+standardization to a certain degree is crucial for the various research groups
+developing \acp{ESM} all around the world in order to obtain comparable output
+and to facilitate analysis. For this reason, the \ac{WGCM} of the \ac{WCRP}
+initiated the \ac{CMIP} in 1995, with the objective to \enquote{better
+understand past, present and future climate changes arising from natural,
+unforced variability or in response to changes in radiative forcing in a
+multi-model context} \autocite{WCRP2020}. One major element of \ac{CMIP} is to
+establish common standards, coordination, infrastructure, and documentation in
+order to facilitate the distribution of climate model output
+\autocite{Eyring2016}.
+
+A further main aspect is to provide a set of standardized experiments for
+global climate model simulations. To participate in the latest phase of
+\ac{CMIP}, \acs{CMIP}6, climate models need to run a \emph{historical}
+simulation of the period \range{1850}{2014} and the so-called \ac{DECK}
+experiments, which include a pre-industrial control run (\emph{piControl}), a
+historical Atmospheric \ac{MIP} simulation (\emph{amip}), a simulation forced
+with an abrupt quadrupling of \ac{CO2} (\emph{abrupt-4xCO2}) and a simulation
+forced with a \pct{1} per year increase of the atmospheric \ac{CO2}
+concentration (\emph{1pctCO2}) \autocite{Eyring2016}. This is shown in the
+center of \cref{fig:02:cmip6}, which illustrates the experimental design of
+\acs{CMIP}6.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\figureWidth{}]{
+    ch02_scientific_background/figs/cmip6.pdf}
+  \caption{Schematic of the experiment design of Phase 6 of the \acl{CMIP}
+    (\acs{CMIP}6). The center of the circle illustrates the four \acs{DECK}
+    (\acl{DECK}) experiments and the \acs{CMIP}6 historical simulation. The
+    circular sectors show additional science themes that can be explored
+    through the 21 \acs{CMIP}6-Endorsed \acfp{MIP}. Taken from
+    \textcite{Simpkins2017}.}
+  \label{fig:02:cmip6}
+\end{figure}
+
+To increase diversity and answer more scientific questions, \acs{CMIP}6 models
+can participate in the so-called \acs{CMIP}6-Endorsed \acp{MIP}, of which
+\acs{CMIP}6 offers 21 (see circular sectors in \cref{fig:02:cmip6}). Some
+\acp{MIP} offer additional experiments to explore specific aspects of the Earth
+system, like the \ac{C4MIP} which focuses on the carbon cycle
+\autocite{Jones2016} or the \ac{CFMIP} which focuses on the evaluation of cloud
+feedbacks \autocite{Webb2017}. Other \acp{MIP} allow the assessment of future
+climate change. An example is the \ac{ScenarioMIP}, which provides common
+experiments that simulate different possible futures \autocite{ONeill2016}.
+These experiments are based on the so-called \acp{SSP}, a set of alternative
+pathways of future societal development \autocite{ONeill2013, ONeill2017}. For
+each experiment, a set of emissions and land use changes is calculated from the
+\acp{SSP} \autocite{Riahi2017} which are then used to force the global climate
+models. For \ac{ScenarioMIP}, five different \acp{SSP} are considered, ranging
+from \ac{SSP}1 (sustainability) to \ac{SSP}5 (fossil-fuel development). Each
+\ac{SSP} is combined with a climate outcome (measured as radiative forcing in
+the year 2100) based on a particular forcing pathway that \acp{IAM} have shown
+to be feasible. For example, \ac{SSP}5-8.5 represents a scenario based on a
+fossil-fuel development with a radiative forcing of $8.5 \unit{W m^{-2}}$ in
+2100 while \ac{SSP}1-2.6 represents a sustainable future with a radiative
+forcing of $2.6 \unit{W m^{-2}}$ in the year 2100. The two other main scenarios
+(called \enquote{Tier 1} experiments in \ac{ScenarioMIP}) are the \ac{SSP}2-4.5
+and \ac{SSP}3-7.0 scenarios. In contrast to the \ac{ScenarioMIP} experiments,
+the corresponding \acs{CMIP}5 counterparts \autocite{Taylor2012}, the so-called
+\ac{RCP}, only used the radiative forcing in 2100 as only dimension to describe
+the possible futures (\eg{} \ac{RCP}8.5, \ac{RCP}4.5, \ac{RCP}2.6, \etc{}).
+
+In this thesis, climate model data from the two most recent \ac{CMIP}
+generations is used, \acs{CMIP}5 and \acs{CMIP}6. More detailed information
+about the specific variables and experiments analyzed is given in the
+corresponding chapters.
 
 
-\section{The global Carbon Cycle}
+\subsection{Sources of Uncertainties in Climate Model Projections}
+\label{subsec:02:source_of_uncertainties}
+
+
+\section{The Global Carbon Cycle}
 \label{sec:02:carbon_cycle}
+
+I like \ac{GPP}!
+
+
+\section{Techniques to reduce Uncertainties in Climate Model Projections}
+\label{sec:02:techniques}

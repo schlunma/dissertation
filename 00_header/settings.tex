@@ -32,7 +32,7 @@
 \colorlet{BrownRed}{red!50!black}
 
 % Biblatex
-\newcommand*{\boldname}[3]{%
+\newcommand*{\boldname}[3]{% Make my name bold in list of references
   \def\lastname{#1}%
   \def\firstname{#2}%
   \def\firstinit{#3}%
@@ -40,21 +40,21 @@
 \renewcommand{\mkbibnamegiven}[1]{%
   \ifboolexpr{
     (test {\ifdefequal{\firstname}{\namepartgiven}} or
-    test {\ifdefequal{\firstinit}{\namepartgiven}}) and
+     test {\ifdefequal{\firstinit}{\namepartgiven}}) and
     test {\ifdefequal{\lastname}{\namepartfamily}}
   }{\mkbibbold{#1}}{#1}%
 }
 \renewcommand{\mkbibnamefamily}[1]{%
   \ifboolexpr{
     (test {\ifdefequal{\firstname}{\namepartgiven}} or
-    test {\ifdefequal{\firstinit}{\namepartgiven}}) and
+     test {\ifdefequal{\firstinit}{\namepartgiven}}) and
     test {\ifdefequal{\lastname}{\namepartfamily}}
   }{\mkbibbold{#1}}{#1}%
 }
 
 % Acronyms
 \makeatletter
-\AtBeginDocument{%
+\AtBeginDocument{% Do not use hyperref color for links
   \renewcommand*{\AC@hyperlink}[2]{%
     \begingroup%
     \hypersetup{hidelinks}%
@@ -62,8 +62,16 @@
     \endgroup%
   }%
 }
+\newcommand*{\org@overidelabel}{} % No warning about multiply-defined labels
+\let\org@overridelabel\@verridelabel
+\renewcommand*{\@verridelabel}[1]{%
+  \@bsphack%
+  \protected@write\@auxout{}{\string\AC@undonewlabel{#1@cref}}%
+  \org@overridelabel{#1}%
+  \@esphack%
+}%
 \makeatother
-\renewcommand{\aclabelfont}[1]{\textrm{#1}}
+\renewcommand{\aclabelfont}[1]{\textrm{#1}} % Font for acronyms in list
 
 % Hyperref
 \hypersetup{
@@ -83,7 +91,7 @@
 }
 
 % Cleveref
-\crefname{enumi}{step}{steps}
+\crefname{enumi}{step}{steps} % Use "step" when referencing an enum item
 \newcommand{\crefrangeconjunction}{--}
 
 % Geometry
