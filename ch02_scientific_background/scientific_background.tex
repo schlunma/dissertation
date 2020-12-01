@@ -102,13 +102,13 @@ Due to the complex nature of the Earth system itself, numerical models of it
 consist of hundreds of thousands of lines of computer code. Thus, a
 standardization to a certain degree is crucial for the various research groups
 developing \acp{ESM} all around the world in order to obtain comparable output
-and to facilitate analysis. For this reason, the \ac{WGCM} of the \ac{WCRP}
-initiated the \ac{CMIP} in 1995, with the objective to \enquote{better
-understand past, present and future climate changes arising from natural,
-unforced variability or in response to changes in radiative forcing in a
-multi-model context} \autocite{WCRP2020}. One major element of \ac{CMIP} is to
-establish common standards, coordination, infrastructure, and documentation in
-order to facilitate the distribution of climate model output
+and to facilitate model analysis. For this reason, the \ac{WGCM} of the
+\ac{WCRP} initiated the \ac{CMIP} in 1995, with the objective to
+\enquote{better understand past, present and future climate changes arising
+  from natural, unforced variability or in response to changes in radiative
+  forcing in a multi-model context} \autocite{WCRP2020}. One major element of
+\ac{CMIP} is to establish common standards, coordination, infrastructure, and
+documentation in order to facilitate the distribution of climate model output
 \autocite{Eyring2016}.
 
 A further main aspect is to provide a set of standardized experiments for
@@ -160,8 +160,9 @@ forcing of $2.6 \unit{W m^{-2}}$ in the year 2100. The two other main scenarios
 (called \enquote{Tier 1} experiments in \ac{ScenarioMIP}) are the \ac{SSP}2-4.5
 and \ac{SSP}3-7.0 scenarios. In contrast to the \ac{ScenarioMIP} experiments,
 the corresponding \acs{CMIP}5 counterparts \autocite{Taylor2012}, the so-called
-\ac{RCP}, only used the radiative forcing in 2100 as only dimension to describe
-the possible futures (\eg{} \ac{RCP}8.5, \ac{RCP}4.5, \ac{RCP}2.6, \etc{}).
+\acp{RCP}, only used the radiative forcing in 2100 as only dimension to
+describe the possible futures (\eg{} \ac{RCP}8.5, \ac{RCP}4.5, \ac{RCP}2.6,
+\etc{}).
 
 In this thesis, climate model data from the two most recent \ac{CMIP}
 generations is used, \acs{CMIP}5 and \acs{CMIP}6. More detailed information
@@ -172,12 +173,131 @@ corresponding chapters.
 \subsection{Sources of Uncertainties in Climate Model Projections}
 \label{subsec:02:source_of_uncertainties}
 
+- anthropogenic forcing vs. natural forcing (volcanoes, solar cycle, etc.)
+
+- basic physics of greenhouse gases (vibration modes, etc.)
+
+- historical vs. future: in historical (future), uncertainty in forcing low
+(high)
+
+- definition of feedbacks, examples
+
+
+\section{Climate Sensitivity}
+\label{sec:02:climate_sensitivity}
+
+- Physical Feedbacks (ECS)
+
+- Equations for feedbacks + decomposition
+
+- ocean heat uptake (TCR)
+
+- different between effective climate sensitivity and equilibrium version
+
+- equations for ECS and TCR
+
 
 \section{The Global Carbon Cycle}
 \label{sec:02:carbon_cycle}
 
-I like \ac{GPP}!
+Since one study presented in this thesis \autocite[see
+\cref{ch:06:paper_gpp}]{Schlund2020} aims to reduce uncertainties in carbon
+cycle-related processes, this chapter introduces the scientific background of
+the global carbon cycle.
+
+
+\subsection{Overview}
+\label{subsec:02:carbon_cycle_overview}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\figureWidth{}]{
+    ch02_scientific_background/figs/carbon_cycle_schematic.png}
+  \caption{Simplified schematic of the global carbon cycle including the
+    typical turnover time scales for carbon transfers through the major
+    reservoirs (atmosphere, land surface and ocean). Taken from
+    \textcite{Ciais2013}.}
+  \label{fig:02:carbon_cycle_schematic}
+\end{figure}
+
+A schematic overview of the global carbon cycle is shown in
+\cref{fig:02:carbon_cycle_schematic}. To quantify the carbon cycle, common
+units are \ac{ppm} for the atmospheric trace gas concentrations (dry-air mole
+fraction) and \ac{GtC} or $\si{\GtCyr{}}$ for the reservoirs masses or exchange
+fluxes, respectively. The carbon exchange processes between the different
+carbon reservoirs run on a wide range of time scales. Conceptually, one can
+distinguish between two domains of the global carbon cycle: a slow and a fast
+domain. The slow domain with turnover times (reservoir mass of carbon divided
+by exchange flux) of more than 10000 years consists of the large carbon stores
+in rocks and sediments which are connected to the rapid domain of the carbon
+cycle through volcanic emissions of \ac{CO2}, chemical weathering, erosion and
+sediment formation on the sea floor. These natural exchange fluxes between the
+slow and the fast domain are comparatively small ($< 0.3 \unit{\GtCyr{}}$) and
+can be assumed as approximately constant in time over the last few centuries
+\autocite{Ciais2013}.
+
+The fast domain of the global carbon cycle consists of three main carbon
+reservoirs: the atmosphere, the terrestrial biosphere and the ocean. In the
+atmosphere, carbon is mainly stored in trace gases, with \ac{CO2} as the major
+component with a current (2019) concentration of about $410 \unit{ppm}$
+\autocite{Friedlingstein2019}. Additional contributors to the atmospheric
+carbon content are the trace gas \ac{CH4}, the trace gas \ac{CO}, hydrocarbons,
+black carbon aerosols and organic compounds \autocite{Ciais2013}. Carbon in the
+terrestrial biosphere is mainly stored as organic compounds, with about
+$\range{450}{650} \unit{GtC}$ in the living vegetation biomass,
+$\range{1500}{2400} \unit{GtC}$ in dead organic matter in litter and soils and
+about $1700 \unit{GtC}$ in permafrost soils \autocite{Ciais2013}. The main
+component of the oceanic carbon reservoir is dissolved inorganic carbon
+(carbonic acid, bicarbonate ions and carbonate ions) with about $38000
+\unit{GtC}$. Further carbon is stored as dissolved organic carbon (about $700
+\unit{GtC}$), in surface sediments (about $1750 \unit{GtC}$) and in marine
+biota (about $3 \unit{GtC}$, predominantly phytoplankton and other
+microorganisms) \autocite{Ciais2013, Friedlingstein2019}.
+
+In the fast domain of the global carbon cycle, reservoir turnover times range
+from seconds to millennia. In contrast to the slow domain, the carbon exchange
+fluxes within the fast domain of the carbon cycle are much higher. One major
+group of exchange processes in the fast domain connects the atmosphere and the
+terrestrial biosphere. \ac{CO2} is removed from the atmosphere by plant
+photosynthesis with about $120 \unit{\GtCyr{}}$ \autocite{Ciais2013}. This
+process is also known as \ac{GPP}. The carbon fixed into plants can be released
+back into the atmosphere by autotrophic (plant) and heterotrophic (soil
+microbial and animal) respiration and additional disturbance processes like
+fires \autocite{Ciais2013}. Since the land \ac{CO2} uptake by photosynthesis
+occurs only during the growing season, whereas respiration occurs nearly all
+year, the larger amount of vegetation in the Northern hemisphere (due to the
+larger land mass) gives rise to a seasonal cycle of the atmospheric \ac{CO2}
+concentration \autocite{Keeling1995}. This seasonal cycle reflects the phase of
+the global carbon cycle and shows a maximum of the atmospheric \ac{CO2}
+concentration in the Northern hemisphere winter (net \ac{CO2} flux into
+atmosphere due to respiration) and a minimum during the Northern hemisphere
+summer (net \ac{CO2} flux into the land due to photosynthesis). Another major
+carbon exchange process connects the atmosphere and the ocean. Atmospheric
+\ac{CO2} is exchanged with the surface ocean through gas exchange, which is
+driven by the partial \ac{CO2} pressure difference between the air and the sea
+\autocite{Ciais2013}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\largeFigureWidth{}]{
+    ch02_scientific_background/figs/carbon_cycle_perturbation.png}
+  \caption{Schematic representation of the overall perturbation of the global
+    carbon cycle caused by anthropogenic activities, averaged globally for the
+    decade \range{2009}{2018}. Arrows represent carbon exchange fluxes; circles
+    carbon reservoirs. More details are given in the legend of this figure.
+    Taken from \textcite{Friedlingstein2019}.}
+  \label{fig:02:carbon_cycle_perturbation}
+\end{figure}
 
 
 \section{Techniques to reduce Uncertainties in Climate Model Projections}
 \label{sec:02:techniques}
+
+- Process-based weighting (Knutti + MDER)
+
+- emergent constraints
+
+- Wenzel et al., Nature (2016) as example (refer to carbon cycle chapter)
+
+- Review of ECS emergent constraints is given in chapter on Schlund et al., ESD
+(2020)
