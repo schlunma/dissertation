@@ -37,19 +37,9 @@ of the Earth that we can analyze when exposed to different external conditions
 (relatively) straightforward, gaining evidence about the future evolution of
 the climate by only considering present-day observations is rather difficult.
 
-A possible way out is given by numerical climate models, which offer the
-possibility to simulate the Earth's climate on a computer. The first numerical
-climate models came up in the 1960s and were based on weather prediction models
-\autocite{Flato2011}. Early models from the 1970s simulated only the physical
-components of the climate system: atmosphere, land surface, ocean and sea ice
-(see \cref{fig:02:esms_historical_evolution}). The basis of these so-called
-\acp{AOGCM} \autocite{Flato2013} is the numerical solving of the differential
-equations describing the exchange of energy and matter between these physical
-components.
-
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\figureWidth{}]{
+  \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/esms_historical_evolution.pdf}
   \caption{Historical evolution of coupled climate models over the last 45
     years. In early days, these models were so-called \acfp{AOGCM} and only
@@ -61,6 +51,16 @@ components.
     \textcite{Cubasch2013}.}
   \label{fig:02:esms_historical_evolution}
 \end{figure}
+
+A possible way out is given by numerical climate models, which offer the
+possibility to simulate the Earth's climate on a computer. The first numerical
+climate models came up in the 1960s and were based on weather prediction models
+\autocite{Flato2011}. Early models from the 1970s simulated only the physical
+components of the climate system: atmosphere, land surface, ocean and sea ice
+(see \cref{fig:02:esms_historical_evolution}). The basis of these so-called
+\acp{AOGCM} \autocite{Flato2013} is the numerical solving of the differential
+equations describing the exchange of energy and matter between these physical
+components.
 
 Over the course of the years, climate models became more and more complex by
 including a wider range of processes within the components, but also by
@@ -88,8 +88,8 @@ system, these changes in the biogeochemical processes also affect the physical
 properties of the climate system. For example, due to the global carbon cycle,
 only about \pct{50} of the emitted \ac{CO2} by humankind remains in the
 atmosphere \autocite{Friedlingstein2019}. The residual part is absorbed by the
-two main carbon sinks of the planet, the terrestrial biosphere and the ocean.
-Since only atmospheric \ac{CO2} can act as \ac{GHG} by introducing an
+two other main carbon sinks of the planet, the terrestrial biosphere and the
+ocean. Since only atmospheric \ac{CO2} can act as \ac{GHG} by introducing an
 additional radiative forcing to the Earth System leading to increasing surface
 temperatures, this uptake of \ac{CO2} by the carbon cycle slows down global
 warming.
@@ -111,6 +111,19 @@ and to facilitate model analysis. For this reason, the \ac{WGCM} of the
 documentation in order to facilitate the distribution of climate model output
 \autocite{Eyring2016}.
 
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/cmip6.pdf}
+  \caption{Schematic of the experiment design of Phase 6 of the \acl{CMIP}
+    (\acs{CMIP}6). The center of the circle illustrates the four \acs{DECK}
+    (\acl{DECK}) experiments and the \acs{CMIP}6 historical simulation. The
+    circular sectors show additional science themes that can be explored
+    through the 21 \acs{CMIP}6-Endorsed \acfp{MIP}. Taken from
+    \textcite{Simpkins2017}.}
+  \label{fig:02:cmip6}
+\end{figure}
+
 A further main aspect is to provide a set of standardized experiments for
 global climate model simulations. To participate in the latest phase of
 \ac{CMIP}, \acs{CMIP}6, climate models need to run a \emph{historical}
@@ -122,19 +135,6 @@ forced with a \pct{1} per year increase of the atmospheric \ac{CO2}
 concentration (\emph{1pctCO2}) \autocite{Eyring2016}. This is shown in the
 center of \cref{fig:02:cmip6}, which illustrates the experimental design of
 \acs{CMIP}6.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\figureWidth{}]{
-    ch02_scientific_background/figs/cmip6.pdf}
-  \caption{Schematic of the experiment design of Phase 6 of the \acl{CMIP}
-    (\acs{CMIP}6). The center of the circle illustrates the four \acs{DECK}
-    (\acl{DECK}) experiments and the \acs{CMIP}6 historical simulation. The
-    circular sectors show additional science themes that can be explored
-    through the 21 \acs{CMIP}6-Endorsed \acfp{MIP}. Taken from
-    \textcite{Simpkins2017}.}
-  \label{fig:02:cmip6}
-\end{figure}
 
 To increase diversity and answer more scientific questions, \acs{CMIP}6 models
 can participate in the so-called \acs{CMIP}6-Endorsed \acp{MIP}, of which
@@ -157,7 +157,7 @@ to be feasible. For example, \ac{SSP}5-8.5 represents a scenario based on a
 fossil-fuel development with a radiative forcing of $8.5 \unit{W m^{-2}}$ in
 2100 while \ac{SSP}1-2.6 represents a sustainable future with a radiative
 forcing of $2.6 \unit{W m^{-2}}$ in the year 2100. The two other main scenarios
-(called \enquote{Tier 1} experiments in \ac{ScenarioMIP}) are the \ac{SSP}2-4.5
+(called \emph{Tier 1} experiments in \ac{ScenarioMIP}) are the \ac{SSP}2-4.5
 and \ac{SSP}3-7.0 scenarios. In contrast to the \ac{ScenarioMIP} experiments,
 the corresponding \acs{CMIP}5 counterparts \autocite{Taylor2012}, the so-called
 \acp{RCP}, only used the radiative forcing in 2100 as only dimension to
@@ -200,10 +200,9 @@ corresponding chapters.
 \section{The Global Carbon Cycle}
 \label{sec:02:carbon_cycle}
 
-Since one study presented in this thesis \autocite[see
-\cref{ch:06:paper_gpp}]{Schlund2020} aims to reduce uncertainties in carbon
-cycle-related processes, this chapter introduces the scientific background of
-the global carbon cycle.
+Since one study presented in this thesis aims to reduce uncertainties in carbon
+cycle-related processes \commentcite{Schlund2020}{see \cref{ch:06:paper_gpp}},
+this chapter introduces the scientific background of the global carbon cycle.
 
 
 \subsection{Overview}
@@ -211,7 +210,7 @@ the global carbon cycle.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\figureWidth{}]{
+  \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/carbon_cycle_schematic.png}
   \caption{Simplified schematic of the global carbon cycle including the
     typical turnover time scales for carbon transfers through the major
@@ -281,7 +280,22 @@ driven by the partial \ac{CO2} pressure difference between the air and the sea
 \subsection{Anthropogenic Perturbations}
 \label{subsec:02:carbon_cycle_perturbations}
 
-Before the Industrial Era, the global carbon cycle was roughly in equilibrium.
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/keeling_curve.pdf}
+  \caption{The Keeling Curve: monthly-mean atmospheric \acs{CO2} concentration
+    at the Mauna Loa Observatory, Hawaii ($19.5 \unit{\degree N}$, $155.6
+    \unit{\degree W}$; elevation: $3397 \unit{m}$) from 1958 to 2019
+    \autocite{Keeling2005}. The steady increase of the atmospheric \acs{CO2}
+    concentration is superimposed with a seasonal oscillation caused by the
+    seasonal \acs{CO2} cycle (see \cref{subsec:02:carbon_cycle_overview}).}
+  \label{fig:02:keeling_curve}
+\end{figure}
+
+Before the Industrial Era, the global carbon cycle was roughly in a dynamic
+equilibrium, which means that exchange fluxes balanced each other and the
+amount of carbon in the different reservoirs did neither increase nor decrease.
 This can be inferred from ice core measurements, which show an almost constant
 atmospheric \ac{CO2} concentration over the last several thousand years before
 the Industrial Revolution in the \nth{19} century \autocite{Ciais2013}. Since
@@ -290,28 +304,24 @@ carbon-based \acp{GHG} (\eg{} \ac{CO2} and \ac{CH4}) into the atmosphere.
 Especially the atmospheric \ac{CO2} concentration has substantially increased,
 which has already been shown by Charles D. Keeling in 1976 by his continuous
 \ac{CO2} measurements at Mauna Loa, Hawaii that started in 1958
-\autocite{Keeling1976}. From 1958, the atmospheric \ac{CO2} concentration at
-Mauna Loa has steadily increased by about $100 \unit{ppm}$ to $410 \unit{ppm}$
-in the year 2019 \autocite{Keeling2005}. In addition to the monotonic increase,
-the so-called \enquote{Keeling Curve} is further superimposed with the seasonal
-\ac{CO2} cycle, which gives rise to local maxima of the atmospheric \ac{CO2}
-concentration in the Northern hemisphere winter and local minima in the
-Northern hemisphere summer \autocite[see
-\cref{subsec:02:carbon_cycle_overview}]{Keeling1995}. Due to its location in
-the middle of the Pacific Ocean, the Mauna Loa Observatory offers perfect
-conditions for \ac{CO2} measurements by being far away from big population
-centers. Moreover, its elevation of more than $3000 \unit{m}$ provides access
-to the well-mixed air of the Pacific Ocean in high altitudes, which prevents
-any interference from the vegetation present on the Hawaiian Islands.
-
-Apart from warming the Earth by altering its radiation budget, the emitted
-\ac{CO2} directly influences the carbon exchange fluxes of the global carbon
-cycle. which introduced net carbon fluxes between the different carbon
-reservoirs into the system, which left this steady state in shows ...
+\commentcite{Keeling1976}{see \cref{fig:02:keeling_curve}}. From 1958, the
+atmospheric \ac{CO2} concentration at Mauna Loa has steadily increased by about
+$100 \unit{ppm}$ to $410 \unit{ppm}$ in the year 2019 \autocite{Keeling2005}.
+In addition to the steady increase, the so-called \emph{Keeling Curve} is
+further superimposed with the seasonal \ac{CO2} cycle, which gives rise to
+local maxima of the atmospheric \ac{CO2} concentration in the Northern
+hemisphere winter and local minima in the Northern hemisphere summer
+\commentcite{Keeling1995}{see \cref{subsec:02:carbon_cycle_overview}}. Due to
+its location in the middle of the Pacific Ocean, the Mauna Loa Observatory
+offers perfect conditions for \ac{CO2} measurements by being far away from big
+population centers. Moreover, its elevation of more than $3000 \unit{m}$
+provides access to the well-mixed air of the Pacific Ocean in high altitudes,
+which prevents any interference from the vegetation present on the Hawaiian
+Islands.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\largeFigureWidth{}]{
+  \includegraphics[width=\LargeFigureWidth{}]{
     ch02_scientific_background/figs/carbon_cycle_perturbation.png}
   \caption{Schematic representation of the overall perturbation of the global
     carbon cycle caused by anthropogenic activities, averaged globally for the
@@ -320,6 +330,46 @@ reservoirs into the system, which left this steady state in shows ...
     Taken from \textcite{Friedlingstein2019}.}
   \label{fig:02:carbon_cycle_perturbation}
 \end{figure}
+
+Apart from warming the Earth by altering its radiation budget, the
+anthropogenically emitted \ac{CO2} directly influences the carbon exchange
+fluxes of the global carbon cycle. Due to the excessive carbon in the
+atmosphere, there is now a net carbon flux from the atmosphere into the land
+and ocean reservoirs (see \cref{fig:02:carbon_cycle_perturbation}). Thus, the
+carbon cycle is not in a steady state anymore. In the decade
+\range{2009}{2018}, anthropogenic activities caused net carbon fluxes of $3.2
+\unit{\GtCyr{}}$ from the atmosphere into the terrestrial biosphere due to
+increased plant photosynthesis and $2.5 \unit{\GtCyr{}}$ from the atmosphere
+into the ocean due to increase dissolution of \ac{CO2} into the sea
+\autocite{Friedlingstein2019}. In the same time, the amount of carbon in the
+atmosphere reservoir increased with a rate of $4.9 \unit{\GtCyr{}}$, indicating
+that only about half of the anthropogenic \ac{CO2} emissions in the last decade
+remained in the atmosphere \autocite{Friedlingstein2019} where they can act as
+\ac{GHG}.
+
+Thus, this removal of \ac{CO2} from the atmosphere actively slows down global
+warming. However, whether this benefit will persist in the future remains
+unclear, which is primarily linked to two feedback processes connecting the
+climate system and the global carbon cycle: the \emph{concentration-carbon
+  feedback} and the \emph{climate-carbon feedback}
+\autocite{Friedlingstein2006, Gregory2009, Collins2013}. For the terrestrial
+biosphere, the concentration-carbon feedback is connected to the \emph{\ac{CO2}
+  fertilization effect} \autocite{Walker2020}, that causes an increase of
+photosynthesis rates when the atmospheric \ac{CO2} concentration increases,
+which in turns removes \ac{CO2} from the atmosphere, forming a negative
+feedback. For the ocean, the concentration-carbon feedback is negative as well.
+In this case, an elevated atmospheric \ac{CO2} concentration causes an
+increased dissolution of \ac{CO2} into the sea, which increases the ocean
+carbon uptake. On the other hand, the climate-carbon feedback is thought to be
+positive for both the terrestrial biosphere and the ocean
+\autocite{Gregory2009}. In the first case, temperature and precipitation
+changes due to anthropogenic activities decrease the land carbon uptake because
+of increased temperature and water stress on photosynthesis and higher
+ecosystem respiration costs, which accelerates global warming due to more
+\ac{CO2} that remains in the atmosphere. For the ocean, increased temperatures
+lead to a reduction of vertical transport in the ocean resulting from increased
+stability and reduced solubility of \ac{CO2} in the sea, which reduces the
+ocean carbon uptake and enhances climate change \autocite{Gregory2009}.
 
 
 \section{Techniques to reduce Uncertainties in Climate Model Projections}
