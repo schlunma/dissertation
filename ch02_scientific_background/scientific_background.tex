@@ -37,6 +37,16 @@ of the Earth that we can analyze when exposed to different external conditions
 (relatively) straightforward, gaining evidence about the future evolution of
 the climate by only considering present-day observations is rather difficult.
 
+A possible way out is given by numerical climate models, which offer the
+possibility to simulate the Earth's climate on a computer. The first numerical
+climate models came up in the 1960s and were based on weather prediction models
+\autocite{Flato2011}. Early models from the 1970s simulated only the physical
+components of the climate system: atmosphere, land surface, ocean and sea ice
+(see \cref{fig:02:esms_historical_evolution}). The basis of these so-called
+\acp{AOGCM} \autocite{Flato2013} is the numerical solving of the differential
+equations describing the exchange of energy and matter between these physical
+components.
+
 \begin{figure}[t]
   \centering
   \includegraphics[width=\FigureWidth{}]{
@@ -51,16 +61,6 @@ the climate by only considering present-day observations is rather difficult.
     \textcite{Cubasch2013}.}
   \label{fig:02:esms_historical_evolution}
 \end{figure}
-
-A possible way out is given by numerical climate models, which offer the
-possibility to simulate the Earth's climate on a computer. The first numerical
-climate models came up in the 1960s and were based on weather prediction models
-\autocite{Flato2011}. Early models from the 1970s simulated only the physical
-components of the climate system: atmosphere, land surface, ocean and sea ice
-(see \cref{fig:02:esms_historical_evolution}). The basis of these so-called
-\acp{AOGCM} \autocite{Flato2013} is the numerical solving of the differential
-equations describing the exchange of energy and matter between these physical
-components.
 
 Over the course of the years, climate models became more and more complex by
 including a wider range of processes within the components, but also by
@@ -111,6 +111,18 @@ and to facilitate model analysis. For this reason, the \ac{WGCM} of the
 documentation in order to facilitate the distribution of climate model output
 \autocite{Eyring2016}.
 
+A further main aspect is to provide a set of standardized experiments for
+global climate model simulations. To participate in the latest phase of
+\ac{CMIP}, \acs{CMIP}6, climate models need to run a \emph{historical}
+simulation of the period \range{1850}{2014} and the so-called \ac{DECK}
+experiments, which include a pre-industrial control run (\emph{piControl}), a
+historical Atmospheric \ac{MIP} simulation (\emph{amip}), a simulation forced
+with an abrupt quadrupling of \ac{CO2} (\emph{abrupt-4xCO2}) and a simulation
+forced with a \pct{1} per year increase of the atmospheric \ac{CO2}
+concentration (\emph{1pctCO2}) \autocite{Eyring2016}. This is shown in the
+center of \cref{fig:02:cmip6}, which illustrates the experimental design of
+\acs{CMIP}6.
+
 \begin{figure}[t]
   \centering
   \includegraphics[width=\FigureWidth{}]{
@@ -123,18 +135,6 @@ documentation in order to facilitate the distribution of climate model output
     \textcite{Simpkins2017}.}
   \label{fig:02:cmip6}
 \end{figure}
-
-A further main aspect is to provide a set of standardized experiments for
-global climate model simulations. To participate in the latest phase of
-\ac{CMIP}, \acs{CMIP}6, climate models need to run a \emph{historical}
-simulation of the period \range{1850}{2014} and the so-called \ac{DECK}
-experiments, which include a pre-industrial control run (\emph{piControl}), a
-historical Atmospheric \ac{MIP} simulation (\emph{amip}), a simulation forced
-with an abrupt quadrupling of \ac{CO2} (\emph{abrupt-4xCO2}) and a simulation
-forced with a \pct{1} per year increase of the atmospheric \ac{CO2}
-concentration (\emph{1pctCO2}) \autocite{Eyring2016}. This is shown in the
-center of \cref{fig:02:cmip6}, which illustrates the experimental design of
-\acs{CMIP}6.
 
 To increase diversity and answer more scientific questions, \acs{CMIP}6 models
 can participate in the so-called \acs{CMIP}6-Endorsed \acp{MIP}, of which
@@ -173,22 +173,127 @@ corresponding chapters.
 \subsection{Sources of Uncertainties in Climate Model Projections}
 \label{subsec:02:source_of_uncertainties}
 
-- anthropogenic forcing vs. natural forcing (volcanoes, solar cycle, etc.)
+Simulations from climate model ensembles of \ac{CMIP} allow us to assess the
+impact of future climate change in a consistent and transparent way. Especially
+the \ac{ScenarioMIP} experiments can give valuable insights into the upcoming
+development of the Earth system by providing \emph{projections} of the future
+climate. In contrast to climate predictions, climate projections run over
+multiple decades and depend upon the future scenario considered, which are
+based on assumptions that may or may not turn out to be correct. On the
+contrary, climate predictions are attempts to predict the actual evolution of
+the climate on much shorter time scales from seasons to years. Similar to any
+other scientific experiment, climate model projections suffer from associated
+uncertainties. There are three major sources of climate model projections we
+can distinguish: natural variability, climate response uncertainty and emission
+uncertainty \autocite{Hawkins2009, Hawkins2010}.
+\Cref{fig:02:sources_of_uncertainty} shows these three sources for the
+projected global mean surface temperature anomaly over the \nth{21} century.
 
-- basic physics of greenhouse gases (vibration modes, etc.)
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\LargeFigureWidth{}]{
+    ch02_scientific_background/figs/sources_of_uncertainty.pdf}
+  \caption{Schematic illustration of the relative importance of different
+    sources of uncertainties in climate model projections and their evolution
+    in time. (a) Time series of the anomaly of the decadal and global mean
+    surface temperature relative to the period \range{1961}{1980}. The black
+    line shows the historical observations with estimates of uncertainty from
+    climate models (gray). The remaining colors show different sources of
+    uncertainty in future climate projections: Natural variability
+    (orange), climate response uncertainty (blue) and emission uncertainty
+    (green) \autocite{Hawkins2009, Hawkins2010}. Climate response uncertainty
+    can (b) increase in newer generations of climate models when a new process
+    is discovered to be relevant or (c) decrease with additional model
+    improvements and observational constraints. Taken from
+    \textcite{Cubasch2013}.}
+  \label{fig:02:sources_of_uncertainty}
+\end{figure}
 
-- historical vs. future: in historical (future), uncertainty in forcing low
-(high)
+\emph{Natural variability} is connected to the chaotic nature of the Earth
+system that arises from complex interactions between the ocean, atmosphere,
+land, biosphere and cryosphere \autocite{Cubasch2013}. It constitutes a
+fundamental limit of how precisely we can project the future climate since it
+is inherent in the Earth system and cannot be eliminated by more knowledge and
+more advanced climate models. Natural variability is more relevant on regional
+and local scales than on continental or global scales. Further contributions to
+natural variability on longer time scales come from phenomena like the
+\ac{ENSO} or the \ac{NAO} and from externally (and thus explainable) events
+like volcanic eruptions and variations in the solar activity. Natural
+variability can be seen as the \emph{noise} in the climate record as opposed to
+the anthropogenic \emph{signal} \autocite{Cubasch2013}. As illustrated by
+\cref{fig:02:sources_of_uncertainty}, the uncertainty associated with natural
+variability is constant over time.
 
-- definition of feedbacks, examples
+The second source of uncertainty in climate model projections is \emph{emission
+  uncertainty}. This arises from the different possible trajectories in terms
+of future forcing (\acp{GHG}, aerosols, land use changes, \etc{}) humankind
+might take. Examples for these are the \ac{SSP}-based experiments given by
+\ac{ScenarioMIP} that include a variety of different scenarios from a
+sustainable future to a full fossil fuel-based development (see
+\cref{subsec:02:cmip}). A possible approach to quantify emission uncertainty is
+to assess the climate impact of these different trajectories. Since the
+emission uncertainty strongly depends on the future development of the human
+society, it cannot be reduced by improving climate models. In contrast to
+natural variability, the emission uncertainty increases over time in climate
+projections, since estimating forcings for the near future is easier than for
+the far future.
+
+Finally, the third source of uncertainty in climate model projections is the
+\emph{climate response uncertainty}, which comes from our imperfect knowledge
+of how the climate system will respond to future anthropogenic forcings. Due to
+the complexity of the Earth system, the future climate could develop in many
+different ways that are all consistent with our current knowledge and models
+\autocite{Cubasch2013}. In the context of climate model ensembles, the climate
+response uncertainty is often also called \emph{model uncertainty} and reflects
+the different responses of the different climate models to a given forcing.
+Even though all climate models are built on the same physical principles, they
+differ in terms of spatial resolution, processes included and parametrizations
+of unresolved processes. The latter can be thought of as different
+approximations that are necessary to represent processes that take place on
+scales smaller than the common size of grid boxes in modern global climate
+models (about $\ang{1} \times \ang{1}$ horizontally), which is for example the
+case for some cloud processes and vegetation processes.
+
+These differences in the climate models also give rise to different intensities
+of \emph{climate feedbacks} (or even their presence/absence) in the models. A
+climate feedback is a mechanism that either amplifies (\emph{positive
+  feedback}) or weakens (\emph{negative feedback}) the effect of an external
+forcing. An example of a positive feedback is the water vapor feedback, where
+the increased surface temperature (caused by anthropogenic forcing) leads to an
+enhanced evaporation of water which enhances the amount of water vapor in the
+atmosphere. Since water vapor itself is a powerful \ac{GHG}, this amplifies the
+effect of the anthropogenic forcing by further increasing the surface
+temperatures \autocite{Cubasch2013}. Further examples and a mathematical
+description of feedbacks are given in
+\cref{sec:02:feedbacks_and_climate_sensitivity}.
+
+As sciences evolves, representations of already included processes can be
+improved in climate models. Moreover, new geophysical and biogeochemical
+processes can be added to them. On the one hand, this can increase the climate
+response uncertainty when a new process is discovered to be relevant
+\commentcite{Cubasch2013}{see \cref{fig:02:sources_of_uncertainty}b}. However,
+such an increase corresponds to a previously unmeasured uncertainty. An example
+for this has recently happened in \acs{CMIP}6: most likely due to changes in
+the cloud representation of the models the spread in the projected global mean
+surface air temperature caused by a doubling of the atmospheric \ac{CO2}
+concentration has substantially increased in \ac{CMIP}6 compared to older
+\ac{CMIP} generations \autocite{Zelinka2020}. On the other hand, the climate
+response uncertainty can decrease with additional model improvements and better
+understanding of the Earth system (see \cref{fig:02:sources_of_uncertainty}c).
+Moreover, it can also be reduced by observational constraints, which is the
+main topic of this thesis.
 
 
-\section{Climate Sensitivity}
-\label{sec:02:climate_sensitivity}
+\section{Feedback Processes and Climate Sensitivity}
+\label{sec:02:feedbacks_and_climate_sensitivity}
 
-- Physical Feedbacks (ECS)
+- Overview over feedbacks (Cubasch et al., 2013, Figure 1.2)
+
+- Mathematical description of feedbacks, geometric series
 
 - Equations for feedbacks + decomposition
+
+- Physical Feedbacks (ECS)
 
 - ocean heat uptake (TCR)
 
@@ -208,17 +313,6 @@ this chapter introduces the scientific background of the global carbon cycle.
 \subsection{Overview}
 \label{subsec:02:carbon_cycle_overview}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\FigureWidth{}]{
-    ch02_scientific_background/figs/carbon_cycle_schematic.png}
-  \caption{Simplified schematic of the global carbon cycle including the
-    typical turnover time scales for carbon transfers through the major
-    reservoirs (atmosphere, land surface and ocean). Taken from
-    \textcite{Ciais2013}.}
-  \label{fig:02:carbon_cycle_schematic}
-\end{figure}
-
 A schematic overview of the global carbon cycle is shown in
 \cref{fig:02:carbon_cycle_schematic}. To quantify the carbon cycle, common
 units are \ac{ppm} for the atmospheric trace gas concentrations (dry-air mole
@@ -234,6 +328,17 @@ sediment formation on the sea floor. These natural exchange fluxes between the
 slow and the fast domain are comparatively small ($< 0.3 \unit{\GtCyr{}}$) and
 can be assumed as approximately constant in time over the last few centuries
 \autocite{Ciais2013}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/carbon_cycle_schematic.png}
+  \caption{Simplified schematic of the global carbon cycle including the
+    typical turnover time scales for carbon transfers through the major
+    reservoirs (atmosphere, land surface and ocean). Taken from
+    \textcite{Ciais2013}.}
+  \label{fig:02:carbon_cycle_schematic}
+\end{figure}
 
 The fast domain of the global carbon cycle consists of three main carbon
 reservoirs: the atmosphere, the terrestrial biosphere and the ocean. In the
@@ -280,19 +385,6 @@ driven by the partial \ac{CO2} pressure difference between the air and the sea
 \subsection{Anthropogenic Perturbations}
 \label{subsec:02:carbon_cycle_perturbations}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\FigureWidth{}]{
-    ch02_scientific_background/figs/keeling_curve.pdf}
-  \caption{The Keeling Curve: monthly-mean atmospheric \acs{CO2} concentration
-    at the Mauna Loa Observatory, Hawaii ($19.5 \unit{\degree N}$, $155.6
-    \unit{\degree W}$; elevation: $3397 \unit{m}$) from 1958 to 2019
-    \autocite{Keeling2005}. The steady increase of the atmospheric \acs{CO2}
-    concentration is superimposed with a seasonal oscillation caused by the
-    seasonal \acs{CO2} cycle (see \cref{subsec:02:carbon_cycle_overview}).}
-  \label{fig:02:keeling_curve}
-\end{figure}
-
 Before the Industrial Era, the global carbon cycle was roughly in a dynamic
 equilibrium, which means that exchange fluxes balanced each other and the
 amount of carbon in the different reservoirs did neither increase nor decrease.
@@ -321,14 +413,15 @@ Islands.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\LargeFigureWidth{}]{
-    ch02_scientific_background/figs/carbon_cycle_perturbation.png}
-  \caption{Schematic representation of the overall perturbation of the global
-    carbon cycle caused by anthropogenic activities, averaged globally for the
-    decade \range{2009}{2018}. Arrows represent carbon exchange fluxes; circles
-    carbon reservoirs. More details are given in the legend of this figure.
-    Taken from \textcite{Friedlingstein2019}.}
-  \label{fig:02:carbon_cycle_perturbation}
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/keeling_curve.pdf}
+  \caption{The Keeling Curve: monthly-mean atmospheric \acs{CO2} concentration
+    at the Mauna Loa Observatory, Hawaii ($19.5 \unit{\degree N}$, $155.6
+    \unit{\degree W}$; elevation: $3397 \unit{m}$) from 1958 to 2019
+    \autocite{Keeling2005}. The steady increase of the atmospheric \acs{CO2}
+    concentration is superimposed with a seasonal oscillation caused by the
+    seasonal \acs{CO2} cycle (see \cref{subsec:02:carbon_cycle_overview}).}
+  \label{fig:02:keeling_curve}
 \end{figure}
 
 Apart from warming the Earth by altering its radiation budget, the
@@ -347,11 +440,23 @@ that only about half of the anthropogenic \ac{CO2} emissions in the last decade
 remained in the atmosphere \autocite{Friedlingstein2019} where they can act as
 \ac{GHG}.
 
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\LargeFigureWidth{}]{
+    ch02_scientific_background/figs/carbon_cycle_perturbation.png}
+  \caption{Schematic representation of the overall perturbation of the global
+    carbon cycle caused by anthropogenic activities, averaged globally for the
+    decade \range{2009}{2018}. Arrows represent carbon exchange fluxes; circles
+    carbon reservoirs. More details are given in the legend of this figure.
+    Taken from \textcite{Friedlingstein2019}.}
+  \label{fig:02:carbon_cycle_perturbation}
+\end{figure}
+
 Thus, this removal of \ac{CO2} from the atmosphere actively slows down global
 warming. However, whether this benefit will persist in the future remains
 unclear, which is primarily linked to two feedback processes connecting the
-climate system and the global carbon cycle: the \emph{concentration-carbon
-  feedback} and the \emph{climate-carbon feedback}
+physical climate system and the global carbon cycle: the
+\emph{concentration-carbon feedback} and the \emph{climate-carbon feedback}
 \autocite{Friedlingstein2006, Gregory2009, Collins2013}. For the terrestrial
 biosphere, the concentration-carbon feedback is connected to the \emph{\ac{CO2}
   fertilization effect} \autocite{Walker2020}, that causes an increase of
@@ -374,6 +479,10 @@ ocean carbon uptake and enhances climate change \autocite{Gregory2009}.
 
 \section{Techniques to reduce Uncertainties in Climate Model Projections}
 \label{sec:02:techniques}
+
+- Problems with multi-model analysis (search for refs in Schlund et al., ESD,
+2020) -> models are not independent, multi-model ensemble is not "real"
+statistical sample
 
 - Process-based weighting (Knutti + MDER)
 
