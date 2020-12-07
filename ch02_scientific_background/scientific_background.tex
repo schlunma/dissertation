@@ -125,7 +125,7 @@ center of \cref{fig:02:cmip6}, which illustrates the experimental design of
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\FigureWidth{}]{
+  \includegraphics[width=\LargeFigureWidth{}]{
     ch02_scientific_background/figs/cmip6.pdf}
   \caption{Schematic of the experiment design of Phase 6 of the \acl{CMIP}
     (\acs{CMIP}6). The center of the circle illustrates the four \acs{DECK}
@@ -141,13 +141,13 @@ can participate in the so-called \acs{CMIP}6-Endorsed \acp{MIP}, of which
 \acs{CMIP}6 offers 21 (see circular sectors in \cref{fig:02:cmip6}). Some
 \acp{MIP} offer additional experiments to explore specific aspects of the Earth
 system, like the \ac{C4MIP} which focuses on the carbon cycle
-\autocite{Jones2016} or the \ac{CFMIP} which focuses on the evaluation of cloud
-feedbacks \autocite{Webb2017}. Other \acp{MIP} allow the assessment of future
-climate change. An example is the \ac{ScenarioMIP}, which provides common
-experiments that simulate different possible futures \autocite{ONeill2016}.
-These experiments are based on the so-called \acp{SSP}, a set of alternative
-pathways of future societal development \autocite{ONeill2013, ONeill2017}. For
-each experiment, a set of emissions and land use changes is calculated from the
+\autocite{Jones2016} or the \ac{AerChemMIP} which focuses on aerosol chemistry
+\autocite{Collins2017}. Other \acp{MIP} allow the assessment of future climate
+change. An example is the \ac{ScenarioMIP}, which provides common experiments
+that simulate different possible futures \autocite{ONeill2016}. These
+experiments are based on the so-called \acp{SSP}, a set of alternative pathways
+of future societal development \autocite{ONeill2013, ONeill2017}. For each
+experiment, a set of emissions and land use changes is calculated from the
 \acp{SSP} \autocite{Riahi2017} which are then used to force the global climate
 models. For \ac{ScenarioMIP}, five different \acp{SSP} are considered, ranging
 from \ac{SSP}1 (sustainability) to \ac{SSP}5 (fossil-fuel development). Each
@@ -265,7 +265,7 @@ atmosphere. Since water vapor itself is a powerful \ac{GHG}, this amplifies the
 effect of the anthropogenic forcing by further increasing the surface
 temperatures \autocite{Cubasch2013}. Further examples and a mathematical
 description of feedbacks are given in
-\cref{sec:02:feedbacks_and_climate_sensitivity}.
+\cref{subsec:02:climate_feedbacks}.
 
 As sciences evolves, representations of already included processes can be
 improved in climate models. Moreover, new geophysical and biogeochemical
@@ -284,10 +284,44 @@ Moreover, it can also be reduced by observational constraints, which is the
 main topic of this thesis.
 
 
-\section{Feedback Processes and Climate Sensitivity}
-\label{sec:02:feedbacks_and_climate_sensitivity}
+\section{Climate Sensitivity}
+\label{sec:02:climate_sensitivity}
+
+Climate sensitivity refers to the change in the \ac{GSAT} that results from a
+change in the radiative forcing. In other words, it describes how sensitive the
+climate system is to an external forcing. The source of this forcing might
+either be natural (changes in the solar activity, volcanic eruptions, \etc{})
+or anthropogenic (emissions of \acp{GHG}, land use changes, \etc{}).
+
+
+\subsection{Climate Feedbacks}
+\label{subsec:02:climate_feedbacks}
+
+As already described in \cref{subsec:02:source_of_uncertainties}, the effects
+of an external forcing acting on the climate system can additionally be
+amplified or weakened by climate feedbacks. Thus, feedback processes play a
+crucial role in the evaluation of climate sensitivity.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\LargeFigureWidth{}]{
+    ch02_scientific_background/figs/feedbacks_overview.pdf}
+  \caption{Climate feedbacks and corresponding time scales. \enquote{+} refers
+    to positive feedbacks, which amplify the effect of the external forcing
+    (\eg{} the water vapor feedback). \enquote{-} refers to negative feedbacks,
+    which weaken the effect of the external forcing (\eg{} the longwave
+    radiation feedback). \enquote{+/-} refers to feedbacks which might be
+    either positive or negative (\eg{} the cloud feedback). The smaller box
+    highlights the large differences in time scales for the various feedbacks.
+    Taken from \textcite{Cubasch2013}.}
+  \label{fig:02:feedbacks_overview}
+\end{figure}
 
 - Overview over feedbacks (Cubasch et al., 2013, Figure 1.2)
+
+- Timescales of feedbacks
+
+- Longwave radiation feedback = Planck feedback
 
 - Mathematical description of feedbacks, geometric series
 

@@ -16,10 +16,9 @@
 \displaywidowpenalty = 10000
 \widowpenalty = 10000
 
-% Headers and footers
-\clearpairofpagestyles
-\ihead{\headmark}
+% Footer
 \cfoot*{\pagemark}
+\ofoot*{}
 
 % New theorem
 \newtheorem{definition}{Definition}[chapter]
@@ -93,6 +92,3 @@
 % Cleveref
 \crefname{enumi}{step}{steps} % Use "step" when referencing an enum item
 \newcommand{\crefrangeconjunction}{--}
-
-% Geometry
-\geometry{a4paper}
