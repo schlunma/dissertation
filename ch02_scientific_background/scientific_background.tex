@@ -257,14 +257,14 @@ case for some cloud processes and vegetation processes.
 These differences in the climate models also give rise to different intensities
 of \emph{climate feedbacks} (or even their presence/absence) in the models. A
 climate feedback is a mechanism that either amplifies (\emph{positive
-  feedback}) or weakens (\emph{negative feedback}) the effect of an external
-forcing. An example of a positive feedback is the water vapor feedback, where
-the increased surface temperature (caused by anthropogenic forcing) leads to an
-enhanced evaporation of water which enhances the amount of water vapor in the
-atmosphere. Since water vapor itself is a powerful \ac{GHG}, this amplifies the
-effect of the anthropogenic forcing by further increasing the surface
-temperatures \autocite{Cubasch2013}. Further examples and a mathematical
-description of feedbacks are given in
+  feedback}) or diminishes (\emph{negative feedback}) the effect of an external
+forcing. An example of a strong positive feedback is the water vapor feedback,
+in which the increased surface temperature (caused by anthropogenic forcing)
+leads to an enhanced evaporation of water which enhances the amount of water
+vapor in the atmosphere. Since water vapor itself is a powerful \ac{GHG}, this
+amplifies the effect of the anthropogenic forcing by further increasing the
+surface temperatures \autocite{Cubasch2013}. Further examples and a
+mathematical description of feedbacks are given in
 \cref{subsec:02:climate_feedbacks}.
 
 As sciences evolves, representations of already included processes can be
@@ -299,8 +299,10 @@ or anthropogenic (emissions of \acp{GHG}, land use changes, \etc{}).
 
 As already described in \cref{subsec:02:source_of_uncertainties}, the effects
 of an external forcing acting on the climate system can additionally be
-amplified or weakened by climate feedbacks. Thus, feedback processes play a
+amplified or diminished by climate feedbacks. Thus, feedback processes play a
 crucial role in the evaluation of climate sensitivity.
+\Cref{fig:02:feedbacks_overview} shows an overview of important feedbacks in
+the Earth system with their corresponding time scales on which they operate.
 
 \begin{figure}[t]
   \centering
@@ -309,7 +311,7 @@ crucial role in the evaluation of climate sensitivity.
   \caption{Climate feedbacks and corresponding time scales. \enquote{+} refers
     to positive feedbacks, which amplify the effect of the external forcing
     (\eg{} the water vapor feedback). \enquote{-} refers to negative feedbacks,
-    which weaken the effect of the external forcing (\eg{} the longwave
+    which diminish the effect of the external forcing (\eg{} the longwave
     radiation feedback). \enquote{+/-} refers to feedbacks which might be
     either positive or negative (\eg{} the cloud feedback). The smaller box
     highlights the large differences in time scales for the various feedbacks.
@@ -317,15 +319,76 @@ crucial role in the evaluation of climate sensitivity.
   \label{fig:02:feedbacks_overview}
 \end{figure}
 
-- Overview over feedbacks (Cubasch et al., 2013, Figure 1.2)
+An example for a positive feedback is the already mentioned \emph{water vapor
+  feedback}. Being the primary \ac{GHG} in the Earth's atmosphere, water vapor
+is the largest contributor to the natural greenhouse effect. Since its amount
+in the atmosphere is mainly controlled by the air temperature and anthropogenic
+emissions of water vapor are negligible, the influence of water vapor on the
+climate system is described as a feedback mechanism and not as an external
+forcing \autocite{Myhre2013}. Basis of this feedback is the enhanced
+evaporation of water with increasing air temperatures. Each degree of warming
+allows the atmosphere to retain about \pct{7} more water vapor
+\autocite{Myhre2013}, which closes the positive feedback loop by further
+increasing air temperatures through the greenhouse effect. With a typical
+residence time of water vapor in the atmosphere of several days, the water
+vapor feedback operates on relatively short time scales. As the largest
+positive feedback in the Earth system \autocite{Soden2006}, the water vapor
+feedback amplifies any initial forcing (\eg{} caused by anthropogenic \ac{CO2}
+emissions) by a typical factor between two and three, rendering water vapor a
+fundamental agent of climate change \autocite{Myhre2013}. An example for a
+positive feedback that operates on longer time scales (several years) is the
+\emph{snow/ice albedo feedback}, in which the surface albedo decreases as
+highly reflective ice and snow surfaces melt with global warming, exposing the
+darker and more absorbing surfaces below \autocite{Cubasch2013}.
 
-- Timescales of feedbacks
+In contrast to positive feedbacks, negative feedbacks diminish the effect of an
+external forcing. An example for this is the \emph{blackbody feedback} (also
+known as \emph{Planck feedback} or \emph{longwave radiation feedback}), which
+is the strongest negative feedback in the Earth system \autocite{Cubasch2013}.
+It is based on the thermal electromagnetic radiation that any object with a
+non-zero temperature emits (the so-called \emph{blackbody radiation}). Since
+the power of this radiation strongly depends on the temperature of the object,
+higher surface temperatures of Earth increase the outgoing longwave radiation
+flux from the surface which reduces the effect of the external forcing and
+cools the planet.
 
-- Longwave radiation feedback = Planck feedback
+For some domains of the Earth system, feedbacks can be positive and/or
+negative, since a variety of different mechanisms is involved. An example for
+this is the cloud feedback. Changes in clouds induced by climate change can
+cause both longwave (greenhouse warming) and shortwave (reflective cooling)
+effects, which both need to be considered for the overall cloud feedback
+\autocite{Boucher2013}. Relevant cloud properties that may change as a response
+to an external forcing and that may alter the Earth's radiative budget are
+cloud cover, cloud optical thickness, cloud altitude and the geographical
+distribution of clouds. Examples for robust cloud feedback processes are the
+rise of high clouds in a warming climate which traps longwave radiation and
+enhances global warming and the reduction in mid- and low-level cloud cover
+which diminishes the reflection of incoming solar radiation and also increases
+the surface warming \autocite{Boucher2013}. In global climate model ensembles,
+the overall cloud feedback shows a large range with positive and negative
+values, but tends to be slightly positive on average \autocite{Soden2006,
+  Dufresne2008, Vial2013, Zelinka2020}. This large uncertainty in the cloud
+feedback is a major reason for uncertainties in the climate sensitivity of
+climate models \autocite{Boucher2013, Flato2013}.
 
-- Mathematical description of feedbacks, geometric series
+Further examples of feedbacks with positive and negative contributions are
+biogeochemical feedbacks. Negative contributions come from increased \ac{CO2}
+fluxes into the land and ocean carbon reservoirs due to increased
+photosynthesis rates and \ac{CO2} dissolution in the sea, which decrease the
+atmospheric \ac{CO2} content and diminish global warming. An example for a
+positive contribution is the decreased solubility of \ac{CO2} in water in a
+warmer climate, which reduces the atmosphere-ocean \ac{CO2} flux and enhances
+climate change. More details on this are given in
+\cref{subsec:02:carbon_cycle_perturbations}.
 
-- Equations for feedbacks + decomposition
+
+\subsection{Mathematical Description of Feedbacks}
+\label{subsec:02:mathematics_of_feedbacks}
+
+- Mathematical description of feedbacks
+
+- Equations for feedbacks + decomposition (reference for feedbacks: Planck, Roe
+2009)
 
 - Physical Feedbacks (ECS)
 
@@ -511,7 +574,7 @@ stability and reduced solubility of \ac{CO2} in the sea, which reduces the
 ocean carbon uptake and enhances climate change \autocite{Gregory2009}.
 
 
-\section{Techniques to reduce Uncertainties in Climate Model Projections}
+\section{Techniques to Reduce Uncertainties in Climate Model Projections}
 \label{sec:02:techniques}
 
 - Problems with multi-model analysis (search for refs in Schlund et al., ESD,
