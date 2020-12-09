@@ -193,17 +193,17 @@ projected global mean surface temperature anomaly over the \nth{21} century.
   \centering
   \includegraphics[width=\LargeFigureWidth{}]{
     ch02_scientific_background/figs/sources_of_uncertainty.pdf}
-  \caption{Schematic illustration of the relative importance of different
-    sources of uncertainties in climate model projections and their evolution
-    in time. (a) Time series of the anomaly of the decadal and global mean
-    surface temperature relative to the period \range{1961}{1980}. The black
-    line shows the historical observations with estimates of uncertainty from
+  \caption{Schematic illustrating the importance of different sources of
+    uncertainties in climate model projections and their evolution in time. (a)
+    Time series of the anomaly of the decadal and global mean surface
+    temperature relative to the period \range{1961}{1980}. The black line
+    shows the historical observations with estimates of uncertainty from
     climate models (gray). The remaining colors show different sources of
-    uncertainty in future climate projections: Natural variability
-    (orange), climate response uncertainty (blue) and emission uncertainty
-    (green) \autocite{Hawkins2009, Hawkins2010}. Climate response uncertainty
-    can (b) increase in newer generations of climate models when a new process
-    is discovered to be relevant or (c) decrease with additional model
+    uncertainty in future climate projections: Natural variability (orange),
+    climate response uncertainty (blue) and emission uncertainty (green)
+    \autocite{Hawkins2009, Hawkins2010}. Climate response uncertainty can (b)
+    increase in newer generations of climate models when a new process is
+    discovered to be relevant or (c) decrease with additional model
     improvements and observational constraints. Taken from
     \textcite{Cubasch2013}.}
   \label{fig:02:sources_of_uncertainty}
@@ -264,7 +264,7 @@ leads to an enhanced evaporation of water which enhances the amount of water
 vapor in the atmosphere. Since water vapor itself is a powerful \ac{GHG}, this
 amplifies the effect of the anthropogenic forcing by further increasing the
 surface temperatures \autocite{Cubasch2013}. Further examples and a
-mathematical description of feedbacks are given in
+mathematical framework for the analysis of feedbacks are given in
 \cref{subsec:02:climate_feedbacks}.
 
 As sciences evolves, representations of already included processes can be
@@ -274,14 +274,14 @@ response uncertainty when a new process is discovered to be relevant
 \commentcite{Cubasch2013}{see \cref{fig:02:sources_of_uncertainty}b}. However,
 such an increase corresponds to a previously unmeasured uncertainty. An example
 for this has recently happened in \acs{CMIP}6: most likely due to changes in
-the cloud representation of the models the spread in the projected global mean
-surface air temperature caused by a doubling of the atmospheric \ac{CO2}
-concentration has substantially increased in \ac{CMIP}6 compared to older
-\ac{CMIP} generations \autocite{Zelinka2020}. On the other hand, the climate
-response uncertainty can decrease with additional model improvements and better
-understanding of the Earth system (see \cref{fig:02:sources_of_uncertainty}c).
-Moreover, it can also be reduced by observational constraints, which is the
-main topic of this thesis.
+the cloud representation of the models the spread in the projected \ac{GSAT}
+caused by a doubling of the atmospheric \ac{CO2} concentration has
+substantially increased in \ac{CMIP}6 compared to older \ac{CMIP} generations
+\autocite{Zelinka2020}. On the other hand, the climate response uncertainty can
+decrease with additional model improvements and better understanding of the
+Earth system (see \cref{fig:02:sources_of_uncertainty}c). Moreover, it can also
+be reduced by observational constraints, which is the main topic of this
+thesis.
 
 
 \section{Climate Sensitivity}
@@ -374,21 +374,100 @@ climate models \autocite{Boucher2013, Flato2013}.
 Further examples of feedbacks with positive and negative contributions are
 biogeochemical feedbacks. Negative contributions come from increased \ac{CO2}
 fluxes into the land and ocean carbon reservoirs due to increased
-photosynthesis rates and \ac{CO2} dissolution in the sea, which decrease the
-atmospheric \ac{CO2} content and diminish global warming. An example for a
-positive contribution is the decreased solubility of \ac{CO2} in water in a
-warmer climate, which reduces the atmosphere-ocean \ac{CO2} flux and enhances
-climate change. More details on this are given in
+photosynthesis rates and \ac{CO2} dissolution in the sea, respectively, which
+decrease the atmospheric \ac{CO2} content and diminish global warming. An
+example for a positive contribution is the decreased solubility of \ac{CO2} in
+water in a warmer climate, which reduces the atmosphere-ocean \ac{CO2} flux and
+enhances climate change. More details on this are given in
 \cref{subsec:02:carbon_cycle_perturbations}.
 
 
-\subsection{Mathematical Description of Feedbacks}
-\label{subsec:02:mathematics_of_feedbacks}
+\subsection{Mathematical Framework for Feedbacks Analysis}
+\label{subsec:02:mathematical_framework_feedbacks}
 
-- Mathematical description of feedbacks
+The foundation for a basic mathematical framework for the analysis of climate
+feedbacks is a simple energy balance model \autocite{Gregory2009, Roe2009}.
+Anthropogenic activities in the Earth system like the emissions of \acp{GHG} or
+aerosols introduce an external forcing to the climate system, which is
+quantified with a radiative forcing $F$ measured in $\si{W m^{-2}}$. To restore
+a stable state, the climate system opposes this forcing with a climate response
+$R$, leading to a net energy flux of
+\begin{equation}
+  N = F + R
+  \label{eq:02:N}
+\end{equation}
+into the system. Positive values of $N$, $F$ and $R$ indicate incoming fluxes;
+usually $F > 0$ and $R < 0$. On long time scales (multiple years), the net
+incoming radiative flux at the \ac{TOA} and the net heat flux into the ocean
+are basically equal definitions of $N$ since nearly all of the Earth's heat
+capacity resides in the ocean \autocite{Gregory2009}. While $N \neq 0$, the
+climate system evolves; when $N = 0$ a new steady state has been reached.
 
-- Equations for feedbacks + decomposition (reference for feedbacks: Planck, Roe
-2009)
+To quantify the effects of different feedbacks, a reference system with a basic
+response needs to be defined, which is a crucial aspect of feedback analysis
+\autocite{Roe2009}. Usually, the idealization of a blackbody Earth (without an
+atmosphere) is used for that: In equilibrium, the incoming solar irradiance is
+balanced with an outgoing thermal irradiance $J_0$ that solely depends on the
+global mean surface temperature $T_0$ following the Stefan–Boltzmann law
+\begin{equation}
+  J_0 = -\sigma T_0^4.
+  \label{eq:02:stefan_boltzmann_law_eq}
+\end{equation}
+$\sigma \approx 5.67 \unit{W m^{-2} K^{-4}}$ is the Stefan–Boltzmann constant.
+To answer an external forcing $F$, the climate system reacts with a response
+$R$ expressed by a change in the global mean surface temperature $\Delta T$:
+\begin{equation}
+  J_0 + R = -\sigma \left( T_0 + \Delta T \right)^4
+  \label{eq:02:stefan_boltzmann_law_non_eq}
+\end{equation}
+Since the temperature change caused by an anthropogenic forcing is much smaller
+than the equilibrium temperature $\Delta T \ll T_0 \approx 255 \unit{K}$, a
+simple \nth{1}-order Taylor expansion can be used to linearize the blackbody
+response:
+\begin{equation}
+  -\sigma \left( T_0 + \Delta T \right)^4 \approx J_0 - 4 \sigma T_0^3 \cdot
+  \Delta T
+  \label{eq:02:stefan_boltzmann_law_lin}
+\end{equation}
+Thus, by comparing
+\cref{eq:02:stefan_boltzmann_law_non_eq,eq:02:stefan_boltzmann_law_lin} the
+climate response $R$ can be expressed as
+\begin{equation}
+  R = -4 \sigma T_0^3 \cdot \Delta T \coloneqq \lambda_\text{BB} \cdot \Delta T
+  \label{eq:02:linear_blackbody_response}
+\end{equation}
+with the blackbody feedback parameter $\lambda_\text{BB} \approx -3.8 \unit{W
+  m^{-2} K^{-1}}$. Results from climate models and analyses of observations
+confirm this linear relationship between $R$ and $\Delta T$
+\autocite{Gregory2004}. However, the value of this linear constant $\lambda$,
+the \emph{climate feedback parameter}, is found to be considerably larger than
+the blackbody response ($\lambda \approx -1.0 \unit{W m^{-2} K^{-1}}$),
+indicating that additional processes affect the Earth's radiative balance: the
+climate feedbacks \autocite{Flato2013, Gregory2009}. Since climate models
+suggest that the radiative effects of these additional feedbacks are also
+proportional to $\Delta T$ \autocite{Gregory2008a},
+\cref{eq:02:linear_blackbody_response} can be adapted to
+\begin{equation}
+  R = \lambda \cdot \Delta T = \left( \lambda_\text{BB} + \lambda_\text{WV} +
+  \lambda_\text{Albedo} + \lambda_\text{Cloud} + \ldots \right) \cdot \Delta T.
+  \label{eq:02:linear_response}
+\end{equation}
+$\lambda_\text{WV}$ refers to the water vapor feedback, $\lambda_\text{Albedo}$
+to the snow/ice albedo feedback and $\lambda_\text{Cloud}$ to the cloud
+feedback. Thus, the overall climate feedback parameter $\lambda$ can be written
+as the sum of the individual feedback parameters $\lambda_i$:
+\begin{equation}
+  \lambda = \sum_i \lambda_i
+  \label{eq:02:lambda_as_sum_of_lambdas}
+\end{equation}
+Positive values of $\lambda_i$ indicate positive feedbacks (\eg{} the water
+vapor feedback) and negative values indicate negative feedbacks (\eg{} the
+blackbody feedback). This equation assumes that the individual radiative
+responses from the different feedbacks are independent, which is a reasonable
+first-order approximation but not entirely true \autocite{Soden2008}.
+
+\subsection{Equilibrium and \acl{ECS}}
+\label{subsec:02:ecs}
 
 - Physical Feedbacks (ECS)
 
