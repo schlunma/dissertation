@@ -235,13 +235,13 @@ to assess the climate impact of these different trajectories. Since the
 emission uncertainty strongly depends on the future development of the human
 society, it cannot be reduced by improving climate models. In contrast to
 natural variability, the emission uncertainty increases over time in climate
-projections, since estimating forcings for the near future is easier than for
+projections, since estimating forcings for the near future is simpler than for
 the far future.
 
 Finally, the third source of uncertainty in climate model projections is the
 \emph{climate response uncertainty}, which comes from our imperfect knowledge
-of how the climate system will respond to future anthropogenic forcings. Due to
-the complexity of the Earth system, the future climate could develop in many
+of how the climate system will respond to anthropogenic forcings. Due to the
+complexity of the Earth system, the future climate could develop in many
 different ways that are all consistent with our current knowledge and models
 \autocite{Cubasch2013}. In the context of climate model ensembles, the climate
 response uncertainty is often also called \emph{model uncertainty} and reflects
@@ -252,7 +252,7 @@ of unresolved processes. The latter can be thought of as different
 approximations that are necessary to represent processes that take place on
 scales smaller than the common size of grid boxes in modern global climate
 models (about $\ang{1} \times \ang{1}$ horizontally), which is for example the
-case for some cloud processes and vegetation processes.
+case for cloud processes and vegetation processes.
 
 These differences in the climate models also give rise to different intensities
 of \emph{climate feedbacks} (or even their presence/absence) in the models. A
@@ -260,7 +260,7 @@ climate feedback is a mechanism that either amplifies (\emph{positive
   feedback}) or diminishes (\emph{negative feedback}) the effect of an external
 forcing. An example of a strong positive feedback is the water vapor feedback,
 in which the increased surface temperature (caused by anthropogenic forcing)
-leads to an enhanced evaporation of water which enhances the amount of water
+leads to an enhanced evaporation of water which increases the amount of water
 vapor in the atmosphere. Since water vapor itself is a powerful \ac{GHG}, this
 amplifies the effect of the anthropogenic forcing by further increasing the
 surface temperatures \autocite{Cubasch2013}. Further examples and a
@@ -287,7 +287,7 @@ thesis.
 \section{Climate Sensitivity}
 \label{sec:02:climate_sensitivity}
 
-Climate sensitivity refers to the change in the \ac{GSAT} that results from a
+Climate sensitivity refers to the change in \ac{GSAT} that results from a
 change in the radiative forcing. In other words, it describes how sensitive the
 climate system is to an external forcing. The source of this forcing might
 either be natural (changes in the solar activity, volcanic eruptions, \etc{})
@@ -348,9 +348,9 @@ is the strongest negative feedback in the Earth system \autocite{Cubasch2013}.
 It is based on the thermal electromagnetic radiation that any object with a
 non-zero temperature emits (the so-called \emph{blackbody radiation}). Since
 the power of this radiation strongly depends on the temperature of the object,
-higher surface temperatures of Earth increase the outgoing longwave radiation
-flux from the surface which reduces the effect of the external forcing and
-cools the planet.
+higher surface temperatures of the Earth increase the outgoing longwave
+radiation flux from the surface which reduces the effect of the external
+forcing and cools the planet.
 
 For some domains of the Earth system, feedbacks can be positive and/or
 negative, since a variety of different mechanisms is involved. An example for
@@ -385,13 +385,13 @@ enhances climate change. More details on this are given in
 \subsection{Mathematical Framework for Feedbacks Analysis}
 \label{subsec:02:mathematical_framework_feedbacks}
 
-The foundation for a basic mathematical framework for the analysis of climate
-feedbacks is a simple energy balance model \autocite{Gregory2009, Roe2009}.
-Anthropogenic activities in the Earth system like the emissions of \acp{GHG} or
-aerosols introduce an external forcing to the climate system, which is
-quantified with a radiative forcing $F$ measured in $\si{W m^{-2}}$. To restore
-a stable state, the climate system opposes this forcing with a climate response
-$R$, leading to a net energy flux of
+The foundation of a basic mathematical framework for climate feedback analysis
+is a simple energy balance model \autocite{Gregory2009, Roe2009}. Anthropogenic
+activities in the Earth system like the emissions of \acp{GHG} or aerosols
+introduce an external forcing to the climate system, which is quantified with a
+radiative forcing $F$ measured in $\si{W m^{-2}}$. To restore a stable state,
+the climate system opposes this forcing with a climate response $R$, leading to
+a net energy flux of
 \begin{equation}
   N = F + R
   \label{eq:02:N}
@@ -405,8 +405,8 @@ climate system evolves; when $N = 0$ a new steady state has been reached.
 
 To quantify the effects of different feedbacks, a reference system with a basic
 response needs to be defined, which is a crucial aspect of feedback analysis
-\autocite{Roe2009}. Usually, the idealization of a blackbody Earth (without an
-atmosphere) is used for that: In equilibrium, the incoming solar irradiance is
+\autocite{Roe2009}. Usually, the idealization of a blackbody Earth without an
+atmosphere is used for that: In equilibrium, the incoming solar irradiance is
 balanced with an outgoing thermal irradiance $J_0$ that solely depends on the
 global mean surface temperature $T_0$ following the Stefan–Boltzmann law
 \begin{equation}
@@ -422,7 +422,7 @@ $R$ expressed by a change in the global mean surface temperature $\Delta T$:
 \end{equation}
 Since the temperature change caused by an anthropogenic forcing is much smaller
 than the equilibrium temperature $\Delta T \ll T_0 \approx 255 \unit{K}$, a
-simple \nth{1}-order Taylor expansion can be used to linearize the blackbody
+simple first-order Taylor expansion can be used to linearize the blackbody
 response:
 \begin{equation}
   -\sigma \left( T_0 + \Delta T \right)^4 \approx J_0 - 4 \sigma T_0^3 \cdot
@@ -446,7 +446,7 @@ indicating that additional processes affect the Earth's radiative balance: the
 climate feedbacks \autocite{Flato2013, Gregory2009}. Since climate models
 suggest that the radiative effects of these additional feedbacks are also
 proportional to $\Delta T$ \autocite{Gregory2008a},
-\cref{eq:02:linear_blackbody_response} can be adapted to
+\cref{eq:02:linear_blackbody_response} can be adjusted to
 \begin{equation}
   R = \lambda \cdot \Delta T = \left( \lambda_\text{BB} + \lambda_\text{WV} +
   \lambda_\text{Albedo} + \lambda_\text{Cloud} + \ldots \right) \cdot \Delta T.
@@ -469,13 +469,140 @@ first-order approximation but not entirely true \autocite{Soden2008}.
 \subsection{Equilibrium and \acl{ECS}}
 \label{subsec:02:ecs}
 
-- Physical Feedbacks (ECS)
+An important metric describing climate sensitivity is the Equilibrium Climate
+Sensitivity. It is defined as the change in \ac{GSAT} after an instantaneous
+doubling of the atmospheric \ac{CO2} concentration from pre-industrial
+conditions once the climate system reaches radiative equilibrium
+\autocite{Bindoff2013}. Being already used in one of the first assessments of
+the anthropogenic climate change, the \emph{Charney Report} from 1979
+\autocite{Charney1979}, the Equilibrium Climate Sensitivity is one of the
+oldest metrics describing climate change. However, in practice this traditional
+definition of is not useful. Running fully-coupled \acp{ESM} into equilibrium
+is computationally expensive as it would require thousands of model years
+\autocite{Rugenstein2020}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/gregory_regression.pdf}
+  \caption{Global and annual mean net \acf{TOA} radiation $N$ \vs{} global and
+    annual mean near-surface air temperature $\Delta T$ for 150 years of a
+    simulation with an abrupt quadrupling of the atmospheric \ac{CO2}
+    concentration (4x\acs{CO2}) for the \acs{CMIP}5 multi-model mean (blue
+    squares). To account for energy leakage and model drift, a linear fit of
+    the corresponding pre-industrial control run is subtracted from the
+    4x\acs{CO2} simulation. As given by \cref{eq:02:N_vs_delta_t}, the slope of
+    the linear regression (black line) corresponds to the climate feedback
+    parameter $\lambda$ and the y-intercept corresponds to the radiative
+    forcing $F_\text{4x}$. These can be used to calculate the \ac{ECS} with
+    the Gregory regression method following to \cref{eq:02:ecs}
+    \autocite{Gregory2004}.}
+  \label{fig:02:gregory_regression}
+\end{figure}
+
+For this reason, the Equilibrium Climate Sensitivity is commonly approximated
+with the \acf{ECS}, which can be derived from only 150 model years of a
+simulation with an abrupt quadrupling of the atmospheric \ac{CO2} concentration
+(4x\acs{CO2}) \autocite{Gregory2004}. The basis of the definition of \ac{ECS}
+is the simple energy balance model introduced in
+\cref{subsec:02:mathematical_framework_feedbacks}. Assuming radiative
+equilibrium ($N = 0$), \cref{eq:02:N,eq:02:linear_response} imply
+\begin{equation}
+  \Delta T = -\frac{F}{\lambda}.
+  \label{eq:02:delta_t_eq}
+\end{equation}
+Thus, the change in \ac{GSAT} in radiative equilibrium can be easily calculated
+from the external forcing $F$ and the climate feedback parameter $\lambda$. The
+steady state values for $F$ and $\lambda$ can be estimated from a 4x\acs{CO2}
+simulation that is not in equilibrium by extrapolation with a linear regression
+\autocite{Gregory2004}. For this method, the so-called \emph{Gregory
+  regression}, the global and annual mean net \ac{TOA} radiation $N$ \vs{} the
+change in the annual mean \ac{GSAT} $\Delta T$ for all 150 years of the
+4x\acs{CO2} run are plotted (see \cref{fig:02:gregory_regression}). To account
+for energy leakage and remove any model drift present in the control climate, a
+linear fit of the corresponding pre-industrial control run is subtracted from
+the 4x\acs{CO2} simulation beforehand \autocite{Andrews2012}. Since the
+combination of \cref{eq:02:N,eq:02:linear_response} yields
+\begin{equation}
+  N = F + \lambda \cdot \Delta T,
+  \label{eq:02:N_vs_delta_t}
+\end{equation}
+$F$ is now given by the y-intercept of this linear regression
+($F_\text{4x}$) and $\lambda$ by its slope. Thus, the \ac{ECS} is given by
+\begin{equation}
+  \text{ECS} = - \frac{F_\text{4x}}{2 \lambda}.
+  \label{eq:02:ecs}
+\end{equation}
+The factor of $2$ in the denominator accounts for the fact the traditional
+Equilibrium Climate Sensitivity is defined for an abrupt \ac{CO2} doubling,
+whereas here a simulation with an abrupt quadrupling is considered.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/gregory_regression_different_years.png}
+  \caption{As \cref{fig:02:gregory_regression}, but for different time periods
+    considered in the Gregory regression resulting in different values for the
+    \acf{ECS} and the climate feedback parameter $\lambda$. Dark gray, blue,
+    red and orange colors correspond to the \acf{CESM} of the \acf{NCAR} for
+    different time periods of a long running simulation (see legend). The
+    initial years are simulated many times for different initial conditions.
+    Light gray colors correspond to the \acs{CMIP}5 ensemble (150 years each).
+    Taken from \textcite{Knutti2017}.}
+  \label{fig:02:gregory_regression_different_years}
+\end{figure}
+
+Although commonly used in the literature, the \ac{ECS} is known to be only an
+approximation of the true Equilibrium Climate Sensitivity. One major reason for
+this is the state and time dependence of the global feedbacks
+\autocite{Knutti2015, Knutti2017}. As
+\cref{fig:02:gregory_regression_different_years} shows, the slope in the
+Gregory regression is not constant, but rather decreases over time when a long
+running 4x\acs{CO2} simulation with more than 1000 model years is considered.
+As a result, the climate feedback parameter $\lambda$ decreases over time,
+resulting in a higher \ac{ECS}. Major reasons for this are temperature
+dependencies of the feedbacks, atmospheric and oceanic adjustments over time,
+changing warming patterns over time, non-additive feedbacks and dependencies on
+the type and magnitude of the external forcings \autocite{Knutti2017}. All in
+all, this demonstrates the limits of the linear feedback framework introduced
+in \cref{subsec:02:mathematical_framework_feedbacks} that is not capable of
+describing non-linear effects. A second major reason for the discrepancies
+between the Equilibrium Climate Sensitivity and \ac{ECS} is the use of a
+4x\acs{CO2} instead of a 2x\acs{CO2} simulation. The factor of $2$ in the
+denominator of \cref{eq:02:ecs} only partly compensates this difference since
+the radiative forcing logarithmically depends on the atmospheric \ac{CO2}
+concentration \autocite{Huang2014}.
+
+However, despite these deficiencies the \ac{ECS} is still a practical estimate
+of the Equilibrium Climate Sensitivity. With the help of climate models,
+\textcite{Sherwood2020} showed that the \ac{ECS} is only about \pct{6} lower
+than the best estimate of the true equilibrium warming obtained from
+integrating climate models until a new steady state is reached. Nevertheless,
+for \acs{CMIP}6 long running simulations from the \ac{LongRunMIP}
+\autocite{Rugenstein2019} can be a promising way forward to estimate the true
+Equilibrium Climate Sensitivity for \acp{ESM}.
+
+
+\subsection{\acl{TCR}}
+\label{subsec:02:tcr}
+
+A further metric describing the climate sensitivity is the \ac{TCR}. In
+contrast to the \ac{ECS}, this metric does not assume radiative equilibrium of
+the climate system but describes the transient response of an evolving climate.
+\ac{TCR} is defined as the change in the annual mean \ac{GSAT} at the time of
+\ac{CO2} doubling in a simulation with a \pct{1} per year increase of the
+atmospheric \ac{CO2} concentration (1\%\acs{CO2}) averaged over a 20 year
+period centered at the time of the doubling (years \range{61}{80} when the
+first year is indexed with 1) \autocite{Bindoff2013}. To account for model
+drift, the annual mean changes in \ac{GSAT} are calculated relative to a
+corresponding pre-industrial control simulation smoothed with a linear fit that
+considers 140 model years (length of the 1\%\acs{CO2} simulation).
 
 - ocean heat uptake (TCR)
 
-- different between effective climate sensitivity and equilibrium version
+- residual heat -> 90\% go into ocean (Knutti et al. 2017)
 
-- equations for ECS and TCR
+- equations for TCR
 
 
 \section{The Global Carbon Cycle}
