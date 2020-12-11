@@ -485,25 +485,27 @@ is computationally expensive as it would require thousands of model years
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/gregory_regression.pdf}
-  \caption{Global and annual mean net \acf{TOA} radiation $N$ \vs{} global and
-    annual mean near-surface air temperature $\Delta T$ for 150 years of a
-    simulation with an abrupt quadrupling of the atmospheric \ac{CO2}
-    concentration (4x\acs{CO2}) for the \acs{CMIP}5 multi-model mean (blue
-    squares). To account for energy leakage and model drift, a linear fit of
-    the corresponding pre-industrial control run is subtracted from the
-    4x\acs{CO2} simulation. As given by \cref{eq:02:N_vs_delta_t}, the slope of
-    the linear regression (black line) corresponds to the climate feedback
+  \caption{Global and annual mean net \acf{TOA} radiation $N$ \vs{} the change
+    in global and annual mean near-surface air temperature $\Delta T$ for 150
+    years of a simulation with an abrupt quadrupling of the atmospheric
+    \ac{CO2} concentration (\nxcotwo{4}) for the \acs{CMIP}5 multi-model mean
+    (blue circles). To account for energy leakage and model drift, a linear
+    fit of the corresponding pre-industrial control run is subtracted from the
+    \nxcotwo{4} simulation. As given by \cref{eq:02:N_vs_delta_t}, the slope
+    of the linear regression (black line) corresponds to the climate feedback
     parameter $\lambda$ and the y-intercept corresponds to the radiative
-    forcing $F_\text{4x}$. These can be used to calculate the \ac{ECS} with
-    the Gregory regression method following to \cref{eq:02:ecs}
-    \autocite{Gregory2004}.}
+    forcing $F_\text{4x}$. These can be used to calculate the \acf{ECS} with
+    the Gregory regression method according to \cref{eq:02:ecs}
+    \autocite{Gregory2004}. \acs{ECS} is equivalently given by the x-intercept
+    of the linear regression line divided by $2$. Here, $\text{ECS} = 3.14
+    \unit{K}$.}
   \label{fig:02:gregory_regression}
 \end{figure}
 
 For this reason, the Equilibrium Climate Sensitivity is commonly approximated
 with the \acf{ECS}, which can be derived from only 150 model years of a
 simulation with an abrupt quadrupling of the atmospheric \ac{CO2} concentration
-(4x\acs{CO2}) \autocite{Gregory2004}. The basis of the definition of \ac{ECS}
+(\nxcotwo{4}) \autocite{Gregory2004}. The basis of the definition of \ac{ECS}
 is the simple energy balance model introduced in
 \cref{subsec:02:mathematical_framework_feedbacks}. Assuming radiative
 equilibrium ($N = 0$), \cref{eq:02:N,eq:02:linear_response} imply
@@ -513,15 +515,15 @@ equilibrium ($N = 0$), \cref{eq:02:N,eq:02:linear_response} imply
 \end{equation}
 Thus, the change in \ac{GSAT} in radiative equilibrium can be easily calculated
 from the external forcing $F$ and the climate feedback parameter $\lambda$. The
-steady state values for $F$ and $\lambda$ can be estimated from a 4x\acs{CO2}
+steady state values for $F$ and $\lambda$ can be estimated from a \nxcotwo{4}
 simulation that is not in equilibrium by extrapolation with a linear regression
 \autocite{Gregory2004}. For this method, the so-called \emph{Gregory
   regression}, the global and annual mean net \ac{TOA} radiation $N$ \vs{} the
 change in the annual mean \ac{GSAT} $\Delta T$ for all 150 years of the
-4x\acs{CO2} run are plotted (see \cref{fig:02:gregory_regression}). To account
+\nxcotwo{4} run are plotted (see \cref{fig:02:gregory_regression}). To account
 for energy leakage and remove any model drift present in the control climate, a
 linear fit of the corresponding pre-industrial control run is subtracted from
-the 4x\acs{CO2} simulation beforehand \autocite{Andrews2012}. Since the
+the \nxcotwo{4} simulation beforehand \autocite{Andrews2012}. Since the
 combination of \cref{eq:02:N,eq:02:linear_response} yields
 \begin{equation}
   N = F + \lambda \cdot \Delta T,
@@ -530,7 +532,7 @@ combination of \cref{eq:02:N,eq:02:linear_response} yields
 $F$ is now given by the y-intercept of this linear regression
 ($F_\text{4x}$) and $\lambda$ by its slope. Thus, the \ac{ECS} is given by
 \begin{equation}
-  \text{ECS} = - \frac{F_\text{4x}}{2 \lambda}.
+  \text{ECS} = -\frac{F_\text{4x}}{2 \lambda}.
   \label{eq:02:ecs}
 \end{equation}
 The factor of $2$ in the denominator accounts for the fact the traditional
@@ -558,7 +560,7 @@ this is the state and time dependence of the global feedbacks
 \autocite{Knutti2015, Knutti2017}. As
 \cref{fig:02:gregory_regression_different_years} shows, the slope in the
 Gregory regression is not constant, but rather decreases over time when a long
-running 4x\acs{CO2} simulation with more than 1000 model years is considered.
+running \nxcotwo{4} simulation with more than 1000 model years is considered.
 As a result, the climate feedback parameter $\lambda$ decreases over time,
 resulting in a higher \ac{ECS}. Major reasons for this are temperature
 dependencies of the feedbacks, atmospheric and oceanic adjustments over time,
@@ -568,7 +570,7 @@ all, this demonstrates the limits of the linear feedback framework introduced
 in \cref{subsec:02:mathematical_framework_feedbacks} that is not capable of
 describing non-linear effects. A second major reason for the discrepancies
 between the Equilibrium Climate Sensitivity and \ac{ECS} is the use of a
-4x\acs{CO2} instead of a 2x\acs{CO2} simulation. The factor of $2$ in the
+\nxcotwo{4} instead of a \nxcotwo{2} simulation. The factor of $2$ in the
 denominator of \cref{eq:02:ecs} only partly compensates this difference since
 the radiative forcing logarithmically depends on the atmospheric \ac{CO2}
 concentration \autocite{Huang2014}.
@@ -588,21 +590,71 @@ Equilibrium Climate Sensitivity for \acp{ESM}.
 
 A further metric describing the climate sensitivity is the \ac{TCR}. In
 contrast to the \ac{ECS}, this metric does not assume radiative equilibrium of
-the climate system but describes the transient response of an evolving climate.
-\ac{TCR} is defined as the change in the annual mean \ac{GSAT} at the time of
-\ac{CO2} doubling in a simulation with a \pct{1} per year increase of the
-atmospheric \ac{CO2} concentration (1\%\acs{CO2}) averaged over a 20 year
-period centered at the time of the doubling (years \range{61}{80} when the
-first year is indexed with 1) \autocite{Bindoff2013}. To account for model
-drift, the annual mean changes in \ac{GSAT} are calculated relative to a
-corresponding pre-industrial control simulation smoothed with a linear fit that
-considers 140 model years (length of the 1\%\acs{CO2} simulation).
+the Earth system but describes the transient response of an evolving climate.
+Following \textcite{Bindoff2013}, \ac{TCR} is defined as the change in the
+\ac{GSAT} at the time of \ac{CO2} doubling in a simulation with a \pct{1} per
+year increase of the atmospheric \ac{CO2} concentration (\onepctcotwo{}). For
+this, the annual mean \acp{GSAT} are averaged over a 20 year period centered at
+the time of the \ac{CO2} doubling (years \range{61}{80} when the first year is
+indexed with 1). To account for model drift, the annual mean changes in
+\ac{GSAT} are calculated relative to a corresponding pre-industrial control
+simulation smoothed with a linear fit that considers 140 model years (length of
+the \onepctcotwo{} simulation). An illustration of that calculation is shown in
+\cref{fig:02:tcr}.
 
-- ocean heat uptake (TCR)
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/tcr_calculation.pdf}
+  \caption{Global and annual mean near-surface air temperature change $\Delta
+    T$ for 140 years of a simulation with a \pct{1} per year increase of the
+    atmospheric \ac{CO2} concentration (\onepctcotwo{}) for the \acf{CESM} of
+    the \acf{NCAR} (blue circles). The temperature change is calculated
+    relative to a corresponding pre-industrial control simulation smoothed
+    with a linear fit over all 140 years. The \acf{TCR} is defined as $\Delta
+    T$ at the time of \acs{CO2} doubling averaged over a 20 year period
+    (illustrated by the vertical dashed lines). Here, $\text{TCR} = 2.35
+    \unit{K}$ (horizontal dashed line).}
+  \label{fig:02:tcr}
+\end{figure}
 
-- residual heat -> 90\% go into ocean (Knutti et al. 2017)
+Similar to \ac{ECS}, \ac{TCR} can also be defined in terms of an external
+forcing and climate feedbacks. For this, the energy balance
+\cref{eq:02:N_vs_delta_t} can be slightly adjusted. Since over \pct{90} of the
+excess energy introduced into the system by the radiative forcing $F$ is taken
+up by the ocean due to its large heat capacity, $N$ can be taken equal to the
+global ocean heat uptake \autocite{Knutti2017}. In experiments with a steadily
+increasing radiative forcing, which is the case for the \onepctcotwo{}
+simulation, this ocean heat uptake can be approximated with
+\begin{equation}
+  N = \kappa \cdot \Delta T,
+  \label{eq:02:ocean_heat_uptake}
+\end{equation}
+where $\kappa$ is the ocean heat uptake efficiency \autocite{Gregory2008}.
+$\kappa > 0$, since there is a net energy flux into the climate system ($N >
+0$) due to the external forcing $F$. This approximation becomes less accurate
+as the deeper ocean warms up and cannot be applied to simulations with a steady
+state climate change ($N \to 0$) where the external forcings tends stabilize
+\autocite{Gregory2009}. By applying the definition of \ac{TCR} (transient
+\ac{GSAT} change $\Delta T$ at the time of \ac{CO2} doubling) and combining
+\cref{eq:02:N_vs_delta_t,eq:02:ocean_heat_uptake}, \ac{TCR} can be estimated as
+\begin{equation}
+  \text{TCR} = \frac{F_\text{2x}}{\kappa - \lambda},
+  \label{eq:02:tcr}
+\end{equation}
+where $F_\text{2x}$ is the radiative forcing induced by a doubling of the
+atmospheric \ac{CO2} concentration.
 
-- equations for TCR
+This equation can be used to derive a relationship between \ac{TCR} and
+\ac{ECS}. Writing $\text{ECS} = -F_\text{2x} / \lambda$ and assuming path
+independence of the forcing (\ie{} the resulting radiative forcing from the
+\onepctcotwo{} and \nxcotwo{2} runs are comparable) gives
+\begin{equation}
+  \text{TCR} = \frac{F_\text{2x} \cdot \text{ECS}}{F_\text{2x} + \kappa \cdot
+    \text{ECS}},
+  \label{eq:02:tcr_vs_ecs}
+\end{equation}
+which demonstrates the non-linear connection between \ac{TCR} and \ac{ECS} \autocite{Gregory2008, Nijsse2020}.
 
 
 \section{The Global Carbon Cycle}
