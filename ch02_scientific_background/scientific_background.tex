@@ -837,19 +837,38 @@ stability and reduced solubility of \ac{CO2} in the sea, which reduces the
 ocean carbon uptake and enhances climate change \autocite{Gregory2009}.
 
 
-\section{Techniques to Reduce Uncertainties in Multi-Model Climate Projections}
+\section{Techniques to Reduce Uncertainties in Multi-Model Climate Projections
+  with Observations}
 \label{sec:02:techniques_to_reduce_uncertainties}
 
 As shown in \cref{subsec:02:source_of_uncertainties}, projections of the future
 climate are always associated with uncertainties. In the context of this
-thesis, the most relevant source for these is the climate response uncertainty.
-It originates from the different responses of the different climate models in a
-multi-model ensemble to a given forcing and affects all multi-model projections
-of the future climate (\eg{} the climate sensitivity or the future development
-of the global carbon cycle). This section introduces three state-of-the-art
-techniques to reduce uncertainties in multi-model climate model projections
-with observations. The presented methods form the baseline for the work
-presented in this thesis.
+thesis, the most relevant source of uncertainty is the climate response
+uncertainty. It originates from our imperfect knowledge on how the climate
+system will respond to external forcing. In a multi-model ensemble (\eg{} from
+\ac{CMIP}), this is expressed as the different responses of the different
+climate models to a given forcing. A common approach to distill information
+about a projected quantity from multi-model ensembles is to treat the
+unweighted \ac{MMM} and the multi-model range as best estimate and uncertainty
+measure of this quantity \autocite{Collins2013}. This \emph{one model one vote}
+or \emph{model democracy} approach basically assumes that all climate models
+are independent, equally plausible, distributed around reality and that the
+projected multi-model range is representative for the uncertainty in the
+projected quantity \autocite{Knutti2017a}. However, since the \ac{CMIP}
+ensembles, sometimes referred to as \emph{ensembles of opportunity}, have not
+been designed to represent a true statistical sample of the reality composed of
+independent climate models \autocite{Tebaldi2007}, these assumptions do not
+hold in practice. The main reasons for this are that different climate models
+(even for different modeling institutions) share parts of their code
+\autocite{Knutti2013}, that models do not equally well represent the observed
+past and present-day climate \autocite{Knutti2013} and that models might suffer
+from common structural limitations like missing processes
+\autocite{Knutti2017a}.
+
+Thus, more sophisticated techniques are necessary to evaluate multi-model
+climate projections. This section introduces three state-of-the-art methods to
+assess multi-model projections and reduce associated uncertainties with
+observations. These techniques form the baseline of the work presented in the following chapters.
 
 
 \subsection{Emergent Constraints}
@@ -889,6 +908,10 @@ statistical sample
 
 \subsection{\acl{MDER}}
 \label{subsec:02:mder}
+
+From Knutti (2017): A way out, at least partially, is to reframe the
+competition of “which model is the best” to “which models are adequate for
+predicting X” [Parker, 2009]
 
 - some equations for MDER
 
