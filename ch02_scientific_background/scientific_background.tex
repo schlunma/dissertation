@@ -156,13 +156,13 @@ the year 2100) based on a particular forcing pathway that \acp{IAM} have shown
 to be feasible. For example, \ac{SSP}5-8.5 represents a scenario based on a
 fossil-fuel development with a radiative forcing of $8.5 \unit{W m^{-2}}$ in
 2100 while \ac{SSP}1-2.6 represents a sustainable future with a radiative
-forcing of $2.6 \unit{W m^{-2}}$ in the year 2100. The two other main scenarios
-(called \emph{Tier 1} experiments in \ac{ScenarioMIP}) are the \ac{SSP}2-4.5
-and \ac{SSP}3-7.0 scenarios. In contrast to the \ac{ScenarioMIP} experiments,
-the corresponding \acs{CMIP}5 counterparts \autocite{Taylor2012}, the so-called
-\acp{RCP}, only used the radiative forcing in 2100 as only dimension to
-describe the possible futures (\eg{} \ac{RCP}8.5, \ac{RCP}4.5, \ac{RCP}2.6,
-\etc{}).
+forcing of $2.6 \unit{W m^{-2}}$ in the year 2100. The two scenarios in the
+main category of \ac{ScenarioMIP}, the \emph{Tier 1} experiments, are the
+\ac{SSP}2-4.5 and \ac{SSP}3-7.0 scenarios. In contrast to the \ac{ScenarioMIP}
+experiments, the corresponding \acs{CMIP}5 counterparts \autocite{Taylor2012},
+the so-called \acp{RCP}, only used the radiative forcing in 2100 as only
+dimension to describe the possible futures (\eg{} \ac{RCP}8.5, \ac{RCP}4.5,
+\ac{RCP}2.6, \etc{}).
 
 In this thesis, climate model data from the two most recent \ac{CMIP}
 generations is used, \acs{CMIP}5 and \acs{CMIP}6. More detailed information
@@ -417,7 +417,7 @@ $\sigma \approx 5.67 \unit{W m^{-2} K^{-4}}$ is the Stefan–Boltzmann constant.
 To answer an external forcing $F$, the climate system reacts with a response
 $R$ expressed by a change in the global mean surface temperature $\Delta T$:
 \begin{equation}
-  J_0 + R = -\sigma \left( T_0 + \Delta T \right)^4
+  J_0 + R = -\sigma \left( T_0 + \Delta T \right)^4.
   \label{eq:02:stefan_boltzmann_law_non_eq}
 \end{equation}
 Since the temperature change caused by an anthropogenic forcing is much smaller
@@ -426,14 +426,14 @@ simple first-order Taylor expansion can be used to linearize the blackbody
 response:
 \begin{equation}
   -\sigma \left( T_0 + \Delta T \right)^4 \approx J_0 - 4 \sigma T_0^3 \cdot
-  \Delta T
+  \Delta T.
   \label{eq:02:stefan_boltzmann_law_lin}
 \end{equation}
 Thus, by comparing
 \cref{eq:02:stefan_boltzmann_law_non_eq,eq:02:stefan_boltzmann_law_lin} the
 climate response $R$ can be expressed as
 \begin{equation}
-  R = -4 \sigma T_0^3 \cdot \Delta T \coloneqq \lambda_\text{BB} \cdot \Delta T
+  R = -4 \sigma T_0^3 \cdot \Delta T \coloneq \lambda_\text{BB} \cdot \Delta T
   \label{eq:02:linear_blackbody_response}
 \end{equation}
 with the blackbody feedback parameter $\lambda_\text{BB} \approx -3.8 \unit{W
@@ -457,7 +457,7 @@ to the snow/ice albedo feedback and $\lambda_\text{Cloud}$ to the cloud
 feedback. Thus, the overall climate feedback parameter $\lambda$ can be written
 as the sum of the individual feedback parameters $\lambda_i$:
 \begin{equation}
-  \lambda = \sum_i \lambda_i
+  \lambda = \sum_i \lambda_i.
   \label{eq:02:lambda_as_sum_of_lambdas}
 \end{equation}
 Positive values of $\lambda_i$ indicate positive feedbacks (\eg{} the water
@@ -837,9 +837,9 @@ stability and reduced solubility of \ac{CO2} in the sea, which reduces the
 ocean carbon uptake and enhances climate change \autocite{Gregory2009}.
 
 
-\section{Techniques to Reduce Uncertainties in Multi-Model Climate Projections
+\section{Reducing Uncertainties in Multi-Model Climate Projections
   with Observations}
-\label{sec:02:techniques_to_reduce_uncertainties}
+\label{sec:02:reducing_uncertainties}
 
 As shown in \cref{subsec:02:source_of_uncertainties}, projections of the future
 climate are always associated with uncertainties. In the context of this
@@ -868,24 +868,192 @@ from common structural limitations like missing processes
 Thus, more sophisticated techniques are necessary to evaluate multi-model
 climate projections. This section introduces three state-of-the-art methods to
 assess multi-model projections and reduce associated uncertainties with
-observations. These techniques form the baseline of the work presented in the following chapters.
+observations. These techniques form the baseline of the work presented in the
+following chapters.
 
 
 \subsection{Emergent Constraints}
 \label{subsec:02:emergent_constraints}
 
-- equations for emergent constraints, see Schlund ESD, following Cox 2013
+As indicated at the beginning of this section, one main issue of multi-model
+ensembles is that not all participating climate models are equally plausible.
+Usually, this is quantified with some kind of measure of the models'
+\emph{performance}, \ie{} their agreement with observations of the real climate
+system. However, this model performance can only be evaluated against
+observations of the past and present-day climate, which does not necessarily
+provide insights into the quality of model projections of the future climate.
 
-- Flat prior, see Schlund ESD
+The \emph{emergent constraint} approach tackles this problem by
+\enquote{identifying robust, physically interpretable relationships between
+  Earth system feedback behaviors on short, well-observed time scales and on
+  time scales that span the twenty-first century and beyond}
+\autocite{Eyring2019}. An illustration of the concept of emergent constraints
+is shown in \cref{fig:02:emergent_constraint}. Each emergent constraint
+requires two key components: an \emph{emergent relationship} and a
+corresponding observation of the real world \autocite{Eyring2019}. The emergent
+relationship (red line in \cref{fig:02:emergent_constraint}) is a robust and
+physically interpretable inter-model relationship between a target variable $y$
+related to the future climate and an observable $x$ of the past or present-day
+climate. Basis for the relationship is output of the different climate models
+of a multi-model ensemble (blue circles in \cref{fig:02:emergent_constraint}).
+Using an observation of $x$, this emergent relationship can then be used to
+derive a emergent constraint on $y$ (gray shaded area in
+\cref{fig:02:emergent_constraint}) that considers uncertainties in the emergent
+relationship itself (red shaded area in \cref{fig:02:emergent_constraint}) and
+uncertainties in the observation (blue shaded area in
+\cref{fig:02:emergent_constraint}).
 
-- Wenzel et al., Nature (2016) as example (refer to carbon cycle chapter)
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/emergent_constraint.pdf}
+  \caption{Schematic illustration of the emergent constraint approach. Basis of
+    every emergent constraint is a robust and physically interpretable emergent
+    relationship (red line) between a target variable $y$ (\eg{} Earth system
+    sensitivity or projection of future climate change) and an observable $x$
+    (\eg{} past or present-day trend or variation) for the climate models of a
+    multi-model ensemble (blue circles). With an observation of $x$,
+    uncertainties in $y$ in the multi-model ensemble, illustrated by the yellow
+    \acf{PDF}, can be reduced (gray \acs{PDF}). Uncertainties in the target
+    variable $y$ arise from two sources: uncertainties in the observation (blue
+    shaded area) and uncertainties in the emergent relationship (red shaded
+    area). Taken and modified from \textcite{Eyring2019}.}
+  \label{fig:02:emergent_constraint}
+\end{figure}
 
-- Review of ECS emergent constraints is given in chapter on Schlund et al., ESD
-(2020)
+One possible mathematical framework for the evaluation of emergent constraints
+is based on linear regression and Gaussian probability densities
+\autocite{Cox2013, Cox2018}. Let $x_m$ be the observable predictor variable for
+climate model $m$ and $y_m$ the corresponding target variable. To find the
+linear emergent relationship for the climate model ensemble $\left\{ \left(
+x_m, y_m \right) \right\}$, a linear regression model
+\begin{equation}
+  \hat{y}(x) = a + b x
+  \label{eq:02:linear_regression_y}
+\end{equation}
+for the predicted target variable $\hat{y}$ with intercept $a$ and slope $b$ is
+used. Fitting this regression line with ordinary least squares includes
+minimizing the standard error $s$ of the estimate
+\begin{equation}
+  s^2 = \frac{1}{M - 2} \sum_{m=1}^M \left( y_m - \hat{y}_m \right)^2,
+  \label{eq:02:sse}
+\end{equation}
+where $\hat{y}_m \coloneq \hat{y}(x_m)$ is the predicted target variable for
+climate model $m$ and $M$ is the total number of climate models. The
+uncertainty of the emergent relationship for a value $x$ that has not been used
+to fit the regression line is given by the standard prediction error
+$\sigma_{\hat{y}}(x)$:
+\begin{equation}
+  \sigma_{\hat{y}}^2(x) = s^2 \left[ 1 + \frac{1}{M} + \frac{\left( x - \bar{x}
+  \right)^2}{\sum_{m=1}^M \left( x_m - \bar{x} \right)^2} \right].
+  \label{eq:02:spe}
+\end{equation}
+Here, $\bar{x}$ indicates the arithmetic mean of $x$ over all climate models.
+Assuming Gaussian errors and a mean of $\hat{y}(x)$ (\ie{} the best estimate of
+the target variable $y$ is given by the regression line), \cref{eq:02:spe} can
+be used to define a conditional \acf{PDF} for predicting a target variable of
+$y$ given $x$:
+\begin{equation}
+  P(y|x) = \frac{1}{\sqrt{2 \pi \sigma_{\hat{y}}^2(x)}} \exp \left[
+  -\frac{\left( y - \hat{y}(x) \right)^2}{2 \sigma_{\hat{y}}^2(x)} \right].
+  \label{eq:02:pdf_y_given_x}
+\end{equation}
+This distribution describes the uncertainty in the emergent relationship itself
+introduced by the imperfect alignment of the climate model data (red shaded
+area in \cref{fig:02:emergent_constraint}). Its maximum is given by the
+emergent relationship itself (red line in \cref{fig:02:emergent_constraint}).
+The conditional \ac{PDF} can be interpreted as the posterior distribution of
+the regression model based on the climate model output but constrained on the
+observable $x$. However, the observed value of $x$, called $x_0$, also has
+uncertainties associated with it (blue shaded are in
+\cref{fig:02:emergent_constraint}). Assuming again a Gaussian distribution, the
+observational \ac{PDF} for observing $x_0$ given the true value $x$ can be
+written as
+\begin{equation}
+  P(x_0|x) = \frac{1}{\sqrt{2 \pi \sigma_x^2}} \exp \left[ -\frac{\left( x_0 -
+  x \right)^2}{2 \sigma_x^2} \right],
+  \label{eq:02:pdf_obs}
+\end{equation}
+where $\sigma_x$ is the standard deviation of the observation around the true
+value. Assuming an imperfect uniform prior $P(x) \propto 1$ with cut-offs at
+$-\infty$ and $+\infty$ and using Bayes' theorem implies $P(x_0|x) = P(x|x_0)$.
+In a final step, this can be used to calculate the posterior \ac{PDF} for the
+constrained prediction of the target variable $y$ given the observation $x_0$
+(gray \ac{PDF} in \cref{fig:02:emergent_constraint}) with numerical
+integration:
+\begin{equation}
+  P(y|x_0) = \int_{-\infty}^{+\infty} P(y|x) \, P(x|x_0) \dd{}x.
+  \label{eq:02:pdf_y_given_x0}
+\end{equation}
+Posterior estimates of the target variable are influenced by the way the
+statistical inference has been performed. Alternative methods that can be used
+include Bayesian frameworks \autocite{Renoult2020}, information theoretic
+approaches based on the Kullback–Leibler divergence between the models'
+\acp{PDF} of $x$ and the observational \ac{PDF} \autocite{Brient2016} and
+linear regression models based on hierarchical Bayesian models
+\autocite{Nijsse2020}. However, no consensus has yet been found for this
+statistical inference \autocite{Brient2020}.
 
-- Problems with multi-model analysis (search for refs in Schlund et al., ESD,
-2020) -> models are not independent, multi-model ensemble is not "real"
-statistical sample
+One limitation of the presented approach is the assumption that the individual
+data points from the different climate models are independent. As already noted
+in the beginning of \cref{sec:02:reducing_uncertainties}, this is not the case
+for typical climate models ensembles, as some modeling groups provide output
+for multiple climate models and some climate models from different modeling
+institutions share components and code \autocite{Knutti2013}. The duplicated
+code in the different climate models leads to an overestimation of the sample
+size and may result in spurious correlations \autocite{Sanderson2015}. Possible
+approaches to tackle this problem are presented in
+\cref{subsec:02:model_weighting} and include a weighting of the climate models
+based on their degree of interdependence \autocite{Knutti2017a, Sanderson2015,
+  Sanderson2017}. A further limitation of this approach is the use of an
+ordinary least squares linear regression model. This is not always appropriate,
+for example when a non-linear emergent relationship is expected
+\autocite{Nijsse2020} or when additional physical considerations further
+constrain the regression model, \eg{} by demanding a zero intercept ($a = 0$)
+\autocite{Annan2020, JimenezdelaCuesta2019}. Moreover, using only a single
+observational dataset to estimate $x_0$ and $\sigma_x$ when different datasets
+are available might lead to an underestimation of the observational
+uncertainty, as different observational datasets might lead to different
+emergent constraints.
+
+A crucial aspect for every emergent constraint is a verifiable physical process
+explaining the correlation between $x$ and $y$ \autocite{Hall2019}. Only if the
+underlying emergent relationship can be derived from a robust and plausible
+physical mechanism, an emergent constraint can be considered credible. The
+reason for this are spurious relationships: Due to the large number of possible
+observables provided by modern \acp{ESM} and the comparatively small number of
+climate models, spurious relationships are possible just by chance
+\autocite{Caldwell2014}. Furthermore, out-of-sample tests offer an important
+tool to evaluate the credibility of emergent constraints \autocite{Hall2019}.
+These ensure that the existence of an emergent relationship is not limited to a
+certain climate model ensemble and might indicate that the relationship is also
+valid for the true climate system. Testing emergent constraints in different
+\ac{CMIP} generations offers a straightforward setup for out-of-sample testing
+\autocite{Caldwell2018}, which is discussed in more detail in
+\cref{ch:05:paper_ecs}, where eleven emergent constraints on \ac{ECS} are
+evaluated on the new \acs{CMIP}6 ensemble.
+
+In the last two decades, many emergent constraints on various aspects of the
+Earth system have been published. Early studies tackled the hydrological cycle
+\autocite{Allen2002} and the snow-albedo feedback \autocite{Hall2006}. Over the
+years, the climate sensitivity expressed by the \ac{ECS} has been a prominent
+target variable. Since cloud feedbacks are a major source of uncertainty for
+climate sensitivity, a variety of papers focus on constraining \ac{ECS} with
+cloud-related processes \autocite{Brient2015, Brient2016, Fasullo2012,
+  Lipat2017, Sherwood2014, Su2014, Tian2015, Volodin2008, Qu2013, Zhai2015},
+which are discussed in detail in
+\cref{sec:05:comparison_of_emergent_constraints}. More recent studies aim to
+constrain \ac{ECS} with the historical temperature variability
+\autocite{Cox2018} or the historical warming trend
+\autocite{JimenezdelaCuesta2019, Nijsse2020, Tokarska2020}. Emergent
+constraints are not only limited to physical processes, but can also be applied
+to other domains, like the global carbon cycle. For example, \textcite{Cox2013}
+and \textcite{Wenzel2014} provide an emergent constraint on the terrestrial
+climate-carbon feedback, \textcite{Wenzel2016} and \textcite{Winkler2019} on
+the terrestrial concentration-carbon feedback. An extensive discussion on the
+emergent constraint by \textcite{Wenzel2016} is given in \cref{sec:06:step_1}.
+A further example of an emergent constraints on the carbon cycle focus on
+primary production in the tropical oceans \autocite{Kwiatkowski2017}.
 
 
 \subsection{Performance- and Interdependence-based Weighting of Climate Models}
@@ -903,11 +1071,13 @@ statistical sample
 
 - Review by Abramowitz
 
-- Theory: Knutt, p.1910
+- Theory: Knutti, p.1910
 
 
 \subsection{\acl{MDER}}
 \label{subsec:02:mder}
+
+I do not like \ac{MDER}!
 
 From Knutti (2017): A way out, at least partially, is to reframe the
 competition of “which model is the best” to “which models are adequate for
@@ -918,3 +1088,8 @@ predicting X” [Parker, 2009]
 - Karpechko, Wenzel, Senftleben
 
 - basic assumption (in contrast to weighting), see Schlund JGR 2020
+
+- Difference to standard model weighting: weaker assumption (see Karpechko
+2013)
+
+- Disadvantages: no interdependence, no errors in OBS
