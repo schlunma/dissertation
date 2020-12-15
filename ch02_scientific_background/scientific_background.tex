@@ -849,21 +849,21 @@ system will respond to external forcing. In a multi-model ensemble (\eg{} from
 \ac{CMIP}), this is expressed as the different responses of the different
 climate models to a given forcing. A common approach to distill information
 about a projected quantity from multi-model ensembles is to treat the
-unweighted \ac{MMM} and the multi-model range as best estimate and uncertainty
-measure of this quantity \autocite{Collins2013}. This \emph{one model one vote}
-or \emph{model democracy} approach basically assumes that all climate models
-are independent, equally plausible, distributed around reality and that the
-projected multi-model range is representative for the uncertainty in the
-projected quantity \autocite{Knutti2017a}. However, since the \ac{CMIP}
-ensembles, sometimes referred to as \emph{ensembles of opportunity}, have not
-been designed to represent a true statistical sample of the reality composed of
-independent climate models \autocite{Tebaldi2007}, these assumptions do not
-hold in practice. The main reasons for this are that different climate models
-(even for different modeling institutions) share parts of their code
-\autocite{Knutti2013}, that models do not equally well represent the observed
-past and present-day climate \autocite{Knutti2013} and that models might suffer
-from common structural limitations like missing processes
-\autocite{Knutti2017a}.
+arithmetic \ac{MMM} and the multi-model range as best estimate and uncertainty
+measure of this quantity \autocite{Collins2013}. This \emph{model democracy}
+approach basically assumes that all climate models are independent, equally
+plausible, distributed around reality and that the projected multi-model range
+is representative for the uncertainty in the projected quantity
+\autocite{Knutti2017a}. However, since the \ac{CMIP} ensembles, sometimes
+referred to as \emph{ensembles of opportunity}, have not been designed to
+represent a true statistical sample of the reality composed of independent
+climate models \autocite{Tebaldi2007}, these assumptions do not hold in
+practice. The main reasons for this are that different climate models (even for
+different modeling institutions) share parts of their code
+\autocite{Abramowitz2019, Knutti2013}, that models do not equally well
+represent the observed past and present-day climate \autocite{Gleckler2008,
+  Knutti2013} and that models might suffer from common structural limitations
+like missing processes \autocite{Knutti2017a}.
 
 Thus, more sophisticated techniques are necessary to evaluate multi-model
 climate projections. This section introduces three state-of-the-art methods to
@@ -945,7 +945,7 @@ to fit the regression line is given by the standard prediction error
 $\sigma_{\hat{y}}(x)$:
 \begin{equation}
   \sigma_{\hat{y}}^2(x) = s^2 \left[ 1 + \frac{1}{M} + \frac{\left( x - \bar{x}
-  \right)^2}{\sum_{m=1}^M \left( x_m - \bar{x} \right)^2} \right].
+    \right)^2}{\sum_{m=1}^M \left( x_m - \bar{x} \right)^2} \right].
   \label{eq:02:spe}
 \end{equation}
 Here, $\bar{x}$ indicates the arithmetic mean of $x$ over all climate models.
@@ -955,7 +955,7 @@ be used to define a conditional \acf{PDF} for predicting a target variable of
 $y$ given $x$:
 \begin{equation}
   P(y|x) = \frac{1}{\sqrt{2 \pi \sigma_{\hat{y}}^2(x)}} \exp \left[
-  -\frac{\left( y - \hat{y}(x) \right)^2}{2 \sigma_{\hat{y}}^2(x)} \right].
+    -\frac{\left( y - \hat{y}(x) \right)^2}{2 \sigma_{\hat{y}}^2(x)} \right].
   \label{eq:02:pdf_y_given_x}
 \end{equation}
 This distribution describes the uncertainty in the emergent relationship itself
@@ -971,7 +971,7 @@ observational \ac{PDF} for observing $x_0$ given the true value $x$ can be
 written as
 \begin{equation}
   P(x_0|x) = \frac{1}{\sqrt{2 \pi \sigma_x^2}} \exp \left[ -\frac{\left( x_0 -
-  x \right)^2}{2 \sigma_x^2} \right],
+    x \right)^2}{2 \sigma_x^2} \right],
   \label{eq:02:pdf_obs}
 \end{equation}
 where $\sigma_x$ is the standard deviation of the observation around the true
@@ -1052,26 +1052,89 @@ and \textcite{Wenzel2014} provide an emergent constraint on the terrestrial
 climate-carbon feedback, \textcite{Wenzel2016} and \textcite{Winkler2019} on
 the terrestrial concentration-carbon feedback. An extensive discussion on the
 emergent constraint by \textcite{Wenzel2016} is given in \cref{sec:06:step_1}.
-A further example of an emergent constraints on the carbon cycle focus on
+A further example of an emergent constraints on the carbon cycle focuses on
 primary production in the tropical oceans \autocite{Kwiatkowski2017}.
 
 
 \subsection{Performance- and Interdependence-based Weighting of Climate Models}
 \label{subsec:02:model_weighting}
 
-- Knutti, Sanderson
+An alternative approach to emergent constraints are climate model weighting
+schemes. Their basic idea is to abandon model democracy by replacing the
+arithmetic mean used to calculate the \acp{MMM} by a weighted mean of the form
+\begin{equation}
+  y = \sum_{m=1}^{M} w_m y_m
+  \label{eq:02:weighted_mean}
+\end{equation}
+with normalized weights $w_m$. Similar to the notation introduced in the
+previous section, $y$ is a target variable (\eg{} a projection of the future
+climate) and $m$ indexes the $M$ different climate models. To address two major
+issues of model democracy (different climate models are not equally plausible
+and not independent; see beginning of \cref{sec:02:reducing_uncertainties}),
+\textcite{Knutti2017a} propose a weighting scheme based on climate model
+performance and interdependence with the following weights:
+\begin{equation}
+  w_m \propto \frac{\exp \left( -\frac{D_m^2}{\sigma_D^2} \right)}{1 + \sum_{n
+    \neq m}^{M} \exp \left( -\frac{S_{mn}^2}{\sigma_S^2} \right)}.
+  \label{eq:02:knutti_weights}
+\end{equation}
+The metric $D_m$ describes the distance between climate model $m$ and
+observations (= model performance) and the metric $S_{mn}$ describes the
+distance between climate model $m$ and $n$ (= model interdependence).
+$\sigma_D$ and $\sigma_S$ are constants that determine the individual strength
+of the performance and interdependence weighting, respectively.
 
-- recent studies: Brunner (T), Paul Young (Ozone), Lorenz?
+A commonly used distance metric to measure model performance $D_m$ and model
+interdependence $S_{mn}$ is the \ac{RMSE}, but others are possible
+\autocite{Knutti2017a}. The metrics are evaluated on a set of past or
+present-day diagnostics and variables, whose choice is crucial for the
+weighting scheme. A helpful strategy for this is to focus on addressing the
+question \enquote{which climate model is adequate for predicting the target
+  variable $y$?} instead of trying to answer the question \enquote{which
+  climate model is the best?} \autocite{Parker2009}. Thus, diagnostics and
+variables are chosen that are relevant for the projection of the target
+variable \autocite{Knutti2017a}. In practice, this choice is either based on
+expert judgment about relevant processes, on emergent relationships (see
+\cref{subsec:02:emergent_constraints}) or on multivariate regression models
+\commentcite{Karpechko2013, Sanderson2015a}{see \cref{subsec:02:mder}}. It
+might also be beneficial to use different diagnostics for the calculations of
+the performance and interdependence metrics \autocite{Merrifield2020} and/or to
+remove selected diagnostics based on their mutual correlation
+\autocite{Lorenz2018}.
 
-- Lorenz (2018): reasoning for non-equal weighting, Collins 2013 as bad example
+The constants $\sigma_D$ and $\sigma_S$ determine how strongly the climate
+models' performance and interdependence are weighted \autocite{Knutti2017a}.
+Small values of the performance parameter $\sigma_D$ lead to an aggressive
+weighting with only a few climate models receiving a majority of the weight,
+while large values of $\sigma_D$ result in an equal weighting. For the
+interdependence parameter $\sigma_S$, this is slightly different: Here, small
+(all climate models are independent) and large (all climate models are
+dependent) values lead to an almost equal weighting. Thus, an optimal choice
+for $\sigma_D$ and $\sigma_S$ is crucial. A useful tool to estimate these
+optimal parameters is the \emph{leave-one-model-out \ac{CV}} approach, which is
+also known as \emph{pseudo-reality}, \emph{model-as-truth} or \emph{perfect
+  model} setup \autocite{Elia2002, Karpechko2013}. For this, a single climate
+model is removed from the multi-model ensemble and treated as observation
+(\emph{pseudo-observation}). Then, a weighted \ac{MMM} with weights computed
+from the updated model ensemble is calculated, which gives a prediction for the
+\enquote{true} climate model. This allows a simple quantitative assessment of
+the weighting scheme by calculating the \ac{RMSE} between the prediction and
+the known ground truth of the pseudo-observation. The whole process is repeated
+for every climate model of the ensemble to get a statistical distribution of
+\acp{RMSE}. Finally, different \ac{RMSE} distributions calculated from
+different parameters $\sigma_D$ and $\sigma_S$ can be assessed using specific
+criteria to find optimal values for $\sigma_D$ and $\sigma_S$
+\autocite{Knutti2017a}. Furthermore, the leave-one-model-out \ac{CV} approach
+can be used to evaluate different climate model weightings schemes (including
+the unweighted \ac{MMM}) and compare them against each other.
 
-- Basic assumption: Models good in past -> good in future (PERFORMANCE)
-
-- Models share code (INTERDEPENDENCE)
-
-- Review by Abramowitz
-
-- Theory: Knutti, p.1910
+Due to its flexibility, the climate model weighting scheme given by
+\cref{eq:02:knutti_weights} has already been used for various target variables:
+Arctic sea ice \autocite{Knutti2017a}, Antarctic ozone concentrations
+\autocite{Amos2020}, North American maximum temperature \autocite{Lorenz2018},
+European temperature and precipitation \autocite{Brunner2019, Merrifield2020}
+and global warming over the \nth{21} century \autocite{Brunner2020,
+  Liang2020a}.
 
 
 \subsection{\acl{MDER}}
