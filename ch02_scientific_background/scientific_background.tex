@@ -449,7 +449,7 @@ proportional to $\Delta T$ \autocite{Gregory2008a},
 \cref{eq:02:linear_blackbody_response} can be adjusted to
 \begin{equation}
   R = \lambda \cdot \Delta T = \left( \lambda_\text{BB} + \lambda_\text{WV} +
-  \lambda_\text{Albedo} + \lambda_\text{Cloud} + \ldots \right) \cdot \Delta T.
+  \lambda_\text{Albedo} + \lambda_\text{Cloud} + \dots \right) \cdot \Delta T.
   \label{eq:02:linear_response}
 \end{equation}
 $\lambda_\text{WV}$ refers to the water vapor feedback, $\lambda_\text{Albedo}$
@@ -928,12 +928,12 @@ climate model $m$ and $y_m$ the corresponding target variable. To find the
 linear emergent relationship for the climate model ensemble $\left\{ \left(
 x_m, y_m \right) \right\}$, a linear regression model
 \begin{equation}
-  \hat{y}(x) = a + b x
+  \hat{y}(x) = b_0 + b_1 x
   \label{eq:02:linear_regression_y}
 \end{equation}
-for the predicted target variable $\hat{y}$ with intercept $a$ and slope $b$ is
-used. Fitting this regression line with ordinary least squares includes
-minimizing the standard error $s$ of the estimate
+for the predicted target variable $\hat{y}$ with intercept $b_0$ and slope
+$b_1$ is used. Fitting this regression line with ordinary least squares
+includes minimizing the standard error $s$ of the estimate
 \begin{equation}
   s^2 = \frac{1}{M - 2} \sum_{m=1}^M \left( y_m - \hat{y}_m \right)^2,
   \label{eq:02:sse}
@@ -1009,7 +1009,7 @@ based on their degree of interdependence \autocite{Knutti2017a, Sanderson2015,
 ordinary least squares linear regression model. This is not always appropriate,
 for example when a non-linear emergent relationship is expected
 \autocite{Nijsse2020} or when additional physical considerations further
-constrain the regression model, \eg{} by demanding a zero intercept ($a = 0$)
+constrain the regression model, \eg{} by demanding a zero intercept ($b_0 = 0$)
 \autocite{Annan2020, JimenezdelaCuesta2019}. Moreover, using only a single
 observational dataset to estimate $x_0$ and $\sigma_x$ when different datasets
 are available might lead to an underestimation of the observational
@@ -1047,21 +1047,19 @@ constrain \ac{ECS} with the historical temperature variability
 \autocite{Cox2018} or the historical warming trend
 \autocite{JimenezdelaCuesta2019, Nijsse2020, Tokarska2020}. Emergent
 constraints are not only limited to physical processes, but can also be applied
-to other domains, like the global carbon cycle. For example, \textcite{Cox2013}
-and \textcite{Wenzel2014} provide an emergent constraint on the terrestrial
-climate-carbon feedback, \textcite{Wenzel2016} and \textcite{Winkler2019} on
-the terrestrial concentration-carbon feedback. An extensive discussion on the
-emergent constraint by \textcite{Wenzel2016} is given in \cref{sec:06:step_1}.
-A further example of an emergent constraints on the carbon cycle focuses on
-primary production in the tropical oceans \autocite{Kwiatkowski2017}.
+to other domains, like the global carbon cycle \autocite{Cox2013,
+  Kwiatkowski2017, Wenzel2014, Wenzel2016, Winkler2019}. An extensive
+discussion on the emergent constraint by \textcite{Wenzel2016}, which focuses
+on the concentration-carbon feedback, is given in \cref{sec:06:step_1}.
 
 
 \subsection{Performance- and Interdependence-based Weighting of Climate Models}
 \label{subsec:02:model_weighting}
 
-An alternative approach to emergent constraints are climate model weighting
-schemes. Their basic idea is to abandon model democracy by replacing the
-arithmetic mean used to calculate the \acp{MMM} by a weighted mean of the form
+A further technique to reduce uncertainties in climate model projections with
+observations are model weighting schemes. Their basic idea is to abandon model
+democracy by replacing the arithmetic mean used to calculate the \acp{MMM} by a
+weighted mean of the form
 \begin{equation}
   y = \sum_{m=1}^{M} w_m y_m
   \label{eq:02:weighted_mean}
@@ -1128,8 +1126,14 @@ criteria to find optimal values for $\sigma_D$ and $\sigma_S$
 can be used to evaluate different climate model weightings schemes (including
 the unweighted \ac{MMM}) and compare them against each other.
 
-Due to its flexibility, the climate model weighting scheme given by
-\cref{eq:02:knutti_weights} has already been used for various target variables:
+The definition of the weights according to \cref{eq:02:knutti_weights} is based
+on reasonable and comprehensible principles. However, the exact form of the
+equation is purely subjective. Moreover, the additional freedom in choosing a
+suitable metric and optimal values for the parameters $\sigma_D$ and $\sigma_S$
+adds another level of subjectivity to the weighting scheme, which can partly be
+addressed with the introduced leave-one-model-out \ac{CV} setup. Nevertheless,
+due to its flexibility, the climate model weighting scheme of
+\textcite{Knutti2017a} has already been used for various target variables:
 Arctic sea ice \autocite{Knutti2017a}, Antarctic ozone concentrations
 \autocite{Amos2020}, North American maximum temperature \autocite{Lorenz2018},
 European temperature and precipitation \autocite{Brunner2019, Merrifield2020}
@@ -1140,7 +1144,46 @@ and global warming over the \nth{21} century \autocite{Brunner2020,
 \subsection{\acl{MDER}}
 \label{subsec:02:mder}
 
-I do not like \ac{MDER}!
+An alternative approach to weighting climate models based on performance and
+interdependence metrics is a technique called \emph{\ac{MDER}}. Similar to all
+methods presented in \cref{sec:02:reducing_uncertainties}, it can be used to
+reduce uncertainties in climate model projections with observations. The basis
+of \ac{MDER} is a set of $K$ predictor diagnostics $\left\{ x^{(k)} \right\}$
+with $k \in \left\{ 1, 2, \dots, K \right\}$ which are relevant for the
+projection of the target variable $y$. The reasoning for this choice of the
+diagnostics is similar to the one presented in the previous section: Weighting
+schemes should address the question \enquote{which climate model is adequate
+  for predicting the target variable?} and not \enquote{which climate model is
+  the best?}.
+
+The concept of \ac{MDER} is mathematically similar to the concept of emergent constraints. In a first step, an inter-model relationship between the target variable $y$ and the process-relevant diagnostics $\left\{ x^{(k)} \right\}$ is used to fit a multivariate linear regression model
+\begin{equation}
+  \bm{X}
+\end{equation}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/mder_schematic.pdf}
+  \caption{Schematic illustration of the \acf{MDER} approach. First,
+    inter-model relationships between a target variable $y$ and multiple
+    process-based predictors $x^{(k)}$ (here: two predictors $x^{(1)}$ and
+    $x^{(2)}$) are used to fit a multivariate linear regression model (gray
+    plane). Second, observations of the predictors (horizontal thick black
+    lines) are fed into the regression model to calculate climate models
+    weights $w_m$ following \cref{eq:02:mder_weights}. The black circle
+    indicates the best estimate for the target variable $y$ given by the
+    observed values of $x^{(1)}$ and $x^{(2)}$. Each of the remaining colored
+    circles represents a single climate model of the multi-model ensemble. The
+    vertical dashed lines are auxiliary lines to visualize the distance
+    between the climate model data and the linear regression surface.}
+  \label{fig:02:mder}
+\end{figure}
+
+\begin{equation}
+  w_m = xD
+  \label{eq:02:mder_weights}
+\end{equation}
 
 From Knutti (2017): A way out, at least partially, is to reframe the
 competition of “which model is the best” to “which models are adequate for
@@ -1153,6 +1196,17 @@ predicting X” [Parker, 2009]
 - basic assumption (in contrast to weighting), see Schlund JGR 2020
 
 - Difference to standard model weighting: weaker assumption (see Karpechko
-2013)
+2013): The assumption that the regression between the present-day diagnostic
+and a future-climatic variable— derived from climate models—holds also for true
+cli- mate might seem to be weak at first sight, especially since it explicitly
+requires imperfect models away from observed climate to span the desired
+relationship. How- ever, a much weaker assumption is done in traditional
+model-weighting approaches: a model that simulates present-day climate better
+than another model neces- sarily better simulates future climate. Whereas
+traditional approaches do not show this relationship, ensemble re- gression
+establishes exactly such a relationship across a broad model ensemble.
+
+- Techniques for diagnostic selection: hypothesis testing, forward iteration,
+backwards elimination
 
 - Disadvantages: no interdependence, no errors in OBS
