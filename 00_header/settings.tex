@@ -11,10 +11,18 @@
 % Use roman font for headings
 \setkomafont{disposition}{\bfseries}
 
+% Prevent overfull hboxes
+\emergencystretch = 1em
+
+%\makeatletter
+%\def\@textbottom{\vskip \z@ \@plus 15pt}
+%\let\@texttop\relax
+%\makeatother
+
 % Widows and orphans
-\clubpenalty = 10000
-\displaywidowpenalty = 10000
-\widowpenalty = 10000
+%\clubpenalty = 10000
+%\displaywidowpenalty = 10000
+%\widowpenalty = 10000
 
 % Footer
 \cfoot*{\pagemark}
