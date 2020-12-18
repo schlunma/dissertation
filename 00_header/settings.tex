@@ -14,29 +14,33 @@
 % Prevent overfull hboxes
 \emergencystretch = 1em
 
-%\makeatletter
-%\def\@textbottom{\vskip \z@ \@plus 15pt}
-%\let\@texttop\relax
-%\makeatother
+% Allow additional vertical stretch to remove underfull vboxes
+\makeatletter
+\def\@textbottom{\vskip \z@ \@plus 8pt}
+\let\@texttop\relax
+\makeatother
 
-% Widows and orphans
-%\clubpenalty = 10000
-%\displaywidowpenalty = 10000
-%\widowpenalty = 10000
+% Remove widows and orphans
+\clubpenalty = 10000
+\displaywidowpenalty = 10000
+\widowpenalty = 10000
 
 % Footer
 \cfoot*{\pagemark}
 \ofoot*{}
-
-% New theorem
-\newtheorem{definition}{Definition}[chapter]
-\theoremstyle{definition}
 
 % Footnotes
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 % Colors
 \colorlet{BrownRed}{red!50!black}
+
+% New theorem
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+
+% Absolute values
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 % Biblatex
 \newcommand*{\boldname}[3]{% Make my name bold in list of references
@@ -58,6 +62,10 @@
     test {\ifdefequal{\lastname}{\namepartfamily}}
   }{\mkbibbold{#1}}{#1}%
 }
+
+% Reduce space before and after equations
+% This removes issues of setspace package that result in many underfull vboxes
+\setdisplayskipstretch{}
 
 % Acronyms
 \makeatletter

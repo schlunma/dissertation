@@ -611,10 +611,10 @@ the \onepctcotwo{} simulation). An illustration of that calculation is shown in
     atmospheric \ac{CO2} concentration (\onepctcotwo{}) for the \acf{CESM} of
     the \acf{NCAR} (blue circles). The temperature change is calculated
     relative to a corresponding pre-industrial control simulation smoothed
-    with a linear fit over all 140 years. The \acf{TCR} is defined as $\Delta
-    T$ at the time of \acs{CO2} doubling averaged over a 20 year period
-    (illustrated by the vertical dashed lines). Here, $\text{TCR} = 2.35
-    \unit{K}$ (horizontal dashed line).}
+    with a linear fit over all 140 years. The \acf{TCR} is defined as the
+    temperature change $\Delta T$ at the time of \acs{CO2} doubling averaged
+    over a 20 year period (illustrated by the vertical dashed lines). Here,
+    $\text{TCR} = 2.35 \unit{K}$ (horizontal dashed line).}
   \label{fig:02:tcr}
 \end{figure}
 
@@ -925,8 +925,9 @@ One possible mathematical framework for the evaluation of emergent constraints
 is based on linear regression and Gaussian probability densities
 \autocite{Cox2013, Cox2018}. Let $x_m$ be the observable predictor variable for
 climate model $m$ and $y_m$ the corresponding target variable. To find the
-linear emergent relationship for the climate model ensemble $\left\{ \left(
-x_m, y_m \right) \right\}$, a linear regression model
+linear emergent relationship for a climate model ensemble with $M$ climate
+models and data $\left\{ \left( x_m, y_m \right) \mid m \in I_M \right\}$ with index set $I_M = \left\{ 1, 2, \ldots, M\right\}$, a linear
+regression model
 \begin{equation}
   \hat{y}(x) = \hat{b}_0 + \hat{b}_1 x
   \label{eq:02:linear_regression_y}
@@ -955,7 +956,7 @@ the target variable $y$ is given by the regression line), \cref{eq:02:spe} can
 be used to define a conditional \acf{PDF} for predicting a target variable of
 $y$ given $x$:
 \begin{equation}
-  P(y|x) = \frac{1}{\sqrt{2 \pi \sigma_{\hat{y}}^2(x)}} \exp \left[
+  \cond{y}{x} = \frac{1}{\sqrt{2 \pi \sigma_{\hat{y}}^2(x)}} \exp \left[
     -\frac{\left( y - \hat{y}(x) \right)^2}{2 \sigma_{\hat{y}}^2(x)} \right].
   \label{eq:02:pdf_y_given_x}
 \end{equation}
@@ -971,19 +972,19 @@ uncertainties associated with it (blue shaded are in
 observational \ac{PDF} for observing $x_0$ given the true value $x$ can be
 written as
 \begin{equation}
-  P(x_0|x) = \frac{1}{\sqrt{2 \pi \sigma_x^2}} \exp \left[ -\frac{\left( x_0 -
-    x \right)^2}{2 \sigma_x^2} \right],
+  \cond{x_0}{x} = \frac{1}{\sqrt{2 \pi \sigma_x^2}} \exp \left[ -\frac{\left(
+    x_0 - x \right)^2}{2 \sigma_x^2} \right],
   \label{eq:02:pdf_obs}
 \end{equation}
 where $\sigma_x$ is the standard deviation of the observation around the true
 value. Assuming an imperfect uniform prior $P(x) \propto 1$ with cut-offs at
-$-\infty$ and $+\infty$ and using Bayes' theorem implies $P(x_0|x) = P(x|x_0)$.
-In a final step, this can be used to calculate the posterior \ac{PDF} for the
-constrained prediction of the target variable $y$ given the observation $x_0$
-(gray \ac{PDF} in \cref{fig:02:emergent_constraint}) with numerical
-integration:
+$-\infty$ and $+\infty$ and using Bayes' theorem implies $\cond{x_0}{x} =
+\cond{x}{x_0}$. In a final step, this can be used to calculate the posterior
+\ac{PDF} for the constrained prediction of the target variable $y$ given the
+observation $x_0$ (gray \ac{PDF} in \cref{fig:02:emergent_constraint}) with
+numerical integration:
 \begin{equation}
-  P(y|x_0) = \int_{-\infty}^{+\infty} P(y|x) \, P(x|x_0) \dd{}x.
+  \cond{y}{x_0} = \int_{-\infty}^{+\infty} \cond{y}{x} \, \cond{x}{x_0} \dd{}x.
   \label{eq:02:pdf_y_given_x0}
 \end{equation}
 Posterior estimates of the target variable are influenced by the way the
@@ -995,7 +996,31 @@ linear regression models based on hierarchical Bayesian models
 \autocite{Nijsse2020}. However, no consensus has yet been found for this
 statistical inference \autocite{Brient2020}.
 
-One limitation of the presented approach is the assumption that the individual
+A convenient metric to quantify the skill of an emergent relationship is the
+coefficient of determination $R^2$ of its underlying statistical model. In the
+presented framework which is based on univariate ordinary least squares
+regression, $R^2$ is given by the squared Pearson correlation coefficient $r$
+evaluated on the climate model ensemble data $\left\{ \left( x_m, y_m \right)
+\mid m \in I_M \right\}$, \ie{} $R^2 = r^2$. A further quantity describing the
+skill of an emergent relationship is its statistical significance. In the
+introduced framework, a two-sided $t$-test can be used to determine how likely
+the correlation found between the target variable $y$ and the predictor $x$
+would be to appear by chance. The null hypothesis for this test is that the
+predictor and the target variable are not linearly correlated, \ie{} that the
+true underlying Pearson correlation coefficient of the population is zero. If
+this null hypothesis is true, the probability distribution of the variable
+\begin{equation}
+  t = \frac{r \sqrt{M - 2}}{\sqrt{1 - r^2}}
+  \label{eq:02:t}
+\end{equation}
+is a Student's $t$-distribution with $M - 2$ degrees of freedom. The
+statistical significance can then be measured with the $p$-value of this
+two-sided $t$-test, which describes the probability of obtaining an absolute
+sample Pearson correlation coefficient greater than $\abs*{r}$ if the null
+hypothesis is true. Smaller $p$-values indicate higher a higher statistical
+significance and vice versa.
+
+One limitation of the presented framework is the assumption that the individual
 data points from the different climate models are independent. As already noted
 in the beginning of \cref{sec:02:reducing_uncertainties}, this is not the case
 for typical climate models ensembles, as some modeling groups provide output
