@@ -13,8 +13,8 @@
 
 In order to answer the research questions of this thesis posed in
 \cref{sec:01:research_questions}, a reliable and efficient tool to read,
-process and evaluate output from climate model simulations is necessary. A
-valuable software that fits these criteria is the \ac{ESMValTool}. The
+process and evaluate climate model output and observational data is necessary.
+A valuable software that fits these criteria is the \ac{ESMValTool}. The
 \ac{ESMValTool} is an open-source community diagnostics and performance metrics
 tool for the routine evaluation of \ac{ESM} output, which notably facilitates
 the analysis of \ac{CMIP} models (\url{https://www.esmvaltool.org}). For this
@@ -34,11 +34,120 @@ this thesis.
 \section{The \acf{ESMValTool}}
 \label{sec:03:esmvaltool}
 
-- overview ESMValTool
+As shown in \cref{subsec:02:climate_modeling}, climate models have been
+continuously improved and extended over the last decades from the relatively
+simple \acp{AOGCM} to the complex state-of-the-art \acp{ESM} that include an
+immense number of variables and processes. In \acs{CMIP}6, more modeling
+institutes provide data for more versions of these complex models running
+simulations for more experiments. Consequently, the data volume of the entire
+\acs{CMIP}6 archive is expected to reach up to $80 \unit{PB}$
+\autocite{Balaji2018}, which is a vast increase in comparison to the $2
+\unit{PB}$ of \acs{CMIP}5. The increasing complexity and data volume of the
+climate models pose a major challenge for the evaluation and analysis of the
+model output. To address this big data challenge and support the scientific
+community, the \ac{ESMValTool} has been developed to provide an
+\enquote{open-source, standardized, community-based software package for the
+  systematic, efficient, and well-documented analysis of \ac{ESM} results}
+\autocite{Righi2020}. Moreover, the \ac{ESMValTool} allows a routine comparison
+of single or multiple climate models against predecessor versions and/or
+observations.
 
-- CMOR
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\LargeFigureWidth{}]{
+    ch03_esmvaltool/figs/esmvaltool_schematic.pdf}
+  \caption{Schematic representation of the \acf{ESMValTool}. First, input data
+    is preprocessed by the \acf{ESMValCore}. Second, the preprocessed data is
+    read by diagnostic scripts, which create the final output (\eg{} plots).
+    The user can specify the desired input datasets, preprocessing operations
+    and diagnostic scripts in the recipe, which is a configuration file that
+    controls the main workflow of the \acs{ESMValTool}. Taken and modified from
+    \textcite{Righi2020}.}
+  \label{fig:03:esmvaltool_schematic}
+\end{figure}
 
-- Changes in ESMValCore + table
+Since its first release in 2016 \autocite{Eyring2016a}, the \ac{ESMValTool} has
+been greatly extended and improved. A schematic of the current structure of the
+\ac{ESMValTool} is illustrated in \cref{fig:03:esmvaltool_schematic}. The first
+major element of this workflow is an extensive preprocessing of the input data.
+For this, the Python-based \acf{ESMValCore} provide a set of operators
+(\emph{preprocessors}) that are applied to the input data. There are two
+classes of preprocessors: non-optional and optional ones. Examples for
+non-optional preprocessors are the \ac{I/O} operations \emph{load} (loading
+input data from climate models and observations) and \emph{save} (saving the
+preprocessed data), which utilize the \ac{netCDF} format (a self-describing,
+machine-independent binary file format used for the storage of array-based
+scientific data). Further non-optional preprocessors include \emph{checks} and
+\emph{fixes} of the input data, which test whether the input data adheres to
+standards given by the \ac{CMOR} format and fixes the data if necessary. The
+\ac{CMOR} format ensures that the output from the many different modeling
+institutes within a generation of \ac{CMIP} follows common standards. The
+optional preprocessors include commonly used operations on spatiotemporal
+datasets, like spatial and temporal \emph{subsetting}, the calculation of
+\emph{spatial and temporal statistics}, horizontal and vertical
+\emph{interpolation}, land/sea/ice \emph{masking}, \emph{unit conversion}, or
+the calculation of \emph{multi-model statistics}. A further example is the
+\emph{variable derivation}, which can be used to derive non-\ac{CMOR} variables
+from the input data. The aim of the preprocessor is to facilitate the routine
+evaluation of climate models by providing a set of commonly used data
+operations. To reduce computation times, \ac{ESMValCore} allows parallel
+preprocessing of different datasets.
+
+The second main element of the \ac{ESMValTool} workflow is the calculation of
+\emph{diagnostics}. This task is performed by the diagnostic scripts, which can
+be written in multiple programming languages. Currently, the languages Python,
+NCL, R and Julia are supported. The diagnostic scripts, which contain the code
+that runs the actual scientific evaluation, read the preprocessed datasets from
+\ac{ESMValCore} and use these to create the final output of the tool. Apart
+from \ac{netCDF} files and plots, this includes log files with provenance
+information that ensure the reproducibility and transparency of the results.
+The whole workflow of the \ac{ESMValTool} is controlled with the \emph{recipe},
+which is a configuration file in which the user can specify the desired input
+datasets, preprocessing operations and diagnostic scripts. Implementing a new
+scientific assessment into the \ac{ESMValTool} usually includes writing a new
+recipe and one or more diagnostic scripts. A third major element of the
+\ac{ESMValTool} is the \emph{\ac{CMOR}ization} (\ie{} the reformatting of data
+so it adheres to \ac{CMOR} standards) of raw observational datasets (not shown
+in \cref{fig:03:esmvaltool_schematic}). This ensures that the \ac{ESMValTool}
+can process arbitrary observational datasets, which can for example be used to
+assess the skill of climate model simulations. More details on the structure of
+the \ac{ESMValTool} are given in its extensive documentation
+(\url{https://esmvaltool.readthedocs.io}).
+
+To ensure a rapid evaluation of the \acs{CMIP}6 models, the \ac{ESMValTool} is
+fully integrated into the infrastructure of the \ac{ESGF}, which provides the
+\ac{CMIP} model output for the general public \autocite{Eyring2016b}. As soon
+as new model data is published on the \ac{ESGF} servers, it can be accessed
+with the \ac{ESMValTool} and analyzed. This instantaneous evaluation of the
+\ac{CMIP} models is urgently needed since there is a growing dependency on
+\ac{CMIP} products by a broad research community and by national and
+international climate assessments. For this reason, the \ac{ESMValTool} is for
+example used to evaluate climate model output and observational data in several
+chapters of the upcoming Sixth \ac{AR} of the \ac{IPCC}.
+
+The \ac{ESMValTool} is developed open-source on GitHub
+(\url{https://github.com/ESMValGroup}). It is released under the Apache
+License, version 2.0. The source code of the latest released version of the
+\ac{ESMValCore} package, which includes the core functionalities of the
+\ac{ESMValTool}, is publicly available at Zenodo \autocite{Andela2020a}.
+Similarly, the source code of the latest released version of the
+\ac{ESMValTool} package, which includes the recipe and diagnostic scripts that
+can for example be used to reproduce scientific assessments, is also available
+at Zenodo \autocite{Andela2020}.
+
+
+\section{Contributions to \acs{ESMValCore}}
+\label{sec:03:contributions_to_esmvalcore}
+
+- total number of changed lines of code
+
+- Changes in \ac{ESMValCore} + table
+
+
+\section{Contributions to \acs{ESMValTool}}
+\label{sec:03:contributions_to_esmvaltool}
+
+- total number of changed lines of code
 
 - Added recipes and diagnostics for ESMValTool + table
 
@@ -55,5 +164,3 @@ this thesis.
 * Schlund20ESD
 
 * Flato13
-
-- total number of changed lines of code
