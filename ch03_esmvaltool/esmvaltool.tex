@@ -143,6 +143,39 @@ at Zenodo \autocite{Andela2020}.
 
 - Changes in \ac{ESMValCore} + table
 
+\begin{table}[t]
+  \centering
+  \begin{tabulary}{\columnwidth}{L L L}
+    \toprule
+    Type & Name & Description \\
+    \midrule
+    Derived variable & \emph{co2s} & Atmospheric \ac{CO2} concentration at
+    surface \\
+    \cmidrule(l){2-3}
+    & \emph{et} & Evapotranspiration \\
+    \cmidrule(l){2-3}
+    & \emph{uajet} & Position of austral jet stream \\
+    \midrule
+    Preprocessor & Amplitude & Amplitude of periodic phenomena (\eg{} diurnal
+    or seasonal cycles) \\
+    \cmidrule(l){2-3}
+    & Land/sea fraction weighting & Weighting of fields based on
+    the land or sea fraction of the respective grid cells \\
+    \cmidrule(l){2-3}
+    & Trend & Calculation of linear trends (slope of ordinary least squares
+    regression) \\
+    \midrule
+    Miscellaneous & Concatenate experiments & Added option to concatenate
+    multiple experiments (\eg{} historical simulation with future scenarios) \\
+    \cmidrule(l){2-3}
+    & Expanded variable derivation & Simplified, cleaned and extended variable
+    derivation \\
+    \bottomrule
+  \end{tabulary}
+  \caption{Summary of features added to the \acf{ESMValCore}.}
+  \label{tab:03:changes_to_esmvalcore}
+\end{table}
+
 
 \section{Contributions to \acs{ESMValTool}}
 \label{sec:03:contributions_to_esmvaltool}
