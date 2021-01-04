@@ -585,6 +585,25 @@ for \acs{CMIP}6 long running simulations from the \ac{LongRunMIP}
 Equilibrium Climate Sensitivity for \acp{ESM}.
 
 
+\subsection{Cloud-Related Feedback Parameters}
+\label{subsec:02:cloud_feedback_parameters}
+
+In addition to the calculation of the external forcing $F$, the overall climate
+feedback parameter $\lambda$ and the \ac{ECS}, the Gregory regression can also
+be used to estimate cloud-related feedback parameters. For this, the net
+\ac{TOA} radiation $N$ on the y-axis in \cref{fig:02:gregory_regression} is
+replaced with the \ac{CRE}, which is defined as the difference between the
+all-sky (\ie{} with clouds if present) net \ac{TOA} radiation and the clear-sky
+(\ie{} clouds artificially removed) net \ac{TOA} radiation
+\autocite{Andrews2012}. This can be done for the shortwave $N_\text{SWCRE}$ and
+longwave $N_\text{LWCRE}$ components separately, but also for the combined
+effect $N_\text{CRE} = N_\text{SWCRE} + N_\text{LWCRE}$. The slopes in the
+corresponding Gregory regressions are the so-called \emph{\ac{CRE} feedback
+  parameters} $\lambda_\text{SWCRE}$, $\lambda_\text{LWCRE}$ and
+$\lambda_\text{CRE}$, which quantify the change in \ac{CRE} as a response to
+increasing \acp{GSAT}.
+
+
 \subsection{\acl{TCR}}
 \label{subsec:02:tcr}
 
@@ -773,7 +792,7 @@ Islands.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\FigureWidth{}]{
+  \includegraphics[width=\LargeFigureWidth{}]{
     ch02_scientific_background/figs/keeling_curve.pdf}
   \caption{The Keeling Curve: monthly-mean atmospheric \acs{CO2} concentration
     at the Mauna Loa Observatory, Hawaii ($19.5 \unit{\degree N}$, $155.6
