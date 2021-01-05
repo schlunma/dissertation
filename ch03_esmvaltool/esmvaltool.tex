@@ -21,14 +21,14 @@ the analysis of \ac{CMIP} models (\url{https://www.esmvaltool.org}). For this
 reason, all analyses presented in
 \cref{ch:04:assessment_climate_metrics,ch:05:paper_ecs,ch:06:paper_gpp} of this
 thesis were implemented into the \ac{ESMValTool}. Apart from that, further
-substantial contributions to the code base of the \ac{ESMValTool} have been
-made that improve the routine evaluation of climate models, which is beneficial
-for the entire scientific community. Moreover, this lead to co-authorship in
-the scientific documentation of the \ac{ESMValTool}, which is published in four
-peer-reviewed studies \autocite{Eyring2020, Lauer2020, Righi2020, Weigel2020}.
-After a brief overview over the \ac{ESMValTool}'s structure, this chapter
-presents all these contributions that are not documented in other chapters of
-this thesis.
+substantial changes and additions to the code base of the \ac{ESMValTool} have
+been contributed that improve the routine evaluation of climate models, which
+is beneficial for the entire scientific community. This lead to co-authorship
+in the scientific documentation of the \ac{ESMValTool}, which is published in
+four peer-reviewed studies \autocite{Eyring2020, Lauer2020, Righi2020,
+  Weigel2020}. After a brief overview over the \ac{ESMValTool}'s structure,
+this chapter presents all these contributions that are not documented in other
+chapters of this thesis.
 
 
 \section{The \acf{ESMValTool}}
@@ -139,9 +139,14 @@ at Zenodo \autocite{Andela2020}.
 \section{Contributions to \acs{ESMValCore}}
 \label{sec:03:contributions_to_esmvalcore}
 
-- total number of changed lines of code
-
-- Changes in \ac{ESMValCore} + table
+As of December 2020, $40408$ lines of code have been added and $21050$ lines of
+code have been removed from to the GitHub repository of \ac{ESMValCore} by the
+author of this thesis. Apart from general improvements of the code base, these
+changes and additions mainly include new preprocessor functions that can be
+applied to the input data and derivation scripts for new non-\ac{CMOR}
+variables. \Cref{tab:03:changes_to_esmvalcore} shows a summary of these main
+contributions, which are partly published in the scientific documentation of
+\ac{ESMValCore} \autocite{Righi2020}.
 
 \begin{table}[t]
   \centering
@@ -149,32 +154,113 @@ at Zenodo \autocite{Andela2020}.
     \toprule
     Type & Name & Description \\
     \midrule
-    Derived variable & \emph{co2s} & Atmospheric \ac{CO2} concentration at
+    Preprocessor & \emph{amplitude} & Amplitude of periodic phenomena (\eg{}
+    diurnal or seasonal cycles) \\
+    \cmidrule(l){2-3}
+    & \emph{land/sea fraction weighting} & Weighting of fields based on
+    the land or sea fraction of the respective grid cells \\
+    \cmidrule(l){2-3}
+    & \emph{trend} & Linear trend (slope of ordinary least squares regression)
+    \\
+    \midrule
+    Derived variable & \emph{asr} & Absorbed shortwave radiation \\
+    \cmidrule(l){2-3}
+    & \emph{co2s} & Atmospheric \ac{CO2} concentration at
     surface \\
     \cmidrule(l){2-3}
     & \emph{et} & Evapotranspiration \\
     \cmidrule(l){2-3}
+    & \emph{rlntcs} & Clear-sky net \acf{TOA} longwave radiation \\
+    \cmidrule(l){2-3}
+    & \emph{rsntcs} & Clear-sky net \ac{TOA} shortwave radiation \\
+    \cmidrule(l){2-3}
     & \emph{uajet} & Position of austral jet stream \\
-    \midrule
-    Preprocessor & Amplitude & Amplitude of periodic phenomena (\eg{} diurnal
-    or seasonal cycles) \\
-    \cmidrule(l){2-3}
-    & Land/sea fraction weighting & Weighting of fields based on
-    the land or sea fraction of the respective grid cells \\
-    \cmidrule(l){2-3}
-    & Trend & Calculation of linear trends (slope of ordinary least squares
-    regression) \\
-    \midrule
-    Miscellaneous & Concatenate experiments & Added option to concatenate
-    multiple experiments (\eg{} historical simulation with future scenarios) \\
-    \cmidrule(l){2-3}
-    & Expanded variable derivation & Simplified, cleaned and extended variable
-    derivation \\
     \bottomrule
   \end{tabulary}
-  \caption{Summary of features added to the \acf{ESMValCore}.}
+  \caption{Summary of changes and features contributed to the
+    \acf{ESMValCore}.}
   \label{tab:03:changes_to_esmvalcore}
 \end{table}
+
+In total, three new preprocessor functions have been added: \emph{amplitude},
+\emph{land/sea fraction weighting} and \emph{trend}. The \emph{amplitude}
+preprocessor calculates the peak-to-peak amplitude of periodic phenomena along
+an arbitrary coordinate. Usually, this coordinate is a temporal dimension. A
+common application of this preprocessor is the calculation of a variable's
+diurnal or seasonal cycle amplitude. The \emph{land/sea fraction weighting}
+preprocessor weights fields with the land or sea fraction of the respective
+grid cells. For example, this is necessary for the spatial integration of
+flux-related variables which are reported in units of \enquote{per square meter
+  of land/sea} and not in \enquote{per square meter of grid cell}. After the
+weighting, the grid cell areas can be used to integrate the flux-related
+variable over a desired region. The \emph{trend} preprocessor calculates the
+linear trend of a variable along an arbitrary coordinate. The linear trend is
+defined as the slope of an ordinary least squares linear regression of the
+variable against the selected coordinate. For example, this can be used to
+calculate the temporal trend of the \ac{GSAT} over the \nth{20} century.
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[t]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch03_esmvaltool/figs/co2s_map.pdf}
+    \caption{}
+    \label{fig:03:co2s:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[t]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch03_esmvaltool/figs/co2s_mlo_cycle.pdf}
+    \caption{}
+    \label{fig:03:co2s:b}
+  \end{subfigure}
+  \caption{(a) \acs{CMIP}6 \acf{MMM} of the global atmospheric \acs{CO2}
+    concentration at surface (\emph{co2s}) averaged over the months \acf{JJA}
+    of the year 2014 in the emission-driven historical simulation. The
+    \acs{CMIP}6 \ac{MMM} includes the four climate models that provide all
+    data needed for the calculation of \emph{co2s} (see legend in (b)). (b)
+    Monthly-mean \emph{co2s} at Mauna Loa, Hawaii ($19.5 \unit{\degree N}$,
+    $155.6 \unit{\degree W}$; elevation: $3397 \unit{m}$) from 1958 to 2014.
+    The thick black line shows observations from the Mauna Loa Observatory
+    \autocite{Keeling2005}; the remaining colored lines show emission-driven
+    historical simulations from individual \acs{CMIP}6 models.}
+  \label{fig:03:co2s}
+\end{figure}
+
+Apart from new preprocessor functions, six derivation scripts for the
+non-\ac{CMOR} variables \emph{asr}, \emph{co2s}, \emph{et}, \emph{rlntcs},
+\emph{rsntcs} and \emph{uajet} have been added. The absorbed shortwave
+radiation (\emph{asr}) is defined as the difference in the incoming \ac{TOA}
+shortwave radiation and the outgoing \ac{TOA} shortwave radiation. The
+atmospheric \ac{CO2} concentration at surface (\emph{co2s}) can be calculated
+from the pressure level-dependent atmospheric \ac{CO2} concentration and the
+surface air pressure using interpolation. An example illustrating \emph{co2s}
+is given in \cref{fig:03:co2s}. \Cref{fig:03:co2s:a} shows the \acs{CMIP}6
+\ac{MMM} of the global \emph{co2s} for the months \acf{JJA} of the year 2014 in
+the emission-driven historical simulation. As expected, the map shows high
+atmospheric \ac{CO2} concentrations over large metropolitan areas with high
+\ac{CO2} emissions (\eg{} over North America, the Arabian Peninsula and East
+Asia). Moreover, regions with high photosynthetic activity (\eg{} the boreal
+forests in the Northern hemisphere summer and the tropical rainforests in South
+America) exhibit smaller \ac{CO2} concentrations. \Cref{fig:03:co2s:b} shows
+the monthly-mean \emph{co2s} at Mauna Loa, Hawaii from 1958 to 2014 for
+observations performed at the Mauna Loa Observatory \autocite{Keeling2005}
+(thick black line) and emission-driven historical simulations from four
+\acs{CMIP}6 models (remaining colored lines). Apart from the model CNRM-ESM2-1,
+the simulated atmospheric \ac{CO2} concentrations show the expected seasonal
+cycle present in the Keeling Curve (see \cref{fig:02:keeling_curve}). All
+climate models correctly simulate the increase in \emph{co2s} over the years.
+However, their are some differences in the absolute values with the model
+BCC-CSM2-MR showing the largest deviations.
+
+The evapotranspiration (\emph{et}) defined as the sum of evaporation and plant
+transpiration can be calculated from the surface latent heat flux and the
+latent heat vaporization constant. The longwave/shortwave clear-sky net
+\acf{TOA} radiations (\emph{rlntcs}/\emph{rsntcs}) is defined as the difference
+between the longwave/shortwave incoming \ac{TOA} radiation assuming clear-sky
+and the longwave/shortwave outgoing \ac{TOA} radiation assuming clear-sky.
+Finally, the position of the austral jet stream (\emph{uajet}) is given by the
+latitude with maximum zonal-mean eastward wind speed at $850 \unit{hPa}$ on the
+Southern hemisphere between $80 \unit{\degree S}$ and $30 \unit{\degree S}$.
 
 
 \section{Contributions to \acs{ESMValTool}}
