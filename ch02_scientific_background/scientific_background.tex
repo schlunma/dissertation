@@ -86,7 +86,7 @@ sources.
 Due to the complex interactions between the different components of the Earth
 system, these changes in the biogeochemical processes also affect the physical
 properties of the climate system. For example, due to the global carbon cycle,
-only about \pct{50} of the emitted \ac{CO2} by humankind remains in the
+only about $50 \unit{\%}$ of the emitted \ac{CO2} by humankind remains in the
 atmosphere \autocite{Friedlingstein2019}. The residual part is absorbed by the
 two other main carbon sinks of the planet, the terrestrial biosphere and the
 ocean. Since only atmospheric \ac{CO2} can act as \ac{GHG} by introducing an
@@ -118,7 +118,7 @@ simulation of the period \range{1850}{2014} and the so-called \ac{DECK}
 experiments, which include a pre-industrial control run (\emph{piControl}), a
 historical Atmospheric \ac{MIP} simulation (\emph{amip}), a simulation forced
 with an abrupt quadrupling of \ac{CO2} (\emph{abrupt-4xCO2}) and a simulation
-forced with a \pct{1} per year increase of the atmospheric \ac{CO2}
+forced with a $1 \unit{\%}$ per year increase of the atmospheric \ac{CO2}
 concentration (\emph{1pctCO2}) \autocite{Eyring2016}. This is shown in the
 center of \cref{fig:02:cmip6}, which illustrates the experimental design of
 \acs{CMIP}6.
@@ -327,14 +327,14 @@ emissions of water vapor are negligible, the influence of water vapor on the
 climate system is described as a feedback mechanism and not as an external
 forcing \autocite{Myhre2013}. Basis of this feedback is the enhanced
 evaporation of water with increasing air temperatures. Each degree of warming
-allows the atmosphere to retain about \pct{7} more water vapor
+allows the atmosphere to retain about $7 \unit{\%}$ more water vapor
 \autocite{Myhre2013}, which closes the positive feedback loop by further
 increasing air temperatures through the greenhouse effect. With a typical
 residence time of water vapor in the atmosphere of several days, the water
 vapor feedback operates on relatively short time scales. As the largest
 positive feedback in the Earth system \autocite{Soden2006}, the water vapor
 feedback amplifies any initial forcing (\eg{} caused by anthropogenic \ac{CO2}
-emissions) by a typical factor between two and three, rendering water vapor a
+emissions) by a typical factor between $2$ and $3$, rendering water vapor a
 fundamental agent of climate change \autocite{Myhre2013}. An example for a
 positive feedback that operates on longer time scales (several years) is the
 \emph{snow/ice albedo feedback}, in which the surface albedo decreases as
@@ -493,12 +493,12 @@ is computationally expensive as it would require thousands of model years
     fit of the corresponding pre-industrial control run is subtracted from the
     \nxcotwo{4} simulation. As given by \cref{eq:02:N_vs_delta_t}, the slope
     of the linear regression (black line) corresponds to the climate feedback
-    parameter $\lambda$ and the y-intercept corresponds to the radiative
+    parameter $\lambda$ and the $y$-intercept corresponds to the radiative
     forcing $F_\text{4x}$. These can be used to calculate the \acf{ECS} with
     the Gregory regression method according to \cref{eq:02:ecs}
-    \autocite{Gregory2004}. \acs{ECS} is equivalently given by the x-intercept
-    of the linear regression line divided by $2$. Here, $\text{ECS} = 3.14
-    \unit{K}$.}
+    \autocite{Gregory2004}. \acs{ECS} is equivalently given by the
+    \xintercept{} of the linear regression line divided by $2$. Here,
+    $\text{ECS} = 3.14 \unit{K}$.}
   \label{fig:02:gregory_regression}
 \end{figure}
 
@@ -529,8 +529,8 @@ combination of \cref{eq:02:N,eq:02:linear_response} yields
   N = F + \lambda \cdot \Delta T,
   \label{eq:02:N_vs_delta_t}
 \end{equation}
-$F$ is now given by the y-intercept of this linear regression
-($F_\text{4x}$) and $\lambda$ by its slope. Thus, the \ac{ECS} is given by
+$F$ is now given by the \yintercept{} of this linear regression ($F_\text{4x}$)
+and $\lambda$ by its slope. Thus, the \ac{ECS} is given by
 \begin{equation}
   \text{ECS} = -\frac{F_\text{4x}}{2 \lambda}.
   \label{eq:02:ecs}
@@ -577,8 +577,8 @@ concentration \autocite{Huang2014}.
 
 However, despite these deficiencies the \ac{ECS} is still a practical estimate
 of the Equilibrium Climate Sensitivity. With the help of climate models,
-\textcite{Sherwood2020} showed that the \ac{ECS} is only about \pct{6} lower
-than the best estimate of the true equilibrium warming obtained from
+\textcite{Sherwood2020} showed that the \ac{ECS} is only about $6 \unit{\%}$
+lower than the best estimate of the true equilibrium warming obtained from
 integrating climate models until a new steady state is reached. Nevertheless,
 for \acs{CMIP}6 long running simulations from the \ac{LongRunMIP}
 \autocite{Rugenstein2019} can be a promising way forward to estimate the true
@@ -591,7 +591,7 @@ Equilibrium Climate Sensitivity for \acp{ESM}.
 In addition to the calculation of the external forcing $F$, the overall climate
 feedback parameter $\lambda$ and the \ac{ECS}, the Gregory regression can also
 be used to estimate cloud-related feedback parameters. For this, the net
-\ac{TOA} radiation $N$ on the y-axis in \cref{fig:02:gregory_regression} is
+\ac{TOA} radiation $N$ on the \yaxis{} in \cref{fig:02:gregory_regression} is
 replaced with the \ac{CRE}, which is defined as the difference between the
 all-sky (\ie{} with clouds if present) net \ac{TOA} radiation and the clear-sky
 (\ie{} clouds artificially removed) net \ac{TOA} radiation
@@ -611,24 +611,24 @@ A further metric describing the climate sensitivity is the \ac{TCR}. In
 contrast to the \ac{ECS}, this metric does not assume radiative equilibrium of
 the Earth system but describes the transient response of an evolving climate.
 Following \textcite{Bindoff2013}, \ac{TCR} is defined as the change in the
-\ac{GSAT} at the time of \ac{CO2} doubling in a simulation with a \pct{1} per
-year increase of the atmospheric \ac{CO2} concentration (\onepctcotwo{}). For
-this, the annual mean \acp{GSAT} are averaged over a 20 year period centered at
-the time of the \ac{CO2} doubling (years \range{61}{80} when the first year is
-indexed with 1). To account for model drift, the annual mean changes in
-\ac{GSAT} are calculated relative to a corresponding pre-industrial control
-simulation smoothed with a linear fit that considers 140 model years (length of
-the \onepctcotwo{} simulation). An illustration of that calculation is shown in
-\cref{fig:02:tcr}.
+\ac{GSAT} at the time of \ac{CO2} doubling in a simulation with a $1 \unit{\%}$
+per year increase of the atmospheric \ac{CO2} concentration (\onepctcotwo{}).
+For this, the annual mean \acp{GSAT} are averaged over a 20 year period
+centered at the time of the \ac{CO2} doubling (years \range{61}{80} when the
+first year is indexed with $1$). To account for model drift, the annual mean
+changes in \ac{GSAT} are calculated relative to a corresponding pre-industrial
+control simulation smoothed with a linear fit that considers 140 model years
+(length of the \onepctcotwo{} simulation). An illustration of that calculation
+is shown in \cref{fig:02:tcr}.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/tcr_calculation.pdf}
   \caption{Global and annual mean near-surface air temperature change $\Delta
-    T$ for 140 years of a simulation with a \pct{1} per year increase of the
-    atmospheric \ac{CO2} concentration (\onepctcotwo{}) for the \acf{CESM} of
-    the \acf{NCAR} (blue circles). The temperature change is calculated
+    T$ for 140 years of a simulation with a $1 \unit{\%}$ per year increase of
+    the atmospheric \ac{CO2} concentration (\onepctcotwo{}) for the \acf{CESM}
+    of the \acf{NCAR} (blue circles). The temperature change is calculated
     relative to a corresponding pre-industrial control simulation smoothed
     with a linear fit over all 140 years. The \acf{TCR} is defined as the
     temperature change $\Delta T$ at the time of \acs{CO2} doubling averaged
@@ -639,12 +639,12 @@ the \onepctcotwo{} simulation). An illustration of that calculation is shown in
 
 Similar to \ac{ECS}, \ac{TCR} can also be defined in terms of an external
 forcing and climate feedbacks. For this, the energy balance
-\cref{eq:02:N_vs_delta_t} can be slightly adjusted. Since over \pct{90} of the
-excess energy introduced into the climate system by the radiative forcing $F$
-is taken up by the ocean due to its large heat capacity, $N$ can be taken equal
-to the global ocean heat uptake \autocite{Knutti2017}. In experiments with a
-steadily increasing radiative forcing, which is the case for the \onepctcotwo{}
-simulation, this ocean heat uptake can be approximated with
+\cref{eq:02:N_vs_delta_t} can be slightly adjusted. Since over $90 \unit{\%}$
+of the excess energy introduced into the climate system by the radiative
+forcing $F$ is taken up by the ocean due to its large heat capacity, $N$ can be
+taken equal to the global ocean heat uptake \autocite{Knutti2017}. In
+experiments with a steadily increasing radiative forcing, which is the case for
+the \onepctcotwo{} simulation, this ocean heat uptake can be approximated with
 \begin{equation}
   N = \kappa \cdot \Delta T,
   \label{eq:02:ocean_heat_uptake}
