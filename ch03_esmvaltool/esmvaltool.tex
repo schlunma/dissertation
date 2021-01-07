@@ -177,8 +177,8 @@ contributions, which are partly published in the scientific documentation of
     & \emph{uajet} & Position of austral jet stream \\
     \bottomrule
   \end{tabulary}
-  \caption{Summary of changes and features contributed to the
-    \acf{ESMValCore}.}
+  \caption{Summary of new preprocessor functions and variable derivation
+    scripts contributed to the \acf{ESMValCore} by the author of this thesis.}
   \label{tab:03:changes_to_esmvalcore}
 \end{table}
 
@@ -249,7 +249,7 @@ observations performed at the Mauna Loa Observatory \autocite{Keeling2005}
 the simulated atmospheric \ac{CO2} concentrations show the expected seasonal
 cycle present in the Keeling Curve (see \cref{fig:02:keeling_curve}). All
 climate models correctly simulate the increase in \emph{co2s} over the years.
-However, their are some differences in the absolute values with the model
+However, there are some differences in the absolute values with the model
 BCC-CSM2-MR showing the largest deviations.
 
 The evapotranspiration (\emph{et}) defined as the sum of evaporation and plant
@@ -265,6 +265,107 @@ Southern hemisphere between $80 \unit{\degree S}$ and $30 \unit{\degree S}$.
 
 \section{Contributions to \acs{ESMValTool}}
 \label{sec:03:contributions_to_esmvaltool}
+
+In addition to the analyses presented in
+\cref{ch:04:assessment_climate_metrics,ch:05:paper_ecs,ch:06:paper_gpp},
+several more recipes and \ac{CMOR}ization scripts for observational data have
+been added to the main \ac{ESMValTool} repository on GitHub. Moreover, multiple
+minor changes and additions have been implemented to improve the code base
+and/or to fix bugs. In total, the author of this study has added 88668 lines of
+code and removed 47816 lines of code from the \ac{ESMValTool} repository (as of
+December 2020). Parts of these implementations are already published in the
+scientific documentation of the \ac{ESMValTool}, which covers large-scale
+diagnostics \autocite{Eyring2020}, diagnostics for emergent constraints and
+future projections \autocite{Lauer2020} and diagnostics for extreme events and
+regional evaluation \autocite{Weigel2020}.
+
+The implemented \ac{CMOR}ization scripts (also referred to as
+\emph{\ac{CMOR}izers}) allow the processing of arbitrary observational data
+with the \ac{ESMValTool}. For this, the raw observational datasets are
+reformatted in such way that they adhere to the \ac{CMOR} standards. Since the
+\ac{CMOR}ization scripts are publicly available like any other code in the
+\ac{ESMValTool} and \ac{ESMValCore} repositories, the entire scientific
+community can use them to \ac{CMOR}ize the observational data. A complete list
+of all eleven newly implemented \ac{CMOR}izers including the main reference for
+the corresponding observational datasets is shown in
+\cref{tab:03:changes_to_esmvaltool}.
+
+Due to an exhaustive overhaul of the \ac{ESMValTool} version 2, older recipes
+from version 1 \autocite{Eyring2016a} cannot be used directly in the latest
+release. Porting recipes from the old version to the current version requires
+substantial changes on the recipes themselves, but also on the corresponding
+diagnostic scripts. As of December 2020, the author of this thesis has ported
+two recipes originally written by other authors to the new version of
+\ac{ESMValTool}: \emph{recipe\_anav13jclim.yml} and
+\emph{recipe\_wenzel16jclim.yml}. \emph{recipe\_anav13jclim.yml} reproduces the
+analysis of \textcite{Anav2013}, who evaluate carbon cycle-related variables
+for climate models of the \acs{CMIP}5 ensemble. This includes climatologies,
+trends and variabilities of important quantities of the terrestrial and oceanic
+carbon cycle like carbon fluxes, carbon reservoir sizes and vegetation
+distributions. \emph{recipe\_wenzel16jclim.yml} includes the \ac{MDER} analysis
+performed by \textcite{Wenzel2016a} to constrain future changes in the position
+of the austral jet stream. Due to its flexible code, the corresponding
+diagnostic scripts can be used to apply the \ac{MDER} method to arbitrary
+target variables and predictors.
+
+\begin{table}[t]
+  \centering
+  \begin{tabulary}{\columnwidth}{L L L}
+    \toprule
+    Type & Name & Main reference \\
+    \midrule
+    \ac{CMOR}izer & CRU & \autocite{Harris2014} \\
+    & CT2019 & \autocite{Jacobson2020} \\
+    & GCP & \autocite{Friedlingstein2019} \\
+    & HWSD & \autocite{Wieder2014} \\
+    & JMA-TRANSCOM & \autocite{Maki2010} \\
+    & LAI3g & \autocite{Zhu2013} \\
+    & LandFlux-EVAL & \autocite{Mueller2013} \\
+    & MLS-Aura & \autocite{Read2015} \\
+    & MTE & \autocite{Jung2011} \\
+    & NDP & \autocite{Gibbs2006} \\
+    & Scripps-\ac{CO2} & \autocite{Keeling2005} \\
+    \midrule
+    Recipe & \emph{bock20jgr} (figures 8 and 10) & \autocite{Bock2020} \\
+    & \emph{cox18nature} & \autocite{Cox2018} \\
+    & \emph{ecs} & \autocite{Gregory2004} \\
+    & \emph{flato13ipcc} (figure 9.42) & \autocite{Flato2013} \\
+    & \emph{schlund20esd} & \autocite{Schlund2020a} \\
+    & \emph{schlund20jgr\_gpp\_abs\_rcp85} & \autocite{Schlund2020} \\
+    & \emph{schlund20jgr\_gpp\_change\_1pct} & \autocite{Schlund2020} \\
+    & \emph{schlund20jgr\_gpp\_change\_rcp85} & \autocite{Schlund2020} \\
+    & \emph{tcr} & \autocite{Gregory2008} \\
+    \bottomrule
+  \end{tabulary}
+  \caption{Summary of new \acs{CMOR}ization scripts for observational data
+    and recipes contributed to the \acf{ESMValTool} by the author of this
+    thesis. The corresponding file names of the recipes in the
+    \acs{ESMValTool} repository are given by
+    \emph{recipe\_(name\_in\_table).yml}.}
+  \label{tab:03:changes_to_esmvaltool}
+\end{table}
+
+In addition to the ported recipes, several new recipes and diagnostic scripts
+have been contributed to the public \ac{ESMValTool} repository (see
+\cref{tab:03:changes_to_esmvaltool} for a summary). Some of these include the
+analyses performed in other chapters of this thesis, namely
+\emph{recipe\_bock20jgr.yml} (\cref{ch:04:assessment_climate_metrics}),
+\emph{recipe\_schlund20esd.yml} (\cref{ch:05:paper_ecs}) and
+\emph{recipe\_schlund20jgr\_*.yml} (\cref{ch:06:paper_gpp}).
+\emph{recipe\_ecs.yml} and \emph{recipe\_tcr.yml} contain diagnostic scripts
+that are able to calculate the climate metrics \ac{ECS} and \ac{TCR} for
+arbitrary model output (see \cref{sec:02:climate_sensitivity}). Corresponding
+plots are shown in \cref{fig:02:gregory_regression,fig:02:tcr}.
+\emph{recipe\_cox18nature.yml} reproduces the analysis of \textcite{Cox2018},
+who introduce an emergent constraint in \ac{ECS} based on a global temperature
+variability metric $\Psi$. \Cref{fig:03:cox18:a} shows $\Psi$ over the past 85
+years for \acs{CMIP}5 models and observations form HadCRUT4
+\autocite{Morice2012}. Since high sensitivity climate models exhibit higher
+values of $\Psi$ than low sensitivity models, an emergent relationship between
+\ac{ECS} and $\Psi$ can be established (\cref{fig:03:cox18:b}). With
+observations of $\Psi$, \ac{ECS} can eventually be constrained to $\left( 2.8
+\pm 0.6 \right) \unit{K}$ ($66 \unit{\%}$ confidence range). More details on
+this including the calculation of $\Psi$ are given in \cref{subsec:05:cox}.
 
 \begin{figure}[t]
   \centering
@@ -283,20 +384,23 @@ Southern hemisphere between $80 \unit{\degree S}$ and $30 \unit{\degree S}$.
     variability \autocite{Cox2018}. Magenta colors indicate high sensitivity
     climate models ($\lambda < 1 \unit{W m^{-2} K^{-1}}$) and green colors
     indicate low sensitivity climate models ($\lambda > 1 \unit{W m^{-2}
-    K^{-1}}$). Both panels were created with the \acs{ESMValTool} and are
-    similar to \textcite{Cox2018}. (a) Temperature variability metric $\Psi$
-    versus time for historical simulations from \acs{CMIP}5 models (colored
-    lines) and observations from the HadCRUT4 dataset (black circles)
-    \autocite{Morice2012}. (b) Emergent relationship between \acs{ECS} and the
-    temperature variability metric $\Psi$. The black dot-dashed line shows the
-    linear regression across the climate model ensemble with its associated
-    uncertainties indicated by the black dashed lines (standard prediction
-    error; see \cref{eq:02:spe}). Blue lines show the observational constraint
-    from HadCRUT4 with its best estimate (dot-dashed line) and standard
-    deviation (dashed lines). The letters represent individual \acs{CMIP}5
-    models (see \textcite{Cox2018} for details).}
+      K^{-1}}$). Both panels were created with the \acs{ESMValTool} using
+    \emph{recipe\_cox18nature.yml} and are similar to \textcite{Cox2018}. (a)
+    Temperature variability metric $\Psi$ versus time for historical
+    simulations from \acs{CMIP}5 models (colored lines) and observations from
+    the HadCRUT4 dataset (black circles) \autocite{Morice2012}. (b) Emergent
+    relationship between \acs{ECS} and the temperature variability metric
+    $\Psi$. The black dot-dashed line shows the linear regression across the
+    climate model ensemble with its associated uncertainties indicated by the
+    black dashed lines (standard prediction error; see \cref{eq:02:spe}). Blue
+    lines show the observational constraint from HadCRUT4 with its best
+    estimate (dot-dashed line) and standard deviation (dashed lines). The
+    letters represent individual \acs{CMIP}5 models (see \textcite{Cox2018}
+    for details).}
   \label{fig:03:cox18}
 \end{figure}
+
+An important class of recipes in the \ac{ESMValTool} covers international climate assessments. One such example is \emph{recipe\_flato13ipcc.yml}, which reproduces large parts of the climate model evaluation performed in chapter 9 of the \ac{IPCC}'s \ac{AR5} \autocite{Flato2013}. For this recipe, the two-panel figure 9.42 has been added, which shows the relationship between the historical and pre-industrial \ac{GSAT} and \ac{ECS} (\cref{fig:03:flato13:a}) and the relationship between \ac{TCR} and \ac{ECS} (\cref{fig:03:flato13:b}) within the \acs{CMIP}5 ensemble. \Cref{fig:03:flato13:a} illustrates that there is no clear connection between \ac{ECS} and the historical or pre-industrial \ac{GSAT}, \ie{} models with high temperatures in the historical or pre-industrial period do no necessarily exhibit a high equilibrium warming in the future or vice versa. On the other hand, \ac{TCR} and \ac{ECS} are in fact well-correlated within the \acs{CMIP}5 ensemble as theoretically expected from \cref{eq:02:tcr_vs_ecs}. However, this figure only shows a linear regression fit between the two variables and not the expected reciprocal relation.
 
 \begin{figure}[t]
   \centering
@@ -317,28 +421,11 @@ Southern hemisphere between $80 \unit{\degree S}$ and $30 \unit{\degree S}$.
       ch03_esmvaltool/figs/flato13_942_legend.pdf}}
   \end{subfigure}
   \caption{Relationships between climate metrics within the \acs{CMIP}5 climate
-    model ensemble. Both panels were created with the \acs{ESMValTool} and are
-    similar to \textcite{Flato2013}. (a) \Acf{GSAT} versus the \acf{ECS} for
-    \acs{CMIP}5 models for the period \range{1961}{1990} (larger symbols) and
-    for pre-industrial control runs (smaller symbols). (b) \acf{TCR} versus
-    \acs{ECS} for \acs{CMIP}5 models. The black line shows a linear fit
-    between \acs{TCR} and \acs{ECS}.}
+    model ensemble. Both panels were created with the \acs{ESMValTool} using
+    \emph{recipe\_flato13ipcc.yml} and are similar to \textcite{Flato2013}. (a)
+    \Acf{GSAT} versus the \acf{ECS} for \acs{CMIP}5 models for the period
+    \range{1961}{1990} (larger symbols) and for pre-industrial control runs
+    (smaller symbols). (b) \acf{TCR} versus \acs{ECS} for \acs{CMIP}5 models.
+    The black line shows a linear fit between \acs{TCR} and \acs{ECS}.}
+  \label{fig:03:flato13}
 \end{figure}
-
-- total number of changed lines of code
-
-- Added recipes and diagnostics for ESMValTool + table
-
-* Anav13
-
-* MDER
-
-* TCR
-
-* ECS
-
-* Schlund20jgr
-
-* Schlund20ESD
-
-* Flato13
