@@ -34,13 +34,13 @@ chapters of this thesis.
 \section{The \acf{ESMValTool}}
 \label{sec:03:esmvaltool}
 
-As shown in \cref{subsec:02:climate_modeling}, climate models have been
-continuously improved and extended over the last decades from the relatively
-simple \acp{AOGCM} to the complex state-of-the-art \acp{ESM} that include an
-immense number of variables and processes. In \acs{CMIP}6, more modeling
-institutes provide data for more versions of these complex models running
-simulations for more experiments. Consequently, the data volume of the entire
-\acs{CMIP}6 archive is expected to reach up to $80 \unit{PB}$
+As outlined in \cref{subsec:02:numerical_climate_modeling}, climate models have
+been continuously improved and extended over the last decades from the
+relatively simple \acp{AOGCM} to the complex state-of-the-art \acp{ESM} that
+include an immense number of variables and processes. In \acs{CMIP}6, more
+modeling institutes provide data for more versions of these complex models
+running simulations for more experiments. Consequently, the data volume of the
+entire \acs{CMIP}6 archive is expected to reach up to $80 \unit{PB}$
 \autocite{Balaji2018}, which is a vast increase in comparison to the $2
 \unit{PB}$ of \acs{CMIP}5. The increasing complexity and data volume of the
 climate models pose a major challenge for the evaluation and analysis of the
@@ -248,7 +248,7 @@ observations performed at the Mauna Loa Observatory \autocite{Keeling2005}
 \acs{CMIP}6 models (remaining colored lines). Apart from the model CNRM-ESM2-1,
 the simulated atmospheric \ac{CO2} concentrations show the expected seasonal
 cycle present in the Keeling Curve (see \cref{fig:02:keeling_curve}). All
-climate models correctly simulate the increase in \emph{co2s} over the years.
+\acp{ESM} correctly simulate the increase in \emph{co2s} over the years.
 However, there are some differences in the absolute values with the model
 BCC-CSM2-MR showing the largest deviations.
 
@@ -299,14 +299,14 @@ two recipes originally written by other authors to the new version of
 \ac{ESMValTool}: \emph{recipe\_anav13jclim.yml} and
 \emph{recipe\_wenzel16jclim.yml}. \emph{recipe\_anav13jclim.yml} reproduces the
 analysis of \textcite{Anav2013}, who evaluate carbon cycle-related variables
-for climate models of the \acs{CMIP}5 ensemble. This includes climatologies,
-trends and variabilities of important quantities of the terrestrial and oceanic
-carbon cycle like carbon fluxes, carbon reservoir sizes and vegetation
-distributions. \emph{recipe\_wenzel16jclim.yml} includes the \ac{MDER} analysis
-performed by \textcite{Wenzel2016a} to constrain future changes in the position
-of the austral jet stream. Due to its flexible code, the corresponding
-diagnostic scripts can be used to apply the \ac{MDER} method to arbitrary
-target variables and predictors.
+for \acp{ESM} of the \acs{CMIP}5 ensemble. This includes climatologies, trends
+and variabilities of important quantities of the terrestrial and oceanic carbon
+cycle like carbon fluxes, carbon reservoir sizes and vegetation distributions.
+\emph{recipe\_wenzel16jclim.yml} includes the \ac{MDER} analysis performed by
+\textcite{Wenzel2016a} to constrain future changes in the position of the
+austral jet stream. Due to its flexible code, the corresponding diagnostic
+scripts can be used to apply the \ac{MDER} method to arbitrary target variables
+and predictors.
 
 \begin{table}[t]
   \centering
