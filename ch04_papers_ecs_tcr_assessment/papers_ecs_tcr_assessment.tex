@@ -33,4 +33,21 @@ generations. This work is already published in two scientific papers:
 \section{Evaluation of \acs{ECS} and \acs{TCR} in \acs{CMIP}6}
 \label{sec:04:evaluation_ecs_and_tcr}
 
+\ifthenelse{\equal{$1$}{$1$}}{X}{Y}
+
+%\csvautotabular{ch04_papers_ecs_tcr_assessment/data/CMIP5_ecs-tcr.csv}
+
+\begin{table}[t]
+  \centering
+  \csvreader[ECSAndTCRTable]{
+    ch04_papers_ecs_tcr_assessment/data/CMIP5_ecs-tcr.csv}{}{
+    \csvlinetotablerow}
+  \caption{\acf{ECS} and \acf{TCR} evaluated for the \acs{CMIP}5 models.
+    Details on the calculation on \acs{ECS} and \acs{TCR} are given in
+    \cref{subsec:02:ecs} and \cref{subsec:02:tcr}, respectively.}
+  \label{tab:04:ecs_tcr_cmip5}
+\end{table}
+
+
+
 

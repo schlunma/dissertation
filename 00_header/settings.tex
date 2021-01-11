@@ -44,6 +44,13 @@
 
 % Tables
 \tymin = 3.5cm
+\csvstyle{ECSAndTCRTable}{
+  head to column names,
+  tabular=llll,
+  table head=\toprule Model & Index used in plots & \acs{ECS} {[K]} &
+  \acs{TCR} \\ \midrule,
+  table foot=\bottomrule,
+}
 
 % Biblatex
 \newcommand*{\boldname}[3]{% Make my name bold in list of references
