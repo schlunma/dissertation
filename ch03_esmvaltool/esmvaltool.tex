@@ -19,7 +19,7 @@ A valuable software that fits these criteria is the \ac{ESMValTool}. The
 tool for the routine evaluation of \ac{ESM} output, which notably facilitates
 the analysis of \ac{CMIP} models (\url{https://www.esmvaltool.org}). For this
 reason, all analyses presented in
-\cref{ch:04:assessment_climate_metrics,ch:05:paper_ecs,ch:06:paper_gpp} of this
+\cref{ch:04:papers_ecs_tcr_assessment,ch:05:paper_ecs,ch:06:paper_gpp} of this
 thesis were implemented into the \ac{ESMValTool}. Apart from that, further
 substantial changes and additions to the code base of the \ac{ESMValTool} have
 been contributed that improve the routine evaluation of climate models, which
@@ -139,8 +139,8 @@ at Zenodo \autocite{Andela2020}.
 \section{Contributions to \acs{ESMValCore}}
 \label{sec:03:contributions_to_esmvalcore}
 
-As of December 2020, 40408 lines of code have been added and 21050 lines of
-code have been removed from to the GitHub repository of \ac{ESMValCore} by the
+As of \TheMonth{}, 40408 lines of code have been added and 21050 lines of code
+have been removed from to the GitHub repository of \ac{ESMValCore} by the
 author of this thesis. Apart from general improvements of the code base, these
 changes and additions mainly include new preprocessor functions that can be
 applied to the input data and derivation scripts for new non-\ac{CMOR}
@@ -267,13 +267,13 @@ Southern hemisphere between $80 \unit{\degree S}$ and $30 \unit{\degree S}$.
 \label{sec:03:contributions_to_esmvaltool}
 
 In addition to the analyses presented in
-\cref{ch:04:assessment_climate_metrics,ch:05:paper_ecs,ch:06:paper_gpp},
-several more recipes and \ac{CMOR}ization scripts for observational data have
-been added to the main \ac{ESMValTool} repository on GitHub. Moreover, multiple
+\cref{ch:04:papers_ecs_tcr_assessment,ch:05:paper_ecs,ch:06:paper_gpp}, several
+more recipes and \ac{CMOR}ization scripts for observational data have been
+added to the main \ac{ESMValTool} repository on GitHub. Moreover, multiple
 minor changes and additions have been implemented to improve the code base
 and/or to fix bugs. In total, the author of this study has added 88668 lines of
 code and removed 47816 lines of code from the \ac{ESMValTool} repository (as of
-December 2020). Parts of these implementations are already published in the
+\TheMonth{}). Parts of these implementations are already published in the
 scientific documentation of the \ac{ESMValTool}, which covers large-scale
 diagnostics \autocite{Eyring2020}, diagnostics for emergent constraints and
 future projections \autocite{Lauer2020} and diagnostics for extreme events and
@@ -294,8 +294,8 @@ Due to an exhaustive overhaul of the \ac{ESMValTool} version 2, older recipes
 from version 1 \autocite{Eyring2016a} cannot be used directly in the latest
 release. Porting recipes from the old version to the current version requires
 substantial changes on the recipes themselves, but also on the corresponding
-diagnostic scripts. As of December 2020, the author of this thesis has ported
-two recipes originally written by other authors to the new version of
+diagnostic scripts. As of \TheMonth{}, the author of this thesis has ported two
+recipes originally written by other authors to the new version of
 \ac{ESMValTool}: \emph{recipe\_anav13jclim.yml} and
 \emph{recipe\_wenzel16jclim.yml}. \emph{recipe\_anav13jclim.yml} reproduces the
 analysis of \textcite{Anav2013}, who evaluate carbon cycle-related variables
@@ -349,7 +349,7 @@ In addition to the ported recipes, several new recipes and diagnostic scripts
 have been contributed to the public \ac{ESMValTool} repository (see
 \cref{tab:03:changes_to_esmvaltool} for a summary). Some of these include the
 analyses performed in other chapters of this thesis, namely
-\emph{recipe\_bock20jgr.yml} (\cref{ch:04:assessment_climate_metrics}),
+\emph{recipe\_bock20jgr.yml} (\cref{ch:04:papers_ecs_tcr_assessment}),
 \emph{recipe\_schlund20esd.yml} (\cref{ch:05:paper_ecs}) and
 \emph{recipe\_schlund20jgr\_*.yml} (\cref{ch:06:paper_gpp}).
 \emph{recipe\_ecs.yml} and \emph{recipe\_tcr.yml} contain diagnostic scripts
