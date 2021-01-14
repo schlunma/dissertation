@@ -125,7 +125,7 @@ center of \cref{fig:02:cmip6}, which illustrates the experimental design of
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\LargeFigureWidth{}]{
+  \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/cmip6.pdf}
   \caption{Schematic of the experiment design of Phase 6 of the \acl{CMIP}
     (\acs{CMIP}6). The center of the circle illustrates the four \acs{DECK}
@@ -304,21 +304,6 @@ crucial role in the evaluation of climate sensitivity.
 \Cref{fig:02:feedbacks_overview} shows an overview of important feedbacks in
 the Earth system with their corresponding time scales on which they operate.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\LargeFigureWidth{}]{
-    ch02_scientific_background/figs/feedbacks_overview.pdf}
-  \caption{Climate feedbacks and corresponding time scales. \enquote{+} refers
-    to positive feedbacks, which amplify the effect of the external forcing
-    (\eg{} the water vapor feedback). \enquote{-} refers to negative feedbacks,
-    which diminish the effect of the external forcing (\eg{} the longwave
-    radiation feedback). \enquote{+/-} refers to feedbacks which might be
-    either positive or negative (\eg{} the cloud feedback). The smaller box
-    highlights the large differences in time scales for the various feedbacks.
-    Taken from \textcite{Cubasch2013}.}
-  \label{fig:02:feedbacks_overview}
-\end{figure}
-
 An example for a positive feedback is the already mentioned \emph{water vapor
   feedback}. Being the primary \ac{GHG} in the Earth's atmosphere, water vapor
 is the largest contributor to the natural greenhouse effect. Since its amount
@@ -340,6 +325,21 @@ positive feedback that operates on longer time scales (several years) is the
 \emph{snow/ice albedo feedback}, in which the surface albedo decreases as
 highly reflective ice and snow surfaces melt with global warming, exposing the
 darker and more absorbing surfaces below \autocite{Cubasch2013}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\LargeFigureWidth{}]{
+    ch02_scientific_background/figs/feedbacks_overview.pdf}
+  \caption{Climate feedbacks and corresponding time scales. \enquote{+} refers
+    to positive feedbacks, which amplify the effect of the external forcing
+    (\eg{} the water vapor feedback). \enquote{-} refers to negative feedbacks,
+    which diminish the effect of the external forcing (\eg{} the longwave
+    radiation feedback). \enquote{+/-} refers to feedbacks which might be
+    either positive or negative (\eg{} the cloud feedback). The smaller box
+    highlights the large differences in time scales for the various feedbacks.
+    Taken from \textcite{Cubasch2013}.}
+  \label{fig:02:feedbacks_overview}
+\end{figure}
 
 In contrast to positive feedbacks, negative feedbacks diminish the effect of an
 external forcing. An example for this is the \emph{blackbody feedback} (also
@@ -539,21 +539,6 @@ The factor of $2$ in the denominator accounts for the fact the traditional
 Equilibrium Climate Sensitivity is defined for an abrupt \ac{CO2} doubling,
 whereas here a simulation with an abrupt quadrupling is considered.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\FigureWidth{}]{
-    ch02_scientific_background/figs/gregory_regression_different_years.png}
-  \caption{As \cref{fig:02:gregory_regression}, but for different time periods
-    considered in the Gregory regression resulting in different values for the
-    \acf{ECS} and the climate feedback parameter $\lambda$. Dark gray, blue,
-    red and orange colors correspond to the \acf{CESM} of the \acf{NCAR} for
-    different time periods of a long running simulation (see legend). The
-    initial years are simulated many times for different initial conditions.
-    Light gray colors correspond to the \acs{CMIP}5 ensemble (150 years each).
-    Taken from \textcite{Knutti2017}.}
-  \label{fig:02:gregory_regression_different_years}
-\end{figure}
-
 Although commonly used in the literature, the \ac{ECS} is known to be only an
 approximation of the true Equilibrium Climate Sensitivity. One major reason for
 this is the state and time dependence of the global feedbacks
@@ -574,6 +559,21 @@ between the Equilibrium Climate Sensitivity and \ac{ECS} is the use of a
 denominator of \cref{eq:02:ecs} only partly compensates this difference since
 the radiative forcing logarithmically depends on the atmospheric \ac{CO2}
 concentration \autocite{Huang2014}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/gregory_regression_different_years.png}
+  \caption{As \cref{fig:02:gregory_regression}, but for different time periods
+    considered in the Gregory regression resulting in different values for the
+    \acf{ECS} and the climate feedback parameter $\lambda$. Dark gray, blue,
+    red and orange colors correspond to the \acf{CESM} of the \acf{NCAR} for
+    different time periods of a long running simulation (see legend). The
+    initial years are simulated many times for different initial conditions.
+    Light gray colors correspond to the \acs{CMIP}5 ensemble (150 years each).
+    Taken from \textcite{Knutti2017}.}
+  \label{fig:02:gregory_regression_different_years}
+\end{figure}
 
 However, despite these deficiencies the \ac{ECS} is still a practical estimate
 of the Equilibrium Climate Sensitivity. With the help of climate models,
@@ -708,17 +708,6 @@ slow and the fast domain are comparatively small ($< 0.3 \unit{\GtCyr{}}$) and
 can be assumed as approximately constant in time over the last few centuries
 \autocite{Ciais2013}.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\FigureWidth{}]{
-    ch02_scientific_background/figs/carbon_cycle_schematic.png}
-  \caption{Simplified schematic of the global carbon cycle including the
-    typical turnover time scales for carbon transfers through the major
-    reservoirs (atmosphere, land surface and ocean). Taken from
-    \textcite{Ciais2013}.}
-  \label{fig:02:carbon_cycle_schematic}
-\end{figure}
-
 The fast domain of the global carbon cycle consists of three main carbon
 reservoirs: the atmosphere, the terrestrial biosphere and the ocean. In the
 atmosphere, carbon is mainly stored in trace gases, with \ac{CO2} as the major
@@ -736,6 +725,17 @@ component of the oceanic carbon reservoir is dissolved inorganic carbon
 \unit{GtC}$), in surface sediments (about $1750 \unit{GtC}$) and in marine
 biota (about $3 \unit{GtC}$, predominantly phytoplankton and other
 microorganisms) \autocite{Ciais2013, Friedlingstein2019}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/carbon_cycle_schematic.png}
+  \caption{Simplified schematic of the global carbon cycle including the
+    typical turnover time scales for carbon transfers through the major
+    reservoirs (atmosphere, land surface and ocean). Taken from
+    \textcite{Ciais2013}.}
+  \label{fig:02:carbon_cycle_schematic}
+\end{figure}
 
 In the fast domain of the global carbon cycle, reservoir turnover times range
 from seconds to millennia. In contrast to the slow domain, the carbon exchange
@@ -792,7 +792,7 @@ Islands.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\LargeFigureWidth{}]{
+  \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/keeling_curve.pdf}
   \caption{The Keeling Curve: monthly-mean atmospheric \acs{CO2} concentration
     at the Mauna Loa Observatory, Hawaii ($19.5 \unit{\degree N}$, $155.6
@@ -1200,27 +1200,6 @@ previous section: Weighting schemes should address the question \enquote{which
   climate model is adequate for predicting the target variable?} and not
 \enquote{which climate model is the best?}.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\FigureWidth{}]{
-    ch02_scientific_background/figs/mder_schematic.pdf}
-  \caption{Schematic illustration of the \acf{MDER} approach
-    \autocite{Karpechko2013}. First, inter-model relationships between a target
-    variable $y$ and multiple process-based predictors $x^{(k)}$ (here: two
-    predictors $x^{(1)}$ and $x^{(2)}$) are used to fit a multivariate linear
-    regression model (gray surface). Second, observations of the predictors
-    (horizontal black lines) are fed into the regression model to calculate an
-    observation-based best estimate of the target variable $\hat{y}_0$
-    following \cref{eq:02:mder_best_estimate}. The black circle indicates the
-    best estimate for the target variable $y$ given by the observed values of
-    $x^{(1)}$ and $x^{(2)}$. Each of the remaining colored circles represents
-    a single climate model of the multi-model ensemble. The vertical dashed
-    lines visualize the distance between the climate model data and the linear
-    regression surface and represent the noise terms $\bm{\varepsilon}$ in
-    \cref{eq:02:multivariate_linear_model}.}
-  \label{fig:02:mder}
-\end{figure}
-
 The concept of \ac{MDER} is mathematically similar to the concept of emergent
 constraints. In a first step, an inter-model relationship between the target
 variable and the process-relevant diagnostics is used to fit a multivariate
@@ -1258,12 +1237,34 @@ $\hat{\bm{b}}$ are given by
   \hat{\bm{b}} = \left( \bm{X}^T \bm{X} \right)^{-1} \bm{X}^T \bm{y},
   \label{eq:02:linear_coefficients}
 \end{equation}
-where the exponent $-1$ denotes the inverse matrix. Since this definition works
-for any number of diagnostics $K$, it can also be used to calculate the linear
-coefficients $\hat{b}_0$ (intercept) and $\hat{b}_1$ (slope) that define
-emergent relationships (see \cref{eq:02:linear_regression_y}).
+where the exponent \enquote{$-1$} denotes the inverse matrix. Since this
+definition works for any number of diagnostics $K$, it can also be used to
+calculate the linear coefficients $\hat{b}_0$ (intercept) and $\hat{b}_1$
+(slope) that define emergent relationships (see
+\cref{eq:02:linear_regression_y}).
 
-In a second step, observed data of the process-based diagnostics $\bm{x}_0 =
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/mder_schematic.pdf}
+  \caption{Schematic illustration of the \acf{MDER} approach
+    \autocite{Karpechko2013}. First, inter-model relationships between a target
+    variable $y$ and multiple process-based predictors $x^{(k)}$ (here: two
+    predictors $x^{(1)}$ and $x^{(2)}$) are used to fit a multivariate linear
+    regression model (gray surface). Second, observations of the predictors
+    (horizontal black lines) are fed into the regression model to calculate an
+    observation-based best estimate of the target variable $\hat{y}_0$
+    following \cref{eq:02:mder_best_estimate}. The black circle indicates the
+    best estimate for the target variable $y$ given by the observed values of
+    $x^{(1)}$ and $x^{(2)}$. Each of the remaining colored circles represents
+    a single climate model of the multi-model ensemble. The vertical dashed
+    lines visualize the distance between the climate model data and the linear
+    regression surface and represent the noise terms $\bm{\varepsilon}$ in
+    \cref{eq:02:multivariate_linear_model}.}
+  \label{fig:02:mder}
+\end{figure}
+
+In the second step of the algorithm, observed data of the process-based diagnostics $\bm{x}_0 =
 \left( 1, x_0^{(1)}, x_0^{(2)}, \ldots, x_0^{(K)} \right)^T \in \mathbb{R}^{(K
   + 1)}$ is fed into the multivariate linear regression model to get an
 observation-based prediction of the target variable $\hat{y}_0$
