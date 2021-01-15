@@ -125,7 +125,7 @@ with the \ac{ESMValTool} and analyzed. This instantaneous evaluation of the
 \ac{CMIP} products by a broad research community and by national and
 international climate assessments. For this reason, the \ac{ESMValTool} is for
 example used to evaluate climate model output and observational data in several
-chapters of the upcoming \ac{AR6} of the \ac{IPCC}.
+chapters of the upcoming Sixth \acl{AR} (\acs{AR}6) of the \ac{IPCC}.
 
 The \ac{ESMValTool} is developed open-source on GitHub, a web service that
 provides hosting for version control with \emph{git}
@@ -151,7 +151,7 @@ variables. \Cref{tab:03:changes_to_esmvalcore} shows a summary of these main
 contributions, which are partly published in the scientific documentation of
 \ac{ESMValCore} \autocite{Righi2020}.
 
-\begin{table}[t]
+\begin{table}[!b]
   \centering
   \begin{tabulary}{\columnwidth}{L L L}
     \toprule
@@ -282,7 +282,7 @@ diagnostics \autocite{Eyring2020}, diagnostics for emergent constraints and
 future projections \autocite{Lauer2020} and diagnostics for extreme events and
 regional evaluation \autocite{Weigel2020}.
 
-\begin{table}[t]
+\begin{table}[!b]
   \centering
   \begin{tabulary}{\columnwidth}{L L L}
     \toprule
@@ -392,7 +392,22 @@ observations of $\Psi$, \ac{ECS} can eventually be constrained to $\left( 2.8
 \pm 0.6 \right) \unit{K}$ ($66 \unit{\%}$ confidence range). More details on
 this including the calculation of $\Psi$ are given in \cref{subsec:05:cox}.
 
-An important class of recipes in the \ac{ESMValTool} covers international climate assessments. One such example is \emph{recipe\_flato13ipcc.yml}, which reproduces large parts of the climate model evaluation performed in chapter 9 of the \ac{IPCC}'s \ac{AR5} \autocite{Flato2013}. For this recipe, the two-panel figure 9.42 has been added, which shows the relationship between the historical and pre-industrial \ac{GSAT} and \ac{ECS} (\cref{fig:03:flato13:a}) and the relationship between \ac{TCR} and \ac{ECS} (\cref{fig:03:flato13:b}) within the \acs{CMIP}5 ensemble. \Cref{fig:03:flato13:a} illustrates that there is no clear connection between \ac{ECS} and the historical or pre-industrial \ac{GSAT}, \ie{} models with high temperatures in the historical or pre-industrial period do no necessarily exhibit a high equilibrium warming in the future or vice versa. On the other hand, \ac{TCR} and \ac{ECS} are in fact well-correlated within the \acs{CMIP}5 ensemble as theoretically expected from \cref{eq:02:tcr_vs_ecs}. However, this figure only shows a linear regression fit between the two variables and not the expected reciprocal relation.
+An important class of recipes in the \ac{ESMValTool} covers international
+climate assessments. One such example is \emph{recipe\_flato13ipcc.yml}, which
+reproduces large parts of the climate model evaluation performed in chapter 9
+of the \ac{IPCC}'s Fifth \acl{AR} (\acs{AR}5) \autocite{Flato2013}. For this
+recipe, the two-panel figure 9.42 has been added, which shows the relationship
+between the historical and pre-industrial \ac{GSAT} and \ac{ECS}
+(\cref{fig:03:flato13:a}) and the relationship between \ac{TCR} and \ac{ECS}
+(\cref{fig:03:flato13:b}) within the \acs{CMIP}5 ensemble.
+\Cref{fig:03:flato13:a} illustrates that there is no clear connection between
+\ac{ECS} and the historical or pre-industrial \ac{GSAT}, \ie{} models with high
+temperatures in the historical or pre-industrial period do no necessarily
+exhibit a high equilibrium warming in the future or vice versa. On the other
+hand, \ac{TCR} and \ac{ECS} are in fact well-correlated within the \acs{CMIP}5
+ensemble as theoretically expected from \cref{eq:02:tcr_vs_ecs}. However, this
+figure only shows a linear regression fit between the two variables and not the
+expected reciprocal relation.
 
 \begin{figure}[t]
   \centering
