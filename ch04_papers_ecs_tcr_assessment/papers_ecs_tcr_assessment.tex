@@ -63,7 +63,7 @@ considered.
   \includegraphics[width=\FigureWidth{}]{
     ch04_papers_ecs_tcr_assessment/figs/gregory_regression_cmip6_mmm.pdf}
   \caption{Gregory regression for the \acs{CMIP}6 \acf{MMM} following
-    \textcite{Gregory2004}: Global and annual mean net \acf{TOA} radiation $N$
+    \textcite{Gregory2004}: Global and annual mean net \acl{TOA} radiation $N$
     versus the change in global and annual mean near-surface air temperature
     $\Delta T$ for 150 years of a simulation with an abrupt quadrupling of the
     atmospheric \acs{CO2} concentration (\nxcotwo{4}) for the \acs{CMIP}6
@@ -182,11 +182,11 @@ more extreme than in any previous climate model generation, resulting in a
 bound, which is about $1.1 \unit{K}$ higher than the assessed upper bound of
 $4.5 \unit{K}$. Moreover, it is not only a small fraction of models that
 exceeds this upper bound: out of the 42 analyzed \ac{CMIP}6 models, a third (14
-models) has an \ac{ECS} above $4.5 \unit{K}$. Because of the massive political
-and societal relevance of \ac{ECS}, its apparent increase in the \ac{CMIP}6
-ensemble is currently one of the most important questions for the entire
-climate modeling community. A list of possible reasons for it is given in
-\cref{sec:04:possible_reasons_high_ecs_cmip6}.
+models) has an \ac{ECS} above $4.5 \unit{K}$. In addition to our analysis,
+several modeling centers independently confirmed high \ac{ECS} values in their
+models \autocite{Andrews2019, Gettelman2019, Wyser2020}. A list of possible
+reasons for the increased climate sensitivity in the \acs{CMIP}6 ensemble is
+given in \cref{sec:04:possible_reasons_high_ecs_cmip6}.
 
 In contrast to \ac{ECS}, \ac{TCR} has only been evaluated since \acs{AR}1 in
 1990, in which it is estimated with $2.3 \unit{K}$ using a single climate model
@@ -208,3 +208,152 @@ models of the \acs{CMIP}6 ensemble.
 
 \section{Possible Reasons for High Climate Sensitivity in \acs{CMIP}6}
 \label{sec:04:possible_reasons_high_ecs_cmip6}
+
+Because of the massive political and societal relevance of \ac{ECS}, its
+apparent increase in the \ac{CMIP}6 ensemble is currently one of the most
+important questions for the entire climate modeling community. For this reason,
+this section discusses possible reasons for the increased climate sensitivity
+in \acs{CMIP}6.
+
+Various improvements of the underlying physical, chemical and biological
+processes have been introduced to the \acs{CMIP}6 \acp{ESM} in order to
+represent the coupled Earth system in more detail. Since many of these
+processes directly influence the models' \ac{ECS} \autocite{Forster2020},
+determining reasons for the increased \ac{ECS} in the \acs{CMIP}6 ensemble is
+highly non-trivial. As discussed in detail by \textcite{Meehl2020}, one
+possible reason is the consideration of aerosol-cloud interactions. New
+prognostic aerosol schemes added to some \acs{CMIP}6 models that include
+aerosol-cloud interactions could have produced overly large negative radiative
+forcing, which then required a stronger model response to \ac{GHG} forcing in
+order to reproduce the observed historical temperature trend. In fact,
+\textcite{Meehl2020} find a weak inter-model relationship between the aerosol
+forcing and \ac{ECS} for some \acs{CMIP}6 models, with larger negative
+present-day aerosol forcing associated with higher \ac{ECS}. Such relationships
+have also been found for previous climate model generations
+\autocite{Kiehl2007, Forster2013}. However, due to the varying aerosol forcing
+over time, these relations cannot be used to tune \ac{ECS} based on the models'
+responses to aerosols over the different periods of the \nth{20} century
+\autocite{Dittus2020}.
+
+Another possible reason for the high climate sensitivity in the \acs{CMIP}6
+ensemble is related to cloud feedbacks \autocite{Bock2020}. As already
+discussed in \cref{subsec:02:climate_feedbacks}, uncertainties in cloud
+feedbacks are a major source of uncertainty of \ac{ECS} in modern \acp{ESM}
+\autocite{Boucher2013, Flato2013}. Thus, changes in processes that are related
+to cloud feedbacks immediately impact the climate models' climate sensitivity.
+The particular feedback mechanism that is thought to be relevant for the high
+\ac{ECS} in \acs{CMIP}6 is connected to cloud phase changes over the Southern
+Ocean that are present in earlier \ac{CMIP} generations (\eg{} \acs{CMIP}5). As
+the climate warms, the predominantly ice clouds over the Southern Ocean in
+these climate models become liquid clouds \autocite{McCoy2015}. As a result,
+the cloud will get more reflective to the incoming solar radiation since a
+cloud consisting of smaller liquid droplets reflects more sunlight than a cloud
+consisting of larger ice crystals (for a fixed water content). In addition,
+predominantly liquid clouds tend to precipitate less than mixed-phase clouds
+(composed of liquid water and ice), leading to more liquid water that stays in
+the cloud. Overall, this forms a strong negative shortwave cloud feedback over
+the Southern Ocean in climate models from previous \ac{CMIP} generations.
+
+However, it is well-known that the low-level mixed-phase clouds over the
+Southern Ocean in these earlier climate models are biased towards too large
+amounts of ice crystals and too little amounts of supercooled liquid water
+\autocite{BodasSalcedo2016, McCoy2015, McCoy2016, Tan2016}. For this reason,
+the microphysical representation of mixed-phase clouds has been substantially
+improved in many \acs{CMIP}6 models \autocite{BodasSalcedo2019, Gettelman2019,
+  Mulcahy2020, Williams2020}, leading for example to a better agreement of the
+simulated \ac{TOA} shortwave \ac{CRE} with corresponding observations
+\autocite{Bock2020}. As a consequence, the strong negative cloud feedback
+described above that results from a cloud phase change from ice clouds in the
+present-day to liquid clouds in the future is removed (or significantly
+reduced) in those \acs{CMIP}6 models that simulate predominantly liquid clouds
+over the present-day Southern Ocean. Moreover, this reduction of the negative
+shortwave cloud feedback increases the global net cloud feedback
+\autocite{BodasSalcedo2019, Tan2016} and eventually the \ac{ECS} of the
+affected \acs{CMIP}6 models \autocite{Andrews2019, Gettelman2019}.
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}[t]{\SmallSubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch04_papers_ecs_tcr_assessment/figs/abs_cmip6_netcre.pdf}
+    \caption{}
+    \label{fig:04:cloud_feedback_parameters:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[t]{\SmallSubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch04_papers_ecs_tcr_assessment/figs/bias_cmip6_netcre-cmip5_netcre.pdf}
+    \caption{}
+    \label{fig:04:cloud_feedback_parameters:b}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[t]{\SmallSubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch04_papers_ecs_tcr_assessment/figs/abs_cmip6_swcre.pdf}
+    \caption{}
+    \label{fig:04:cloud_feedback_parameters:c}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[t]{\SmallSubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch04_papers_ecs_tcr_assessment/figs/bias_cmip6_swcre-cmip5_swcre.pdf}
+    \caption{}
+    \label{fig:04:cloud_feedback_parameters:d}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[t]{\SmallSubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch04_papers_ecs_tcr_assessment/figs/abs_cmip6_lwcre.pdf}
+    \caption{}
+    \label{fig:04:cloud_feedback_parameters:e}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[t]{\SmallSubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch04_papers_ecs_tcr_assessment/figs/bias_cmip6_lwcre-cmip5_lwcre.pdf}
+    \caption{}
+    \label{fig:04:cloud_feedback_parameters:f}
+  \end{subfigure}
+  \caption{Geographical distributions of the net (a), shortwave (c) and
+    longwave (e) \acf{CRE} feedback parameters for the \acs{CMIP}6 \acf{MMM}
+    and the corresponding differences to the \acs{CMIP}5 \acs{MMM}, again for
+    the net (b), shortwave (d) and longwave (f) components. The \acs{CRE}
+    feedback parameters for each grid cell are calculated with a Gregory
+    regression of the grid cell's \acs{CRE} versus the change in the
+    \acl{GSAT} (see \cref{subsec:02:cloud_feedback_parameters}). Updated from
+    \textcite{Bock2020}.}
+  \label{fig:04:cloud_feedback_parameters}
+\end{figure}
+
+To further confirm this hypothesis, we show the global distributions of
+relevant cloud feedback parameters (expressed by the net, shortwave and
+longwave \ac{CRE} feedback parameters; see
+\cref{subsec:02:cloud_feedback_parameters}) for the \acs{CMIP}6 \ac{MMM} and
+its difference to the \acs{CMIP}5 \ac{MMM} in
+\cref{fig:04:cloud_feedback_parameters}. First of all, the comparison of
+\cref{fig:04:cloud_feedback_parameters:a,fig:04:cloud_feedback_parameters:c,%
+  fig:04:cloud_feedback_parameters:e} demonstrates that the shortwave component
+dominates the net \ac{CRE} feedback parameter over large swaths of the globe
+in the \acs{CMIP}6 \ac{MMM}. The sign change at approximately $60
+\unit{\degree S}$ in the shortwave \ac{CRE} feedback parameter (see
+\cref{fig:04:cloud_feedback_parameters:b}) shows where the climate models are
+switching from simulating almost purely liquid clouds (north of $60
+\unit{\degree S}$) to clouds with an increasing ice component (south of $60
+\unit{\degree S}$) in their pre-industrial and present-day experiments. The
+increasing fraction of ice in the simulated mixed-phase clouds when moving
+south supports a negative shortwave cloud feedback on warming in these areas.
+\Cref{fig:04:cloud_feedback_parameters:b,fig:04:cloud_feedback_parameters:d}
+show a higher shortwave and net \ac{CRE} feedback parameter over the Southern
+Ocean in \acs{CMIP}6 compared to \acs{CMIP}5. This is consistent to the
+hypothesis presented in the paragraph above, which claims that the reduced
+negative cloud phase change feedback over the Southern Ocean in \acs{CMIP}6
+leads to an increased net cloud feedback parameter in comparison to older
+\ac{CMIP} generations. This result is further supported by
+\textcite{Zelinka2020}, who find a larger positive zonal mean net cloud
+feedback parameter in \acs{CMIP}6 compared to \acs{CMIP}5 due to a more
+positive (reduced negative) low‐level cloud feedback, primarily in the
+extratropics. Moreover, \textcite{Zelinka2020} show that this mainly results
+from an increase in the liquid condensate fraction in the \acs{CMIP}6 clouds
+for the pre-industrial and present‐day periods, leading to the aforementioned
+reduction in the negative cloud phase change feedback on warming and
+eventually to higher \ac{ECS} values.
