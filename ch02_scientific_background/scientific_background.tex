@@ -945,7 +945,8 @@ is based on linear regression and Gaussian probability densities
 \autocite{Cox2013, Cox2018}. Let $x_m$ be the observable predictor variable for
 climate model $m$ and $y_m$ the corresponding target variable. To find the
 linear emergent relationship for a climate model ensemble with $M$ climate
-models and data $\left\{ \left( x_m, y_m \right) \mid m \in I_M \right\}$ with index set $I_M = \left\{ 1, 2, \ldots, M\right\}$, a linear
+models and data $\left\{ \left( x_m, y_m \right) \mid m \in I_M \right\}$ with
+index set $I_M = \left\{ 1, 2, \ldots, M\right\}$, a linear
 regression model
 \begin{equation}
   \hat{y}(x) = \hat{b}_0 + \hat{b}_1 x
@@ -1264,10 +1265,11 @@ calculate the linear coefficients $\hat{b}_0$ (intercept) and $\hat{b}_1$
   \label{fig:02:mder}
 \end{figure}
 
-In the second step of the algorithm, observed data of the process-based diagnostics $\bm{x}_0 =
-\left( 1, x_0^{(1)}, x_0^{(2)}, \ldots, x_0^{(K)} \right)^T \in \mathbb{R}^{(K
-  + 1)}$ is fed into the multivariate linear regression model to get an
-observation-based prediction of the target variable $\hat{y}_0$
+In the second step of the algorithm, observed data of the process-based
+diagnostics $\bm{x}_0 = \left( 1, x_0^{(1)}, x_0^{(2)}, \ldots, x_0^{(K)}
+\right)^T \in \mathbb{R}^{(K + 1)}$ is fed into the multivariate linear
+regression model to get an observation-based prediction of the target variable
+$\hat{y}_0$
 \autocite{Karpechko2013}:
 \begin{equation}
   \hat{y}_0 = \bm{x}_0^T \hat{\bm{b}}
