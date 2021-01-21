@@ -24,9 +24,9 @@ models is crucial since they provide vital information about the future climate
 of planet Earth. As the \ac{ESMValTool} is an excellent tool that allows for a
 quick and robust evaluation of new \ac{CMIP} data as soon as it gets published
 on the \ac{ESGF} servers (see \cref{sec:03:esmvaltool}), we use it to assess
-and analyze climate sensitivity (expressed by \ac{ECS} and \ac{TCR}) of the
-\acs{CMIP}6 models and compare it to corresponding results of predecessor model
-generations. This work is already published in two scientific papers:
+and analyze \ac{ECS} and \ac{TCR} of the \acs{CMIP}6 models and compare it to
+corresponding results of predecessor model generations and international
+climate assessments. This work is already published in two scientific papers:
 \textcite{Bock2020} and \textcite{Meehl2020}. For \textcite{Bock2020}, the
 author of this thesis contributed their figure 8 (a bar chart showing the
 \ac{ECS} for the three climate model generations \acs{CMIP}3, \acs{CMIP}5 and
@@ -34,11 +34,16 @@ author of this thesis contributed their figure 8 (a bar chart showing the
 parameters for the \acs{CMIP}5 and \acs{CMIP}6 \acp{MMM}; see
 \cref{fig:04:cloud_feedback_parameters}) and discussion about \ac{ECS} of the
 \acs{CMIP}6 models. For \textcite{Meehl2020}, the author of this thesis
-contributed all figures and tables of the study and details on the calculations
-of \ac{ECS} and \ac{TCR}.
+contributed all figures and tables of the study. This chapter first presents
+the evaluation of climate sensitivity for the \acs{CMIP}5 and \acs{CMIP}6
+ensembles (\cref{sec:04:evaluation_ecs_and_tcr}) and puts the corresponding
+\ac{ECS} and \ac{TCR} values into historical context
+(\cref{sec:04:historical_context}). Finally, possible reasons for the apparent
+increase of climate sensitivity in the \acs{CMIP}6 models are briefly discussed
+(\cref{sec:04:possible_reasons_high_ecs_cmip6}).
 
 
-\section{Evaluation of \acs{ECS} and \acs{TCR} in \acs{CMIP}6}
+\section{Evaluation of \acs{ECS} and \acs{TCR} in \acs{CMIP}5 and \acs{CMIP}6}
 \label{sec:04:evaluation_ecs_and_tcr}
 
 Following \cref{subsec:02:ecs}, \ac{ECS} is calculated with the Gregory
@@ -56,7 +61,14 @@ for this is the state and time dependence of the climate feedback parameter,
 which is given by the slope of the Gregory regression line. Due to non-linear
 effects in the feedbacks, this slope changes over time, resulting in lower
 (higher) values of \ac{ECS} when only early (late) years of the simulation are
-considered.
+considered. In contrast to that, the transient response of the climate system
+\ac{TCR} is calculated from \ac{GSAT} data at the time of \ac{CO2} doubling in
+a \onepctcotwo{} run \commentcite{Bindoff2013}{see \cref{subsec:02:tcr}}. Using
+these two definitions and the \ac{ESMValTool}, we assess \ac{ECS} and \ac{TCR}
+for all \acs{CMIP}5 and \acs{CMIP}6 models where the necessary temperature and
+radiation data is available (as of \TheMonth{}).
+\Cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6} give an overview over the
+results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
 
 \begin{figure}[t]
   \centering
@@ -82,15 +94,6 @@ considered.
     (orange circles and line). Updated from \textcite{Meehl2020}.}
   \label{fig:04:gregory_regression_cmip6_mmm}
 \end{figure}
-
-In contrast to that, the transient response of the climate system \ac{TCR} is
-calculated from \ac{GSAT} data at the time of \ac{CO2} doubling in a
-\onepctcotwo{} run \commentcite{Bindoff2013}{see \cref{subsec:02:tcr}}. Using
-these two definitions and the \ac{ESMValTool}, we assess \ac{ECS} and \ac{TCR}
-for all \acs{CMIP}5 and \acs{CMIP}6 models where the necessary temperature and
-radiation data is available (as of \TheMonth{}).
-\Cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6} give an overview over the
-results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
 
 \begin{table}[!t]
   \centering
@@ -138,32 +141,19 @@ assessed ranges given by the latest published \ac{AR} of the \ac{IPCC} from
 (\acs{AR}5: $\range{1.5}{4.5} \unit{K}$) and  $\range{1.3}{3.0} \unit{K}$
 (\acs{AR}5: $\range{1.0}{2.5} \unit{K}$) for \ac{TCR}.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\LargeFigureWidth{}]{
-    ch04_papers_ecs_tcr_assessment/figs/historical_ecs_tcr_ranges.pdf}
-  \caption{Assessed values of the \acf{ECS} (blue bars) and the \acf{TCR} (red
-    bars) over the years in the Charney report from 1979 \autocite{Charney1979}
-    and the subsequent \acfp{AR} of the \acf{IPCC} \autocite{Mitchell1990,
-      Kattenberg1996, Albritton2001, Solomon2007, Stocker2013}. Orange and
-    green bars represent the modeled ranges of \acs{ECS} and \acs{TCR},
-    respectively, from the different climate model ensembles of the \acf{CMIP}
-    with the corresponding \acf{MMM} illustrated with the horizontal black
-    lines (the green dot represents output from a single climate model). The
-    numbers correspond to individual \acs{CMIP}5 and \acs{CMIP}6 models (see
-    \cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6}). Updated from
-    \textcite{Meehl2020}.}
-  \label{fig:04:historical_ecs_tcr_ranges}
-\end{figure}
 
-To illustrate this and put it into historical context,
-\cref{fig:04:historical_ecs_tcr_ranges} shows the assessed \ac{ECS} and
-\ac{TCR} ranges over the years from the Charney report \autocite{Charney1979}
-and the different \acp{AR} of the \ac{IPCC} in combination with the
-corresponding modeled ranges from the different \ac{CMIP} generations. Since
-the Charney report in 1979, the assessed range of \ac{ECS} of $\range{1.5}{4.5}
-\unit{K}$ has almost remained unchanged during the last 40 years
-\autocite{Charney1979, Mitchell1990, Kattenberg1996, Albritton2001,
+\section{Comparison to Previous \acs{CMIP} Generations and International
+  Climate Assessments}
+\label{sec:04:historical_context}
+
+To illustrate the results of the previous section and put them into historical
+context, \cref{fig:04:historical_ecs_tcr_ranges} shows the assessed \ac{ECS}
+and \ac{TCR} ranges over the years from the Charney report
+\autocite{Charney1979} and the different \acp{AR} of the \ac{IPCC} in
+combination with the corresponding modeled ranges from the different \ac{CMIP}
+generations. Since the Charney report in 1979, the assessed range of \ac{ECS}
+of $\range{1.5}{4.5} \unit{K}$ has almost remained unchanged during the last 40
+years \autocite{Charney1979, Mitchell1990, Kattenberg1996, Albritton2001,
   Stocker2013} with the exception of \acs{AR}4, where the lower bound was
 temporarily increased to $2.0 \unit{K}$ \autocite{Solomon2007}. For \acs{AR}2,
 \acs{AR}4 and \acs{AR}5, the corresponding climate model generations from
@@ -189,6 +179,24 @@ reasons for the increased climate sensitivity in the \acs{CMIP}6 ensemble
 including aerosol-cloud interactions and changes in the shortwave cloud
 feedback over the Southern Ocean is given in
 \cref{sec:04:possible_reasons_high_ecs_cmip6}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\LargeFigureWidth{}]{
+    ch04_papers_ecs_tcr_assessment/figs/historical_ecs_tcr_ranges.pdf}
+  \caption{Assessed values of the \acf{ECS} (blue bars) and the \acf{TCR} (red
+    bars) over the years in the Charney report from 1979 \autocite{Charney1979}
+    and the subsequent \acfp{AR} of the \acf{IPCC} \autocite{Mitchell1990,
+      Kattenberg1996, Albritton2001, Solomon2007, Stocker2013}. Orange and
+    green bars represent the modeled ranges of \acs{ECS} and \acs{TCR},
+    respectively, from the different climate model ensembles of the \acf{CMIP}
+    with the corresponding \acf{MMM} illustrated with the horizontal black
+    lines (the green dot represents output from a single climate model). The
+    numbers correspond to individual \acs{CMIP}5 and \acs{CMIP}6 models (see
+    \cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6}). Updated from
+    \textcite{Meehl2020}.}
+  \label{fig:04:historical_ecs_tcr_ranges}
+\end{figure}
 
 In contrast to \ac{ECS}, \ac{TCR} has only been evaluated since \acs{AR}1 in
 1990, in which it is estimated with $2.3 \unit{K}$ using only a single climate
@@ -241,6 +249,28 @@ over time, these relations cannot be used to tune \ac{ECS} based on the models'
 responses to aerosols over the different periods of the \nth{20} century
 \autocite{Dittus2020}.
 
+Another possible reason for the high climate sensitivity in the \acs{CMIP}6
+ensemble is related to cloud feedbacks \autocite{Bock2020}. As already
+discussed in \cref{subsec:02:climate_feedbacks}, uncertainties in cloud
+feedbacks are a major source of uncertainty of \ac{ECS} in modern \acp{ESM}
+\autocite{Boucher2013, Flato2013}. Thus, changes in processes that are related
+to cloud feedbacks immediately impact the climate models' climate sensitivity.
+The particular feedback mechanism that is thought to be relevant for the high
+\ac{ECS} in \acs{CMIP}6 is connected to cloud phase changes over the Southern
+Ocean that are present in earlier \ac{CMIP} generations (\eg{} \acs{CMIP}5).
+This so-called \emph{cloud phase change feedback} is illustrated in
+\cref{fig:04:cloud_phase_change_feedback} (green arrows). As the climate warms,
+the predominantly ice clouds over the Southern Ocean in these climate models
+become liquid clouds \autocite{McCoy2015}. As a result, the cloud will get more
+reflective to the incoming solar radiation since a cloud consisting of smaller
+liquid droplets reflects more sunlight than a cloud consisting of larger ice
+crystals (for a fixed water content), which has a cooling effect on the climate
+system. In addition, predominantly liquid clouds tend to precipitate less than
+mixed-phase clouds (composed of liquid water and ice). This leads to a higher
+liquid water content of the cloud and a further amplification of the cooling
+effect. Overall, this forms a strong negative shortwave cloud feedback over the
+Southern Ocean in climate models from previous \ac{CMIP} generations.
+
 \begin{figure}[t]
   \centering
   \includegraphics[width=\LargeFigureWidth{}]{
@@ -264,28 +294,6 @@ responses to aerosols over the different periods of the \nth{20} century
   \label{fig:04:cloud_phase_change_feedback}
 \end{figure}
 
-Another possible reason for the high climate sensitivity in the \acs{CMIP}6
-ensemble is related to cloud feedbacks \autocite{Bock2020}. As already
-discussed in \cref{subsec:02:climate_feedbacks}, uncertainties in cloud
-feedbacks are a major source of uncertainty of \ac{ECS} in modern \acp{ESM}
-\autocite{Boucher2013, Flato2013}. Thus, changes in processes that are related
-to cloud feedbacks immediately impact the climate models' climate sensitivity.
-The particular feedback mechanism that is thought to be relevant for the high
-\ac{ECS} in \acs{CMIP}6 is connected to cloud phase changes over the Southern
-Ocean that are present in earlier \ac{CMIP} generations (\eg{} \acs{CMIP}5).
-This so-called \emph{cloud phase change feedback} is illustrated in
-\cref{fig:04:cloud_phase_change_feedback} (green arrows). As the climate warms,
-the predominantly ice clouds over the Southern Ocean in these climate models
-become liquid clouds \autocite{McCoy2015}. As a result, the cloud will get more
-reflective to the incoming solar radiation since a cloud consisting of smaller
-liquid droplets reflects more sunlight than a cloud consisting of larger ice
-crystals (for a fixed water content), which has a cooling effect on the climate
-system. In addition, predominantly liquid clouds tend to precipitate less than
-mixed-phase clouds (composed of liquid water and ice). This leads to a higher
-liquid water content of the cloud and a further amplification of the cooling
-effect. Overall, this forms a strong negative shortwave cloud feedback over the
-Southern Ocean in climate models from previous \ac{CMIP} generations.
-
 However, it is well-known that the low-level mixed-phase clouds over the
 Southern Ocean in these earlier climate models are biased towards too large
 amounts of ice crystals and too little amounts of supercooled liquid water
@@ -306,7 +314,7 @@ the \ac{ECS} of the affected \acs{CMIP}6 models \autocite{Andrews2019,
   Gettelman2019}, offering a possible explanation for the high \ac{ECS} values
 in some \acs{CMIP}6 models.
 
-\begin{figure}[!t]
+\begin{figure}[p]
   \centering
   \begin{subfigure}[t]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
