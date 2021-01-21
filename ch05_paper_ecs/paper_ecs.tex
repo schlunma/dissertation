@@ -11,7 +11,49 @@
 \chapter{Evaluation of Emergent Constraints on the \acl{ECS} in \acs{CMIP}6}
 \label{ch:05:paper_ecs}
 
-TBA.
+The massive spread in \ac{ECS} within the \acs{CMIP}6 ensemble discussed in the
+previous chapter begs the question about the interpretation and credibility of
+these results. Since the \acs{CMIP}6 models provide crucial input for the
+upcoming international climate assessment of the \ac{IPCC} (\acs{AR}6), this is
+not only important for the scientific community, but also directly affects
+society and policymakers. An important question in this context could be the
+following: Is it reasonable to adapt the assessed \ac{ECS} range from \acs{AR}5
+($\range{1.5}{4.5} \unit{K}$) in \acs{AR}6 based on the \acs{CMIP}6 model
+range? An argument for this is that due to the many new and improved processes
+included to the models, the \acs{CMIP}6 ensemble is arguably more realistic
+than its predecessor generations. However, even the \acs{CMIP}6 models are far
+from fully simulating all aspects and processes of the vastly complex Earth
+system. For this reason, the apparent increase in climate sensitivity in the
+\acs{CMIP}6 models might be wrongly caused by missing processes that cancel out
+the effects of the newly included processes, leading to a biased \ac{ECS} even
+though the models are more realistic. Thus, it is vital to take other sources
+of information into account before answering the question raised above.
+
+One of the most important sources of information for this purpose is
+undoubtedly observational data. As presented in
+\cref{subsec:02:emergent_constraints}, emergent constraints are a beneficial
+tool to assess the accuracy of climate model projections and reduce associated
+uncertainties with appropriate observations of the Earth system. For \ac{ECS},
+a large variety of different emergent constraints has been developed over the
+years, which we now evaluate on the new \acs{CMIP}6 ensemble. In total we
+assess eleven emergent constraints (selected by their availability in the
+\ac{ESMValTool}), out of which the most are related to cloud feedbacks, since
+these constitute the most important source of uncertainty for \ac{ECS}
+\commentcite{Boucher2013, Flato2013}{see also
+  \cref{subsec:02:climate_feedbacks}}. Since all of the evaluated emergent
+constraints have been derived on the \acs{CMIP}3 or \ac{CMIP}5 ensemble, the
+\ac{CMIP}6 models offer an exciting possibility to perform out-of-sample
+testing using the previously unseen data. We quantify the skill of the emergent
+constraints with three metrics: the coefficient of determination $R^2$ of the
+linear relationship, the statistical significance using a two-sided $t$-test
+based on the Pearson correlation coefficient $r$ (see \cref{eq:02:t}) and the
+constrained range of \ac{ECS} based on the constrained \ac{PDF} (see
+\cref{eq:02:pdf_y_given_x0}). This analysis has already been published in
+\textcite{Schlund2020a}. In this chapter, we first introduce the eleven
+emergent constraints on \acs{ECS} and evaluate them on \acs{CMIP}5 and
+\acs{CMIP}6 data (\cref{sec:05:comparison_of_emergent_constraints}). After
+that, we provide a discussion of the results and draw important conclusions
+from them (\cref{sec:05:discussion_and_conclusions}).
 
 
 \section{Comparison of Emergent Constraints on \acs{ECS} for \acs{CMIP}5 and
@@ -25,3 +67,9 @@ TBA.
 
 \section{Discussion and Conclusions}
 \label{sec:05:discussion_and_conclusions}
+
+- mention limitation of emergent constraints of chapter 2 again
+
+- mention why significance
+
+- it is not possible to constrain ECS with the emergent constraints
