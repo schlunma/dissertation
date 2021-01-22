@@ -283,3 +283,6 @@ TSWLatexianTemp*
 
 # SVG files
 *.svg
+
+# pychache
+__pycache__
