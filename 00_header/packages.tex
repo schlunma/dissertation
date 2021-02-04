@@ -42,7 +42,16 @@
 \usepackage{csvsimple}
 
 % Biblatex
-\usepackage[backend=biber, style=apa]{biblatex}
+\usepackage[
+  backend=biber,
+  bibstyle=apa,
+  citestyle=authoryear-comp,
+  labelalpha=true,
+  maxalphanames=1,
+  sorting=anyt,
+  uniquelist=false,
+  uniquename=init,
+]{biblatex}
 
 % Appearance
 \usepackage[onehalfspacing]{setspace}

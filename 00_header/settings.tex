@@ -43,7 +43,7 @@
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 % Tables
-\tymin = 3.5cm
+\tymin = 0.2\columnwidth
 \csvstyle{ECSAndTCRTable}{
   head to column names,
   tabular=l l r r,
@@ -74,6 +74,11 @@
      test {\ifdefequal{\firstinit}{\namepartgiven}}) and
     test {\ifdefequal{\lastname}{\namepartfamily}}
   }{\mkbibbold{#1}}{#1}%
+}
+\newcommand{\apashortdash}{-} % Necessary when apa and authoryear-comp are used
+\DeclareLabelalphaTemplate{% Sorting of bibliography (first author -> year)
+  \labelelement{\field[names=1, lowercase]{labelname}}
+  \labelelement{\field{year}}
 }
 
 % Reduce space before and after equations

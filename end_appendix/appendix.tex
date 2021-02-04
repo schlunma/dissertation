@@ -10,50 +10,121 @@
 
 \chapter{Appendix}
 
+\begingroup
+
+
+\crefalias{section}{appendix}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
 \renewcommand{\thesection}{\Alph{section}}
 
 
-\section{TBA}
+\section{Overview of \acs{CMIP} Models used in
+  \texorpdfstring{\Cref{ch:05:paper_ecs}}{Chapter \ref{ch:05:paper_ecs}}}
+\label{sec:app:cmip_models_in_chapter_5}
+
+\Cref{tab:app:a:cmip5_models,tab:app:a:cmip6_models} give an overview over the
+\acs{CMIP}5 and \acs{CMIP}6 models, respectively, which are used for the
+evaluation of emergent constraints on \ac{ECS} \autocite{Schlund2020a} as
+presented in \cref{ch:05:paper_ecs}.
+
+\begin{table}[!b]
+  \centering
+  \begin{tabulary}{\columnwidth}{L L L}
+    \toprule
+    Model & Index & Main reference \\
+    \midrule
+    ACCESS1-0 & 1 & \textcite{Dix2013} \\
+    ACCESS1-3 & 2 & \textcite{Dix2013} \\
+    BNU-ESM & 3 & \textcite{Ji2014} \\
+    CCSM4 & 4 & \textcite{Gent2011, Meehl2012} \\
+    CNRM-CM5 & 5 & \textcite{Voldoire2013} \\
+    CNRM-CM5-2 & 6 & \textcite{Voldoire2013} \\
+    CSIRO-Mk3-6-0 & 7 & \textcite{Rotstayn2012} \\
+    CanESM2 & 8 & \textcite{Arora2011} \\
+    FGOALS-g2 & 9 & \textcite{Li2013} \\
+    GFDL-CM3 & 10 & \textcite{Donner2011} \\
+    GFDL-ESM2G & 11 & \textcite{Dunne2012} \\
+    GFDL-ESM2M & 12 & \textcite{Dunne2012} \\
+    GISS-E2-H & 13 & \textcite{Schmidt2006} \\
+    GISS-E2-R & 14 & \textcite{Schmidt2006} \\
+    HadGEM2-ES & 15 & \textcite{Collins2011} \\
+    IPSL-CM5A-LR & 16 & \textcite{Dufresne2013} \\
+    IPSL-CM5A-MR & 17 & \textcite{Dufresne2013} \\
+    IPSL-CM5B-LR & 18 & \textcite{Dufresne2013} \\
+    MIROC-ESM & 19 & \textcite{Watanabe2011} \\
+    MIROC5 & 20 & \textcite{Watanabe2010} \\
+    MPI-ESM-LR & 21 & \textcite{Giorgetta2013} \\
+    MPI-ESM-MR & 22 & \textcite{Giorgetta2013} \\
+    MPI-ESM-P & 23 & \textcite{Giorgetta2013} \\
+    MRI-CGCM3 & 24 & \textcite{Yukimoto2012} \\
+    NorESM1-M & 25 & \textcite{Bentsen2013, Iversen2013} \\
+    bcc-csm1-1 & 26 & \textcite{Wu2014} \\
+    bcc-csm1-1-m & 27 & \textcite{Wu2014} \\
+    inmcm4 & 28 & \textcite{Volodin2010} \\
+    \bottomrule
+  \end{tabulary}
+  \caption{List of \acs{CMIP}5 models used in \cref{ch:05:paper_ecs} alongside
+    the main reference and the index used in the corresponding figures.
+    \AdaptedFrom{Schlund2020a}.}
+  \label{tab:app:a:cmip5_models}
+\end{table}
+
+\begin{table}[p]
+  \centering
+  \begin{tabulary}{\columnwidth}{L L L}
+    \toprule
+    Model & Index & Main reference \\
+    \midrule
+    ACCESS-CM2 & 29 & \textcite{Bi2013} \\
+    ACCESS-ESM1-5 & 30 & \textcite{Law2017, Ziehn2017} \\
+    AWI-CM-1-1-MR & 31 & \textcite{Rackow2018, Sidorenko2015} \\
+    BCC-CSM2-MR & 32 & \textcite{Wu2019} \\
+    BCC-ESM1 & 33 & \textcite{Wu2019} \\
+    CAMS-CSM1-0 & 34 & \textcite{Rong2018} \\
+    CAS-ESM2-0 & 35 & \textcite{Wang2020} \\
+    CESM2 & 36 & \textcite{Danabasoglu2020} \\
+    CESM2-FV2 & 37 & \textcite{Danabasoglu2020} \\
+    CESM2-WACCM & 38 & \textcite{Danabasoglu2020, Gettelman2019a} \\
+    CESM2-WACCM-FV2 & 39 & \textcite{Danabasoglu2020, Gettelman2019a} \\
+    CMCC-CM2-SR5 & 40 & \textcite{Cherchi2019} \\
+    CNRM-CM6-1 & 41 & \textcite{Voldoire2019} \\
+    CNRM-CM6-1-HR & 42 & \textcite{Voldoire2019} \\
+    CNRM-ESM2-1 & 43 & \textcite{Seferian2019} \\
+    CanESM5 & 44 & \textcite{Swart2019} \\
+    E3SM-1-0 & 45 & \textcite{Golaz2019} \\
+    EC-Earth3-Veg & 46 & \textcite{Wyser2020} \\
+    FGOALS-f3-L & 47 & \textcite{Guo2020, He2019, He2020} \\
+    FGOALS-g3 & 48 & \textcite{Li2020} \\
+    GISS-E2-1-G & 49 & \textcite{Rind2020} \\
+    GISS-E2-1-H & 50 & \textcite{Rind2020} \\
+    HadGEM3-GC31-LL & 51 & \textcite{Kuhlbrodt2018} \\
+    HadGEM3-GC31-MM & 52 & \textcite{Williams2018} \\
+    INM-CM4-8 & 53 & \textcite{Volodin2017,Volodin2017a} \\
+    INM-CM5-0 & 54 & \textcite{Volodin2017,Volodin2017a} \\
+    IPSL-CM6A-LR & 55 & \textcite{Boucher2020} \\
+    KACE-1-0-G & 56 & \textcite{Lee2020} \\
+    MCM-UA-1-0 & 57 & \textcite{Delworth2002} \\
+    MIROC-ES2L & 58 & \textcite{Hajima2020} \\
+    MIROC6 & 59 & \textcite{Tatebe2019} \\
+    MPI-ESM-1-2-HAM & 60 & \textcite{Mauritsen2019} \\
+    MPI-ESM1-2-HR & 61 & \textcite{Muller2018} \\
+    MPI-ESM1-2-LR & 62 & \textcite{Mauritsen2019} \\
+    MRI-ESM2-0 & 63 & \textcite{Yukimoto2019} \\
+    NESM3 & 64 & \textcite{Cao2018} \\
+    NorCPM1 & 65 & \textcite{Counillon2016} \\
+    NorESM2-LM & 66 & \textcite{Seland2020} \\
+    NorESM2-MM & 67 & \textcite{Seland2020} \\
+    SAM0-UNICON & 68 & \textcite{Park2019} \\
+    TaiESM1 & 69 & \textcite{Lee2020a} \\
+    UKESM1-0-LL & 70 & \textcite{Sellar2019} \\
+    \bottomrule
+  \end{tabulary}
+  \caption{As in \cref{tab:app:a:cmip5_models}, but for the \acs{CMIP}6 models
+    used in \cref{ch:05:paper_ecs}. \AdaptedFrom{Schlund2020a}.}
+  \label{tab:app:a:cmip6_models}
+\end{table}
 
 
-\subsection{test}
-
-
-\subsubsection{test}
-
-
-\paragraph{hi}
-
-The \ac{ECS} is really cool. I like it very much!
-
-This is e.g. without an "at" and this is it with an "at" e.g.\@ difference?
-Test space. Real dot!
-
-\Eg blaa. \Eg{} blaaaa. \ie blaaaa, \ie{} blaa.
-
-These are really cool papers: \autocite{Schlund2020, Schlund2020a}
-
-autocite:
-\autocite{Lauer2018}
-
-cite:
-\cite{Lauer2010}
-\autocite{Anav2015}
-\autocite{Anav2013}
-\autocite{Allen2002}
-
-textcite:
-\textcite{Lauer2010}
-
-And this one, too: \autocite{Lauer2020}
-
-Three authors: \autocite{Bao2020}
-
-Many many authors: \autocite{Eyring2020}
-
-\texttt{input <iostream>}
-
-
-\section{TBA}
-
-TBA.
+\endgroup
