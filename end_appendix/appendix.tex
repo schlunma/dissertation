@@ -20,16 +20,68 @@
 \renewcommand{\thesection}{\Alph{section}}
 
 
-\section{Overview of \acs{CMIP} Models used in
+\section{Supplementary Materials for
   \texorpdfstring{\Cref{ch:05:paper_ecs}}{Chapter \ref{ch:05:paper_ecs}}}
 \label{sec:app:cmip_models_in_chapter_5}
 
-\Cref{tab:app:a:cmip5_models,tab:app:a:cmip6_models} give an overview over the
-\acs{CMIP}5 and \acs{CMIP}6 models, respectively, which are used for the
-evaluation of emergent constraints on \ac{ECS} \autocite{Schlund2020a} as
-presented in \cref{ch:05:paper_ecs}.
+This section contains supplementary tables for \cref{ch:05:paper_ecs}
+(\nameref*{ch:05:paper_ecs}; see \cite{Schlund2020a}).
 
 \begin{table}[!b]
+  \centering
+  \begin{tabulary}{\columnwidth}{L L}
+    \toprule
+    Variable short name & Description \\
+    \midrule
+    \emph{cl} & Cloud area fraction \\
+    \emph{clt} & Total cloud area fraction \\
+    \emph{hur} & Relative humidity \\
+    \emph{hus} & Specific humidity \\
+    \emph{pr} & Precipitation \\
+    \emph{rsdt} & \Acf{TOA} incoming shortwave radiation \\
+    \emph{rsut} & \acs{TOA} outgoing shortwave radiation \\
+    \emph{rsutcs} & Clear-sky \acs{TOA} outgoing shortwave radiation \\
+    \emph{ta} & Air temperature \\
+    \emph{tas} & Surface air temperature \\
+    \emph{tos} & Sea surface temperature \\
+    \emph{ts} & Surface temperature \\
+    \emph{va} & Northward wind speed \\
+    \emph{wap} & Vertical velocity \\
+    \bottomrule
+  \end{tabulary}
+  \caption{Overview of the variables used in \cref{ch:05:paper_ecs}
+    (\nameref*{ch:05:paper_ecs}). More details are given in
+    \cref{tab:05:overview_emergent_constraints}, which lists the corresponding
+    variable short names for each emergent constraint.}
+  \label{tab:app:a:overview_variables}
+\end{table}
+
+\begin{table}[!b]
+  \centering
+  \begin{tabulary}{\columnwidth}{L L L}
+    \toprule
+    Observational dataset & Corresponding variables & Reference \\
+    \midrule
+    AIRS & \emph{hur}, \emph{hus} & \textcite{Aumann2003} \\
+    AMSRE SST & \emph{tos} & \textcite{AMSRE2011} \\
+    CERES-EBAF & \emph{rsdt}, \emph{rsut}, \emph{rsutcs} & \textcite{Loeb2018}
+    \\
+    CloudSat/CALIPSO & \emph{cl} & \textcite{Mace2009} \\
+    ERA-Interim & \emph{hur}, \emph{ta}, \emph{va}, \emph{wap} &
+    \textcite{Dee2011} \\
+    GPCP & \emph{pr} & \textcite{Adler2003} \\
+    HadCRUT4 & \emph{tas} & \textcite{Morice2012} \\
+    HadISST & \emph{ts} & \textcite{Rayner2003} \\
+    ISCCP D-2 & \emph{clt} & \textcite{Rossow1991} \\
+    MLS-Aura & \emph{hur} & \textcite{Beer2006} \\
+    \bottomrule
+  \end{tabulary}
+  \caption{References for all observational datasets used in
+    \cref{ch:05:paper_ecs} (\nameref*{ch:05:paper_ecs}).}
+  \label{tab:app:a:observations}
+\end{table}
+
+\begin{table}[p]
   \centering
   \begin{tabulary}{\columnwidth}{L L L}
     \toprule
@@ -65,9 +117,9 @@ presented in \cref{ch:05:paper_ecs}.
     inmcm4 & 28 & \textcite{Volodin2010} \\
     \bottomrule
   \end{tabulary}
-  \caption{List of \acs{CMIP}5 models used in \cref{ch:05:paper_ecs} alongside
-    the main reference and the index used in the corresponding figures.
-    \AdaptedFrom{Schlund2020a}.}
+  \caption{List of \acs{CMIP}5 models used in \cref{ch:05:paper_ecs}
+    (\nameref*{ch:05:paper_ecs}) alongside the main reference and the index
+    used in the corresponding figures. \AdaptedFrom{Schlund2020a}.}
   \label{tab:app:a:cmip5_models}
 \end{table}
 
@@ -121,9 +173,35 @@ presented in \cref{ch:05:paper_ecs}.
     UKESM1-0-LL & 70 & \textcite{Sellar2019} \\
     \bottomrule
   \end{tabulary}
-  \caption{As in \cref{tab:app:a:cmip5_models}, but for the \acs{CMIP}6 models
-    used in \cref{ch:05:paper_ecs}. \AdaptedFrom{Schlund2020a}.}
+  \caption{As in \cref{tab:app:a:cmip5_models}, but for the \acs{CMIP}6 models.
+    \AdaptedFrom{Schlund2020a}.}
   \label{tab:app:a:cmip6_models}
+\end{table}
+
+\begin{table}[p]
+  \centering
+  \begin{tabulary}{\columnwidth}{L L L}
+    \toprule
+    A & B & C \\
+    \midrule
+    111111111111111111111111111111111111111111111 & 2 & 3 \\
+    \bottomrule
+  \end{tabulary}
+  \caption{\acs{CMIP}5. \AdaptedFrom{Schlund2020a}.}
+  \label{tab:app:a:emergent_constraints_cmip5}
+\end{table}
+
+\begin{table}[p]
+  \centering
+  \begin{tabulary}{\columnwidth}{L L L}
+    \toprule
+    A & B & C \\
+    \midrule
+    111111111111111111111111111111111111111111111 & 2 & 3 \\
+    \bottomrule
+  \end{tabulary}
+  \caption{\acs{CMIP}6. \AdaptedFrom{Schlund2020a}.}
+  \label{tab:app:a:emergent_constraints_cmip6}
 \end{table}
 
 

@@ -47,13 +47,14 @@
 \csvstyle{ECSAndTCRTable}{
   head to column names,
   tabular=l l r r,
-  table head=\toprule Model & Index used in plots & \acs{ECS} {[K]} &
-  \acs{TCR} {[K]} \\ \midrule,
+  table head=\toprule Model & Index used in plots & \acs{ECS} {[$\si{K}$]} &
+  \acs{TCR} {[$\si{K}$]} \\ \midrule,
   table foot=\bottomrule,
   before line=\hspace{-0.5\tabcolsep}, % Avoid indentation for first two rows
   late after line=\ifthenelse{\equal{\csvcoli}{Multi-model mean}}{\\
     \midrule}{\\},
 }
+\renewcommand{\cellalign}{tl}
 
 % Biblatex
 \newcommand*{\boldname}[3]{% Make my name bold in list of references

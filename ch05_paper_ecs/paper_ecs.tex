@@ -18,46 +18,110 @@ upcoming international climate assessment of the \ac{IPCC} (\acs{AR}6), this is
 not only important for the scientific community, but also directly affects
 society and policymakers. An important question in this context could be the
 following: Is it reasonable to adapt the assessed \ac{ECS} range from \acs{AR}5
-($\range{1.5}{4.5} \unit{K}$) in \acs{AR}6 based on the \acs{CMIP}6 model
-range? An argument for this is that due to the many new and improved processes
-included to the models, the \acs{CMIP}6 ensemble is arguably more realistic
-than its predecessor generations. However, even the \acs{CMIP}6 models are far
-from fully simulating all aspects and processes of the vastly complex Earth
-system. For this reason, the apparent increase in climate sensitivity in the
-\acs{CMIP}6 models might be wrongly caused by missing processes that cancel out
-the effects of the newly included processes, leading to a biased \ac{ECS} even
-though the models are more realistic. Thus, it is vital to take other sources
-of information into account before answering the question raised above.
+($\range{1.5}{4.5} \unit{K}$) in \acs{AR}6 based on the \acs{CMIP}6 model range
+of $\range{1.8}{5.6} \unit{K}$? An argument for this is that due to the many
+new and improved processes included to the models, the \acs{CMIP}6 ensemble is
+arguably more realistic than its predecessor generations. However, even the
+\acs{CMIP}6 models are far from fully simulating all aspects and processes of
+the full vastly complex Earth system. This could introduce new biases which
+have not been present in earlier \ac{CMIP} models. For example, the apparent
+increase in climate sensitivity in the \acs{CMIP}6 models might be wrongly
+caused by missing processes that cancel out the effects of the newly included
+processes. Thus, it is vital to take other sources of information into account
+before answering the question raised above.
 
 One of the most important sources of information for this purpose is
 undoubtedly observational data. As presented in
-\cref{subsec:02:emergent_constraints}, emergent constraints are a beneficial
-tool to assess the accuracy of climate model projections and reduce associated
-uncertainties with appropriate observations of the Earth system. For \ac{ECS},
-a large variety of different emergent constraints has been developed over the
-years, which we now evaluate on the new \acs{CMIP}6 ensemble. In total we
-assess eleven emergent constraints (selected by their availability in the
-\ac{ESMValTool}), out of which the most are related to cloud feedbacks, since
-these constitute the most important source of uncertainty for \ac{ECS}
-\commentcite{Boucher2013, Flato2013}{see also
-  \cref{subsec:02:climate_feedbacks}}. Since all of the evaluated emergent
-constraints have been derived on the \acs{CMIP}3 or \ac{CMIP}5 ensemble, the
-\ac{CMIP}6 models offer an exciting possibility to perform out-of-sample
-testing using the previously unseen data. We quantify the skill of the emergent
-constraints with three metrics: the coefficient of determination $R^2$ of the
-linear relationship, the statistical significance using a two-sided $t$-test
-based on the Pearson correlation coefficient $r$ (see \cref{eq:02:t}) and the
-constrained range of \ac{ECS} based on the constrained \ac{PDF} (see
-\cref{eq:02:pdf_y_given_x0}). This analysis has already been published in
-\textcite{Schlund2020a}. For this paper, the author of this thesis lead the
-writing and the analysis and contributed the code to reproduce this analysis
-including all figures and tables with the \ac{ESMValTool}. In this chapter, we
-first introduce the data (climate model output and observations) and methods
-used in this study (\cref{sec:05:data_and_methods}). After that, we present the
-eleven emergent constraints on \acs{ECS} and evaluate them on the \acs{CMIP}5
-and \acs{CMIP}6 ensemble (\cref{sec:05:comparison_of_emergent_constraints}).
-Finally, we provide a discussion (\cref{sec:05:discussion}) and a summary of
-the results (\cref{sec:05:summary}).
+\cref{subsec:02:emergent_constraints}, appropriate observations of the Earth
+system can be utilized within the emergent constraints framework to assess the
+accuracy of climate model projections and reduce associated uncertainties. For
+\ac{ECS}, a large variety of different emergent constraints has been developed
+over the years, which we now evaluate on the \acs{CMIP}6 ensemble in order to
+assess whether they still hold for these new climate models. In total we assess
+eleven emergent constraints on \ac{ECS}, out of which the most are related to
+cloud feedbacks since these constitute the most important source of uncertainty
+for \ac{ECS} \commentcite{Boucher2013, Flato2013}{see also
+  \cref{subsec:02:climate_feedbacks}}. A complete list of these emergent
+constraints, which are selected by their availability in the \ac{ESMValTool},
+is given in \cref{tab:05:overview_emergent_constraints}. Since all of the
+evaluated emergent constraints have been derived on the \acs{CMIP}3 or
+\ac{CMIP}5 ensemble, the \ac{CMIP}6 models offer an exciting possibility to
+perform out-of-sample testing using the previously unseen data.
+
+\begin{table}[!t]
+  \centering
+  \hbadness=3500
+  \begin{tabular}{p{0.07\columnwidth} p{0.24\columnwidth} p{0.29\columnwidth}
+      p{0.29\columnwidth}}
+    \toprule
+    Label & Reference & Description of \xaxis{} & Variables and corresponding
+    observations \\
+    \midrule
+    BRI & \textcite{Brient2016} & Sensitivity of shortwave cloud albedo
+    to changes in \acf{SST} [$\si{\pctK{}}$] & \makecell{\tabitem\emph{hur}
+      (ERA-Interim) \\ \tabitem \emph{rsdt} (CERES-EBAF) \\ \tabitem
+      \emph{rsut} (CERES-EBAF) \\ \tabitem \emph{rsutcs} (CERES-EBAF) \\
+      \tabitem \emph{ts} (HadISST)} \\
+    \midrule
+    COX & \textcite{Cox2018} & $\Psi$ (temperature variability metric)
+    [$\si{K}$] &
+    \tabitem \emph{tas} (HadCRUT4) \\
+    \midrule
+    LIP & \textcite{Lipat2017} & Extent of Southern Hemisphere Hadley cell
+    [$\si{\degree}$] & \tabitem \emph{va} (ERA-Interim) \\
+    \midrule
+    SHD & \textcite{Sherwood2014} & $D$-index (large-scale lower-tropospheric
+    mixing) [$\si{1}$] & \tabitem \emph{wap} (ERA-Interim) \\
+    \midrule
+    SHL & \textcite{Sherwood2014} & \acs{LTMI} (\acl{LTMI}) [$\si{1}$] &
+    \makecell{\tabitem \emph{hur} (ERA-Interim) \\ \tabitem \emph{ta}
+      (ERA-Interim) \\ \tabitem \emph{wap} (ERA-Interim)} \\
+    \midrule
+    SHS & \textcite{Sherwood2014} & $S$-index (small-scale lower-tropospheric
+    mixing) [$\si{1}$] & \makecell{\tabitem \emph{hur} (ERA-Interim) \\
+      \tabitem \emph{ta} (ERA-Interim) \\ \tabitem \emph{wap} (ERA-Interim)} \\
+    \midrule
+    SU & \textcite{Su2014} & Error in vertical profile of relative humidity
+    [$\si{1}$] & \tabitem \emph{hur} (AIRS, MLS-Aura) \\
+    \midrule
+    TIH & \textcite{Tian2015} & Tropical mid-tropospheric humidity asymmetry
+    index from AIRS [$\si{\%}$] & \tabitem \emph{hus} (AIRS) \\
+    \midrule
+    TII & \textcite{Tian2015} & Southern ITCZ index from GPCP
+    [$\si{\mmday{}}$] & \tabitem \emph{pr} (GPCP) \\
+    \midrule
+    VOL* & \textcite{Volodin2008} & Difference between tropical and southern
+    midlatitudinal cloud fraction [$\si{\%}$] & \tabitem \emph{clt} (ISCCP
+    D-2) \\
+    \midrule
+    ZHA* & \textcite{Zhai2015} & Seasonal response of marine boundary layer
+    cloud fraction to changes in \acs{SST} [$\si{\pctK{}}$] &
+    \makecell{\tabitem \emph{cl} (CloudSat/CALIPSO) \\ \tabitem \emph{tos}
+      (AMSRE SST) \\ \tabitem \emph{wap} (ERA-Interim)} \\
+    \bottomrule
+  \end{tabular}
+  \caption{Overview of the eleven emergent constraints on the \acf{ECS}
+    evaluated in this chapter. Detailed descriptions of the variables used to
+    calculate the \xaxis{} values of the emergent constraints and the
+    references for the corresponding observations (fourth column) are given in
+    \cref{tab:app:a:overview_variables,tab:app:a:observations}, respectively.
+    For emergent constraints marked with an asterisk (*), the observational
+    value of the original publication is used to calculate the observational
+    constraint. For all others, the observational value is computed with the
+    \acs{ESMValTool}. \AdaptedFrom{Schlund2020a}.}
+  \label{tab:05:overview_emergent_constraints}
+\end{table}
+
+This analysis is already published in \textcite{Schlund2020a}. For this paper,
+the author of this thesis lead the writing and the analysis and implemented the
+code to reproduce this analysis with all figures and tables using the
+\ac{ESMValTool}. In this chapter, we first introduce the data (climate model
+output and observations) and methods used in this study
+(\cref{sec:05:data_and_methods}). After that, we present the eleven emergent
+constraints on \acs{ECS} and evaluate them on the \acs{CMIP}5 and \acs{CMIP}6
+ensemble (\cref{sec:05:comparison_of_emergent_constraints}). Finally, we
+provide a discussion (\cref{sec:05:discussion}) and a summary of the results
+(\cref{sec:05:summary}).
 
 
 \section{Data and Methods}
@@ -66,6 +130,12 @@ the results (\cref{sec:05:summary}).
 In this study we use the output from climate models participating in
 \acs{CMIP}5 and \acs{CMIP}6, shown in \cref{sec:app:cmip_models_in_chapter_5}
 in \cref{tab:app:a:cmip5_models,tab:app:a:cmip6_models}, respectively.
+
+We quantify the skill of the emergent constraints with three metrics: the
+coefficient of determination $R^2$ of the linear relationship, the statistical
+significance using a two-sided $t$-test based on the Pearson correlation
+coefficient $r$ (see \cref{eq:02:t}) and the constrained range of \ac{ECS}
+based on the constrained \ac{PDF} (see \cref{eq:02:pdf_y_given_x0}).
 
 
 \section{Comparison of Emergent Constraints on \acs{ECS} for \acs{CMIP}5 and
@@ -122,6 +192,11 @@ in \cref{tab:app:a:cmip5_models,tab:app:a:cmip6_models}, respectively.
   \caption{xD. \AdaptedFrom{Schlund2020a}.}
   \label{fig:05:bri_cox_lip}
 \end{figure}
+
+\subsection{SHL}
+\label{subsec:05:shl}
+
+This is the \ac{LTMI}!!
 
 
 \section{Discussion}
