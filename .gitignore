@@ -281,8 +281,5 @@ TSWLatexianTemp*
 *.doc#
 *.docx#
 
-# SVG files
-*.svg
-
 # pychache
 __pycache__
