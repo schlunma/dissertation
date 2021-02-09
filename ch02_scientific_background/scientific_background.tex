@@ -152,19 +152,19 @@ of future societal development \autocite{ONeill2013, ONeill2017}. For each
 experiment, a set of emissions and land use changes is calculated from the
 \acp{SSP} \autocite{Riahi2017} which are then used to force the global climate
 models. For \ac{ScenarioMIP}, five different \acp{SSP} are considered, ranging
-from \ac{SSP}1 (sustainability) to \ac{SSP}5 (fossil-fuel development). Each
+from \acs{SSP}1 (sustainability) to \acs{SSP}5 (fossil-fuel development). Each
 \ac{SSP} is combined with a climate outcome (measured as radiative forcing in
 the year 2100) based on a particular forcing pathway that \acp{IAM} have shown
-to be feasible. For example, \ac{SSP}5-8.5 represents a scenario based on a
+to be feasible. For example, \acs{SSP}5-8.5 represents a scenario based on a
 fossil-fuel development with a radiative forcing of $8.5 \unit{W m^{-2}}$ in
-2100 while \ac{SSP}1-2.6 represents a sustainable future with a radiative
+2100 while \acs{SSP}1-2.6 represents a sustainable future with a radiative
 forcing of $2.6 \unit{W m^{-2}}$ in the year 2100. The two scenarios in the
 main category of \ac{ScenarioMIP}, the \emph{Tier 1} experiments, are the
-\ac{SSP}2-4.5 and \ac{SSP}3-7.0 scenarios. In contrast to the \ac{ScenarioMIP}
-experiments, the corresponding \acs{CMIP}5 counterparts \autocite{Taylor2012},
-the so-called \acp{RCP}, only used the radiative forcing in 2100 as only
-dimension to describe the possible futures (\eg{} \ac{RCP}8.5, \ac{RCP}4.5,
-\ac{RCP}2.6, \etc{}).
+\acs{SSP}2-4.5 and \acs{SSP}3-7.0 scenarios. In contrast to the
+\ac{ScenarioMIP} experiments, the corresponding \acs{CMIP}5 counterparts
+\autocite{Taylor2012}, the so-called \acp{RCP}, only used the radiative forcing
+in 2100 as only dimension to describe the possible futures (\eg{} \acs{RCP}8.5,
+\acs{RCP}4.5, \acs{RCP}2.6, \etc{}).
 
 In this thesis, climate model data from the two most recent \ac{CMIP}
 generations is used, \acs{CMIP}5 and \acs{CMIP}6. More detailed information
@@ -278,7 +278,7 @@ such an increase corresponds to a previously unmeasured uncertainty. An example
 for this has recently happened in \acs{CMIP}6: most likely due to changes in
 the cloud representation of the models the spread in the projected \ac{GSAT}
 caused by a doubling of the atmospheric \ac{CO2} concentration has
-substantially increased in \ac{CMIP}6 compared to older \ac{CMIP} generations
+substantially increased in \acs{CMIP}6 compared to older \ac{CMIP} generations
 \autocite{Zelinka2020}. On the other hand, the climate response uncertainty can
 decrease with additional model improvements and better understanding of the
 Earth system (see \cref{fig:02:sources_of_uncertainty}c). Moreover, it can also
@@ -435,12 +435,13 @@ Thus, by comparing
 \cref{eq:02:stefan_boltzmann_law_non_eq,eq:02:stefan_boltzmann_law_lin} the
 climate response $R$ can be expressed as
 \begin{equation}
-  R = -4 \sigma T_0^3 \cdot \Delta T \coloneq \lambda_\text{BB} \cdot \Delta T
+  R = -4 \sigma T_0^3 \cdot \Delta T \coloneq \lambda_\mathtxt{BB} \cdot
+  \Delta T
   \label{eq:02:linear_blackbody_response}
 \end{equation}
-with the blackbody feedback parameter $\lambda_\text{BB} \approx -3.8 \unit{W
-  m^{-2} K^{-1}}$. Results from climate models and analyses of observations
-confirm this linear relationship between $R$ and $\Delta T$
+with the blackbody feedback parameter $\lambda_\mathtxt{BB} \approx -3.8
+\unit{W m^{-2} K^{-1}}$. Results from climate models and analyses of
+observations confirm this linear relationship between $R$ and $\Delta T$
 \autocite{Gregory2004}. However, the value of this linear constant $\lambda$,
 the \emph{climate feedback parameter}, is found to be considerably larger than
 the blackbody response ($\lambda \approx -1.0 \unit{W m^{-2} K^{-1}}$),
@@ -450,14 +451,16 @@ suggest that the radiative effects of these additional feedbacks are also
 proportional to $\Delta T$ \autocite{Gregory2008a},
 \cref{eq:02:linear_blackbody_response} can be adjusted to
 \begin{equation}
-  R = \lambda \cdot \Delta T = \left( \lambda_\text{BB} + \lambda_\text{WV} +
-  \lambda_\text{Albedo} + \lambda_\text{Cloud} + \ldots \right) \cdot \Delta T.
+  R = \lambda \cdot \Delta T = \left( \lambda_\mathtxt{BB} +
+  \lambda_\mathtxt{WV} + \lambda_\mathtxt{Albedo} + \lambda_\mathtxt{Cloud} +
+  \ldots \right) \cdot \Delta T.
   \label{eq:02:linear_response}
 \end{equation}
-$\lambda_\text{WV}$ refers to the water vapor feedback, $\lambda_\text{Albedo}$
-to the snow/ice albedo feedback and $\lambda_\text{Cloud}$ to the cloud
-feedback. Thus, the overall climate feedback parameter $\lambda$ can be written
-as the sum of the individual feedback parameters $\lambda_i$:
+$\lambda_\mathtxt{WV}$ refers to the water vapor feedback,
+$\lambda_\mathtxt{Albedo}$ to the snow/ice albedo feedback and
+$\lambda_\mathtxt{Cloud}$ to the cloud feedback. Thus, the overall climate
+feedback parameter $\lambda$ can be written as the sum of the individual
+feedback parameters $\lambda_i$:
 \begin{equation}
   \lambda = \sum_i \lambda_i.
   \label{eq:02:lambda_as_sum_of_lambdas}
@@ -496,11 +499,11 @@ is computationally expensive as it would require thousands of model years
     \nxcotwo{4} simulation. As given by \cref{eq:02:N_vs_delta_t}, the slope
     of the linear regression (black line) corresponds to the climate feedback
     parameter $\lambda$ and the $y$-intercept corresponds to the radiative
-    forcing $F_\text{4x}$. These can be used to calculate the \acf{ECS} with
+    forcing $F_\mathtxt{4x}$. These can be used to calculate the \acf{ECS} with
     the Gregory regression method according to \cref{eq:02:ecs}
     \autocite{Gregory2004}. \acs{ECS} is equivalently given by the
     \xintercept{} of the linear regression line divided by $2$. Here,
-    $\text{ECS} = 3.14 \unit{K}$.}
+    $\mathtxt{ECS} = 3.14 \unit{K}$.}
   \label{fig:02:gregory_regression}
 \end{figure}
 
@@ -531,10 +534,10 @@ combination of \cref{eq:02:N,eq:02:linear_response} yields
   N = F + \lambda \cdot \Delta T,
   \label{eq:02:N_vs_delta_t}
 \end{equation}
-$F$ is now given by the \yintercept{} of this linear regression ($F_\text{4x}$)
-and $\lambda$ by its slope. Thus, the \ac{ECS} is given by
+$F$ is now given by the \yintercept{} of this linear regression
+($F_\mathtxt{4x}$) and $\lambda$ by its slope. Thus, the \ac{ECS} is given by
 \begin{equation}
-  \text{ECS} = -\frac{F_\text{4x}}{2 \lambda}.
+  \mathtxt{ECS} = -\frac{F_\mathtxt{4x}}{2 \lambda}.
   \label{eq:02:ecs}
 \end{equation}
 The factor of $2$ in the denominator accounts for the fact the traditional
@@ -597,13 +600,13 @@ be used to estimate cloud-related feedback parameters. For this, the net
 replaced with the \ac{CRE}, which is defined as the difference between the
 all-sky (\ie{} with clouds if present) net \ac{TOA} radiation and the clear-sky
 (\ie{} clouds artificially removed) net \ac{TOA} radiation
-\autocite{Andrews2012}. This can be done for the shortwave $N_\text{SWCRE}$ and
-longwave $N_\text{LWCRE}$ components separately, but also for the combined
-effect $N_\text{CRE} = N_\text{SWCRE} + N_\text{LWCRE}$. The slopes in the
-corresponding Gregory regressions are the so-called \emph{\ac{CRE} feedback
-  parameters} $\lambda_\text{SWCRE}$, $\lambda_\text{LWCRE}$ and
-$\lambda_\text{CRE}$, which quantify the change in \ac{CRE} as a response to
-increasing \acp{GSAT}.
+\autocite{Andrews2012}. This can be done for the shortwave $N_\mathtxt{SWCRE}$
+and longwave $N_\mathtxt{LWCRE}$ components separately, but also for the
+combined effect $N_\mathtxt{CRE} = N_\mathtxt{SWCRE} + N_\mathtxt{LWCRE}$. The
+slopes in the corresponding Gregory regressions are the so-called
+\emph{\ac{CRE} feedback parameters} $\lambda_\mathtxt{SWCRE}$,
+$\lambda_\mathtxt{LWCRE}$ and $\lambda_\mathtxt{CRE}$, which quantify the
+change in \ac{CRE} as a response to increasing \acp{GSAT}.
 
 
 \subsection{\acl{TCR}}
@@ -635,7 +638,7 @@ is shown in \cref{fig:02:tcr}.
     with a linear fit over all 140 years. The \acf{TCR} is defined as the
     temperature change $\Delta T$ at the time of \acs{CO2} doubling averaged
     over a 20 year period (illustrated by the vertical dashed lines). Here,
-    $\text{TCR} = 2.35 \unit{K}$ (horizontal dashed line).}
+    $\mathtxt{TCR} = 2.35 \unit{K}$ (horizontal dashed line).}
   \label{fig:02:tcr}
 \end{figure}
 
@@ -661,26 +664,26 @@ stabilize \autocite{Gregory2009}. By applying the definition of \ac{TCR}
 combining \cref{eq:02:N_vs_delta_t,eq:02:ocean_heat_uptake}, \ac{TCR} can be
 estimated as
 \begin{equation}
-  \text{TCR} = \frac{F_\text{2x}}{\kappa - \lambda},
+  \mathtxt{TCR} = \frac{F_\mathtxt{2x}}{\kappa - \lambda},
   \label{eq:02:tcr}
 \end{equation}
-where $F_\text{2x}$ is the radiative forcing induced by a doubling of the
+where $F_\mathtxt{2x}$ is the radiative forcing induced by a doubling of the
 atmospheric \ac{CO2} concentration.
 
 This equation can be used to derive a relationship between \ac{TCR} and
-\ac{ECS}. Writing $\text{ECS} = -F_\text{2x} / \lambda$ and assuming path
+\ac{ECS}. Writing $\mathtxt{ECS} = -F_\mathtxt{2x} / \lambda$ and assuming path
 independence of the forcing (\ie{} the resulting radiative forcing from the
 \onepctcotwo{} and \nxcotwo{2} runs are comparable) gives
 \begin{equation}
-  \text{TCR} = \frac{F_\text{2x} \cdot \text{ECS}}{F_\text{2x} + \kappa \cdot
-    \text{ECS}},
+  \mathtxt{TCR} = \frac{F_\mathtxt{2x} \cdot \mathtxt{ECS}}{F_\mathtxt{2x} +
+    \kappa \cdot \mathtxt{ECS}},
   \label{eq:02:tcr_vs_ecs}
 \end{equation}
 which demonstrates the non-linear connection between \ac{TCR} and \ac{ECS}
 \autocite{Gregory2008, Nijsse2020}. Since $\lambda < 0$ and $\kappa > 0$,
 \cref{eq:02:tcr} implies that the equilibrium response \ac{ECS} is (as
-expected) larger than transient response \ac{TCR}, \ie{} $\text{ECS} >
-\text{TCR}$.
+expected) larger than transient response \ac{TCR}, \ie{} $\mathtxt{ECS} >
+\mathtxt{TCR}$.
 
 
 \section{The Global Carbon Cycle}

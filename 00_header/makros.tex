@@ -24,10 +24,14 @@
 \newcommand{\ThePlace}{Oberpfaffenhofen}
 \newcommand{\TheMonth}{January 2021}
 
+% Colors
+\colorlet{BrownRed}{red!50!black}
+
 % Figure scales
 \newcommand{\LargeFigureWidth}{0.97\columnwidth}
 \newcommand{\FigureWidth}{0.70\columnwidth}
 \newcommand{\SubfigureWidth}{0.48\columnwidth}
+\newcommand{\SmallSubfigureWidth}{0.47\columnwidth}
 
 % Abbreviations
 \newcommand{\eg}{\mbox{e.g.\@}}
@@ -56,9 +60,43 @@
 \newcommand{\unit}[1]{\ensuremath{\, \si{#1}}}
 \newcommand{\pmrange}[2]{\ensuremath{#1 \pm #2}}
 \newcommand{\cond}[2]{\ensuremath{P(#1|#2)}}
+\newcommand{\mathtxt}{\textnormal}
 
 % Other commands
-\newcommand{\range}[2]{#1\text{--}#2}
+\newcommand{\range}[2]{#1\textnormal{--}#2}
 \newcommand{\commentcite}[2]{(\cite{#1}; #2)}
 \newcommand{\nxcotwo}[1]{#1x\acs{CO2}}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+% Tables
+\newcommand{\EChead}[2]{\makecell[tc]{#1 \\ {[$\si{#2}$]}}}
+
+% CSV table styles
+\csvstyle{ECSAndTCRTable}{
+  head to column names,
+  tabular=l l r r,
+  table head=\toprule Model & Index used in plots & \acs{ECS} {[$\si{K}$]} &
+  \acs{TCR} {[$\si{K}$]} \\ \midrule,
+  table foot=\bottomrule,
+  before line=\hspace{-0.5\tabcolsep}, % Avoid indentation for first two rows
+  late after line=\ifthenelse{\equal{\csvcoli}{Multi-model mean}}{\\
+    \midrule}{\\},
+}
+\csvstyle{EmergentConstraintsPart1Table}{
+  head to column names,
+  tabular=l l r r r r r r r,
+  table head=\toprule Model & Index & \EChead{\acs{ECS}}{K} &
+  \EChead{BRI}{\pctK{}} & \EChead{COX}{K} & \EChead{LIP}{\degree} &
+  \EChead{SHD}{1} & \EChead{SHL}{1} & \EChead{SHS}{1} \\ \midrule,
+  table foot=\bottomrule,
+  before line=\hspace{-0.5\tabcolsep}, % Avoid indentation for first two rows
+}
+\csvstyle{EmergentConstraintsPart2Table}{
+  head to column names,
+  tabular=l l r r r r r r,
+  table head=\toprule Model & Index &\EChead{\acs{ECS}}{K} & \EChead{SU}{1} &
+  \EChead{TIH}{\%} & \EChead{TII}{\mmday{}} & \EChead{VOL}{\%} &
+  \EChead{ZHA}{\pctK{}} \\ \midrule,
+  table foot=\bottomrule,
+  before line=\hspace{-0.5\tabcolsep}, % Avoid indentation for first two rows
+}

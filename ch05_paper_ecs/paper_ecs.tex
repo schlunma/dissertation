@@ -38,17 +38,27 @@ accuracy of climate model projections and reduce associated uncertainties. For
 \ac{ECS}, a large variety of different emergent constraints has been developed
 over the years, which we now evaluate on the \acs{CMIP}6 ensemble in order to
 assess whether they still hold for these new climate models. In total we assess
-eleven emergent constraints on \ac{ECS}, out of which the most are related to
-cloud feedbacks since these constitute the most important source of uncertainty
-for \ac{ECS} \commentcite{Boucher2013, Flato2013}{see also
-  \cref{subsec:02:climate_feedbacks}}. A complete list of these emergent
-constraints, which are selected by their availability in the \ac{ESMValTool},
-is given in \cref{tab:05:overview_emergent_constraints}. Since all of the
-evaluated emergent constraints have been derived on the \acs{CMIP}3 or
-\ac{CMIP}5 ensemble, the \ac{CMIP}6 models offer an exciting possibility to
-perform out-of-sample testing using the previously unseen data.
+eleven emergent constraints on \ac{ECS} (see
+\cref{tab:05:overview_emergent_constraints}), out of which the most are related
+to cloud feedbacks since these constitute the most important source of
+uncertainty for \ac{ECS} \commentcite{Boucher2013, Flato2013}{see also
+  \cref{subsec:02:climate_feedbacks}}. Since all of the evaluated emergent
+constraints have been derived on the \acs{CMIP}3 or \acs{CMIP}5 ensemble, the
+\acs{CMIP}6 models offer an exciting possibility to perform out-of-sample
+testing using the previously unseen data.
 
-\begin{table}[!t]
+This analysis is already published in \textcite{Schlund2020a}. For this paper,
+the author of this thesis lead the writing and the analysis and implemented the
+code to reproduce this analysis with all figures and tables using the
+\ac{ESMValTool}. In this chapter, we first introduce the data (climate model
+output and observations) and methods used in this study
+(\cref{sec:05:data_and_methods}). After that, we present the eleven emergent
+constraints on \acs{ECS} and evaluate them on the \acs{CMIP}5 and \acs{CMIP}6
+ensemble (\cref{sec:05:comparison_of_emergent_constraints}). Finally, we
+provide a discussion (\cref{sec:05:discussion}) and a summary of the results
+(\cref{sec:05:summary}).
+
+\begin{table}[p]
   \centering
   \hbadness=3500
   \begin{tabular}{p{0.07\columnwidth} p{0.24\columnwidth} p{0.29\columnwidth}
@@ -112,30 +122,38 @@ perform out-of-sample testing using the previously unseen data.
   \label{tab:05:overview_emergent_constraints}
 \end{table}
 
-This analysis is already published in \textcite{Schlund2020a}. For this paper,
-the author of this thesis lead the writing and the analysis and implemented the
-code to reproduce this analysis with all figures and tables using the
-\ac{ESMValTool}. In this chapter, we first introduce the data (climate model
-output and observations) and methods used in this study
-(\cref{sec:05:data_and_methods}). After that, we present the eleven emergent
-constraints on \acs{ECS} and evaluate them on the \acs{CMIP}5 and \acs{CMIP}6
-ensemble (\cref{sec:05:comparison_of_emergent_constraints}). Finally, we
-provide a discussion (\cref{sec:05:discussion}) and a summary of the results
-(\cref{sec:05:summary}).
-
 
 \section{Data and Methods}
 \label{sec:05:data_and_methods}
 
 In this study we use the output from climate models participating in
-\acs{CMIP}5 and \acs{CMIP}6, shown in \cref{sec:app:cmip_models_in_chapter_5}
-in \cref{tab:app:a:cmip5_models,tab:app:a:cmip6_models}, respectively.
-
-We quantify the skill of the emergent constraints with three metrics: the
-coefficient of determination $R^2$ of the linear relationship, the statistical
-significance using a two-sided $t$-test based on the Pearson correlation
-coefficient $r$ (see \cref{eq:02:t}) and the constrained range of \ac{ECS}
-based on the constrained \ac{PDF} (see \cref{eq:02:pdf_y_given_x0}).
+\acs{CMIP}5 and \acs{CMIP}6 as shown in
+\cref{tab:app:a:cmip5_models,tab:app:a:cmip6_models}, respectively. In
+addition, for each emergent constraint at least one observational dataset is
+used to calculate the observational constraint. A complete list of these
+datasets is given in \cref{tab:05:overview_emergent_constraints} and in
+\cref{tab:app:a:observations}. Following other similar studies, we calculate
+\ac{ECS} with the Gregory regression method \autocite{Gregory2004}, which is
+described in detail in \cref{subsec:02:ecs}. An overview of the eleven emergent
+constraints on \ac{ECS} analyzed in this study including the variables required
+for their calculations is given in \cref{tab:05:overview_emergent_constraints}
+and \cref{sec:05:comparison_of_emergent_constraints}. We chose these particular
+emergent constraints since these were already implemented in the
+\ac{ESMValTool} at the time of writing this study, which greatly facilitated
+this analysis. For all emergent constraints, we use the historical simulations
+of \acs{CMIP}5 and \acs{CMIP}6 in order to ensure maximum agreement with the
+observational data. If necessary, the historical simulation of \acs{CMIP}5 is
+extended after its final year 2005 with data from the \acs{RCP}8.5 scenario
+\autocite{Riahi2011}. Note that we only use data through 2014, during which
+time all \ac{RCP} scenarios behave similarly and the choice of the scenario is
+not expected to affect the results considerably. Such an extension is not
+needed for \acs{CMIP}6 models as their historical simulations cover a longer
+time period until 2014. We quantify the skill of the emergent constraints with
+three metrics: the coefficient of determination $R^2$ of the linear
+relationship, the statistical significance using a two-sided $t$-test based on
+the Pearson correlation coefficient $r$ (see \cref{eq:02:t}) and the
+constrained range of \ac{ECS} based on the constrained \ac{PDF} (see
+\cref{eq:02:pdf_y_given_x0}).
 
 
 \section{Comparison of Emergent Constraints on \acs{ECS} for \acs{CMIP}5 and
@@ -148,55 +166,204 @@ based on the constrained \ac{PDF} (see \cref{eq:02:pdf_y_given_x0}).
 
 \begin{figure}[p]
   \centering
-  \begin{subfigure}[b]{\SubfigureWidth{}}
+  \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
       ch05_paper_ecs/figs/scatterplot_merged_training_data_BRI.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:a}
   \end{subfigure}
   ~
-  \begin{subfigure}[b]{\SubfigureWidth{}}
+  \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
       ch05_paper_ecs/figs/target_distribution_training_data_BRI.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:b}
   \end{subfigure}
   \\
-  \begin{subfigure}[b]{\SubfigureWidth{}}
+  \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
       ch05_paper_ecs/figs/scatterplot_merged_training_data_COX.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:c}
   \end{subfigure}
   ~
-  \begin{subfigure}[b]{\SubfigureWidth{}}
+  \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
   ch05_paper_ecs/figs/target_distribution_training_data_COX.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:d}
   \end{subfigure}
   \\
-  \begin{subfigure}[b]{\SubfigureWidth{}}
+  \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
       ch05_paper_ecs/figs/scatterplot_merged_training_data_LIP.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:e}
   \end{subfigure}
   ~
-  \begin{subfigure}[b]{\SubfigureWidth{}}
+  \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
   ch05_paper_ecs/figs/target_distribution_training_data_LIP.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:f}
   \end{subfigure}
-  \caption{xD. \AdaptedFrom{Schlund2020a}.}
+  \caption{Emergent constraints BRI, COX and LIP applied to the \acs{CMIP}5
+    (blue) and \acs{CMIP}6 ensemble (orange). (a), (c), (e) Emergent
+    relationships (solid lines) for the \acs{CMIP} models (numbers; see
+    \cref{tab:app:a:cmip5_models,tab:app:a:cmip6_models} for details) with
+    their standard prediction errors (blue and orange shaded areas; see
+    \cref{eq:02:spe}). The vertical dashed line corresponds to the
+    observational reference with its standard error (gray shaded area). The
+    horizontal dashed lines show the best estimates of the constrained
+    \acf{ECS} and the colored points mark the \aclp{MMM} for \acs{CMIP}5
+    (blue) and \acs{CMIP}6 (orange). (b), (d), (f) \Aclp{PDF} for \acs{ECS} of
+    the emergent constraints (solid lines; see \cref{eq:02:pdf_y_given_x0})
+    and the unconstrained model ensembles (histograms). Due to the
+    availability of data, the histograms may differ for the different emergent
+    constraints. \AdaptedFrom{Schlund2020a}.}
   \label{fig:05:bri_cox_lip}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_SHD.pdf}
+    \caption{}
+    \label{fig:05:shd_shl_shs:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/target_distribution_training_data_SHD.pdf}
+    \caption{}
+    \label{fig:05:shd_shl_shs:b}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_SHL.pdf}
+    \caption{}
+    \label{fig:05:shd_shl_shs:c}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/target_distribution_training_data_SHL.pdf}
+    \caption{}
+    \label{fig:05:shd_shl_shs:d}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_SHS.pdf}
+    \caption{}
+    \label{fig:05:shd_shl_shs:e}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/target_distribution_training_data_SHS.pdf}
+    \caption{}
+    \label{fig:05:shd_shl_shs:f}
+  \end{subfigure}
+  \caption{As in \cref{fig:05:bri_cox_lip} but for the emergent constraints
+    SHD, SHL and SHS. \AdaptedFrom{Schlund2020a}.}
+  \label{fig:05:shd_shl_shs}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_SU.pdf}
+    \caption{}
+    \label{fig:05:su_tih_tii:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/target_distribution_training_data_SU.pdf}
+    \caption{}
+    \label{fig:05:su_tih_tii:b}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_TIH.pdf}
+    \caption{}
+    \label{fig:05:su_tih_tii:c}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/target_distribution_training_data_TIH.pdf}
+    \caption{}
+    \label{fig:05:su_tih_tii:d}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_TII.pdf}
+    \caption{}
+    \label{fig:05:su_tih_tii:e}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/target_distribution_training_data_TII.pdf}
+    \caption{}
+    \label{fig:05:su_tih_tii:f}
+  \end{subfigure}
+  \caption{As in \cref{fig:05:bri_cox_lip} but for the emergent constraints
+    SU, TIH and TII. \AdaptedFrom{Schlund2020a}.}
+  \label{fig:05:su_tih_tii}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_VOL.pdf}
+    \caption{}
+    \label{fig:05:vol_zha:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/target_distribution_training_data_VOL.pdf}
+    \caption{}
+    \label{fig:05:vol_zha:b}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_ZHA.pdf}
+    \caption{}
+    \label{fig:05:vol_zha:c}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch05_paper_ecs/figs/target_distribution_training_data_ZHA.pdf}
+    \caption{}
+    \label{fig:05:vol_zha:d}
+  \end{subfigure}
+  \caption{As in \cref{fig:05:bri_cox_lip} but for the emergent constraints
+    VOL and ZHA. \AdaptedFrom{Schlund2020a}.}
+  \label{fig:05:vol_zha}
 \end{figure}
 
 \subsection{SHL}
 \label{subsec:05:shl}
 
 This is the \ac{LTMI}!!
+
+\begin{center}
+  \newcommand{\testiii}{YOTHISISATEST!}
+  hi
+  \testiii{}
+\end{center}
 
 
 \section{Discussion}

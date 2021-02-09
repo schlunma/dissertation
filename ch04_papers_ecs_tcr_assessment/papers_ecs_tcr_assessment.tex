@@ -85,11 +85,11 @@ results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
     linear fit of the corresponding pre-industrial control run is subtracted
     from the \nxcotwo{4} simulation. A linear regression can be used to
     calculate the \acf{ECS} according to \cref{eq:02:ecs} with the radiative
-    forcing $F_\text{4x}$ (\yintercept) and the climate feedback parameter
+    forcing $F_\mathtxt{4x}$ (\yintercept) and the climate feedback parameter
     $\lambda$ (slope) for all 150 years (black line), which results in
-    $\text{ECS} = 3.74 \unit{K}$. Due to non-linear effects, the exact value
-    of \acs{ECS} depends on the years considered for the Gregory regression
-    (see \cref{subsec:02:ecs} and
+    $\mathtxt{ECS} = 3.74 \unit{K}$. Due to non-linear effects, the exact
+    value of \acs{ECS} depends on the years considered for the Gregory
+    regression (see \cref{subsec:02:ecs} and
     \cref{fig:02:gregory_regression_different_years}): Using only the first 20
     years of the simulation (blue circles and line) yields a considerably
     smaller \acs{ECS} than using only the last 130 years of the simulation
@@ -100,8 +100,8 @@ results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
 \begin{table}[!t]
   \centering
   \csvreader[ECSAndTCRTable]{
-    ch04_papers_ecs_tcr_assessment/data/CMIP5_ecs-tcr.csv}{}{
-    \dataset & \idx & \ecs & \tcr}
+    ch04_papers_ecs_tcr_assessment/data/cmip5_ecs-tcr.csv}{}{
+    \dataset & $\idx$ & $\ecs$ & $\tcr$}
   \caption{\acf{ECS} and \acf{TCR} evaluated for the \acs{CMIP}5 models.
     Details on the calculation of \acs{ECS} and \acs{TCR} are given in
     \cref{subsec:02:ecs} and \cref{subsec:02:tcr}, respectively. The \acf{MMM}
@@ -117,8 +117,8 @@ results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
 \begin{table}[p]
   \centering
   \csvreader[ECSAndTCRTable]{
-    ch04_papers_ecs_tcr_assessment/data/CMIP6_ecs-tcr.csv}{}{
-    \dataset & \idx & \ecs & \tcr}
+    ch04_papers_ecs_tcr_assessment/data/cmip6_ecs-tcr.csv}{}{
+    \dataset & $\idx$ & $\ecs$ & $\tcr$}
   \caption{As in \cref{tab:04:ecs_tcr_cmip5} but for the \acs{CMIP}6 models.
     \AdaptedFrom{Meehl2020}.}
   \label{tab:04:ecs_tcr_cmip6}
@@ -137,7 +137,7 @@ difference is about $17 \unit{\%}$ ($0.36 \unit{K}$ in \acs{CMIP}5 to $0.42
 \unit{K}$ in \acs{CMIP}6). The main reason for the increased \ac{MMM} and
 spread in the \acs{CMIP}6 ensemble is the existence of several models with very
 high values of \ac{ECS} and \ac{TCR}. In addition to that, there also exists a
-number of models with very low values of \ac{ECS}. Therefore, the \ac{CMIP}6
+number of models with very low values of \ac{ECS}. Therefore, the \acs{CMIP}6
 model ranges of \ac{ECS} and \ac{TCR} are well outside the corresponding
 assessed ranges given by the latest published \ac{AR} of the \ac{IPCC} from
 2013 \autocite{Stocker2013} with $\range{1.8}{5.6} \unit{K}$ for \ac{ECS}
@@ -174,8 +174,8 @@ in a \acs{CMIP}6  \ac{ECS} model range of $\range{1.8}{5.6} \unit{K}$ (as of
 \TheMonth{}). This increase in range is particularly relevant for the upper
 bound, which is about $1.1 \unit{K}$ higher than the assessed upper bound of
 $4.5 \unit{K}$. Moreover, it is not only a small fraction of models that
-exceeds this upper bound: out of the 42 analyzed \ac{CMIP}6 models, a third (14
-models) has an \ac{ECS} above $4.5 \unit{K}$. In addition to our analysis,
+exceeds this upper bound: out of the 42 analyzed \acs{CMIP}6 models, a third
+(14 models) has an \ac{ECS} above $4.5 \unit{K}$. In addition to our analysis,
 several modeling centers independently confirmed high \ac{ECS} values in their
 models \autocite{Andrews2019, Gettelman2019, Wyser2020}. A list of possible
 reasons for the increased climate sensitivity in the \acs{CMIP}6 ensemble
@@ -194,7 +194,7 @@ feedback over the Southern Ocean is given in
     green bars represent the modeled ranges of \acs{ECS} and \acs{TCR},
     respectively, from the different climate model ensembles of the \acf{CMIP}
     with the corresponding \acf{MMM} illustrated with the horizontal black
-    lines (the green dot represents output from a single climate model). The
+    lines (the green circle represents output from a single climate model). The
     numbers correspond to individual \acs{CMIP}5 and \acs{CMIP}6 models (see
     \cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6}).
     \AdaptedFrom{Meehl2020}.}
@@ -227,7 +227,7 @@ that are present the \acs{CMIP}6 ensemble.
 \label{sec:04:possible_reasons_high_ecs_cmip6}
 
 Because of the massive political and societal relevance of \ac{ECS}, its
-apparent increase in the \ac{CMIP}6 ensemble is currently one of the most
+apparent increase in the \acs{CMIP}6 ensemble is currently one of the most
 important questions for the entire climate modeling community. For this reason,
 this section discusses possible reasons for the increased climate sensitivity
 in \acs{CMIP}6.

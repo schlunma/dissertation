@@ -29,31 +29,11 @@
 \cfoot*{\pagemark}
 \ofoot*{}
 
-% Footnotes
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-
-% Colors
-\colorlet{BrownRed}{red!50!black}
-
-% New theorem
-\newtheorem{definition}{Definition}[chapter]
-\theoremstyle{definition}
-
 % Absolute values
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 % Tables
 \tymin = 0.2\columnwidth
-\csvstyle{ECSAndTCRTable}{
-  head to column names,
-  tabular=l l r r,
-  table head=\toprule Model & Index used in plots & \acs{ECS} {[$\si{K}$]} &
-  \acs{TCR} {[$\si{K}$]} \\ \midrule,
-  table foot=\bottomrule,
-  before line=\hspace{-0.5\tabcolsep}, % Avoid indentation for first two rows
-  late after line=\ifthenelse{\equal{\csvcoli}{Multi-model mean}}{\\
-    \midrule}{\\},
-}
 \renewcommand{\cellalign}{tl}
 
 % Biblatex
@@ -128,7 +108,6 @@
 }
 
 % Cleveref
-\crefname{enumi}{step}{steps} % Use "step" when referencing an enum item
 \newcommand{\crefrangeconjunction}{--}
 
 % PDF version of document

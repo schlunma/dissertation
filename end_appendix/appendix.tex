@@ -173,35 +173,57 @@ This section contains supplementary tables for \cref{ch:05:paper_ecs}
     UKESM1-0-LL & 70 & \textcite{Sellar2019} \\
     \bottomrule
   \end{tabulary}
-  \caption{As in \cref{tab:app:a:cmip5_models}, but for the \acs{CMIP}6 models.
+  \caption{As in \cref{tab:app:a:cmip5_models} but for the \acs{CMIP}6 models.
     \AdaptedFrom{Schlund2020a}.}
   \label{tab:app:a:cmip6_models}
 \end{table}
 
 \begin{table}[p]
   \centering
-  \begin{tabulary}{\columnwidth}{L L L}
-    \toprule
-    A & B & C \\
-    \midrule
-    111111111111111111111111111111111111111111111 & 2 & 3 \\
-    \bottomrule
-  \end{tabulary}
-  \caption{\acs{CMIP}5. \AdaptedFrom{Schlund2020a}.}
-  \label{tab:app:a:emergent_constraints_cmip5}
+  \csvreader[EmergentConstraintsPart1Table]{
+    ch05_paper_ecs/data/cmip5_emergent_constraints.csv}{}{
+    \dataset & $\idx$ & $\ECS$ & $\BRI$ & $\COX$ & $\LIP$ & $\SHD$ & $\SHL$ &
+    $\SHS$}
+  \caption{All \acs{CMIP}5 models used in \cref{ch:05:paper_ecs}
+    (\nameref*{ch:05:paper_ecs}) including their \acf{ECS} and \xaxis{} values
+    for the emergent constraints BRI, COX, LIP, SHD, SHL and SHS. More details
+    on the emergent constraints are given in
+    \cref{tab:05:overview_emergent_constraints}. The specified index
+    corresponds to the index used in the associated figures.
+    \AdaptedFrom{Schlund2020a}.}
+  \label{tab:app:a:cmip5_emergent_constraints_part1}
 \end{table}
 
 \begin{table}[p]
   \centering
-  \begin{tabulary}{\columnwidth}{L L L}
-    \toprule
-    A & B & C \\
-    \midrule
-    111111111111111111111111111111111111111111111 & 2 & 3 \\
-    \bottomrule
-  \end{tabulary}
-  \caption{\acs{CMIP}6. \AdaptedFrom{Schlund2020a}.}
-  \label{tab:app:a:emergent_constraints_cmip6}
+  \csvreader[EmergentConstraintsPart2Table]{
+    ch05_paper_ecs/data/cmip5_emergent_constraints.csv}{}{
+    \dataset & $\idx$ & $\ECS$ & $\SU$ & $\TIH$ & $\TII$ & $\VOL$ & $\ZHA$}
+  \caption{As in \cref{tab:app:a:cmip5_emergent_constraints_part1} but for the
+    emergent constraints SU, TIH, TII, VOL and ZHA.
+    \AdaptedFrom{Schlund2020a}.}
+  \label{tab:app:a:cmip5_emergent_constraints_part2}
+\end{table}
+
+\begin{table}[p]
+  \centering
+  \csvreader[EmergentConstraintsPart1Table]{
+    ch05_paper_ecs/data/cmip6_emergent_constraints.csv}{}{
+    \dataset & $\idx$ & $\ECS$ & $\BRI$ & $\COX$ & $\LIP$ & $\SHD$ & $\SHL$ &
+    $\SHS$}
+  \caption{As in \cref{tab:app:a:cmip5_emergent_constraints_part1} but for the
+    \acs{CMIP}6 models. \AdaptedFrom{Schlund2020a}.}
+  \label{tab:app:a:cmip6_emergent_constraints_part1}
+\end{table}
+
+\begin{table}[p]
+  \centering
+  \csvreader[EmergentConstraintsPart2Table]{
+    ch05_paper_ecs/data/cmip6_emergent_constraints.csv}{}{
+    \dataset & $\idx$ & $\ECS$ & $\SU$ & $\TIH$ & $\TII$ & $\VOL$ & $\ZHA$}
+  \caption{As in \cref{tab:app:a:cmip5_emergent_constraints_part2} but for the
+  \acs{CMIP}6 models. \AdaptedFrom{Schlund2020a}.}
+  \label{tab:app:a:cmip6_emergent_constraints_part2}
 \end{table}
 
 
