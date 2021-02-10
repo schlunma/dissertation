@@ -36,8 +36,9 @@
 % Abbreviations
 \newcommand{\eg}{\mbox{e.g.\@}}
 \newcommand{\Eg}{\mbox{E.g.\@}}
-\newcommand{\etc}{etc.\@}
+\newcommand{\etc}{\mbox{etc.\@}}
 \newcommand{\ie}{\mbox{i.e.\@}}
+\newcommand{\stddev}{\mbox{std.\@ dev.\@}}
 \newcommand{\onepctcotwo}{1\%\acs{CO2}}
 \newcommand{\xaxis}{$x$-axis}
 \newcommand{\yaxis}{$y$-axis}
@@ -58,7 +59,7 @@
 \newcommand{\pctK}{\ensuremath{\% \, K^{-1}}}
 \newcommand{\dd}{\ensuremath{\, d}}
 \newcommand{\unit}[1]{\ensuremath{\, \si{#1}}}
-\newcommand{\pmrange}[2]{\ensuremath{#1 \pm #2}}
+\newcommand{\pmrangeunit}[3]{\ensuremath{\left( #1 \pm #2 \right) \unit{#3}}}
 \newcommand{\cond}[2]{\ensuremath{P(#1|#2)}}
 \newcommand{\mathtxt}{\textnormal}
 
@@ -69,7 +70,10 @@
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 % Tables
-\newcommand{\EChead}[2]{\makecell[tc]{#1 \\ {[$\si{#2}$]}}}
+\newcommand{\ignorecolumntype}[2]{\multicolumn{1}{#1}{#2}}
+\newcommand{\echead}[2]{\makecell[tc]{#1 \\ {[$\si{#2}$]}}}
+\newcommand{\ecreshead}[2]{\ignorecolumntype{c}{\makecell[tc]{#1 \\ #2}}}
+\newcolumntype{y}[1]{>{\raggedleft \arraybackslash $}p{#1\columnwidth}<{$}}
 
 % CSV table styles
 \csvstyle{ECSAndTCRTable}{
@@ -85,18 +89,18 @@
 \csvstyle{EmergentConstraintsPart1Table}{
   head to column names,
   tabular=l l r r r r r r r,
-  table head=\toprule Model & Index & \EChead{\acs{ECS}}{K} &
-  \EChead{BRI}{\pctK{}} & \EChead{COX}{K} & \EChead{LIP}{\degree} &
-  \EChead{SHD}{1} & \EChead{SHL}{1} & \EChead{SHS}{1} \\ \midrule,
+  table head=\toprule Model & Index & \echead{\acs{ECS}}{K} &
+  \echead{BRI}{\pctK{}} & \echead{COX}{K} & \echead{LIP}{\degree} &
+  \echead{SHD}{1} & \echead{SHL}{1} & \echead{SHS}{1} \\ \midrule,
   table foot=\bottomrule,
   before line=\hspace{-0.5\tabcolsep}, % Avoid indentation for first two rows
 }
 \csvstyle{EmergentConstraintsPart2Table}{
   head to column names,
   tabular=l l r r r r r r,
-  table head=\toprule Model & Index &\EChead{\acs{ECS}}{K} & \EChead{SU}{1} &
-  \EChead{TIH}{\%} & \EChead{TII}{\mmday{}} & \EChead{VOL}{\%} &
-  \EChead{ZHA}{\pctK{}} \\ \midrule,
+  table head=\toprule Model & Index &\echead{\acs{ECS}}{K} & \echead{SU}{1} &
+  \echead{TIH}{\%} & \echead{TII}{\mmday{}} & \echead{VOL}{\%} &
+  \echead{ZHA}{\pctK{}} \\ \midrule,
   table foot=\bottomrule,
   before line=\hspace{-0.5\tabcolsep}, % Avoid indentation for first two rows
 }

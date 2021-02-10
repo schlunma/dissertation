@@ -357,13 +357,65 @@ constrained range of \ac{ECS} based on the constrained \ac{PDF} (see
 \subsection{SHL}
 \label{subsec:05:shl}
 
-This is the \ac{LTMI}!!
+I like \ac{LTMI}!!
 
-\begin{center}
-  \newcommand{\testiii}{YOTHISISATEST!}
-  hi
-  \testiii{}
-\end{center}
+\begin{table}[t]
+  \centering
+  \begin{tabular}{p{0.06\columnwidth} p{0.34\columnwidth} y{0.12} y{0.12}
+      y{0.1} y{0.1}}
+    \toprule
+    Label & \ecreshead{\acs{ECS}}{(original publication)} &
+    \ecreshead{\acs{ECS} [$\si{K}$]}{(\acs{CMIP}5)} & \ecreshead{\acs{ECS}
+      [$\si{K}$]}{(\acs{CMIP}6)} & \ecreshead{$p$}{(\acs{CMIP}5)} &
+    \ecreshead{$p$}{(\acs{CMIP}6)} \\
+    \midrule
+    BRI & most likely $4.0 \unit{K}$, $< 2.30 \unit{K}$ very unlikely ($90
+    \unit{\%}$ confidence) & 3.72
+    \pm 0.59 & 4.32 \pm 1.07 & 0.0005 & 0.0355 \\
+    COX & $\pmrangeunit{2.8}{0.6}{K}$ & 3.03 \pm 0.73 & 3.71 \pm 1.09 & 0.0032
+    & 0.5415 \\
+    LIP & no best estimate given & 2.97 \pm 0.75 & 3.75 \pm 1.11 & 0.0228 &
+    0.6791 \\
+    SHD & none --- see SHL & 3.65 \pm 0.64 & 3.77 \pm 1.06 & 0.0037 & 0.2805 \\
+    SHL & most likely $4 \unit{K}$, lower limit $3 \unit{K}$ & 3.42 \pm 0.65 &
+    3.67 \pm 1.06 & 0.0002 & 0.0138 \\
+    SHS & none --- see SHL & 3.07 \pm 0.73 & 3.48 \pm 1.07 & 0.0647 & 0.0396 \\
+    SU & most likely $4 \unit{K}$, lower limit $3 \unit{K}$ & 3.30 \pm 0.88 &
+    3.77 \pm 1.35 & 0.1676 & 0.1935 \\
+    TIH & most likely $4.0 \unit{K}$ & 3.88 \pm 0.75 & 4.15 \pm 1.10 & 0.0089
+    & 0.1348 \\
+    TII & most likely $4.0 \unit{K}$ & 3.87 \pm 0.67 & 3.84 \pm 1.09 & 0.0013
+    & 0.8236 \\
+    VOL & $\pmrangeunit{3.6}{0.4}{K}$ (\stddev{}) & 3.74 \pm 0.64 & 4.21 \pm
+    1.04 & 0.0004 & 0.0056 \\
+    ZHA & $\pmrangeunit{3.90}{0.45}{K}$ (\stddev{}) & 3.35 \pm 0.74 & 3.79 \pm
+    0.67 & 0.2567 & < 0.0001 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Overview of the constrained \acf{ECS} ranges and $p$-values for all
+    eleven analyzed emergent constraints. If not further specified, the
+    uncertainty ranges correspond to the $66 \unit{\%}$ confidence intervals
+    ($\range{17}{83} \unit{\%}$). For \acs{CMIP}5 and \acs{CMIP}6, these are
+    evaluated from the \acl{PDF} given by \cref{eq:02:pdf_y_given_x0} (see also
+    the right columns of \cref{fig:05:bri_cox_lip,fig:05:shd_shl_shs,%
+      fig:05:su_tih_tii,fig:05:vol_zha}). Note that even though \acs{CMIP}5
+    models were used for some constraints in the original publications, the
+    constrained ranges in the second and third column might differ due to the
+    use of a different subset of climate models (in this study, we use output
+    from all \acs{CMIP} models that is publicly available; see
+    \cref{tab:app:a:cmip5_emergent_constraints_part1,%
+      tab:app:a:cmip5_emergent_constraints_part2,%
+      tab:app:a:cmip6_emergent_constraints_part1,%
+      tab:app:a:cmip6_emergent_constraints_part2} for details). The $p$-values
+    describing the significance of the emergent relationships are defined as
+    the probability to obtain an absolute correlation coefficient $\abs*{r}$ or
+    higher under the null hypothesis that the true underlying correlation
+    coefficient between the predictor and \acs{ECS} is zero. Smaller $p$-values
+    point to higher significance and vice versa (see
+    \cref{subsec:02:emergent_constraints} for details).
+    \AdaptedFrom{Schlund2020a}.}
+  \label{tab:05:overview_results}
+\end{table}
 
 
 \section{Discussion}
