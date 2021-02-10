@@ -104,8 +104,8 @@ provide a discussion (\cref{sec:05:discussion}) and a summary of the results
     midlatitudinal cloud fraction [$\si{\%}$] & \tabitem \emph{clt} (ISCCP
     D-2) \\
     \midrule
-    ZHA* & \textcite{Zhai2015} & Seasonal response of marine boundary layer
-    cloud fraction to changes in \acs{SST} [$\si{\pctK{}}$] &
+    ZHA* & \textcite{Zhai2015} & Seasonal response of \acl{MBLC} cloud
+    fraction to changes in \acs{SST} [$\si{\pctK{}}$] &
     \makecell{\tabitem \emph{cl} (CloudSat/CALIPSO) \\ \tabitem \emph{tos}
       (AMSRE SST) \\ \tabitem \emph{wap} (ERA-Interim)} \\
     \bottomrule
@@ -160,9 +160,60 @@ constrained range of \ac{ECS} based on the constrained \ac{PDF} (see
   \acs{CMIP}6}
 \label{sec:05:comparison_of_emergent_constraints}
 
+In this section we describe and discuss the eleven emergent constraints on
+\ac{ECS} summarized in \cref{tab:05:overview_emergent_constraints} using
+\acs{CMIP}5 and \acs{CMIP}6 data
+(\cref{subsec:05:bri,subsec:05:cox,subsec:05:lip,subsec:05:shd,subsec:05:shs,%
+  subsec:05:shl,subsec:05:su,subsec:05:tih,subsec:05:tii,subsec:05:vol,%
+  subsec:05:zha}) and provide a best estimate for \ac{ECS} and statistical
+significance of the eleven emergent constraints in
+\cref{subsec:05:emergent_constraints_summary}. While most of these emergent
+constraints have been derived using data from the \acs{CMIP}5 and/or
+\acs{CMIP}3 ensembles, to our knowledge none of them has been evaluated on
+the \acs{CMIP}6 ensemble so far. The results for the individual emergent
+constraints described in the following are shown in
+\cref{fig:05:bri_cox_lip,fig:05:shd_shl_shs,fig:05:su_tih_tii,fig:05:vol_zha}.
+The left columns in these figures show the emergent relationships, including
+the uncertainty of the linear regressions (blue and orange shaded areas; see
+\cref{eq:02:spe}) and the uncertainty in the observations (gray shaded area;
+see \cref{eq:02:pdf_obs}). The right columns show the \acp{PDF} of \ac{ECS} in
+the original model ensemble (histogram) and the constrained distribution given
+by the emergent constraints (blue and orange line; see
+\cref{eq:02:pdf_y_given_x0}). \Cref{tab:05:overview_results} shows the
+corresponding $66 \unit{\%}$ confidence intervals (\ie{} the $\range{17}{83}
+\unit{\%}$ intervals) of \ac{ECS} derived from the \acp{PDF} given by
+\cref{eq:02:pdf_y_given_x0} and the $p$-values used to assess the significance
+of the emergent relationships.
 
-\subsection{COX}
-\label{subsec:05:cox}
+
+\subsection{Sensitivity of Shortwave Cloud Albedo to changes in \acl{SST}
+  (BRI)}
+\label{subsec:05:bri}
+
+In this emergent constraint proposed by \textcite{Brient2016}, \ac{ECS} is
+correlated with the \ac{TLC} albedo, \ie{} using the covariance of clouds with
+changes in \acp{SST}. Differences in the \ac{TLC} albedo account for more than
+half of the variance of \ac{ECS} in the \acs{CMIP}5 ensemble. Following
+\textcite{Brient2016}, \ac{TLC} regions are defined as grid points that are in
+the driest quartile of $500 \unit{hPa}$ relative humidity of all grid cells
+over the ocean between $30 \unit{\degree S}$ and $30 \unit{\degree N}$. The
+\ac{TLC} albedo is obtained by calculating the ratio of \ac{TOA} shortwave
+cloud radiative forcing and solar insolation averaged over the \ac{TLC} region.
+The regression coefficients of de-seasonalized variations of \ac{TLC} shortwave
+albedo and \ac{SST} (in $\si{\pctK{}}$) are then used as an emergent constraint
+for \ac{ECS}. Here, we use observational data from HadISST for \ac{SST}
+\autocite{Rayner2003}, ERA-Interim for $500 \unit{hPa}$ relative humidity
+\autocite{Dee2011} and CERES-EBAF \autocite{Loeb2018} for the \ac{TOA}
+radiative fluxes over the time period \range{2001}{2005}. In the original
+publication, \textcite{Brient2016} use similar observation-based datasets with
+the exception of \ac{SST}, where they take ERSST data \autocite{Smith2003} as
+reference instead. Our analysis yields a $66 \unit{\%}$ confidence range for
+\ac{ECS} of $\pmrangeunit{3.72}{0.59}{K}$ for \acs{CMIP}5 ($R^2 = 0.38$) and
+$\pmrangeunit{4.32}{1.07}{K}$ for \acs{CMIP}6, with much lower $R^2 = 0.12$.
+The original publication states a best estimate of $4.0 \unit{K}$ with a very
+low likelihood of values below $2.3 \unit{K}$ ($90 \unit{\%}$ confidence). The
+statistical significance of the emergent relationship drops from $p = 0.0005$
+for \acs{CMIP}5 to $p = 0.0355$ for \acs{CMIP}6.
 
 \begin{figure}[p]
   \centering
@@ -189,7 +240,7 @@ constrained range of \ac{ECS} based on the constrained \ac{PDF} (see
   ~
   \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-  ch05_paper_ecs/figs/target_distribution_training_data_COX.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_COX.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:d}
   \end{subfigure}
@@ -203,7 +254,7 @@ constrained range of \ac{ECS} based on the constrained \ac{PDF} (see
   ~
   \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-  ch05_paper_ecs/figs/target_distribution_training_data_LIP.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_LIP.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:f}
   \end{subfigure}
@@ -223,6 +274,82 @@ constrained range of \ac{ECS} based on the constrained \ac{PDF} (see
     constraints. \AdaptedFrom{Schlund2020a}.}
   \label{fig:05:bri_cox_lip}
 \end{figure}
+
+
+\subsection{Temperature Variability Metric (COX)}
+\label{subsec:05:cox}
+
+The emergent constraint on \ac{ECS} proposed by \textcite{Cox2018} uses a
+temperature variability metric $\Psi$ that is based on the interannual
+variation of \ac{GSAT} calculated from its variance (in time) and $1$-year lag
+autocorrelation. In contrast to the majority of emergent constraints that focus
+on cloud-related processes, this constraint is based on the
+fluctuation-dissipation theorem, which relates the long-term response of the
+climate system to an external forcing (\ac{ECS}) and short-term variations of
+the climate system (climate variability). This arguably places the constraint
+on a more solid theoretical foundation, although several questions have been
+raised on the robustness of the results to choices made in the analysis
+\autocite{Brown2018, PoChedley2018, Rypdal2018}. For example,
+\textcite{Annan2020} has shown that the assumed linear relationship between
+$\Psi$ and \ac{ECS} does not hold when adding a deep ocean to the model. As
+observational data, here we use the HadCRUT4 dataset \autocite{Morice2012} over
+the time period \range{1880}{2014}. Under the COX constraint we assess a $66
+\unit{\%}$ \ac{ECS} range of $\pmrangeunit{3.03}{0.73}{K}$ for \acs{CMIP}5
+($R^2 = 0.31$) and $\pmrangeunit{3.71}{1.09}{K}$ for \acs{CMIP}6 ($R^2 =
+0.01$). \textcite{Cox2018} derive a $66 \unit{\%}$ range of
+$\pmrangeunit{2.8}{0.6}{K}$ from a different subset of \acs{CMIP}5 models but
+the same observations. When moving from \acs{CMIP}5 to \acs{CMIP}6, the
+significance of the emergent relation drops massively from $p = 0.0032$ to $p =
+0.5415$, respectively.
+
+
+\subsection{Extent of Southern Hemisphere Hadley Cell (LIP)}
+\label{subsec:05:lip}
+
+The results of \textcite{Lipat2017} show that the multi-year average extent of
+the Hadley cell correlates with \acs{ECS} in \acs{CMIP}5 models. The Hadley
+cell edge is defined as the latitude of the first two grid cells from the
+Equator going south where the zonal average $500 \unit{hPa}$ mass stream
+function calculated from \ac{DJF} means of the meridional wind field changes
+sign from negative to positive. \textcite{Lipat2017} explain this correlation
+by tying it to the observed correlation of the interannual variability in
+midlatitudinal clouds and their radiative effects with the poleward extent of
+the Hadley cell. For the calculation of the emergent constraint, we use
+reanalysis data from ERA-Interim \autocite{Dee2011} for the meridional wind
+speed over the time period \range{1980}{2005}. Our application of this emergent
+constraint gives \ac{ECS} $66 \unit{\%}$ ranges of
+$\pmrangeunit{2.97}{0.75}{K}$ for \acs{CMIP}5 ($R^2 = 0.18$) and
+$\pmrangeunit{3.75}{1.11}{K}$ for \acs{CMIP}6 ($R^2 < 0.01$). The original
+publication does not specify an \ac{ECS} range. For \acs{CMIP}6, the emergent
+constraint shows a much lower statistical significance ($p = 0.6791$) than for
+\acs{CMIP}5 ($p = 0.0228$).
+
+\subsection{Large-Scale Lower-Tropospheric Mixing (SHD)}
+\label{subsec:05:shd}
+
+\textcite{Sherwood2014} propose that the degree of mixing in the lower
+troposphere determines the response of boundary layer clouds and humidity to
+climate warming, as the associated moisture transport would increase rapidly in
+a warmer atmosphere due to the Clausius-Clapeyron relationship. The large-scale
+component $D$ of this mixing is defined as the ratio of shallow to deep
+overturning. $D$ is calculated from the vertical velocities averaged over two
+height regions: $850$ and $700 \unit{hPa}$ for shallow overturning and $600$,
+$500$ and $400 \unit{hPa}$ for deep overturning. Both quantities are averaged
+over parts of the tropical ocean region away from the regions of highest
+\ac{SST} and strongest mid-level ascent, specifically the region $\range{30
+  \unit{\degree S}}{30 \unit{\degree N}}$, $\range{160 \unit{\degree W}}{30
+  \unit{\degree E}}$, wherever air is ascending at low levels. As
+observation-based data, we use vertical velocities from ERA-Interim
+\autocite{Dee2011} over the time period \range{1989}{1998} similar to the
+original publication. We derive \ac{ECS} $66 \unit{\%}$ confidence ranges of
+$\pmrangeunit{3.65}{0.64}{K}$ for \acs{CMIP}5 ($R^2 = 0.28$) and
+$\pmrangeunit{3.77}{1.06}{K}$ for \acs{CMIP}6 ($R^2 = 0.03$).
+\textcite{Sherwood2014} do not give a best estimate for \ac{ECS} based on the
+large-scale component of mixing $D$ or its small-scale counterpart $S$ (see
+\cref{subsec:05:shs}) but instead for the sum of $D + S$ only (see
+\cref{subsec:05:shl}). The regression shows a much lower significance for
+\acs{CMIP}6 ($p = 0.2805$) than for \acs{CMIP}5 ($p = 0.0037$).
+
 
 \begin{figure}[p]
   \centering
@@ -271,6 +398,47 @@ constrained range of \ac{ECS} based on the constrained \ac{PDF} (see
     SHD, SHL and SHS. \AdaptedFrom{Schlund2020a}.}
   \label{fig:05:shd_shl_shs}
 \end{figure}
+
+
+\subsection{Small-Scale Lower-Tropospheric Mixing (SHS)}
+\label{subsec:05:shs}
+
+
+\subsection{Lower-Tropospheric Mixing Index (SHL)}
+\label{subsec:05:shl}
+
+I like the \ac{LTMI}!!
+
+
+\subsection{Error in Vertical Profile of Relative Humidity (SU)}
+\label{subsec:05:su}
+
+
+\subsection{Tropical Mid-Tropospheric Humidity Asymmetry Index (TIH)}
+\label{subsec:05:tih}
+
+
+\subsection{Southern \acs{ITCZ} index from (TII)}
+\label{subsec:05:tii}
+
+I like the \ac{ITCZ}!!
+
+
+\subsection{Difference Between Tropical and Southern Midlatitudinal Cloud
+  Fraction (VOL)}
+\label{subsec:05:vol}
+
+
+\subsection{Response of Marine Boundary Layer Cloud Fraction to changes in
+  \acl{SST} (ZHA)}
+\label{subsec:05:zha}
+
+I like the \ac{MBLC}!!
+
+
+\subsection{Constrained \acs{ECS} ranges and statistical significance of the
+  eleven emergent constraints}
+\label{subsec:05:emergent_constraints_summary}
 
 \begin{figure}[p]
   \centering
@@ -353,11 +521,6 @@ constrained range of \ac{ECS} based on the constrained \ac{PDF} (see
     VOL and ZHA. \AdaptedFrom{Schlund2020a}.}
   \label{fig:05:vol_zha}
 \end{figure}
-
-\subsection{SHL}
-\label{subsec:05:shl}
-
-I like \ac{LTMI}!!
 
 \begin{table}[t]
   \centering
