@@ -20,7 +20,7 @@ tool for the routine evaluation of \ac{ESM} output, which notably facilitates
 the analysis of \ac{CMIP} models (\url{https://www.esmvaltool.org}). For this
 reason, all analyses presented in
 \cref{ch:04:papers_ecs_tcr_assessment,ch:05:paper_ecs,ch:06:paper_gpp} of this
-thesis were implemented into the \ac{ESMValTool}. Apart from that, further
+thesis have been implemented into the \ac{ESMValTool}. Apart from that, further
 substantial changes and additions to the code base of the \ac{ESMValTool} have
 been contributed that improve the routine evaluation of climate models, which
 is beneficial for the entire scientific community. This lead to co-authorship
@@ -357,15 +357,15 @@ and predictors.
     variability \autocite{Cox2018}. Magenta colors indicate high sensitivity
     climate models ($\lambda < 1 \unit{W m^{-2} K^{-1}}$) and green colors
     indicate low sensitivity climate models ($\lambda > 1 \unit{W m^{-2}
-      K^{-1}}$). Both panels were created with the \acs{ESMValTool} using
+      K^{-1}}$). Both panels have been created with the \acs{ESMValTool} using
     \emph{recipe\_cox18nature.yml} and are similar to \textcite{Cox2018}. (a)
     Temperature variability metric $\Psi$ versus time for historical
     simulations from \acs{CMIP}5 models (colored lines) and observations from
     the HadCRUT4 dataset (black circles) \autocite{Morice2012}. (b) Emergent
     relationship between \acs{ECS} and the temperature variability metric
-    $\Psi$. The black dot-dashed line shows the linear regression across the
+    $\Psi$. The dot-dashed black line shows the linear regression across the
     climate model ensemble with its associated uncertainties indicated by the
-    black dashed lines (standard prediction error; see \cref{eq:02:spe}). Blue
+    dashed black lines (standard prediction error; see \cref{eq:02:spe}). Blue
     lines show the observational constraint from HadCRUT4 with its best
     estimate (dot-dashed line) and standard deviation (dashed lines). The
     letters represent individual \acs{CMIP}5 models (see \textcite{Cox2018}
@@ -408,7 +408,7 @@ between the historical and pre-industrial \ac{GSAT} and \ac{ECS}
 \ac{ECS} and the historical or pre-industrial \ac{GSAT}, \ie{} models with high
 temperatures in the historical or pre-industrial period do no necessarily
 exhibit a high equilibrium warming in the future or vice versa. On the other
-hand, \ac{TCR} and \ac{ECS} are in fact well-correlated within the \acs{CMIP}5
+hand, \ac{TCR} and \ac{ECS} are in fact well correlated within the \acs{CMIP}5
 ensemble as theoretically expected from \cref{eq:02:tcr_vs_ecs}. However, this
 figure only shows a linear regression fit between the two variables and not the
 expected reciprocal relation.
@@ -432,12 +432,13 @@ expected reciprocal relation.
       ch03_esmvaltool/figs/flato13_942_legend.pdf}}
   \end{subfigure}
   \caption{Relationships between climate metrics within the \acs{CMIP}5 climate
-    model ensemble. Both panels were created with the \acs{ESMValTool} using
-    \emph{recipe\_flato13ipcc.yml} and are similar to \textcite{Flato2013}. (a)
-    \Acf{GSAT} versus the \acf{ECS} for \acs{CMIP}5 models for the period
-    \range{1961}{1990} (larger symbols) and for pre-industrial control runs
-    (smaller symbols). (b) \acf{TCR} versus \acs{ECS} for \acs{CMIP}5 models.
-    The black line shows a linear fit between \acs{TCR} and \acs{ECS}.}
+    model ensemble. Both panels have been created with the \acs{ESMValTool}
+    using \emph{recipe\_flato13ipcc.yml} and are similar to
+    \textcite{Flato2013}. (a) \Acf{GSAT} versus the \acf{ECS} for \acs{CMIP}5
+    models for the period \range{1961}{1990} (larger symbols) and for
+    pre-industrial control runs (smaller symbols). (b) \acf{TCR} versus
+    \acs{ECS} for \acs{CMIP}5 models. The black line shows a linear fit
+    between \acs{TCR} and \acs{ECS}.}
   \label{fig:03:flato13}
 \end{figure}
 

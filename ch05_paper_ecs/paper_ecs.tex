@@ -97,7 +97,7 @@ provide a discussion (\cref{sec:05:discussion}) and a summary of the results
     TIH & \textcite{Tian2015} & Tropical mid-tropospheric humidity asymmetry
     index from AIRS [$\si{\%}$] & \tabitem \emph{hus} (AIRS) \\
     \midrule
-    TII & \textcite{Tian2015} & Southern ITCZ index from GPCP
+    TII & \textcite{Tian2015} & Southern \acs{ITCZ} index from GPCP
     [$\si{\mmday{}}$] & \tabitem \emph{pr} (GPCP) \\
     \midrule
     VOL* & \textcite{Volodin2008} & Difference between tropical and southern
@@ -106,8 +106,8 @@ provide a discussion (\cref{sec:05:discussion}) and a summary of the results
     \midrule
     ZHA* & \textcite{Zhai2015} & Seasonal response of \acl{MBLC} cloud
     fraction to changes in \acs{SST} [$\si{\pctK{}}$] &
-    \makecell{\tabitem \emph{cl} (CloudSat/CALIPSO) \\ \tabitem \emph{tos}
-      (AMSRE SST) \\ \tabitem \emph{wap} (ERA-Interim)} \\
+    \makecell{\tabitem \emph{cl} (Cloudsat/CALIPSO) \\ \tabitem \emph{tos}
+      (AMSRE \ac{SST}) \\ \tabitem \emph{wap} (ERA-Interim)} \\
     \bottomrule
   \end{tabular}
   \caption{Overview of the eleven emergent constraints on the \acf{ECS}
@@ -138,7 +138,7 @@ described in detail in \cref{subsec:02:ecs}. An overview of the eleven emergent
 constraints on \ac{ECS} analyzed in this study including the variables required
 for their calculations is given in \cref{tab:05:overview_emergent_constraints}
 and \cref{sec:05:comparison_of_emergent_constraints}. We chose these particular
-emergent constraints since these were already implemented in the
+emergent constraints since these had already been implemented in the
 \ac{ESMValTool} at the time of writing this study, which greatly facilitated
 this analysis. For all emergent constraints, we use the historical simulations
 of \acs{CMIP}5 and \acs{CMIP}6 in order to ensure maximum agreement with the
@@ -219,42 +219,42 @@ for \acs{CMIP}5 to $p = 0.0355$ for \acs{CMIP}6.
   \centering
   \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/scatterplot_merged_training_data_BRI.pdf}
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_bri.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:a}
   \end{subfigure}
   ~
   \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/target_distribution_training_data_BRI.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_bri.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:b}
   \end{subfigure}
   \\
   \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/scatterplot_merged_training_data_COX.pdf}
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_cox.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:c}
   \end{subfigure}
   ~
   \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/target_distribution_training_data_COX.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_cox.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:d}
   \end{subfigure}
   \\
   \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/scatterplot_merged_training_data_LIP.pdf}
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_lip.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:e}
   \end{subfigure}
   ~
   \begin{subfigure}[b]{\SmallSubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/target_distribution_training_data_LIP.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_lip.pdf}
     \caption{}
     \label{fig:05:bri_cox_lip:f}
   \end{subfigure}
@@ -266,7 +266,7 @@ for \acs{CMIP}5 to $p = 0.0355$ for \acs{CMIP}6.
     \cref{eq:02:spe}). The vertical dashed line corresponds to the
     observational reference with its standard error (gray shaded area). The
     horizontal dashed lines show the best estimates of the constrained
-    \acf{ECS} and the colored points mark the \aclp{MMM} for \acs{CMIP}5
+    \acf{ECS} and the colored circles mark the \aclp{MMM} for \acs{CMIP}5
     (blue) and \acs{CMIP}6 (orange). (b), (d), (f) \Aclp{PDF} for \acs{ECS} of
     the emergent constraints (solid lines; see \cref{eq:02:pdf_y_given_x0})
     and the unconstrained model ensembles (histograms). Due to the
@@ -324,6 +324,7 @@ publication does not specify an \ac{ECS} range. For \acs{CMIP}6, the emergent
 constraint shows a much lower statistical significance ($p = 0.6791$) than for
 \acs{CMIP}5 ($p = 0.0228$).
 
+
 \subsection{Large-Scale Lower-Tropospheric Mixing (SHD)}
 \label{subsec:05:shd}
 
@@ -350,47 +351,46 @@ large-scale component of mixing $D$ or its small-scale counterpart $S$ (see
 \cref{subsec:05:shl}). The regression shows a much lower significance for
 \acs{CMIP}6 ($p = 0.2805$) than for \acs{CMIP}5 ($p = 0.0037$).
 
-
-\begin{figure}[p]
+\begin{figure}[!t]
   \centering
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/scatterplot_merged_training_data_SHD.pdf}
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_shd.pdf}
     \caption{}
     \label{fig:05:shd_shl_shs:a}
   \end{subfigure}
   ~
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/target_distribution_training_data_SHD.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_shd.pdf}
     \caption{}
     \label{fig:05:shd_shl_shs:b}
   \end{subfigure}
   \\
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/scatterplot_merged_training_data_SHL.pdf}
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_shl.pdf}
     \caption{}
     \label{fig:05:shd_shl_shs:c}
   \end{subfigure}
   ~
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/target_distribution_training_data_SHL.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_shl.pdf}
     \caption{}
     \label{fig:05:shd_shl_shs:d}
   \end{subfigure}
   \\
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/scatterplot_merged_training_data_SHS.pdf}
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_shs.pdf}
     \caption{}
     \label{fig:05:shd_shl_shs:e}
   \end{subfigure}
   ~
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/target_distribution_training_data_SHS.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_shs.pdf}
     \caption{}
     \label{fig:05:shd_shl_shs:f}
   \end{subfigure}
@@ -403,83 +403,88 @@ large-scale component of mixing $D$ or its small-scale counterpart $S$ (see
 \subsection{Small-Scale Lower-Tropospheric Mixing (SHS)}
 \label{subsec:05:shs}
 
+The small-scale mixing $S$ \autocite{Sherwood2014} is calculated from the
+differences in relative humidity and temperature between $700$ and $850
+\unit{hPa}$. The differences are averaged over all grid cells within the upper
+quartile of the annual mean $500 \unit{hPa}$ ascent rate (within ascending
+regions) in the tropics. The tropics are defined as the region between $30
+\unit{\degree S}$ and $30 \unit{\degree N}$. In the \ac{CFMIP} models
+\autocite{Webb2017}, for which convective tendencies are available, upward
+moisture transport by parameterized convection is shown to increase more
+rapidly with warming for higher values of $S$. We use reanalysis data from
+ERA-Interim \autocite{Dee2011} for temperature and relative humidity to
+calculate the observational constraint (\range{1989}{1998}). Our analysis shows
+a $66 \unit{\%}$ range of \ac{ECS} of $\pmrangeunit{3.07}{0.73}{K}$ for
+\acs{CMIP}5 ($R^2 = 0.13$) and $\pmrangeunit{3.48}{1.07}{K}$ for \acs{CMIP}6
+($R^2 = 0.12$). The correlation of $S$ and \acs{ECS} shows a slightly higher
+significance in the \acs{CMIP}6 ensemble ($p = 0.0396$) than in the \acs{CMIP}5
+ensemble ($p = 0.0647$). The SHS constraint is one of the two analyzed emergent
+constraints (ZHA being the other exception) that shows a higher statistical
+significance for the \acs{CMIP}6 than for the \acs{CMIP}5 ensemble.
+
 
 \subsection{Lower-Tropospheric Mixing Index (SHL)}
 \label{subsec:05:shl}
 
-I like the \ac{LTMI}!!
+The \ac{LTMI} formulated by \textcite{Sherwood2014} is defined as the sum of
+the small-scale mixing $S$ (see \cref{subsec:05:shs}) and the large-scale
+mixing $D$ (see \cref{subsec:05:shd}), which are supposed to capture
+complementary components of the total mixing phenomenon.
+\textcite{Sherwood2014} argue that the increase in dehydration depends on
+initial mixing linking it to cloud feedbacks and thus also to \ac{ECS}. For
+this constraint, we derive an \ac{ECS} $66 \unit{\%}$ confidence range of
+$\pmrangeunit{3.42}{0.65}{K}$ for \acs{CMIP}5 ($R^2 = 0.41$) and
+$\pmrangeunit{3.67}{1.06}{K}$ for \acs{CMIP}6 ($R^2 = 0.16$).
+\textcite{Sherwood2014} give a best estimate of about $4 \unit{K}$ with a lower
+limit of $3 \unit{K}$. Similar to both other constraints by
+\textcite{Sherwood2014}, SHD and SHS, the statistical significance of the SHL
+emergent relation decreases in \acs{CMIP}6 ($p = 0.0138$) compared to
+\acs{CMIP}5 ($p = 0.0002$).
 
 
 \subsection{Error in Vertical Profile of Relative Humidity (SU)}
 \label{subsec:05:su}
 
-
-\subsection{Tropical Mid-Tropospheric Humidity Asymmetry Index (TIH)}
-\label{subsec:05:tih}
-
-
-\subsection{Southern \acs{ITCZ} index from (TII)}
-\label{subsec:05:tii}
-
-I like the \ac{ITCZ}!!
-
-
-\subsection{Difference Between Tropical and Southern Midlatitudinal Cloud
-  Fraction (VOL)}
-\label{subsec:05:vol}
-
-
-\subsection{Response of Marine Boundary Layer Cloud Fraction to changes in
-  \acl{SST} (ZHA)}
-\label{subsec:05:zha}
-
-I like the \ac{MBLC}!!
-
-
-\subsection{Constrained \acs{ECS} ranges and statistical significance of the
-  eleven emergent constraints}
-\label{subsec:05:emergent_constraints_summary}
-
-\begin{figure}[p]
+\begin{figure}[!t]
   \centering
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/scatterplot_merged_training_data_SU.pdf}
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_su.pdf}
     \caption{}
     \label{fig:05:su_tih_tii:a}
   \end{subfigure}
   ~
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/target_distribution_training_data_SU.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_su.pdf}
     \caption{}
     \label{fig:05:su_tih_tii:b}
   \end{subfigure}
   \\
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/scatterplot_merged_training_data_TIH.pdf}
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_tih.pdf}
     \caption{}
     \label{fig:05:su_tih_tii:c}
   \end{subfigure}
   ~
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/target_distribution_training_data_TIH.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_tih.pdf}
     \caption{}
     \label{fig:05:su_tih_tii:d}
   \end{subfigure}
   \\
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/scatterplot_merged_training_data_TII.pdf}
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_tii.pdf}
     \caption{}
     \label{fig:05:su_tih_tii:e}
   \end{subfigure}
   ~
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/target_distribution_training_data_TII.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_tii.pdf}
     \caption{}
     \label{fig:05:su_tih_tii:f}
   \end{subfigure}
@@ -488,32 +493,142 @@ I like the \ac{MBLC}!!
   \label{fig:05:su_tih_tii}
 \end{figure}
 
-\begin{figure}[p]
+Another emergent constraint on \ac{ECS} that targets uncertainties in cloud
+feedbacks is proposed by \textcite{Su2014}. They show that changes in the
+Hadley circulation are physically connected to changes in tropical clouds and
+thus \ac{ECS}. Consequently, the inter-model spread in the change of the Hadley
+circulation in an ensemble of climate models is well correlated with the
+corresponding changes in the \ac{TOA} \ac{CRE}. Moreover, \textcite{Su2014}
+find a correlation between a model's \ac{ECS} and its ability to represent the
+present-day Hadley circulation. The latter is calculated from the tropical
+($\range{45 \unit{\degree S}}{40 \unit{\degree N}}$) zonal-mean vertical
+profiles of relative humidity from the surface to $100 \unit{hPa}$. These
+profiles are then used to define the \xaxis{} of the SU constraint by
+calculating a performance metric based on the slope of the linear regression
+between a climate model's relative humidity profile and the corresponding
+observational reference. Similarly to the original publication, we use humidity
+observations from AIRS \autocite{Aumann2003} for pressure levels greater than
+$300 \unit{hPa}$ and MLS-Aura data \autocite{Beer2006} for pressure levels of
+less than $300 \unit{hPa}$. Our analysis yields a constrained $66 \unit{\%}$
+range of \ac{ECS} of $\pmrangeunit{3.30}{0.88}{K}$ for \acs{CMIP}5 ($R^2 =
+0.08$) and $\pmrangeunit{3.77}{1.35}{K}$ for \acs{CMIP}6 ($R^2 = 0.05$). The
+original publication gives a best estimate of $4 \unit{K}$ with a lower limit
+of $3 \unit{K}$. \Cref{fig:05:su_tih_tii:a} shows that in addition to the low
+$R^2$ values, the emergent relationship shows different slopes for \acs{CMIP}5
+and \acs{CMIP}6. For \acs{CMIP}5, the expected positive correlation is found,
+while for \acs{CMIP}6, a negative correlation is found. This suggests that the
+constraint is not working (anymore) when applied to the \acs{CMIP}6 data.
+Consequently, the SU constraint shows a weaker statistical significance in
+\acs{CMIP}6 ($p = 0.1935$) than in \acs{CMIP}5 ($p = 0.1676$). The SU
+constraint is related to an emergent constraint on \ac{ECS} proposed by
+\textcite{Fasullo2012}, who correlate \range{May}{August} zonal-mean relative
+humidity against \ac{ECS}. In contrast to \textcite{Su2014}, they do not use
+the entire tropics, but identify two distinct regions with the largest
+correlation.
+
+
+\subsection{Tropical Mid-Tropospheric Humidity Asymmetry Index (TIH)}
+\label{subsec:05:tih}
+
+\textcite{Tian2015} finds a link between mid-tropospheric humidity over the
+tropical Pacific and simulated moisture, precipitation, clouds, large-scale
+circulation, and thus \ac{ECS} in \acs{CMIP}3 and \acs{CMIP}5 models. The study
+explains this link with the similarity of mid-tropospheric humidity and
+precipitation patterns as both are related to the \ac{ITCZ}. The proposed
+tropical mid-tropospheric humidity asymmetry index to constrain \ac{ECS} is
+defined as relative bias (in $\si{\%}$) in simulated annual mean $500
+\unit{hPa}$ specific humidity averaged over the Southern Hemisphere tropical
+Pacific ($\range{30 \unit{\degree S}}{0 \unit{\degree N}}$, $\range{80
+  \unit{\degree W}}{120 \unit{\degree E}}$) minus the bias averaged over the
+Northern Hemisphere tropical Pacific ($\range{0 \unit{\degree N}}{20
+  \unit{\degree N}}$, $\range{80 \unit{\degree W}}{120 \unit{\degree E}}$) when
+compared with observations. Similar to the SU constraint, the index proposed by
+\textcite{Tian2015} seems to be related to the emergent constraint by
+\textcite{Fasullo2012}, who find correlations between relative humidity of the
+middle and upper troposphere and \ac{ECS}. Here, we use humidity observations
+from AIRS \autocite{Aumann2003} over the time period \range{2003}{2005} as the
+reference dataset. We assess a $66 \unit{\%}$ \ac{ECS} range of
+$\pmrangeunit{3.88}{0.75}{K}$ for \acs{CMIP}5 ($R^2 = 0.24$) and
+$\pmrangeunit{4.15}{1.10}{K}$ for \acs{CMIP}6 ($R^2 = 0.06$).
+\textcite{Tian2015} specifies a best estimate of $4.0 \unit{K}$. The
+significance of the emergent relationship drops massively from $p = 0.0089$ in
+\acs{CMIP}5 to $p = 0.1348$ in \acs{CMIP}6.
+
+
+\subsection{Southern \acs{ITCZ} index from (TII)}
+\label{subsec:05:tii}
+
+In addition to the humidity index, \textcite{Tian2015} proposes an emergent
+constraint on \ac{ECS} based on the southern \ac{ITCZ} index
+\autocite{Bellucci2010, Hirota2011}. This index is defined as the
+climatological annual mean precipitation bias averaged over the southeastern
+Pacific ($\range{30 \unit{\degree S}}{0 \unit{\degree N}}$, $\range{150
+  \unit{\degree W}}{100 \unit{\degree W}}$). The southern \ac{ITCZ} index is
+calculated in $\si{\mmday{}}$ and dominated by the so-called double-\ac{ITCZ},
+a common problem in many \acs{CMIP}5 climate models. \textcite{Tian2015} finds
+a link between double-\ac{ITCZ} bias and simulated moisture, precipitation,
+clouds, and large-scale circulation in \acs{CMIP}3 and \acs{CMIP}5 models. He
+argues that this could explain the link between the double-\acs{ITCZ} bias and
+\ac{ECS}. As reference data, we use observed precipitation data for the years
+\range{1986}{2005} from GPCP \autocite{Adler2003}. We calculate an \ac{ECS} $66
+\unit{\%}$ confidence range of $\pmrangeunit{3.87}{0.67}{K}$ for \acs{CMIP}5
+($R^2 = 0.33$) and $\pmrangeunit{3.84}{1.09}{K}$ for \acs{CMIP}6 ($R^2 <
+0.01$). \textcite{Tian2015} specifies a best estimate of $4.0 \unit{K}$. The
+emergent relationship shows a much lower statistical significance in
+\acs{CMIP}6 ($p = 0.8236$) than in \acs{CMIP}5 ($p = 0.0013$).
+
+
+\subsection{Difference Between Tropical and Southern Midlatitudinal Cloud
+  Fraction (VOL)}
+\label{subsec:05:vol}
+
+The study by \textcite{Volodin2008} aims at constraining \ac{ECS} based on the
+geographical distribution of clouds in climate models. Since this early
+emergent constraint has originally been trained on \acs{CMIP}3 models, both
+\acs{CMIP}5 and \acs{CMIP}6 are out-of-sample tests for it.
+\textcite{Volodin2008} shows that high \ac{ECS} models tend to simulate a
+higher total cloud cover over the southern midlatitudes and a lower total cloud
+cover over the tropics (relative to the \ac{MMM}). This can be used to
+establish an emergent relationship between the \ac{ECS} and the difference in
+tropical total cloud cover ($\range{28 \unit{\degree S}}{28 \unit{\degree N}}$)
+and the southern midlatitudinal total cloud cover ($\range{56 \unit{\degree
+    S}}{36 \unit{\degree S}}$). Analogous to the original study, we use the
+ISCCP-D2 data \autocite{Rossow1991} as observational reference. For the VOL
+constraint, we calculate a constrained $66 \unit{\%}$ range of \ac{ECS} of
+$\pmrangeunit{3.74}{0.64}{K}$ for \acs{CMIP}5 ($R^2 = 0.38$) and
+$\pmrangeunit{4.21}{1.04}{K}$ for \acs{CMIP}6 ($R^2 = 0.18$), whereas the
+original publication gives a range of $\pmrangeunit{3.6}{0.4}{K}$ (standard
+deviation) for a climate model ensemble of \acs{CMIP}3 models. The emergent
+constraint by \textcite{Volodin2008} shows a lower significance in the
+\acs{CMIP}6 ensemble ($p = 0.0056$) than in the \acs{CMIP}5 ensemble ($p =
+0.0004$).
+
+\begin{figure}[t]
   \centering
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/scatterplot_merged_training_data_VOL.pdf}
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_vol.pdf}
     \caption{}
     \label{fig:05:vol_zha:a}
   \end{subfigure}
   ~
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/target_distribution_training_data_VOL.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_vol.pdf}
     \caption{}
     \label{fig:05:vol_zha:b}
   \end{subfigure}
   \\
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/scatterplot_merged_training_data_ZHA.pdf}
+      ch05_paper_ecs/figs/scatterplot_merged_training_data_zha.pdf}
     \caption{}
     \label{fig:05:vol_zha:c}
   \end{subfigure}
   ~
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{
-      ch05_paper_ecs/figs/target_distribution_training_data_ZHA.pdf}
+      ch05_paper_ecs/figs/target_distribution_training_data_zha.pdf}
     \caption{}
     \label{fig:05:vol_zha:d}
   \end{subfigure}
@@ -522,7 +637,77 @@ I like the \ac{MBLC}!!
   \label{fig:05:vol_zha}
 \end{figure}
 
-\begin{table}[t]
+
+\subsection{Response of Marine Boundary Layer Cloud Fraction to changes in
+  \acl{SST} (ZHA)}
+\label{subsec:05:zha}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\LargeFigureWidth{}]{ch05_paper_ecs/figs/zha.pdf}
+  \caption{Emergent relationship ZHA \autocite{Zhai2015} for different subsets
+    of \acs{CMIP}5 models. Blue circles show the 15 \acs{CMIP}5 models used in
+    the original publication (except for CESM1-CAM5). The solid blue line and
+    blue shaded area show the emergent relationships evaluated on these models
+    including the uncertainty range. In our study, we added eleven more
+    \acs{CMIP}5 models (red circles). The corresponding emergent relationship
+    that considers all available \acs{CMIP}5 models is shown in red colors.
+    This relationship shows a considerably lower coefficient of determination
+    ($R^2$) and higher $p$-value than the relationship using the original
+    subset of \acs{CMIP}5 models. The vertical dashed line and shaded area
+    correspond to the observational reference and the horizontal dashed lines
+    show the corresponding constraints on the \acf{ECS} using this observation.
+    \AdaptedFrom{Schlund2020a}.}
+  \label{fig:05:zha}
+\end{figure}
+
+\textcite{Zhai2015} focus on the variations of \acp{MBLC}, which largely
+contribute to the shortwave cloud feedback and thus to the uncertainty in
+modeled \ac{ECS}. Their central quantity is the response of the \ac{MBLC}
+fraction to changes in the \ac{SST} in subtropical oceanic subsidence regions
+for both hemispheres ($\range{20 \unit{\degree}}{40 \unit{\degree}}$). On short
+(seasonal) and long (centennial under a forcing) timescales, this quantity is
+well correlated with \ac{ECS} among an ensemble of \acs{CMIP}3 and \acs{CMIP}5
+models. Together with observations of cloud fraction from Cloudsat/CALIPSO
+\autocite{Mace2009}, \ac{SST} from AMSRE \ac{SST} \autocite{AMSRE2011}, and
+vertical velocity from ERA-Interim \autocite{Dee2011}, the seasonal response of
+\ac{MBLC} fraction to changes in \ac{SST} forms an emergent constraint on
+\ac{ECS}. We assess a $66 \unit{\%}$ \ac{ECS} range of
+$\pmrangeunit{3.35}{0.74}{K}$ for \acs{CMIP}5 ($R^2 = 0.05$) and
+$\pmrangeunit{3.79}{0.67}{K}$ for \acs{CMIP}6 ($R^2 = 0.62$). In their original
+publication, \textcite{Zhai2015} find an \ac{ECS} range of
+$\pmrangeunit{3.90}{0.45}{K}$ (standard deviation) for a combination of
+\acs{CMIP}3 and \acs{CMIP}5 models. In terms of statistical significance, the
+results of the ZHA constraints are somewhat surprising: although \acs{CMIP}5
+data (in combination with \acs{CMIP}3 data) has successfully been used in the
+original publication, our approach finds that the statistical significance of
+the emergent relationship is much higher in the unseen \acs{CMIP}6 ensemble ($p
+< 0.0001$) than in the previously available \acs{CMIP}5 ensemble ($p =
+0.2567$). The ZHA constraint is the only emergent constraint analyzed here that
+shows this extreme behavior (only one other constraint, SHS, shows a slightly
+higher significance in \acs{CMIP}6; all other constraints show lower
+significances in \acs{CMIP}6). The reason for the erratic skill in \acs{CMIP}5
+is the set of climate models used. For our analysis, we use eleven additional
+\acs{CMIP}5 models that have not been used in the original publication
+(ACCESS1-0, ACCESS1-3, bcc-csm1-1, bcc-csm1-1-m, CCSM4, GFDL-ESM2G, GFDL-ESM2M,
+IPSL-CM5A-MR, IPSL-CM5B-LR, MPI-ESM-MR and MPI-ESM-P). Due to a lack of
+publicly available data, the model CESM1-CAM5 that is used in the original
+publication is not included in our analysis. The effect of choosing different
+subsets of \acs{CMIP}5 models on the emergent relationship is illustrated in
+\cref{fig:05:zha}. Using the original \acs{CMIP}5 models from the original
+publication gives a considerably higher correlation ($R^2 = 0.38$) than using
+all available \acs{CMIP}5 models ($R^2 = 0.05$). This result shows a strong
+dependency of this emergent constraint on the subset of climate models used.
+Nonetheless, the performance on \acs{CMIP}6 models is, surprisingly, the best
+of all the constraints, and much better than on either subset of \acs{CMIP}5
+models.
+
+
+\subsection{Constrained \acs{ECS} ranges and statistical significance of the
+  eleven emergent constraints}
+\label{subsec:05:emergent_constraints_summary}
+
+\begin{table}[!b]
   \centering
   \begin{tabular}{p{0.06\columnwidth} p{0.34\columnwidth} y{0.12} y{0.12}
       y{0.1} y{0.1}}
@@ -562,23 +747,79 @@ I like the \ac{MBLC}!!
     evaluated from the \acl{PDF} given by \cref{eq:02:pdf_y_given_x0} (see also
     the right columns of \cref{fig:05:bri_cox_lip,fig:05:shd_shl_shs,%
       fig:05:su_tih_tii,fig:05:vol_zha}). Note that even though \acs{CMIP}5
-    models were used for some constraints in the original publications, the
-    constrained ranges in the second and third column might differ due to the
-    use of a different subset of climate models (in this study, we use output
-    from all \acs{CMIP} models that is publicly available; see
+    models have been used for some constraints in the original publications,
+    the constrained ranges in the second and third column might differ due to
+    the use of a different subset of climate models (in this study, we use
+    output from all \acs{CMIP} models that is publicly available; see
     \cref{tab:app:a:cmip5_emergent_constraints_part1,%
       tab:app:a:cmip5_emergent_constraints_part2,%
       tab:app:a:cmip6_emergent_constraints_part1,%
       tab:app:a:cmip6_emergent_constraints_part2} for details). The $p$-values
     describing the significance of the emergent relationships are defined as
-    the probability to obtain an absolute correlation coefficient $\abs*{r}$ or
-    higher under the null hypothesis that the true underlying correlation
-    coefficient between the predictor and \acs{ECS} is zero. Smaller $p$-values
-    point to higher significance and vice versa (see
+    the probability to obtain an absolute correlation coefficient $\abs*{r}$
+    or higher under the null hypothesis that the true underlying correlation
+    coefficient between the predictor and \acs{ECS} is zero. Smaller
+    $p$-values point to higher significance and vice versa (see
     \cref{subsec:02:emergent_constraints} for details).
     \AdaptedFrom{Schlund2020a}.}
   \label{tab:05:overview_results}
 \end{table}
+
+In most cases, the emergent relationships (left columns of
+\cref{fig:05:bri_cox_lip,fig:05:shd_shl_shs,fig:05:su_tih_tii,fig:05:vol_zha})
+show the same sign of the slope (as expected from the theory) for \acs{CMIP}5
+and \acs{CMIP}6, with the SU constraint being the only exception. However, the
+coefficient of determination ($R^2$) is lower for \acs{CMIP}6 compared to
+\acs{CMIP}5 for all one constraint: ZHA. The probability distributions of the
+constrained \ac{ECS} that we obtain (right columns of
+\cref{fig:05:bri_cox_lip,fig:05:shd_shl_shs,fig:05:su_tih_tii,fig:05:vol_zha})
+give similar results: except for the ZHA constraint, the constraint on the
+\acs{CMIP}6 ensemble is weaker, \ie{} the constrained \acp{PDF} derived from
+the \acs{CMIP}6 ensemble are broader than their respective \acs{CMIP}5
+counterparts. As shown in \cref{tab:05:overview_results} and
+\cref{fig:05:overview_results}, for \acs{CMIP}5, the range of the best (maximum
+likelihood) estimates for \acs{ECS} is $2.97 \unit{K}$ to $3.88 \unit{K}$,
+while the corresponding \acs{CMIP}6 best estimates are higher for almost every
+tested emergent constraint (TII being the only exception), resulting in a range
+of best estimates of $3.48 \unit{K}$ to $4.32 \unit{K}$. Using the arithmetic
+mean of all analyzed emergent constraints, this results in a mean increase of
+the \ac{ECS} best estimate of $12 \unit{\%}$ in \acs{CMIP}6 compared to
+\acs{CMIP}5. Similarly, the size of the $66 \unit{\%}$ \ac{ECS} ranges
+($\range{17}{83} \unit{\%}$ confidence) shows values of $1.16 \unit{K}$ to
+$1.75 \unit{K}$ in \acs{CMIP}5 and $1.32 \unit{K}$ to $2.70 \unit{K}$ in
+\acs{CMIP}6, resulting in an increase of $51 \unit{\%}$ averaged over all
+emergent constraints.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch05_paper_ecs/figs/constrained_ranges_summary.pdf}
+  \caption{Overview of the constrained \acf{ECS} ranges given by the eleven
+    analyzed emergent constraints using the \acs{CMIP}5 (blue) and \acs{CMIP}6
+    (orange) ensemble. The bars correspond to the $66 \unit{\%}$ confidence
+    intervals ($\range{17}{83} \unit{\%}$) calculated from the constrained
+    \acl{PDF} of \acs{ECS} following \cref{eq:02:pdf_y_given_x0}. The vertical
+    black lines illustrate the corresponding best estimates of the
+    distributions. For almost all emergent constraints, the constrained best
+    estimate and range of \ac{ECS} is higher in the \acs{CMIP}6 ensemble.}
+  \label{fig:05:overview_results}
+\end{figure}
+
+In summary, the $R^2$ of the emergent relationships and the constrained range
+of \ac{ECS} each depend strongly on the climate model ensemble used, even
+though a physical explanation is given for each emergent constraint that is
+thought to be valid for every climate model ensemble. The same behavior is
+found for the statistical significance of the emergent relationships using the
+null hypothesis that there is no correlation between the predictor and
+\ac{ECS}. Except for the ZHA and SHS constraints, every emergent relationship
+investigated shows a lower statistical significance (\ie{} a higher $p$- value)
+in the \acs{CMIP}6 ensemble than in the \acs{CMIP}5 ensemble. If a conventional
+significance test of $p < 0.05$ was applied, eight of the eleven constraints
+would pass this test on \acs{CMIP}5 model data but only five (BRI, SHL, SHS,
+VOL, and ZHA) would pass this test on \acs{CMIP}6. This is still much better
+than would be expected purely by chance. Hence, there is still skill in at
+least a few of the constraints, but it is much lower than was suggested in
+nearly all of the initial studies.
 
 
 \section{Discussion}
