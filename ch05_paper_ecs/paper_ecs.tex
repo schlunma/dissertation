@@ -666,10 +666,10 @@ contribute to the shortwave cloud feedback and thus to the uncertainty in
 modeled \ac{ECS}. Their central quantity is the response of the \ac{MBLC}
 fraction to changes in the \ac{SST} in subtropical oceanic subsidence regions
 for both hemispheres ($\range{20 \unit{\degree}}{40 \unit{\degree}}$). On short
-(seasonal) and long (centennial under a forcing) timescales, this quantity is
+(seasonal) and long (centennial under a forcing) time scales, this quantity is
 well correlated with \ac{ECS} among an ensemble of \acs{CMIP}3 and \acs{CMIP}5
 models. Together with observations of cloud fraction from Cloudsat/CALIPSO
-\autocite{Mace2009}, \ac{SST} from AMSRE \ac{SST} \autocite{AMSRE2011}, and
+\autocite{Mace2009}, \ac{SST} from AMSRE \ac{SST} \autocite{AMSRE2011} and
 vertical velocity from ERA-Interim \autocite{Dee2011}, the seasonal response of
 \ac{MBLC} fraction to changes in \ac{SST} forms an emergent constraint on
 \ac{ECS}. We assess a $66 \unit{\%}$ \ac{ECS} range of
@@ -699,7 +699,7 @@ publication gives a considerably higher correlation ($R^2 = 0.38$) than using
 all available \acs{CMIP}5 models ($R^2 = 0.05$). This result shows a strong
 dependency of this emergent constraint on the subset of climate models used.
 Nonetheless, the performance on \acs{CMIP}6 models is, surprisingly, the best
-of all the constraints, and much better than on either subset of \acs{CMIP}5
+of all the constraints and much better than on either subset of \acs{CMIP}5
 models.
 
 
@@ -816,15 +816,175 @@ investigated shows a lower statistical significance (\ie{} a higher $p$- value)
 in the \acs{CMIP}6 ensemble than in the \acs{CMIP}5 ensemble. If a conventional
 significance test of $p < 0.05$ was applied, eight of the eleven constraints
 would pass this test on \acs{CMIP}5 model data but only five (BRI, SHL, SHS,
-VOL, and ZHA) would pass this test on \acs{CMIP}6. This is still much better
+VOL and ZHA) would pass this test on \acs{CMIP}6. This is still much better
 than would be expected purely by chance. Hence, there is still skill in at
-least a few of the constraints, but it is much lower than was suggested in
-nearly all of the initial studies.
+least a few of the constraints, but it is much lower than suggested in nearly
+all of the initial studies.
 
 
 \section{Discussion}
 \label{sec:05:discussion}
 
+As shown in the previous sections, most emergent relationships show smaller
+coefficients of determination when evaluated on the new \acs{CMIP}6 ensemble
+compared to the \acs{CMIP}5 ensemble. In this section, we discuss possible
+reasons for, and implications of, these differences. As reported by
+\textcite{Caldwell2014}, the large amount of data provided by modern \acp{ESM}
+can generate spurious correlations of variables between past climate and
+\ac{ECS} just by chance, especially when only a small number of climate models
+is considered. This would cause the performance of the emergent constraint to
+be reduced on out-of-sample data (like the new \acs{CMIP}6 ensemble), since the
+emergent relationship appeared just by chance and not because of a physically
+based mechanism.
+
+A further reason for the weaker emergent relationships in \acs{CMIP}6 may be
+the increased complexity of the participating \acp{ESM}. Each emergent
+constraint approach is based on the assumption that a single observable process
+or physical aspect in the current climate dominates the uncertainty in
+\ac{ECS}. Some emergent constraints such as ZHA and BRI relate changes in cloud
+properties (ZHA: low-level cloud fraction; BRI: cloud reflectivity) on seasonal
+or interannual time scales driven by changes in \ac{SST} to \ac{ECS}. This
+means that it has to be implicitly assumed that the observable changes in these
+properties on seasonal or interannual time scales are related to those
+occurring as a result of climate forcing in a way successfully captured by the
+\acp{ESM}. While this assumption seems to make sense, we do not know whether
+the \acp{ESM} cover all relevant processes of the real Earth system. For
+example, it may be possible that there exist processes that are unimportant in
+the \acp{ESM} (and hence are not captured by the emergent constraints) but are
+actually important in reality. This lack of relevant processes may lead to an
+overconfident constraint. Thus, the more complex \acp{ESM} of the \acs{CMIP}6
+ensemble are more likely to capture relevant processes of the true climate,
+which leads to weaker emergent relationships. On the other hand, emergent
+constraints on the less complex \acs{CMIP}3 and \acs{CMIP}5 ensemble may be
+overconfident.
+
+For \acs{CMIP}6 models, \textcite{Zelinka2020} show that cloud feedbacks and
+thus \ac{ECS} in high-sensitivity models are to some extent associated with
+changes in clouds over the Southern Ocean, while in \acs{CMIP}3 and \acs{CMIP}5
+the uncertainty in cloud feedbacks is dominated by clouds in the subtropical
+subsidence regions. One might speculate that a possible reason for this might
+be an improved simulation of clouds over the Southern Ocean in some models
+\autocite{BodasSalcedo2019, Gettelman2019}, as shown for some pre-\acs{CMIP}6
+model versions evaluated by \textcite{Lauer2018}. The findings of
+\textcite{Zelinka2020} can also at least partly explain the larger inter-model
+spread in climate sensitivity due to a greater diversity of cloud feedbacks,
+which also results in a weaker emergent constraint compared with \acs{CMIP}5
+models, as most of them constrained low-cloud feedbacks. They find that on
+average, the shortwave low-cloud feedback is larger in \acs{CMIP}6 than in
+\acs{CMIP}5, which they primarily relate to changes in the representation of
+clouds. As a possible explanation, \textcite{Zelinka2020} give an increase in
+mean-state supercooled liquid water (\ie{} increase in the cloud water liquid
+fraction) in mixed-phase clouds resulting in less pronounced increases in
+low-level cloud cover and water content with warmer \acp{SST} particularly in
+midlatitudes.
+
+Our findings suggest that the process-oriented emergent constraints (\ie{} all
+of the emergent constraints investigated here except COX) are only successful
+in constraining \ac{ECS} as long as the uncertainty in \ac{ECS} is dominated by
+the same process or feedback. In the \acs{CMIP}5 ensemble, cloud feedback is
+the main contributor to the spread in \ac{ECS} with low-level clouds in
+tropical subsidence regions dominating the spread in cloud feedback
+\autocite{Ceppi2017}. If any other process or feedback is biased (or missing)
+in the ensemble as a whole, then these process-oriented emergent constraints
+will be biased in their estimates of \ac{ECS}. The appearance of diverse new
+feedback processes in \acs{CMIP}6 could explain the reduced skill when applied
+to \acs{CMIP}6 data, and a tendency for these to be positive would explain the
+upward shift in the model \ac{ECS} distribution that is not captured by the
+\acs{CMIP}5-trained constraints. Process-oriented emergent constraints are
+therefore perhaps best thought of as constraints on the processes that they
+target, rather than constraints on \ac{ECS}.
+
+Emergent constraints that use global temperature change as a way of
+constraining \ac{ECS} could in principle overcome this problem. If one feedback
+is biased in an ensemble the constraint might still work as both global
+temperature change and \ac{ECS} might similarly reflect the sum of all
+feedbacks. Emergent constraints of this kind include the tropical temperature
+during the Last Glacial Maximum \autocite{Hargreaves2012}, tropical temperature
+anomalies during the mid-Pliocene Warm Period \autocite{Hargreaves2016} and
+post-1970s warming \autocite{JimenezdelaCuesta2019}. This seems to be supported
+by the findings of \textcite{Tokarska2020}, who test an emergent constraint for
+the \ac{TCR} based on recent global warming trends on the \acs{CMIP}5 and
+\acs{CMIP}6 ensembles with similar results for both model ensembles.
+Nevertheless, these temperature-based estimates are sensitive to assumptions
+about forcings and unforced decadal temperature variations, which could also be
+incorrect, as could model-predicted relationships between feedbacks on short
+and long time scales that are implicit in most such measures.
+
 
 \section{Summary}
 \label{sec:05:summary}
+
+This paper assesses eleven different emergent constraints on \ac{ECS}, of which
+most are directly or indirectly related to cloud feedbacks, by applying them to
+results from \acp{ESM} contributing to \acs{CMIP}5 and \acs{CMIP}6. Of
+particular interest are the results from \acs{CMIP}6, since all analyzed
+emergent constraints have been published prior to the availability of
+\acs{CMIP}6 data. In summary, the best estimate of \ac{ECS} averaged over all
+emergent constraints increases by $12 \unit{\%}$ when moving from relationships
+trained on \acs{CMIP}5 to those trained on \acs{CMIP}6. Some increase is
+predicted by almost every constraint we analyze (with TII as the only
+exception) and can be at least partly explained by the increased multi-model
+mean \ac{ECS} of \acs{CMIP}6, which has not been accompanied by systematic
+changes in the constraint variables that could explain this increase, leading
+to regression fits with higher intercept values at observed constraint values.
+This is also illustrated by the \acs{CMIP}5 and \acs{CMIP}6 \acp{MMM} in the
+left columns of
+\cref{fig:05:bri_cox_lip,fig:05:shd_shl_shs,fig:05:su_tih_tii,fig:05:vol_zha}
+(colored circles), in which the connecting line between the \acs{CMIP}5 and
+\acs{CMIP}6 \ac{MMM} is not parallel to the \acs{CMIP}5 emergent relationships
+for all emergent constraints.
+
+Our results also show that, except for ZHA, all emergent relationships are
+weaker (in terms of the coefficient of determination $R^2$) in \acs{CMIP}6
+compared to \acs{CMIP}5, which means that the corresponding emergent
+relationships are able to explain less of the \ac{ECS} variation simulated by
+the newer \acs{CMIP}6 models than by those of \acs{CMIP}5. This is also
+demonstrated by the statistical significance, which is lower in \acs{CMIP}6
+than in \acs{CMIP}5 for all emergent constraint except for ZHA and SHS. As
+described in \cref{subsec:02:emergent_constraints}, our test for statistical
+significance uses the null hypothesis that there is no correlation between the
+predictor variable of the emergent constraint and \ac{ECS}. Further evidence of
+the decreased performance of the emergent constraints in \acs{CMIP}6 is given
+by the size of the constrained \acs{ECS} ranges, which widens by $51 \unit{\%}$
+in \acs{CMIP}6 compared to \acs{CMIP}5 on average. Moreover, our more detailed
+analysis of the ZHA constraint (see \cref{fig:05:zha}) shows that this emergent
+constraint is very sensitive to outliers and the subset of the climate model
+ensemble used to fit the emergent relationship. Such a behavior might not be
+unique to the ZHA constraint but could apply to other emergent constraints as
+well. This in turn suggests that the number of climate models commonly used for
+emergent constraints might be too low, leading to non-robust relationships.
+
+Our analysis makes a number of simplifying assumptions common to other studies,
+such as model independence, discussed in detail in
+\cref{subsec:02:ecs,subsec:02:emergent_constraints}. These assumptions affect
+the significance of emergent relationships and the \acp{PDF} of \ac{ECS} based
+on a constraint. However, they do not affect our main conclusions here, which
+concern the change in performance on \acs{CMIP}6 relative to \acs{CMIP}5 and
+the implications for robustness and future use of emergent constraints.
+
+\ac{ECS} is the product of the complex interactions of the many components and
+feedbacks. Thus, constraining \ac{ECS} with a single physical process might
+overly simplify this problem. Such single process-oriented emergent constraints
+therefore do not seem to be helpful in constraining \ac{ECS} but should
+probably rather be thought of as constraints for the process or feedback they
+are actually targeting (if that can be clearly identified). With increasing
+computational resources available to climate science, more and more detailed
+process interactions can be taken into account in a modern \ac{ESM}. In
+contrast, the predecessor versions \acs{CMIP}3 and \acs{CMIP}5 are less complex
+with simpler atmospheric process representations, so constraining uncertainties
+of a single dominant process may allow for an apparently more successful
+constraint of \ac{ECS} than would be achieved in more complex models. As a
+conclusion, we argue that to constrain \ac{ECS} in a more robust way, it might
+be beneficial to apply multivariate approaches that are able to consider
+multiple (different) relevant physical processes and feedbacks at once and thus
+are able to get a broader picture of the complex reality. A possible approach
+for this is given by \textcite{Bretherton2020}, who combine the information
+from multiple emergent constraints on \ac{ECS} using a multivariate Gaussian
+and multiple linear regression. For the \acs{CMIP}3 and \acs{CMIP}5 ensembles,
+they find an increased best estimate relative to the unweighted ensemble mean
+similar to the participating individual emergent constraints, but with lower
+uncertainty range. Moreover, new machine learning techniques are a promising
+avenue forward for such multivariate approaches and for constraining
+uncertainties in multi-model projections \commentcite{Schlund2020}{see
+  \cref{ch:06:paper_gpp}} with the aim of further improving climate modeling
+and analysis \autocite{Reichstein2019}.
