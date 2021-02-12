@@ -22,7 +22,7 @@ in projections of the future climate with observations are shown
 techniques developed in this thesis.
 
 
-\section{\aclp{ESM}: Simulations and Analysis}
+\section{Earth System Models: Simulations and Analysis}
 \label{sec:02:esms}
 
 
@@ -471,16 +471,16 @@ blackbody feedback). This equation assumes that the individual radiative
 responses from the different feedbacks are independent, which is a reasonable
 first-order approximation but not entirely true \autocite{Soden2008}.
 
-\subsection{Equilibrium and \acl{ECS}}
+\subsection{Equilibrium and Effective Climate Sensitivity}
 \label{subsec:02:ecs}
 
-An important metric describing climate sensitivity is the Equilibrium Climate
-Sensitivity. It is defined as the change in \ac{GSAT} after an instantaneous
+An important metric describing climate sensitivity is the equilibrium climate
+sensitivity. It is defined as the change in \ac{GSAT} after an instantaneous
 doubling of the atmospheric \ac{CO2} concentration from pre-industrial
 conditions once the climate system reaches radiative equilibrium
 \autocite{Bindoff2013}. Being already used in one of the first assessments of
 the anthropogenic climate change, the \emph{Charney Report} from 1979
-\autocite{Charney1979}, the Equilibrium Climate Sensitivity is one of the
+\autocite{Charney1979}, the equilibrium climate sensitivity is one of the
 oldest metrics describing climate change. However, in practice this traditional
 definition of is not useful. Running fully-coupled \acp{ESM} into equilibrium
 is computationally expensive as it would require thousands of model years
@@ -507,7 +507,7 @@ is computationally expensive as it would require thousands of model years
   \label{fig:02:gregory_regression}
 \end{figure}
 
-For this reason, the Equilibrium Climate Sensitivity is commonly approximated
+For this reason, the equilibrium climate sensitivity is commonly approximated
 with the \acf{ECS}, which can be derived from only 150 model years of a
 simulation with an abrupt quadrupling of the atmospheric \ac{CO2} concentration
 (\nxcotwo{4}) \autocite{Gregory2004}. The basis of the definition of \ac{ECS}
@@ -541,11 +541,11 @@ $F$ is now given by the \yintercept{} of this linear regression
   \label{eq:02:ecs}
 \end{equation}
 The factor of $2$ in the denominator accounts for the fact the traditional
-Equilibrium Climate Sensitivity is defined for an abrupt \ac{CO2} doubling,
+equilibrium climate sensitivity is defined for an abrupt \ac{CO2} doubling,
 whereas here a simulation with an abrupt quadrupling is considered.
 
 Although commonly used in the literature, the \ac{ECS} is known to be only an
-approximation of the true Equilibrium Climate Sensitivity. One major reason for
+approximation of the true equilibrium climate sensitivity. One major reason for
 this is the state and time dependence of the global feedbacks
 \autocite{Knutti2015, Knutti2017}. As
 \cref{fig:02:gregory_regression_different_years} shows, the slope in the
@@ -559,7 +559,7 @@ the type and magnitude of the external forcings \autocite{Knutti2017}. All in
 all, this demonstrates the limits of the linear feedback framework introduced
 in \cref{subsec:02:mathematical_framework_feedbacks} that is not capable of
 describing non-linear effects. A second major reason for the discrepancies
-between the Equilibrium Climate Sensitivity and \ac{ECS} is the use of a
+between the equilibrium climate sensitivity and \ac{ECS} is the use of a
 \nxcotwo{4} instead of a \nxcotwo{2} simulation. The factor of $2$ in the
 denominator of \cref{eq:02:ecs} only partly compensates this difference since
 the radiative forcing logarithmically depends on the atmospheric \ac{CO2}
@@ -581,13 +581,13 @@ concentration \autocite{Huang2014}.
 \end{figure}
 
 However, despite these deficiencies the \ac{ECS} is still a practical estimate
-of the Equilibrium Climate Sensitivity. With the help of climate models,
+of the equilibrium climate sensitivity. With the help of climate models,
 \textcite{Sherwood2020} showed that the \ac{ECS} is only about $6 \unit{\%}$
 lower than the best estimate of the true equilibrium warming obtained from
 integrating climate models until a new steady state is reached. Nevertheless,
 for \acs{CMIP}6 long running simulations from the \ac{LongRunMIP}
 \autocite{Rugenstein2019} can be a promising way forward to estimate the true
-Equilibrium Climate Sensitivity for \acp{ESM}.
+equilibrium climate sensitivity for \acp{ESM}.
 
 
 \subsection{Cloud-Related Feedback Parameters}
@@ -609,7 +609,7 @@ $\lambda_\mathtxt{LWCRE}$ and $\lambda_\mathtxt{CRE}$, which quantify the
 change in \ac{CRE} as a response to increasing \acp{GSAT}.
 
 
-\subsection{\acl{TCR}}
+\subsection{Transient Climate Response}
 \label{subsec:02:tcr}
 
 A further metric describing the climate sensitivity is the \ac{TCR}. In
@@ -1101,7 +1101,7 @@ constraints are not only limited to physical processes, but can also be applied
 to other domains, like the global carbon cycle \autocite{Cox2013,
   Kwiatkowski2017, Wenzel2014, Wenzel2016, Winkler2019}. An extensive
 discussion on the emergent constraint by \textcite{Wenzel2016}, which focuses
-on the concentration-carbon feedback, is given in \cref{sec:06:step_1}.
+on the concentration-carbon feedback, is given in \cref{subsec:06:step_1}.
 
 
 \subsection{Performance- and Interdependence-based Weighting of Climate Models}
@@ -1192,7 +1192,7 @@ and global warming over the \nth{21} century \autocite{Brunner2020,
   Liang2020a}.
 
 
-\subsection{\acl{MDER}}
+\subsection{Multiple Diagnostic Ensemble Regression}
 \label{subsec:02:mder}
 
 An alternative climate model weighting scheme is the \emph{\ac{MDER}} approach

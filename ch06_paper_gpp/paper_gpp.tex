@@ -8,30 +8,91 @@
 
 
 
-\chapter{Constraining Future \acl{GPP} with Machine Learning}
+\chapter{Constraining Future Gross Primary Production with Machine Learning}
 \label{ch:06:paper_gpp}
 
-- Single-process emergent constraints have disadvantages
+As argued in detail in the previous chapter, single-process-oriented emergent
+constraints do not seem to be beneficial in constraining climate projections
+from the vastly complex modern-day \acp{ESM} since they might overly simplify
+the problem. To overcome this issue, we explore an alternative approach that
+expands the \acf{MDER} method with a supervised \acf{ML} algorithm. In contrast
+to emergent constraints, this approach considers (1) multiple process-based
+predictors, (2) multi-dimensional (gridded) target variables and (3) non-linear
+relationships between the predictors and the target variable. Since the new
+technique relies on a large number of data points in order to train the \ac{ML}
+algorithm, \ac{ECS} as a single scalar metric for each climate model is not an
+appropriate target variable. As an alternative, we analyze projections of
+future \acf{GPP} in this study, which constitutes the largest flux of the
+terrestrial carbon uptake. As described in detail in
+\cref{subsec:02:carbon_cycle_perturbations}, the global carbon cycle actively
+slows down global warming by removing \ac{CO2} from the atmosphere. In
+particular, the terrestrial biosphere absorbs about $30 \unit{\%}$ of the total
+anthropogenic \ac{CO2} emission \autocite{Friedlingstein2020}. Thus, accurately
+quantifying the future evolution of the terrestrial carbon sink is crucial for
+reliable climate change projections.
 
-To overcome these, we explore an alternative approach that expands the MDER
-method with an ML algorithm. In contrast to emergent constraints, this approach
-considers (1) multiple process-based predictors, (2) multi-dimensional
-(gridded) target variables and (3) non-linear relationships between the
-predictors and the target variable. The target variable analyzed is GPP. As
-described in detail in section XXX, the carbon cycle slows down global warming
-by absorbing 30 \% CO2, thus accurately quantifying the carbon sink is crucial.
-GPP is most largest flux of the terrestrial carbon cycle. Due to feedbacks
-(section XXX, NAME OF FEEDBACKS), multi-model projectionf of future GPP is
-uncertain, especially in CMIP5 RCP 8.5 at the end of the century. Thus, the aim
-of the works presented in this chapter is to reduce uncertainties in
-multi-model projections of future GPP in the RCP 8.5 scenario at the end of the
-21st century with a new ML-based weighting technique and observations. The new
-two‐step approach utilizes aspects of emergent constraints and the MDER
-technique in combination with a supervised machine learning algorithm. In the
-first step, we apply an existing emergent... (see SCHLUND ET AL., 2020).
+Due to complex feedback processes connected to the global carbon cycle
+(concentration-carbon feedback and climate-carbon feedback; see
+\cref{subsec:02:carbon_cycle_perturbations}), the response of the terrestrial
+carbon cycle to changes in the atmospheric \ac{CO2} concentration and climate
+is a major source of uncertainty in climate projections \autocite{Bodman2013,
+  Booth2012, Collins2013}. This applies for example to multi-model projections
+of future \ac{GPP} of the \acs{CMIP}5 ensemble. Thus, the aim of this study is
+to reduce uncertainties in multi-model projections of future \ac{GPP} in the
+\acs{CMIP}5 \acs{RCP}8.5 scenario at the end of the \nth{21} century with a new
+\ac{ML}-based weighting technique and appropriate observations. The new
+two‐step approach utilizes aspects of emergent constraints and the \ac{MDER}
+technique in combination with a \ac{ML} algorithm. In the first step, we apply
+an existing emergent constraint on \ac{CO2} fertilization \autocite{Wenzel2016}
+to constrain the \acp{ESM}' responses to rising atmospheric \ac{CO2}
+concentration using observations of the increase of the \ac{CO2} seasonal cycle
+amplitude at Cape Kumukahi, Hawaii \autocite{Keeling2005}. In a second step, we
+introduce a supervised \ac{ML} algorithm based on boosting trees
+\autocite{Friedman2001} to learn an empirical spatial relationship that links
+grid‐wise future \ac{GPP} to historical processes relevant to its simulation
+under present‐day conditions. In combination with observational products of the
+predictors, that relationship can be used to further constrain uncertainties in
+the projected spatial maps of \ac{GPP} at the end of the \nth{21} century in
+the \acs{RCP}8.5 scenario. We examine both constraining the absolute \ac{GPP}
+and the fractional change in \ac{GPP} as two independent approaches and target
+variables. Unlike univariate linear regression used in the \ac{MDER} algorithm,
+the proposed \ac{GBRT} algorithm is able to handle multiple predictors and
+copes with non-linearities in the data. \ac{GBRT} is a well‐known and
+successful tool used for interpolation, classification and prediction in other
+fields of data science and engineering \autocite{Death2007, Elith2008}. In the
+context of climate science, \ac{GBRT} was recently applied to identify the key
+drivers of spatial variations of the ratio of plant transpiration to total
+terrestrial evapotranspiration in \acp{ESM} \autocite{Lian2018}.
+
+This work is already published in \textcite{Schlund2020}. For this paper, the
+author of this thesis lead the writing and the analysis and implemented the
+code to reproduce this study with all figures and tables using the
+\ac{ESMValTool}. \Cref{sec:06:data_and_methods} of this chapter provides an
+overview of the data and methods used in this paper. The results are presented
+in \cref{sec:06:results} and \cref{sec:06:summary_and_discussion} closes with a
+summary and discussion.
 
 
-\section{Step 1: XXXXXXXXXXXXXXXXXX}
-\label{sec:06:step_1}
+\section{Data and Methods}
+\label{sec:06:data_and_methods}
+
+TBA.
+
+
+\subsection{Constraining the \texorpdfstring{\acs{CO2}}{CO2} Fertilization
+  Effect (Step 1)}
+\label{subsec:06:step_1}
+
+TBA.
+
+
+\section{Results}
+\label{sec:06:results}
+
+TBA.
+
+
+\section{Summary and Discussion}
+\label{sec:06:summary_and_discussion}
 
 TBA.
