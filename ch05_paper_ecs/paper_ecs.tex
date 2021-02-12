@@ -16,49 +16,38 @@ previous chapter begs the question about the interpretation and credibility of
 these results. Since the \acs{CMIP}6 models provide crucial input for the
 upcoming international climate assessment of the \ac{IPCC} (\acs{AR}6), this is
 not only important for the scientific community, but also directly affects
-society and policymakers. An important question in this context could be the
-following: Is it reasonable to adapt the assessed \ac{ECS} range from \acs{AR}5
-($\range{1.5}{4.5} \unit{K}$) in \acs{AR}6 based on the \acs{CMIP}6 model range
-of $\range{1.8}{5.6} \unit{K}$? An argument for this is that due to the many
-new and improved processes included to the models, the \acs{CMIP}6 ensemble is
-arguably more realistic than its predecessor generations. However, even the
-\acs{CMIP}6 models are far from fully simulating all aspects and processes of
-the full vastly complex Earth system. This could introduce new biases which
+society and policymakers. Due to the many new and improved processes included
+to the models, the \acs{CMIP}6 ensemble is arguably more realistic than its
+predecessor generations. However, does this automatically make results derived
+from \acs{CMIP}6 models more trustworthy than those derived from earlier
+\ac{CMIP} models? In general, the answer to this question is \enquote{no}. Even
+the \acs{CMIP}6 models are far from fully simulating all aspects and processes
+of the full vastly complex Earth system, which could introduce new biases which
 have not been present in earlier \ac{CMIP} models. For example, the apparent
 increase in climate sensitivity in the \acs{CMIP}6 models might be wrongly
 caused by missing processes that cancel out the effects of the newly included
-processes. Thus, it is vital to take other sources of information into account
-before answering the question raised above.
+processes. Thus, to assess the credibility of \ac{ESM} results it is vital to
+take other sources of information into account.
 
 One of the most important sources of information for this purpose is
 undoubtedly observational data. As presented in
 \cref{subsec:02:emergent_constraints}, appropriate observations of the Earth
-system can be utilized within the emergent constraints framework to assess the
-accuracy of climate model projections and reduce associated uncertainties. For
-\ac{ECS}, a large variety of different emergent constraints has been developed
-over the years, which we now evaluate on the \acs{CMIP}6 ensemble in order to
-assess whether they still hold for these new climate models. In total we assess
-eleven emergent constraints on \ac{ECS} (see
-\cref{tab:05:overview_emergent_constraints}), out of which the most are related
-to cloud feedbacks since these constitute the most important source of
-uncertainty for \ac{ECS} \commentcite{Boucher2013, Flato2013}{see also
-  \cref{subsec:02:climate_feedbacks}}. Since all of the evaluated emergent
-constraints have been derived on the \acs{CMIP}3 or \acs{CMIP}5 ensemble, the
-\acs{CMIP}6 models offer an exciting possibility to perform out-of-sample
-testing using the previously unseen data.
+system can be utilized within the so-called \emph{emergent constraints}
+framework to assess the accuracy of climate model projections and reduce
+associated uncertainties. For \ac{ECS}, a large variety of different emergent
+constraints has been developed over the years, which we now evaluate on the
+\acs{CMIP}6 ensemble in order to assess whether they still hold for these new
+climate models, \ie{} whether they have skill to reduce uncertainties in
+\ac{ECS} in the \acs{CMIP}6 ensemble. In total we assess eleven emergent
+constraints on \ac{ECS} (see \cref{tab:05:overview_emergent_constraints}), out
+of which the most are related to cloud feedbacks since these constitute the
+most important source of uncertainty for \ac{ECS} \commentcite{Boucher2013,
+  Flato2013}{see also \cref{subsec:02:climate_feedbacks}}. Since all of the
+evaluated emergent constraints have been derived on the \acs{CMIP}3 or
+\acs{CMIP}5 ensemble, the \acs{CMIP}6 models offer an exciting possibility to
+perform out-of-sample testing using the previously unseen data.
 
-This analysis is already published in \textcite{Schlund2020a}. For this paper,
-the author of this thesis lead the writing and the analysis and implemented the
-code to reproduce this analysis with all figures and tables using the
-\ac{ESMValTool}. In this chapter, we first introduce the data (climate model
-output and observations) and methods used in this study
-(\cref{sec:05:data_and_methods}). After that, we present the eleven emergent
-constraints on \acs{ECS} and evaluate them on the \acs{CMIP}5 and \acs{CMIP}6
-ensemble (\cref{sec:05:comparison_of_emergent_constraints}). Finally, we
-provide a discussion (\cref{sec:05:discussion}) and a summary of the results
-(\cref{sec:05:summary}).
-
-\begin{table}[p]
+\begin{table}[!t]
   \centering
   \hbadness=3500
   \begin{tabular}{p{0.07\columnwidth} p{0.24\columnwidth} p{0.29\columnwidth}
@@ -121,6 +110,17 @@ provide a discussion (\cref{sec:05:discussion}) and a summary of the results
     \acs{ESMValTool}. \AdaptedFrom{Schlund2020a}.}
   \label{tab:05:overview_emergent_constraints}
 \end{table}
+
+This analysis is already published in \textcite{Schlund2020a}. For this paper,
+the author of this thesis lead the writing and the analysis and implemented the
+code to reproduce this analysis with all figures and tables using the
+\ac{ESMValTool}. In this chapter, we first introduce the data (climate model
+output and observations) and methods used in this study
+(\cref{sec:05:data_and_methods}). After that, we present the eleven emergent
+constraints on \acs{ECS} and evaluate them on the \acs{CMIP}5 and \acs{CMIP}6
+ensemble (\cref{sec:05:comparison_of_emergent_constraints}). Finally, we
+provide a discussion (\cref{sec:05:discussion}) and a summary of the results
+(\cref{sec:05:summary}).
 
 
 \section{Data and Methods}
