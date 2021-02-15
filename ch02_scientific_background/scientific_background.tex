@@ -1168,14 +1168,15 @@ model is removed from the multi-model ensemble and treated as observation
 from the updated model ensemble is calculated, which gives a prediction for the
 \enquote{true} climate model. This allows a simple quantitative assessment of
 the weighting scheme by calculating the \ac{RMSE} between the prediction and
-the known ground truth of the pseudo-observation. The whole process is repeated
-for every climate model of the ensemble to get a statistical distribution of
-\acp{RMSE}. Finally, different \ac{RMSE} distributions calculated from
-different parameters $\sigma_D$ and $\sigma_S$ can be assessed using specific
-criteria to find optimal values for $\sigma_D$ and $\sigma_S$
-\autocite{Knutti2017a}. Furthermore, the leave-one-model-out \ac{CV} approach
-can be used to evaluate different climate model weightings schemes (including
-the unweighted \ac{MMM}) and compare them against each other.
+the known ground truth of the pseudo-observation, which is also known as
+\ac{RMSEP}. The whole process is repeated for every climate model of the
+ensemble to get a statistical distribution of \acp{RMSEP}. Finally, different
+\ac{RMSEP} distributions calculated from different parameters $\sigma_D$ and
+$\sigma_S$ can be assessed using specific criteria to find optimal values for
+$\sigma_D$ and $\sigma_S$ \autocite{Knutti2017a}. Furthermore, the
+leave-one-model-out \ac{CV} approach can be used to evaluate different climate
+model weightings schemes (including the unweighted \ac{MMM}) and compare them
+against each other.
 
 The definition of the weights according to \cref{eq:02:knutti_weights} is based
 on reasonable and comprehensible principles. However, the exact form of the
@@ -1318,7 +1319,7 @@ since it explicitly requires climate models that deviate from the observed
 climate to span the desired relationship (similar to emergent constraints).
 However, a much weaker assumption is made traditional in weighting approaches
 which assume that climate models that are better in simulating the past or
-present‐day climate are necessarily better in simulating the future climate. In
+present-day climate are necessarily better in simulating the future climate. In
 contrast to these other weighting approaches, \ac{MDER} explicitly establishes
 the relationship between past/present and future within the climate model
 ensemble \autocite{Karpechko2013}.

@@ -41,7 +41,7 @@ of future \ac{GPP} of the \acs{CMIP}5 ensemble. Thus, the aim of this study is
 to reduce uncertainties in multi-model projections of future \ac{GPP} in the
 \acs{CMIP}5 \acs{RCP}8.5 scenario at the end of the \nth{21} century with a new
 \ac{ML}-based weighting technique and appropriate observations. The new
-two‐step approach utilizes aspects of emergent constraints and the \ac{MDER}
+two-step approach utilizes aspects of emergent constraints and the \ac{MDER}
 technique in combination with a \ac{ML} algorithm. In the first step, we apply
 an existing emergent constraint on \ac{CO2} fertilization \autocite{Wenzel2016}
 to constrain the \acp{ESM}' responses to rising atmospheric \ac{CO2}
@@ -49,15 +49,15 @@ concentration using observations of the increase of the \ac{CO2} seasonal cycle
 amplitude at Cape Kumukahi, Hawaii \autocite{Keeling2005}. In a second step, we
 introduce a supervised \ac{ML} algorithm based on boosting trees
 \autocite{Friedman2001} to learn an empirical spatial relationship that links
-grid‐wise future \ac{GPP} to historical processes relevant to its simulation
-under present‐day conditions. In combination with observational products of the
+grid-wise future \ac{GPP} to historical processes relevant to its simulation
+under present-day conditions. In combination with observational products of the
 predictors, that relationship can be used to further constrain uncertainties in
 the projected spatial maps of \ac{GPP} at the end of the \nth{21} century in
 the \acs{RCP}8.5 scenario. We examine both constraining the absolute \ac{GPP}
 and the fractional change in \ac{GPP} as two independent approaches and target
 variables. Unlike univariate linear regression used in the \ac{MDER} algorithm,
 the proposed \ac{GBRT} algorithm is able to handle multiple predictors and
-copes with non-linearities in the data. \ac{GBRT} is a well‐known and
+copes with non-linearities in the data. \ac{GBRT} is a well-known and
 successful tool used for interpolation, classification and prediction in other
 fields of data science and engineering \autocite{Death2007, Elith2008}. In the
 context of climate science, \ac{GBRT} was recently applied to identify the key
@@ -77,6 +77,46 @@ summary and discussion.
 \label{sec:06:data_and_methods}
 
 TBA.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\LargeFigureWidth{}]{
+    ch06_paper_gpp/figs/schematic_steps.pdf}
+  \caption{Schematic illustration of our two-step approach. In step 1 an
+    emergent constraint by \textcite{Wenzel2016} is used to constrain the
+    global mean fractional change in \acf{GPP} over the 21st century.
+    Moreover, this constraint is used to rescale two different gridded target
+    variables: absolute \acs{GPP} at the end of the \nth{21} century and
+    fractional \acs{GPP} change over the \nth{21} century. In step 2, a
+    \acl{ML} model is used to constrain these two target variables (step 2a:
+    absolute \acs{GPP}; step 2b: fractional \acs{GPP} change) in two
+    independent approaches. \AdaptedFrom{Schlund2020a}.}
+  \label{fig:06:schematic_steps}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\LargerFigureWidth{}]{
+    ch06_paper_gpp/figs/mlr_concept.pdf}
+  \caption{Schematic illustration of our \acf{ML} approach to constrain
+    projected absolute \acf{GPP} in step 2a. (a) In the training phase of the
+    algorithm, the model is fitted to the training data interpolating the
+    empirical (non-linear) relationship between two process-oriented
+    diagnostics of the past climate $\left\{ x^{(1)}, x^{(2)} \right\}$ and
+    (rescaled) future \acs{GPP} (gray surface). The points show the training
+    points for the supervised \acs{ML} algorithm, each of them representing a
+    single grid cell/month of a single climate model (the different colors
+    correspond to different climate models). (b) In the prediction phase,
+    observation-based values of the diagnostic (black points) are fed into the
+    trained \acs{ML} model to constrain \acs{GPP} for every grid cell/month to
+    a value which best agrees with the observations. (c) For an independent
+    validation of our method, we use an out-of-sample testing setup based on a
+    leave-one-model-out \acl{CV} approach (see
+    \cref{subsec:02:model_weighting} for details). The schematic illustration
+    of step 2b differs only in the target variable used (fractional \acs{GPP}
+    change instead of absolute \acs{GPP}). \AdaptedFrom{Schlund2020a}.}
+  \label{fig:06:mlr_concept}
+\end{figure}
 
 
 \subsection{Constraining the \texorpdfstring{\acs{CO2}}{CO2} Fertilization
