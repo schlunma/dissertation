@@ -90,7 +90,7 @@ TBA.
     fractional \acs{GPP} change over the \nth{21} century. In step 2, a
     \acl{ML} model is used to constrain these two target variables (step 2a:
     absolute \acs{GPP}; step 2b: fractional \acs{GPP} change) in two
-    independent approaches. \AdaptedFrom{Schlund2020a}.}
+    independent approaches. \AdaptedFrom{Schlund2020}.}
   \label{fig:06:schematic_steps}
 \end{figure}
 
@@ -114,7 +114,7 @@ TBA.
     leave-one-model-out \acl{CV} approach (see
     \cref{subsec:02:model_weighting} for details). The schematic illustration
     of step 2b differs only in the target variable used (fractional \acs{GPP}
-    change instead of absolute \acs{GPP}). \AdaptedFrom{Schlund2020a}.}
+    change instead of absolute \acs{GPP}). \AdaptedFrom{Schlund2020}.}
   \label{fig:06:mlr_concept}
 \end{figure}
 
@@ -130,6 +130,49 @@ TBA.
 \label{sec:06:results}
 
 TBA.
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \raisebox{5.5mm}{\includegraphics[width=\columnwidth]{
+      ch06_paper_gpp/figs/step2a_rmse.pdf}}
+    \caption{}
+    \label{fig:06:step2a_ml_inference:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{
+      ch06_paper_gpp/figs/step2a_global_feature_importance.pdf}
+    \caption{}
+    \label{fig:06:step2a_ml_inference:b}
+  \end{subfigure}
+  \caption{(a) Box plot of the \acf{RMSEP} distributions for six different
+    statistical models used to predict future absolute \acf{GPP} in step 2a
+    using a leave-one-model-out \acl{CV} approach. The distribution for each
+    statistical model contains seven elements (black points; one for each
+    climate model used as truth) and is represented in the following way: The
+    lower and upper limit of the blue boxes correspond to the $25 \unit{\%}$
+    and $75 \unit{\%}$ quantiles, respectively. The central line in the box
+    shows the median and the black \enquote{x} shows the mean of the
+    distribution. The whiskers outside the box represent the range of the
+    distribution. Compared to the \acs{CMIP}5 \acf{MMM} and its corresponding
+    rescaled version (r\acs{MMM}), the prediction uncertainty measured by the
+    mean \acs{RMSEP} is significantly reduced by up to $48 \unit{\%}$ and $39
+    \unit{\%}$, respectively, when using other statistical models. Moreover,
+    the non-linear \acf{GBRT} models can slightly reduce the mean \acs{RMSEP}
+    compared to the linear \acf{LASSO} models by about $2 \unit{\%}$ for
+    \acs{GBRT}-1D (using historical \acs{GPP} as single predictor) and $3
+    \unit{\%}$ for the full \acs{GBRT} model (using all predictors). (b)
+    Relative global feature importance for the different predictors used in
+    the \acs{GBRT} model to predict future absolute \acs{GPP} (step 2a). The
+    red bars correspond to positive Pearson correlation coefficients between
+    all predictors and the target variable. Due to its strong positive linear
+    relationship with the future \acs{GPP}, the historical \acs{GPP} is by far
+    the most important predictor in the model. A local feature importance map
+    using \acf{LIME} is not shown here because \acs{GPP} is the dominant
+    predictor for all grid cells. \AdaptedFrom{Schlund2020}.}
+  \label{fig:06:step2a_ml_inference}
+\end{figure}
 
 
 \section{Summary and Discussion}
