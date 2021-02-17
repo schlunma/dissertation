@@ -22,7 +22,7 @@
 
 \section{Supplementary Materials for
   \texorpdfstring{\Cref{ch:05:paper_ecs}}{Chapter \ref{ch:05:paper_ecs}}}
-\label{sec:app:cmip_models_in_chapter_5}
+\label{sec:app:si_for_paper_ecs}
 
 \vspace{\fill}
 
@@ -227,6 +227,250 @@
   \acs{CMIP}6 models. \AdaptedFrom{Schlund2020a}.}
   \label{tab:app:a:cmip6_emergent_constraints_part2}
 \end{table}
+
+
+\section{Supplementary Materials for
+  \texorpdfstring{\Cref{ch:06:paper_gpp}}{Chapter \ref{ch:06:paper_gpp}}}
+\label{sec:app:si_for_paper_gpp}
+
+\begin{table}[p]
+  \centering
+  \begin{tabulary}{\columnwidth}{L L L}
+    \toprule
+    Climate model & Land model & Main reference \\
+    \midrule
+    CESM1-BGC & CLM4 & \textcite{Gent2011} \\
+    CanESM2 & CLASS2.7 + CTEM1 & \textcite{Arora2011} \\
+    GFDL-ESM2M & LM3 & \textcite{Dunne2012} \\
+    HadGEM2-ES & JULES + TRIFFID & \textcite{Collins2011} \\
+    MIROC-ESM & MATSIRO + SEIB-DGVM & \textcite{Watanabe2011} \\
+    MPI-ESM-LR & JSBACH + BETHY & \textcite{Giorgetta2013} \\
+    NorESM1-ME & CLM4 & \textcite{Iversen2013} \\
+    \bottomrule
+  \end{tabulary}
+  \caption{List of the seven \acs{CMIP}5 models used in \cref{ch:06:paper_gpp}
+    (\nameref*{ch:06:paper_gpp}) alongside the main reference. More details are
+    given by \textcite{Anav2013}. We chose all \acs{CMIP}5 models which provide
+    all necessary variables (\emph{co2}, \emph{gpp}, \emph{lai}, \emph{pr},
+    \emph{rsds} and \emph{tas}) for all used experiments (\emph{esmHistorical},
+    \emph{esmrcp85} and \emph{esmFixClim1}). For all models, we only use the
+    first ensemble member available. \AdaptedFrom{Schlund2020}.}
+  \label{tab:app:b:cmip5_models}
+\end{table}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}[b]{0.39\columnwidth}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s1a.pdf}
+    \caption{}
+    \label{fig:app:b:co2:a}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.39\columnwidth}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s1b.pdf}
+    \caption{}
+    \label{fig:app:b:co2:b}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.2\columnwidth}
+    \raisebox{14.5mm}{\includegraphics[width=\columnwidth]{
+      ch06_paper_gpp/figs/s1c.pdf}}
+  \end{subfigure}
+  \caption{(a) Monthly mean atmospheric \acs{CO2} concentration at \acf{KUM}
+    from 1979 to 2019. The thin colored lines show the individual \acs{CMIP}5
+    models (emission-driven historical simulations for the years
+    \range{1979}{2005} and emission-driven \acs{RCP}8.5 simulations for the
+    years \range{2006}{2019}; the latter is not available for HadGEM2-ES). The
+    thick black line shows the observations. For the \acs{CMIP}5 models, the
+    grid cell closest to \acs{KUM} is considered. The curves show an increase
+    of the atmospheric \acs{CO2} concentration superimposed by a pronounced
+    seasonal cycle (see \cref{subsec:02:carbon_cycle_perturbations}). (b)
+    Annual amplitude of the seasonal cycle of \acs{CO2} (defined as the
+    difference between the maximum and the minimum monthly mean atmospheric
+    \acs{CO2} concentration for each year) against the annual mean atmospheric
+    \acs{CO2} concentration at \acs{KUM}. Colored points show the \acs{CMIP}5
+    models (similar time ranges as in (a)) and thick black points show the
+    observations. The lines show the corresponding linear regression fits for
+    each dataset. The slopes of these linear fits define the sensitivity of
+    the seasonal \acs{CO2} cycle amplitude to atmospheric \acs{CO2}
+    concentrations, which is used as predictor for the emergent constraint
+    step of our approach (step 1). \AdaptedFrom{Schlund2020}.}
+  \label{fig:app:b:co2}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s2a.pdf}
+    \caption{}
+    \label{fig:app:b:residuals:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s2b.pdf}
+    \caption{}
+    \label{fig:app:b:residuals:b}
+  \end{subfigure}
+  \caption{Distribution of the residuals of the \acf{GBRT} model for the two
+    different target variables used in step 2a (absolute \acf{GPP} at the end
+    of the \nth{21} century) and step 2b (fractional \acs{GPP} change over the
+    \nth{21} century). The distributions are derived by kernel density
+    estimation using training (blue) and test (green) data. The plots show
+    approximately unbiased distributions for the training and the test
+    datasets, which are very similar to each other. This indicates that the
+    \acl{ML} model does not overfit the data. \AdaptedFrom{Schlund2020}.}
+  \label{fig:app:b:residuals}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s3a.pdf}
+    \caption{}
+    \label{fig:app:b:cmip5_hist_mte:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s3b.pdf}
+    \caption{}
+    \label{fig:app:b:cmip5_hist_mte:b}
+  \end{subfigure}
+  \caption{Geographical distributions of the historical \acf{GPP} averaged
+    between 1991 and 2000. (a) C\acs{MIP}5 \acf{MMM}. (b) FLUXNET-MTE product
+    \autocite{Jung2011}. \AdaptedFrom{Schlund2020}.}
+  \label{fig:app:b:cmip5_hist_mte}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s4a.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s4b.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results:b}
+  \end{subfigure}
+  \\
+    \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s4c.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results:c}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s4d.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results:d}
+  \end{subfigure}
+  \\
+    \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s4e.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results:e}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s4f.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results:f}
+  \end{subfigure}
+  \caption{Geographical distributions of the absolute \acf{GPP} at the end of
+    the \nth{21} century in the \acs{RCP}8.5 scenario (step 2a) for different
+    statistical models. (a) \acs{CMIP}5 \acf{MMM}. (b) Rescaled \acs{CMIP}5
+    \acs{MMM} using \cref{eq:06:xxx}. (c) \Acf{LASSO} model using only the
+    historical \acs{GPP} as single predictor. (d) \Acf{GBRT} model using only
+    the historical \acs{GPP} as single predictor. (e) \acs{LASSO} model using
+    all predictors. (f) \acs{GBRT} model using all predictors.
+    \AdaptedFrom{Schlund2020}.}
+  \label{fig:app:b:step2a_results}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s5a.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results_errors:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s5b.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results_errors:b}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s5c.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results_errors:c}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s5d.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results_errors:d}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s5e.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results_errors:e}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s5f.pdf}
+    \caption{}
+    \label{fig:app:b:step2a_results_errors:f}
+  \end{subfigure}
+  \caption{Geographical distributions of the \acfp{SPE} of the absolute
+    \acf{GPP} at the end of the \nth{21} century in the \acs{RCP}8.5 scenario
+    (step 2a) for different statistical models. Details on the calculation of
+    the \acs{SPE} are given in \cref{subsec:app:b:xxx}. (a) \acs{CMIP}5
+    \acf{MMM}. (b) Rescaled \acs{CMIP}5 \acs{MMM} using \cref{eq:06:xxx}. (c)
+    \Acf{LASSO} model using only the historical \acs{GPP} as single predictor.
+    (d) \Acf{GBRT} model using only the historical \acs{GPP} as single
+    predictor. (e) \acs{LASSO} model using all predictors. (f) \acs{GBRT}
+    model using all predictors. The \acs{SPE} is minimal for the \acs{GBRT}
+    model using all predictors. \AdaptedFrom{Schlund2020}.}
+  \label{fig:app:b:step2a_results_errors}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s6a.pdf}
+    \caption{}
+    \label{fig:app:b:step2b_results_errors:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s6b.pdf}
+    \caption{}
+    \label{fig:app:b:step2b_results_errors:b}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s6c.pdf}
+    \caption{}
+    \label{fig:app:b:step2b_results_errors:c}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/s6d.pdf}
+    \caption{}
+    \label{fig:app:b:step2b_results_errors:d}
+  \end{subfigure}
+  \caption{Geographical distributions of the \acfp{SPE} of the fractional
+    change in \acf{GPP} over the \nth{21} century in the \acs{RCP}8.5 scenario
+    (step 2b) for different statistical models. Details on the calculation of
+    the \acs{SPE} are given in \cref{subsec:app:b:xxx}. (a) \acs{CMIP}5
+    \acf{MMM}. (b) Rescaled \acs{CMIP}5 \acs{MMM} using \cref{eq:06:xxx}. (c)
+    \Acf{LASSO} model. (d) \Acf{GBRT} model. The \acs{SPE} is minimal for the
+    \acs{GBRT} model. \AdaptedFrom{Schlund2020}.}
+  \label{fig:app:b:step2b_results_errors}
+\end{figure}
 
 
 \endgroup
