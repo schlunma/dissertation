@@ -46,23 +46,23 @@ technique in combination with a \ac{ML} algorithm. In the first step, we apply
 an existing emergent constraint on \ac{CO2} fertilization \autocite{Wenzel2016}
 to constrain the \acp{ESM}' responses to rising atmospheric \ac{CO2}
 concentration using observations of the increase of the \ac{CO2} seasonal cycle
-amplitude at Cape Kumukahi, Hawaii \autocite{Keeling2005}. In a second step, we
-introduce a supervised \ac{ML} algorithm based on boosting trees
-\autocite{Friedman2001} to learn an empirical spatial relationship that links
-grid-wise future \ac{GPP} to historical processes relevant to its simulation
-under present-day conditions. In combination with observational products of the
-predictors, that relationship can be used to further constrain uncertainties in
-the projected spatial maps of \ac{GPP} at the end of the \nth{21} century in
-the \acs{RCP}8.5 scenario. We examine both constraining the absolute \ac{GPP}
-and the fractional change in \ac{GPP} as two independent approaches and target
-variables. Unlike univariate linear regression used in the \ac{MDER} algorithm,
-the proposed \ac{GBRT} algorithm is able to handle multiple predictors and
-copes with non-linearities in the data. \ac{GBRT} is a well-known and
-successful tool used for interpolation, classification and prediction in other
-fields of data science and engineering \autocite{Death2007, Elith2008}. In the
-context of climate science, \ac{GBRT} was recently applied to identify the key
-drivers of spatial variations of the ratio of plant transpiration to total
-terrestrial evapotranspiration in \acp{ESM} \autocite{Lian2018}.
+amplitude at \ac{KUM} \autocite{Keeling2005}. In a second step, we introduce a
+supervised \ac{ML} algorithm based on boosting trees \autocite{Friedman2001} to
+learn an empirical spatial relationship that links grid-wise future \ac{GPP} to
+historical processes relevant to its simulation under present-day conditions.
+In combination with observational products of the predictors, that relationship
+can be used to further constrain uncertainties in the projected spatial maps of
+\ac{GPP} at the end of the \nth{21} century in the \acs{RCP}8.5 scenario. We
+examine both constraining the absolute \ac{GPP} and the fractional change in
+\ac{GPP} as two independent approaches and target variables. Unlike univariate
+linear regression used in the \ac{MDER} algorithm, the proposed \ac{GBRT}
+algorithm is able to handle multiple predictors and copes with non-linearities
+in the data. \ac{GBRT} is a well-known and successful tool used for
+interpolation, classification and prediction in other fields of data science
+and engineering \autocite{Death2007, Elith2008}. In the context of climate
+science, \ac{GBRT} was recently applied to identify the key drivers of spatial
+variations of the ratio of plant transpiration to total terrestrial
+evapotranspiration in \acp{ESM} \autocite{Lian2018}.
 
 This work is already published in \textcite{Schlund2020}. For this paper, the
 author of this thesis lead the writing and the analysis and implemented the
@@ -89,7 +89,7 @@ TBA.
     fractional \acs{GPP} change over the \nth{21} century. In step 2, a
     \acl{ML} model is used to constrain these two target variables (step 2a:
     absolute \acs{GPP}; step 2b: fractional \acs{GPP} change) in two
-    independent approaches. \AdaptedFrom{Schlund2020}.}
+    independent approaches. \AdaptedFrom{Schlund2020}. \cref{eq:06:xxx}}
   \label{fig:06:schematic_steps}
 \end{figure}
 
@@ -170,6 +170,52 @@ TBA.
 
 \begin{figure}[t]
   \centering
+  \begin{subfigure}[b]{0.37\columnwidth}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/3a.pdf}
+    \caption{}
+    \label{fig:06:step1:a}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.37\columnwidth}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/3b.pdf}
+    \caption{}
+    \label{fig:06:step1:b}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.24\columnwidth}
+    \raisebox{12.9mm}{\includegraphics[width=\columnwidth]{
+      ch06_paper_gpp/figs/3c.pdf}}
+  \end{subfigure}
+  \caption{Emergent relationship between the global mean fractional change in
+    \acf{GPP} and the sensitivity of the \acs{CO2} seasonal cycle amplitude to
+    rising atmospheric \acs{CO2} concentrations observed at \acf{KUM}. Colored
+    points refer to \acs{CMIP}5 models, the orange line and shaded area to the
+    linear  regression fit and its corresponding standard prediction error and
+    the dashed black lines to the observational constraint. (a) Similar to
+    \textcite{Wenzel2016}: The global mean fractional \acs{GPP} change after
+    \acs{CO2} doubling in a \acf{1BGC} defined as 10-year mean of the
+    \acs{1BGC} run centered at the time of \acs{CO2} doubling relative to the
+    10-year mean of pre-industrial control conditions at the beginning of the
+    \acs{1BGC} run. The sensitivity of the \acs{CO2} amplitude for the
+    \acs{CMIP}5 models is calculated from the years \range{1860}{2005}, the
+    corresponding observational value from the years \range{1979}{2019}. The
+    constrained global mean \acs{GPP} change after \acs{CO2} doubling in the
+    \acs{1BGC} run is $\pmrangeunit{30}{9}{\%}$. (b) Fractional global mean
+    \acs{GPP} change over the \nth{21} century calculated from the 10-year
+    mean \acs{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in
+    the emission-driven fully coupled \acs{RCP}8.5 simulations and the 10-year
+    mean \acs{GPP} at the end of the \nth{20} century (\range{1991}{2000}) in
+    the emission‐driven fully-coupled historical run (see \cref{eq:06:xxx}).
+    In contrast to \textcite{Wenzel2016}, the sensitivity of the \acs{CO2}
+    amplitude is calculated from the years \range{1979}{2019} for climate
+    models and observations for better comparability (the historical
+    \acs{CMIP}5 simulations are extended with the \acs{RCP}8.5 simulations for
+    the years \range{2006}{2019}). The constrained global mean \acs{GPP}
+    change over the \nth{21} century is $\pmrangeunit{39}{7}{\%}$.
+    \AdaptedFrom{Schlund2020}.}
+  \label{fig:06:step1}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \raisebox{5.5mm}{\includegraphics[width=\columnwidth]{
       ch06_paper_gpp/figs/4a.pdf}}
@@ -208,6 +254,261 @@ TBA.
     using \acf{LIME} is not shown here because \acs{GPP} is the dominant
     predictor for all grid cells. \AdaptedFrom{Schlund2020}.}
   \label{fig:06:step2a_ml_inference}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/5a.pdf}
+    \caption{}
+    \label{fig:06:step2a_results:a}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/5b.pdf}
+    \caption{}
+    \label{fig:06:step2a_results:b}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/5c.pdf}
+    \caption{}
+    \label{fig:06:step2a_results:c}
+  \end{subfigure}
+  \caption{(a) Ratio of the rescaled \acs{CMIP}5 ensemble mean of the absolute
+    \acf{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in the
+    \acs{RCP}8.5 scenario using \cref{eq:06:xxx} (r\acs{MMM}) and its
+    unweighted version (\acs{MMM}). The plot shows an almost constant value
+    over the whole globe with a mean of $0.92$, which corresponds to the ratio
+    of the constrained global mean \acs{GPP} change over the \nth{21} century
+    from step 1 ($39 \unit{\%}$) and the \acs{CMIP}5 ensemble mean global mean
+    \acs{GPP} change ($43 \unit{\%}$). All values close to $0$ for the dataset
+    in the denominator have been masked to avoid divisions by $0$. (b) Bias
+    between r\acs{MMM} and our \acf{GBRT} prediction for the end of the
+    \nth{21} century. This corresponds to step 2a of our approach. (c) Bias
+    between the modeled \acs{GPP} in the \acs{CMIP}5 \acs{MMM} of the
+    historical simulation and the FLUXNET-MTE observation‐based estimate of
+    \acs{GPP} \autocite{Jung2011} averaged between 1991 and 2000. Over large
+    swaths of the globe, the \acs{CMIP}5 ensemble overestimates \acs{GPP} (red
+    color). Panels (b) and (c) show similar bias patterns (pattern correlation
+    of $R^2 = 0.88$). Thus, the \acs{GBRT} prediction in step 2a is able to
+    correct the historical bias of the \acs{CMIP}5 ensemble relative to the
+    FLUXNET‐MTE product. \AdaptedFrom{Schlund2020}.}
+  \label{fig:06:step2a_results}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/6a.pdf}
+    \caption{}
+    \label{fig:06:step2a_results_biases:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/6b.pdf}
+    \caption{}
+    \label{fig:06:step2a_results_biases:b}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/6c.pdf}
+    \caption{}
+    \label{fig:06:step2a_results_biases:c}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/6d.pdf}
+    \caption{}
+    \label{fig:06:step2a_results_biases:d}
+  \end{subfigure}
+  \caption{Difference (a) and ratio (b) of the both biases shown in
+    \cref{fig:06:step2a_results:b,fig:06:step2a_results:c}. For panel (b), all
+    values close to $0$ for the dataset in the denominator have been masked to
+    avoid divisions by $0$. Both panels show that our approach is only to
+    first-order a bias correction, in which case both plots would only show
+    constant values. (c) Comparison of the \acf{GBRT} versus \acs{GBRT}-1D
+    projections of future \acf{GPP}. This panel indicates a clear difference
+    between the full \acs{GBRT} model using all predictors and the \acs{GBRT}
+    model using only historical \acs{GPP} as single predictor. (d) Comparison
+    of the \acs{GBRT} versus the \acf{LASSO} projections of future \acs{GPP}.
+    This panel shows that there is a clear difference between using the
+    non-linear \acs{GBRT} model and the linear \acs{LASSO} model. The results
+    of the \acs{LASSO}-1D model are not shown here because they are very
+    similar to the results of the \acs{LASSO} model.
+    \AdaptedFrom{Schlund2020}.}
+  \label{fig:06:step2a_results_biases}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \raisebox{5mm}{\includegraphics[width=\columnwidth]{
+      ch06_paper_gpp/figs/7a.pdf}}
+    \caption{}
+    \label{fig:06:step2b_ml_inference:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/7b.pdf}
+    \caption{}
+    \label{fig:06:step2b_ml_inference:b}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \raisebox{12.5mm}{\includegraphics[width=\columnwidth]{
+      ch06_paper_gpp/figs/7c.pdf}}
+    \caption{}
+    \label{fig:06:step2b_ml_inference:c}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/7d.pdf}
+    \caption{}
+    \label{fig:06:step2b_ml_inference:d}
+  \end{subfigure}
+  \caption{(a) Box plot of the \acf{RMSEP} distributions for four different
+    statistical models used to predict the fractional change in \acf{GPP} over
+    the \nth{21} century (step 2b) using the leave‐one‐model‐out \acl{CV}
+    approach. A detailed description of the representation of these
+    distributions is given in \cref{fig:06:step2a_ml_inference:a}. The
+    \acf{GBRT} algorithm shows the minimal mean and median \acs{RMSEP}.
+    Compared to the \acs{CMIP}5 \acf{MMM}, its corresponding rescaled version
+    (r\acs{MMM}), and the linear \acf{LASSO} model, the mean \acs{RMSEP} of the
+    \acs{GBRT} model is reduced by more than $16 \unit{\%}$, $9 \unit{\%}$, and
+    $3 \unit{\%}$, respectively. (b) Relative global feature importance for
+    the different features used in the \acs{LASSO} model to predict the
+    fractional \acs{GPP} change (step 2b). The feature importance for the
+    \acs{LASSO} model is given by the normalized linear coefficients of the
+    model. (c) Local feature importance for the \acs{GBRT} model used to
+    predict fractional \acs{GPP} change (step 2b) calculated using the
+    \acf{LIME} approach \autocite{Ribeiro2016} for the three dominant features
+    \acf{T}, \acf{LAI} and \acs{GPP}. The relative influence of these three
+    features (ignoring all other features) is color-coded according to the
+    triangle in the lower left corner. Over large parts of the globe, \acs{T}
+    is the dominant feature. (d) Relative global feature importance for the
+    different features used in the \acs{GBRT} model to predict the fractional
+    \acs{GPP} change (step 2b). The blue bars for the two global feature
+    importance plots (b) and (d) correspond to negative Pearson correlation
+    coefficients between all predictors and the target variable.
+    \AdaptedFrom{Schlund2020}.}
+  \label{fig:06:step2b_ml_inference}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/8a.pdf}
+    \caption{}
+    \label{fig:06:step2b_results:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/8b.pdf}
+    \caption{}
+    \label{fig:06:step2b_results:b}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/8c.pdf}
+    \caption{}
+    \label{fig:06:step2b_results:c}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/8d.pdf}
+    \caption{}
+    \label{fig:06:step2b_results:d}
+  \end{subfigure}
+  \caption{Fractional change in \acf{GPP} over the \nth{21} century (2100
+    versus 2000) in the \acs{RCP}8.5 scenario for different statistical models
+    (step 2b): (a) \acs{CMIP}5 \acf{MMM} of the fractional \acs{GPP} change,
+    (b) rescaled \acs{CMIP}5 \acl{MMM} (r\acs{MMM}) using \cref{eq:06:xxx}, (c)
+    linear \acf{LASSO} model, and (d) \acf{GBRT} model. The geographical
+    patterns from the different statistical models are very similar and show a
+    higher \acs{GPP} increase in high latitudes and a lower \acs{GPP} closer
+    to the equator. \AdaptedFrom{Schlund2020}.}
+  \label{fig:06:step2b_results}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/9a.pdf}
+    \caption{}
+    \label{fig:06:step2b_results_biases:a}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/9b.pdf}
+    \caption{}
+    \label{fig:06:step2b_results_biases:b}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/9c.pdf}
+    \caption{}
+    \label{fig:06:step2b_results_biases:c}
+  \end{subfigure}
+  \caption{(a) Ratio of the rescaled \acs{CMIP}5 ensemble mean of the
+    fractional change in \acf{GPP} over the \nth{21} century using
+    \cref{eq:06:xxx} (r\acs{MMM}; see \cref{fig:06:step2b_results:b}) and its
+    unweighted version (\acs{MMM}; see \cref{fig:06:step2b_results:a}). The
+    plot shows an almost constant value over the whole globe with a mean of
+    $0.91$, which corresponds to the ratio of the constrained global mean
+    \acs{GPP} change over the \nth{21} century from step 1 ($39 \unit{\%}$)
+    and the \acs{CMIP}5 ensemble mean global mean GPP change ($43 \unit{\%}$).
+    All values close to $0$ for the dataset in the denominator have been
+    masked to avoid divisions by $0$. Absolute (b) and relative (c)
+    differences between the fractional \acs{GPP} change over the \nth{21}
+    century predicted by the \acf{GBRT} model (see
+    \cref{fig:06:step2b_results:d}) and r\acs{MMM} (see
+    \cref{fig:06:step2b_results:b}). For panel (c), all values close to $0$ for
+    the dataset in the denominator have been masked to avoid divisions by $0$.
+    Both plots show a good agreement over large parts of the globe
+    (corresponding to values of $0$). There are large absolute differences in
+    the Sahara region and central Asia. The largest relative differences
+    (except for the Sahara and Arabian Peninsula region) appear over South
+    America, South Africa, the west coast of Africa, the Middle East, parts of
+    Australia and western parts of the United States.
+    \AdaptedFrom{Schlund2020}.}
+  \label{fig:06:step2b_results_biases}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/10a.pdf}
+    \caption{}
+    \label{fig:06:comparison_step2a_step2b:a}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/10b.pdf}
+    \caption{}
+    \label{fig:06:comparison_step2a_step2b:b}
+  \end{subfigure}
+  \\
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/10c.pdf}
+    \caption{}
+    \label{fig:06:comparison_step2a_step2b:c}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{\SubfigureWidth{}}
+    \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/10d.pdf}
+    \caption{}
+    \label{fig:06:comparison_step2a_step2b:d}
+  \end{subfigure}
+  \caption{Top row: Absolute future \acf{GPP} at the end of the \nth{21}
+    century (\range{2091}{2100}) calculated using step 2a (a) and step 2b (b).
+    Both approaches give similar results with global averages of $169
+    \unit{\GtCyr{}}$ (a) and $175 \unit{\GtCyr{}}$ (b), which are both
+    consistent with the global result of step 1 of
+    $\pmrangeunit{171}{12}{\GtCyr{}}$. The pattern correlation between both
+    approaches is $R^2 = 0.97$. Bottom row: Absolute (c) and relative (d)
+    differences between panels (a) and (b). \AdaptedFrom{Schlund2020}.}
+  \label{fig:06:comparison_step2a_step2b}
 \end{figure}
 
 
