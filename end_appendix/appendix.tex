@@ -24,68 +24,70 @@
   \texorpdfstring{\Cref{ch:05:paper_ecs}}{Chapter \ref{ch:05:paper_ecs}}}
 \label{sec:app:cmip_models_in_chapter_5}
 
-This section contains supplementary tables for \cref{ch:05:paper_ecs}
-(\nameref*{ch:05:paper_ecs}; see \cite{Schlund2020a}).
+\vspace{\fill}
 
-\begin{table}[!b]
+\begin{table}[!h]
   \centering
-  \begin{tabulary}{\columnwidth}{L L}
+  \begin{tabulary}{\columnwidth}{>{\em}L L}
     \toprule
-    Variable short name & Description \\
+    \ignorecolumntype{l}{Variable short name} & Description \\
     \midrule
-    \emph{cl} & Cloud area fraction \\
-    \emph{clt} & Total cloud area fraction \\
-    \emph{hur} & Relative humidity \\
-    \emph{hus} & Specific humidity \\
-    \emph{pr} & Precipitation \\
-    \emph{rsdt} & \Acf{TOA} incoming shortwave radiation \\
-    \emph{rsut} & \acs{TOA} outgoing shortwave radiation \\
-    \emph{rsutcs} & Clear-sky \acs{TOA} outgoing shortwave radiation \\
-    \emph{ta} & Air temperature \\
-    \emph{tas} & Surface air temperature \\
-    \emph{tos} & Sea surface temperature \\
-    \emph{ts} & Surface temperature \\
-    \emph{va} & Northward wind speed \\
-    \emph{wap} & Vertical velocity \\
+    cl & Cloud area fraction \\
+    clt & Total cloud area fraction \\
+    hur & Relative humidity \\
+    hus & Specific humidity \\
+    pr & Precipitation \\
+    rsdt & \Acf{TOA} incoming shortwave radiation \\
+    rsut & \acs{TOA} outgoing shortwave radiation \\
+    rsutcs & Clear-sky \acs{TOA} outgoing shortwave radiation \\
+    ta & Air temperature \\
+    tas & Surface air temperature \\
+    tos & Sea surface temperature \\
+    ts & Surface temperature \\
+    va & Northward wind speed \\
+    wap & Vertical velocity \\
     \bottomrule
   \end{tabulary}
   \caption{Overview of the variables used in \cref{ch:05:paper_ecs}
     (\nameref*{ch:05:paper_ecs}). More details are given in
-    \cref{tab:05:overview_emergent_constraints}, which lists the corresponding
-    variable short names for each emergent constraint.}
+    \cref{tab:05:overview_emergent_constraints}, which lists the variables
+    used for each emergent constraint.}
   \label{tab:app:a:overview_variables}
 \end{table}
 
+\vspace{\fill}
+
 \begin{table}[!b]
   \centering
-  \begin{tabulary}{\columnwidth}{L L L}
+  \begin{tabulary}{\columnwidth}{L >{\em}L L}
     \toprule
-    Observational dataset & Corresponding variables & Reference \\
+    Observational dataset & \ignorecolumntype{l}{Corresponding variables} &
+    Reference \\
     \midrule
-    AIRS & \emph{hur}, \emph{hus} & \textcite{Aumann2003} \\
-    AMSRE \ac{SST} & \emph{tos} & \textcite{AMSRE2011} \\
-    CERES-EBAF & \emph{rsdt}, \emph{rsut}, \emph{rsutcs} & \textcite{Loeb2018}
-    \\
-    Cloudsat/CALIPSO & \emph{cl} & \textcite{Mace2009} \\
-    ERA-Interim & \emph{hur}, \emph{ta}, \emph{va}, \emph{wap} &
-    \textcite{Dee2011} \\
-    GPCP & \emph{pr} & \textcite{Adler2003} \\
-    HadCRUT4 & \emph{tas} & \textcite{Morice2012} \\
-    HadISST & \emph{ts} & \textcite{Rayner2003} \\
-    ISCCP D-2 & \emph{clt} & \textcite{Rossow1991} \\
-    MLS-Aura & \emph{hur} & \textcite{Beer2006} \\
+    AIRS & hur, hus & \textcite{Aumann2003} \\
+    AMSRE \ac{SST} & tos & \textcite{AMSRE2011} \\
+    CERES-EBAF & rsdt, rsut, rsutcs & \textcite{Loeb2018} \\
+    Cloudsat/CALIPSO & cl & \textcite{Mace2009} \\
+    ERA-Interim & hur, ta, va, wap & \textcite{Dee2011} \\
+    GPCP & pr & \textcite{Adler2003} \\
+    HadCRUT4 & tas & \textcite{Morice2012} \\
+    HadISST & ts & \textcite{Rayner2003} \\
+    ISCCP D-2 & clt & \textcite{Rossow1991} \\
+    MLS-Aura & hur & \textcite{Beer2006} \\
     \bottomrule
   \end{tabulary}
   \caption{References for all observational datasets used in
-    \cref{ch:05:paper_ecs} (\nameref*{ch:05:paper_ecs}).}
+    \cref{ch:05:paper_ecs} (\nameref*{ch:05:paper_ecs}). More details are
+    given in \cref{tab:05:overview_emergent_constraints}, which lists the
+    observational datasets used for each emergent constraint.}
   \label{tab:app:a:observations}
 \end{table}
 
 \begin{table}[p]
   \centering
-  \begin{tabulary}{\columnwidth}{L L L}
+  \begin{tabulary}{\columnwidth}{L >{$}L<{$} L}
     \toprule
-    Model & Index & Main reference \\
+    Model & \ignorecolumntype{l}{Index} & Main reference \\
     \midrule
     ACCESS1-0 & 1 & \textcite{Dix2013} \\
     ACCESS1-3 & 2 & \textcite{Dix2013} \\
@@ -125,9 +127,9 @@ This section contains supplementary tables for \cref{ch:05:paper_ecs}
 
 \begin{table}[p]
   \centering
-  \begin{tabulary}{\columnwidth}{L L L}
+  \begin{tabulary}{\columnwidth}{L >{$}L<{$} L}
     \toprule
-    Model & Index & Main reference \\
+    Model & \ignorecolumntype{l}{Index} & Main reference \\
     \midrule
     ACCESS-CM2 & 29 & \textcite{Bi2013} \\
     ACCESS-ESM1-5 & 30 & \textcite{Law2017, Ziehn2017} \\

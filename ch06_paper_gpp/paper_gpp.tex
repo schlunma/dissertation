@@ -116,6 +116,45 @@ TBA.
   \label{fig:06:mlr_concept}
 \end{figure}
 
+\begin{table}[t]
+  \centering
+  \begin{tabular}[t]{p{0.27\columnwidth} l p{0.11\columnwidth}
+      p{0.3\columnwidth}}
+    \toprule
+    Predictor & \makecell{Observation‐driven \\ data} & Used time range &
+    Physical connection to \acs{GPP} \\
+    \midrule
+    \predictor{GPP} & \makecell{FLUXNET-MTE \\ \autocite{Jung2011}} &
+    \range{1991}{2000} & -- \\
+    \midrule
+    \predictor{LAI} & \makecell{LAI3g \\ \autocite{Zhu2013}} &
+    \range{1982}{2005} & \acs{LAI} is a measure for the number of leaves in a
+    grid cell. The photosynthesis rate is highly dependent on the number of
+    leaves (and vegetation in general). \\
+    \midrule
+    \predictor{PR} & \makecell{CRU \\ \autocite{Harris2014}} &
+    \range{1901}{2005} & Water is essential for the chemical processes of
+    photosynthesis. \\
+    \midrule
+    \predictor{RSDS} & \makecell{ERA-Interim \\ \autocite{Dee2011}} &
+    \range{1979}{2005} & Solar radiation is essential for the chemical
+    processes of photosynthesis. \\
+    \midrule
+    \predictor{T} & \makecell{CRU \\ \autocite{Harris2014}} &
+    \range{1901}{2005} & \acs{T} and photosynthesis rate have a common driver
+    (incoming solar radiation). \\
+    \bottomrule
+  \end{tabular}
+  \caption{Process-oriented diagnostics (\enquote{predictors} or
+    \enquote{features}) used in the \acf{GBRT} model to predict the target
+    variables. For step 2a (target variable: absolute \acs{GPP}), all listed
+    variables are monthly climatologies of the specified time ranges in the
+    historical climate. For step 2b (target variable: fractional \acs{GPP}
+    change), the temporal mean over the specified time ranges is calculated for
+    all variables. \AdaptedFrom{Schlund2020}.}
+  \label{tab:06:predictors}
+\end{table}
+
 
 \subsection{Constraining the \texorpdfstring{\acs{CO2}}{CO2} Fertilization
   Effect (Step 1)}
