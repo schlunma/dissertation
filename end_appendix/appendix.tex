@@ -282,9 +282,9 @@ linear combination of simple decision trees $h(\bm{x})$
 \end{equation}
 where $H$ is the total number of decision trees, $\beta_j$ the expansion
 coefficient for tree $j$ and $\bm{\alpha}_j$ the hyperparameters for tree $j$.
-Using all $N$ training data points $\left\{ \left( \bm{x}_i, y_i \right) \mid m
+Using all $N$ training data points $\left\{ \left( \bm{x}_i, y_i \right) \mid i
 \in I_N \right\}$ with index set $I_N = \left\{ 1, 2, \ldots, N \right\}$
-(\enquote{classic} gradient boosting), the expansion coefficients and
+(\enquote{classic} gradient boosting), the expansion coefficients and tree
 parameters are jointly fitted by minimizing a loss function $L \left( y,
 F(\bm{x}) \right)$ in a forward iteration:
 \begin{equation}
@@ -327,6 +327,88 @@ process is repeated $n$ times so that every input point is part of the
 validation set at least once. The optimal hyperparameters are the set of
 hyperparameters with optimal performance on the validation datasets
 \autocite{Elith2008}.
+
+
+\subsection{Evaluation of Prediction Uncertainty}
+\label{subsec:app:b:uncertainty}
+
+We estimate the \acf{SPE} of the \ac{GBRT} model itself as the \ac{RMSE} of the
+predicted target variable $\hat{y}$ and the corresponding true values $y$ of a
+hold-out test dataset, the so-called \emph{\acf{RMSEP}} \autocite{Bishop2006},
+which is assumed to be constant for all prediction input points:
+\begin{equation}
+  \sigma_\mathtxt{GBRT} = \mathtxt{RMSE}(\hat{y}, y).
+  \label{eq:app:b:sigma_gbrt}
+\end{equation}
+For this, we randomly select $25 \unit{\%}$ of the input data prior to
+training, so that this part of the data neither enters the training of the
+\ac{GBRT} model nor the hyperparameter optimization process. Moreover, the test
+dataset allows an assessment of the prediction residuals, which is useful to
+detect overfitting (see \cref{fig:app:b:residuals}).
+
+A second source of uncertainty is the error in the rescaling of the target
+variable in step 1 of our approach. Analogous to \cref{eq:06:y}, we estimate
+this error as
+\begin{equation}
+  \sigma_{i, \mathtxt{RESC}} = \bar{y}_i \cdot \frac{\sigma_{f'}}{\bar{f}}
+  \label{eq:app:b:sigma_rescaling}
+\end{equation}
+for each prediction input point $i$ ($i$ runs over all grid cells and months).
+$\bar{y}_i$ is the \acs{CMIP}5 \acf{MMM} of the target variable at prediction
+input point $i$ (step 2a: absolute \ac{GPP} at the end of the \nth{21} century;
+step 2b: fractional \ac{GPP} change over the \nth{21} century), $\sigma_{f'}$
+the standard error in the global mean fractional \acs{GPP} change given by the
+emergent constraint from step 1 and $\bar{f}$ the \acs{CMIP}5 \ac{MMM} global
+mean fractional \ac{GPP} change over the \nth{21} century.
+
+The final source of uncertainty is the error of the prediction input data
+$\sigma_{ik}$ ($i$ corresponds to the prediction input point and $k$ to the
+predictor). These are only available for the FLUXNET-MTE product
+\autocite{Jung2011}. To account for this, we use the \acf{LIME} technique
+\commentcite{Ribeiro2016}{see \cref{subsec:06:step_2}} to build a local linear
+model for every sample point, which yields the linear coefficients $b_{ik}$.
+Using error propagation for all predictors and assuming independence of all
+individual errors, the \ac{SPE} due to observational uncertainty $\sigma_{i,
+  \mathtxt{OBS}}$ then be calculated as
+\begin{equation}
+  \sigma_{i, \mathtxt{OBS}} = \sum_{k=1}^{K} b_{ik}^2 \sigma_{ik}^2.
+  \label{eq:app:b:sigma_obs}
+\end{equation}
+The total \ac{SPE} at a prediction input point $i$ is the sum of the squared
+errors presented above (assuming all of them are independent):
+\begin{equation}
+  \sigma_i^2 = \sigma_\mathtxt{GBRT}^2 + \sigma_{i, \mathtxt{RESC}}^2 +
+  \sigma_{i, \mathtxt{OBS}}^2.
+  \label{eq:app:b:sigma_sum}
+\end{equation}
+The specified error ranges for the \ac{MMM} approaches are calculated in a
+similar way: The constant \ac{SPE} per grid cell is estimated by the mean
+\ac{RMSEP} given in the leave-one-model-out \ac{CV} experiment (see
+\cref{subsec:02:model_weighting}). For the plain \ac{MMM}, this is the only
+source of uncertainty. For the rescaled \ac{MMM}, the total error can be
+calculated similarly to \cref{eq:app:b:sigma_sum} without the last term
+(observational uncertainty).
+
+
+\subsection{Evaluation of Residuals}
+\label{subsec:app:b:residuals}
+
+A convenient way to gain information about statistical models is to analyze the
+residuals $\varepsilon_i$, which are defined as the difference between the true
+value of the target variable $y_i$ and the predicted value $\hat{y}_i$ at a
+sample point $i$ with known ground truth:
+\begin{equation}
+  \varepsilon_i = y_i - \hat{y}_i.
+  \label{eq:app:b:residuals}
+\end{equation}
+A common way to visualize the residuals is to plot their \acfp{PDF} (see
+\cref{fig:app:b:residuals}). The two panels (for steps 2a and 2b) show that the
+\ac{ML} model is not overfitting in both cases: The distributions of the
+training data and the independent hold-out data are very similar. Moreover, the
+\acp{PDF} do not show significant biases, as the residuals are approximately
+unbiased (zero mean) for the training and the test dataset. This justifies the
+use of the \ac{RMSEP} to estimate the \ac{SPE}, since for unbiased residuals
+the \ac{RMSEP} is equal to the standard deviation of the residuals.
 
 \begin{table}[p]
   \centering
@@ -382,7 +464,7 @@ hyperparameters with optimal performance on the validation datasets
     difference between the maximum and the minimum monthly mean atmospheric
     \acs{CO2} concentration for each year) against the annual mean atmospheric
     \acs{CO2} concentration at \acs{KUM}. Colored points show the \acs{CMIP}5
-    models (similar time ranges as in (a)) and thick black points show the
+    models (similar time ranges as in (a)), and thick black points show the
     observations. The lines show the corresponding linear regression fits for
     each dataset. The slopes of these linear fits define the sensitivity of
     the seasonal \acs{CO2} cycle amplitude to atmospheric \acs{CO2}
@@ -522,7 +604,7 @@ hyperparameters with optimal performance on the validation datasets
   \caption{Geographical distributions of the \acfp{SPE} of the absolute
     \acf{GPP} at the end of the \nth{21} century in the \acs{RCP}8.5 scenario
     (step 2a) for different statistical models. Details on the calculation of
-    the \acs{SPE} are given in \cref{subsec:app:b:xxx}. (a) \acs{CMIP}5
+    the \acs{SPE} are given in \cref{subsec:app:b:uncertainty}. (a) \acs{CMIP}5
     \acf{MMM}. (b) Rescaled \acs{CMIP}5 \acs{MMM} using \cref{eq:06:y}. (c)
     \Acf{LASSO} model using only the historical \acs{GPP} as single predictor.
     (d) \Acf{GBRT} model using only the historical \acs{GPP} as single
@@ -560,7 +642,7 @@ hyperparameters with optimal performance on the validation datasets
   \caption{Geographical distributions of the \acfp{SPE} of the fractional
     change in \acf{GPP} over the \nth{21} century in the \acs{RCP}8.5 scenario
     (step 2b) for different statistical models. Details on the calculation of
-    the \acs{SPE} are given in \cref{subsec:app:b:xxx}. (a) \acs{CMIP}5
+    the \acs{SPE} are given in \cref{subsec:app:b:uncertainty}. (a) \acs{CMIP}5
     \acf{MMM}. (b) Rescaled \acs{CMIP}5 \acs{MMM} using \cref{eq:06:y}. (c)
     \Acf{LASSO} model. (d) \Acf{GBRT} model. The \acs{SPE} is minimal for the
     \acs{GBRT} model. \AdaptedFrom{Schlund2020}.}
