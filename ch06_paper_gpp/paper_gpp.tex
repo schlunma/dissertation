@@ -55,13 +55,13 @@ can be used to further constrain uncertainties in the projected spatial maps of
 \ac{GPP} at the end of the \nth{21} century in the \acs{RCP}8.5 scenario. We
 examine both constraining the absolute \ac{GPP} and the fractional change in
 \ac{GPP} as two independent approaches and target variables. Unlike univariate
-linear regression used in the \ac{MDER} algorithm, the proposed \ac{GBRT}
-algorithm is able to handle multiple predictors and copes with non-linearities
-in the data. \ac{GBRT} is a well-known and successful tool used for
-interpolation, classification and prediction in other fields of data science
-and engineering \autocite{Death2007, Elith2008}. In the context of climate
-science, \ac{GBRT} was recently applied to identify the key drivers of spatial
-variations of the ratio of plant transpiration to total terrestrial
+linear regression used in the \ac{MDER} algorithm, the proposed
+\emph{\ac{GBRT}} algorithm is able to handle multiple predictors and copes with
+non-linearities in the data. \ac{GBRT} is a well-known and successful tool used
+for interpolation, classification and prediction in other fields of data
+science and engineering \autocite{Death2007, Elith2008}. In the context of
+climate science, \ac{GBRT} was recently applied to identify the key drivers of
+spatial variations of the ratio of plant transpiration to total terrestrial
 evapotranspiration in \acp{ESM} \autocite{Lian2018}.
 
 This work is already published in \textcite{Schlund2020}. For this paper, the
@@ -76,7 +76,25 @@ summary and discussion.
 \section{Data and Methods}
 \label{sec:06:data_and_methods}
 
-TBA.
+Here we briefly describe the data and methods used in this study.
+\Cref{subsec:06:step_1} reviews the method of a previously published emergent
+constraint on \ac{CO2} fertilization from \textcite{Wenzel2016} that we apply
+here to our study to rescale the climate model output (step 1). This includes a
+discussion of the caveats that are associated with this emergent constraint
+that attributes changes in the observed increase in the \ac{CO2} seasonal cycle
+amplitude at \ac{KUM} entirely to the increase in atmospheric \ac{CO2}
+concentration, yet other studies provide indications that part of this increase
+is due to climate and land use changes \autocite{Bastos2019, Forkel2016,
+  Piao2018, Zhao2016}. In \cref{subsec:06:step_2} the \ac{ML} technique used in
+step 2 to constrain gridded \ac{GPP} projections is presented.
+\Cref{fig:06:schematic_steps} shows an overview of our two-step approach.
+\Cref{subsec:06:uncertainty_and_skill} describes how uncertainty and predictive
+skill are quantified. A complete list of all \acs{CMIP}5 models used in this
+study is given in \cref{tab:app:b:cmip5_models}. To apply the emergent
+constraint in step 1, we need emission-driven \acs{CMIP}5 simulations. The
+number of \acp{ESM} included is therefore seven, as in \textcite{Wenzel2016}.
+More details on the methods and the experimental setup are given in
+\cref{sec:app:si_for_paper_gpp}.
 
 \begin{figure}[t]
   \centering
@@ -89,9 +107,152 @@ TBA.
     fractional \acs{GPP} change over the \nth{21} century. In step 2, a
     \acl{ML} model is used to constrain these two target variables (step 2a:
     absolute \acs{GPP}; step 2b: fractional \acs{GPP} change) in two
-    independent approaches. \AdaptedFrom{Schlund2020}. \cref{eq:06:xxx}}
+    independent approaches. \AdaptedFrom{Schlund2020}.}
   \label{fig:06:schematic_steps}
 \end{figure}
+
+
+\subsection{Constraining the \texorpdfstring{\acs{CO2}}{CO2} Fertilization
+  Effect (Step 1)}
+\label{subsec:06:step_1}
+
+In this section, we present the observational emergent constraint on the
+\ac{CO2} fertilization effect by \textcite{Wenzel2016} which we use to globally
+rescale the models for their individual bias in the sensitivity of \ac{GPP} to
+an increase in atmospheric \ac{CO2} concentration. Our objective here is to
+present a general methodology and suggest further improvements upon this
+constraint that could be used in the future. \textcite{Wenzel2016} show a
+correlation between the increase in the \ac{CO2} seasonal cycle amplitude
+simulated by models and the projected \ac{CO2} fertilization. When combined
+with the observed trends in the \ac{CO2} seasonal cycle amplitude, the
+fractional \ac{GPP} change at the time of \ac{CO2} doubling relative to
+pre-industrial conditions in a \ac{1BGC} is constrained. The predictor in this
+study is the sensitivity of the \ac{CO2} seasonal cycle amplitude to rising
+atmospheric \ac{CO2} concentrations, defined as the slope of the linear
+regression between the \ac{CO2} seasonal cycle amplitude and the annual mean
+atmospheric \ac{CO2} concentrations (see \cref{fig:app:b:co2} for details). The
+emergent constraint is physically motivated by the hypothesis that increasing
+terrestrial \ac{GPP} is a main driver for the observed changes in the \ac{CO2}
+seasonal cycle amplitude \autocite{Gray2014, Keeling1996, Zhao2014}. This
+hypothesis is based on the fact that the seasonal cycle in atmospheric \ac{CO2}
+concentration originates from photosynthesis and decomposition processes: in
+summer, photosynthesis removes \ac{CO2} from the atmosphere; in winter,
+additional \ac{CO2} is added to the atmosphere due to the decomposition of
+organic matter \autocite{Keeling1995}. Thus, \ac{CO2} fertilization leads to an
+increase of the \acs{CO2} seasonal cycle amplitude due to increased \acs{CO2}
+removal from the atmosphere. We note that this emergent constraint implicitly
+assumes that there is no temperature-driven increase in respiration over time.
+Therefore, this approach most likely overestimates the true sensitivity of
+\ac{GPP} to an increase in the atmospheric \ac{CO2} concentration.
+
+However, we note that this emergent constraint is not undisputed. In other
+studies, the observed change in the \ac{CO2} seasonal cycle amplitude is
+attributed to other factors. Using a dynamic global vegetation model,
+\textcite{Forkel2016} find that the increase in the \ac{CO2} seasonal cycle
+amplitude above $40 \unit{\degree N}$ is mainly driven by the response of
+plants to global warming instead of \ac{CO2}. Similarly, \textcite{Piao2018}
+show that elevated atmospheric \acs{CO2} concentration and climate change
+equally contribute to the increase in the \ac{CO2} seasonal cycle in northern
+high latitudes with additional smaller contributions from air-sea carbon fluxes
+and land use changes. For their analysis, \textcite{Piao2018} use \ac{CO2}
+records from 26 stations and nine terrestrial ecosystem models. An evaluation
+of two atmospheric inversions and eleven land surface models shows contrasting
+effects of \ac{CO2} fertilization (positive) and global warming (negative) on
+the \ac{CO2} seasonal cycle amplitude increase in northern high latitudes with
+negligible contributions from land use changes \autocite{Bastos2019}. A further
+study by \textcite{Zhao2016} finds that for seven out of nine dynamic
+vegetation models, the \ac{CO2} fertilization effect is the strongest driver
+for the observed changes in the \ac{CO2} seasonal cycle amplitude, while the
+two remaining models equally attribute this to \ac{CO2} fertilization, climate
+change and land use changes. Moreover, \textcite{Winkler2019a} discuss
+limitations of carbon cycle emergent constraints related to the calculation of
+the predictor from observation-based data and the inter-model relationship. As
+a case study, they adopt a further emergent constraint by
+\textcite{Winkler2019} that uses the response of the \ac{LAI} to ambient
+\ac{CO2} instead of the \ac{CO2} seasonal cycle amplitude sensitivity to
+constrain the \ac{GPP} increase in the northern high latitudes. Furthermore, it
+has been shown that the \acs{CMIP}5 models \autocite{Graven2013} and the TRENDY
+dynamic vegetation models \autocite{Thomas2016} greatly underestimate long-term
+changes in the \ac{CO2} seasonal cycle which questions their ability to
+attribute changes in the \ac{CO2} seasonal cycle to different contributors.
+Nevertheless, we emphasize that we here present a generic methodology and use
+the results of an existing emergent constraint. Our proposed framework is
+universal and could be based on other emergent constraints in the future.
+
+In contrast to \textcite{Wenzel2016}, instead of idealized simulations we apply
+the presented emergent constraint on the emission-driven \acs{RCP}8.5
+simulation \autocite{Riahi2011} and examine whether it still holds for this
+simulation where forcings other than \ac{CO2} also change. Moreover, we
+consider the global mean \ac{GPP} change instead of the \ac{GPP} change in the
+northern extratropics as in \textcite{Wenzel2016}. Due to the strong annual
+mixing of \ac{CO2} in the atmosphere, the change in the \ac{CO2} seasonal cycle
+amplitude at \ac{KUM} is representative for the whole globe. Thus, we apply
+this emergent constraint to the global mean \ac{GPP} change. However, we note
+that this approach might introduce errors since the \ac{CO2} fertilization
+effect could be different for tropical and extratropical ecosystems due to
+nutrient limitations and the temperature dependence of Rubisco kinetics
+\autocite{CraftsBrandner2000} in the tropics. Nevertheless, we argue that we
+can use the constraint if the emergent relationship still holds within our
+considered framework (the \acs{RCP}8.5 scenario simulated by the \acs{CMIP}5
+models).
+
+Therefore, our target variable in step 1 is the global mean fractional
+\acs{GPP} change over the \nth{21} century $f$ in the \acs{RCP}8.5 scenario,
+which is calculated from the 10-year mean \ac{GPP} at the end of the \nth{21}
+century in the emission‐driven fully-coupled \acs{RCP}8.5 simulations
+(\range{2091}{2100}) and the 10-year mean \ac{GPP} at the end of the \nth{20}
+century (\range{1991}{2000}) in the emission-driven historical simulation:
+\begin{equation}
+  f = \frac{\mathtxt{GPP (\range{2091}{2100})}}{
+    \mathtxt{GPP (\range{1991}{2000})}} - 1.
+  \label{eq:06:f}
+\end{equation}
+This variable is given as a percentage, where negative values correspond to a
+decrease in \ac{GPP}, positive values to an increase in \ac{GPP} and a value of
+$0 \unit{\%}$ to no \ac{GPP} change. The \ac{CO2} amplitude sensitivity is
+calculated for the years \range{1979}{2019}, which is the full available time
+range for the observed \ac{CO2} record at \ac{KUM} \autocite{Keeling2005}.
+Similar \textcite{Wenzel2016}, we extract the observed \ac{CO2} amplitude from
+smoothed atmospheric \ac{CO2} concentrations (using a stiff cubic spline
+function plus a four-harmonics functions with linear gain) as provided by
+\textcite{Keeling2005}. For the \acs{CMIP}5 models, the respective grid cell
+closest to \ac{KUM} ($19.5 \unit{\degree N}$, $154.8 \unit{\degree W}$) is
+extracted. Additionally, the emission-driven historical simulations are
+extended with the emission-driven \acs{RCP}8.5 simulations for the years 2006
+to 2019. More details including an illustration of this calculation are shown
+in \cref{fig:app:b:co2}.
+
+Since the global constraint above cannot be used directly as a predictor in the
+\ac{ML} approach which operates on gridded values (see
+\cref{subsec:06:step_2}), we use it as first step to globally rescale the
+\ac{ESM} output. This important first step allows us to constrain the large
+uncertainty in the global \ac{CO2} fertilization effect of the \acs{CMIP}5
+models. In this study, two different gridded target variables are examined (see
+\cref{fig:06:schematic_steps}): the monthly climatology of future absolute
+\ac{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in the
+\acs{RCP}8.5 scenario (see step 2a) and the fractional \acs{GPP} change over
+the \nth{21} century as defined in \cref{eq:06:f} (see step 2b). The global
+rescaling of the gridded target variables works as follows: Let $f_m$ be the
+global mean fractional \acs{GPP} change over the \nth{21} century of \ac{ESM}
+$m$, $f'$ the constrained value of the global mean fractional \ac{GPP} change
+and $y_{mi}$ the target variable of climate model $m$. Then, we define the
+rescaled target variable $y'_{mi}$ by
+\begin{equation}
+  y'_{mi} = y_{mi} \cdot \frac{f'}{f_m},
+  \label{eq:06:y}
+\end{equation}
+where the index $i$ counts over all grid cells (and months when absolute
+\ac{GPP} is used as target variable in step 2a) and $m$ refers to the \ac{ESM}
+($m \in \left\{ 1, 2, \ldots, 7 \right\}$). Thus, values for the individual
+grid cells/months are rescaled by a factor that is determined by the ratio
+between the models' global mean \ac{GPP} change and the constrained global mean
+\ac{GPP} change derived from the \textcite{Wenzel2016} emergent constraint
+using the observed change in the \ac{CO2} cycle amplitude. Models that simulate
+a too high global mean \ac{GPP} change are nudged toward smaller values and
+vice versa. The rescaled target variables are then fed into the \ac{ML} model
+(step 2) presented in the following section. We note that this global rescaling
+assumes that the relative biases in the fractional \ac{GPP} change of the
+individual \acp{ESM} are constant over the whole globe.
 
 \begin{figure}[p]
   \centering
@@ -145,20 +306,49 @@ TBA.
     (incoming solar radiation). \\
     \bottomrule
   \end{tabular}
-  \caption{Process-oriented diagnostics (\enquote{predictors} or
-    \enquote{features}) used in the \acf{GBRT} model to predict the target
-    variables. For step 2a (target variable: absolute \acs{GPP}), all listed
-    variables are monthly climatologies of the specified time ranges in the
-    historical climate. For step 2b (target variable: fractional \acs{GPP}
-    change), the temporal mean over the specified time ranges is calculated for
-    all variables. \AdaptedFrom{Schlund2020}.}
+  \caption{Process-oriented diagnostics (\emph{predictors} or \emph{features})
+    used in the \acf{GBRT} model to predict the target variables. For step 2a
+    (target variable: absolute \acs{GPP}), all listed variables are monthly
+    climatologies of the specified time ranges in the historical climate. For
+    step 2b (target variable: fractional \acs{GPP} change), the temporal mean
+    over the specified time ranges is calculated for all variables.
+    \AdaptedFrom{Schlund2020}.}
   \label{tab:06:predictors}
 \end{table}
 
 
-\subsection{Constraining the \texorpdfstring{\acs{CO2}}{CO2} Fertilization
-  Effect (Step 1)}
-\label{subsec:06:step_1}
+\subsection{Gradient Boosted Regression Tree (\acs{GBRT}) Algorithm (Step 2)}
+\label{subsec:06:step_2}
+
+For step 2 we use the \ac{GBRT} algorithm to find an optimal regression
+function $F$ relating the target variable $y$ to a set of $K$ predictors
+$\bm{x} = \left( x^{(1)}, x^{(2)}, \ldots, x^{(K)} \right)$ (\emph{features} or
+\emph{covariates}) such that the predicted target variable is given by $\hat{y}
+= F(\bm{x})$ \autocite{Death2007, Elith2008, Friedman2001, Friedman2002}. Its
+basic elements are decision trees, which use binary splits of the input data to
+create decision rules. Due to their simple nature, decision trees are easy to
+interpret but cannot be used to create satisfying predictions for very complex
+datasets. This issue can be overcome by a technique called \emph{boosting}
+\autocite{Freund1996}. Boosting iteratively improves the performance of
+\emph{weak learners} (in our case decision trees) in the following way: At
+first, a single decision tree is fitted to a randomly selected subsample of the
+training data $\left\{ \left( \bm{x}_i, y_i \right) \mid i \in I \right\}$ with
+an arbitrary index set $I$ (using a predefined loss function, \eg{} the mean
+square error). Then, further decision trees are linearly added to the
+regression function $F$ (scaled by a regularization parameter $\nu \ll 1$
+called \emph{learning rate}) and the model is fitted again in the same manner.
+This ensures that the prediction for poorly modeled training points in the
+beginning will gradually improve during the training. The whole procedure is
+repeated until the loss function does not improve anymore, as evaluated on an
+independent validation data set. Relevant hyperparameters of this algorithm
+(maximum number of decision trees, maximum depth of the decision trees,
+learning rate and the subsample ratio) are optimized by $5$-fold \ac{CV} using
+the training data. More details on the \ac{GBRT} algorithm are given in
+\cref{subsec:app:b:gbrt}.
+
+
+\subsection{Assessment of Uncertainty and Predictive Skill}
+\label{subsec:06:uncertainty_and_skill}
 
 TBA.
 
@@ -203,8 +393,8 @@ TBA.
     mean \acs{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in
     the emission-driven fully coupled \acs{RCP}8.5 simulations and the 10-year
     mean \acs{GPP} at the end of the \nth{20} century (\range{1991}{2000}) in
-    the emission‐driven fully-coupled historical run (see \cref{eq:06:xxx}).
-    In contrast to \textcite{Wenzel2016}, the sensitivity of the \acs{CO2}
+    the emission‐driven fully-coupled historical run (see \cref{eq:06:f}). In
+    contrast to \textcite{Wenzel2016}, the sensitivity of the \acs{CO2}
     amplitude is calculated from the years \range{1979}{2019} for climate
     models and observations for better comparability (the historical
     \acs{CMIP}5 simulations are extended with the \acs{RCP}8.5 simulations for
@@ -277,11 +467,11 @@ TBA.
   \end{subfigure}
   \caption{(a) Ratio of the rescaled \acs{CMIP}5 ensemble mean of the absolute
     \acf{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in the
-    \acs{RCP}8.5 scenario using \cref{eq:06:xxx} (r\acs{MMM}) and its
-    unweighted version (\acs{MMM}). The plot shows an almost constant value
-    over the whole globe with a mean of $0.92$, which corresponds to the ratio
-    of the constrained global mean \acs{GPP} change over the \nth{21} century
-    from step 1 ($39 \unit{\%}$) and the \acs{CMIP}5 ensemble mean global mean
+    \acs{RCP}8.5 scenario using \cref{eq:06:y} (r\acs{MMM}) and its unweighted
+    version (\acs{MMM}). The plot shows an almost constant value over the
+    whole globe with a mean of $0.92$, which corresponds to the ratio of the
+    constrained global mean \acs{GPP} change over the \nth{21} century from
+    step 1 ($39 \unit{\%}$) and the \acs{CMIP}5 ensemble mean global mean
     \acs{GPP} change ($43 \unit{\%}$). All values close to $0$ for the dataset
     in the denominator have been masked to avoid divisions by $0$. (b) Bias
     between r\acs{MMM} and our \acf{GBRT} prediction for the end of the
@@ -423,7 +613,7 @@ TBA.
   \caption{Fractional change in \acf{GPP} over the \nth{21} century (2100
     versus 2000) in the \acs{RCP}8.5 scenario for different statistical models
     (step 2b): (a) \acs{CMIP}5 \acf{MMM} of the fractional \acs{GPP} change,
-    (b) rescaled \acs{CMIP}5 \acl{MMM} (r\acs{MMM}) using \cref{eq:06:xxx}, (c)
+    (b) rescaled \acs{CMIP}5 \acl{MMM} (r\acs{MMM}) using \cref{eq:06:y}, (c)
     linear \acf{LASSO} model, and (d) \acf{GBRT} model. The geographical
     patterns from the different statistical models are very similar and show a
     higher \acs{GPP} increase in high latitudes and a lower \acs{GPP} closer
@@ -452,7 +642,7 @@ TBA.
   \end{subfigure}
   \caption{(a) Ratio of the rescaled \acs{CMIP}5 ensemble mean of the
     fractional change in \acf{GPP} over the \nth{21} century using
-    \cref{eq:06:xxx} (r\acs{MMM}; see \cref{fig:06:step2b_results:b}) and its
+    \cref{eq:06:y} (r\acs{MMM}; see \cref{fig:06:step2b_results:b}) and its
     unweighted version (\acs{MMM}; see \cref{fig:06:step2b_results:a}). The
     plot shows an almost constant value over the whole globe with a mean of
     $0.91$, which corresponds to the ratio of the constrained global mean

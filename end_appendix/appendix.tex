@@ -14,6 +14,7 @@
 
 
 \crefalias{section}{appendix}
+\crefalias{subsection}{appendix}
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
@@ -233,6 +234,100 @@
   \texorpdfstring{\Cref{ch:06:paper_gpp}}{Chapter \ref{ch:06:paper_gpp}}}
 \label{sec:app:si_for_paper_gpp}
 
+
+\subsection{Data Preprocessing}
+\label{subsec:app:b:data_preprocessing}
+
+The raw monthly mean output of every participating climate model and
+observation-driven dataset is regridded to a $\ang{2} \times \ang{2}$ grid and
+masked with a common mask to remove all oceans and Antarctica. For step 2a
+(target variable: absolute \acf{GPP} at the end of the \nth{21} century),
+monthly climatologies are calculated for every dataset by averaging over all
+available years for every month. For step 2b (target variable: fractional
+\ac{GPP} change over the \nth{21} century), temporal means are calculated for
+every dataset by averaging over the full time dimension. In addition, values
+greater than $300 \unit{\%}$ in the target variable in step 2b (fractional
+\ac{GPP} change over the \nth{21} century) are masked to avoid numerical
+inconsistencies caused by the division of small numbers in the derivation of
+the target variable. In the next step, the multi-dimensional data is flattened
+and all the training data from the different climate models is stacked into a
+single large training array. Finally, to account for the varying magnitudes of
+the different predictors, all of them are linearly scaled by their respective
+means and standard deviations so that they have a mean of zero and unit
+variance. In total, 237852 (16503) training data points, 79284 (5501) hold-out
+test data points, and 46344 (3727) points for the prediction are used in the
+machine learning model for step 2a (step 2b).
+
+
+\subsection{Gradient Boosted Regression Tree (\acs{GBRT}) Algorithm}
+\label{subsec:app:b:gbrt}
+
+The basic elements of the \ac{GBRT} algorithm are decision trees. These models
+create decision rules based on binary splits to predict a target variable $y$
+from a set of predictors $\bm{x} = \left( x^{(1)}, x^{(2)}, \ldots, x^{(K)}
+\right)$ ($K$ is the number of predictors). These predictors do not need to be
+of the same type: \ac{GBRT} allows the simultaneous input of numerical and
+categorical variables, which is a great advantage for our use case. There is no
+need to encode the categorical predictors in any way. Due to their simple
+nature, \acf{ML} models based on decision trees are easy to interpret and
+explain but cannot be used to create satisfying predictions for complex
+datasets. This issue can be overcome by a technique called \emph{boosting}.
+Boosting improves the performance of \emph{weak learners} (in our case decision
+trees) by combining a large number of them  \autocite{Freund1996}. The
+regression function used to predict $\hat{y} = F(\bm{x})$ can be written as a
+linear combination of simple decision trees $h(\bm{x})$
+\begin{equation}
+  F(\bm{x}) = \sum_{j=0}^{H} \beta_j h(\bm{x}, \bm{\alpha}_j),
+  \label{eq:app:b:f_x_sum}
+\end{equation}
+where $H$ is the total number of decision trees, $\beta_j$ the expansion
+coefficient for tree $j$ and $\bm{\alpha}_j$ the hyperparameters for tree $j$.
+Using all $N$ training data points $\left\{ \left( \bm{x}_i, y_i \right) \mid m
+\in I_N \right\}$ with index set $I_N = \left\{ 1, 2, \ldots, N \right\}$
+(\enquote{classic} gradient boosting), the expansion coefficients and
+parameters are jointly fitted by minimizing a loss function $L \left( y,
+F(\bm{x}) \right)$ in a forward iteration:
+\begin{equation}
+  \left( \beta_j, \bm{\alpha}_j \right) = \underset{\beta,
+    \bm{\alpha}}{\arg\min} \sum_{i=1}^{N} L \left( y_i, F_{j-1}(\bm{x}_i) +
+  \beta h(\bm{x}_i, \bm{\alpha}) \right).
+  \label{eq:app:b:beta_alpha}
+\end{equation}
+In practice, this iteration step only uses a randomly selected subsample of the
+training data (drawn without replacement), \ie{} the sum does not cover all $N$
+training points. Starting with an initial guess $F_0(\bm{x})$, the model is
+recursively built by
+\begin{equation}
+  F_j(\bm{x}) = F_{j-1}(\bm{x}) + \beta_j h(\bm{x}, \bm{\alpha}_j).
+  \label{eq:app:b:f_x_recursion}
+\end{equation}
+The minimization procedure of the loss function (mean square error with
+additional sample weights determined by the grid cell areas) is called
+\emph{stochastic gradient boosting} and is explained in detail by
+\textcite{Friedman2001, Friedman2002}. Fitting the \ac{GBRT} model involves
+building the decision trees by splitting the data at points with maximum
+information gain. Boosting those simple trees greatly improves the overall
+predictive power of the \ac{ML} algorithm: Poorly modeled training points in
+the early stages of the algorithm will gradually improve throughout the
+training process.
+
+A crucial criterion for the successful application of any \ac{GBRT} algorithm
+is the choice of several hyperparameters. The three main control parameters of
+the learning procedure are the total number of decision trees $H$, the
+complexity of the individual trees (for example measured by the maximum tree
+depth) and the learning rate $\nu \ll 1$. The latter parameter is used for
+regularization and dramatically reduces the risk of overfitting by scaling down
+the contribution of each added weak learner \autocite{Death2007, Elith2008,
+  Friedman2001}. A common way to optimize the algorithm is $n$-fold \acf{CV}
+\autocite{Bishop2006}: The data is randomly divided into a training and a
+validation dataset and the \acs{GBRT} model is fitted on the training data
+only. After that, the performance of this model can be evaluated on the
+validation dataset by a suitable metric (\eg{} the mean square error). This
+process is repeated $n$ times so that every input point is part of the
+validation set at least once. The optimal hyperparameters are the set of
+hyperparameters with optimal performance on the validation datasets
+\autocite{Elith2008}.
+
 \begin{table}[p]
   \centering
   \begin{tabulary}{\columnwidth}{L L L}
@@ -379,7 +474,7 @@
   \caption{Geographical distributions of the absolute \acf{GPP} at the end of
     the \nth{21} century in the \acs{RCP}8.5 scenario (step 2a) for different
     statistical models. (a) \acs{CMIP}5 \acf{MMM}. (b) Rescaled \acs{CMIP}5
-    \acs{MMM} using \cref{eq:06:xxx}. (c) \Acf{LASSO} model using only the
+    \acs{MMM} using \cref{eq:06:y}. (c) \Acf{LASSO} model using only the
     historical \acs{GPP} as single predictor. (d) \Acf{GBRT} model using only
     the historical \acs{GPP} as single predictor. (e) \acs{LASSO} model using
     all predictors. (f) \acs{GBRT} model using all predictors.
@@ -428,7 +523,7 @@
     \acf{GPP} at the end of the \nth{21} century in the \acs{RCP}8.5 scenario
     (step 2a) for different statistical models. Details on the calculation of
     the \acs{SPE} are given in \cref{subsec:app:b:xxx}. (a) \acs{CMIP}5
-    \acf{MMM}. (b) Rescaled \acs{CMIP}5 \acs{MMM} using \cref{eq:06:xxx}. (c)
+    \acf{MMM}. (b) Rescaled \acs{CMIP}5 \acs{MMM} using \cref{eq:06:y}. (c)
     \Acf{LASSO} model using only the historical \acs{GPP} as single predictor.
     (d) \Acf{GBRT} model using only the historical \acs{GPP} as single
     predictor. (e) \acs{LASSO} model using all predictors. (f) \acs{GBRT}
@@ -466,7 +561,7 @@
     change in \acf{GPP} over the \nth{21} century in the \acs{RCP}8.5 scenario
     (step 2b) for different statistical models. Details on the calculation of
     the \acs{SPE} are given in \cref{subsec:app:b:xxx}. (a) \acs{CMIP}5
-    \acf{MMM}. (b) Rescaled \acs{CMIP}5 \acs{MMM} using \cref{eq:06:xxx}. (c)
+    \acf{MMM}. (b) Rescaled \acs{CMIP}5 \acs{MMM} using \cref{eq:06:y}. (c)
     \Acf{LASSO} model. (d) \Acf{GBRT} model. The \acs{SPE} is minimal for the
     \acs{GBRT} model. \AdaptedFrom{Schlund2020}.}
   \label{fig:app:b:step2b_results_errors}

@@ -62,10 +62,10 @@
 \newcommand{\unit}[1]{\ensuremath{\, \si{#1}}}
 \newcommand{\pmrangeunit}[3]{\ensuremath{\left( #1 \pm #2 \right) \unit{#3}}}
 \newcommand{\cond}[2]{\ensuremath{P(#1|#2)}}
-\newcommand{\mathtxt}{\textnormal}
+\newcommand{\mathtxt}[1]{\textnormal{#1}}
 
 % Other commands
-\newcommand{\range}[2]{#1\textnormal{--}#2}
+\newcommand{\range}[2]{#1\mathtxt{--}#2}
 \newcommand{\commentcite}[2]{(\cite{#1}; #2)}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
