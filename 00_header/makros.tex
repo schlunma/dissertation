@@ -54,6 +54,11 @@
   Adapted by permission from Springer Nature Customer Service Centre GmbH:
   \textcite{#1}}
 
+% Other commands
+\newcommand{\range}[2]{#1\mathtxt{--}#2}
+\newcommand{\commentcite}[2]{(\cite{#1}; #2)}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
 % Math commands
 \newcommand{\GtCyr}{\ensuremath{GtC \, yr^{-1}}}
 \newcommand{\mmday}{\ensuremath{mm \, day^{-1}}}
@@ -61,13 +66,9 @@
 \newcommand{\dd}{\ensuremath{\, d}}
 \newcommand{\unit}[1]{\ensuremath{\, \si{#1}}}
 \newcommand{\pmrangeunit}[3]{\ensuremath{\left( #1 \pm #2 \right) \unit{#3}}}
+\newcommand{\rangeunit}[3]{\range{#1}{#2} \unit{#3}}
 \newcommand{\cond}[2]{\ensuremath{P(#1|#2)}}
 \newcommand{\mathtxt}[1]{\textnormal{#1}}
-
-% Other commands
-\newcommand{\range}[2]{#1\mathtxt{--}#2}
-\newcommand{\commentcite}[2]{(\cite{#1}; #2)}
-\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 % Tables
 \newcommand{\ignorecolumntype}[2]{\multicolumn{1}{#1}{#2}}

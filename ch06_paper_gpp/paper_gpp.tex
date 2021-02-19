@@ -440,10 +440,10 @@ our statistical model.
 
 The estimation of the \acf{SPE} for the \ac{GBRT} models needs to consider
 three sources of uncertainty: the uncertainty of the \ac{ML} model itself, the
-uncertainty in the rescaling of the target variable (see \cref{eq:06:y}) and
-the uncertainty in the input data, that is, errors in the observation-based
-products. First, the \ac{SPE} of the \ac{GBRT} model itself (\ie{} uncertainty
-in the position of the gray surface in \namecrefs{fig:06:mlr_concept}
+uncertainty in the rescaling of the target variable and the uncertainty in the
+input data, that is, errors in the observation-based products. First, the
+\ac{SPE} of the \ac{GBRT} model itself (\ie{} uncertainty in the position of
+the gray surface in \namecrefs{fig:06:mlr_concept}
 \labelcref{fig:06:mlr_concept}{\color{BrownRed} a} and
 \labelcref{fig:06:mlr_concept}{\color{BrownRed} b}) is estimated as the
 \emph{\acf{RMSEP}}, that is, the \ac{RMSE} between the predicted and true
@@ -472,9 +472,9 @@ cell/month. Further details on the calculation of errors are given in
 The predictive power of the \ac{GBRT} algorithm and its robustness is assessed
 using a \emph{leave-one-model-out \ac{CV}} approach \commentcite{Elia2002,
   Karpechko2013}{see \cref{fig:06:mlr_concept}{\color{BrownRed} c} and
-  \cref{subsec:02:model_weighting}}. For this, a single climate model is removed
-from the multi-model ensemble and considered as being the true climate. Our
-statistical model is then fitted on all remaining climate models and a
+  \cref{subsec:02:model_weighting}}. For this, a single climate model is
+removed from the multi-model ensemble and considered as being the true climate.
+Our statistical model is then fitted on all remaining climate models and a
 prediction for the \enquote{true} model is created. This allows a simple
 evaluation of the predictive power by calculating the \ac{RMSEP}. The whole
 process is repeated for every climate model of the ensemble in order to get a
@@ -492,7 +492,27 @@ and provides an effective way to combat overfitting induced by collinearity.
 \section{Results}
 \label{sec:06:results}
 
-TBA.
+
+\subsection{Constraining Global Mean \acs{GPP} Projections (Step 1)}
+\label{subsec:06:results_step1}
+
+In \textcite{Wenzel2016}, the observed atmospheric \ac{CO2} concentration at
+\ac{KUM} \autocite{Keeling2005} is used to constrain the \ac{GPP} change in the
+\ac{1BGC} run resulting from a doubling of atmospheric \ac{CO2} concentrations
+to $\pmrangeunit{32}{9}{\%}$ for extratropical ecosystems
+($\rangeunit{30}{90}{\degree N}$). As mentioned in \cref{subsec:06:step_1}, we
+argue that due to the strong annual mixing of \ac{CO2} in the atmosphere, this
+emergent constraint can also be applied to the global mean \ac{GPP} change if
+the emergent relationship holds. In order to test this, we first use the
+idealized \acs{CMIP}5 simulations that were analyzed by \textcite{Wenzel2016}
+to calculate the emergent constraint (\cref{fig:06:step1:a}). The relationship
+is statistically significant at a $5 \unit{\%}$ significance level ($R^2 =
+0.79$, $p = 0.007$) and predicts a constrained global mean \acs{GPP} change of
+$\pmrangeunit{30}{9}{\%}$, which is consistent with the findings of
+\textcite{Wenzel2016}. This result gives us confidence that the emergent
+relationship holds for the global mean \ac{GPP}. Details on the mathematical
+derivation of the constrained range are given in
+\cref{subsec:02:emergent_constraints}.
 
 \begin{figure}[t]
   \centering
@@ -527,7 +547,7 @@ TBA.
     \acs{1BGC} run is $\pmrangeunit{30}{9}{\%}$. (b) Fractional global mean
     \acs{GPP} change over the \nth{21} century calculated from the 10-year
     mean \acs{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in
-    the emission-driven fully coupled \acs{RCP}8.5 simulations and the 10-year
+    the emission-driven fully-coupled \acs{RCP}8.5 simulations and the 10-year
     mean \acs{GPP} at the end of the \nth{20} century (\range{1991}{2000}) in
     the emission‐driven fully-coupled historical run (see \cref{eq:06:f}). In
     contrast to \textcite{Wenzel2016}, the sensitivity of the \acs{CO2}
@@ -540,7 +560,83 @@ TBA.
   \label{fig:06:step1}
 \end{figure}
 
-\begin{figure}[t]
+In addition to applying it to the idealized simulations, we apply the emergent
+constraint to the \acs{RCP}8.5 scenario. In the \ac{1BGC} simulation, the
+\ac{CO2} fertilization effect is the only driver of future \ac{GPP} change
+since the carbon cycle components of the \acp{ESM} only see the increasing
+\ac{CO2} concentration. However, since the magnitude of the
+concentration-carbon feedback is believed to be four times the size of the
+climate-carbon feedback \autocite{Gregory2009}, the \ac{CO2} fertilization
+effect is still the dominant driver of \ac{GPP} change in the fully-coupled
+simulations \autocite{Huntzinger2017}. This is also supported by
+\textcite{Wenzel2016}, who show that the \ac{GPP} increase due to rising
+atmospheric \ac{CO2} concentrations in the fully-coupled historical simulations
+is proportional to the same quantity in the \ac{1BGC} run. Additional lines of
+evidence suggest that the modeled \ac{CO2} sensitivity of photosynthesis is the
+main source of uncertainty of future \ac{GPP} \autocite{Arora2013, Haverd2020,
+  Rogers2017}. Thus, the sensitivity of the \ac{CO2} amplitude can be used to
+approximately constrain global mean \ac{GPP} change over the \nth{21} century
+in \acs{RCP}8.5, which is shown in \cref{fig:06:step1:b}. Assuming a
+significance level of $5 \unit{\%}$, the emergent relationship is statistically
+significant ($R^2 = 0.65$, $p = 0.029$).
+
+Using the emergent relationship, the global mean \ac{GPP} change over the
+\nth{21} century can be constrained to $\pmrangeunit{39}{7}{\%}$ (standard
+error), which is at the lower end of the original \acs{CMIP}5 range
+($\rangeunit{31}{57}{\%}$). Moreover, the best estimate $39 \unit{\%}$ is also
+slightly lower than the \acs{CMIP}5 \ac{MMM} of $43 \unit{\%}$. The observed
+\ac{GPP} averaged over the years \range{1991}{2000} from the FLUXNET-MTE
+product is $\pmrangeunit{123}{6}{\GtCyr{}}$ \autocite{Jung2011}. Assuming
+independent errors and using Gaussian error propagation, the constrained
+fractional change corresponds to a global mean \ac{GPP} of
+$\pmrangeunit{171}{12}{\GtCyr{}}$ (standard error) at the end of the \nth{21}
+century (\range{2091}{2100}) in the \acs{RCP}8.5 scenario. In contrast to that,
+the unconstrained\acs{CMIP}5 ensemble has a model range of
+$\rangeunit{156}{247}{\GtCyr{}}$ for future \ac{GPP} in the \acs{RCP}8.5
+scenario (\range{2091}{2100}). The resulting global mean \ac{GPP} change is
+used to rescale the gridded output of the different climate models with
+\cref{eq:06:y}. The following two \namecrefs{subsec:06:results_step2a} show the
+results for the rescaled absolute future \ac{GPP} (step 2a) and the rescaled
+fractional \ac{GPP} change (step 2b) further constrained by the \ac{GBRT}
+model.
+
+
+\subsection{Constraining Gridded Absolute \acs{GPP} Projections (Step 2a)}
+\label{subsec:06:results_step2a}
+
+In the second step, the objective is to constrain the spatial distribution of
+the projected \ac{GPP}. We use the grid-wise monthly mean climatology of
+absolute \ac{GPP} at the end of the \nth{21} century (\range{2091}{2100}) as
+target variable, rescaled using \cref{eq:06:y} to reduce the large
+uncertainties in the \acs{CO2} fertilization effect in the models. In the first
+part, we evaluate the GBRT model using the leave-one-model-out \ac{CV} approach
+and compare it to other statistical approaches and the unweighted \ac{MMM}. In
+the second part, we use observation-based products to predict the target
+variable.
+
+
+\subsubsection{Prediction Error in Leave‐One‐Model‐Out \acs{CV} Approach and
+  Feature Importance}
+\label{subsubsec:06:results_step2a_ml_inference}
+
+To get a detailed insight into the performance of our \ac{GBRT} model, we
+compare it to five other statistical models: the unweighted \acs{CMIP}5
+\ac{MMM} of future \ac{GPP} (\acs{MMM}), its rescaled version using
+\cref{eq:06:y} (r\acs{MMM}), a linear \ac{LASSO} regression model using all
+features as defined in \cref{tab:06:predictors} (\ac{LASSO}), a
+single-predictor \ac{LASSO} model (\acs{LASSO}-1D) and a single-predictor
+\ac{GBRT} model (\acs{GBRT}-1D). Both single-predictor models use the
+historical \ac{GPP} as only feature. The predictive power (in terms of
+\ac{RMSEP}) of each statistical model is assessed using the leave-one-model-out
+\ac{CV} approach (see \cref{subsec:06:uncertainty_and_skill}). This allows us
+to create an \ac{RMSEP} distribution for each statistical approach, where the
+different points of the distributions refer to different training/prediction
+dataset combinations generated by the leave-one-model-out \ac{CV} approach.
+Thus, each distribution consists of seven points, one for each climate model.
+\Cref{fig:06:step2a_ml_inference:a} shows the \ac{RMSEP} distributions for the
+six different statistical models.
+
+\begin{figure}[!t]
   \centering
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \raisebox{5.5mm}{\includegraphics[width=\columnwidth]{
@@ -582,7 +678,83 @@ TBA.
   \label{fig:06:step2a_ml_inference}
 \end{figure}
 
-\begin{figure}[t]
+In terms of raw predictive power, the simple \ac{MMM} is outperformed by every
+other model. Its prediction uncertainty expressed as mean \ac{RMSEP} can be
+reduced by more than $48 \unit{\%}$ by using other statistical models. However,
+this is not surprising: In contrast to the other statistical models, the simple
+\acs{RCP}8.5 \ac{MMM} does not take further evidence in form of observations of
+the historical climate into account. Step 1 of our algorithm (r\acs{MMM}) can
+reduce this mean \ac{RMSEP} by $15 \unit{\%}$ due to the simple rescaling of
+the gridded climate model output with the global mean \ac{GPP} constraint on
+the \ac{CO2} fertilization effect. However, since there is a considerably large
+\ac{GPP} range in the individual climate models themselves, this reduction is
+rather small for the gridded values. A far larger reduction of the \ac{RMSEP}
+can be achieved by using the regression models \acs{LASSO}‐1D, \ac{LASSO},
+\acs{GBRT}‐1D and \ac{GBRT}. All of them share similar \ac{RMSEP}
+distributions, which can be explained as follows: The historical \ac{GPP} is
+strongly (near linearly) correlated to the rescaled end-of-century \ac{GPP}
+(with pattern correlation of $R^2 = 0.83$ for the whole multi-model ensemble).
+Because of that, all regression models are able to considerably reduce the
+\acp{RMSEP} compared to the \acs{MMM} and r\acs{MMM}. This also shows that the
+\ac{GBRT} models successfully learn the linear connection between past and
+future \ac{GPP}. Moreover, the non-linear \ac{GBRT} models can slightly reduce
+the mean \ac{RMSEP} even further compared to the linear \ac{LASSO} models by
+about $2 \unit{\%}$ for \acs{GBRT}‐1D and $3 \unit{\%}$ for the full \ac{GBRT}
+model. This leads to the conclusion that in addition to the strong linear
+relationship between past and future \ac{GPP}, there are small non-linear
+relations between the predictors and the target variable that can be used to
+further reduce the \ac{RMSEP}. Since the full \ac{GBRT} model with access to
+all predictors shows the minimal mean \ac{RMSEP}, we argue that it is
+beneficial for our approach to use the multivariate non-linear \ac{GBRT} model
+instead of a linear model because only the \ac{GBRT} algorithm is able to make
+use of all predictors and exploit more complex relationships.
+
+The influence of the different predictors can be further analyzed by evaluating
+the global feature importance by using the whole training dataset and the
+already trained model. This is shown in \cref{fig:06:step2a_ml_inference:b}.
+The past \ac{GPP} with its strong positive linear correlation to future
+\ac{GPP} is the most relevant predictor of the trained model with a relative
+importance of approximately $95 \unit{\%}$. All other features show values of
+less than $2 \unit{\%}$. The global feature importance determines the expected
+impact of a feature in predictions of the target variable. In our \ac{GBRT}
+model, the prediction input data of historical \ac{GPP} mainly determines the
+\ac{ML} model's prediction of the future \ac{GPP} in the \acs{RCP}8.5 scenario
+at the end of the \nth{21} century. However, we emphasize that this is only
+valid for our specific setup (\ie{} which variables are used, which algorithm
+is used, which climate models are considered, \etc{}). For another problem
+setup, the global feature importance could change significantly. Since the
+historical \ac{GPP} is the most important predictor for all grid cells, we do
+not show the plot of the local feature importance using \ac{LIME}. We can get
+further insights into our \ac{GBRT} model by analyzing the residuals of the
+prediction using an independent test dataset. The resulting plots show that the
+algorithm is not overfitting the training data and that the prediction errors
+on the whole are approximately unbiased (see \cref{fig:app:b:residuals:a}).
+
+
+\subsubsection{Observation-Based \acs{GBRT} Prediction of Absolute \acs{GPP}}
+\label{subsubsec:06:results_step2a_obs}
+
+In this \namecref{subsubsec:06:results_step2a_obs}, we use the different
+statistical models to predict absolute \ac{GPP} at the end of the \nth{21}
+century. For this, we feed observation-based data (see
+\cref{tab:06:predictors}) into the regression models \ac{GBRT}, \acs{GBRT}‐1D,
+\ac{LASSO} and \acs{LASSO}‐1D.
+
+The result of step 1 on the gridded data is illustrated in
+\cref{fig:06:step2a_results:a}, which shows the ratio between r\acs{MMM} and
+\acs{MMM}. This ratio is almost constant over the whole globe, which is not
+surprising due to the global nature of the rescaling (see \cref{eq:06:y}). The
+use of the global emergent constraint predicts a slightly lower \ac{GPP}
+increase over the \nth{21} century ($39 \unit{\%}$) than the unweighted
+\acs{CMIP}5 ensemble mean ($43 \unit{\%}$). The corresponding ratio $39
+\unit{\%} / 43 \unit{\%} \approx 0.91$ is approximately equal to the mean value
+of r\acs{MMM}/\acs{MMM} ($0.92$). Consequently, the global estimate of
+r\acs{MMM} gives a lower \ac{GPP} at the end of the century ($179
+\unit{\GtCyr{}}$) as \acs{MMM} ($198 \unit{\GtCyr{}}$), which can be
+interpreted as a correction of the \acp{ESM}' overestimation of future \ac{GPP}
+to changes in the atmospheric \ac{CO2} concentration.
+
+\begin{figure}[!t]
   \centering
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/5a.pdf}
@@ -623,7 +795,7 @@ TBA.
   \label{fig:06:step2a_results}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[!t]
   \centering
   \begin{subfigure}[b]{\SubfigureWidth{}}
     \includegraphics[width=\columnwidth]{ch06_paper_gpp/figs/6a.pdf}
@@ -652,7 +824,7 @@ TBA.
     \cref{fig:06:step2a_results:b,fig:06:step2a_results:c}. For panel (b), all
     values close to $0$ for the dataset in the denominator have been masked to
     avoid divisions by $0$. Both panels show that our approach is only to
-    first-order a bias correction, in which case both plots would only show
+    first order a bias correction, in which case both plots would only show
     constant values. (c) Comparison of the \acf{GBRT} versus \acs{GBRT}-1D
     projections of future \acf{GPP}. This panel indicates a clear difference
     between the full \acs{GBRT} model using all predictors and the \acs{GBRT}
@@ -665,6 +837,41 @@ TBA.
     \AdaptedFrom{Schlund2020}.}
   \label{fig:06:step2a_results_biases}
 \end{figure}
+
+The spatial result of our \ac{GBRT} model in step 2a can be visualized by
+comparing r\acs{MMM} and the output of the \acs{GBRT} model.
+\Cref{fig:06:step2a_results:b} shows the bias of the rescaled \acs{CMIP}5
+\acs{RCP}8.5 \ac{MMM} (r\acs{MMM}) compared to our \acs{GBRT} predicted
+\ac{GPP} at the end of the \nth{21} century (\range{2091}{2100}), while
+\Cref{fig:06:step2a_results:c} shows the bias of the historical \acs{CMIP}5
+\ac{MMM} compared to the observational FLUXNET-MTE product \autocite{Jung2011}
+averaged for the period \range{1991}{2000}. As reported by \textcite{Anav2013},
+the historical \acs{CMIP}5 ensemble mean overestimates \ac{GPP} in most
+regions, leading to a global mean of $138 \unit{\GtCyr{}}$, which is larger
+than the $123 \unit{\GtCyr{}}$ estimate for the FLUXNET-MTE product. Regions
+where \ac{GPP} is largely overestimated are the western parts of South America,
+central and southern Africa, and East Asia. On the contrary, \ac{GPP} is
+underestimated in small areas of Central America and northern parts of South
+America. The bias patterns in
+\cref{fig:06:step2a_results:b,fig:06:step2a_results:c} are very similar
+(pattern correlation of $R^2 = 0.88$), which means that the \ac{GBRT} algorithm
+detects regional biases in the historical simulation and corrects them in its
+future predictions. This is also illustrated in
+\cref{fig:06:step2a_results_biases:b}, in which many values are close to $1$,
+while only a few negative values exist. However, we emphasize that our approach
+is only to first order a bias correction (\ie{} subtracting the historical bias
+from the \acs{RCP}8.5 \ac{MMM}). There are clear differences between
+\cref{fig:06:step2a_results:b,fig:06:step2a_results:c}, which are also
+illustrated in
+\cref{fig:06:step2a_results_biases:a,fig:06:step2a_results_biases:b}. A simple
+bias correction would only show constant values for the whole globe, whereas
+our approach applies different corrections (in sign and magnitude) for
+different regions. On the global domain, our approach predicts a \ac{GPP} at
+the end of the century of $169 \unit{\GtCyr{}}$, which is consistent with the
+global constraint from step 1 of $\pmrangeunit{171}{12}{\GtCyr{}}$. In summary,
+our approach first corrects the \acs{CMIP}5 models response to \ac{CO2} (step
+1) and second corrects the historical bias of the \acp{ESM} relative to
+observations (step 2a).
 
 \begin{figure}[p]
   \centering
@@ -720,6 +927,53 @@ TBA.
     \AdaptedFrom{Schlund2020}.}
   \label{fig:06:step2b_ml_inference}
 \end{figure}
+
+Further illustrations of these results including the uncertainties can be found
+in \cref{fig:app:b:cmip5_hist_mte,fig:app:b:step2a_results,%
+  fig:app:b:step2a_results_errors}. Analogous to the results from the
+leave-one-model-out \ac{CV} approach, the uncertainties on grid cell level
+are significantly reduced for the \ac{GBRT} prediction compared to the
+\ac{MMM} results. These errors consider all three sources of uncertainty that
+we present in \cref{subsec:06:uncertainty_and_skill} (error in the \ac{GBRT}
+model, error in the rescaling and error in the observational-driven
+products). In contrast to that, the error derived from the
+leave-one-model-out \ac{CV} approach illustrated in
+\cref{fig:06:step2a_ml_inference:a} only shows the error in the statistical
+models themselves. We note that local relative errors can be very large
+(especially in regions with low absolute \ac{GPP}) due to the uncertainty
+calculation method: Regardless of the absolute value, the error of each grid
+cell is at least $535 \unit{gC \, m^{-2} yr^{-1}}$ (estimated \ac{SPE} of the
+\ac{GBRT} model using the \ac{RMSEP}), which is added to the propagated
+errors of the observation-driven datasets and the error derived from the
+rescaling using \cref{eq:app:b:sigma_rescaling}. The \ac{GBRT} model error is
+the dominant source of uncertainty. Since the true covariance structure of
+these global fields is unknown, a global (or at least regional) aggregation
+of these uncertainties is not possible.
+
+To further compare our \ac{GBRT} approach to other statistical models, we also
+fed the observation-driven data into the \acs{GBRT}‐1D, \ac{LASSO}, and
+\acs{LASSO}‐1D models to get a constrained projection of the \acs{RCP}8.5
+\ac{GPP}. \Cref{fig:06:step2a_results_biases:c,fig:06:step2a_results_biases:d}
+show the difference of the other models to the full \ac{GBRT} approach. Both
+panels show values close to $0$ for most of the globe (\ie{} the differences
+between the \ac{GBRT} and \acs{GBRT}‐1D/\ac{LASSO} models are small),
+indicating that the bias-correcting property of our approach is also present in
+the other regression models that use only the historical \ac{GPP} as single
+predictors. Thus, we conclude that the bias correction of our \ac{GBRT} model
+originates from the observation of the historical \ac{GPP}, which is also
+supported by \cref{fig:06:step2a_ml_inference:b}, which shows historical
+\ac{GPP} as by far most important feature. On the contrary, second-order
+corrections originate from the observations in the remaining predictors. These
+second-order corrections are also visible as the non-zero values in
+\Cref{fig:06:step2a_results_biases:c,fig:06:step2a_results_biases:d}. This
+indicates that using the non-linear \ac{GBRT} model with all predictors
+improves the final result. Moreover, the similar patterns in both panels
+demonstrate that the \acs{GBRT}‐1D model emulates the strong linear relation of
+the historical \ac{GPP} to future \ac{GPP} and performs equally well as the
+linear models. The global estimates of $167 \unit{\GtCyr{}}$ (\acs{GBRT}‐1D),
+$163 \unit{\GtCyr{}}$ (\ac{LASSO}), and $162 \unit{\GtCyr{}}$ (\acs{LASSO}‐1D)
+are all consistent with the global constraint of
+$\pmrangeunit{171}{12}{\GtCyr{}}$.
 
 \begin{figure}[t]
   \centering
