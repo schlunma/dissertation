@@ -11,12 +11,13 @@
 \chapter{Constraining Future Gross Primary Production with Machine Learning}
 \label{ch:06:paper_gpp}
 
-As argued in detail in the previous chapter, single-process-oriented emergent
-constraints do not seem to be beneficial in constraining climate projections
-from the vastly complex modern-day \acp{ESM} since they might overly simplify
-the problem. To overcome this issue, we explore an alternative approach that
-expands the \acf{MDER} method with a supervised \acf{ML} algorithm. In contrast
-to emergent constraints, this approach considers (1) multiple process-based
+As argued in detail in the previous \namecref{ch:05:paper_ecs},
+single-process-oriented emergent constraints do not seem to be beneficial in
+constraining climate projections from the vastly complex modern-day \acp{ESM}
+since they might overly simplify the problem. To overcome this issue, we
+explore an alternative approach that expands the \acf{MDER} method (see
+\cref{subsec:02:mder}) with a supervised \acf{ML} algorithm. In contrast to
+emergent constraints, this approach considers (1) multiple process-based
 predictors, (2) multi-dimensional (gridded) target variables and (3) non-linear
 relationships between the predictors and the target variable. Since the new
 technique relies on a large number of data points in order to train the \ac{ML}
@@ -67,10 +68,10 @@ evapotranspiration in \acp{ESM} \autocite{Lian2018}.
 This work is already published in \textcite{Schlund2020}. For this paper, the
 author of this thesis lead the writing and the analysis and implemented the
 code to reproduce this study with all figures and tables using the
-\ac{ESMValTool}. \Cref{sec:06:data_and_methods} of this chapter provides an
-overview of the data and methods used in this paper. The results are presented
-in \cref{sec:06:results} and \cref{sec:06:summary_and_discussion} closes with a
-summary and discussion.
+\ac{ESMValTool}. \Cref{sec:06:data_and_methods} of this
+\namecref{ch:06:paper_gpp} provides an overview of the data and methods used in
+this paper. The results are presented in \cref{sec:06:results} and
+\cref{sec:06:summary_and_discussion} closes with a summary and discussion.
 
 
 \section{Data and Methods}
@@ -116,34 +117,35 @@ More details on the methods and the experimental setup are given in
   Effect (Step 1)}
 \label{subsec:06:step_1}
 
-In this section, we present the observational emergent constraint on the
-\ac{CO2} fertilization effect by \textcite{Wenzel2016} which we use to globally
-rescale the models for their individual bias in the sensitivity of \ac{GPP} to
-an increase in atmospheric \ac{CO2} concentration. Our objective here is to
-present a general methodology and suggest further improvements upon this
-constraint that could be used in the future. \textcite{Wenzel2016} show a
-correlation between the increase in the \ac{CO2} seasonal cycle amplitude
-simulated by models and the projected \ac{CO2} fertilization. When combined
-with the observed trends in the \ac{CO2} seasonal cycle amplitude, the
-fractional \ac{GPP} change at the time of \ac{CO2} doubling relative to
-pre-industrial conditions in a \ac{1BGC} is constrained. The predictor in this
-study is the sensitivity of the \ac{CO2} seasonal cycle amplitude to rising
-atmospheric \ac{CO2} concentrations, defined as the slope of the linear
-regression between the \ac{CO2} seasonal cycle amplitude and the annual mean
-atmospheric \ac{CO2} concentrations (see \cref{fig:app:b:co2} for details). The
-emergent constraint is physically motivated by the hypothesis that increasing
-terrestrial \ac{GPP} is a main driver for the observed changes in the \ac{CO2}
-seasonal cycle amplitude \autocite{Gray2014, Keeling1996, Zhao2014}. This
-hypothesis is based on the fact that the seasonal cycle in atmospheric \ac{CO2}
-concentration originates from photosynthesis and decomposition processes: in
-summer, photosynthesis removes \ac{CO2} from the atmosphere; in winter,
-additional \ac{CO2} is added to the atmosphere due to the decomposition of
-organic matter \autocite{Keeling1995}. Thus, \ac{CO2} fertilization leads to an
-increase of the \acs{CO2} seasonal cycle amplitude due to increased \acs{CO2}
-removal from the atmosphere. We note that this emergent constraint implicitly
-assumes that there is no temperature-driven increase in respiration over time.
-Therefore, this approach most likely overestimates the true sensitivity of
-\ac{GPP} to an increase in the atmospheric \ac{CO2} concentration.
+In this \namecref{subsec:06:step_1}, we present the observational emergent
+constraint on the \ac{CO2} fertilization effect by \textcite{Wenzel2016} which
+we use to globally rescale the models for their individual bias in the
+sensitivity of \ac{GPP} to an increase in atmospheric \ac{CO2} concentration.
+Our objective here is to present a general methodology and suggest further
+improvements upon this constraint that could be used in the future.
+\textcite{Wenzel2016} show a correlation between the increase in the \ac{CO2}
+seasonal cycle amplitude simulated by models and the projected \ac{CO2}
+fertilization. When combined with the observed trends in the \ac{CO2} seasonal
+cycle amplitude, the fractional \ac{GPP} change at the time of \ac{CO2}
+doubling relative to pre-industrial conditions in a \ac{1BGC} is constrained.
+The predictor in this study is the sensitivity of the \ac{CO2} seasonal cycle
+amplitude to rising atmospheric \ac{CO2} concentrations, defined as the slope
+of the linear regression between the \ac{CO2} seasonal cycle amplitude and the
+annual mean atmospheric \ac{CO2} concentrations (see \cref{fig:app:b:co2} for
+details). The emergent constraint is physically motivated by the hypothesis
+that increasing terrestrial \ac{GPP} is a main driver for the observed changes
+in the \ac{CO2} seasonal cycle amplitude \autocite{Gray2014, Keeling1996,
+  Zhao2014}. This hypothesis is based on the fact that the seasonal cycle in
+atmospheric \ac{CO2} concentration originates from photosynthesis and
+decomposition processes: in summer, photosynthesis removes \ac{CO2} from the
+atmosphere; in winter, additional \ac{CO2} is added to the atmosphere due to
+the decomposition of organic matter \autocite{Keeling1995}. Thus, \ac{CO2}
+fertilization leads to an increase of the \acs{CO2} seasonal cycle amplitude
+due to increased \acs{CO2} removal from the atmosphere. We note that this
+emergent constraint implicitly assumes that there is no temperature-driven
+increase in respiration over time. Therefore, this approach most likely
+overestimates the true sensitivity of \ac{GPP} to an increase in the
+atmospheric \ac{CO2} concentration.
 
 However, we note that this emergent constraint is not undisputed. In other
 studies, the observed change in the \ac{CO2} seasonal cycle amplitude is
@@ -250,9 +252,57 @@ between the models' global mean \ac{GPP} change and the constrained global mean
 using the observed change in the \ac{CO2} cycle amplitude. Models that simulate
 a too high global mean \ac{GPP} change are nudged toward smaller values and
 vice versa. The rescaled target variables are then fed into the \ac{ML} model
-(step 2) presented in the following section. We note that this global rescaling
-assumes that the relative biases in the fractional \ac{GPP} change of the
-individual \acp{ESM} are constant over the whole globe.
+(step 2) presented in the following \namecref{subsec:06:step_2}. We note that
+this global rescaling assumes that the relative biases in the fractional
+\ac{GPP} change of the individual \acp{ESM} are constant over the whole globe.
+
+
+\subsection{Gradient Boosted Regression Tree (\acs{GBRT}) Algorithm (Step 2)}
+\label{subsec:06:step_2}
+
+For step 2 we use the \ac{GBRT} algorithm to find an optimal regression
+function $F$ relating the target variable $y$ to a set of $K$ predictors
+$\bm{x} = \left( x^{(1)}, x^{(2)}, \ldots, x^{(K)} \right)$ (also called
+\emph{features} or \emph{covariates}) such that the predicted target variable
+is given by $\hat{y} = F(\bm{x})$ \autocite{Death2007, Elith2008, Friedman2001,
+  Friedman2002}. Its basic elements are decision trees, which use binary splits
+of the input data to create decision rules. Due to their simple nature,
+decision trees are easy to interpret but cannot be used to create satisfying
+predictions for very complex datasets. This issue can be overcome by a
+technique called \emph{boosting} \autocite{Freund1996}. Boosting iteratively
+improves the performance of \emph{weak learners} (in our case decision trees)
+in the following way: At first, a single decision tree is fitted to a randomly
+selected subsample of the training data $\left\{ \left( \bm{x}_i, y_i \right)
+\mid i \in I \right\}$ with an arbitrary index set $I$ (using a predefined loss
+function, \eg{} the mean square error). Then, further decision trees are
+linearly added to the regression function $F$ (scaled by a regularization
+parameter $\nu \ll 1$ called \emph{learning rate}) and the model is fitted
+again in the same manner. This ensures that the prediction for poorly modeled
+training points in the beginning will gradually improve during the training.
+The whole procedure is repeated until the loss function does not improve
+anymore, as evaluated on an independent validation data set. Relevant
+hyperparameters of this algorithm (maximum number of decision trees, maximum
+depth of the decision trees, learning rate and the subsample ratio) are
+optimized by $5$-fold \acf{CV} using the training data. More details on the
+\ac{GBRT} algorithm are given in \cref{subsec:app:b:gbrt}.
+
+A convenient way to evaluate and interpret \ac{GBRT} models (or other
+statistical models in general) is to identify the most relevant predictors.
+Globally, this so-called \emph{feature importance} is closely related to the
+number of appearances of a predictor in the different decision trees that set
+up the \ac{GBRT} model \autocite{Friedman2001}. To evaluate the feature
+importance regionally (for the different grid cells), we use a model
+distillation technique called \emph{\ac{LIME}}, which approximates the
+\ac{GBRT} model with a local linear regression model for each grid cell
+\autocite{Ribeiro2016}. The corresponding linear coefficients $b_k$ for each
+predictor $x^{(k)}$ constitute a good proxy to the model's Jacobian
+\begin{equation}
+  b_k \approx \frac{\partial y}{\partial x^{(k)}},
+  \label{eq:06:jacobian}
+\end{equation}
+which is difficult to compute explicitly for this particular \ac{ML} model.
+Thus, features with high (low) absolute $b_k$ have a high (low) impact on the
+local prediction of the target variable $y$.
 
 \begin{figure}[p]
   \centering
@@ -306,51 +356,137 @@ individual \acp{ESM} are constant over the whole globe.
     (incoming solar radiation). \\
     \bottomrule
   \end{tabular}
-  \caption{Process-oriented diagnostics (\emph{predictors} or \emph{features})
-    used in the \acf{GBRT} model to predict the target variables. For step 2a
-    (target variable: absolute \acs{GPP}), all listed variables are monthly
-    climatologies of the specified time ranges in the historical climate. For
-    step 2b (target variable: fractional \acs{GPP} change), the temporal mean
-    over the specified time ranges is calculated for all variables.
-    \AdaptedFrom{Schlund2020}.}
+  \caption{Process-oriented diagnostics (also called \emph{predictors} or
+    \emph{features}) used in the \acf{GBRT} model to predict the target
+    variables. For step 2a (target variable: absolute \acs{GPP}), all listed
+    variables are monthly climatologies of the specified time ranges in the
+    historical climate. For step 2b (target variable: fractional \acs{GPP}
+    change), the temporal mean over the specified time ranges is calculated
+    for all variables. \AdaptedFrom{Schlund2020}.}
   \label{tab:06:predictors}
 \end{table}
 
+As already described in the previous \namecref{subsec:06:step_1}, we analyze
+two different target variables in this study: the monthly climatology of
+absolute \ac{GPP} at the end of the \nth{21} century (step 2a) and the
+fractional \ac{GPP} change over the \nth{21} century (step 2b). A schematic
+representation of step 2a is shown in \cref{fig:06:mlr_concept}. The target
+variable $y$ for the \ac{ML} model is the rescaled monthly climatology of
+future GPP at the end of the \nth{21} century (\range{2091}{2100}) in the
+\acs{RCP}8.5 scenario given by \cref{eq:06:y}. We relate this target variable
+to several process-oriented diagnostics $\bm{x}$ of the past climate
+(historical simulation) listed in \cref{tab:06:predictors}. A single training
+point $\left( \bm{x}_i, y_i \right)$ for the supervised \ac{ML} algorithm
+corresponds to the set of the aforementioned diagnostics evaluated on a single
+grid cell/month of a single climate model (see colored points in
+\namecrefs{fig:06:mlr_concept} \labelcref{fig:06:mlr_concept}{\color{BrownRed}
+  a} and \labelcref{fig:06:mlr_concept}{\color{BrownRed} b}). Step 2b differs
+from step 2a only in the target variable used. Both steps are independent
+approaches and are evaluated separately.
 
-\subsection{Gradient Boosted Regression Tree (\acs{GBRT}) Algorithm (Step 2)}
-\label{subsec:06:step_2}
+The main part of steps 2a and 2b each consist of two phases. In the first phase
+(training of the algorithm), we build a statistical model based on the
+empirical relationship between observable process-oriented variables of the
+present-day climate and future \ac{GPP} in the \acs{CMIP}5 ensemble (see gray
+surface in \namecrefs{fig:06:mlr_concept}
+\labelcref{fig:06:mlr_concept}{\color{BrownRed} a} and
+\labelcref{fig:06:mlr_concept}{\color{BrownRed} b}). This has a flavor similar
+to the \ac{MDER} algorithm \commentcite{Karpechko2013, Senftleben2020,
+  Wenzel2016a}{see \cref{subsec:02:mder}}. However, in contrast to the original
+\ac{MDER} algorithm, our multivariate \ac{GBRT} approach is able to handle
+multiple predictors with non-linear dependencies. Moreover, instead of
+considering a single globally or regionally averaged value per climate model,
+our approach uses spatiotemporally gridded data for every \ac{ESM} in the
+ensemble. This dramatically increases the available number of training data
+(even if they are not statistically independent) and uniquely enables the
+statistical model to identify and exploit regional processes. Furthermore, the
+large training database allows us to perform extensive out-of-sample testing,
+which is crucial to ensure the \ac{ML} model's robustness.
 
-For step 2 we use the \ac{GBRT} algorithm to find an optimal regression
-function $F$ relating the target variable $y$ to a set of $K$ predictors
-$\bm{x} = \left( x^{(1)}, x^{(2)}, \ldots, x^{(K)} \right)$ (\emph{features} or
-\emph{covariates}) such that the predicted target variable is given by $\hat{y}
-= F(\bm{x})$ \autocite{Death2007, Elith2008, Friedman2001, Friedman2002}. Its
-basic elements are decision trees, which use binary splits of the input data to
-create decision rules. Due to their simple nature, decision trees are easy to
-interpret but cannot be used to create satisfying predictions for very complex
-datasets. This issue can be overcome by a technique called \emph{boosting}
-\autocite{Freund1996}. Boosting iteratively improves the performance of
-\emph{weak learners} (in our case decision trees) in the following way: At
-first, a single decision tree is fitted to a randomly selected subsample of the
-training data $\left\{ \left( \bm{x}_i, y_i \right) \mid i \in I \right\}$ with
-an arbitrary index set $I$ (using a predefined loss function, \eg{} the mean
-square error). Then, further decision trees are linearly added to the
-regression function $F$ (scaled by a regularization parameter $\nu \ll 1$
-called \emph{learning rate}) and the model is fitted again in the same manner.
-This ensures that the prediction for poorly modeled training points in the
-beginning will gradually improve during the training. The whole procedure is
-repeated until the loss function does not improve anymore, as evaluated on an
-independent validation data set. Relevant hyperparameters of this algorithm
-(maximum number of decision trees, maximum depth of the decision trees,
-learning rate and the subsample ratio) are optimized by $5$-fold \ac{CV} using
-the training data. More details on the \ac{GBRT} algorithm are given in
-\cref{subsec:app:b:gbrt}.
+In the second phase (predicting with the trained \ac{GBRT} model), we use
+observational data products to constrain the \acs{RCP}8.5 \acs{CMIP}5
+projection of \ac{GPP}. To do this, observational data for all predictors
+$\bm{x}$ of the historical climate (for every grid cell/month) are fed into the
+trained \ac{GBRT} model in order to get a spatially constrained projection of
+\ac{GPP} (see black points in \cref{fig:06:mlr_concept}{\color{BrownRed} b}).
+Similar to the \ac{MDER} algorithm, our approach assumes that there exists an
+inter-model relationship between the predictors and the target variable which
+also holds for the true climate. This assumption may seem weak at first glance,
+but compared to the assumption of traditional weighting approaches (models that
+are better in simulating the present-day climate are also better in simulating
+the future climate and vice versa), the \ac{MDER} assumption is more reasonable
+and allows correcting models instead of just weighing
+\commentcite{Karpechko2013}{see \cref{subsec:02:mder}}. Following other
+\ac{MDER} studies \autocite{Karpechko2013, Senftleben2020, Wenzel2016a}, we
+also select diagnostics as predictor variables $\bm{x}$ that are related to
+\ac{GPP}-relevant processes (see \cref{tab:06:predictors} for detailed physical
+explanations of the links between the predictors and \ac{GPP}).
+
+The raw \acs{CMIP}5 and observation-driven datasets are preprocessed before
+entering the \ac{ML} algorithm (see \cref{subsec:app:b:data_preprocessing}). In
+particular, increases greater than $300 \unit{\%}$ in the fractional \ac{GPP}
+change that is used as target variable in step 2b are removed. These
+unrealistically high values (making up about $5.9 \unit{\%}$ of the data) occur
+in places with very small absolute \ac{GPP} values in the historical simulation
+that are used in the denominator of the derivation of the fractional \ac{GPP}
+change (see \cref{eq:06:f}). In addition, we randomly select $25 \unit{\%}$ of
+the training data and use it as hold-out test data. This dataset is excluded
+from the training and can therefore be used for an independent validation of
+our statistical model.
 
 
 \subsection{Assessment of Uncertainty and Predictive Skill}
 \label{subsec:06:uncertainty_and_skill}
 
-TBA.
+The estimation of the \acf{SPE} for the \ac{GBRT} models needs to consider
+three sources of uncertainty: the uncertainty of the \ac{ML} model itself, the
+uncertainty in the rescaling of the target variable (see \cref{eq:06:y}) and
+the uncertainty in the input data, that is, errors in the observation-based
+products. First, the \ac{SPE} of the \ac{GBRT} model itself (\ie{} uncertainty
+in the position of the gray surface in \namecrefs{fig:06:mlr_concept}
+\labelcref{fig:06:mlr_concept}{\color{BrownRed} a} and
+\labelcref{fig:06:mlr_concept}{\color{BrownRed} b}) is estimated as the
+\emph{\acf{RMSEP}}, that is, the \ac{RMSE} between the predicted and true
+values of the independent hold-out test dataset \autocite{Bishop2006}. This
+approach is justified when the distribution of residuals is unbiased (see
+\cref{subsec:app:b:residuals}), in which case the \ac{RMSEP} equals the
+standard deviation of the residuals (which we interpret as error).
+\Cref{fig:app:b:residuals} shows that this is approximately correct.
+
+The \ac{SPE} of the \ac{GBRT} model can be understood as combined error due to
+the internal variability of the climate system, the different model responses
+within the climate model ensemble to forcing and the incomplete description of
+the climate system with the limited number of variables used as input features.
+Second, the uncertainty in the rescaling is simply assessed as the uncertainty
+given by the emergent constraint from step 1. Finally, the uncertainty in the
+observation-based data (\ie{} uncertainty in the position of the black points
+in \cref{fig:06:mlr_concept}{\color{BrownRed} b}) is assessed by error
+propagation. The necessary sensitivities of the target variable to the various
+predictors for each grid cell/month are given by the linear coefficients $b_k$
+given by the \ac{LIME} approach introduced in \cref{subsec:06:step_2}. All
+sources of uncertainty are assumed independent and are combined by adding the
+squared errors, yielding a single estimate of the \ac{SPE} for each grid
+cell/month. Further details on the calculation of errors are given in
+\cref{subsec:app:b:uncertainty}.
+
+The predictive power of the \ac{GBRT} algorithm and its robustness is assessed
+using a \emph{leave-one-model-out \ac{CV}} approach \commentcite{Elia2002,
+  Karpechko2013}{see \cref{fig:06:mlr_concept}{\color{BrownRed} c} and
+  \cref{subsec:02:model_weighting}}. For this, a single climate model is removed
+from the multi-model ensemble and considered as being the true climate. Our
+statistical model is then fitted on all remaining climate models and a
+prediction for the \enquote{true} model is created. This allows a simple
+evaluation of the predictive power by calculating the \ac{RMSEP}. The whole
+process is repeated for every climate model of the ensemble in order to get a
+distribution of \acp{RMSEP}. Since this approach is not limited to \ac{GBRT},
+it allows a simple comparison of the predictive skill of different statistical
+models. We compare the \ac{GBRT} model to the simple \acs{CMIP}5 \acf{MMM} and
+a \ac{LASSO} model \autocite{Tibshirani1996}. The \ac{LASSO} model is an
+extended linear regression model that regularizes the least squares solution
+with an L$1$ penalty term. In contrast to the ordinary least squares
+regression, the \ac{LASSO} model promotes sparse solutions (\ie{} only a few
+non-zero coefficients/weights), which acts as an intrinsic feature selection
+and provides an effective way to combat overfitting induced by collinearity.
 
 
 \section{Results}

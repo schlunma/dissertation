@@ -11,13 +11,14 @@
 \chapter{Scientific Background}
 \label{ch:02:scientific_background}
 
-This chapter introduces the scientific background of this thesis. First, basic
-concepts of climate model simulations and associated uncertainties are
-introduced (\cref{sec:02:esms}). Next, important metrics describing climate
-sensitivity (\cref{sec:02:climate_sensitivity}) and fundamental biogeochemical
-processes of the global carbon cycle (\cref{sec:02:esms}) are presented.
-Finally, state-of-the art techniques that can be used to reduce uncertainties
-in projections of the future climate with observations are shown
+This \namecref{ch:02:scientific_background} introduces the scientific
+background of this thesis. First, basic concepts of climate model simulations
+and associated uncertainties are introduced (\cref{sec:02:esms}). Next,
+important metrics describing climate sensitivity
+(\cref{sec:02:climate_sensitivity}) and fundamental biogeochemical processes of
+the global carbon cycle (\cref{sec:02:esms}) are presented. Finally,
+state-of-the art techniques that can be used to reduce uncertainties in
+projections of the future climate with observations are shown
 (\cref{sec:02:reducing_uncertainties}). These methods form the basis for new
 techniques developed in this thesis.
 
@@ -169,7 +170,7 @@ in 2100 as only dimension to describe the possible futures (\eg{} \acs{RCP}8.5,
 In this thesis, climate model data from the two most recent \ac{CMIP}
 generations is used, \acs{CMIP}5 and \acs{CMIP}6. More detailed information
 about the specific variables and experiments analyzed is given in the
-corresponding chapters.
+corresponding \namecrefs{ch:04:papers_ecs_tcr_assessment}.
 
 
 \subsection{Sources of Uncertainties in Climate Model Projections}
@@ -221,8 +222,8 @@ and local scales than on continental or global scales. Further contributions to
 natural variability on longer time scales come from phenomena like the
 \ac{ENSO} or the \ac{NAO} and from externally (and thus explainable) events
 like volcanic eruptions and variations in the solar activity. Natural
-variability can be seen as the \emph{noise} in the climate record as opposed to
-the anthropogenic \emph{signal} \autocite{Cubasch2013}. As illustrated by
+variability can be seen as the \enquote{noise} in the climate record as opposed
+to the anthropogenic \enquote{signal} \autocite{Cubasch2013}. As illustrated by
 \cref{fig:02:sources_of_uncertainty}, the uncertainty associated with natural
 variability is constant over time.
 
@@ -273,17 +274,18 @@ As sciences evolves, representations of already included processes can be
 improved in climate models. Moreover, new geophysical and biogeochemical
 processes can be added to them. On the one hand, this can increase the climate
 response uncertainty when a new process is discovered to be relevant
-\commentcite{Cubasch2013}{see \cref{fig:02:sources_of_uncertainty}b}. However,
-such an increase corresponds to a previously unmeasured uncertainty. An example
-for this has recently happened in \acs{CMIP}6: most likely due to changes in
-the cloud representation of the models the spread in the projected \ac{GSAT}
-caused by a doubling of the atmospheric \ac{CO2} concentration has
-substantially increased in \acs{CMIP}6 compared to older \ac{CMIP} generations
+\commentcite{Cubasch2013}{see
+  \cref{fig:02:sources_of_uncertainty}{\color{BrownRed} b}}. However, such an
+increase corresponds to a previously unmeasured uncertainty. An example for
+this has recently happened in \acs{CMIP}6: most likely due to changes in the
+cloud representation of the models the spread in the projected \ac{GSAT} caused
+by a doubling of the atmospheric \ac{CO2} concentration has substantially
+increased in \acs{CMIP}6 compared to older \ac{CMIP} generations
 \autocite{Zelinka2020}. On the other hand, the climate response uncertainty can
 decrease with additional model improvements and better understanding of the
-Earth system (see \cref{fig:02:sources_of_uncertainty}c). Moreover, it can also
-be reduced by observational constraints, which is the main topic of this
-thesis.
+Earth system (see \cref{fig:02:sources_of_uncertainty}{\color{BrownRed} c}).
+Moreover, it can also be reduced by observational constraints, which is the
+main topic of this thesis.
 
 
 \section{Climate Sensitivity}
@@ -691,7 +693,8 @@ expected) larger than transient response \ac{TCR}, \ie{} $\mathtxt{ECS} >
 
 Since one study presented in this thesis aims to reduce uncertainties in carbon
 cycle--related processes \commentcite{Schlund2020}{see \cref{ch:06:paper_gpp}},
-this chapter introduces the scientific background of the global carbon cycle.
+this \namecref{sec:02:carbon_cycle} introduces the scientific background of the
+global carbon cycle.
 
 
 \subsection{Overview}
@@ -890,22 +893,23 @@ represent the observed past and present-day climate \autocite{Gleckler2008,
 like missing processes \autocite{Knutti2017a}.
 
 Thus, more sophisticated techniques are necessary to evaluate multi-model
-climate projections. This section introduces three state-of-the-art methods to
-assess multi-model projections and reduce associated uncertainties with
-observations. These techniques form the baseline of the work presented in the
-following chapters.
+climate projections. This \namecref{sec:02:reducing_uncertainties} introduces
+three state-of-the-art methods to assess multi-model projections and reduce
+associated uncertainties with observations. These techniques form the baseline
+of the work presented in the following \namecrefs{ch:05:paper_ecs}.
 
 
 \subsection{Emergent Constraints}
 \label{subsec:02:emergent_constraints}
 
-As indicated at the beginning of this section, one main issue of multi-model
-ensembles is that not all participating climate models are equally plausible.
-Usually, this is quantified with some kind of measure of the models'
-\emph{performance}, \ie{} their agreement with observations of the real climate
-system. However, this model performance can only be evaluated against
-observations of the past and present-day climate, which does not necessarily
-provide insights into the quality of model projections of the future climate.
+As indicated at the beginning of this \namecref{sec:02:reducing_uncertainties},
+one main issue of multi-model ensembles is that not all participating climate
+models are equally plausible. Usually, this is quantified with some kind of
+measure of the models' \emph{performance}, \ie{} their agreement with
+observations of the real climate system. However, this model performance can
+only be evaluated against observations of the past and present-day climate,
+which does not necessarily provide insights into the quality of model
+projections of the future climate.
 
 The \emph{emergent constraint} approach tackles this problem by
 \enquote{identifying robust, physically interpretable relationships between
@@ -1115,12 +1119,13 @@ weighted mean of the form
   \label{eq:02:weighted_mean}
 \end{equation}
 with normalized weights $w_m$. Similar to the notation introduced in the
-previous section, $y$ is a target variable (\eg{} a projection of the future
-climate) and $m$ indexes the $M$ different climate models. To address two major
-issues of model democracy (different climate models are not equally plausible
-and not independent; see beginning of \cref{sec:02:reducing_uncertainties}),
-\textcite{Knutti2017a} propose a weighting scheme based on climate model
-performance and interdependence with the following weights:
+previous \namecref{subsec:02:emergent_constraints}, $y$ is a target variable
+(\eg{} a projection of the future climate) and $m$ indexes the $M$ different
+climate models. To address two major issues of model democracy (different
+climate models are not equally plausible and not independent; see beginning of
+\cref{sec:02:reducing_uncertainties}), \textcite{Knutti2017a} propose a
+weighting scheme based on climate model performance and interdependence with
+the following weights:
 \begin{equation}
   w_m \propto \frac{\exp \left( -\frac{D_m^2}{\sigma_D^2} \right)}{1 + \sum_{n
     \neq m}^{M} \exp \left( -\frac{S_{mn}^2}{\sigma_S^2} \right)}.
@@ -1168,7 +1173,7 @@ from the updated model ensemble is calculated, which gives a prediction for the
 \enquote{true} climate model. This allows a simple quantitative assessment of
 the weighting scheme by calculating the \ac{RMSE} between the prediction and
 the known ground truth of the pseudo-observation, which is also known as
-\ac{RMSEP}. The whole process is repeated for every climate model of the
+\emph{\ac{RMSEP}}. The whole process is repeated for every climate model of the
 ensemble to get a statistical distribution of \acp{RMSEP}. Finally, different
 \ac{RMSEP} distributions calculated from different parameters $\sigma_D$ and
 $\sigma_S$ can be assessed using specific criteria to find optimal values for
@@ -1202,9 +1207,9 @@ climate model projections with observations. The basis of \ac{MDER} is a set of
 $K$ predictor diagnostics $\left\{ x^{(1)}, x^{(2)}, \ldots, x^{(K)} \right\}$
 which are relevant for the projection of the target variable $y$. The reasoning
 for this choice of the diagnostics is similar to the one presented in the
-previous section: Weighting schemes should address the question \enquote{which
-  climate model is adequate for predicting the target variable?} and not
-\enquote{which climate model is the best?}.
+previous \namecref{subsec:02:model_weighting}: Weighting schemes should address
+the question \enquote{which climate model is adequate for predicting the target
+  variable?} and not \enquote{which climate model is the best?}.
 
 The concept of \ac{MDER} is mathematically similar to the concept of emergent
 constraints. In a first step, an inter-model relationship between the target
