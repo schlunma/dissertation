@@ -841,7 +841,7 @@ to changes in the atmospheric \ac{CO2} concentration.
 The spatial result of our \ac{GBRT} model in step 2a can be visualized by
 comparing r\acs{MMM} and the output of the \acs{GBRT} model.
 \Cref{fig:06:step2a_results:b} shows the bias of the rescaled \acs{CMIP}5
-\acs{RCP}8.5 \ac{MMM} (r\acs{MMM}) compared to our \acs{GBRT} predicted
+\acs{RCP}8.5 \ac{MMM} (r\acs{MMM}) compared to our \acs{GBRT}-predicted
 \ac{GPP} at the end of the \nth{21} century (\range{2091}{2100}), while
 \Cref{fig:06:step2a_results:c} shows the bias of the historical \acs{CMIP}5
 \ac{MMM} compared to the observational FLUXNET-MTE product \autocite{Jung2011}
@@ -1252,4 +1252,128 @@ step 1.
 \section{Summary and Discussion}
 \label{sec:06:summary_and_discussion}
 
-TBA.
+In this paper, we develop a two-step approach to constrain the projected
+\ac{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in the
+\acs{RCP}8.5 scenario. In the first step, we constrain the global mean \ac{GPP}
+to $\pmrangeunit{171}{12}{\GtCyr{}}$ using a published emergent constraint
+approach which we assume can also be applied to the global mean \ac{GPP} at the
+end of the \nth{21} century in the \acs{RCP}8.5 scenario (see discussion in
+\cref{subsec:06:step_1}). This step corresponds to the correction of the
+\acp{ESM}' biases in the response of future \ac{GPP} to rising atmospheric
+\ac{CO2} concentration, which is the main source of uncertainty in future
+\ac{GPP} projections \autocite{Arora2013, Haverd2020, Rogers2017}. As already
+discussed in \cref{subsec:06:step_1}, due to other than \ac{CO2} fertilization
+drivers of the increase in the \ac{CO2} seasonal cycle amplitude
+\autocite{Bastos2019, Forkel2016, Piao2018, Zhao2016} this emergent constraint
+is not undisputed and can be replaced with another emergent constraint in
+future studies. In the second step, a \ac{ML} approach is used to further
+constrain the gridded \ac{GPP} based on process-based present-day predictors.
+We consider two target variables: first (step 2a) the gridded monthly
+climatologies of absolute \ac{GPP} (\range{2091}{2100}) and second (step 2b)
+the gridded fractional \ac{GPP} change over the \nth{21} century (years
+\range{2091}{2100} versus years \range{1991}{2000}; see \cref{eq:06:f}). Both
+approaches give consistent results (see
+\cref{fig:06:comparison_step2a_step2b}). The latter quantity shows an increased
+\ac{GPP} change in the high latitudes compared to regions closer to the
+equator, which might be attributed to an additional greening trend in the high
+latitudes as supported by the feature map in
+\cref{fig:06:step2b_ml_inference:c} that shows \ac{LAI} as dominant predictor
+in this region. However, in the absence of a robust physical mechanism this
+connection cannot be proven. For both target variables, the \ac{GBRT} algorithm
+is superior to all other considered statistical models in terms of prediction
+uncertainty evaluated in a leave-one-model-out \ac{CV} approach among different
+statistical models. Compared to the unweighted \acs{CMIP}5 \ac{MMM} the mean
+prediction error is reduced by $48 \unit{\%}$ (step 2a) and $16 \unit{\%}$
+(step 2b); compared to a linear \ac{LASSO} regression model the mean prediction
+error is reduced by approximately $3 \unit{\%}$ for both cases. However, local
+standard errors are still large for both target variables, even for the
+\ac{GBRT} model. Due to the unknown covariance structure a global aggregation
+of these errors is not possible. Step 2a mainly corrects the bias of the
+simulated absolute historical \ac{GPP} relative to observations
+\autocite{Anav2013}. Consequently, the historical \ac{GPP} is by far the most
+important predictor for future absolute \ac{GPP} (regions with high \ac{GPP} in
+the past are likely to have high \ac{GPP} in the future and vice versa).
+However, as we show in \cref{fig:06:step2a_results_biases}, the \ac{GBRT} model
+expands this bias correction by taking more predictors than the historical
+\ac{GPP} into account. A similar result is provided by step 2b:
+\cref{fig:06:step2b_results_biases:b,fig:06:step2b_results_biases:c} show the
+impact of the additional predictors as difference between the \acs{CMIP}5
+\ac{MMM} and the \ac{GBRT} prediction of the \ac{GPP} change. In this case, the
+target variable (fractional \ac{GPP} change) is already normalized with the
+historical \ac{GPP}. Therefore, \ac{T} (second most important feature in step
+2a) is now the most important predictor instead of historical \ac{GPP} (see
+\cref{fig:06:step2b_ml_inference:d}). As shown in
+\cref{fig:06:step2b_ml_inference:c}, the different features have also different
+dominant regional impacts; but again, since there is no distinct physical
+mechanism relating the predictors to the target variable this map requires
+further analysis and needs to be treated with care.
+
+Our \ac{GBRT} approach (step 2) is mathematically similar to \ac{MDER}
+\autocite{Karpechko2013, Senftleben2020, Wenzel2016a}: We establish a
+relationship between process-oriented, physically-relevant diagnostics and
+future projections and then utilize this to predict today's observed conditions
+into the future. We emphasize that the exact nature of this relationship is
+strongly dependent on the climate model ensemble considered. Although derived
+empirically, we argue that this relationship can still be used to extract
+further information from the climate model ensemble for two reasons: First, we
+consider process-oriented variables which are physically linked to \ac{GPP},
+and second, we ensure its statistical robustness. The latter is achieved by
+considering gridded climatological data instead of global or regional means.
+The number of points establishing the relation is dramatically increased from
+about 50 points for classical emergent constraints to 237852 points (step 2a)
+and 16503 (step 2b) in our approach. We validate the relationship by extensive
+out-of-sample testing using a leave-one-model-out \ac{CV} approach and randomly
+excluding parts of the data prior to training. Furthermore, the large number of
+points in combination with the non-linear \ac{GBRT} model allows us to exploit
+more information than classical emergent constraints and include non-linear
+multivariate relations in the statistical model, including the information
+encoded in spatial variation. The prediction phase of our approach (feeding
+observation-based data into the trained \ac{GBRT} model) can be interpreted as
+an implicit performance weighting: The \ac{GBRT} model creates predictions
+based on today's conditions (in form of variables which are physically
+connected to \ac{GPP}). However, unlike other performance weighting techniques
+\autocite{Knutti2017a, Sanderson2017}, we do not assign constant weights to the
+different climate models. On the contrary, since the algorithm works on grid
+cell level, it is able to adapt to regional climate characteristics and thus
+applies an implicit \emph{local} and \emph{climate-dependent} weighting.
+Moreover, the algorithm adds another level of weighting by assigning a relative
+relevance score to the different predictors. We emphasize that this is only an
+implicit weighting, since it is not possible to extract specific values for the
+individual weights due to the complex structure of the \ac{GBRT} model.
+
+Yet, like emergent constraints and performance weighting techniques, our
+\ac{GBRT} approach in step 2 hinges on the assumption that the climate models
+reflect the real world. This is certainly only partially true, since there are
+processes like \ac{CO2} fertilization, land use and land cover changes,
+nutrient cycles and limitations \autocite{Du2020,Fleischer2019}, disturbances,
+and induced vegetation dynamics which may strongly alter the future
+trajectories of \ac{GPP} without this being fully encoded in today's
+observational products. Moreover, all \ac{CO2}-related effects are only
+implicitly incorporated in our approach by the target period we are using and
+the global rescaling using the emergent constraint in step 1. Thus, our
+reduction of uncertainty only applies to the specific setup we are considering
+here: the future \ac{GPP} in the \acs{CMIP}5 \acs{RCP}8.5 scenario at the end
+of the \nth{21} century. It has to be viewed as a nominal reduction, while the
+real uncertainty remains unknown and is likely larger than the nominal one.
+These issues could be tested in the future by including other (even offline)
+models, which account for the aforementioned processes. A true validation will
+only be possible once we experience the changed condition or could be based on
+paleo data. In summary, our approach does not address the coupled system
+directly but hinges on the climate predictions of the individual \acp{ESM} and
+hence is not able to implicitly correct respective biases of the \acs{CMIP}5
+ensemble.
+
+The presented approach based on \ac{ML} is not limited to projections of the
+future carbon cycle, which is used as an illustrative example. Indeed, since
+its only prerequisites are the availability of gridded climate model data and
+gridded observation-based data, the \ac{GBRT} algorithm can be applied to any
+variable of interest if physically-relevant diagnostics that influence the
+target variable are known. This opens a wide range of possibilities for
+constraining uncertainties in projected variable scenarios. In addition, maps
+of the local relative feature importance as shown in
+\cref{fig:06:step2b_ml_inference:c} can be used to reveal connections between
+different Earth system variables that are currently unknown. With the proposed
+data-driven approach, a possibly extended application could be to constrain
+projections of not just one but several variables simultaneously. Moreover, the
+concept of our method is not limited to \ac{GBRT} but can be used with any
+other (\ac{ML}) regression algorithm.
