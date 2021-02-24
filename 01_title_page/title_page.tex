@@ -9,6 +9,46 @@
 
 
 \begin{titlepage}
+  % "True" title page
+  \newgeometry{
+    includeheadfoot,
+    heightrounded,
+    top=1.5cm,
+    bottom=1.5cm,
+    inner=2.0cm,
+    outer=2.0cm,
+  }
+  \thispagestyle{empty}
+
+  \begin{center}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.6\columnwidth]{
+        01_title_page/figs/uni_bremen.pdf}
+    \end{figure}
+
+    \vspace{20mm}
+
+    \hrule
+    \par \vspace{8mm}
+    \par {\huge \textbf{\TheTitle{}}}
+    \par \vspace{8mm}
+    \par \hrule
+
+    \vspace{20mm}
+
+    {\large \textsc{\TheThesis{}} of}
+    \par \vspace{2mm}
+    \par {\color{BrownRed} \LARGE \TheAuthor{}}
+
+    \vfill
+
+    {\large \TheMonth{}}
+  \end{center}
+  \cleardoublepage
+
+
+  % "Inner" title page with additional information
   \thispagestyle{empty}
 
   \begin{center}
@@ -24,23 +64,43 @@
     \par \vspace{8mm}
     \par \hrule
 
-    \vspace{18mm}
+    \vspace{20mm}
 
-    {\Large \textsc{\TheThesis{}}}
-
-    \vspace{18mm}
-
-    {\large \textit{Author:} \hfill \textit{Supervisors:}}
-    \par {\color{BrownRed} \large \TheAuthor{} \hfill \TheFirstSupervisor{}}
-    \par {\color{BrownRed} \large \hfill \TheSecondSupervisor{}}
+    {\large \textsc{\TheThesis{}} of}
+    \par \vspace{2mm}
+    \par {\color{BrownRed} \LARGE \TheAuthor{}}
 
     \vfill
 
-    {\large \textit{This thesis is submitted for the degree}}
+    {\large \textit{A thesis submitted in fulfillment of the requirements for
+      the degree}}
     \par {\large \textit{\TheDegree{}}}
 
     \vfill
+  \end{center}
 
-    {\large \TheDate{}}
+  \begin{tabular}{>{\large}l >{\color{BrownRed} \large}l}
+    First Supervisor: & \TheFirstSupervisor{} \\
+    Second Supervisor: & \TheSecondSupervisor{} \\
+    & \\
+    Submission Date: & \TheSubmissionDate{} \\
+  \end{tabular}
+  \clearpage
+
+
+  % Page with license at bottom
+  \restoregeometry
+  \thispagestyle{empty}
+
+  \vspace*{\fill}
+
+  \begin{center}
+    \begin{figure}[h]
+      \centering
+      \href{\TheLicenseLink}{\includegraphics[width=0.2\columnwidth]{
+          01_title_page/figs/cc_by.pdf}}
+    \end{figure}
+
+    This work is licensed under a \href{\TheLicenseLink}{\TheLicense{}}.
   \end{center}
 \end{titlepage}
