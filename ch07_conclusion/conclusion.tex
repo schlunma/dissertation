@@ -122,21 +122,21 @@ and slows down global warming by removing \ac{CO2} from the atmosphere. In the
 first step of our new two-step approach, we constrain the global mean \ac{GPP}
 at the end of the \nth{21} century in the \acs{CMIP}5 \acs{RCP}8.5 scenario to
 $\pmrangeunit{171}{12}{\GtCyr{}}$ using a published emergent constraint by
-\textcite{Wenzel2016}. This first step corrects the \acs{CMIP}5 models' GPP
-response to \ac{CO2}, which shows a range of $\rangeunit{156}{248}{\GtCyr{}}$
-in the raw multi-model ensemble. In the second step, a \ac{ML}-based climate
-model weighting approach is used to further constrain the gridded \ac{GPP}
-based on present-day predictors that are relevant for the simulation of
-\ac{GPP} in the \acp{ESM}. Our \ac{ML} approach is mathematically similar to
-the \ac{MDER} approach \autocite{Karpechko2013, Senftleben2020, Wenzel2016a},
-but additionally considers multi-dimensional (gridded) target variables and
-non-linear relationships between the predictors and the target variable. We
-establish a relationship between process‐oriented predictors and future
-projections of \ac{GPP} and then utilize this to project today's observed
-conditions into the future. The prediction phase of our method can be
-interpreted as an implicit performance weighting. However, due to the complex
-structure of the used \ac{ML} algorithm (\ac{GBRT}) it is not possible to
-extract specific values for the individual weights. We consider two target
+\textcite{Wenzel2016}. This first step corrects the \acs{CMIP}5 models'
+\ac{GPP} response to \ac{CO2}, which shows a range of
+$\rangeunit{156}{248}{\GtCyr{}}$ in the raw multi-model ensemble. In the second
+step, a \ac{ML}-based climate model weighting approach is used to further
+constrain the gridded \ac{GPP} based on present-day predictors that are
+relevant for the simulation of \ac{GPP} in the \acp{ESM}. Our \ac{ML} approach
+is mathematically similar to the \ac{MDER} approach \autocite{Karpechko2013,
+  Senftleben2020, Wenzel2016a}, but additionally considers multi-dimensional
+(gridded) target variables and non-linear relationships between the predictors
+and the target variable. We establish a relationship between process‐oriented
+predictors and future projections of \ac{GPP} and then utilize this to project
+today's observed conditions into the future. The prediction phase of our method
+can be interpreted as an implicit performance weighting. However, due to the
+complex structure of the used \ac{ML} algorithm (\ac{GBRT}) it is not possible
+to extract specific values for the individual weights. We consider two target
 variables: the gridded monthly climatologies of absolute \ac{GPP}
 (\range{2091}{2100}) and the gridded fractional \ac{GPP} change over the
 \nth{21} century (2100 versus 2000). The latter quantity shows an increased
@@ -153,18 +153,66 @@ insights into the \ac{ML} model. For the first target variable (absolute
 can be explained with a correction of the historical bias in \ac{GPP} by our
 approach. For the second variable, \ac{T} and \ac{LAI} are the dominant
 features. This study directly addresses \cref{enum:01:question_3}
-(\enquote{\emph{\KeyScienceQuestionThree{}}}), which we can answer with
-\enquote{yes} based on the results presented here.
+(\enquote{\emph{\KeyScienceQuestionThree{}}}), which we can confidently answer
+with \enquote{yes} based on the results we find.
 
 
 \section{Outlook}
 \label{sec:07:outlook}
 
-- Why GBRT not used for ECS?
+Climate change is a global phenomenon affecting the entire human society. Due
+to the vastly complex nature of the Earth system, accurately quantifying future
+climate change is a highly non-trivial task. This thesis covers several
+important aspects of the climate system and metrics describing the changing
+climate, but it is by no means complete and can be extended in an arbitrary
+number of ways. This final \namecref{sec:07:outlook} presents several
+suggestions on possible ways forward.
 
-- GBRT used for temperature anomaly based on other studies (emergent
-constraints, historical T trend, weighting following Brunner et al.)
+\Cref{ch:04:papers_ecs_tcr_assessment} presents two possible reasons for the
+increased climate sensitivity in the \acs{CMIP}6 models (changes in the
+aerosol-cloud interaction and changes in the shortwave cloud phase change
+feedback over the Southern Ocean). While these are likely explanations, there
+might be additional relevant aspects that have not been analyzed in detail yet.
+This could include additional feedback processes that are not present in older
+\ac{CMIP} generations or missing feedback processes that appear in previous
+\ac{CMIP} models but are absent in the \acs{CMIP}6 ensemble. Obvious candidates
+for these feedback processes are cloud-related feedbacks, which pose a major
+source of uncertainty in climate sensitivity in modern-day \acp{ESM}
+\autocite{Boucher2013}. Identifying and quantifying such feedback mechanisms
+can further help to gain a better understanding of the \acs{CMIP}6 models and
+potentially to reduce associated uncertainties in the entire multi-model
+ensemble.
 
-- Missing feedback process relevant for high ECS (Grise et al. 2016)?
+Due to the flexibility of our \ac{ML}-based climate model weighting approach
+presented in \cref{ch:06:paper_gpp}, one natural way forward is to apply this
+technique to other target variables. While the scalar metrics \ac{ECS} or
+\ac{TCR} with one value per climate model do not offer enough training points
+for this technique, a possible alternative could be the gridded \acl{T} over
+the \nth{21} century in the \ac{SSP} scenarios. A relevant study in this
+context is given by \textcite{Brunner2020}, who use performance and
+interdependence-based climate model weighting to constrain the \acl{T} over the
+\nth{21} century based on observable process-based predictors of today's
+climate and which could serve as a possible baseline for our new \ac{ML}-based
+weighting approach. An exciting and valuable addition to our method could be
+causal inference \autocite{Nowack2020, Runge2019}. In the current approach, the
+relationships between the different predictors and the target variable are
+based on statistical correlation alone. Moreover, the local feature importance
+maps do not reveal true causal relationships between the predictors and the
+target variable, but only show the relative weight that is given to a specific
+predictor at a specific location for the prediction of the target variable by
+the \ac{ML} model. By integrating causal networks into our approach, it might
+be possible to explore and utilize true causal connections instead.
 
-- Causal model evaluation (Nowack et al., Runge et al.)?
+The massive progress in \ac{AI} and \ac{ML} in recent years in combination with
+ever increasing computational power and resources provided by modern
+supercomputers has the potential for enormous improvements in climate modeling
+and analysis \autocite{Reichstein2019}. Apart from the presented \ac{ML}-based
+weighting approach, further possible applications of \ac{AI} and \ac{ML} in
+climate science involve for example \ac{ML}-based parametrizations that are
+learned from high-resolution climate models \autocite{Rasp2018}, the
+\ac{ML}-based analysis and prediction of forcing patterns \autocite{Barnes2019,
+  Mansfield2020} or the learning of entire \acp{ESM} from observational
+products \autocite{Geer2021}. Therefore, the foundation for innovative and
+groundbreaking research in climate science has been laid, which will hopefully
+help us in further understanding and mitigating one of the greatest challenges
+for humankind today: climate change.

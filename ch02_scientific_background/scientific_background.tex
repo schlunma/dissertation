@@ -493,19 +493,18 @@ is computationally expensive as it would require thousands of model years
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/gregory_regression.pdf}
   \caption{Global and annual mean net \acf{TOA} radiation $N$ versus the change
-    in global and annual mean near-surface air temperature $\Delta T$ for 150
-    years of a simulation with an abrupt quadrupling of the atmospheric
-    \acs{CO2} concentration (\nxcotwo{4}) for the \acs{CMIP}5 \acl{MMM} (blue
-    circles). To account for energy leakage and model drift, a linear fit of
-    the corresponding pre-industrial control run is subtracted from the
-    \nxcotwo{4} simulation. As given by \cref{eq:02:N_vs_delta_t}, the slope
-    of the linear regression (black line) corresponds to the climate feedback
-    parameter $\lambda$, and the $y$-intercept corresponds to the radiative
-    forcing $F_\mathtxt{4x}$. These can be used to calculate the \acf{ECS} with
-    the Gregory regression method according to \cref{eq:02:ecs}
-    \autocite{Gregory2004}. \acs{ECS} is equivalently given by the
-    \xintercept{} of the linear regression line divided by $2$. Here,
-    $\mathtxt{ECS} = 3.14 \unit{K}$.}
+    in global and annual mean \acl{T} $\Delta T$ for 150 years of a simulation
+    with an abrupt quadrupling of the atmospheric \acs{CO2} concentration
+    (\nxcotwo{4}) for the \acs{CMIP}5 \acl{MMM} (blue circles). To account for
+    energy leakage and model drift, a linear fit of the corresponding
+    pre-industrial control run is subtracted from the \nxcotwo{4} simulation.
+    As given by \cref{eq:02:N_vs_delta_t}, the slope of the linear regression
+    (black line) corresponds to the climate feedback parameter $\lambda$, and
+    the \yintercept{} corresponds to the radiative forcing $F_\mathtxt{4x}$.
+    These can be used to calculate the \acf{ECS} with the Gregory regression
+    method according to \cref{eq:02:ecs} \autocite{Gregory2004}. \acs{ECS} is
+    equivalently given by the \xintercept{} of the linear regression line
+    divided by $2$. Here, $\mathtxt{ECS} = 3.14 \unit{K}$.}
   \label{fig:02:gregory_regression}
 \end{figure}
 
@@ -632,14 +631,14 @@ is shown in \cref{fig:02:tcr}.
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/tcr_calculation.pdf}
-  \caption{Global and annual mean near-surface air temperature change $\Delta
-    T$ for 140 years of a simulation with a $1 \unit{\%}$ per year increase of
-    the atmospheric \acs{CO2} concentration (\onepctcotwo{}) for the \acf{CESM}
-    of the \acf{NCAR} (blue circles). The temperature change is calculated
-    relative to a corresponding pre-industrial control simulation smoothed
-    with a linear fit over all 140 years. The \acf{TCR} is defined as the
-    temperature change $\Delta T$ at the time of \acs{CO2} doubling averaged
-    over a 20 year period (illustrated by the vertical dashed lines). Here,
+  \caption{Global and annual mean \acl{T} change $\Delta T$ for 140 years of a
+    simulation with a $1 \unit{\%}$ per year increase of the atmospheric
+    \acs{CO2} concentration (\onepctcotwo{}) for the \acf{CESM} of the
+    \acf{NCAR} (blue circles). The temperature change is calculated relative
+    to a corresponding pre-industrial control simulation smoothed with a
+    linear fit over all 140 years. The \acf{TCR} is defined as the temperature
+    change $\Delta T$ at the time of \acs{CO2} doubling averaged over a
+    20-year period (illustrated by the vertical dashed lines). Here,
     $\mathtxt{TCR} = 2.35 \unit{K}$ (horizontal dashed line).}
   \label{fig:02:tcr}
 \end{figure}
