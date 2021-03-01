@@ -15,49 +15,115 @@
 \section{Motivation}
 \label{sec:01:motivation}
 
-Start: Climate change is one of the greatest challenges for humankind today...
+Climate change is one of the greatest challenges for humankind today with
+far-reaching consequences for all human beings on planet Earth. The warming of
+the climate system is \enquote{unequivocal} and \enquote{many of the observed
+  changes are unprecedented over decades to millennia} \autocite{IPCC2014}. The
+changing climate increases the \enquote{likelihood of severe, pervasive and
+  irreversible impacts for people, species and ecosystems} with \enquote{mostly
+  negative impacts for biodiversity, ecosystem services and economic
+  development} and amplifies \enquote{risks for livelihoods and for food and
+  human security} \autocite{IPCC2014}. Potential drivers for climate change
+are all natural and anthropogenic substances and processes that may alter the
+Earth's energy budget. The human influence on the climate system is clear: Ever
+increasing emissions of \acp{GHG} since the end of the pre-industrial era
+largely driven by economic and population growth led to atmospheric
+concentrations of \ac{CO2}, \ac{CH4} and \ac{N2O} that are
+\enquote{unprecedented in at least the last 800000 years} \autocite{IPCC2014}.
+The effects of these \ac{GHG} emissions and other anthropogenic drivers have
+been \enquote{detected throughout the climate system and are extremely likely
+  to have been the dominant cause of the observed warming since the
+  mid-\nth{20} century} \autocite{IPCC2014}. The greenhouse effect is based on
+the optical properties of the \acp{GHG}: While the atmosphere is mostly
+transparent for the incoming solar (shortwave) radiation, the outgoing
+infrared (longwave) radiation that is reflected from the planet's surface is
+partly absorbed by the corresponding \ac{GHG} molecules through an excitation
+of their corresponding vibrational modes and re-emitted isotropically. This
+process traps energy near the surface and leads to a warming of the Earth's
+surface and the lower atmosphere. The individual impact of the different
+drivers of climate change measured with the so-called \emph{radiative
+forcing}, which quantifies the change in energy fluxes caused by changes in
+these drivers relative to pre-industrial conditions \autocite{IPCC2013}. The
+total radiative forcing is positive (which corresponds to a warming) and its
+largest contribution is caused by the increase in the atmospheric
+concentration of \ac{CO2} due to fossil fuel emissions since the year 1750
+\autocite{IPCC2014}. Apart from their physical warming effect on the climate,
+carbon-based \acp{GHG} like \ac{CO2} also directly influence the global
+carbon cycle, an important biogeochemical cycle of the Earth. A crucial flux
+of the carbon cycle is the \emph{\ac{GPP}}, which describes the carbon uptake
+of the terrestrial biosphere due to photosynthesis. Since this land carbon
+uptake absorbs about $30 \unit{\%}$ of the anthropogenic \ac{CO2} emissions in
+today's climate \autocite{Friedlingstein2020}, this process substantially slows
+down global warming. Other important anthropogenic drivers of climate change
+are the emission of aerosols and land use/land cover changes. Apart from
+anthropogenic drivers, there are also natural processes which impact the
+climate system like changes in the solar activity or volcanic eruptions.
+However, there is clear evidence that these natural drives alone cannot explain
+the observed climate change \autocite{Haustein2017}.
 
-- Why is climate change relevant for the society?
+To successfully mitigate the massive impacts of climate change, a first
+important step is the understanding of climate change and its accurate
+quantification. Extremely valuable tools in this context are climate models,
+which allow us to simulate the behavior of the climate system under arbitrary
+conditions without having to perform (ethnically questionable) experiments in
+the real world. All around the world climate research institutes provide a
+variety of different climate models. Many of them participate in the \ac{CMIP},
+which was initiated in 1995 by the \ac{WGCM} of the \ac{WCRP} to
+\enquote{better understand past, present and future climate changes arising
+  from natural, unforced variability or in response to changes in radiative
+  forcing in a multi-model context} \autocite{WCRP2020}. The \ac{CMIP} models
+provide crucial input for the international climate assessments given by the
+\acp{AR} of the \ac{IPCC}. For example, the latest generation of climate models
+from the most recent (sixth) phase of \ac{CMIP} \commentcite{Eyring2016}{known
+  as \acs{CMIP}6} will be used in the upcoming Sixth \acl{AR} (\acs{AR}6) of
+the \ac{IPCC}, and their predecessor models from \acs{CMIP}5
+\autocite{Taylor2012} have been successfully evaluated in the Fifth \acl{AR}
+(\acs{AR}5) in 2013 \autocite{Flato2013}. Modern-day climate models, which
+allow the simulation of biological and chemical processes in addition to the
+dynamics of the physical components of the Earth system, are also known as
+\acp{ESM} and provide the most sophisticated simulations of the Earth's
+climate. In this thesis, the terms \enquote{climate model} and
+\enquote{\acl{ESM}} are used interchangeably since most modern models
+participating in \ac{CMIP} are \acp{ESM} or at least have \ac{ESM} versions.
 
-- Cite latest warming reports, also other variables (droughts, extreme events,
-etc.)
-
-- basic physics of greenhouse gases (vibration modes, etc.)
-
-- definition of radiative forcing
-
-- well-mixed greenhouse gases (water vapor, CO2, CH4) + sources
-
-- long-lived vs. short-lived GHGs?
-
-- aerosols + cooling effect
-
-- natural vs. anthropogenic effects (D\&A) -> clear evidence that climate
-change over 21st century is caused by human influence. Website:
-(https://globalwarmingindex.org/, Haustein et al., 2017)
-
-- remove description of emergent constraints from section 1.3, since this will
-probably be included in this section.
-
-- answer question: what is climate sensitivity? What is \ac{ECS}? What is
-\ac{TCR}? What is \ac{CMIP}?
-
-- One sentence on \ac{ML}.
-
-- Mention IPCC assessments, older ones and upcoming AR6
-
-- "climate model" is used as generic term which include \acp{AOGCM} and
-\acp{ESM} (see \cref{subsec:02:numerical_climate_modeling}) (subcategories).
-Since most modern climate models participating in CMIP are \acp{ESM} (or at
-least have \ac{ESM} versions), the terms "climate model" and "ESM" are used
-interchangeably in this thesis.
+Simulations that extrapolate state of the climate system into the future are
+called \emph{projections} of the future climate. These include idealized
+simulations with only a prescribed change in the atmospheric \ac{CO2}
+concentration (\eg{} an instantaneous doubling of \ac{CO2} or a \ac{CO2}
+increase of $1 \unit{\%}$ per year) as well as more realistic projections that
+consider different future scenarios (\eg{} a fossil fuel--based future or a
+scenario that is based on a sustainable development). In many variables that
+are relevant for climate change, multi-model projections from \ac{CMIP} show a
+large inter-model range \autocite{Collins2013, Flato2013}. A crucial and
+policy-relevant example for this is the climate sensitivity, which refers to
+the change in the \ac{GSAT} that results from a change in the radiative
+forcing. Common metrics for this are the \emph{\ac{ECS}}, which describes the
+equilibrium response of the climate system after a doubling of the atmospheric
+\ac{CO2} concentration and the \emph{\ac{TCR}}, which describes the transient
+response of the system to a \ac{CO2} doubling. In \acs{AR}5, both quantities
+have been assessed with high ranges of $\rangeunit{1.5}{4.5}{K}$ and
+$\rangeunit{1.0}{2.5}{K}$ for \ac{ECS} and \ac{TCR}, respectively
+\autocite{Stocker2013}. The corresponding inter-model ranges from the
+\acs{CMIP}5 models show similar results \autocite{Flato2013}. For this reason,
+a careful statistical evaluation and further refinement of the output of
+multi-model climate projections is necessary in order to reduce associated
+uncertainties. State-of-the-art techniques for this are so-called
+\emph{emergent constraints}, which use a physically-based inter-model
+relationship between an observable quantity of the Earth system and a target
+variable to reduce uncertainties in the target variable with observations
+\autocite{Allen2002}. An alternative approach is climate model weighting based
+on performance (\ie{} the distance of the climate models relative to
+observational products) and interdependence (\ie{} the distance between the
+climate models among each other) \autocite{Knutti2017a}. These techniques form
+the baseline for the new analyses and results presented in this thesis.
 
 
 \section{Key Science Questions}
 \label{sec:01:key_science_questions}
 
-This \namecref{sec:01:key_science_questions} will present the \textbf{AWESOME}
-\namecrefs{enum:01:question_1}!!
+The aim of this thesis is to reduce uncertainties in multi-model climate
+projections with observations by addressing the following three
+\namecrefs{enum:01:question_1}:
 
 \begingroup
 \crefalias{enumi}{question}
@@ -91,18 +157,17 @@ evaluation of \acp{ESM} which is useful for the entire scientific community and
 lead to co-authorship in four peer-reviewed studies \autocite{Eyring2020,
   Lauer2020, Righi2020, Weigel2020}. \Cref{ch:04:papers_ecs_tcr_assessment}
 covers the assessment of climate sensitivity metrics like the \ac{ECS} or
-\ac{TCR} in the latest generation of \acp{ESM} (\acs{CMIP}6). This work is
+\ac{TCR} in the latest generation of \acp{ESM} from \acs{CMIP}6. This work is
 already published in two scientific publications \autocite{Bock2020,
   Meehl2020}. Since the \ac{ECS} and \ac{TCR} are considerably higher in this
 new climate model generation, \cref{ch:05:paper_ecs} describes the assessment
-of emergent constraints (a technique to reduce uncertainties in multi-model
-climate projections, see \cref{subsec:02:emergent_constraints}) on the \ac{ECS}
-for these \acp{ESM}. The contents of this \namecref{ch:05:paper_ecs} are
-published in \emph{Earth System Dynamics} \autocite{Schlund2020a}.
-\Cref{ch:06:paper_gpp} focuses on a new method to reduce uncertainties in
-multi-dimensional (gridded) multi-model projections of the future climate with
-observations based on \ac{ML}. As an example, the method is applied to the
-photosynthesis rate at the end of the \nth{21} century, which is already
-published in the \emph{Journal of Geophysical Research: Biogeosciences}
+of emergent constraints on the \ac{ECS} for these \acs{CMIP}6 models and
+compares these to results derived from \acs{CMIP}5 models. The contents of this
+\namecref{ch:05:paper_ecs} are published in \emph{Earth System Dynamics}
+\autocite{Schlund2020a}. \Cref{ch:06:paper_gpp} focuses on a new method to
+reduce uncertainties in multi-dimensional (gridded) multi-model projections of
+the future climate with observations based on \ac{ML}. As an example, the
+method is applied to \ac{GPP} at the end of the \nth{21} century, which is
+already published in the \emph{Journal of Geophysical Research: Biogeosciences}
 \autocite{Schlund2020}. Finally, \cref{ch:07:conclusion} provides a summary of
 the results of this thesis and gives an outlook of possible future works.
