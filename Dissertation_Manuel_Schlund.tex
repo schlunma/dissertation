@@ -36,7 +36,7 @@
 %  02_abstract/abstract_german,
 %  ch01_introduction/introduction,
 %  ch07_conclusion/conclusion,
-%  end_acronyms/acronyms,
+%  end_abbreviations/abbreviations,
 %  end_acknowledgments/acknowledgments,
 %}
 
@@ -52,10 +52,8 @@
   \frontmatter
   \include{01_title_page/title_page}
 
-  % Abstracts
-  \include{02_abstract/abstract_english}
-  \acresetall
-  \include{02_abstract/abstract_german}
+  % Abstract
+  \include{02_abstract/abstract}
   \acresetall
 
   % Table of contents
@@ -77,19 +75,19 @@
   \appendix
   \include{end_appendix/appendix}
 
-  % Acronyms
+  % Abbreviations
   \backmatter
-  \include{end_acronyms/acronyms}
+  \include{end_abbreviations/abbreviations}
 
   % References
   \boldname{Schlund}{Manuel}{M.}
-  \printbibliography[keyword=own, title=Integrated Author's References]
+  \printbibliography[
+    keyword=own,
+    title={Integrated Author's References \label{ch:bib:own}},
+  ]
   \printbibliography[title=References]
   \cleardoublepage
 
   % Acknowledgments
   \include{end_acknowledgments/acknowledgments}
-
-  % Declaration of authorship
-  \include{end_declaration_authorship/declaration_authorship}
 \end{document}
