@@ -121,3 +121,9 @@
   table foot=\bottomrule,
   before line=\hspace{-0.5\tabcolsep}, % Avoid indentation for first two rows
 }
+
+% Alternatives for \acf{} and \acfp{} for the use in the abstract, otherwise
+% this will result in a permanent warning "Label(s) may have changed. Rerun to
+% get cross-references right."
+\newcommand{\acfAbstract}[1]{\acl{#1} (\acs{#1})}
+\newcommand{\acfpAbstract}[1]{\aclp{#1} (\acsp{#1})}
