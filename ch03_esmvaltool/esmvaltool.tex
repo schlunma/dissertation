@@ -58,13 +58,17 @@ observations.
   \centering
   \includegraphics[width=\LargeFigureWidth{}]{
     ch03_esmvaltool/figs/esmvaltool_schematic.pdf}
-  \caption{Schematic representation of the \acf{ESMValTool}. First, input data
-    is preprocessed by the \acf{ESMValCore}. Second, the preprocessed data is
-    read by diagnostic scripts, which create the final output (\eg{} plots).
-    The user can specify the desired input datasets, preprocessing operations
-    and diagnostic scripts in the recipe, which is a configuration file that
-    controls the main workflow of the \acs{ESMValTool}.
-    \AdaptedFrom{Righi2020}.}
+  \caption[
+    Schematic representation of the structure of the \acf{ESMValTool}.
+  ]{
+    Schematic representation of the structure of the \acf{ESMValTool}. First,
+    input data is preprocessed by the \acf{ESMValCore}. Second, the
+    preprocessed data is read by diagnostic scripts, which create the final
+    output (\eg{} plots). The user can specify the desired input datasets,
+    preprocessing operations and diagnostic scripts in the recipe, which is a
+    configuration file that controls the main workflow of the \acs{ESMValTool}.
+    \AdaptedFrom{Righi2020}.
+  }
   \label{fig:03:esmvaltool_schematic}
 \end{figure}
 
@@ -181,8 +185,13 @@ contributions, which are partly published in the scientific documentation of
     & uajet & Position of austral jet stream \\
     \bottomrule
   \end{tabulary}
-  \caption{Summary of new preprocessor functions and variable derivation
-    scripts contributed to the \acf{ESMValCore} by the author of this thesis.}
+  \caption[
+    Summary of new preprocessor functions and variable derivation scripts
+    contributed to the \acf{ESMValCore} by the author of this thesis.
+  ]{
+    Summary of new preprocessor functions and variable derivation scripts
+    contributed to the \acf{ESMValCore} by the author of this thesis.
+  }
   \label{tab:03:changes_to_esmvalcore}
 \end{table}
 
@@ -218,16 +227,21 @@ the \ac{GSAT} over the \nth{20} century.
     \caption{}
     \label{fig:03:co2s:b}
   \end{subfigure}
-  \caption{(a) \acs{CMIP}6 \acf{MMM} of the atmospheric \acs{CO2} concentration
-    at surface (\emph{co2s}) averaged over the months \acf{JJA} of the year
-    2014 in the emission-driven historical simulation. The \acs{CMIP}6
-    \acs{MMM} includes the four climate models that provide all data needed
-    for the calculation of \emph{co2s} (see legend in (b)). (b) Monthly mean
+  \caption[
+    Illustration of the atmospheric \acs{CO2} concentration at surface
+    (\emph{co2}) for \acs{CMIP}6 models.
+  ]{
+    (a) \acs{CMIP}6 \acf{MMM} of the atmospheric \acs{CO2} concentration at
+    surface (\emph{co2s}) averaged over the months \acf{JJA} of the year 2014
+    in the emission-driven historical simulation. The \acs{CMIP}6 \acs{MMM}
+    includes the four climate models that provide all data needed for the
+    calculation of \emph{co2s} (see legend in (b)). (b) Monthly mean
     \emph{co2s} at Mauna Loa, Hawaii ($19.5 \unit{\degree N}$, $155.6
     \unit{\degree W}$) from 1958 to 2014. The black line shows observations
     from the Mauna Loa Observatory \autocite{Keeling2005}; the remaining lines
     show emission-driven historical simulations from individual \acs{CMIP}6
-    models.}
+    models.
+  }
   \label{fig:03:co2s}
 \end{figure}
 
@@ -315,11 +329,15 @@ regional evaluation \autocite{Weigel2020}.
     & Scripps-\ac{CO2} & \autocite{Keeling2005} \\
     \bottomrule
   \end{tabulary}
-  \caption{Summary of new recipes and \acs{CMOR}ization scripts for
-    observational data contributed to the \acf{ESMValTool} by the author of
-    this thesis. The corresponding file names of the recipes in the
-    \acs{ESMValTool} repository are given by
-    \emph{recipe\_(name\_in\_table).yml}.}
+  \caption[
+    Summary of new recipes and \acs{CMOR}ization scripts for observational data
+    contributed to the \acf{ESMValTool} by the author of this thesis.
+  ]{
+    Summary of new recipes and \acs{CMOR}ization scripts for observational data
+    contributed to the \acf{ESMValTool} by the author of this thesis. The
+    corresponding file names of the recipes in the \acs{ESMValTool} repository
+    are given by \emph{recipe\_(name\_in\_table).yml}.
+  }
   \label{tab:03:changes_to_esmvaltool}
 \end{table}
 
@@ -354,11 +372,14 @@ and predictors.
     \caption{}
     \label{fig:03:cox18:b}
   \end{subfigure}
-  \caption{Emergent constraint on the \acf{ECS} from global temperature
-    variability \autocite{Cox2018}. Magenta colors indicate high-sensitivity
-    climate models ($\lambda < 1 \unit{W m^{-2} K^{-1}}$), and green colors
-    indicate low sensitivity climate models ($\lambda > 1 \unit{W m^{-2}
-      K^{-1}}$). Both panels have been created with the \acs{ESMValTool} using
+  \caption[
+    Emergent constraint on the \acf{ECS} from global temperature variability.
+  ]{
+    Emergent constraint on the \acf{ECS} from global temperature variability
+    \autocite{Cox2018}. Magenta colors indicate high-sensitivity climate models
+    ($\lambda < 1 \unit{W m^{-2} K^{-1}}$), and green colors indicate low
+    sensitivity climate models ($\lambda > 1 \unit{W m^{-2} K^{-1}}$). Both
+    panels have been created with the \acs{ESMValTool} using
     \emph{recipe\_cox18nature.yml} and are similar to \textcite{Cox2018}. (a)
     Temperature variability metric $\Psi$ versus time for historical
     simulations from \acs{CMIP}5 models (colored lines) and observations from
@@ -369,7 +390,8 @@ and predictors.
     dashed black lines (\acl{SPE}; see \cref{eq:02:spe}). Blue lines show the
     observational constraint from HadCRUT4 with its best estimate (dot-dashed
     line) and standard deviation (dashed lines). The letters represent
-    individual \acs{CMIP}5 models (see \textcite{Cox2018} for details).}
+    individual \acs{CMIP}5 models (see \textcite{Cox2018} for details).
+  }
   \label{fig:03:cox18}
 \end{figure}
 
@@ -430,14 +452,18 @@ expected reciprocal relation.
     \raisebox{12.5mm}{\includegraphics[width=\columnwidth]{
       ch03_esmvaltool/figs/flato13_942_legend.pdf}}
   \end{subfigure}
-  \caption{Relationships between climate metrics within the \acs{CMIP}5 climate
-    model ensemble. Both panels have been created with the \acs{ESMValTool}
-    using \emph{recipe\_flato13ipcc.yml} and are similar to
-    \textcite{Flato2013}. (a) \Acf{GSAT} versus the \acf{ECS} for \acs{CMIP}5
-    models for the period \range{1961}{1990} (larger symbols) and for
-    pre-industrial control runs (smaller symbols). (b) \acf{TCR} versus
-    \acs{ECS} for \acs{CMIP}5 models. The black line shows a linear fit
-    between \acs{TCR} and \acs{ECS}.}
+  \caption[
+    Relationships between climate metrics within the \acs{CMIP}5 climate model
+    ensemble.
+  ]{
+    Relationships between climate metrics within the \acs{CMIP}5 climate model
+    ensemble. Both panels have been created with the \acs{ESMValTool} using
+    \emph{recipe\_flato13ipcc.yml} and are similar to \textcite{Flato2013}. (a)
+    \Acf{GSAT} versus the \acf{ECS} for \acs{CMIP}5 models for the period
+    \range{1961}{1990} (larger symbols) and for pre-industrial control runs
+    (smaller symbols). (b) \acf{TCR} versus \acs{ECS} for \acs{CMIP}5 models.
+    The black line shows a linear fit between \acs{TCR} and \acs{ECS}.
+  }
   \label{fig:03:flato13}
 \end{figure}
 

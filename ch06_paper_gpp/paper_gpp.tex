@@ -100,15 +100,19 @@ More details on the methods and the experimental setup are given in
 \begin{figure}[t]
   \centering
   \includegraphics[width=\LargeFigureWidth{}]{ch06_paper_gpp/figs/1.pdf}
-  \caption{Schematic illustration of our two-step approach. In step 1 an
-    emergent constraint by \textcite{Wenzel2016} is used to constrain the
-    global mean fractional change in \acf{GPP} over the \nth{21} century.
-    Moreover, this constraint is used to rescale two different gridded target
-    variables: absolute \acs{GPP} at the end of the \nth{21} century and
-    fractional \acs{GPP} change over the \nth{21} century. In step 2, a
-    \acl{ML} model is used to constrain these two target variables (step 2a:
-    absolute \acs{GPP}; step 2b: fractional \acs{GPP} change) in two
-    independent approaches. \AdaptedFrom{Schlund2020}.}
+  \caption[
+    Schematic illustration of our two-step approach.
+  ]{
+    Schematic illustration of our two-step approach. In step 1 an emergent
+    constraint by \textcite{Wenzel2016} is used to constrain the global mean
+    fractional change in \acf{GPP} over the \nth{21} century. Moreover, this
+    constraint is used to rescale two different gridded target variables:
+    absolute \acs{GPP} at the end of the \nth{21} century and fractional
+    \acs{GPP} change over the \nth{21} century. In step 2, a \acl{ML} model is
+    used to constrain these two target variables (step 2a: absolute \acs{GPP};
+    step 2b: fractional \acs{GPP} change) in two independent approaches.
+    \AdaptedFrom{Schlund2020}.
+  }
   \label{fig:06:schematic_steps}
 \end{figure}
 
@@ -307,23 +311,28 @@ local prediction of the target variable $y$.
 \begin{figure}[p]
   \centering
   \includegraphics[width=\LargerFigureWidth{}]{ch06_paper_gpp/figs/2.pdf}
-  \caption{Schematic illustration of our \acf{ML} approach to constrain
-    projected absolute \acf{GPP} in step 2a. (a) In the training phase of the
-    algorithm, the model is fitted to the training data interpolating the
-    empirical (non-linear) relationship between two process-oriented
-    diagnostics of the past climate $\left\{ x^{(1)}, x^{(2)} \right\}$ and
-    (rescaled) future \acs{GPP} (gray surface). The points show the training
-    points for the supervised \acs{ML} algorithm, each of them representing a
-    single grid cell/month of a single climate model (the different colors
-    correspond to different climate models). (b) In the prediction phase,
-    observation-based values of the diagnostic (black points) are fed into the
-    trained \acs{ML} model to constrain \acs{GPP} for every grid cell/month to
-    a value which best agrees with the observations. (c) For an independent
-    validation of our method, we use an out-of-sample testing setup based on a
-    leave-one-model-out \acl{CV} approach (see
-    \cref{subsec:02:model_weighting} for details). The schematic illustration
-    of step 2b differs only in the target variable used (fractional \acs{GPP}
-    change instead of absolute \acs{GPP}). \AdaptedFrom{Schlund2020}.}
+  \caption[
+    Schematic illustration of our \acl{ML} approach to constrain projected
+    absolute \acf{GPP} at the end of the \nth{21} century in step 2a.
+  ]{
+    Schematic illustration of our \acf{ML} approach to constrain projected
+    absolute \acf{GPP} in step 2a. (a) In the training phase of the algorithm,
+    the model is fitted to the training data interpolating the empirical
+    (non-linear) relationship between two process-oriented diagnostics of the
+    past climate $\left\{ x^{(1)}, x^{(2)} \right\}$ and (rescaled) future
+    \acs{GPP} (gray surface). The points show the training points for the
+    supervised \acs{ML} algorithm, each of them representing a single grid
+    cell/month of a single climate model (the different colors correspond to
+    different climate models). (b) In the prediction phase, observation-based
+    values of the diagnostic (black points) are fed into the trained \acs{ML}
+    model to constrain \acs{GPP} for every grid cell/month to a value which
+    best agrees with the observations. (c) For an independent validation of our
+    method, we use an out-of-sample testing setup based on a
+    leave-one-model-out \acl{CV} approach (see \cref{subsec:02:model_weighting}
+    for details). The schematic illustration of step 2b differs only in the
+    target variable used (fractional \acs{GPP} change instead of absolute
+    \acs{GPP}). \AdaptedFrom{Schlund2020}.
+  }
   \label{fig:06:mlr_concept}
 \end{figure}
 
@@ -356,13 +365,18 @@ local prediction of the target variable $y$.
     (incoming solar radiation). \\
     \bottomrule
   \end{tabular}
-  \caption{Process-oriented diagnostics (also called \emph{predictors} or
+  \caption[
+    Process-oriented diagnostics used in the \acf{GBRT} model to predict the
+    target variables.
+  ]{
+    Process-oriented diagnostics (also called \emph{predictors} or
     \emph{features}) used in the \acf{GBRT} model to predict the target
     variables. For step 2a (target variable: absolute \acs{GPP}), all listed
     variables are monthly climatologies of the specified time ranges in the
     historical climate. For step 2b (target variable: fractional \acs{GPP}
-    change), the temporal mean over the specified time ranges is calculated
-    for all variables. \AdaptedFrom{Schlund2020}.}
+    change), the temporal mean over the specified time ranges is calculated for
+    all variables. \AdaptedFrom{Schlund2020}.
+  }
   \label{tab:06:predictors}
 \end{table}
 
@@ -530,7 +544,12 @@ derivation of the constrained range are given in
     \raisebox{12.9mm}{\includegraphics[width=\columnwidth]{
       ch06_paper_gpp/figs/3c.pdf}}
   \end{subfigure}
-  \caption{Emergent relationship between the global mean fractional change in
+  \caption[
+    Emergent relationship between the global mean fractional change in
+    \acf{GPP} and the sensitivity of the \acs{CO2} seasonal cycle amplitude to
+    rising atmospheric \acs{CO2} concentrations observed at \acl{KUM}.
+  ]{
+    Emergent relationship between the global mean fractional change in
     \acf{GPP} and the sensitivity of the \acs{CO2} seasonal cycle amplitude to
     rising atmospheric \acs{CO2} concentrations observed at \acf{KUM}. Colored
     points refer to \acs{CMIP}5 models, the orange line and shaded area to the
@@ -545,18 +564,19 @@ derivation of the constrained range are given in
     corresponding observational value from the years \range{1979}{2019}. The
     constrained global mean \acs{GPP} change after \acs{CO2} doubling in the
     \acs{1BGC} run is $\pmrangeunit{30}{9}{\%}$. (b) Fractional global mean
-    \acs{GPP} change over the \nth{21} century calculated from the 10-year
-    mean \acs{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in
-    the emission-driven fully-coupled \acs{RCP}8.5 simulations and the 10-year
-    mean \acs{GPP} at the end of the \nth{20} century (\range{1991}{2000}) in
-    the emission‐driven fully-coupled historical run (see \cref{eq:06:f}). In
+    \acs{GPP} change over the \nth{21} century calculated from the 10-year mean
+    \acs{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in the
+    emission-driven fully-coupled \acs{RCP}8.5 simulations and the 10-year mean
+    \acs{GPP} at the end of the \nth{20} century (\range{1991}{2000}) in the
+    emission‐driven fully-coupled historical run (see \cref{eq:06:f}). In
     contrast to \textcite{Wenzel2016}, the sensitivity of the \acs{CO2}
     amplitude is calculated from the years \range{1979}{2019} for climate
     models and observations for better comparability (the historical
     \acs{CMIP}5 simulations are extended with the \acs{RCP}8.5 simulations for
-    the years \range{2006}{2019}). The constrained global mean \acs{GPP}
-    change over the \nth{21} century is $\pmrangeunit{39}{7}{\%}$.
-    \AdaptedFrom{Schlund2020}.}
+    the years \range{2006}{2019}). The constrained global mean \acs{GPP} change
+    over the \nth{21} century is $\pmrangeunit{39}{7}{\%}$.
+    \AdaptedFrom{Schlund2020}.
+  }
   \label{fig:06:step1}
 \end{figure}
 
@@ -650,9 +670,14 @@ six different statistical models.
     \caption{}
     \label{fig:06:step2a_ml_inference:b}
   \end{subfigure}
-  \caption{(a) Box plot of the \acf{RMSEP} distributions for six different
-    statistical models used to predict future absolute \acf{GPP} in step 2a
-    using a leave-one-model-out \acl{CV} approach. The distribution for each
+  \caption[
+    Prediction error in a leave-one-model-out \acl{CV} setup and feature
+    importance of our \acl{ML} approach to constrain projected absolute
+    \acf{GPP} at the end of the \nth{21} century in step 2a.
+  ]{
+    (a) Box plot of the \acf{RMSEP} distributions for six different statistical
+    models used to predict future absolute \acf{GPP} in step 2a using a
+    leave-one-model-out \acl{CV} approach. The distribution for each
     statistical model contains seven elements (black points; one for each
     climate model used as truth) and is represented in the following way: The
     lower and upper limit of the blue boxes correspond to the $25 \unit{\%}$
@@ -667,14 +692,15 @@ six different statistical models.
     compared to the linear \acf{LASSO} models by about $2 \unit{\%}$ for
     \acs{GBRT}-1D (using historical \acs{GPP} as single predictor) and $3
     \unit{\%}$ for the full \acs{GBRT} model (using all predictors). (b)
-    Relative global feature importance for the different predictors used in
-    the \acs{GBRT} model to predict future absolute \acs{GPP} (step 2a). The
-    red bars correspond to positive Pearson correlation coefficients between
-    all predictors and the target variable. Due to its strong positive linear
+    Relative global feature importance for the different predictors used in the
+    \acs{GBRT} model to predict future absolute \acs{GPP} (step 2a). The red
+    bars correspond to positive Pearson correlation coefficients between all
+    predictors and the target variable. Due to its strong positive linear
     relationship with the future \acs{GPP}, the historical \acs{GPP} is by far
     the most important predictor in the model. A local feature importance map
     using \acf{LIME} is not shown here because \acs{GPP} is the dominant
-    predictor for all grid cells. \AdaptedFrom{Schlund2020}.}
+    predictor for all grid cells. \AdaptedFrom{Schlund2020}.
+  }
   \label{fig:06:step2a_ml_inference}
 \end{figure}
 
@@ -773,11 +799,15 @@ to changes in the atmospheric \ac{CO2} concentration.
     \caption{}
     \label{fig:06:step2a_results:c}
   \end{subfigure}
-  \caption{(a) Ratio of the rescaled \acs{CMIP}5 ensemble mean of the absolute
+  \caption[
+    Illustration of our \acl{ML} approach to constrain projected absolute
+    \acf{GPP} at the end of the \nth{21} century with observations in step 2a.
+  ]{
+    (a) Ratio of the rescaled \acs{CMIP}5 ensemble mean of the absolute
     \acf{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in the
     \acs{RCP}8.5 scenario using \cref{eq:06:y} (r\acs{MMM}) and its unweighted
-    version (\acs{MMM}). The plot shows an almost constant value over the
-    whole globe with a mean of $0.92$, which corresponds to the ratio of the
+    version (\acs{MMM}). The plot shows an almost constant value over the whole
+    globe with a mean of $0.92$, which corresponds to the ratio of the
     constrained global mean \acs{GPP} change over the \nth{21} century from
     step 1 ($39 \unit{\%}$) and the \acs{CMIP}5 ensemble mean global mean
     \acs{GPP} change ($43 \unit{\%}$). All values close to $0$ for the dataset
@@ -791,7 +821,8 @@ to changes in the atmospheric \ac{CO2} concentration.
     color). Panels (b) and (c) show similar bias patterns (pattern correlation
     of $R^2 = 0.88$). Thus, the \acs{GBRT} prediction in step 2a is able to
     correct the historical bias of the \acs{CMIP}5 ensemble relative to the
-    FLUXNET‐MTE product. \AdaptedFrom{Schlund2020}.}
+    FLUXNET‐MTE product. \AdaptedFrom{Schlund2020}.
+  }
   \label{fig:06:step2a_results}
 \end{figure}
 
@@ -820,21 +851,26 @@ to changes in the atmospheric \ac{CO2} concentration.
     \caption{}
     \label{fig:06:step2a_results_biases:d}
   \end{subfigure}
-  \caption{Difference (a) and ratio (b) of the both biases shown in
+  \caption[
+    Further illustrations of our \acl{ML} approach to constrain projected
+    absolute \acf{GPP} at the end of the \nth{21} century with observations in
+    step 2a and comparison to other statistical models.
+  ]{
+    Difference (a) and ratio (b) of the both biases shown in
     \cref{fig:06:step2a_results:b,fig:06:step2a_results:c}. For panel (b), all
     values close to $0$ for the dataset in the denominator have been masked to
-    avoid divisions by $0$. Both panels show that our approach is only to
-    first order a bias correction, in which case both plots would only show
-    constant values. (c) Comparison of the \acf{GBRT} versus \acs{GBRT}-1D
-    projections of future \acf{GPP}. This panel indicates a clear difference
-    between the full \acs{GBRT} model using all predictors and the \acs{GBRT}
-    model using only historical \acs{GPP} as single predictor. (d) Comparison
-    of the \acs{GBRT} versus the \acf{LASSO} projections of future \acs{GPP}.
-    This panel shows that there is a clear difference between using the
-    non-linear \acs{GBRT} model and the linear \acs{LASSO} model. The results
-    of the \acs{LASSO}-1D model are not shown here because they are very
-    similar to the results of the \acs{LASSO} model.
-    \AdaptedFrom{Schlund2020}.}
+    avoid divisions by $0$. Both panels show that our approach is only to first
+    order a bias correction, in which case both plots would only show constant
+    values. (c) Comparison of the \acf{GBRT} versus \acs{GBRT}-1D projections
+    of future \acf{GPP}. This panel indicates a clear difference between the
+    full \acs{GBRT} model using all predictors and the \acs{GBRT} model using
+    only historical \acs{GPP} as single predictor. (d) Comparison of the
+    \acs{GBRT} versus the \acf{LASSO} projections of future \acs{GPP}. This
+    panel shows that there is a clear difference between using the non-linear
+    \acs{GBRT} model and the linear \acs{LASSO} model. The results of the
+    \acs{LASSO}-1D model are not shown here because they are very similar to
+    the results of the \acs{LASSO} model. \AdaptedFrom{Schlund2020}.
+  }
   \label{fig:06:step2a_results_biases}
 \end{figure}
 
@@ -990,7 +1026,12 @@ obtain a constrained fractional \ac{GPP} change over the \nth{21} century.
     \caption{}
     \label{fig:06:step2b_ml_inference:d}
   \end{subfigure}
-  \caption{(a) Box plot of the \acf{RMSEP} distributions for four different
+  \caption[
+    Prediction error in a leave-one-model-out \acl{CV} setup and feature
+    importance of our \acl{ML} approach to constrain the fractional change in
+    \acf{GPP} over the \nth{21} century in step 2b.
+  ]{
+    (a) Box plot of the \acf{RMSEP} distributions for four different
     statistical models used to predict the fractional change in \acf{GPP} over
     the \nth{21} century (step 2b) using the leave‐one‐model‐out \acl{CV}
     approach. A detailed description of the representation of these
@@ -999,22 +1040,22 @@ obtain a constrained fractional \ac{GPP} change over the \nth{21} century.
     Compared to the \acs{CMIP}5 \acf{MMM}, its corresponding rescaled version
     (r\acs{MMM}), and the linear \acf{LASSO} model, the mean \acs{RMSEP} of the
     \acs{GBRT} model is reduced by more than $16 \unit{\%}$, $9 \unit{\%}$, and
-    $3 \unit{\%}$, respectively. (b) Relative global feature importance for
-    the different features used in the \acs{LASSO} model to predict the
-    fractional \acs{GPP} change (step 2b). The feature importance for the
-    \acs{LASSO} model is given by the normalized linear coefficients of the
-    model. (c) Local feature importance for the \acs{GBRT} model used to
-    predict fractional \acs{GPP} change (step 2b) calculated using the
-    \acf{LIME} approach \autocite{Ribeiro2016} for the three dominant features
-    \acf{T}, \acf{LAI} and \acs{GPP}. The relative influence of these three
-    features (ignoring all other features) is color-coded according to the
-    triangle in the lower left corner. Over large parts of the globe, \acs{T}
-    is the dominant feature. (d) Relative global feature importance for the
-    different features used in the \acs{GBRT} model to predict the fractional
-    \acs{GPP} change (step 2b). The blue bars for the two global feature
-    importance plots (b) and (d) correspond to negative Pearson correlation
-    coefficients between all predictors and the target variable.
-    \AdaptedFrom{Schlund2020}.}
+    $3 \unit{\%}$, respectively. (b) Relative global feature importance for the
+    different features used in the \acs{LASSO} model to predict the fractional
+    \acs{GPP} change (step 2b). The feature importance for the \acs{LASSO}
+    model is given by the normalized linear coefficients of the model. (c)
+    Local feature importance for the \acs{GBRT} model used to predict
+    fractional \acs{GPP} change (step 2b) calculated using the \acf{LIME}
+    approach \autocite{Ribeiro2016} for the three dominant features \acf{T},
+    \acf{LAI} and \acs{GPP}. The relative influence of these three features
+    (ignoring all other features) is color-coded according to the triangle in
+    the lower left corner. Over large parts of the globe, \acs{T} is the
+    dominant feature. (d) Relative global feature importance for the different
+    features used in the \acs{GBRT} model to predict the fractional \acs{GPP}
+    change (step 2b). The blue bars for the two global feature importance plots
+    (b) and (d) correspond to negative Pearson correlation coefficients between
+    all predictors and the target variable. \AdaptedFrom{Schlund2020}.
+  }
   \label{fig:06:step2b_ml_inference}
 \end{figure}
 
@@ -1062,14 +1103,19 @@ concentration.
     \caption{}
     \label{fig:06:step2b_results:d}
   \end{subfigure}
-  \caption{Fractional change in \acf{GPP} over the \nth{21} century (2100
-    versus 2000) in the \acs{RCP}8.5 scenario for different statistical models
-    (step 2b): (a) \acs{CMIP}5 \acf{MMM} of the fractional \acs{GPP} change,
-    (b) rescaled \acs{CMIP}5 \acl{MMM} (r\acs{MMM}) using \cref{eq:06:y}, (c)
-    linear \acf{LASSO} model and (d) \acf{GBRT} model. The geographical
-    patterns from the different statistical models are very similar and show a
-    higher \acs{GPP} increase in high latitudes and a lower \acs{GPP} closer
-    to the equator. \AdaptedFrom{Schlund2020}.}
+  \caption[
+    Illustration of our \acl{ML} approach to constrain the fractional change in
+    \acf{GPP} over the \nth{21} century with observations in step 2b.
+  ]{
+    Fractional change in \acf{GPP} over the \nth{21} century (2100 versus 2000)
+    in the \acs{RCP}8.5 scenario for different statistical models (step 2b):
+    (a) \acs{CMIP}5 \acf{MMM} of the fractional \acs{GPP} change, (b) rescaled
+    \acs{CMIP}5 \acl{MMM} (r\acs{MMM}) using \cref{eq:06:y}, (c) linear
+    \acf{LASSO} model and (d) \acf{GBRT} model. The geographical patterns from
+    the different statistical models are very similar and show a higher
+    \acs{GPP} increase in high latitudes and a lower \acs{GPP} closer to the
+    equator. \AdaptedFrom{Schlund2020}.
+  }
   \label{fig:06:step2b_results}
 \end{figure}
 
@@ -1092,19 +1138,22 @@ concentration.
     \caption{}
     \label{fig:06:step2b_results_biases:c}
   \end{subfigure}
-  \caption{(a) Ratio of the rescaled \acs{CMIP}5 ensemble mean of the
-    fractional change in \acf{GPP} over the \nth{21} century using
-    \cref{eq:06:y} (r\acs{MMM}; see \cref{fig:06:step2b_results:b}) and its
-    unweighted version (\acs{MMM}; see \cref{fig:06:step2b_results:a}). The
-    plot shows an almost constant value over the whole globe with a mean of
-    $0.91$, which corresponds to the ratio of the constrained global mean
-    \acs{GPP} change over the \nth{21} century from step 1 ($39 \unit{\%}$)
-    and the \acs{CMIP}5 ensemble mean global mean GPP change ($43 \unit{\%}$).
-    All values close to $0$ for the dataset in the denominator have been
-    masked to avoid divisions by $0$. Absolute (b) and relative (c)
-    differences between the fractional \acs{GPP} change over the \nth{21}
-    century predicted by the \acf{GBRT} model (see
-    \cref{fig:06:step2b_results:d}) and r\acs{MMM} (see
+  \caption[
+    Further illustrations of our \acl{ML} approach to constrain the fractional
+    change in \acf{GPP} over the \nth{21} century with observations in step 2b.
+  ]{
+    (a) Ratio of the rescaled \acs{CMIP}5 ensemble mean of the fractional
+    change in \acf{GPP} over the \nth{21} century using \cref{eq:06:y}
+    (r\acs{MMM}; see \cref{fig:06:step2b_results:b}) and its unweighted version
+    (\acs{MMM}; see \cref{fig:06:step2b_results:a}). The plot shows an almost
+    constant value over the whole globe with a mean of $0.91$, which
+    corresponds to the ratio of the constrained global mean \acs{GPP} change
+    over the \nth{21} century from step 1 ($39 \unit{\%}$) and the \acs{CMIP}5
+    ensemble mean global mean GPP change ($43 \unit{\%}$). All values close to
+    $0$ for the dataset in the denominator have been masked to avoid divisions
+    by $0$. Absolute (b) and relative (c) differences between the fractional
+    \acs{GPP} change over the \nth{21} century predicted by the \acf{GBRT}
+    model (see \cref{fig:06:step2b_results:d}) and r\acs{MMM} (see
     \cref{fig:06:step2b_results:b}). For panel (c), all values close to $0$ for
     the dataset in the denominator have been masked to avoid divisions by $0$.
     Both plots show a good agreement over large parts of the globe
@@ -1113,7 +1162,8 @@ concentration.
     (except for the Sahara and Arabian Peninsula region) appear over South
     America, South Africa, the west coast of Africa, the Middle East, parts of
     Australia and western parts of the United States.
-    \AdaptedFrom{Schlund2020}.}
+    \AdaptedFrom{Schlund2020}.
+  }
   \label{fig:06:step2b_results_biases}
 \end{figure}
 
@@ -1237,14 +1287,18 @@ step 1.
     \caption{}
     \label{fig:06:comparison_step2a_step2b:d}
   \end{subfigure}
-  \caption{Top row: Absolute future \acf{GPP} at the end of the \nth{21}
-    century (\range{2091}{2100}) calculated using step 2a (a) and step 2b (b).
-    Both approaches give similar results with global averages of $169
+  \caption[
+    Comparison of our two independent approaches from step 2a and step 2b.
+  ]{
+    Top row: Absolute future \acf{GPP} at the end of the \nth{21} century
+    (\range{2091}{2100}) calculated using step 2a (a) and step 2b (b). Both
+    approaches give similar results with global averages of $169
     \unit{\GtCyr{}}$ (a) and $175 \unit{\GtCyr{}}$ (b), which are both
     consistent with the global result of step 1 of
     $\pmrangeunit{171}{12}{\GtCyr{}}$. The pattern correlation between both
     approaches is $R^2 = 0.97$. Bottom row: Absolute (c) and relative (d)
-    differences between panels (a) and (b). \AdaptedFrom{Schlund2020}.}
+    differences between panels (a) and (b). \AdaptedFrom{Schlund2020}.
+  }
   \label{fig:06:comparison_step2a_step2b}
 \end{figure}
 

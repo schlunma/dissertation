@@ -54,14 +54,18 @@ components.
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/esms_historical_evolution.pdf}
-  \caption{Historical evolution of coupled climate models over the last 45
-    years. In early days, these models were so-called \acfp{AOGCM}, which only
-    included three components: the atmosphere, the land surface and the ocean.
-    Over the time, the individual components grew in complexity and included a
-    wider range of processes (illustrated by the growing cylinders).
-    Eventually, more and more components (aerosols, carbon cycle, \etc{}) were
-    added to the coupled system, forming the modern \acfp{ESM}.
-    \IPCCReproducedFrom{Cubasch2013}{their figure 1.13}.}
+  \caption[
+    Historical evolution of coupled climate models over the last 45 years.
+  ]{
+    Historical evolution of coupled climate models over the last 45 years. In
+    early days, these models were so-called \acfp{AOGCM}, which only included
+    three components: the atmosphere, the land surface and the ocean. Over the
+    time, the individual components grew in complexity and included a wider
+    range of processes (illustrated by the growing cylinders). Eventually, more
+    and more components (aerosols, carbon cycle, \etc{}) were added to the
+    coupled system, forming the modern \acfp{ESM}.
+    \IPCCReproducedFrom{Cubasch2013}{their figure 1.13}.
+  }
   \label{fig:02:esms_historical_evolution}
 \end{figure}
 
@@ -130,12 +134,17 @@ center of \cref{fig:02:cmip6}, which illustrates the experimental design of
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/cmip6.pdf}
-  \caption{Schematic of the experiment design of Phase 6 of the \acl{CMIP}
+  \caption[
+    Schematic of the experiment design of Phase 6 of the \acl{CMIP}
+    (\acs{CMIP}6).
+  ]{
+    Schematic of the experiment design of Phase 6 of the \acl{CMIP}
     (\acs{CMIP}6). The center of the circle illustrates the four \acs{DECK}
     (\acl{DECK}) experiments and the \acs{CMIP}6 historical simulation. The
     circular sectors show additional science themes that can be explored
     through the 21 \acs{CMIP}6-Endorsed \acfp{MIP}.
-    \SpringerAdaptedFrom{Simpkins2017}.}
+    \SpringerAdaptedFrom{Simpkins2017}.
+  }
   \label{fig:02:cmip6}
 \end{figure}
 
@@ -196,7 +205,11 @@ projected global mean surface temperature anomaly over the \nth{21} century.
   \centering
   \includegraphics[width=\LargeFigureWidth{}]{
     ch02_scientific_background/figs/sources_of_uncertainty.pdf}
-  \caption{Schematic illustrating the importance of different sources of
+  \caption[
+    Schematic illustrating the importance of different sources of
+    uncertainties in climate model projections and their evolution in time.
+  ]{
+    Schematic illustrating the importance of different sources of
     uncertainties in climate model projections and their evolution in time. (a)
     Time series of the anomaly of the decadal and global mean surface
     temperature relative to the period \range{1961}{1980}. The black line
@@ -208,7 +221,8 @@ projected global mean surface temperature anomaly over the \nth{21} century.
     increase (b) in newer generations of climate models when a new process is
     discovered to be relevant or decrease (c) with additional model
     improvements and observational constraints.
-    \IPCCReproducedFrom{Cubasch2013}{their FAQ 1.1, figure 1}.}
+    \IPCCReproducedFrom{Cubasch2013}{their FAQ 1.1, figure 1}.
+  }
   \label{fig:02:sources_of_uncertainty}
 \end{figure}
 
@@ -334,14 +348,18 @@ darker and more absorbing surfaces below \autocite{Cubasch2013}.
   \centering
   \includegraphics[width=\LargeFigureWidth{}]{
     ch02_scientific_background/figs/feedbacks_overview.pdf}
-  \caption{Climate feedbacks and corresponding time scales. \enquote{+} refers
-    to positive feedbacks, which amplify the effect of the external forcing
-    (\eg{} the water vapor feedback). \enquote{-} refers to negative feedbacks,
-    which diminish the effect of the external forcing (\eg{} the longwave
-    radiation feedback). \enquote{+/-} refers to feedbacks which might be
-    either positive or negative (\eg{} the cloud feedback). The smaller box
-    highlights the large differences in time scales for the various feedbacks.
-    \IPCCReproducedFrom{Cubasch2013}{their figure 1.2}.}
+  \caption[
+    Climate feedbacks and corresponding time scales.
+  ]{
+    Climate feedbacks and corresponding time scales. \enquote{+} refers to
+    positive feedbacks, which amplify the effect of the external forcing (\eg{}
+    the water vapor feedback). \enquote{-} refers to negative feedbacks, which
+    diminish the effect of the external forcing (\eg{} the longwave radiation
+    feedback). \enquote{+/-} refers to feedbacks which might be either positive
+    or negative (\eg{} the cloud feedback). The smaller box highlights the
+    large differences in time scales for the various feedbacks.
+    \IPCCReproducedFrom{Cubasch2013}{their figure 1.2}.
+  }
   \label{fig:02:feedbacks_overview}
 \end{figure}
 
@@ -492,8 +510,12 @@ is computationally expensive as it would require thousands of model years
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/gregory_regression.pdf}
-  \caption{Global and annual mean net \acf{TOA} radiation $N$ versus the change
-    in global and annual mean \acl{T} $\Delta T$ for 150 years of a simulation
+  \caption[
+    Gregory regression for the \acs{CMIP}5 \acl{MMM} illustrating the
+    definition of the \acf{ECS}.
+  ]{
+    Global and annual mean net \acf{TOA} radiation $N$ versus the change in
+    global and annual mean \acl{T} $\Delta T$ for 150 years of a simulation
     with an abrupt quadrupling of the atmospheric \acs{CO2} concentration
     (\nxcotwo{4}) for the \acs{CMIP}5 \acl{MMM} (blue circles). To account for
     energy leakage and model drift, a linear fit of the corresponding
@@ -504,7 +526,8 @@ is computationally expensive as it would require thousands of model years
     These can be used to calculate the \acf{ECS} with the Gregory regression
     method according to \cref{eq:02:ecs} \autocite{Gregory2004}. \acs{ECS} is
     equivalently given by the \xintercept{} of the linear regression line
-    divided by $2$. Here, $\mathtxt{ECS} = 3.14 \unit{K}$.}
+    divided by $2$. Here, $\mathtxt{ECS} = 3.14 \unit{K}$.
+  }
   \label{fig:02:gregory_regression}
 \end{figure}
 
@@ -570,14 +593,18 @@ concentration \autocite{Huang2014}.
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/gregory_regression_different_years.png}
-  \caption{As in \cref{fig:02:gregory_regression} but for different time
-    periods considered in the Gregory regression resulting in different values
-    for the \acf{ECS} and the climate feedback parameter $\lambda$. Dark gray,
-    blue, red and orange colors correspond to the \acf{CESM} of the \acf{NCAR}
-    for different time periods of a long running simulation (see legend). The
+  \caption[
+    Gregory regression for different time periods.
+  ]{
+    As in \cref{fig:02:gregory_regression} but for different time periods
+    considered in the Gregory regression resulting in different values for the
+    \acf{ECS} and the climate feedback parameter $\lambda$. Dark gray, blue,
+    red and orange colors correspond to the \acf{CESM} of the \acf{NCAR} for
+    different time periods of a long running simulation (see legend). The
     initial years are simulated many times for different initial conditions.
     Light gray colors correspond to the \acs{CMIP}5 ensemble (150 years each).
-    \SpringerAdaptedFrom{Knutti2017}.}
+    \SpringerAdaptedFrom{Knutti2017}.
+  }
   \label{fig:02:gregory_regression_different_years}
 \end{figure}
 
@@ -631,15 +658,19 @@ is shown in \cref{fig:02:tcr}.
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/tcr_calculation.pdf}
-  \caption{Global and annual mean \acl{T} change $\Delta T$ for 140 years of a
+  \caption[
+    Illustration of the definition of the \acf{TCR}.
+  ]{
+    Global and annual mean \acl{T} change $\Delta T$ for 140 years of a
     simulation with a $1 \unit{\%}$ per year increase of the atmospheric
     \acs{CO2} concentration (\onepctcotwo{}) for the \acf{CESM} of the
-    \acf{NCAR} (blue circles). The temperature change is calculated relative
-    to a corresponding pre-industrial control simulation smoothed with a
-    linear fit over all 140 years. The \acf{TCR} is defined as the temperature
-    change $\Delta T$ at the time of \acs{CO2} doubling averaged over a
-    20-year period (illustrated by the vertical dashed lines). Here,
-    $\mathtxt{TCR} = 2.35 \unit{K}$ (horizontal dashed line).}
+    \acf{NCAR} (blue circles). The temperature change is calculated relative to
+    a corresponding pre-industrial control simulation smoothed with a linear
+    fit over all 140 years. The \acf{TCR} is defined as the temperature change
+    $\Delta T$ at the time of \acs{CO2} doubling averaged over a 20-year period
+    (illustrated by the vertical dashed lines). Here, $\mathtxt{TCR} = 2.35
+    \unit{K}$ (horizontal dashed line).
+  }
   \label{fig:02:tcr}
 \end{figure}
 
@@ -737,10 +768,14 @@ microorganisms) \autocite{Ciais2013, Friedlingstein2020}.
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/carbon_cycle_schematic.png}
-  \caption{Simplified schematic of the global carbon cycle including the
-    typical turnover time scales for carbon transfers through the major
-    reservoirs (atmosphere, land surface and ocean).
-    \IPCCReproducedFrom{Ciais2013}{their FAQ 6.2, figure 1}.}
+  \caption[
+    Simplified schematic of the global carbon cycle.
+  ]{
+    Simplified schematic of the global carbon cycle including the typical
+    turnover time scales for carbon transfers through the major reservoirs
+    (atmosphere, land surface and ocean). \IPCCReproducedFrom{Ciais2013}{their
+      FAQ 6.2, figure 1}.
+  }
   \label{fig:02:carbon_cycle_schematic}
 \end{figure}
 
@@ -801,12 +836,16 @@ Islands.
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/keeling_curve.pdf}
-  \caption{The Keeling Curve: monthly mean atmospheric \acs{CO2} concentration
-    at the Mauna Loa Observatory, Hawaii ($19.5 \unit{\degree N}$, $155.6
+  \caption[
+    The Keeling Curve.
+  ]{
+    The Keeling Curve: monthly mean atmospheric \acs{CO2} concentration at the
+    Mauna Loa Observatory, Hawaii ($19.5 \unit{\degree N}$, $155.6
     \unit{\degree W}$; elevation: $3397 \unit{m}$) from 1958 to 2019
     \autocite{Keeling2005}. The steady increase of the atmospheric \acs{CO2}
     concentration is superimposed with a seasonal oscillation caused by the
-    seasonal \acs{CO2} cycle (see \cref{subsec:02:carbon_cycle_overview}).}
+    seasonal \acs{CO2} cycle (see \cref{subsec:02:carbon_cycle_overview}).
+  }
   \label{fig:02:keeling_curve}
 \end{figure}
 
@@ -830,11 +869,16 @@ remained in the atmosphere \autocite{Friedlingstein2020} where they can act as
   \centering
   \includegraphics[width=\LargeFigureWidth{}]{
     ch02_scientific_background/figs/carbon_cycle_perturbation.png}
-  \caption{Schematic representation of the overall perturbation of the global
-    carbon cycle caused by anthropogenic activities, averaged globally for the
-    decade \range{2010}{2019}. Arrows represent carbon exchange fluxes; circles
-    carbon reservoirs. More details are given in the legend of this figure.
-    \AdaptedFrom{Friedlingstein2020}.}
+  \caption[
+    Schematic representation of the overall perturbation of the global carbon
+    cycle caused by anthropogenic activities.
+  ]{
+    Schematic representation of the overall perturbation of the global carbon
+    cycle caused by anthropogenic activities, averaged globally for the decade
+    \range{2010}{2019}. Arrows represent carbon exchange fluxes; circles carbon
+    reservoirs. More details are given in the legend of this figure.
+    \AdaptedFrom{Friedlingstein2020}.
+  }
   \label{fig:02:carbon_cycle_perturbation}
 \end{figure}
 
@@ -934,8 +978,11 @@ uncertainties in the observation (blue shaded area in
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/emergent_constraint.pdf}
-  \caption{Schematic illustration of the emergent constraint approach. Basis of
-    every emergent constraint is a robust and physically-interpretable emergent
+  \caption[
+    Schematic illustration of the emergent constraint approach.
+  ]{
+    Schematic illustration of the emergent constraint approach. Basis of every
+    emergent constraint is a robust and physically-interpretable emergent
     relationship (red line) between a target variable $y$ (\eg{} Earth system
     sensitivity or projection of future climate change) and an observable $x$
     (\eg{} past or present-day trend or variation) for the climate models of a
@@ -944,7 +991,8 @@ uncertainties in the observation (blue shaded area in
     \acf{PDF}, can be reduced (gray \acs{PDF}). Uncertainties in the target
     variable $y$ arise from two sources: uncertainties in the observation (blue
     shaded area) and uncertainties in the emergent relationship (red shaded
-    area). \SpringerAdaptedFrom{Eyring2019}.}
+    area). \SpringerAdaptedFrom{Eyring2019}.
+  }
   \label{fig:02:emergent_constraint}
 \end{figure}
 
@@ -1256,20 +1304,24 @@ calculate the linear coefficients $\hat{b}_0$ (intercept) and $\hat{b}_1$
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/mder_schematic.pdf}
-  \caption{Schematic illustration of the \acf{MDER} approach
-    \autocite{Karpechko2013}. First, inter-model relationships between a target
-    variable $y$ and multiple process-based predictors $x^{(k)}$ (here: two
-    predictors $x^{(1)}$ and $x^{(2)}$) are used to fit a multivariate linear
-    regression model (gray surface). Second, observations of the predictors
-    (horizontal black lines) are fed into the regression model to calculate an
-    observation-based best estimate of the target variable $\hat{y}_0$
-    following \cref{eq:02:mder_best_estimate}. The black circle indicates the
-    best estimate for the target variable $y$ given by the observed values of
-    $x^{(1)}$ and $x^{(2)}$. Each of the remaining colored circles represents
-    a single climate model of the multi-model ensemble. The vertical dashed
-    lines visualize the distance between the climate model data and the linear
+  \caption[
+    Schematic illustration of the \acf{MDER} approach.
+  ]{
+    Schematic illustration of the \acf{MDER} approach \autocite{Karpechko2013}.
+    First, inter-model relationships between a target variable $y$ and multiple
+    process-based predictors $x^{(k)}$ (here: two predictors $x^{(1)}$ and
+    $x^{(2)}$) are used to fit a multivariate linear regression model (gray
+    surface). Second, observations of the predictors (horizontal black lines)
+    are fed into the regression model to calculate an observation-based best
+    estimate of the target variable $\hat{y}_0$ following
+    \cref{eq:02:mder_best_estimate}. The black circle indicates the best
+    estimate for the target variable $y$ given by the observed values of
+    $x^{(1)}$ and $x^{(2)}$. Each of the remaining colored circles represents a
+    single climate model of the multi-model ensemble. The vertical dashed lines
+    visualize the distance between the climate model data and the linear
     regression surface, which represents the noise term $\bm{\varepsilon}$ in
-    \cref{eq:02:multivariate_linear_model}.}
+    \cref{eq:02:multivariate_linear_model}.
+  }
   \label{fig:02:mder}
 \end{figure}
 

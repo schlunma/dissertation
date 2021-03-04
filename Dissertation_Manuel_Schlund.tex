@@ -16,9 +16,10 @@
 % Document class
 \documentclass[
   english,
-  paper=a4,
-  fontsize=11pt,
   bibliography=totoc,
+  fontsize=11pt,
+  listof=totoc,
+  paper=a4,
 ]{scrbook}
 
 % Packages, makros and settings
@@ -31,13 +32,18 @@
 
 % Debug options
 %\includeonly{
-%  01_title_page/title_page,
-%  02_abstract/abstract_english,
-%  02_abstract/abstract_german,
-%  ch01_introduction/introduction,
-%  ch07_conclusion/conclusion,
+%%  01_title_page/title_page,
+%%  02_abstract/abstract,
+%%  ch01_introduction/introduction,
+%%  ch02_scientific_background/scientific_background,
+%%  ch03_esmvaltool/esmvaltool,
+%%  ch04_papers_ecs_tcr_assessment/papers_ecs_tcr_assessment,
+%%  ch05_paper_ecs/paper_ecs,
+%%  ch06_paper_gpp/paper_gpp,
+%%  ch07_conclusion/conclusion,
+%  end_appendix/appendix,
 %  end_abbreviations/abbreviations,
-%  end_acknowledgments/acknowledgments,
+%%  end_acknowledgments/acknowledgments,
 %}
 
 
@@ -78,6 +84,14 @@
   % Abbreviations
   \backmatter
   \include{end_abbreviations/abbreviations}
+
+  % List of figures
+  \listoffigures
+  \cleardoublepage
+
+  % List of tables
+  \listoftables
+  \cleardoublepage
 
   % References
   \boldname{Schlund}{Manuel}{M.}

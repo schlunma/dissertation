@@ -77,7 +77,10 @@ results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
   \centering
   \includegraphics[width=\FigureWidth{}]{
     ch04_papers_ecs_tcr_assessment/figs/gregory_regression_cmip6_mmm.pdf}
-  \caption{Gregory regression for the \acs{CMIP}6 \acf{MMM} following
+  \caption[
+    Gregory regression for the \acs{CMIP}6 \acl{MMM}.
+  ]{
+    Gregory regression for the \acs{CMIP}6 \acf{MMM} following
     \textcite{Gregory2004}: Global and annual mean net \acl{TOA} radiation $N$
     versus the change in global and annual mean \acl{T} $\Delta T$ for 150
     years of a simulation with an abrupt quadrupling of the atmospheric
@@ -86,15 +89,15 @@ results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
     the corresponding pre-industrial control run is subtracted from the
     \nxcotwo{4} simulation. A linear regression can be used to calculate the
     \acf{ECS} according to \cref{eq:02:ecs} with the radiative forcing
-    $F_\mathtxt{4x}$ (\yintercept) and the climate feedback parameter
-    $\lambda$ (slope) for all 150 years (black line), which results in
-    $\mathtxt{ECS} = 3.74 \unit{K}$. Due to non-linear effects, the exact
-    value of \acs{ECS} depends on the years considered for the Gregory
-    regression (see \cref{subsec:02:ecs} and
-    \cref{fig:02:gregory_regression_different_years}): Using only the first 20
-    years of the simulation (blue circles and line) yields a considerably
-    smaller \acs{ECS} than using only the last 130 years of the simulation
-    (orange circles and line). \AdaptedFrom{Meehl2020}.}
+    $F_\mathtxt{4x}$ (\yintercept) and the climate feedback parameter $\lambda$
+    (slope) for all 150 years (black line), which results in $\mathtxt{ECS} =
+    3.74 \unit{K}$. Due to non-linear effects, the exact value of \acs{ECS}
+    depends on the years considered for the Gregory regression (see
+    \cref{subsec:02:ecs} and \cref{fig:02:gregory_regression_different_years}):
+    Using only the first 20 years of the simulation (blue circles and line)
+    yields a considerably smaller \acs{ECS} than using only the last 130 years
+    of the simulation (orange circles and line). \AdaptedFrom{Meehl2020}.
+  }
   \label{fig:04:gregory_regression_cmip6_mmm}
 \end{figure}
 
@@ -103,8 +106,11 @@ results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
   \csvreader[ECSAndTCRTable]{
     ch04_papers_ecs_tcr_assessment/data/cmip5_ecs-tcr.csv}{}{
     \dataset & $\idx$ & $\ecs$ & $\tcr$}
-  \caption{\Acf{ECS} and \acf{TCR} evaluated for the \acs{CMIP}5 models.
-    Details on the calculation of \acs{ECS} and \acs{TCR} are given in
+  \caption[
+    \Acf{ECS} and \acf{TCR} evaluated for the \acs{CMIP}5 models.
+  ]{
+    \Acf{ECS} and \acf{TCR} evaluated for the \acs{CMIP}5 models. Details on
+    the calculation of \acs{ECS} and \acs{TCR} are given in
     \cref{subsec:02:ecs} and \cref{subsec:02:tcr}, respectively. The \acf{MMM}
     is calculated from the Gregory regression method using the \acs{MMM} net
     \acf{TOA} radiation and the \acs{MMM} change in \acf{GSAT} similar to
@@ -112,7 +118,8 @@ results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
     deviation is given by the sample standard deviation of \acs{ECS} evaluated
     over all climate models (using the normalization $1 / M$, where $M$ is the
     number of models). Corresponding references for each model are given in
-    \cref{tab:app:a:cmip5_models}. \AdaptedFrom{Meehl2020}.}
+    \cref{tab:app:a:cmip5_models}. \AdaptedFrom{Meehl2020}.
+  }
   \label{tab:04:ecs_tcr_cmip5}
 \end{table}
 
@@ -121,9 +128,13 @@ results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
   \csvreader[ECSAndTCRTable]{
     ch04_papers_ecs_tcr_assessment/data/cmip6_ecs-tcr.csv}{}{
     \dataset & $\idx$ & $\ecs$ & $\tcr$}
-  \caption{As in \cref{tab:04:ecs_tcr_cmip5} but for the \acs{CMIP}6 models.
+  \caption[
+    As in \cref{tab:04:ecs_tcr_cmip5} but for the \acs{CMIP}6 models.
+  ]{
+    As in \cref{tab:04:ecs_tcr_cmip5} but for the \acs{CMIP}6 models.
     Corresponding references for each model are given in
-    \cref{tab:app:a:cmip6_models}. \AdaptedFrom{Meehl2020}.}
+    \cref{tab:app:a:cmip6_models}. \AdaptedFrom{Meehl2020}.
+  }
   \label{tab:04:ecs_tcr_cmip6}
 \end{table}
 
@@ -191,17 +202,21 @@ feedback over the Southern Ocean is given in
   \centering
   \includegraphics[width=\LargeFigureWidth{}]{
     ch04_papers_ecs_tcr_assessment/figs/historical_ecs_tcr_ranges.pdf}
-  \caption{Assessed values of the \acf{ECS} (blue bars) and the \acf{TCR} (red
-    bars) over the years in the Charney report from 1979 \autocite{Charney1979}
-    and the subsequent \acfp{AR} of the \acf{IPCC} \autocite{Mitchell1990,
+  \caption[
+    Historical values of the \acf{ECS} and the \acf{TCR} for different
+    \aclp{AR} and climate model ensembles.
+  ]{
+    Assessed values of the \acf{ECS} (blue bars) and the \acf{TCR} (red bars)
+    over the years in the Charney report from 1979 \autocite{Charney1979} and
+    the subsequent \acfp{AR} of the \acf{IPCC} \autocite{Mitchell1990,
       Kattenberg1996, Albritton2001, Solomon2007, Stocker2013}. Orange and
     green bars represent the modeled ranges of \acs{ECS} and \acs{TCR},
     respectively, from the different climate model ensembles of the \acf{CMIP}
     with the corresponding \acf{MMM} illustrated with the horizontal black
     lines (the green circle represents output from a single climate model). The
     numbers correspond to individual \acs{CMIP}5 and \acs{CMIP}6 models (see
-    \cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6}).
-    \AdaptedFrom{Meehl2020}.}
+    \cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6}). \AdaptedFrom{Meehl2020}.
+  }
   \label{fig:04:historical_ecs_tcr_ranges}
 \end{figure}
 
@@ -282,22 +297,26 @@ Southern Ocean in climate models from previous \ac{CMIP} generations.
   \centering
   \includegraphics[width=\LargeFigureWidth{}]{
     ch04_papers_ecs_tcr_assessment/figs/cloud_phase_change_feedback.pdf}
-  \caption{Schematic illustration of the strong negative shortwave cloud phase
-    change feedback over the Southern Ocean, which is present in earlier
-    \acs{CMIP} model generations like \acs{CMIP}5 (green arrows). Due to
-    substantial improvements in the microphysical representation of mixed-phase
-    clouds in many \acs{CMIP}6 models, the predominantly ice clouds over the
-    Southern Ocean in the present-day climate of previous climate model
-    generations have been replaced with clouds that predominantly consist of
-    (supercooled) liquid clouds \autocite{BodasSalcedo2019, Gettelman2019,
-      Mulcahy2020, Williams2020}. Thus, in these models a cloud phase change
-    due to global warming is no longer possible, which removes (or
-    significantly reduces) the strong negative cloud phase change feedback
-    (orange arrows). This leads to an increase in the global net cloud
-    feedback \autocite{BodasSalcedo2019, Tan2016} and the \acf{ECS} in the
-    corresponding \acs{CMIP}6 models \autocite{Andrews2019, Gettelman2019},
-    which is a possible explanation for the high \acs{ECS} values found in
-    many \acs{CMIP}6 models.}
+  \caption[
+    Schematic illustration of the strong negative shortwave cloud phase change
+    feedback over the Southern Ocean.
+  ]{
+    Schematic illustration of the strong negative shortwave cloud phase change
+    feedback over the Southern Ocean, which is present in earlier \acs{CMIP}
+    model generations like \acs{CMIP}5 (green arrows). Due to substantial
+    improvements in the microphysical representation of mixed-phase clouds in
+    many \acs{CMIP}6 models, the predominantly ice clouds over the Southern
+    Ocean in the present-day climate of previous climate model generations have
+    been replaced with clouds that predominantly consist of (supercooled)
+    liquid clouds \autocite{BodasSalcedo2019, Gettelman2019, Mulcahy2020,
+      Williams2020}. Thus, in these models a cloud phase change due to global
+    warming is no longer possible, which removes (or significantly reduces) the
+    strong negative cloud phase change feedback (orange arrows). This leads to
+    an increase in the global net cloud feedback \autocite{BodasSalcedo2019,
+      Tan2016} and the \acf{ECS} in the corresponding \acs{CMIP}6 models
+    \autocite{Andrews2019, Gettelman2019}, which is a possible explanation for
+    the high \acs{ECS} values found in many \acs{CMIP}6 models.
+  }
   \label{fig:04:cloud_phase_change_feedback}
 \end{figure}
 
@@ -364,14 +383,18 @@ in some \acs{CMIP}6 models.
     \caption{}
     \label{fig:04:cloud_feedback_parameters:f}
   \end{subfigure}
-  \caption{Geographical distributions of the net (a), shortwave (c) and
-    longwave (e) \acf{CRE} feedback parameters for the \acs{CMIP}6 \acf{MMM}
-    and the corresponding differences to the \acs{CMIP}5 \acs{MMM}, again for
-    the net (b), shortwave (d) and longwave (f) components. The \acs{CRE}
-    feedback parameters for each grid cell are calculated with a Gregory
-    regression of the grid cell's \acs{CRE} versus the change in the
-    \acl{GSAT} (see \cref{subsec:02:cloud_feedback_parameters}).
-    \AdaptedFrom{Bock2020}.}
+  \caption[
+    Geographical distributions of the \acl{CRE} feedback parameters for the
+    \acs{CMIP}5 and \acs{CMIP}6 \aclp{MMM}.
+  ]{
+    Geographical distributions of the net (a), shortwave (c) and longwave (e)
+    \acf{CRE} feedback parameters for the \acs{CMIP}6 \acf{MMM} and the
+    corresponding differences to the \acs{CMIP}5 \acs{MMM}, again for the net
+    (b), shortwave (d) and longwave (f) components. The \acs{CRE} feedback
+    parameters for each grid cell are calculated with a Gregory regression of
+    the grid cell's \acs{CRE} versus the change in the \acl{GSAT} (see
+    \cref{subsec:02:cloud_feedback_parameters}). \AdaptedFrom{Bock2020}.
+  }
   \label{fig:04:cloud_feedback_parameters}
 \end{figure}
 
