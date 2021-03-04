@@ -32,16 +32,16 @@
 
 % Debug options
 %\includeonly{
-%%  01_title_page/title_page,
-%%  02_abstract/abstract,
-%%  ch01_introduction/introduction,
+%  01_title_page/title_page,
+%  02_abstract/abstract,
+%  ch01_introduction/introduction,
 %%  ch02_scientific_background/scientific_background,
 %%  ch03_esmvaltool/esmvaltool,
 %%  ch04_papers_ecs_tcr_assessment/papers_ecs_tcr_assessment,
 %%  ch05_paper_ecs/paper_ecs,
 %%  ch06_paper_gpp/paper_gpp,
 %%  ch07_conclusion/conclusion,
-%  end_appendix/appendix,
+%%  end_appendix/appendix,
 %  end_abbreviations/abbreviations,
 %%  end_acknowledgments/acknowledgments,
 %}
@@ -56,13 +56,31 @@
 
   % Title page
   \frontmatter
+  \bookmark[page=1]{Title Page}
   \include{01_title_page/title_page}
 
   % Abstract
   \include{02_abstract/abstract}
   \acresetall
 
+  % Integrated author's references
+  \boldname{Schlund}{Manuel}{M.}
+  \defbibnote{ownrefs}{
+    Parts of this thesis (text, figures and tables) are already published in
+    the following peer-reviewed publications. More details on this are given in
+    \cref{sec:01:structure} and in the beginning of the corresponding
+    \namecrefs{ch:03:esmvaltool}.
+  }
+  \printbibliography[
+    keyword=own,
+    prenote=ownrefs,
+    title={Integrated Author's \refname \label{ch:bib:own}},
+  ]
+  \cleardoublepage
+
   % Table of contents
+  \hypertarget{toc}{}
+  \bookmark[dest=toc]{\contentsname}
   \tableofcontents
   \cleardoublepage
 
@@ -95,11 +113,7 @@
 
   % References
   \boldname{Schlund}{Manuel}{M.}
-  \printbibliography[
-    keyword=own,
-    title={Integrated Author's References \label{ch:bib:own}},
-  ]
-  \printbibliography[title=References]
+  \printbibliography[title=\refname]
   \cleardoublepage
 
   % Acknowledgments
