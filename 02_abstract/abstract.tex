@@ -18,36 +18,37 @@ processes of the Earth system. Of particular relevance are projections of the
 future climate, which enable an assessment of future climate change. Due to the
 chaotic nature of the climate system, unknowns in future emission pathways and
 uncertainties in the climate models, projections of the future climate are
-associated with large uncertainties. In this thesis, we analyze future climate
-projections from \acsp{ESM} participating in the \acfAbstract{CMIP} and reduce
-corresponding uncertainties with observations.
+associated with large uncertainties. The main focus of this thesis is the
+analysis of future climate projections from \acsp{ESM} participating in the
+\acfAbstract{CMIP} and the reduction of corresponding uncertainties with
+observations.
 
 In a first step, the climate sensitivity (\ie{} the temperature response of the
 climate system to an external forcing) in the latest generation of \acsp{ESM}
-from \acs{CMIP}6 is evaluated. For the \acfAbstract{ECS}, the equilibrium
-temperature response that follows a doubling of the atmospheric
-\acfAbstract{CO2} concentration, we find a \acfAbstract{MMM} and multi-model
-range of $3.74 \unit{K}$ and $\rangeunit{1.8}{5.6}{K}$, respectively. These
-values are higher than in any previous \acs{CMIP} ensemble before. Moreover, a
-third of the analyzed \acs{CMIP}6 models exceeds the upper bound of the likely
-\acs{ECS} range of $\rangeunit{1.5}{4.5}{K}$ assessed by the Fifth \acl{AR}
-(\acs{AR}5) of the \acl{IPCC} from 2013. Similarly, the transient response of
-the climate system to a doubling of \acs{CO2}, also known as \acfAbstract{TCR},
-shows an inter-model range of $\rangeunit{1.3}{3.0}{K}$, whose upper bound is
-again higher than the likely range assessed in \acs{AR}5 of
+from \acs{CMIP}6 is evaluated. For the \acfAbstract{ECS}, which is defined as
+the equilibrium temperature response that follows a doubling of the atmospheric
+\acfAbstract{CO2} concentration, a \acfAbstract{MMM} of $3.74 \unit{K}$ and a
+multi-model range of $\rangeunit{1.8}{5.6}{K}$ are found. These values are
+higher than in any previous \acs{CMIP} ensemble before. Moreover, a third of
+the analyzed \acs{CMIP}6 models exceeds the upper bound of the likely \acs{ECS}
+range of $\rangeunit{1.5}{4.5}{K}$ assessed by the Fifth \acl{AR} (\acs{AR}5)
+of the \acl{IPCC} from 2013. Similarly, the transient response of the climate
+system to a doubling of \acs{CO2}, also known as \acfAbstract{TCR}, shows an
+inter-model range of $\rangeunit{1.3}{3.0}{K}$, whose upper bound is again
+higher than the likely range assessed in \acs{AR}5 of
 $\rangeunit{1.0}{2.5}{K}$. A possible reason for the increased climate
 sensitivity in many \acs{CMIP}6 models is a change in the microphysical
 representation of mixed-phase clouds above the Southern Ocean, which reduces
 the strong negative shortwave cloud phase change feedback in this region that
 is present in climate models from previous \acs{CMIP} generations.
 
-To reduce uncertainties in \acs{ECS} projected by the \acs{CMIP}6 models, we
-systematically analyze eleven published emergent constraints on \acs{ECS} that
-have mostly been derived from models participating in \acs{CMIP}5, the
-predecessor generation of \acs{CMIP}6. Emergent constraints are potentially
-promising approaches to reduce uncertainties in climate model projections by
-combining observations and output from \acsp{ESM}. The focus of this study is
-on testing if these emergent constraints hold for \acsp{ESM} participating
+To reduce uncertainties in \acs{ECS} projected by the \acs{CMIP}6 models,
+eleven published emergent constraints on \acs{ECS} (mostly derived from models
+participating in \acs{CMIP}5, the predecessor generation of \acs{CMIP}6) are
+systematically analyzed. Emergent constraints are potentially promising
+approaches to reduce uncertainties in climate model projections by combining
+observations and output from \acsp{ESM}. The focus of this analysis is on
+testing if these emergent constraints hold for \acsp{ESM} participating
 \acs{CMIP}6. Since none of the emergent constraints considered here have been
 derived on the \acs{CMIP}6 ensemble, the \acs{CMIP}6 models can be used for
 cross-checking of the emergent constraints on a new model ensemble. The
@@ -65,33 +66,33 @@ $12 \unit{\%}$ on average. This can be at least partly explained by the
 increased number of high-\acs{ECS} models in \acs{CMIP}6 without a
 corresponding change in the constraint predictors, suggesting the emergence of
 new feedback processes rather than changes in strength of those previously
-dominant. Our results support previous studies concluding that emergent
+dominant. The results support previous studies concluding that emergent
 constraints should be based on an independently verifiable physical mechanism
 and that process-based emergent constraints on \acs{ECS} should rather be
 thought of as constraints for the process or feedback they are actually
 targeting.
 
-To overcome these issues of single-process-oriented emergent constraints, we
-introduce an alternative approach based on \acfAbstract{ML}. Since this new
+To overcome these issues of single-process-oriented emergent constraints, an
+alternative approach based on \acfAbstract{ML} is introduced. Since this new
 technique relies on a large number of data points in order to train the
 \acs{ML} algorithm, the scalar climate sensitivity expressed as \acs{ECS} or
-\acs{TCR} is not an appropriate target variable. As an alternative, we study
-projections of the future \acfAbstract{GPP}, which is the largest flux of the
-terrestrial carbon uptake and slows down global warming by removing \acs{CO2}
-from the atmosphere. In this analysis, we combine an existing emergent
-constraint on \acs{CO2} fertilization with a \acs{ML} approach to constrain the
-spatial variations of multi-model \acs{GPP} projections. In the first step of
-our two-step approach, we use observed changes in the \acs{CO2} seasonal cycle
-at \acl{KUM} to constrain the global mean \acs{GPP} at the end of the \nth{21}
-century (\range{2091}{2100}) in \acl{RCP} 8.5 simulations with \acsp{ESM}
-participating in \acs{CMIP}5 to $\pmrangeunit{171}{12}{\GtCyr{}}$, compared to
-the unconstrained model range $\rangeunit{156}{247}{\GtCyr{}}$. In a second
-step, we use a \acs{ML} model to constrain gridded future absolute \acs{GPP}
-and gridded fractional \acs{GPP} change in two independent approaches. For
-this, observational data is fed into the \acs{ML} algorithm that has been
-trained on \acs{CMIP}5 data to learn relationships between present-day
-physically-relevant diagnostics and the target variable. In a
-leave-one-model-out \acl{CV} approach, the \acs{ML} model shows superior
-performance to the \acs{CMIP}5 \acs{MMM}. Our approach predicts an increased
-\acs{GPP} change in northern high latitudes compared to regions closer to the
-equator.
+\acs{TCR} is not an appropriate target variable. Therefore, \acfAbstract{GPP}
+as a process that contributes to climate sensitivity is studied as an
+alternative. \acs{GPP} is the largest flux of the terrestrial carbon uptake and
+slows down global warming by removing \acs{CO2} from the atmosphere. In this
+analysis, an existing emergent constraint on \acs{CO2} fertilization is
+combined with a \acs{ML} approach to constrain the spatial variations of
+multi-model \acs{GPP} projections. In the first step of the two-step approach,
+observed changes in the \acs{CO2} seasonal cycle at \acl{KUM} are used to
+constrain the global mean \acs{GPP} at the end of the \nth{21} century
+(\range{2091}{2100}) in \acl{RCP} 8.5 simulations with \acsp{ESM} participating
+in \acs{CMIP}5 to $\pmrangeunit{171}{12}{\GtCyr{}}$, compared to the
+unconstrained model range $\rangeunit{156}{247}{\GtCyr{}}$. In a second step, a
+\acs{ML} model is used to constrain gridded future absolute \acs{GPP} and
+gridded fractional \acs{GPP} change in two independent approaches. For this,
+observational data is fed into the \acs{ML} algorithm that has been trained on
+\acs{CMIP}5 data to learn relationships between present-day physically-relevant
+diagnostics and the target variable. In a leave-one-model-out \acl{CV}
+approach, the \acs{ML} model shows superior performance to the \acs{CMIP}5
+\acs{MMM}. The new approach predicts a higher \acs{GPP} increase in high
+latitudes and a lower \acs{GPP} increase in regions closer to the equator.

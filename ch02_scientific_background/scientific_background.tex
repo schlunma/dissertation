@@ -30,8 +30,8 @@ techniques developed in this thesis.
 \subsection{Numerical Climate Modeling}
 \label{subsec:02:numerical_climate_modeling}
 
-In contrast to other fields of science, researching the future evolution of the
-Earth's climate cannot be purely done by performing experiments in a
+In contrast to many other fields of science, researching the future evolution
+of the Earth's climate cannot be purely done by performing experiments in a
 laboratory. Due to the immense complexity of the Earth system (including
 physical, biological and chemical processes on various temporal and spatial
 scales and their mutual interactions), we do not have access to a tiny replica
@@ -47,8 +47,8 @@ climate models came up in the 1960s and were based on weather prediction models
 components of the climate system: atmosphere, land surface, ocean and sea ice
 (see \cref{fig:02:esms_historical_evolution}). The basis of these so-called
 \acp{AOGCM} \autocite{Flato2013} is the numerical solving of the differential
-equations describing the exchange of energy and matter between these physical
-components.
+equations describing the exchange of energy, momentum and matter between and
+within these physical components.
 
 \begin{figure}[t]
   \centering
@@ -102,21 +102,21 @@ temperatures, this uptake of \ac{CO2} by the carbon cycle slows down global
 warming.
 
 
-\subsection{The \acf{CMIP}}
+\subsection{The \acfAbstract{CMIP}}
 \label{subsec:02:cmip}
 
 Due to the complex nature of the Earth system itself, numerical models of it
 consist of hundreds of thousands of lines of computer code. Thus, a
-standardization to a certain degree is crucial for the various research groups
-developing \acp{ESM} all around the world in order to obtain comparable output
-and to facilitate model analysis. For this reason, the \ac{WGCM} of the
-\ac{WCRP} initiated the \acf{CMIP} in 1995, with the objective to
-\enquote{better understand past, present and future climate changes arising
-  from natural, unforced variability or in response to changes in radiative
-  forcing in a multi-model context} \autocite{WCRP2020}. One major element of
-\ac{CMIP} is to establish common standards, coordination, infrastructure and
-documentation in order to facilitate the distribution of climate model output
-\autocite{Eyring2016, Juckes2020}.
+standardization of the experimental setup and model output to a certain degree
+is crucial for the various research groups developing \acp{ESM} all around the
+world in order to obtain comparable output and to facilitate model analysis.
+For this reason, the \ac{WGCM} of the \ac{WCRP} initiated the \acf{CMIP} in
+1995, with the objective to \enquote{better understand past, present and future
+  climate changes arising from natural, unforced variability or in response to
+  changes in radiative forcing in a multi-model context} \autocite{WCRP2020}.
+One major element of \ac{CMIP} is to establish common standards, coordination,
+infrastructure and documentation in order to facilitate the distribution of
+climate model output \autocite{Eyring2016, Juckes2020}.
 
 A further main aspect is to provide a set of standardized experiments for
 global climate model simulations. To participate in the latest phase of
@@ -195,9 +195,9 @@ based on assumptions that may or may not turn out to be correct. On the
 contrary, climate predictions are attempts to predict the actual evolution of
 the climate on much shorter time scales from seasons to years. Similar to any
 other scientific experiment, climate model projections suffer from associated
-uncertainties. There are three major sources of climate model projections we
-can distinguish: natural variability, climate response uncertainty and emission
-uncertainty \autocite{Hawkins2009, Hawkins2010}.
+uncertainties. There are three major sources of uncertainties in climate model
+projections we can distinguish: natural variability, climate response
+uncertainty and emission uncertainty \autocite{Hawkins2009, Hawkins2010}.
 \Cref{fig:02:sources_of_uncertainty} shows these three sources for the
 projected global mean surface temperature anomaly over the \nth{21} century.
 
@@ -234,12 +234,10 @@ is inherent in the Earth system and cannot be eliminated by more knowledge and
 more advanced climate models. Natural variability is more relevant on regional
 and local scales than on continental or global scales. Further contributions to
 natural variability on longer time scales come from phenomena like the
-\ac{ENSO} or the \ac{NAO} and from externally (and thus explainable) events
-like volcanic eruptions and variations in the solar activity. Natural
-variability can be seen as the \enquote{noise} in the climate record as opposed
-to the anthropogenic \enquote{signal} \autocite{Cubasch2013}. As illustrated by
-\cref{fig:02:sources_of_uncertainty}, the uncertainty associated with natural
-variability is constant over time.
+\ac{ENSO} or the \ac{NAO} and from other events like volcanic eruptions and
+variations in the solar activity. Natural variability can be seen as the
+\enquote{noise} in the climate record as opposed to the anthropogenic
+\enquote{signal} \autocite{Cubasch2013}.
 
 The second source of uncertainty in climate model projections is \emph{emission
   uncertainty}. This arises from the different possible trajectories in terms
@@ -305,11 +303,16 @@ main topic of this thesis.
 \section{Climate Sensitivity}
 \label{sec:02:climate_sensitivity}
 
-Climate sensitivity refers to the change in \ac{GSAT} that results from a
-change in the radiative forcing. In other words, it describes how sensitive the
-climate system is to an external forcing. The source of this forcing might
-either be natural (changes in the solar activity, volcanic eruptions, \etc{})
-or anthropogenic (emissions of \acp{GHG}, land use changes, \etc{}).
+An important policy-relevant metric of the Earth system that can be assessed
+with numerical climate model simulations is the climate sensitivity. Climate
+sensitivity refers to the change in \ac{GSAT} that results from a change in the
+radiative forcing. In other words, it describes how sensitive the climate
+system is to an external forcing. The source of this forcing might either be
+natural (changes in the solar activity, volcanic eruptions, \etc{}) or
+anthropogenic (emissions of \acp{GHG}, land use changes, \etc{}). Thus, the
+assessment of climate sensitivity is essential for a precise quantification of
+the human-made climate change in order to determine optimal mitigation and
+adaptation strategies.
 
 
 \subsection{Climate Feedbacks}
@@ -318,7 +321,7 @@ or anthropogenic (emissions of \acp{GHG}, land use changes, \etc{}).
 As already described in \cref{subsec:02:source_of_uncertainties}, the effects
 of an external forcing acting on the climate system can additionally be
 amplified or diminished by climate feedbacks. Thus, feedback processes play a
-crucial role in the evaluation of climate sensitivity.
+crucial role determining the magnitude of the climate sensitivity.
 \Cref{fig:02:feedbacks_overview} shows an overview of important feedbacks in
 the Earth system with their corresponding time scales on which they operate.
 
@@ -376,22 +379,24 @@ forcing and cools the planet.
 
 For some domains of the Earth system, feedbacks can be positive and/or
 negative, since a variety of different mechanisms is involved. An example for
-this is the cloud feedback. Changes in clouds induced by climate change can
-cause both longwave (greenhouse warming) and shortwave (reflective cooling)
-effects, which both need to be considered for the overall cloud feedback
-\autocite{Boucher2013}. Relevant cloud properties that may change as a response
-to an external forcing and that may alter the Earth's radiative budget are
-cloud cover, cloud optical thickness, cloud altitude and the geographical
-distribution of clouds. Examples for robust cloud feedback processes are the
-rise of high clouds in a warming climate which traps longwave radiation and
-enhances global warming and the reduction in mid- and low-level cloud cover
-which diminishes the reflection of incoming solar radiation and also increases
-the surface warming \autocite{Boucher2013}. In global climate model ensembles,
-the overall cloud feedback shows a large range with positive and negative
-values, but tends to be slightly positive on average \autocite{Soden2006,
-  Dufresne2008, Vial2013, Zelinka2020}. This large uncertainty in the cloud
-feedback is a major reason for uncertainties in the climate sensitivity of
-climate models \autocite{Boucher2013, Flato2013}.
+this is the cloud feedback. Changes in the clouds induced by climate change can
+cause changes in their longwave (greenhouse warming) and shortwave (reflective
+cooling) effects on the Earth's radiation budget, which both need to be
+considered for the overall cloud feedback \autocite{Boucher2013}. Relevant
+cloud properties that may change as a response to an external forcing and that
+may alter the Earth's radiative budget are cloud cover, cloud optical
+thickness, cloud top and cloud base height, vertical extent and the
+geographical distribution of clouds. Examples for robust cloud feedback
+processes are the increase in cloud top height of high-level clouds in a
+warming climate which traps longwave radiation and enhances global warming and
+the reduction in mid- and low-level cloud cover which diminishes the reflection
+of incoming solar radiation and also increases the surface warming
+\autocite{Boucher2013}. In global climate model ensembles, the overall cloud
+feedback shows a large range with positive and negative values, but tends to be
+slightly positive on average \autocite{Soden2006, Dufresne2008, Vial2013,
+  Zelinka2020}. This large uncertainty in the cloud feedback is a major reason
+for uncertainties in the climate sensitivity of climate models
+\autocite{Boucher2013, Flato2013}.
 
 Further examples of feedbacks with positive and negative contributions are
 biogeochemical feedbacks. Negative contributions come from increased \ac{CO2}
@@ -407,13 +412,14 @@ enhances climate change. More details on this are given in
 \subsection{Mathematical Framework for Feedbacks Analysis}
 \label{subsec:02:mathematical_framework_feedbacks}
 
-The foundation of a basic mathematical framework for climate feedback analysis
-is a simple energy balance model \autocite{Gregory2009, Roe2009}. Anthropogenic
-activities in the Earth system like the emissions of \acp{GHG} or aerosols
-introduce an external forcing to the climate system, which is quantified with a
-radiative forcing $F$ measured in $\si{W m^{-2}}$. To restore a stable state,
-the climate system opposes this forcing with a climate response $R$, leading to
-a net energy flux of
+For a precise quantification of climate feedbacks and thus climate sensitivity,
+a mathematical framework for climate feedback analysis necessary. One possible
+approach for this is based on a simple energy balance model
+\autocite{Gregory2009, Roe2009}. Anthropogenic activities in the Earth system
+like the emissions of \acp{GHG} or aerosols introduce an external forcing to
+the climate system, which is quantified with a radiative forcing $F$ measured
+in $\si{W m^{-2}}$. To restore a stable state, the climate system opposes this
+forcing with a climate response $R$, leading to a net energy flux of
 \begin{equation}
   N = F + R
   \label{eq:02:N}
@@ -502,9 +508,9 @@ pre-industrial conditions once the climate system reaches radiative equilibrium
 the anthropogenic climate change, the \emph{Charney Report} from 1979
 \autocite{Charney1979}, the equilibrium climate sensitivity is one of the
 oldest metrics describing climate change. However, in practice this traditional
-definition of is not useful. Running fully-coupled \acp{ESM} into equilibrium
-is computationally expensive as it would require thousands of model years
-\autocite{Rugenstein2020}.
+definition of is not always useful. Running fully-coupled \acp{ESM} into
+equilibrium is computationally expensive as it would require thousands of model
+years \autocite{Rugenstein2020}.
 
 \begin{figure}[t]
   \centering
@@ -690,11 +696,10 @@ where $\kappa$ is the ocean heat uptake efficiency \autocite{Gregory2008}.
 Since there is a net energy flux into the climate system ($N > 0$) due to the
 external forcing $F$, $\kappa$ is positive. This approximation becomes less
 accurate as the deeper ocean warms up and cannot be applied to simulations with
-a steady state climate change ($N \to 0$) where the external forcing tends
-stabilize \autocite{Gregory2009}. By applying the definition of \ac{TCR}
-(transient \ac{GSAT} change $\Delta T$ at the time of \ac{CO2} doubling) and
-combining \cref{eq:02:N_vs_delta_t,eq:02:ocean_heat_uptake}, \ac{TCR} can be
-estimated as
+a steady state climate change in which $N \to 0$ \autocite{Gregory2009}. By
+applying the definition of \ac{TCR} (transient \ac{GSAT} change $\Delta T$ at
+the time of \ac{CO2} doubling) and combining
+\cref{eq:02:N_vs_delta_t,eq:02:ocean_heat_uptake}, \ac{TCR} can be estimated as
 \begin{equation}
   \mathtxt{TCR} = \frac{F_\mathtxt{2x}}{\kappa - \lambda},
   \label{eq:02:tcr}
@@ -721,10 +726,26 @@ expected) larger than transient response \ac{TCR}, \ie{} $\mathtxt{ECS} >
 \section{The Global Carbon Cycle}
 \label{sec:02:carbon_cycle}
 
-Since one study presented in this thesis aims to reduce uncertainties in carbon
-cycle--related processes \commentcite{Schlund2020}{see \cref{ch:06:paper_gpp}},
-this \namecref{sec:02:carbon_cycle} introduces the scientific background of the
-global carbon cycle.
+Currently, only about $50 \unit{\%}$ of the emitted \ac{CO2} by humankind
+remains in the atmosphere \autocite{Friedlingstein2020}. The residual part is
+absorbed by the two other main carbon sinks of the planet, the terrestrial
+biosphere and the ocean. These exchange fluxes of carbon are part of the global
+carbon cycle of planet Earth. Since only atmospheric \ac{CO2} can act as
+\ac{GHG}, this removal of \ac{CO2} from the atmosphere substantially slows down
+global warming. Moreover, since the emission of carbon-based \acp{GHG}
+introduces additional carbon into the Earth system, the carbon exchange fluxes
+might change under global warming, which in turn directly influences the
+magnitude of the climate sensitivity. However, the two idealized climate
+sensitivity metrics \ac{ECS} and \ac{TCR} introduced in the previous
+\namecref{sec:02:climate_sensitivity} are by definition independent from carbon
+cycle--related effects, since both of them are defined in terms of a doubling
+of the atmospheric \ac{CO2} concentration, not in terms of \ac{CO2} emissions.
+Nevertheless, in order to assess policy-relevant metrics like the allowable
+fossil fuel emissions to meet particular warming targets, for example the $1.5
+\unit{\degreeCelsius}$ of the Paris Agreement \autocite{UNFCCC2015}, it is
+crucial to take the global carbon cycle into account. This
+\namecref{sec:02:carbon_cycle} introduces the scientific background of the
+global carbon cycle and its current anthropogenic perturbations.
 
 
 \subsection{Overview}

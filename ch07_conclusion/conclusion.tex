@@ -43,13 +43,13 @@ documentation of the \ac{ESMValTool} \autocite{Eyring2020, Lauer2020,
 everyone, these improvements are beneficial for the entire scientific
 community.
 
-In a first analysis, we evaluate the climate sensitivity metrics \ac{ECS} and
-\ac{TCR} for the latest generation of \acp{ESM} from \acs{CMIP}6. This work,
+In a first analysis, the climate sensitivity metrics \ac{ECS} and \ac{TCR} are
+evaluated for the latest generation of \acp{ESM} from \acs{CMIP}6. This work,
 which is presented in \cref{ch:04:papers_ecs_tcr_assessment} and already
 published in \textcite{Bock2020, Meehl2020}, directly addresses
 \cref{enum:01:question_1} (\enquote{\emph{\KeyScienceQuestionOne{}}}). For
-\ac{ECS}, we find a \acs{CMIP}6 model range of $\rangeunit{1.8}{5.6}{K}$, which
-is higher on the upper and lower end than any model range from previous
+\ac{ECS}, a \acs{CMIP}6 model range of $\rangeunit{1.8}{5.6}{K}$ is found,
+which is higher on the upper and lower end than any model range from previous
 \ac{CMIP} generations before. In comparison to \acs{CMIP}5, the \acs{CMIP}6
 \ac{MMM} of \ac{ECS} is about $16 \unit{\%}$ higher ($3.74 \unit{K}$ in
 \acs{CMIP}6 versus $3.23 \unit{K}$ in \acs{CMIP}5). Moreover, especially the
@@ -63,29 +63,29 @@ range of \acs{CMIP}6 is $\rangeunit{1.3}{3.0}{K}$, which also exceeds the
 \acs{AR}5 of $\rangeunit{1.0}{2.5}{K}$. A possible reason for the increased
 climate sensitivity in many \acs{CMIP}6 models is a change in the microphysical
 representation of mixed-phase clouds above the Southern Ocean. For one thing,
-this change leads to an improved shortwave \ac{CRE} in these models when
-compared to observations. However, this change also substantially reduces the
-strong negative shortwave cloud feedback over the Southern Ocean that is
-present in previous \ac{CMIP} generations and that results from a cloud phase
-change from ice clouds in the present-day to liquid clouds in the future. In
-the affected \acs{CMIP}6 models, this cloud phase change is not possible
+this change leads to an improved simulation of the shortwave \ac{CRE} in these
+models when compared to observations. However, this change also substantially
+reduces the strong negative shortwave cloud feedback over the Southern Ocean
+that is present in previous \ac{CMIP} generations and that results from a cloud
+phase change from ice clouds in the present-day to liquid clouds in the future.
+In the affected \acs{CMIP}6 models, this cloud phase change is not possible
 anymore since the models predominantly simulate liquid clouds over the
 present-day Southern Ocean.
 
 In order to reduce this large range of \ac{ECS} in the latest generation of
-climate  models, we evaluate suitable emergent constraints on the \acs{CMIP}6
-ensemble. Emergent constraints use a physically-based inter-model relationship
+climate  models, suitable emergent constraints on the \acs{CMIP}6 ensemble are
+evaluated. Emergent constraints use a physically-based inter-model relationship
 between an observable quantity of the Earth system and a target variable to
 reduce uncertainties in the target variable with observations
-\autocite{Allen2002}. In total we assess eleven emergent constraints on
-\ac{ECS}, which are mostly related to cloud feedbacks since these constitute
+\autocite{Allen2002}. In total eleven emergent constraints on \ac{ECS} are
+assessed, which are mostly related to cloud feedbacks since these constitute
 the most important source of uncertainty for \ac{ECS} \autocite{Boucher2013,
   Flato2013}. Since all of the evaluated emergent constraints have been derived
-on the \acs{CMIP}3 or \acs{CMIP}5 ensemble, we can perform out-of-sample tests
-on the emergent constraints by assessing whether they still hold for the
+on the \acs{CMIP}3 or \acs{CMIP}5 ensemble, out-of-sample tests on the emergent
+constraints can be performed by assessing whether they still hold for the
 \acs{CMIP}6 models. In this study, which is shown in \cref{ch:05:paper_ecs} and
-already published in \textcite{Schlund2020a}, we find a substantial reduction
-of skill for the majority of emergent constraints when applied to the
+already published in \textcite{Schlund2020a}, a substantial reduction of skill
+for the majority of emergent constraints is found when applied to the
 \acs{CMIP}6 ensemble in comparison to the \acs{CMIP}5 ensemble. This drop in
 skill is expressed as a decrease of the coefficient of determination $R^2$ of
 the emergent relationship and a decrease of the statistical significance using
@@ -116,45 +116,46 @@ To overcome these issues of single-process-oriented emergent constraints,
 This work is already published in \textcite{Schlund2020}. Since the new
 technique relies on a large number of data points in order to train the \ac{ML}
 algorithm, the scalar climate sensitivity expressed as \ac{ECS} or \ac{TCR} is
-not an appropriate target variable. As an alternative, we study projections of
-the future \ac{GPP}, which is the largest flux of the terrestrial carbon uptake
-and slows down global warming by removing \ac{CO2} from the atmosphere. In the
-first step of our new two-step approach, we constrain the global mean \ac{GPP}
-at the end of the \nth{21} century in the \acs{CMIP}5 \acs{RCP}8.5 scenario to
-$\pmrangeunit{171}{12}{\GtCyr{}}$ using a published emergent constraint by
-\textcite{Wenzel2016}. This first step corrects the \acs{CMIP}5 models'
-\ac{GPP} response to \ac{CO2}, which shows a range of
-$\rangeunit{156}{247}{\GtCyr{}}$ in the raw multi-model ensemble. In the second
-step, a \ac{ML}-based climate model weighting approach is used to further
-constrain the gridded \ac{GPP} based on present-day predictors that are
-relevant for the simulation of \ac{GPP} in the \acp{ESM}. Our \ac{ML} approach
+not an appropriate target variable. Therefore, this analysis does not focus on
+reducing uncertainties in climate sensitivity itself but rather on a selected
+process that contributes to it: \ac{GPP}. \ac{GPP} is the largest flux of the
+terrestrial carbon uptake and slows down global warming by removing \ac{CO2}
+from the atmosphere. In the first step of the new two-step approach, the global
+mean \ac{GPP} at the end of the \nth{21} century in the \acs{CMIP}5
+\acs{RCP}8.5 scenario is constrained to $\pmrangeunit{171}{12}{\GtCyr{}}$ using
+a published emergent constraint by \textcite{Wenzel2016}. This first step
+corrects the \acs{CMIP}5 models' \ac{GPP} response to \ac{CO2}, which shows a
+range of $\rangeunit{156}{247}{\GtCyr{}}$ in the raw multi-model ensemble. In
+the second step, a \ac{ML}-based climate model weighting approach is used to
+further constrain the gridded \ac{GPP} based on present-day predictors that are
+relevant for the simulation of \ac{GPP} in the \acp{ESM}. The \ac{ML} approach
 is mathematically similar to the \ac{MDER} approach \autocite{Karpechko2013,
   Senftleben2020, Wenzel2016a}, but additionally considers multi-dimensional
 (gridded) target variables and non-linear relationships between the predictors
-and the target variable. We establish a relationship between process‐oriented
-predictors and future projections of \ac{GPP} and then utilize this to project
-today's observed conditions into the future. The prediction phase of our method
-can be interpreted as an implicit performance weighting. However, due to the
-complex structure of the used \ac{ML} algorithm (\ac{GBRT}) it is not possible
-to extract specific values for the individual weights. We consider two target
-variables: the gridded monthly climatologies of absolute \ac{GPP}
-(\range{2091}{2100}) and the gridded fractional \ac{GPP} change over the
-\nth{21} century (2100 versus 2000). The latter quantity shows an increased
+and the target variable. A a relationship between process‐oriented predictors
+and future projections of \ac{GPP} is established and then utilized to project
+today's observed conditions into the future. The prediction phase of the new
+method can be interpreted as an implicit performance weighting. However, due to
+the complex structure of the used \ac{ML} algorithm (\ac{GBRT}) it is not
+possible to extract specific values for the individual weights. Two target
+variables are considered: the gridded monthly climatologies of absolute
+\ac{GPP} (\range{2091}{2100}) and the gridded fractional \ac{GPP} change over
+the \nth{21} century (2100 versus 2000). The latter quantity shows an increased
 \acs{GPP} change in the high latitudes compared to regions closer to the
 equator. The results of both approaches are consistent with each other and with
-the global constraint of the first step. We validate our approach by comparing
-it to other statistical models (the \acs{CMIP}5 \ac{MMM} and a linear
+the global constraint of the first step. The new approach is validated by
+comparing it to other statistical models (the \acs{CMIP}5 \ac{MMM} and a linear
 \ac{LASSO} model) in a leave‐one‐model‐out \ac{CV} setup. Compared to \ac{MMM}
-(\ac{LASSO}), we find a reduction of the resulting mean \ac{RMSEP} of up to $48
-\unit{\%}$ ($3 \unit{\%}$) when using our \ac{ML} approach. Moreover, the
-evaluation of the global and local feature importance allows us to get further
+(\ac{LASSO}), a reduction of the resulting mean \ac{RMSEP} of up to $48
+\unit{\%}$ ($3 \unit{\%}$) is found when using the \ac{ML} approach. Moreover,
+the evaluation of the global and local feature importance allows further
 insights into the \ac{ML} model. For the first target variable (absolute
 \ac{GPP}), historical \ac{GPP} is by far the most important predictor, which
-can be explained with a correction of the historical bias in \ac{GPP} by our
-approach. For the second variable, \ac{T} and \ac{LAI} are the dominant
+can be explained with a correction of the historical bias in \ac{GPP} by the
+new approach. For the second variable, \ac{T} and \ac{LAI} are the dominant
 features. This study directly addresses \cref{enum:01:question_3}
-(\enquote{\emph{\KeyScienceQuestionThree{}}}), which we can confidently answer
-with \enquote{yes} based on the results we find.
+(\enquote{\emph{\KeyScienceQuestionThree{}}}), which can be confidently
+answered with \enquote{yes} based on the results found.
 
 
 \section{Outlook}
@@ -183,25 +184,25 @@ can further help to gain a better understanding of the \acs{CMIP}6 models and
 potentially to reduce associated uncertainties in the entire multi-model
 ensemble.
 
-Due to the flexibility of our \ac{ML}-based climate model weighting approach
-presented in \cref{ch:06:paper_gpp}, one natural way forward is to apply this
-technique to other target variables. While the scalar metrics \ac{ECS} or
-\ac{TCR} with one value per climate model do not offer enough training points
-for this technique, a possible alternative could be the gridded \acl{T} over
-the \nth{21} century in the \ac{SSP} scenarios. A relevant study in this
-context is given by \textcite{Brunner2020}, who use performance and
+Due to the flexibility of the new \ac{ML}-based climate model weighting
+approach presented in \cref{ch:06:paper_gpp}, one natural way forward is to
+apply this technique to other target variables. While the scalar metrics
+\ac{ECS} or \ac{TCR} with one value per climate model do not offer enough
+training points for this technique, a possible alternative could be the gridded
+\acl{T} over the \nth{21} century in the \ac{SSP} scenarios. A relevant study
+in this context is given by \textcite{Brunner2020}, who use performance and
 interdependence-based climate model weighting to constrain the \acl{T} over the
 \nth{21} century based on observable process-based predictors of today's
-climate and which could serve as a possible baseline for our new \ac{ML}-based
-weighting approach. An exciting and valuable addition to our method could be
+climate and which could serve as a possible baseline for the new \ac{ML}-based
+weighting approach. An exciting and valuable addition to the method could be
 causal inference \autocite{Nowack2020, Runge2019}. In the current approach, the
 relationships between the different predictors and the target variable are
 based on statistical correlation alone. Moreover, the local feature importance
 maps do not reveal true causal relationships between the predictors and the
 target variable, but only show the relative weight that is given to a specific
 predictor at a specific location for the prediction of the target variable by
-the \ac{ML} model. By integrating causal networks into our approach, it might
-be possible to explore and utilize true causal connections instead.
+the \ac{ML} model. By integrating causal networks into the new approach, it
+might be possible to explore and utilize true causal connections instead.
 
 The massive progress in \ac{AI} and \ac{ML} in recent years in combination with
 ever increasing computational power and resources provided by modern
@@ -209,10 +210,10 @@ supercomputers has the potential for enormous improvements in climate modeling
 and analysis \autocite{Reichstein2019}. Apart from the presented \ac{ML}-based
 weighting approach, further possible applications of \ac{AI} and \ac{ML} in
 climate science involve for example \ac{ML}-based parametrizations that are
-learned from high-resolution climate models \autocite{Rasp2018}, the
-\ac{ML}-based analysis and prediction of forcing patterns \autocite{Barnes2019,
-  Mansfield2020} or the learning of entire \acp{ESM} from observational
-products \autocite{Geer2021}. Therefore, the foundation for innovative and
+learned from high-resolution climate models \autocite{Rasp2018}, \ac{ML}-based
+analysis and prediction of forcing patterns \autocite{Barnes2019,
+  Mansfield2020} or learning of entire \acp{ESM} from observational products
+\autocite{Geer2021}. Therefore, the foundation for innovative and
 groundbreaking research in climate science for the near future has been laid,
 which will hopefully help us in further understanding and fighting one of the
 greatest challenges for humankind today: climate change.

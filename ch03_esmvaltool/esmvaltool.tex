@@ -33,7 +33,7 @@ contributions that are not documented in other
 (\cref{sec:03:contributions_to_esmvalcore,sec:03:contributions_to_esmvaltool}).
 
 
-\section{The \acf{ESMValTool}}
+\section{The \acfAbstract{ESMValTool}}
 \label{sec:03:esmvaltool}
 
 As outlined in \cref{subsec:02:numerical_climate_modeling}, climate models have
@@ -377,9 +377,9 @@ and predictors.
   ]{
     Emergent constraint on the \acf{ECS} from global temperature variability
     \autocite{Cox2018}. Magenta colors indicate high-sensitivity climate models
-    ($\lambda < 1 \unit{W m^{-2} K^{-1}}$), and green colors indicate low
-    sensitivity climate models ($\lambda > 1 \unit{W m^{-2} K^{-1}}$). Both
-    panels have been created with the \acs{ESMValTool} using
+    ($\abs*{\lambda} < 1 \unit{W m^{-2} K^{-1}}$), and green colors indicate
+    low-sensitivity climate models ($\abs*{\lambda} > 1 \unit{W m^{-2}
+      K^{-1}}$). Both panels have been created with the \acs{ESMValTool} using
     \emph{recipe\_cox18nature.yml} and are similar to \textcite{Cox2018}. (a)
     Temperature variability metric $\Psi$ versus time for historical
     simulations from \acs{CMIP}5 models (colored lines) and observations from
@@ -412,12 +412,12 @@ reproduces the analysis of \textcite{Cox2018}, who introduce an emergent
 constraint in \ac{ECS} based on a global temperature variability metric $\Psi$.
 \Cref{fig:03:cox18:a} shows $\Psi$ over the past 85 years for \acs{CMIP}5
 models and observations form HadCRUT4 \autocite{Morice2012}. Since
-high-sensitivity climate models exhibit higher values of $\Psi$ than low
-sensitivity models, an emergent relationship between \ac{ECS} and $\Psi$ can be
-established (\cref{fig:03:cox18:b}). With observations of $\Psi$, \ac{ECS} can
-eventually be constrained to $\left( 2.8 \pm 0.6 \right) \unit{K}$ ($66
-\unit{\%}$ confidence range). More details on this including the calculation of
-$\Psi$ are given in \cref{subsec:05:cox}.
+high-sensitivity climate models exhibit higher values of $\Psi$ than
+low-sensitivity models, an emergent relationship between \ac{ECS} and $\Psi$
+can be established (\cref{fig:03:cox18:b}). With observations of $\Psi$,
+\ac{ECS} can eventually be constrained to $\left( 2.8 \pm 0.6 \right) \unit{K}$
+($66 \unit{\%}$ confidence range). More details on this including the
+calculation of $\Psi$ are given in \cref{subsec:05:cox}.
 
 An important class of recipes in the \ac{ESMValTool} covers international
 climate assessments. One such example is \emph{recipe\_flato13ipcc.yml}, which

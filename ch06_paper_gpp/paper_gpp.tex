@@ -21,12 +21,13 @@ emergent constraints, this approach considers (1) multiple process-based
 predictors, (2) multi-dimensional (gridded) target variables and (3) non-linear
 relationships between the predictors and the target variable. Since the new
 technique relies on a large number of data points in order to train the \ac{ML}
-algorithm, \ac{ECS} as a single scalar metric for each climate model is not an
-appropriate target variable. As an alternative, we analyze projections of
-future \acf{GPP} in this study, which constitutes the largest flux of the
-terrestrial carbon uptake. As described in detail in
-\cref{subsec:02:carbon_cycle_perturbations}, the global carbon cycle actively
-slows down global warming by removing \ac{CO2} from the atmosphere. In
+algorithm, \ac{ECS} as a scalar climate sensitivity metric is not an
+appropriate target variable. Thus, this analysis does not focus on reducing
+uncertainties in climate sensitivity itself, but rather on a selected process
+that contributes to it: \ac{GPP}. As described in detail in
+\cref{subsec:02:carbon_cycle_overview,subsec:02:carbon_cycle_perturbations},
+\ac{GPP} constitutes the largest flux of the terrestrial carbon uptake and
+actively slows down global warming by removing \ac{CO2} from the atmosphere. In
 particular, the terrestrial biosphere absorbs about $30 \unit{\%}$ of the total
 anthropogenic \ac{CO2} emission \autocite{Friedlingstein2020}. Thus, accurately
 quantifying the future evolution of the terrestrial carbon sink is crucial for
@@ -1113,8 +1114,8 @@ concentration.
     \acs{CMIP}5 \acl{MMM} (r\acs{MMM}) using \cref{eq:06:y}, (c) linear
     \acf{LASSO} model and (d) \acf{GBRT} model. The geographical patterns from
     the different statistical models are very similar and show a higher
-    \acs{GPP} increase in high latitudes and a lower \acs{GPP} closer to the
-    equator. \AdaptedFrom{Schlund2020}.
+    \acs{GPP} increase in high latitudes and a lower \acs{GPP} increase in
+    regions closer to the equator. \AdaptedFrom{Schlund2020}.
   }
   \label{fig:06:step2b_results}
 \end{figure}
@@ -1327,8 +1328,8 @@ climatologies of absolute \ac{GPP} (\range{2091}{2100}) and second (step 2b)
 the gridded fractional \ac{GPP} change over the \nth{21} century (years
 \range{2091}{2100} versus years \range{1991}{2000}; see \cref{eq:06:f}). Both
 approaches give consistent results (see
-\cref{fig:06:comparison_step2a_step2b}). The latter quantity shows an increased
-\ac{GPP} change in the high latitudes compared to regions closer to the
+\cref{fig:06:comparison_step2a_step2b}). The latter quantity shows a higher
+\ac{GPP} increase in high latitudes and a lower \ac{GPP} increase closer to the
 equator, which might be attributed to an additional greening trend in the high
 latitudes as supported by the feature map in
 \cref{fig:06:step2b_ml_inference:c} that shows \ac{LAI} as dominant predictor
