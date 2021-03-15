@@ -20,10 +20,10 @@ simulations is of paramount importance for an accurate quantification of the
 future climate change. Since this involves metrics of public interest like the
 allowable fossil fuel emissions to meet particular warming targets, for example
 the $1.5 \unit{\degreeCelsius}$ of the Paris Agreement \autocite{UNFCCC2015},
-this scientific question is not only relevant to climate scientists but to
-policymakers and the whole human society. In the light of the large spread of
-climate sensitivity in the most recent generation of climate models from
-\acs{CMIP}6 \autocite{Meehl2020}, a careful statistical evaluation and
+research in this field of science is not only relevant to climate scientists
+but to policymakers and the whole human society. In the light of the large
+spread of climate sensitivity in the most recent generation of climate models
+from \acs{CMIP}6 \autocite{Meehl2020}, a careful statistical evaluation and
 refinement of the output of multi-model climate projections is as relevant as
 ever. This thesis quantifies the associated uncertainties, presents the
 evaluation of established methods to reduce these uncertainties in the new
@@ -68,9 +68,10 @@ models when compared to observations. However, this change also substantially
 reduces the strong negative shortwave cloud feedback over the Southern Ocean
 that is present in previous \ac{CMIP} generations and that results from a cloud
 phase change from ice clouds in the present-day to liquid clouds in the future.
-In the affected \acs{CMIP}6 models, this cloud phase change is not possible
-anymore since the models predominantly simulate liquid clouds over the
-present-day Southern Ocean.
+In the affected \acs{CMIP}6 models, this cloud phase change due to warming is
+reduced by allowing for supercooled cloud liquid. As a consequence, these
+models simulate less cloud ice over the present-day Southern Ocean than their
+predecessor versions with no supercooled cloud liquid.
 
 In order to reduce this large range of \ac{ECS} in the latest generation of
 climate  models, suitable emergent constraints on the \acs{CMIP}6 ensemble are
@@ -100,8 +101,8 @@ the best estimates for \ac{ECS} show values of $\rangeunit{2.97}{3.88}{K}$ in
 \acs{CMIP}5 and $\rangeunit{3.48}{4.32}{K}$ in \acs{CMIP}6, resulting in an
 increase of about $12 \unit{\%}$ averaged over all emergent constraints. Thus,
 \cref{enum:01:question_2} (\enquote{\emph{\KeyScienceQuestionTwo{}}}) needs to
-be answered with a \enquote{no} for the \acs{CMIP}6 ensemble. The increased
-best estimates and spreads resulting from the emergent constraints in
+be answered with a \enquote{not very well} for the \acs{CMIP}6 ensemble. The
+increased best estimates and spreads resulting from the emergent constraints in
 \acs{CMIP}6 are likely related to the increased \ac{MMM} and multi-model spread
 of \ac{ECS} in \acs{CMIP}6. A possible reason for the reduced skill of the
 emergent constraints when applied to the \acs{CMIP}6 ensemble is the increased
@@ -169,40 +170,45 @@ climate, but it is by no means complete and can be extended in an arbitrary
 number of ways. This final \namecref{sec:07:outlook} presents several
 suggestions on possible ways forward.
 
-\Cref{ch:04:papers_ecs_tcr_assessment} presents two possible reasons for the
-increased climate sensitivity in the \acs{CMIP}6 models (changes in the
-aerosol-cloud interaction and changes in the shortwave cloud phase change
-feedback over the Southern Ocean). While these are likely explanations, there
-might be additional relevant aspects that have not been analyzed in detail yet.
-This could include additional feedback processes that are not present in older
-\ac{CMIP} generations or missing feedback processes that appear in previous
-\ac{CMIP} models but are absent in the \acs{CMIP}6 ensemble. Obvious candidates
-for these feedback processes are cloud-related feedbacks, which pose a major
-source of uncertainty in climate sensitivity in modern-day \acp{ESM}
-\autocite{Boucher2013}. Identifying and quantifying such feedback mechanisms
-can further help to gain a better understanding of the \acs{CMIP}6 models and
-potentially to reduce associated uncertainties in the entire multi-model
-ensemble.
+Climate sensitivity is a policy-relevant and easy-to-use metric to assess the
+strength of climate change. The range of model results for this important
+climate metric, however, remains large and has not been narrowed down over the
+last decades. In the latest generation of climate models contributing to
+\acs{CMIP}6, the range has even increased.
+\Cref{ch:04:papers_ecs_tcr_assessment} presents two possible reasons for this:
+changes in the aerosol-cloud interaction and changes in the shortwave cloud
+phase change feedback over the Southern Ocean. While these are likely
+explanations, there might be additional relevant aspects that have not been
+analyzed in detail yet. This could include additional feedback processes that
+are not present in older \ac{CMIP} generations or missing feedback processes
+that appear in previous \ac{CMIP} models but are absent in the \acs{CMIP}6
+ensemble. Obvious candidates for these feedback processes are cloud-related
+feedbacks, which pose a major source of uncertainty in climate sensitivity in
+modern-day \acp{ESM} \autocite{Boucher2013}. Identifying and quantifying such
+feedback mechanisms can further help to gain a better understanding of the
+\acs{CMIP}6 models and potentially to reduce associated uncertainties in the
+entire multi-model ensemble.
 
-Due to the flexibility of the new \ac{ML}-based climate model weighting
-approach presented in \cref{ch:06:paper_gpp}, one natural way forward is to
-apply this technique to other target variables. While the scalar metrics
-\ac{ECS} or \ac{TCR} with one value per climate model do not offer enough
-training points for this technique, a possible alternative could be the gridded
-\acl{T} over the \nth{21} century in the \ac{SSP} scenarios. A relevant study
-in this context is given by \textcite{Brunner2020}, who use performance and
-interdependence-based climate model weighting to constrain the \acl{T} over the
-\nth{21} century based on observable process-based predictors of today's
-climate and which could serve as a possible baseline for the new \ac{ML}-based
-weighting approach. An exciting and valuable addition to the method could be
-causal inference \autocite{Nowack2020, Runge2019}. In the current approach, the
-relationships between the different predictors and the target variable are
-based on statistical correlation alone. Moreover, the local feature importance
-maps do not reveal true causal relationships between the predictors and the
-target variable, but only show the relative weight that is given to a specific
-predictor at a specific location for the prediction of the target variable by
-the \ac{ML} model. By integrating causal networks into the new approach, it
-might be possible to explore and utilize true causal connections instead.
+A promising way forward to reduce uncertainties in multi-model climate
+projections is to apply the new flexible \ac{ML}-based climate model weighting
+approach introduced in \cref{ch:06:paper_gpp} to other target variables. While
+the scalar metrics \ac{ECS} or \ac{TCR} with one value per climate model do not
+offer enough training points for this technique, a possible alternative could
+be the gridded \acl{T} over the \nth{21} century in the \ac{SSP} scenarios. A
+relevant study in this context is given by \textcite{Brunner2020}, who use
+performance and interdependence-based climate model weighting to constrain the
+\acl{T} over the \nth{21} century based on observable process-based predictors
+of today's climate and which could serve as a possible baseline for the new
+\ac{ML}-based weighting approach. An exciting and valuable addition to the
+method could be causal inference \autocite{Nowack2020, Runge2019}. In the
+current approach, the relationships between the different predictors and the
+target variable are based on statistical correlation alone. Moreover, the local
+feature importance maps do not reveal true causal relationships between the
+predictors and the target variable, but only show the relative weight that is
+given to a specific predictor at a specific location for the prediction of the
+target variable by the \ac{ML} model. By integrating causal networks into the
+new approach, it might be possible to explore and utilize true causal
+connections instead.
 
 The massive progress in \ac{AI} and \ac{ML} in recent years in combination with
 ever increasing computational power and resources provided by modern

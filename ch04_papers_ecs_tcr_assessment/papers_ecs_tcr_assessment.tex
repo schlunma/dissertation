@@ -107,18 +107,17 @@ results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
     ch04_papers_ecs_tcr_assessment/data/cmip5_ecs-tcr.csv}{}{
     \dataset & $\idx$ & $\ecs$ & $\tcr$}
   \caption[
-    \Acf{ECS} and \acf{TCR} evaluated for the \acs{CMIP}5 models.
+    \Acf{ECS} and \acf{TCR} calculated for the \acs{CMIP}5 models.
   ]{
-    \Acf{ECS} and \acf{TCR} evaluated for the \acs{CMIP}5 models. Details on
-    the calculation of \acs{ECS} and \acs{TCR} are given in
-    \cref{subsec:02:ecs} and \cref{subsec:02:tcr}, respectively. The \acf{MMM}
-    is calculated from the Gregory regression method using the \acs{MMM} net
-    \acf{TOA} radiation and the \acs{MMM} change in \acf{GSAT} similar to
-    \cref{fig:04:gregory_regression_cmip6_mmm}. The multi-model standard
-    deviation is given by the sample standard deviation of \acs{ECS} evaluated
-    over all climate models (using the normalization $1 / M$, where $M$ is the
-    number of models). Corresponding references for each model are given in
-    \cref{tab:app:a:cmip5_models}. \AdaptedFrom{Meehl2020}.
+    \Acf{ECS} and \acf{TCR} calculated for the \acs{CMIP}5 models. Details on
+    this are given in \cref{subsec:02:ecs} and \cref{subsec:02:tcr},
+    respectively. The \acf{MMM} is calculated from the Gregory regression
+    method using the \acs{MMM} net \acf{TOA} radiation and the \acs{MMM} change
+    in \acf{GSAT} similar to \cref{fig:04:gregory_regression_cmip6_mmm}. The
+    multi-model standard deviation is given by the sample standard deviation of
+    \acs{ECS} evaluated over all climate models (using the normalization $1 /
+    M$, where $M$ is the number of models). Corresponding references for each
+    model are given in \cref{tab:app:a:cmip5_models}. \AdaptedFrom{Meehl2020}.
   }
   \label{tab:04:ecs_tcr_cmip5}
 \end{table}
@@ -181,7 +180,7 @@ some of the early climate models used in \acs{AR}1 and some \acs{CMIP}2 models
 used in \acs{AR}3 exhibit values of \acs{ECS} well above $4.5 \unit{K}$,
 resulting in a upper model range of about $0.6 \unit{K}$ higher than the
 assessed range \autocite{Mitchell1990, Cubasch2001}. However, these deviations
-from the assessed range are insignificant to the ones present in the
+from the assessed range are small compared to the ones present in the
 \acs{CMIP}6 ensemble, which have become evident over the course of 2020. As
 shown in \cref{fig:04:historical_ecs_tcr_ranges}, both the lower and upper
 bound are more extreme than in any previous climate model generation, resulting
@@ -309,13 +308,14 @@ Southern Ocean in climate models from previous \ac{CMIP} generations.
     Ocean in the present-day climate of previous climate model generations have
     been replaced with clouds that predominantly consist of (supercooled)
     liquid clouds \autocite{BodasSalcedo2019, Gettelman2019, Mulcahy2020,
-      Williams2020}. Thus, in these models a cloud phase change due to global
-    warming is no longer possible, which removes (or significantly reduces) the
-    strong negative cloud phase change feedback (orange arrows). This leads to
-    an increase in the global net cloud feedback \autocite{BodasSalcedo2019,
-      Tan2016} and the \acf{ECS} in the corresponding \acs{CMIP}6 models
-    \autocite{Andrews2019, Gettelman2019}, which is a possible explanation for
-    the high \acs{ECS} values found in many \acs{CMIP}6 models.
+      Williams2020}. Thus, in the affected \acs{CMIP}6 models, this cloud phase
+    change due to warming is reduced by allowing for supercooled cloud liquid,
+    which substantially reduces the strong negative cloud phase change feedback
+    (orange arrows). This leads to an increase in the global net cloud feedback
+    \autocite{BodasSalcedo2019, Tan2016} and the \acf{ECS} in the corresponding
+    \acs{CMIP}6 models \autocite{Andrews2019, Gettelman2019}, which is a
+    possible explanation for the high \acs{ECS} values found in many
+    \acs{CMIP}6 models.
   }
   \label{fig:04:cloud_phase_change_feedback}
 \end{figure}
@@ -330,15 +330,15 @@ improved in many \acs{CMIP}6 models \autocite{BodasSalcedo2019, Gettelman2019,
 simulated \ac{TOA} shortwave \ac{CRE} with corresponding observations
 \autocite{Bock2020}. As a consequence, the strong negative cloud feedback
 described above that results from a cloud phase change from ice clouds in the
-present-day to liquid clouds in the future is removed (or significantly
-reduced) in those \acs{CMIP}6 models that simulate predominantly liquid clouds
-over the present-day Southern Ocean. This is illustrated in
+present-day to liquid clouds in the future is substantially reduced in those
+\acs{CMIP}6 models that simulate predominantly liquid clouds over the
+present-day Southern Ocean. This is illustrated in
 \cref{fig:04:cloud_phase_change_feedback} (orange arrows). Moreover, this
 reduction of the negative shortwave cloud phase change feedback increases the
 global net cloud feedback \autocite{BodasSalcedo2019, Tan2016} and eventually
 the \ac{ECS} of the affected \acs{CMIP}6 models \autocite{Andrews2019,
-  Gettelman2019}, offering a possible explanation for the high \ac{ECS} values
-in some \acs{CMIP}6 models.
+  Gettelman2019}, offering a possible explanation for the high \ac{ECS} values in
+some \acs{CMIP}6 models.
 
 \begin{figure}[p]
   \centering
@@ -409,12 +409,12 @@ its difference to the \acs{CMIP}5 \ac{MMM} in
 dominates the net \ac{CRE} feedback parameter over large swaths of the globe
 in the \acs{CMIP}6 \ac{MMM}. The sign change at approximately $60
 \unit{\degree S}$ in the shortwave \ac{CRE} feedback parameter (see
-\cref{fig:04:cloud_feedback_parameters:b}) shows where the climate models are
-switching from simulating almost purely liquid clouds (north of $60
-\unit{\degree S}$) to clouds with an increasing ice component (south of $60
-\unit{\degree S}$) in their pre-industrial and present-day experiments. The
-increasing fraction of ice in the simulated mixed-phase clouds when moving
-south supports a negative shortwave cloud feedback on warming in these areas.
+\cref{fig:04:cloud_feedback_parameters:c}) roughly shows where the climate
+models simulate a high fraction of ice clouds (south of $60 \unit{\degree
+  S}$) for which possible phase changes under global warming are potentially
+important. Such possible phase changes (from ice to liquid) contribute to a
+negative shortwave cloud feedback in this region as liquid clouds tend to be
+more reflective than ice clouds with a similar cloud water content.
 \Cref{fig:04:cloud_feedback_parameters:b,fig:04:cloud_feedback_parameters:d}
 show a higher shortwave and net \ac{CRE} feedback parameter over the Southern
 Ocean in \acs{CMIP}6 compared to \acs{CMIP}5. This is consistent to the

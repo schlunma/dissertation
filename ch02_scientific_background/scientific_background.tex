@@ -547,19 +547,19 @@ equilibrium ($N = 0$), \cref{eq:02:N,eq:02:linear_response} imply
 \begin{equation}
   \Delta T = -\frac{F}{\lambda}.
   \label{eq:02:delta_t_eq}
-\end{equation}
-Thus, the change in \ac{GSAT} in radiative equilibrium can be easily calculated
-from the external forcing $F$ and the climate feedback parameter $\lambda$. The
-steady state values for $F$ and $\lambda$ can be estimated from a \nxcotwo{4}
-simulation that is not in equilibrium by extrapolation with a linear regression
-\autocite{Gregory2004}. For this method, the so-called \emph{Gregory
-  regression}, the global and annual mean net \ac{TOA} radiation $N$ versus the
-change in the annual mean \ac{GSAT} $\Delta T$ for all 150 years of the
-\nxcotwo{4} run are plotted (see \cref{fig:02:gregory_regression}). To account
-for energy leakage and remove any model drift present in the control climate, a
-linear fit of the corresponding pre-industrial control run is subtracted from
-the \nxcotwo{4} simulation beforehand \autocite{Andrews2012}. Since the
-combination of \cref{eq:02:N,eq:02:linear_response} yields
+\end{equation} Thus, the change in \ac{GSAT} in radiative equilibrium can be
+easily calculated from the external forcing $F$ and the climate feedback
+parameter $\lambda$. The steady state values for $F$ and $\lambda$ can be
+estimated from a \nxcotwo{4} simulation that is not in equilibrium by
+extrapolation with a linear regression \autocite{Gregory2004}. For this
+so-called \emph{Gregory regression} (see \cref{fig:02:gregory_regression}), the
+global and annual mean net \ac{TOA} radiation $N$ versus the change in the
+annual mean \ac{GSAT} $\Delta T$ for all 150 years of the \nxcotwo{4} run are
+plotted. To account for energy leakage and remove any model drift present in
+the control climate, a linear fit of the corresponding pre-industrial control
+run is subtracted from the \nxcotwo{4} simulation beforehand
+\autocite{Andrews2012}. Since the combination of
+\cref{eq:02:N,eq:02:linear_response} yields
 \begin{equation}
   N = F + \lambda \cdot \Delta T,
   \label{eq:02:N_vs_delta_t}
@@ -573,6 +573,25 @@ $F$ is now given by the \yintercept{} of this linear regression
 The factor of $2$ in the denominator accounts for the fact the traditional
 equilibrium climate sensitivity is defined for an abrupt \ac{CO2} doubling,
 whereas here a simulation with an abrupt quadrupling is considered.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\FigureWidth{}]{
+    ch02_scientific_background/figs/gregory_regression_different_years.png}
+  \caption[
+  Gregory regression for different time periods.
+  ]{
+    As in \cref{fig:02:gregory_regression} but for different time periods
+    considered in the Gregory regression resulting in different values for the
+    \acf{ECS} and the climate feedback parameter $\lambda$. Dark gray, blue,
+    red and orange colors correspond to the \acf{CESM} of the \acf{NCAR} for
+    different time periods of a long running simulation (see legend). The
+    initial years are simulated many times for different initial conditions.
+    Light gray colors correspond to the \acs{CMIP}5 ensemble (150 years each).
+    \SpringerAdaptedFrom{Knutti2017}.
+  }
+  \label{fig:02:gregory_regression_different_years}
+\end{figure}
 
 Although commonly used in the literature, the \ac{ECS} is known to be only an
 approximation of the true equilibrium climate sensitivity. One major reason for
@@ -594,25 +613,6 @@ between the equilibrium climate sensitivity and \ac{ECS} is the use of a
 denominator of \cref{eq:02:ecs} only partly compensates this difference since
 the radiative forcing logarithmically depends on the atmospheric \ac{CO2}
 concentration \autocite{Huang2014}.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\FigureWidth{}]{
-    ch02_scientific_background/figs/gregory_regression_different_years.png}
-  \caption[
-    Gregory regression for different time periods.
-  ]{
-    As in \cref{fig:02:gregory_regression} but for different time periods
-    considered in the Gregory regression resulting in different values for the
-    \acf{ECS} and the climate feedback parameter $\lambda$. Dark gray, blue,
-    red and orange colors correspond to the \acf{CESM} of the \acf{NCAR} for
-    different time periods of a long running simulation (see legend). The
-    initial years are simulated many times for different initial conditions.
-    Light gray colors correspond to the \acs{CMIP}5 ensemble (150 years each).
-    \SpringerAdaptedFrom{Knutti2017}.
-  }
-  \label{fig:02:gregory_regression_different_years}
-\end{figure}
 
 However, despite these deficiencies the \ac{ECS} is still a practical estimate
 of the equilibrium climate sensitivity. With the help of climate models,
@@ -849,9 +849,8 @@ Hemisphere winter and local minima in the Northern Hemisphere summer
 its location in the middle of the Pacific Ocean, the Mauna Loa Observatory
 offers perfect conditions for \ac{CO2} measurements by being far away from big
 population centers. Moreover, its elevation of more than $3000 \unit{m}$
-provides access to the well-mixed air of the Pacific Ocean in high altitudes,
-which prevents any interference from the vegetation present on the Hawaiian
-Islands.
+provides access to the free troposphere where \ac{CO2} is well mixed, which
+prevents any interference from the vegetation present on the Hawaiian Islands.
 
 \begin{figure}[t]
   \centering
@@ -864,27 +863,27 @@ Islands.
     Mauna Loa Observatory, Hawaii ($19.5 \unit{\degree N}$, $155.6
     \unit{\degree W}$; elevation: $3397 \unit{m}$) from 1958 to 2019
     \autocite{Keeling2005}. The steady increase of the atmospheric \acs{CO2}
-    concentration is superimposed with a seasonal oscillation caused by the
-    seasonal \acs{CO2} cycle (see \cref{subsec:02:carbon_cycle_overview}).
+    concentration is superimposed with a pronounced seasonal oscillation caused
+    by the seasonal \acs{CO2} cycle (see
+    \cref{subsec:02:carbon_cycle_overview}).
   }
   \label{fig:02:keeling_curve}
 \end{figure}
 
 Apart from warming the Earth by altering its radiation budget, the
 anthropogenically emitted \ac{CO2} directly influences the carbon exchange
-fluxes of the global carbon cycle. Due to the excessive carbon in the
-atmosphere, there is now a net carbon flux from the atmosphere into the land
-and ocean reservoirs (see \cref{fig:02:carbon_cycle_perturbation}). Thus, the
-carbon cycle is not in a steady state anymore. In the decade
-\range{2010}{2019}, anthropogenic activities caused net carbon fluxes of $3.4
-\unit{\GtCyr{}}$ from the atmosphere into the terrestrial biosphere due to
-increased plant photosynthesis and $2.5 \unit{\GtCyr{}}$ from the atmosphere
-into the ocean due to increase dissolution of \ac{CO2} into the sea
-\autocite{Friedlingstein2020}. In the same time, the amount of carbon in the
-atmosphere reservoir increased with a rate of $5.1 \unit{\GtCyr{}}$, indicating
-that only about half of the anthropogenic \ac{CO2} emissions in the last decade
-remained in the atmosphere \autocite{Friedlingstein2020} where they can act as
-\ac{GHG}.
+fluxes of the global carbon cycle. Due to the excess carbon in the atmosphere,
+there is now a net carbon flux from the atmosphere into the land and ocean
+reservoirs (see \cref{fig:02:carbon_cycle_perturbation}). Thus, the carbon
+cycle is not in a steady state anymore. In the decade \range{2010}{2019},
+anthropogenic activities caused net carbon fluxes of $3.4 \unit{\GtCyr{}}$ from
+the atmosphere into the terrestrial biosphere due to increased plant
+photosynthesis and $2.5 \unit{\GtCyr{}}$ from the atmosphere into the ocean due
+to increase dissolution of \ac{CO2} into the sea \autocite{Friedlingstein2020}.
+In the same time, the amount of carbon in the atmosphere reservoir increased
+with a rate of $5.1 \unit{\GtCyr{}}$, indicating that only about half of the
+anthropogenic \ac{CO2} emissions in the last decade remained in the atmosphere
+\autocite{Friedlingstein2020} where they can act as \ac{GHG}.
 
 \begin{figure}[t]
   \centering
@@ -935,16 +934,18 @@ uptake and enhances climate change \autocite{Gregory2009}.
 As shown in \cref{subsec:02:source_of_uncertainties}, projections of the future
 climate are always associated with uncertainties. In the context of this
 thesis, the most relevant source of uncertainty is the climate response
-uncertainty. It originates from our imperfect knowledge on how the climate
-system will respond to external forcing. In a multi-model ensemble (\eg{} from
-\ac{CMIP}), this is expressed as the different responses of the different
-climate models to a given forcing. A common approach to distill information
-about a projected quantity from multi-model ensembles is to treat the
-arithmetic \ac{MMM} and the multi-model range as best estimate and uncertainty
-measure of this quantity \autocite{Collins2013}. This \emph{model democracy}
-approach basically assumes that all climate models are independent, equally
-plausible, distributed around reality and that the projected multi-model range
-is representative for the uncertainty in the projected quantity
+uncertainty. It originates from necessary simplifications that have to be
+implemented into the climate models due to limited computational resources  and
+from our imperfect knowledge on how the climate system will respond to external
+forcing. In a multi-model ensemble (\eg{} from \ac{CMIP}), the climate response
+uncertainty is expressed in the different responses of the different climate
+models to a given forcing. A common approach to distill information about a
+projected quantity from multi-model ensembles is to treat the arithmetic
+\ac{MMM} and the multi-model range as best estimate and uncertainty measure of
+this quantity \autocite{Collins2013}. This \emph{model democracy} approach
+basically assumes that all climate models are independent, equally plausible,
+distributed around reality and that the projected multi-model range is
+representative for the uncertainty in the projected quantity
 \autocite{Knutti2017a}. However, since the \ac{CMIP} ensembles, sometimes
 referred to as \emph{ensembles of opportunity}, have not been designed to
 represent a true statistical sample of the reality composed of independent
