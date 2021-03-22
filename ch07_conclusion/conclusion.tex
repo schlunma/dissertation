@@ -16,19 +16,19 @@
 \label{sec:07:overall_summary}
 
 The analysis of future climate projections from numerical climate model
-simulations is of paramount importance for an accurate quantification of the
-future climate change. Since this involves metrics of public interest like the
-allowable fossil fuel emissions to meet particular warming targets, for example
-the $1.5 \unit{\degreeCelsius}$ of the Paris Agreement \autocite{UNFCCC2015},
-research in this field of science is not only relevant to climate scientists
-but to policymakers and the whole human society. In the light of the large
-spread of climate sensitivity in the most recent generation of climate models
-from \acs{CMIP}6 \autocite{Meehl2020}, a careful statistical evaluation and
-refinement of the output of multi-model climate projections is as relevant as
-ever. This thesis quantifies the associated uncertainties, presents the
-evaluation of established methods to reduce these uncertainties in the new
-climate model ensemble and finally introduces a novel alternative technique
-based on supervised \ac{ML}.
+simulations is of paramount importance to assess future climate change under
+different forcing scenarios. Since this involves metrics of public interest
+like the allowable fossil fuel emissions to meet particular warming targets,
+for example the $1.5 \unit{\degreeCelsius}$ of the Paris Agreement
+\autocite{UNFCCC2015}, research in this field of science is not only relevant
+to climate scientists but to policymakers and the whole human society. In the
+light of the large spread of climate sensitivity in the most recent generation
+of climate models from \acs{CMIP}6 \autocite{Meehl2020}, a careful statistical
+evaluation and refinement of the output of multi-model climate projections is
+as relevant as ever. This thesis quantifies the associated uncertainties,
+presents the evaluation of established methods to reduce these uncertainties in
+the new climate model ensemble and finally introduces a novel alternative
+technique based on supervised \ac{ML}.
 
 To answer the \namecrefs{enum:01:question_1} posed in
 \cref{sec:01:key_science_questions} and to ensure a consistent evaluation of
@@ -36,17 +36,17 @@ the participating climate model ensembles in this thesis, the \ac{ESMValTool}
 is used, an open-source community diagnostics and performance metrics tool for
 the routine evaluation of \acp{ESM}. All analyses shown in this thesis are
 performed with the \ac{ESMValTool}. Apart from that, further substantial
-changes and additions to the code base of the tool have been implemented (see
-\cref{ch:03:esmvaltool}), which lead to co-authorship in the scientific
-documentation of the \ac{ESMValTool} \autocite{Eyring2020, Lauer2020,
-  Righi2020, Weigel2020}. Since the open-source tool is freely available for
-everyone, these improvements are beneficial for the entire scientific
-community.
+changes and additions to the code base of the tool have been implemented as
+part of this thesis (see \cref{ch:03:esmvaltool}), which led to co-authorship
+in the technical and scientific documentation of the \ac{ESMValTool}
+\autocite{Eyring2020, Lauer2020, Righi2020, Weigel2020}. Since the open-source
+tool is freely available, the code that has been implemented as part of this
+thesis is beneficial for the entire scientific community.
 
-In a first analysis, the climate sensitivity metrics \ac{ECS} and \ac{TCR} are
-evaluated for the latest generation of \acp{ESM} from \acs{CMIP}6. This work,
-which is presented in \cref{ch:04:papers_ecs_tcr_assessment} and already
-published in \textcite{Bock2020, Meehl2020}, directly addresses
+In the first study of this thesis, the climate sensitivity metrics \ac{ECS} and
+\ac{TCR} are evaluated for the latest generation of \acp{ESM} from \acs{CMIP}6.
+This work, which is presented in \cref{ch:04:papers_ecs_tcr_assessment} and
+already published in \textcite{Bock2020, Meehl2020}, directly addresses
 \cref{enum:01:question_1} (\enquote{\emph{\KeyScienceQuestionOne{}}}). For
 \ac{ECS}, a \acs{CMIP}6 model range of $\rangeunit{1.8}{5.6}{K}$ is found,
 which is higher on the upper and lower end than any model range from previous
@@ -62,50 +62,52 @@ range of \acs{CMIP}6 is $\rangeunit{1.3}{3.0}{K}$, which also exceeds the
 \acs{CMIP}5 range of $\rangeunit{1.1}{2.5}{K}$ and the assessed range from
 \acs{AR}5 of $\rangeunit{1.0}{2.5}{K}$. A possible reason for the increased
 climate sensitivity in many \acs{CMIP}6 models is a change in the microphysical
-representation of mixed-phase clouds above the Southern Ocean. For one thing,
-this change leads to an improved simulation of the shortwave \ac{CRE} in these
-models when compared to observations. However, this change also substantially
-reduces the strong negative shortwave cloud feedback over the Southern Ocean
-that is present in previous \ac{CMIP} generations and that results from a cloud
-phase change from ice clouds in the present-day to liquid clouds in the future.
-In the affected \acs{CMIP}6 models, this cloud phase change due to warming is
-reduced by allowing for supercooled cloud liquid. As a consequence, these
-models simulate less cloud ice over the present-day Southern Ocean than their
-predecessor versions with no supercooled cloud liquid.
+representation of mixed-phase clouds above the Southern Ocean. This change
+leads to an improved simulation of the shortwave \ac{CRE} in these models when
+compared to observations. However, this change also substantially reduces the
+strong negative shortwave cloud feedback over the Southern Ocean that is
+present in previous \ac{CMIP} generations and that results from a cloud phase
+change from ice clouds in the present-day to liquid clouds in the future. In
+the affected \acs{CMIP}6 models, this cloud phase change due to warming is
+reduced since these models simulate less cloud ice over the present-day
+Southern Ocean than their predecessor versions with no supercooled cloud
+liquid.
 
 In order to reduce this large range of \ac{ECS} in the latest generation of
-climate  models, suitable emergent constraints on the \acs{CMIP}6 ensemble are
-evaluated. Emergent constraints use a physically-based inter-model relationship
-between an observable quantity of the Earth system and a target variable to
-reduce uncertainties in the target variable with observations
-\autocite{Allen2002}. In total eleven emergent constraints on \ac{ECS} are
-assessed, which are mostly related to cloud feedbacks since these constitute
-the most important source of uncertainty for \ac{ECS} \autocite{Boucher2013,
-  Flato2013}. Since all of the evaluated emergent constraints have been derived
-on the \acs{CMIP}3 or \acs{CMIP}5 ensemble, out-of-sample tests on the emergent
-constraints can be performed by assessing whether they still hold for the
-\acs{CMIP}6 models. In this study, which is shown in \cref{ch:05:paper_ecs} and
-already published in \textcite{Schlund2020a}, a substantial reduction of skill
-for the majority of emergent constraints is found when applied to the
-\acs{CMIP}6 ensemble in comparison to the \acs{CMIP}5 ensemble. This drop in
-skill is expressed as a decrease of the coefficient of determination $R^2$ of
-the emergent relationship and a decrease of the statistical significance using
-the null hypothesis that there is no correlation between the predictor and
-\ac{ECS}. Moreover, the corresponding \acp{PDF} for the emergent constraints
-show higher $66 \unit{\%}$ \ac{ECS} ranges ($\rangeunit{17}{83}{\%}$
-confidence) for almost all emergent constraints, resulting in values of
-$\rangeunit{1.32}{2.70}{K}$ for \acs{CMIP}6 (\acs{CMIP}5:
-$\rangeunit{1.16}{1.75}{K}$). Averaged over all emergent constraints, this is
-an increase in the $66 \unit{\%}$ \ac{ECS} range of $51 \unit{\%}$. Similarly,
-the best estimates for \ac{ECS} show values of $\rangeunit{2.97}{3.88}{K}$ in
-\acs{CMIP}5 and $\rangeunit{3.48}{4.32}{K}$ in \acs{CMIP}6, resulting in an
-increase of about $12 \unit{\%}$ averaged over all emergent constraints. Thus,
-\cref{enum:01:question_2} (\enquote{\emph{\KeyScienceQuestionTwo{}}}) needs to
-be answered with a \enquote{not very well} for the \acs{CMIP}6 ensemble. The
-increased best estimates and spreads resulting from the emergent constraints in
-\acs{CMIP}6 are likely related to the increased \ac{MMM} and multi-model spread
-of \ac{ECS} in \acs{CMIP}6. A possible reason for the reduced skill of the
-emergent constraints when applied to the \acs{CMIP}6 ensemble is the increased
+climate  models, already-published emergent constraints that have been derived
+on models from the previous \ac{CMIP} generations \acs{CMIP}3 and \acs{CMIP}5
+are evaluated for their skill in the \acs{CMIP}6 ensemble. Emergent constraints
+use a physically-based inter-model relationship between an observable quantity
+of the Earth system and a target variable to reduce uncertainties in the target
+variable with observations \autocite{Allen2002}. In total eleven emergent
+constraints on \ac{ECS} are assessed, which are mostly related to cloud
+feedbacks since these constitute the most important source of uncertainty for
+\ac{ECS} \autocite{Boucher2013, Flato2013}. Since all of the evaluated emergent
+constraints have been derived on the \acs{CMIP}3 or \acs{CMIP}5 ensemble,
+out-of-sample tests on the emergent constraints can be performed by assessing
+whether they still hold for the \acs{CMIP}6 models. In this study, which is
+shown in \cref{ch:05:paper_ecs} and already published in
+\textcite{Schlund2020a}, a substantial reduction of skill for the majority of
+emergent constraints is found when applied to the \acs{CMIP}6 ensemble in
+comparison to the \acs{CMIP}5 ensemble. This drop in skill is expressed as a
+decrease of the coefficient of determination $R^2$ of the emergent relationship
+and a decrease of the statistical significance using the null hypothesis that
+there is no correlation between the predictor and \ac{ECS}. Moreover, the
+corresponding \acp{PDF} for the emergent constraints show higher $66 \unit{\%}$
+\ac{ECS} ranges ($\rangeunit{17}{83}{\%}$ confidence) for almost all emergent
+constraints, resulting in values of $\rangeunit{1.32}{2.70}{K}$ for \acs{CMIP}6
+(\acs{CMIP}5: $\rangeunit{1.16}{1.75}{K}$). Averaged over all emergent
+constraints, this is an increase in the $66 \unit{\%}$ \ac{ECS} range of $51
+\unit{\%}$. Similarly, the best estimates for \ac{ECS} show values of
+$\rangeunit{2.97}{3.88}{K}$ in \acs{CMIP}5 and $\rangeunit{3.48}{4.32}{K}$ in
+\acs{CMIP}6, resulting in an increase of about $12 \unit{\%}$ averaged over all
+emergent constraints. Thus, \cref{enum:01:question_2}
+(\enquote{\emph{\KeyScienceQuestionTwo{}}}) needs to be answered with a
+\enquote{not very well} for the \acs{CMIP}6 ensemble. The increased best
+estimates and spreads resulting from the emergent constraints in \acs{CMIP}6
+are likely related to the increased \ac{MMM} and multi-model spread of \ac{ECS}
+in \acs{CMIP}6. A possible reason for the reduced skill of the emergent
+constraints when applied to the \acs{CMIP}6 ensemble is the increased
 complexity of the \acs{CMIP}6 models: A basic assumption for these
 single-process-oriented emergent constraints is that a single observable
 process dominates the uncertainty in \ac{ECS}, which might not be valid anymore
@@ -153,41 +155,34 @@ the evaluation of the global and local feature importance allows further
 insights into the \ac{ML} model. For the first target variable (absolute
 \ac{GPP}), historical \ac{GPP} is by far the most important predictor, which
 can be explained with a correction of the historical bias in \ac{GPP} by the
-new approach. For the second variable, \ac{T} and \ac{LAI} are the dominant
-features. This study directly addresses \cref{enum:01:question_3}
-(\enquote{\emph{\KeyScienceQuestionThree{}}}), which can be confidently
-answered with \enquote{yes} based on the results found.
+new approach. For the second variable (fractional change in \ac{GPP}), \ac{T}
+and \ac{LAI} are the dominant features. This study directly addresses
+\cref{enum:01:question_3} (\enquote{\emph{\KeyScienceQuestionThree{}}}), which
+can be confidently answered with \enquote{yes} based on the results found.
 
 
 \section{Outlook}
 \label{sec:07:outlook}
 
-Climate change is a global phenomenon affecting the entire human society. Due
-to the vastly complex nature of the Earth system, accurately quantifying future
-climate change is a highly non-trivial task. This thesis covers several
-important aspects of the climate system and metrics describing the changing
-climate, but it is by no means complete and can be extended in an arbitrary
-number of ways. This final \namecref{sec:07:outlook} presents several
-suggestions on possible ways forward.
-
 Climate sensitivity is a policy-relevant and easy-to-use metric to assess the
 strength of climate change. The range of model results for this important
-climate metric, however, remains large and has not been narrowed down over the
-last decades. In the latest generation of climate models contributing to
-\acs{CMIP}6, the range has even increased.
+climate metric, however, remains large and has not been narrowed over the last
+decades. In the latest generation of climate models contributing to
+\acs{CMIP}6, the range has even increased \autocite{Meehl2020}.
 \Cref{ch:04:papers_ecs_tcr_assessment} presents two possible reasons for this:
 changes in the aerosol-cloud interaction and changes in the shortwave cloud
 phase change feedback over the Southern Ocean. While these are likely
 explanations, there might be additional relevant aspects that have not been
 analyzed in detail yet. This could include additional feedback processes that
-are not present in older \ac{CMIP} generations or missing feedback processes
-that appear in previous \ac{CMIP} models but are absent in the \acs{CMIP}6
-ensemble. Obvious candidates for these feedback processes are cloud-related
-feedbacks, which pose a major source of uncertainty in climate sensitivity in
-modern-day \acp{ESM} \autocite{Boucher2013}. Identifying and quantifying such
-feedback mechanisms can further help to gain a better understanding of the
-\acs{CMIP}6 models and potentially to reduce associated uncertainties in the
-entire multi-model ensemble.
+are not present in older \ac{CMIP} generations. Obvious candidates for these
+feedback processes are cloud-related feedbacks, which pose a major source of
+uncertainty in climate sensitivity in modern-day \acp{ESM}
+\autocite{Boucher2013}. Identifying and quantifying such feedback mechanisms
+can further help to gain a better understanding of the \acs{CMIP}6 models and
+potentially to reduce associated uncertainties in the entire multi-model
+ensemble. A potentially interesting process relevant in this context is the
+influence of the midlatitude jet position on clouds and \acp{CRE}
+\autocite{Grise2016}.
 
 A promising way forward to reduce uncertainties in multi-model climate
 projections is to apply the new flexible \ac{ML}-based climate model weighting
@@ -216,10 +211,10 @@ supercomputers has the potential for enormous improvements in climate modeling
 and analysis \autocite{Reichstein2019}. Apart from the presented \ac{ML}-based
 weighting approach, further possible applications of \ac{AI} and \ac{ML} in
 climate science involve for example \ac{ML}-based parametrizations that are
-learned from high-resolution climate models \autocite{Rasp2018}, \ac{ML}-based
-analysis and prediction of forcing patterns \autocite{Barnes2019,
+learned from high-resolution climate models \autocite{Gentine2018, Rasp2018},
+\ac{ML}-based analysis and prediction of forcing patterns \autocite{Barnes2019,
   Mansfield2020} or learning of entire \acp{ESM} from observational products
 \autocite{Geer2021}. Therefore, the foundation for innovative and
 groundbreaking research in climate science for the near future has been laid,
-which will hopefully help us in further understanding and fighting one of the
+which will help to further understand the Earth system and fight one of the
 greatest challenges for humankind today: climate change.
