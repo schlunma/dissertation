@@ -41,14 +41,28 @@ of the Earth that we can analyze when exposed to different external conditions
 the climate by only considering present-day observations is rather difficult.
 
 A possible way out is given by numerical climate models, which offer the
-possibility to simulate the Earth's climate on a computer. The first numerical
-climate models came up in the 1960s and were based on weather prediction models
-\autocite{Flato2011}. Early models from the 1970s simulated only the physical
-components of the climate system: atmosphere, land surface, ocean and sea ice
-(see \cref{fig:02:esms_historical_evolution}). The basis of these so-called
-\acp{AOGCM} \autocite{Flato2013} is the numerical solving of the differential
-equations describing the exchange of energy, momentum and matter between and
-within these physical components.
+possibility to simulate the Earth's climate on a computer. To efficiently
+replicate the vastly complex Earth system with finite computational resources,
+climate models divide the Earth into a set of \emph{grid cells}. The typical
+size of an atmospheric grid cell in a modern-day global climate model is about
+$100 \unit{km}$ along the horizontal dimensions (latitude and longitude) and $1
+\unit{km}$ along the vertical dimension (pressure level or height). In
+addition, the temporal evolution of the Earth system is described using
+discrete time steps, which are about $30 \unit{min}$ long in a modern-day
+global climate model. For each grid cell and time step, usually a single value
+per model variable is given. Examples for such variables provided by a climate
+model are the atmospheric prognostic variables velocity (horizontal and
+vertical), temperature, specific humidity, pressure and density. These
+prognostic variables are related to each other via the \emph{primitive
+  equations}, which is a set of partial differential equations that can be
+derived from the conservation of momentum, mass, energy and moisture
+\autocite{Holton2004}. To progress further in time, these primitive equations
+are solved numerically by the dynamical core of the climate models, which
+eventually describes the Earth's large-scale atmospheric motion. Similar to
+this, many other processes of the Earth system are simulated by the climate
+models using other fundamental physical laws and principles. As opposed to
+these calculated variables that form the \emph{output} of climate models, the
+corresponding \emph{input} is mainly given by the radiative forcing.
 
 \begin{figure}[t]
   \centering
@@ -69,12 +83,31 @@ within these physical components.
   \label{fig:02:esms_historical_evolution}
 \end{figure}
 
-Over the course of the years, climate models became more and more complex by
-including a wider range of processes within the components, but also by
-introducing new components to the coupled system. Examples of these are
-aerosols, the carbon cycle, a dynamic vegetation, atmospheric chemistry and
-land ice (see \cref{fig:02:esms_historical_evolution}). \acp{AOGCM} coupled to
-these additional components are called \acfp{ESM}, which are the current
+Many processes in the Earth system occur at spatial scales much smaller than
+the size of a typical grid cell. Illustrative examples for this are clouds,
+which are usually much smaller than a $100 \unit{km} \times 100 \unit{km}$ grid
+cell, but still play an important role in the overall climate system by
+reflecting incoming and outgoing radiation \autocite{Boucher2013}. In order to
+approximate these subgrid-scale processes, a concept called
+\emph{parameterization} is used. Instead of simulating a process exactly,
+parameterizations aim to represent the effect of that process at the grid scale
+of the climate model by generating the appropriate forcing terms for the rest
+of the system and the rest of the processes \autocite{Gettelman2016}.
+Parameterizations are necessary to simulate many processes of the Earth system,
+such as surface heat and moisture fluxes, moist convection, turbulent mixing
+and radiation \autocite{Holton2004}.
+
+The first numerical climate models came up in the 1960s and were based on
+weather prediction models \autocite{Flato2011}. Early models from the 1970s
+simulated only the physical components of the climate system: atmosphere, land
+surface, ocean and sea ice (see \cref{fig:02:esms_historical_evolution}). These
+models are called \emph{\acp{AOGCM}} \autocite{Flato2013}. Over the course of
+the years, climate models became more and more complex by including a wider
+range of processes within the components, but also by introducing new
+components to the coupled system. Examples of these are aerosols, the carbon
+cycle, a dynamic vegetation, atmospheric chemistry and land ice (see
+\cref{fig:02:esms_historical_evolution}). \acp{AOGCM} coupled to these
+additional components are called \emph{\acfp{ESM}}, which are the current
 state-of-the-art models that allow the most sophisticated simulations of the
 Earth's climate. In contrast to \acp{AOGCM}, \acp{ESM} enable the simulation of
 biological and chemical processes in addition to the dynamics of the physical
@@ -262,12 +295,8 @@ different ways that are all consistent with our current knowledge and models
 response uncertainty is often also called \emph{model uncertainty} and reflects
 the different responses of the different climate models to a given forcing.
 Even though all climate models are built on the same physical principles, they
-differ in terms of spatial resolution, processes included and parametrizations
-of unresolved processes. The latter can be thought of as different
-approximations that are necessary to represent processes that take place on
-scales smaller than the common size of grid boxes in modern global climate
-models (about $\ang{1} \times \ang{1}$ horizontally), which is for example the
-case for cloud processes and vegetation processes.
+differ in terms of spatial resolution, processes included and parameterizations
+of unresolved processes (see \cref{subsec:02:numerical_climate_modeling}).
 
 These differences in the climate models also give rise to different intensities
 of \emph{climate feedbacks} (or even their presence/absence) in the models. A
@@ -935,7 +964,7 @@ As shown in \cref{subsec:02:source_of_uncertainties}, projections of the future
 climate are always associated with uncertainties. In the context of this
 thesis, the most relevant source of uncertainty is the climate response
 uncertainty. It originates from necessary simplifications that have to be
-implemented into the climate models due to limited computational resources  and
+implemented into the climate models due to limited computational resources and
 from our imperfect knowledge on how the climate system will respond to external
 forcing. In a multi-model ensemble (\eg{} from \ac{CMIP}), the climate response
 uncertainty is expressed in the different responses of the different climate
