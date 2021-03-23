@@ -44,25 +44,25 @@ A possible way out is given by numerical climate models, which offer the
 possibility to simulate the Earth's climate on a computer. To efficiently
 replicate the vastly complex Earth system with finite computational resources,
 climate models divide the Earth into a set of \emph{grid cells}. The typical
-size of an atmospheric grid cell in a modern-day global climate model is about
+size of an atmospheric grid cell in modern-day global climate models is about
 $100 \unit{km}$ along the horizontal dimensions (latitude and longitude) and $1
 \unit{km}$ along the vertical dimension (pressure level or height). In
-addition, the temporal evolution of the Earth system is described using
-discrete time steps, which are about $30 \unit{min}$ long in a modern-day
-global climate model. For each grid cell and time step, usually a single value
-per model variable is given. Examples for such variables provided by a climate
+addition, also the temporal evolution of the Earth system is discretized using
+time steps that are typically about $30 \unit{min}$ long in modern-day global
+climate models. For each grid cell and time step, usually a single value per
+model variable is given. Examples for such variables provided by a climate
 model are the atmospheric prognostic variables velocity (horizontal and
 vertical), temperature, specific humidity, pressure and density. These
 prognostic variables are related to each other via the \emph{primitive
-  equations}, which is a set of partial differential equations that can be
-derived from the conservation of momentum, mass, energy and moisture
-\autocite{Holton2004}. To progress further in time, these primitive equations
-are solved numerically by the dynamical core of the climate models, which
-eventually describes the Earth's large-scale atmospheric motion. Similar to
-this, many other processes of the Earth system are simulated by the climate
-models using other fundamental physical laws and principles. As opposed to
-these calculated variables that form the \emph{output} of climate models, the
-corresponding \emph{input} is mainly given by the radiative forcing.
+  equations}, a set of partial differential equations that can be derived from
+the conservation of momentum, mass, energy and moisture \autocite{Holton2004}.
+To progress further in time, these primitive equations are solved numerically
+by the dynamical core of the climate models, which eventually describes the
+Earth's large-scale atmospheric motions. Similar to this, many other processes
+of the Earth system are simulated by the climate models using other fundamental
+physical laws and principles. As opposed to these calculated variables that
+form the output of climate models, the corresponding input is mainly given by
+the radiative forcing.
 
 \begin{figure}[t]
   \centering
@@ -85,17 +85,17 @@ corresponding \emph{input} is mainly given by the radiative forcing.
 
 Many processes in the Earth system occur at spatial scales much smaller than
 the size of a typical grid cell. Illustrative examples for this are clouds,
-which are usually much smaller than a $100 \unit{km} \times 100 \unit{km}$ grid
+which are usually smaller than a $100 \unit{km} \times 100 \unit{km}$ grid
 cell, but still play an important role in the overall climate system by
 reflecting incoming and outgoing radiation \autocite{Boucher2013}. In order to
-approximate these subgrid-scale processes, a concept called
+reasonably approximate these subgrid-scale processes, a concept called
 \emph{parameterization} is used. Instead of simulating a process exactly,
 parameterizations aim to represent the effect of that process at the grid scale
 of the climate model by generating the appropriate forcing terms for the rest
 of the system and the rest of the processes \autocite{Gettelman2016}.
 Parameterizations are necessary to simulate many processes of the Earth system,
-such as surface heat and moisture fluxes, moist convection, turbulent mixing
-and radiation \autocite{Holton2004}.
+for example surface heat and moisture fluxes, moist convection, turbulent
+mixing and radiation \autocite{Holton2004}.
 
 The first numerical climate models came up in the 1960s and were based on
 weather prediction models \autocite{Flato2011}. Early models from the 1970s
@@ -954,6 +954,53 @@ remains in the atmosphere. For the ocean, increased temperatures lead to a
 reduction of vertical transport in the ocean resulting from increased stability
 and reduced solubility of \ac{CO2} in the sea, which reduces the ocean carbon
 uptake and enhances climate change \autocite{Gregory2009}.
+
+
+\subsection{Representation in \aclp{ESM}}
+\label{subsec:02:carbon_cycle_representation}
+
+In modern \acp{ESM}, the carbon cycle is usually represented by a land carbon
+cycle model and an ocean carbon cycle model that are both coupled to the other
+components of the \ac{ESM}. An overarching principle is the conservation of the
+total carbon mass in the Earth system \autocite{Gregory2009}, \ie{}
+\begin{equation}
+  \CE{} = \CA{} + \CL{} + \CO{}.
+  \label{eq:02:carbon_balance}
+\end{equation}
+Here, $\CE{}$ represents the cumulative anthropogenic carbon emissions that are
+distributed among the three main carbon reservoirs of the Earth system.
+$\CA{}$, $\CL{}$, and $\CO{}$ describe the corresponding changes in these
+carbon stores, namely the atmosphere, the terrestrial biosphere (land) and the
+ocean, respectively.
+
+Similar to many cloud processes, most carbon cycle--related processes need to
+be parameterized in \acp{ESM} since they occur on spatial scales much smaller
+than the typical grid cell sizes (see
+\cref{subsec:02:numerical_climate_modeling}). For the terrestrial carbon cycle,
+the major carbon exchange processes that need to be considered are
+photosynthesis, respiration and disturbances, which connect the atmospheric
+carbon reservoir and the land carbon reservoir. The latter mainly consists of
+the vegetation biomass, litter and soil. The terrestrial carbon exchange
+processes are commonly described with \ac{GPP}, \ac{NPP}, \ac{NEP} and
+\ac{NBP}, which are all illustrated in \cref{fig:02:carbon_cycle_processes}.
+\ac{GPP} describes the total carbon uptake of the vegetation by photosynthesis,
+while \ac{NPP} refers to the net carbon gain of the plants after accounting for
+autotrophic respiration ($\Ra{}$). \Ac{NEP} additionally considers
+heterotrophic respiration ($\Rh{}$) and describes the carbon uptake/release of
+the entire ecosystem. Finally, \ac{NBP} describes changes in the long-term
+carbon storage of the terrestrial biosphere by including disturbances like
+fires \autocite{Ciais2013}.
+
+The different land carbon cycle models integrated into modern \acp{ESM} use a
+variety of different parameterizations for the different processes
+\autocite{Arora2020}. Examples for the photosynthesis (\ac{GPP}) are given by
+\textcite{Farquhar1980} for \ch{C3} plants and \textcite{Collatz1992} for
+\ch{C4} plants. The terms \enquote{\ch{C3}} and \enquote{\ch{C4}} refer to the
+different metabolic pathways used in the carbon fixation during photosynthesis.
+In both cases, the enzyme \ac{RuBisCO} is an important catalyst for the
+corresponding chemical reactions. Both parameterizations utilize variables that
+are known to affect photosynthesis, such as the availability of light, the
+\ac{CO2} concentration, the soil moisture and the temperature.
 
 
 \section{Reducing Uncertainties in Multi-Model Climate Projections
