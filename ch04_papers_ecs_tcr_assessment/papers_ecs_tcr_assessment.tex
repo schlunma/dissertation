@@ -23,9 +23,9 @@ policy-relevant metrics like \ac{ECS} or \ac{TCR} for these new \acs{CMIP}6
 models is crucial since they provide vital information about the future climate
 of planet Earth. As the \ac{ESMValTool} is an excellent tool that allows for a
 quick and robust evaluation of new \ac{CMIP} data as soon as it gets published
-on the \ac{ESGF} servers (see \cref{sec:03:esmvaltool}), we use it to assess
-and analyze \ac{ECS} and \ac{TCR} of the \acs{CMIP}6 models and compare it to
-corresponding results of predecessor model generations and international
+on the \ac{ESGF} servers (see \cref{sec:03:esmvaltool}), it is used here to
+assess and analyze \ac{ECS} and \ac{TCR} of the \acs{CMIP}6 models and compare
+it to corresponding results of predecessor model generations and international
 climate assessments. This work is already published in two scientific papers:
 \textcite{Bock2020} and \textcite{Meehl2020}. For \textcite{Bock2020}, the
 author of this thesis contributed their figure 8 (a bar chart showing the
@@ -67,9 +67,9 @@ effects in the feedbacks, this slope changes over time, resulting in lower
 considered. In contrast to that, the transient response of the climate system
 \ac{TCR} is calculated from \ac{GSAT} data at the time of \ac{CO2} doubling in
 a \onepctcotwo{} run \commentcite{Bindoff2013}{see \cref{subsec:02:tcr}}. Using
-these two definitions and the \ac{ESMValTool}, we assess \ac{ECS} and \ac{TCR}
-for all \acs{CMIP}5 and \acs{CMIP}6 models where the necessary temperature and
-radiation data is available (as of \TheMonth{}).
+these two definitions and the \ac{ESMValTool}, \ac{ECS} and \ac{TCR} are
+assessed for all \acs{CMIP}5 and \acs{CMIP}6 models where the necessary
+temperature and radiation data is available (as of \TheMonth{}).
 \Cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6} give an overview over the
 results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
 
@@ -189,12 +189,12 @@ in a \acs{CMIP}6 \ac{ECS} model range of $\rangeunit{1.8}{5.6}{K}$ (as of
 bound, which is about $1.1 \unit{K}$ higher than the assessed upper bound of
 $4.5 \unit{K}$. Moreover, it is not only a small fraction of models that
 exceeds this upper bound: out of the 42 analyzed \acs{CMIP}6 models, a third
-(14 models) has an \ac{ECS} above $4.5 \unit{K}$. In addition to our analysis,
-several modeling centers independently confirmed high \ac{ECS} values in their
-models \autocite{Andrews2019, Gettelman2019, Wyser2020}. A list of possible
-reasons for the increased climate sensitivity in the \acs{CMIP}6 ensemble
-including aerosol-cloud interactions and changes in the shortwave cloud
-feedback over the Southern Ocean is given in
+(14 models) has an \ac{ECS} above $4.5 \unit{K}$. In addition to the analysis
+presented here, several modeling centers independently confirmed high \ac{ECS}
+values in their models \autocite{Andrews2019, BodasSalcedo2019, Gettelman2019,
+  Wyser2020}. A list of possible reasons for the increased climate sensitivity
+in the \acs{CMIP}6 ensemble including aerosol-cloud interactions and changes in
+the shortwave cloud feedback over the Southern Ocean is given in
 \cref{sec:04:possible_reasons_high_ecs_cmip6}.
 
 \begin{figure}[t]
@@ -268,7 +268,18 @@ have also been found for previous climate model generations
 \autocite{Kiehl2007, Forster2013}. However, due to the varying aerosol forcing
 over time, these relations cannot be used to tune \ac{ECS} based on the models'
 responses to aerosols over the different periods of the \nth{20} century
-\autocite{Dittus2020}.
+\autocite{Dittus2020}. An example for a \acs{CMIP}6 model with high \ac{ECS}
+and a new aerosol scheme is the \ac{HadGEM} version 3. The new aerosol scheme
+in this model suppresses a strong negative cloud feedback over the Southern
+Ocean \autocite{BodasSalcedo2019}, which is one of the most pristine aerosol
+regions in the world \autocite{Hamilton2014}, where aerosols are predominantly
+of natural origin (\eg{} marine emissions of gaseous dimethyl sulfide). Earlier
+\ac{HadGEM} versions show a large reduction in cloud droplet size with warming
+over the Southern Ocean, which produces a negative shortwave cloud feedback.
+However, in \acs{HadGEM}3, this negative feedback is completely suppressed or
+even positive due to a small increase of the cloud droplet size with warming,
+which eventually increases \ac{ECS} due to an increased net cloud feedback
+\autocite{BodasSalcedo2019}.
 
 Another possible reason for the high climate sensitivity in the \acs{CMIP}6
 ensemble is related to cloud feedbacks \autocite{Bock2020}. As already
@@ -307,11 +318,11 @@ Southern Ocean in climate models from previous \ac{CMIP} generations.
     many \acs{CMIP}6 models, the predominantly ice clouds over the Southern
     Ocean in the present-day climate of previous climate model generations have
     been replaced with clouds that predominantly consist of (supercooled)
-    liquid clouds \autocite{BodasSalcedo2019, Gettelman2019, Mulcahy2020,
-      Williams2020}. Thus, in the affected \acs{CMIP}6 models, this cloud phase
-    change due to warming is reduced by allowing for supercooled cloud liquid,
-    which substantially reduces the strong negative cloud phase change feedback
-    (orange arrows). This leads to an increase in the global net cloud feedback
+    liquid clouds \autocite{BodasSalcedo2019, Gettelman2019}. Thus, in the
+    affected \acs{CMIP}6 models, this cloud phase change due to warming is
+    reduced by allowing for supercooled cloud liquid, which substantially
+    reduces the strong negative cloud phase change feedback (orange arrows).
+    This leads to an increase in the global net cloud feedback
     \autocite{BodasSalcedo2019, Tan2016} and the \acf{ECS} in the corresponding
     \acs{CMIP}6 models \autocite{Andrews2019, Gettelman2019}, which is a
     possible explanation for the high \acs{ECS} values found in many
@@ -322,23 +333,52 @@ Southern Ocean in climate models from previous \ac{CMIP} generations.
 
 However, it is well known that the low-level mixed-phase clouds over the
 Southern Ocean in these earlier climate models are biased towards too large
-amounts of ice crystals and too little amounts of supercooled liquid water
-\autocite{BodasSalcedo2016, McCoy2015, McCoy2016, Tan2016}. For this reason,
-the microphysical representation of mixed-phase clouds has been substantially
-improved in many \acs{CMIP}6 models \autocite{BodasSalcedo2019, Gettelman2019,
-  Mulcahy2020, Williams2020}, leading for example to a better agreement of the
-simulated \ac{TOA} shortwave \ac{CRE} with corresponding observations
-\autocite{Bock2020}. As a consequence, the strong negative cloud feedback
-described above that results from a cloud phase change from ice clouds in the
-present-day to liquid clouds in the future is substantially reduced in those
-\acs{CMIP}6 models that simulate predominantly liquid clouds over the
-present-day Southern Ocean. This is illustrated in
-\cref{fig:04:cloud_phase_change_feedback} (orange arrows). Moreover, this
-reduction of the negative shortwave cloud phase change feedback increases the
-global net cloud feedback \autocite{BodasSalcedo2019, Tan2016} and eventually
-the \ac{ECS} of the affected \acs{CMIP}6 models \autocite{Andrews2019,
-  Gettelman2019}, offering a possible explanation for the high \ac{ECS} values in
-some \acs{CMIP}6 models.
+amounts of ice crystals and too little amounts of supercooled liquid water when
+compared to satellite observations \autocite{BodasSalcedo2016}. Thus, the size
+of the resulting strong negative cloud phase change feedback in these models
+has long been questioned \autocite{McCoy2015, Tan2016}. Improvements in the
+representation of mixed-phase clouds are known to reduce this long-standing
+cloud phase bias over the Southern Ocean \autocite{BodasSalcedo2016, McCoy2016}
+and to improve the representation of both cloud microphysical structure and
+cloud radiative impacts in this region \autocite{Hyder2018, Kay2016}. For this
+reason, the microphysical representation of mixed-phase clouds has been updated
+in many \acs{CMIP}6 models. For example, in \acs{CESM}2, a new mixed-phase ice
+nucleation scheme by \textcite{Hoose2010} replaces the \textcite{Meyers1992}
+empirical scheme used in predecessor models \autocite{Gettelman2019}.
+Simulations with the \textcite{Meyers1992} scheme show almost no supercooled
+liquid water in high-latitude clouds and a strong negative cloud phase feedback
+when ice turns to liquid. On the contrary, simulations with the new ice
+nucleation scheme by \textcite{Hoose2010} show a strong reduction in this
+feedback and are more consistent with observations of the current climate
+\autocite{Gettelman2019}. Another example is the \acs{HadGEM}3 model, for which
+a new cloud scheme that accounts for turbulent production of liquid water in
+mixed-phase clouds has been implemented \autocite{BodasSalcedo2019}. The new
+scheme parameterizes the role of subgrid-scale turbulence in the production and
+maintenance of supercooled liquid water \autocite{Furtado2016}. As a
+consequence, the cloud liquid water content over the Southern ocean is
+increased, which is in closer agreement to observations compared to earlier
+\ac{HadGEM} versions. Moreover, the increase in the cloud liquid water content
+with warming is reduced in \acs{HadGEM}3, leading to a reduction in the
+negative cloud phase change feedback over the Southern Ocean
+\autocite{BodasSalcedo2019}. By evaluating short-term forecasts created with
+\acs{HadGEM}3, \textcite{Williams2020} additionally show that the new climate
+model version improves in traditional metrics used for numerical weather
+prediction, which indicates an improvement in the physical processes simulated
+by the climate model.
+
+Overall, these changes in many of the \acs{CMIP}6 models lead to a better
+agreement of the \acs{CMIP}6 \ac{MMM} of the \ac{TOA} shortwave \ac{CRE} with
+corresponding observations \autocite{Bock2020}. Moreover, the strong negative
+cloud feedback described above that results from a cloud phase change from ice
+clouds in the present-day to liquid clouds in the future is substantially
+reduced in those \acs{CMIP}6 models that simulate predominantly liquid clouds
+over the present-day Southern Ocean. This is illustrated in
+\cref{fig:04:cloud_phase_change_feedback} (orange arrows). As a consequence,
+this reduction of the negative shortwave cloud phase change feedback increases
+the global net cloud feedback \autocite{BodasSalcedo2019, Tan2016} and
+eventually the \ac{ECS} of the affected \acs{CMIP}6 models
+\autocite{Andrews2019, Gettelman2019}, offering a possible explanation for the
+high \ac{ECS} values found in many \acs{CMIP}6 models.
 
 \begin{figure}[p]
   \centering
@@ -398,11 +438,10 @@ some \acs{CMIP}6 models.
   \label{fig:04:cloud_feedback_parameters}
 \end{figure}
 
-To further confirm this hypothesis, we show the global distributions of
-relevant cloud feedback parameters (expressed by the net, shortwave and
-longwave \ac{CRE} feedback parameters; see
-\cref{subsec:02:cloud_feedback_parameters}) for the \acs{CMIP}6 \ac{MMM} and
-its difference to the \acs{CMIP}5 \ac{MMM} in
+To further confirm this hypothesis, the global distributions of relevant cloud
+feedback parameters (expressed by the net, shortwave and longwave \ac{CRE}
+feedback parameters; see \cref{subsec:02:cloud_feedback_parameters}) are shown
+for the \acs{CMIP}6 \ac{MMM} and its difference to the \acs{CMIP}5 \ac{MMM} in
 \cref{fig:04:cloud_feedback_parameters}. First of all, the comparison of
 \cref{fig:04:cloud_feedback_parameters:a,fig:04:cloud_feedback_parameters:c,%
   fig:04:cloud_feedback_parameters:e} demonstrates that the shortwave component
