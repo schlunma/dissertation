@@ -23,12 +23,13 @@ for example the $1.5 \unit{\degreeCelsius}$ of the Paris Agreement
 \autocite{UNFCCC2015}, research in this field of science is not only relevant
 to climate scientists but to policymakers and the whole human society. In the
 light of the large spread of climate sensitivity in the most recent generation
-of climate models from \acs{CMIP}6 \autocite{Meehl2020}, a careful statistical
-evaluation and refinement of the output of multi-model climate projections is
-as relevant as ever. This thesis quantifies the associated uncertainties,
-presents the evaluation of established methods to reduce these uncertainties in
-the new climate model ensemble and finally introduces a novel alternative
-technique based on supervised \ac{ML}.
+of climate models from \acs{CMIP}6, that has been demonstrated in
+\cref{ch:04:papers_ecs_tcr_assessment}, a careful statistical evaluation and
+refinement of the output of multi-model climate projections is as relevant as
+ever. This thesis quantifies the associated uncertainties, presents the
+evaluation of established methods to reduce these uncertainties in the new
+climate model ensemble and finally introduces a novel alternative technique
+based on supervised \ac{ML}.
 
 To answer the \namecrefs{enum:01:question_1} posed in
 \cref{sec:01:key_science_questions} and to ensure a consistent evaluation of
@@ -134,24 +135,26 @@ terrestrial carbon uptake and slows down global warming by removing \ac{CO2}
 from the atmosphere. In the first step of the new two-step approach, the global
 mean \ac{GPP} at the end of the \nth{21} century in the \acs{CMIP}5
 \acs{RCP}8.5 scenario is constrained to $\pmrangeunit{171}{12}{\GtCyr{}}$ using
-a published emergent constraint by \textcite{Wenzel2016}. This first step
-corrects the \acs{CMIP}5 models' \ac{GPP} response to \ac{CO2}, which shows a
-range of $\rangeunit{156}{247}{\GtCyr{}}$ in the raw multi-model ensemble. In
-the second step, a \ac{ML}-based climate model weighting approach is used to
-further constrain the gridded \ac{GPP} based on present-day predictors that are
-relevant for the simulation of \ac{GPP} in the \acp{ESM}. The \ac{ML} approach
-is mathematically similar to the \ac{MDER} approach \autocite{Karpechko2013,
-  Senftleben2020, Wenzel2016a}, but additionally considers multi-dimensional
-(gridded) target variables and non-linear relationships between the predictors
-and the target variable. A a relationship between process‐oriented predictors
-and future projections of \ac{GPP} is established and then utilized to project
-today's observed conditions into the future. The prediction phase of the new
-method can be interpreted as an implicit performance weighting. However, due to
-the complex structure of the used \ac{ML} algorithm (\ac{GBRT}) it is not
-possible to extract specific values for the individual weights. Two target
-variables are considered: the gridded monthly climatologies of absolute
-\ac{GPP} (\range{2091}{2100}) and the gridded fractional \ac{GPP} change over
-the \nth{21} century (2100 versus 2000). The latter quantity shows an increased
+a published emergent constraint by \textcite{Wenzel2016}. In contrast to that,
+the corresponding multi-model range of \ac{GPP} in the raw \acs{CMIP}5 ensemble
+is $\rangeunit{156}{247}{\GtCyr{}}$. This first step corrects the \acs{CMIP}5
+models' \ac{GPP} response to \ac{CO2}, which is primarily driven by the
+\ac{CO2} fertilization. In the second step, a \ac{ML}-based climate model
+weighting approach is used to further constrain the gridded \ac{GPP} based on
+present-day predictors that are relevant for the simulation of \ac{GPP} in the
+\acp{ESM}. The \ac{ML} approach is mathematically similar to the \ac{MDER}
+approach \autocite{Karpechko2013, Senftleben2020, Wenzel2016a}, but
+additionally considers multi-dimensional (gridded) target variables and
+non-linear relationships between the predictors and the target variable. A a
+relationship between process‐oriented predictors and future projections of
+\ac{GPP} is established and then utilized to project today's observed
+conditions into the future. The prediction phase of the new method can be
+interpreted as an implicit performance weighting. However, due to the complex
+structure of the used \ac{ML} algorithm (\ac{GBRT}) it is not possible to
+extract specific values for the individual weights. Two target variables are
+considered: the gridded monthly climatologies of absolute \ac{GPP}
+(\range{2091}{2100}) and the gridded fractional \ac{GPP} change over the
+\nth{21} century (2100 versus 2000). The latter quantity shows an increased
 \acs{GPP} change in the high latitudes compared to regions closer to the
 equator. The results of both approaches are consistent with each other and with
 the global constraint of the first step. The new approach is validated by
@@ -164,9 +167,14 @@ insights into the \ac{ML} model. For the first target variable (absolute
 \ac{GPP}), historical \ac{GPP} is by far the most important predictor, which
 can be explained with a correction of the historical bias in \ac{GPP} by the
 new approach. For the second variable (fractional change in \ac{GPP}), \ac{T}
-and \ac{LAI} are the dominant features. This study directly addresses
-\cref{enum:01:question_3} (\enquote{\emph{\KeyScienceQuestionThree{}}}), which
-can be confidently answered with \enquote{yes} based on the results found.
+and \ac{LAI} are the most important features. A corresponding feature map shows
+that \ac{T} dominates in the tropics and \ac{LAI} dominates in the northern
+high latitudes, which might be attributed to an additional greening trend in
+the high latitudes that enhances the \ac{GPP} increase in this regions compared
+to regions closer to the equator through an extension of the growing season.
+This study directly addresses \cref{enum:01:question_3}
+(\enquote{\emph{\KeyScienceQuestionThree{}}}), which can be confidently
+answered with \enquote{yes} based on the results found.
 
 
 \section{Outlook}
