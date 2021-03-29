@@ -16,14 +16,16 @@
 
 Examples
 --------
-python search_in_tex.py '(?i).{25}\.\s*\\.{0,12}cite{.{25}'
-python search_in_tex.py '(?i).{25}\)\s*\\.{0,12}cite{.{25}'
+python search_in_tex.py '(?i).{25}\.\s*\\.{0,12}cite\{.{25}'
+python search_in_tex.py '(?i).{25}\)\s*\\.{0,12}cite\{.{25}'
 
-python search_in_tex.py '(?i).{25}\.\s*\\.{0,12}ac.{0,12}{.{25}'
-python search_in_tex.py '(?i).{25}\)\s*\\.{0,12}ac.{0,12}{.{25}'
+python search_in_tex.py '(?i).{25}\.\s*\\.{0,12}ac.{0,12}\{.{25}'
+python search_in_tex.py '(?i).{25}\)\s*\\.{0,12}ac.{0,12}\{.{25}'
 
-python search_in_tex.py '(?i).{25}\.\s*\\.{0,12}cref.{0,12}{.{25}'
-python search_in_tex.py '(?i).{25}\)\s*\\.{0,12}cref.{0,12}{.{25}'
+python search_in_tex.py '(?i).{25}\.\s*\\.{0,12}ref.{0,12}\{.{25}'
+python search_in_tex.py '(?i).{25}\)\s*\\.{0,12}ref.{0,12}\{.{25}'
+
+python search_in_tex.py '(?i)\\caption\[.*?\]\{.*?\\label' | egrep '\\ac\{'
 
 """
 
@@ -53,6 +55,7 @@ def search(filename, pattern, replace_linebreak_char=' '):
     print(f"In file '{filename}', found {len(matches):d} matche(s)")
     for match in matches:
         print(f"    {match}")
+    print()
 
 
 def main():

@@ -211,7 +211,7 @@ models).
 Therefore, our target variable in step 1 is the global mean fractional
 \acs{GPP} change over the \nth{21} century $f$ in the \acs{RCP}8.5 scenario,
 which is calculated from the 10-year mean \ac{GPP} at the end of the \nth{21}
-century in the emission‐driven fully-coupled \acs{RCP}8.5 simulations
+century in the emission-driven fully-coupled \acs{RCP}8.5 simulations
 (\range{2091}{2100}) and the 10-year mean \ac{GPP} at the end of the \nth{20}
 century (\range{1991}{2000}) in the emission-driven historical simulation:
 \begin{equation}
@@ -290,7 +290,7 @@ parameter $\nu \ll 1$ called \emph{learning rate}) and the model is fitted
 again in the same manner. This ensures that the prediction for poorly modeled
 training points in the beginning will gradually improve during the training.
 The whole procedure is repeated until the loss function does not improve
-anymore, as evaluated on an independent validation data set. Relevant
+anymore, as evaluated on an independent validation dataset. Relevant
 hyperparameters of this algorithm (maximum number of decision trees, maximum
 depth of the decision trees, learning rate and the subsample ratio) are
 optimized by $5$-fold \acf{CV} using the training data. More details on the
@@ -347,7 +347,7 @@ local prediction of the target variable $y$.
   \begin{tabular}[t]{p{0.27\columnwidth} l p{0.11\columnwidth}
       p{0.3\columnwidth}}
     \toprule
-    Predictor & \makecell{Observation‐driven \\ data} & Used time range &
+    Predictor & \makecell{Observation-driven \\ data} & Used time range &
     Physical connection to \acs{GPP} \\
     \midrule
     \predictor{GPP} & \makecell{FLUXNET-MTE \\ \autocite{Jung2011}} &
@@ -574,7 +574,7 @@ derivation of the constrained range are given in
     \acs{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in the
     emission-driven fully-coupled \acs{RCP}8.5 simulations and the 10-year mean
     \acs{GPP} at the end of the \nth{20} century (\range{1991}{2000}) in the
-    emission‐driven fully-coupled historical run (see \cref{eq:06:f}). In
+    emission-driven fully-coupled historical run (see \cref{eq:06:f}). In
     contrast to \textcite{Wenzel2016}, the sensitivity of the \acs{CO2}
     amplitude is calculated from the years \range{1979}{2019} for climate
     models and observations for better comparability (the historical
@@ -641,7 +641,7 @@ the second part, we use observation-based products to predict the target
 variable.
 
 
-\subsubsection{Prediction Error in Leave‐One‐Model‐Out \acs{CV} Approach and
+\subsubsection{Prediction Error in Leave-One-Model-Out \acs{CV} Approach and
   Feature Importance}
 \label{subsubsec:06:results_step2a_ml_inference}
 
@@ -721,8 +721,8 @@ the gridded climate model output with the global mean \ac{GPP} constraint on
 the \ac{CO2} fertilization effect. However, since there is a considerably large
 \ac{GPP} range in the individual climate models themselves, this reduction is
 rather small for the gridded values. A far larger reduction of the \ac{RMSEP}
-can be achieved by using the regression models \acs{LASSO}‐1D, \ac{LASSO},
-\acs{GBRT}‐1D and \ac{GBRT}. All of them share similar \ac{RMSEP}
+can be achieved by using the regression models \acs{LASSO}-1D, \ac{LASSO},
+\acs{GBRT}-1D and \ac{GBRT}. All of them share similar \ac{RMSEP}
 distributions, which can be explained as follows: The historical \ac{GPP} is
 strongly (near linearly) correlated to the rescaled end-of-century \ac{GPP}
 (with pattern correlation of $R^2 = 0.83$ for the whole multi-model ensemble).
@@ -731,7 +731,7 @@ Because of that, all regression models are able to considerably reduce the
 \ac{GBRT} models successfully learn the linear connection between past and
 future \ac{GPP}. Moreover, the non-linear \ac{GBRT} models can slightly reduce
 the mean \ac{RMSEP} even further compared to the linear \ac{LASSO} models by
-about $2 \unit{\%}$ for \acs{GBRT}‐1D and $3 \unit{\%}$ for the full \ac{GBRT}
+about $2 \unit{\%}$ for \acs{GBRT}-1D and $3 \unit{\%}$ for the full \ac{GBRT}
 model. This leads to the conclusion that in addition to the strong linear
 relationship between past and future \ac{GPP}, there are small non-linear
 relations between the predictors and the target variable that can be used to
@@ -769,8 +769,8 @@ on the whole are approximately unbiased (see \cref{fig:app:b:residuals:a}).
 In this \namecref{subsubsec:06:results_step2a_obs}, we use the different
 statistical models to predict absolute \ac{GPP} at the end of the \nth{21}
 century. For this, we feed observation-based data (see
-\cref{tab:06:predictors}) into the regression models \ac{GBRT}, \acs{GBRT}‐1D,
-\ac{LASSO} and \acs{LASSO}‐1D.
+\cref{tab:06:predictors}) into the regression models \ac{GBRT}, \acs{GBRT}-1D,
+\ac{LASSO} and \acs{LASSO}-1D.
 
 The result of step 1 on the gridded data is illustrated in
 \cref{fig:06:step2a_results:a}, which shows the ratio between r\acs{MMM} and
@@ -821,13 +821,13 @@ to changes in the atmospheric \ac{CO2} concentration.
     between r\acs{MMM} and our \acf{GBRT} prediction for the end of the
     \nth{21} century. This corresponds to step 2a of our approach. (c) Bias
     between the modeled \acs{GPP} in the \acs{CMIP}5 \acs{MMM} of the
-    historical simulation and the FLUXNET-MTE observation‐based estimate of
+    historical simulation and the FLUXNET-MTE observation-based estimate of
     \acs{GPP} \autocite{Jung2011} averaged between 1991 and 2000. Over large
     swaths of the globe, the \acs{CMIP}5 ensemble overestimates \acs{GPP} (red
     color). Panels (b) and (c) show similar bias patterns (pattern correlation
     of $R^2 = 0.88$). Thus, the \acs{GBRT} prediction in step 2a is able to
     correct the historical bias of the \acs{CMIP}5 ensemble relative to the
-    FLUXNET‐MTE product. \AdaptedFrom{Schlund2020}.
+    FLUXNET-MTE product. \AdaptedFrom{Schlund2020}.
   }
   \label{fig:06:step2a_results}
 \end{figure}
@@ -938,12 +938,12 @@ these global fields is unknown, a global (or at least regional) aggregation
 of these uncertainties is not possible.
 
 To further compare our \ac{GBRT} approach to other statistical models, we also
-fed the observation-driven data into the \acs{GBRT}‐1D, \ac{LASSO}, and
-\acs{LASSO}‐1D models to get a constrained projection of the \acs{RCP}8.5
+fed the observation-driven data into the \acs{GBRT}-1D, \ac{LASSO}, and
+\acs{LASSO}-1D models to get a constrained projection of the \acs{RCP}8.5
 \ac{GPP}. \Cref{fig:06:step2a_results_biases:c,fig:06:step2a_results_biases:d}
 show the difference of the other models to the full \ac{GBRT} approach. Both
 panels show values close to $0$ for most of the globe (\ie{} the differences
-between the \ac{GBRT} and \acs{GBRT}‐1D/\ac{LASSO} models are small),
+between the \ac{GBRT} and \acs{GBRT}-1D/\ac{LASSO} models are small),
 indicating that the bias-correcting property of our approach is also present in
 the other regression models that use only the historical \ac{GPP} as single
 predictors. Thus, we conclude that the bias correction of our \ac{GBRT} model
@@ -955,10 +955,10 @@ second-order corrections are also visible as the non-zero values in
 \Cref{fig:06:step2a_results_biases:c,fig:06:step2a_results_biases:d}. This
 indicates that using the non-linear \ac{GBRT} model with all predictors
 improves the final result. Moreover, the similar patterns in both panels
-demonstrate that the \acs{GBRT}‐1D model emulates the strong linear relation of
+demonstrate that the \acs{GBRT}-1D model emulates the strong linear relation of
 the historical \ac{GPP} to future \ac{GPP} and performs equally well as the
-linear models. The global estimates of $167 \unit{\GtCyr{}}$ (\acs{GBRT}‐1D),
-$163 \unit{\GtCyr{}}$ (\ac{LASSO}), and $162 \unit{\GtCyr{}}$ (\acs{LASSO}‐1D)
+linear models. The global estimates of $167 \unit{\GtCyr{}}$ (\acs{GBRT}-1D),
+$163 \unit{\GtCyr{}}$ (\ac{LASSO}), and $162 \unit{\GtCyr{}}$ (\acs{LASSO}-1D)
 are all consistent with the global constraint of
 $\pmrangeunit{171}{12}{\GtCyr{}}$.
 
@@ -975,7 +975,7 @@ and only differs in the target variable (\ac{GPP} change instead of absolute
 itself and the datasets are similar.
 
 
-\subsubsection{Prediction Error in Leave‐One‐Model‐Out \acs{CV} Approach and
+\subsubsection{Prediction Error in Leave-One-Model-Out \acs{CV} Approach and
   Feature Importance}
 \label{subsubsec:06:results_step2b_ml_inference}
 
@@ -989,7 +989,7 @@ $16 \unit{\%}$ and $9 \unit{\%}$, respectively. Moreover, the non-linear
 \ac{GBRT} model also outperforms the linear \ac{LASSO} model (mean reduced by
 $3 \unit{\%}$). In contrast to step 2a, there is not a single predictor which
 heavily dominates the feature importance of the \ac{GBRT} model. Thus, using
-single-predictor models (\acs{GBRT}‐1D and \acs{LASSO}‐1D) is not necessary in
+single-predictor models (\acs{GBRT}-1D and \acs{LASSO}-1D) is not necessary in
 step 2b. \Cref{fig:06:step2b_ml_inference:b,fig:06:step2b_ml_inference:d} show
 the global feature importance for the \ac{LASSO} and \ac{GBRT} model,
 respectively. Both models agree that the \acf{T} and \ac{LAI} are the two
@@ -1039,7 +1039,7 @@ obtain a constrained fractional \ac{GPP} change over the \nth{21} century.
   ]{
     (a) Box plot of the \acf{RMSEP} distributions for four different
     statistical models used to predict the fractional change in \acf{GPP} over
-    the \nth{21} century (step 2b) using the leave‐one‐model‐out \acl{CV}
+    the \nth{21} century (step 2b) using the leave-one-model-out \acl{CV}
     approach. A detailed description of the representation of these
     distributions is given in \cref{fig:06:step2a_ml_inference:a}. The
     \acf{GBRT} algorithm shows the minimal mean and median \acs{RMSEP}.
@@ -1251,7 +1251,7 @@ residuals and is not overfitting.
 \subsection{Comparison of the Absolute and Relative \acs{GBRT} Prediction}
 \label{subsec:06:comparison_step2a_step2b}
 
-In a last step, we use the FLUXNET‐MTE observational product to constrain the
+In a last step, we use the FLUXNET-MTE observational product to constrain the
 absolute \ac{GPP} increase at the end of the \nth{21} century
 (\range{2091}{2100}) from the fractional \ac{GPP} change given by the \ac{GBRT}
 model in step 2b. This can be directly compared to the output of step 2a and
