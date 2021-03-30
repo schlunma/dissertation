@@ -211,11 +211,11 @@
   \caption[
     All \acs{CMIP}5 models used in \cref{ch:05:paper_ecs} including their
     \acf{ECS} and \xaxis{} values for the emergent constraints BRI, COX, LIP,
-    SHD, SHL and SHS.
+    SHD, SHL, and SHS.
   ]{
     All \acs{CMIP}5 models used in \cref{ch:05:paper_ecs}
     (\nameref*{ch:05:paper_ecs}) including their \acf{ECS} and \xaxis{} values
-    for the emergent constraints BRI, COX, LIP, SHD, SHL and SHS. More details
+    for the emergent constraints BRI, COX, LIP, SHD, SHL, and SHS. More details
     on the emergent constraints are given in
     \cref{tab:05:overview_emergent_constraints}. The specified index
     corresponds to the index used in the associated figures.
@@ -231,10 +231,11 @@
     \dataset & $\idx$ & $\ECS$ & $\SU$ & $\TIH$ & $\TII$ & $\VOL$ & $\ZHA$}
   \caption[
     As in \cref{tab:app:a:cmip5_emergent_constraints_part1} but for the
-    emergent constraints SU, TIH, TII, VOL and ZHA.
+    emergent constraints SU, TIH, TII, VOL, and ZHA.
   ]{
     As in \cref{tab:app:a:cmip5_emergent_constraints_part1} but for the
-    emergent constraints SU, TIH, TII, VOL and ZHA. \AdaptedFrom{Schlund2020a}.
+    emergent constraints SU, TIH, TII, VOL, and ZHA.
+    \AdaptedFrom{Schlund2020a}.
   }
   \label{tab:app:a:cmip5_emergent_constraints_part2}
 \end{table}
@@ -322,7 +323,7 @@ linear combination of simple decision trees $h(\bm{x})$
   \label{eq:app:b:f_x_sum}
 \end{equation}
 where $H$ is the total number of decision trees, $\beta_j$ the expansion
-coefficient for tree $j$ and $\bm{\alpha}_j$ the hyperparameters for tree $j$.
+coefficient for tree $j$, and $\bm{\alpha}_j$ the hyperparameters for tree $j$.
 Using all $N$ training data points $\left\{ \left( \bm{x}_i, y_i \right) \mid i
 \in I_N \right\}$ with index set $I_N = \left\{ 1, 2, \ldots, N \right\}$
 (\enquote{classic} gradient boosting), the expansion coefficients and tree
@@ -356,7 +357,7 @@ A crucial criterion for the successful application of any \ac{GBRT} algorithm
 is the choice of several hyperparameters. The three main control parameters of
 the learning procedure are the total number of decision trees $H$, the
 complexity of the individual trees (for example measured by the maximum tree
-depth) and the learning rate $\nu \ll 1$. The latter parameter is used for
+depth), and the learning rate $\nu \ll 1$. The latter parameter is used for
 regularization and dramatically reduces the risk of overfitting by scaling down
 the contribution of each added weak learner \autocite{Death2007, Elith2008,
   Friedman2001}. A common way to optimize the algorithm is $n$-fold \acf{CV}
@@ -399,7 +400,7 @@ $\bar{y}_i$ is the \acs{CMIP}5 \acf{MMM} of the target variable at prediction
 input point $i$ (step 2a: absolute \ac{GPP} at the end of the \nth{21} century;
 step 2b: fractional \ac{GPP} change over the \nth{21} century), $\sigma_{f'}$
 the standard error in the global mean fractional \acs{GPP} change given by the
-emergent constraint from step 1 and $\bar{f}$ the \acs{CMIP}5 \ac{MMM} global
+emergent constraint from step 1, and $\bar{f}$ the \acs{CMIP}5 \ac{MMM} global
 mean fractional \ac{GPP} change over the \nth{21} century.
 
 The final source of uncertainty is the error of the prediction input data
@@ -474,8 +475,8 @@ the \ac{RMSEP} is equal to the standard deviation of the residuals.
     (\nameref*{ch:06:paper_gpp}) alongside the main references. More details
     are given by \textcite{Anav2013}. We chose all \acs{CMIP}5 models which
     provide all necessary variables (\emph{co2}, \emph{gpp}, \emph{lai},
-    \emph{pr}, \emph{rsds} and \emph{tas}) for all used experiments
-    (\emph{esmHistorical}, \emph{esmrcp85} and \emph{esmFixClim1}). For all
+    \emph{pr}, \emph{rsds}, and \emph{tas}) for all used experiments
+    (\emph{esmHistorical}, \emph{esmrcp85}, and \emph{esmFixClim1}). For all
     models, we only use the first ensemble member available.
     \AdaptedFrom{Schlund2020}.
   }

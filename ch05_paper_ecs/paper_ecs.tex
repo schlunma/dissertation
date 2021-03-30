@@ -124,10 +124,10 @@ perform out-of-sample testing using the previously unseen data.
 \end{table}
 
 This work is already published in \textcite{Schlund2020a}. For this paper, the
-author of this thesis lead the writing and the analysis and implemented the
-code to reproduce this study with all figures and tables using the
-\ac{ESMValTool}. In this \namecref{ch:05:paper_ecs}, we first introduce the
-data (climate model output and observations) and methods used in this study
+author of this thesis led the writing and the analysis and implemented the code
+to reproduce this study with all figures and tables using the \ac{ESMValTool}.
+In this \namecref{ch:05:paper_ecs}, we first introduce the data (climate model
+output and observations) and methods used in this study
 (\cref{sec:05:data_and_methods}). After that, we present the eleven emergent
 constraints on \acs{ECS} and evaluate them on the \acs{CMIP}5 and \acs{CMIP}6
 ensemble (\cref{sec:05:comparison_of_emergent_constraints}). Finally, we
@@ -163,7 +163,7 @@ needed for \acs{CMIP}6 models as their historical simulations cover a longer
 time period until 2014. We quantify the skill of the emergent constraints with
 three metrics: the coefficient of determination $R^2$ of the linear
 relationship, the statistical significance using a two-sided $t$-test based on
-the Pearson correlation coefficient $r$ (see \cref{eq:02:t}) and the
+the Pearson correlation coefficient $r$ (see \cref{eq:02:t}), and the
 constrained range of \ac{ECS} based on the constrained \ac{PDF} (see
 \cref{eq:02:pdf_y_given_x0}).
 
@@ -216,7 +216,7 @@ The regression coefficients of de-seasonalized variations of \ac{TLC} shortwave
 albedo and \ac{SST} (in $\si{\pctK{}}$) are then used as an emergent constraint
 for \ac{ECS}. Here, we use observational data from HadISST for \ac{SST}
 \autocite{Rayner2003}, ERA-Interim for $500 \unit{hPa}$ relative humidity
-\autocite{Dee2011} and CERES-EBAF \autocite{Loeb2018} for the \ac{TOA}
+\autocite{Dee2011}, and CERES-EBAF \autocite{Loeb2018} for the \ac{TOA}
 radiative fluxes over the time period \range{2001}{2005}. In the original
 publication, \textcite{Brient2016} use similar observation-based datasets with
 the exception of \ac{SST}, where they take ERSST data \autocite{Smith2003} as
@@ -272,12 +272,12 @@ for \acs{CMIP}5 to $p = 0.0355$ for \acs{CMIP}6.
     \label{fig:05:bri_cox_lip:f}
   \end{subfigure}
   \caption[
-    Emergent constraints BRI, COX and LIP applied to the \acs{CMIP}5 and
+    Emergent constraints BRI, COX, and LIP applied to the \acs{CMIP}5 and
     \acs{CMIP}6 ensemble.
   ]{
-    Emergent constraints BRI, COX and LIP applied to the \acs{CMIP}5 (blue) and
-    \acs{CMIP}6 ensemble (orange). (a), (c), (e) Emergent relationships (solid
-    lines) for the \acs{CMIP} models (numbers; see
+    Emergent constraints BRI, COX, and LIP applied to the \acs{CMIP}5 (blue)
+    and \acs{CMIP}6 ensemble (orange). (a), (c), (e) Emergent relationships
+    (solid lines) for the \acs{CMIP} models (numbers; see
     \cref{tab:app:a:cmip5_emergent_constraints_part1,%
       tab:app:a:cmip6_emergent_constraints_part1} for details) with their
     \aclp{SPE} (blue and orange shaded areas; see \cref{eq:02:spe}). The
@@ -353,7 +353,7 @@ a warmer atmosphere due to the Clausius-Clapeyron relationship. The large-scale
 component $D$ of this mixing is defined as the ratio of shallow to deep
 overturning. $D$ is calculated from the vertical velocities averaged over two
 height regions: $850$ and $700 \unit{hPa}$ for shallow overturning and $600$,
-$500$ and $400 \unit{hPa}$ for deep overturning. Both quantities are averaged
+$500$, and $400 \unit{hPa}$ for deep overturning. Both quantities are averaged
 over parts of the tropical ocean region away from the regions of highest
 \ac{SST} and strongest mid-level ascent, specifically the region $\range{30
   \unit{\degree S}}{30 \unit{\degree N}}$, $\range{160 \unit{\degree W}}{30
@@ -413,10 +413,10 @@ large-scale component of mixing $D$ or its small-scale counterpart $S$ (see
     \label{fig:05:shd_shl_shs:f}
   \end{subfigure}
   \caption[
-    As in \cref{fig:05:bri_cox_lip} but for the emergent constraints SHD, SHL
+    As in \cref{fig:05:bri_cox_lip} but for the emergent constraints SHD, SHL,
     and SHS.
   ]{
-    As in \cref{fig:05:bri_cox_lip} but for the emergent constraints SHD, SHL
+    As in \cref{fig:05:bri_cox_lip} but for the emergent constraints SHD, SHL,
     and SHS (see \cref{tab:app:a:cmip5_emergent_constraints_part1,%
       tab:app:a:cmip6_emergent_constraints_part1} for details).
     \AdaptedFrom{Schlund2020a}.
@@ -514,10 +514,10 @@ emergent relation decreases in \acs{CMIP}6 ($p = 0.0138$) compared to
     \label{fig:05:su_tih_tii:f}
   \end{subfigure}
   \caption[
-    As in \cref{fig:05:bri_cox_lip} but for the emergent constraints SU, TIH
+    As in \cref{fig:05:bri_cox_lip} but for the emergent constraints SU, TIH,
     and TII.
   ]{
-    As in \cref{fig:05:bri_cox_lip} but for the emergent constraints SU, TIH
+    As in \cref{fig:05:bri_cox_lip} but for the emergent constraints SU, TIH,
     and TII (see \cref{tab:app:a:cmip5_emergent_constraints_part2,%
       tab:app:a:cmip6_emergent_constraints_part2} for details).
     \AdaptedFrom{Schlund2020a}.
@@ -711,7 +711,7 @@ for both hemispheres ($\rangeunit{20}{40}{\degree}$). On short (seasonal) and
 long (centennial under a forcing) time scales, this quantity is well correlated
 with \ac{ECS} among an ensemble of \acs{CMIP}3 and \acs{CMIP}5 models. Together
 with observations of cloud fraction from Cloudsat/CALIPSO \autocite{Mace2009},
-\ac{SST} from AMSRE \ac{SST} \autocite{AMSRE2011} and vertical velocity from
+\ac{SST} from AMSRE \ac{SST} \autocite{AMSRE2011}, and vertical velocity from
 ERA-Interim \autocite{Dee2011}, the seasonal response of \ac{MBLC} fraction to
 changes in \ac{SST} forms an emergent constraint on \ac{ECS}. We assess a $66
 \unit{\%}$ \ac{ECS} range of $\pmrangeunit{3.35}{0.74}{K}$ for \acs{CMIP}5
@@ -731,7 +731,7 @@ constraints show lower significances in \acs{CMIP}6). The reason for the
 erratic skill in \acs{CMIP}5 is the set of climate models used. For our
 analysis, we use eleven additional \acs{CMIP}5 models that have not been used
 in the original publication (ACCESS1-0, ACCESS1-3, bcc-csm1-1, bcc-csm1-1-m,
-CCSM4, GFDL-ESM2G, GFDL-ESM2M, IPSL-CM5A-MR, IPSL-CM5B-LR, MPI-ESM-MR and
+CCSM4, GFDL-ESM2G, GFDL-ESM2M, IPSL-CM5A-MR, IPSL-CM5B-LR, MPI-ESM-MR, and
 MPI-ESM-P). Due to a lack of publicly available data, the model
 \acs{CESM}1-CAM5 that is used in the original publication is not included in
 our analysis. The effect of choosing different subsets of \acs{CMIP}5 models on
@@ -800,7 +800,7 @@ much better than on either subset of \acs{CMIP}5 models.
       tab:app:a:cmip5_emergent_constraints_part2,%
       tab:app:a:cmip6_emergent_constraints_part1,%
       tab:app:a:cmip6_emergent_constraints_part2} for details). The $p$-values
-    describing the significance of the emergent relationships are defined as
+    describing the significances of the emergent relationships are defined as
     the probability to obtain an absolute correlation coefficient $\abs*{r}$
     or higher under the null hypothesis that the true underlying correlation
     coefficient between the predictor and \acs{ECS} is zero. Smaller
@@ -867,7 +867,7 @@ investigated shows a lower statistical significance (\ie{} a higher $p$-value)
 in the \acs{CMIP}6 ensemble than in the \acs{CMIP}5 ensemble. If a conventional
 significance test of $p < 0.05$ was applied, eight of the eleven constraints
 would pass this test on \acs{CMIP}5 model data but only five (BRI, SHL, SHS,
-VOL and ZHA) would pass this test on \acs{CMIP}6. This is still much better
+VOL, and ZHA) would pass this test on \acs{CMIP}6. This is still much better
 than would be expected purely by chance. Hence, there is still skill in at
 least a few of the constraints, but it is much lower than suggested in nearly
 all of the initial studies.
@@ -951,7 +951,7 @@ is biased in an ensemble the constraint might still work as both global
 temperature change and \ac{ECS} might similarly reflect the sum of all
 feedbacks. Emergent constraints of this kind include the tropical temperature
 during the Last Glacial Maximum \autocite{Hargreaves2012}, tropical temperature
-anomalies during the mid-Pliocene Warm Period \autocite{Hargreaves2016} and
+anomalies during the mid-Pliocene Warm Period \autocite{Hargreaves2016}, and
 post-1970s warming \autocite{JimenezdelaCuesta2019}. This seems to be supported
 by the findings of \textcite{Tokarska2020}, who test an emergent constraint for
 the \ac{TCR} based on recent global warming trends on the \acs{CMIP}5 and
@@ -1031,11 +1031,11 @@ multiple (different) relevant physical processes and feedbacks at once and thus
 are able to get a broader picture of the complex reality. A possible approach
 for this is given by \textcite{Bretherton2020}, who combine the information
 from multiple emergent constraints on \ac{ECS} using a multivariate Gaussian
-and multiple linear regression. For the \acs{CMIP}3 and \acs{CMIP}5 ensembles,
-they find an increased best estimate relative to the unweighted ensemble mean
-similar to the participating individual emergent constraints, but with lower
-uncertainty range. Moreover, new \ac{ML} techniques are a promising avenue
-forward for such multivariate approaches and for constraining uncertainties in
-multi-model projections \commentcite{Schlund2020}{see \cref{ch:06:paper_gpp}}
-with the aim of further improving climate modeling and analysis
-\autocite{Reichstein2019}.
+and multivariate linear regression. For the \acs{CMIP}3 and \acs{CMIP}5
+ensembles, they find an increased best estimate relative to the unweighted
+ensemble mean similar to the participating individual emergent constraints, but
+with lower uncertainty range. Moreover, new \ac{ML} techniques are a promising
+avenue forward for such multivariate approaches and for constraining
+uncertainties in multi-model projections \commentcite{Schlund2020}{see
+  \cref{ch:06:paper_gpp}} with the aim of further improving climate modeling
+and analysis \autocite{Reichstein2019}.
