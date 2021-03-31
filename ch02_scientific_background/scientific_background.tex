@@ -48,9 +48,9 @@ the climate by only considering present-day observations is rather difficult.
 A possible way out is given by numerical climate models, which offer the
 possibility to simulate the Earth's climate on a computer. To efficiently
 replicate the vastly complex Earth system with finite computational resources,
-climate models divide the Earth into a set of \emph{grid cells}. The typical
-size of an atmospheric grid cell in modern-day global climate models is about
-$100 \unit{km}$ along the horizontal dimensions (latitude and longitude) and $1
+climate models divide the Earth into a set of grid cells. The typical size of
+an atmospheric grid cell in modern-day global climate models is about $100
+\unit{km}$ along the horizontal dimensions (latitude and longitude) and $1
 \unit{km}$ along the vertical dimension (pressure level or height). In
 addition, also the temporal evolution of the Earth system is discretized using
 time steps that are typically about $30 \unit{min}$ long in modern-day global
@@ -226,9 +226,9 @@ corresponding \namecrefs{ch:04:papers_ecs_tcr_assessment}.
 Simulations from climate model ensembles of \ac{CMIP} allow us to assess future
 climate change in a consistent and transparent way. Especially the
 \ac{ScenarioMIP} experiments can give valuable insights into possible
-developments of the Earth system by providing \emph{projections} of the future
-climate. In contrast to climate predictions, climate projections run over
-multiple decades and depend upon the future scenario considered, which are
+developments of the Earth system by providing future \emph{climate
+  projections}. In contrast to climate predictions, climate projections run
+over multiple decades and depend upon the future scenario considered, which are
 based on assumptions that may or may not turn out to be correct. On the
 contrary, climate predictions are attempts to predict the actual evolution of
 the climate on much shorter time scales from seasons to years. Similar to any
@@ -274,8 +274,8 @@ and local scales than on continental or global scales. Further contributions to
 natural variability on longer time scales come from phenomena like the
 \ac{ENSO} or the \ac{NAO} and from other events like volcanic eruptions and
 variations in the solar activity. Natural variability can be seen as the
-\enquote{noise} in the climate record as opposed to the anthropogenic
-\enquote{signal} \autocite{Cubasch2013}.
+\emph{noise} in the climate record as opposed to the anthropogenic
+\emph{signal} \autocite{Cubasch2013}.
 
 The second source of uncertainty in climate model projections is \emph{emission
   uncertainty}. This arises from the different possible trajectories in terms
@@ -1319,7 +1319,7 @@ question \enquote{which climate model is adequate for predicting the target
 variables are chosen that are relevant for the projection of the target
 variable \autocite{Knutti2017a}. In practice, this choice is either based on
 expert judgment about relevant processes, on emergent relationships (see
-\cref{subsec:02:emergent_constraints}) or on multivariate regression models
+\cref{subsec:02:emergent_constraints}), or on multivariate regression models
 \commentcite{Karpechko2013, Sanderson2015a}{see \cref{subsec:02:mder}}. It
 might also be beneficial to use different diagnostics for the calculations of
 the performance and interdependence metrics \autocite{Merrifield2020} and/or to
@@ -1336,7 +1336,7 @@ interdependence parameter $\sigma_S$, this is slightly different: Here, small
 dependent) values lead to an almost equal weighting. Thus, an optimal choice
 for $\sigma_D$ and $\sigma_S$ is crucial. A useful tool to estimate these
 optimal parameters is the \emph{leave-one-model-out \ac{CV}} approach, which is
-also known as \emph{pseudo-reality}, \emph{model-as-truth} or \emph{perfect
+also known as \emph{pseudo-reality}, \emph{model-as-truth}, or \emph{perfect
   model} setup \autocite{Elia2002, Karpechko2013}. For this, a single climate
 model is removed from the multi-model ensemble and treated as observation
 (\emph{pseudo-observation}). Then, a weighted \ac{MMM} with weights computed
@@ -1418,11 +1418,10 @@ $\hat{\bm{b}}$ are given by
   \hat{\bm{b}} = \left( \bm{X}^T \bm{X} \right)^{-1} \bm{X}^T \bm{y},
   \label{eq:02:linear_coefficients}
 \end{equation}
-where the exponent \enquote{$-1$} denotes the inverse matrix. Since this
-definition works for any number of diagnostics $K$, it can also be used to
-calculate the linear coefficients $\hat{b}_0$ (intercept) and $\hat{b}_1$
-(slope) that define emergent relationships (see
-\cref{eq:02:linear_regression_y}).
+where the exponent $-1$ denotes the inverse matrix. Since this definition works
+for any number of diagnostics $K$, it can also be used to calculate the linear
+coefficients $\hat{b}_0$ (intercept) and $\hat{b}_1$ (slope) that define
+emergent relationships (see \cref{eq:02:linear_regression_y}).
 
 \begin{figure}[t]
   \centering
