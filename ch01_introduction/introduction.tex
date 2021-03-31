@@ -45,7 +45,7 @@ the planet's surface is partly absorbed by the corresponding \ac{GHG}
 molecules through an excitation of their corresponding vibrational modes and
 re-emitted isotropically. This process traps energy near the surface and
 leads to a warming of the Earth's surface and the lower atmosphere. The
-individual impact of the different drivers of climate change measured with
+individual impact of the different drivers of climate change is measured with
 the so-called \emph{radiative forcing}, which quantifies the change in energy
 fluxes caused by changes in these drivers relative to pre-industrial
 conditions \autocite{IPCC2013}. The total radiative forcing is positive
@@ -54,14 +54,14 @@ the increase in the atmospheric concentration of \ac{CO2} due to fossil fuel
 emissions since the year 1750 \autocite{IPCC2014}. Apart from their physical
 warming effect on the climate, carbon-based \acp{GHG} like \ac{CO2} also
 directly influence the global carbon cycle, an important biogeochemical cycle
-of the Earth. A crucial flux of the carbon cycle is the \emph{\ac{GPP}}, which
-describes the carbon uptake of the terrestrial biosphere due to
+of the Earth. A crucial flux of the carbon cycle is the \emph{\ac{GPP}},
+which describes the carbon uptake of the terrestrial biosphere due to
 photosynthesis. Since this land carbon uptake absorbs about $30 \unit{\%}$ of
 the anthropogenic \ac{CO2} emissions in today's climate
 \autocite{Friedlingstein2020}, this process substantially slows down global
-warming and directly contributes to the magnitude of the climate sensitivity.
+warming and directly contributes to the magnitude of climate sensitivity.
 Other important anthropogenic drivers of climate change are the emission of
-aerosols and land use/land cover changes. Apart from anthropogenic drivers,
+aerosols, and land use/land cover changes. Apart from anthropogenic drivers,
 there are also natural processes which impact the climate system like changes
 in the solar activity or volcanic eruptions. However, there is clear evidence
 that these natural drivers alone cannot explain the observed climate change
@@ -72,7 +72,7 @@ important step is the understanding of climate change and its accurate
 quantification. Extremely valuable tools in this context are climate models,
 which allow us to simulate the behavior of the climate system under arbitrary
 conditions without having to perform (ethnically questionable) experiments in
-the real world. All around the world climate research institutes provide a
+the real world. All around the world climate research institutes develop a
 variety of different climate models. Many of them participate in the \ac{CMIP},
 which was initiated in 1995 by the \ac{WGCM} of the \ac{WCRP} to
 \enquote{better understand past, present and future climate changes arising
@@ -98,32 +98,31 @@ simulations with only a prescribed change in the atmospheric \ac{CO2}
 concentration (\eg{} an instantaneous doubling of \ac{CO2} or a \ac{CO2}
 increase of $1 \unit{\%}$ per year) as well as more realistic projections that
 consider different future scenarios (\eg{} a fossil fuel--based future or a
-scenario that is based on a sustainable development). In many variables that
-are relevant for climate change, multi-model projections from \ac{CMIP} show a
-large inter-model range \autocite{Collins2013, Flato2013}. A crucial and
+scenario that is based on a sustainable development). Multi-model projections
+from \ac{CMIP} show a large inter-model range in many variables that are
+relevant for climate change \autocite{Collins2013, Flato2013}. A crucial and
 policy-relevant example for this is the climate sensitivity, which refers to
 the change in the \ac{GSAT} that results from a change in the radiative
 forcing. Common metrics for this are the \emph{\ac{ECS}}, which describes the
 equilibrium response of the climate system after a doubling of the atmospheric
 \ac{CO2} concentration, and the \emph{\ac{TCR}}, which describes the transient
-response of the system to a \ac{CO2} doubling. In \acs{AR}5, both quantities
-have been assessed with large ranges of $\rangeunit{1.5}{4.5}{K}$ and
-$\rangeunit{1.0}{2.5}{K}$ for \ac{ECS} and \ac{TCR}, respectively
-\autocite{Stocker2013}. The corresponding inter-model ranges from the
-\acs{CMIP}5 models show similar results \autocite{Flato2013}. For this reason,
-a careful statistical evaluation and further refinement of the output of
-multi-model climate projections is necessary in order to reduce associated
-uncertainties. A state-of-the-art technique for this is the \emph{emergent
-  constraints} method, which uses a physically-based inter-model relationship
-between an observable quantity of the Earth system and a target variable to
-reduce uncertainties in the target variable with observations
-\autocite{Allen2002}. An alternative approach is the weighting of climate
-models based on their performance (\ie{} the distance of one model to
-observational products) and interdependence (\ie{} the distance of one model to
-other climate models) \autocite{Knutti2017a}. These techniques form the
-baseline for the new analyses and results presented in this thesis, which
-partly utilize methods from a new emerging research field in climate sciences:
-\ac{AI} and \ac{ML}.
+response of the system to a \ac{CO2} doubling. In \acs{AR}5, the assessed range
+of both quantities is large with $\rangeunit{1.5}{4.5}{K}$ for \ac{ECS} and
+$\rangeunit{1.0}{2.5}{K}$ for \ac{TCR} \autocite{Stocker2013}. The
+corresponding inter-model ranges from the \acs{CMIP}5 models show similar
+results \autocite{Flato2013}. For this reason, a careful statistical evaluation
+and further refinement of the output of multi-model climate projections is
+necessary in order to reduce associated uncertainties. A state-of-the-art
+technique for this is the \emph{emergent constraints} method, which uses a
+physically-based inter-model relationship between an observable quantity of the
+Earth system and a target variable to reduce uncertainties in the target
+variable with observations \autocite{Allen2002}. An alternative approach is the
+weighting of climate models based on their performance (\ie{} the distance of
+one model to observational products) and interdependence (\ie{} the distance of
+one model to other climate models) \autocite{Knutti2017a}. These techniques
+form the baseline for the new analyses and results presented in this thesis,
+which partly utilize methods from a new emerging research field in climate
+sciences: \ac{AI} and \ac{ML}.
 
 
 \section{Key Science Questions}
@@ -148,10 +147,10 @@ projections with observations by addressing the following three
 
 Parts of this thesis are already published in multiple peer-reviewed
 publications (two first-author studies and six co-author studies). A complete
-list of these is given on \cpageref{ch:bib:own}. Wherever material from these
-studies is presented in this thesis, the pronoun \enquote{we} is used to
-increase readability by avoiding the passive voice and to acknowledge all
-involved contributors. However, unless stated otherwise, all contents from
+list of these publications is given on \cpageref{ch:bib:own}. Wherever material
+from these studies is presented in this thesis, the pronoun \enquote{we} is
+used to increase readability by avoiding the passive voice and to acknowledge
+all involved contributors. However, unless stated otherwise, all content from
 these publications (text, figures, and tables) shown in this thesis originate
 from the author of this thesis. A detailed list of contributions to these
 studies is given in the corresponding \namecrefs{ch:03:esmvaltool}.
@@ -170,12 +169,12 @@ already published in two scientific publications \autocite{Bock2020,
   Meehl2020}. Since the \ac{ECS} and \ac{TCR} are considerably higher in this
 new climate model generation, \cref{ch:05:paper_ecs} describes the assessment
 of emergent constraints on the \ac{ECS} for these \acs{CMIP}6 models and
-compares these to results derived from \acs{CMIP}5 models. The contents of this
-\namecref{ch:05:paper_ecs} are published in \emph{Earth System Dynamics}
+compares these to results derived from \acs{CMIP}5 models. The content of this
+\namecref{ch:05:paper_ecs} is published in \emph{Earth System Dynamics}
 \autocite{Schlund2020a}. \Cref{ch:06:paper_gpp} focuses on a new method to
 reduce uncertainties in multi-dimensional (gridded) multi-model projections of
 the future climate with observations based on \ac{ML}. As an example, the
 method is applied to \ac{GPP} at the end of the \nth{21} century, which is
 already published in the \emph{Journal of Geophysical Research: Biogeosciences}
 \autocite{Schlund2020}. Finally, \cref{ch:07:conclusion} provides a summary of
-the results of this thesis and gives an outlook of possible future works.
+the results of this thesis and gives an outlook of possible future work.
