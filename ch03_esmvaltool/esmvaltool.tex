@@ -88,7 +88,7 @@ applied to the input data. There are two classes of preprocessors: non-optional
 and optional ones. Examples for non-optional preprocessors are the input/output
 operations \emph{load} (loading input data from climate models and
 observations) and \emph{save} (saving the preprocessed data), which utilize the
-\ac{netCDF} format (a self-describing, machine-independent binary file format
+\ac{NetCDF} format (a self-describing, machine-independent binary file format
 used for the storage of array-based scientific data). Further non-optional
 preprocessors include \emph{checks} and \emph{fixes} of the input data, which
 test whether the input data adheres to standards given by the \ac{CMOR} format
@@ -113,7 +113,7 @@ be written in multiple programming languages. Currently, the languages Python,
 NCL, R, and Julia are supported. The diagnostic scripts, which contain the code
 that runs the actual scientific evaluation, read the preprocessed datasets from
 \ac{ESMValCore} and use these to create the final output of the tool. Apart
-from \ac{netCDF} files and plots, this includes log files with provenance
+from \ac{NetCDF} files and plots, this includes log files with provenance
 information that ensure the reproducibility and transparency of the results.
 The whole workflow of the \ac{ESMValTool} is controlled with the \emph{recipe},
 which is a configuration file in which the user can specify the desired input
@@ -460,7 +460,7 @@ between the historical and pre-industrial \ac{GSAT} and \ac{ECS}
 (\cref{fig:03:flato13:b}) within the \acs{CMIP}5 ensemble.
 \Cref{fig:03:flato13:a} illustrates that there is no clear connection between
 \ac{ECS} and the historical or pre-industrial \ac{GSAT}, \ie{} models with high
-temperatures in the historical or pre-industrial period do no necessarily
+temperatures in the historical or pre-industrial period do not necessarily
 exhibit a high equilibrium warming in the future or vice versa. On the other
 hand, \ac{TCR} and \ac{ECS} are in fact well correlated within the \acs{CMIP}5
 ensemble as theoretically expected from \cref{eq:02:tcr_vs_ecs}. However, this

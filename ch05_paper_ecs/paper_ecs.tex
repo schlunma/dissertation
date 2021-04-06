@@ -27,14 +27,15 @@ improved processes included to the models, the \acs{CMIP}6 ensemble is arguably
 more realistic than its predecessor generations. However, does this
 automatically make results derived from \acs{CMIP}6 models more trustworthy
 than those derived from earlier \ac{CMIP} models? In general, the answer to
-this question is \enquote{no}. Even the \acs{CMIP}6 models are far from fully
-simulating all aspects and processes of the full vastly complex Earth system,
-which could introduce new biases which have not been present in earlier
-\ac{CMIP} models. For example, the apparent increase in climate sensitivity in
-the \acs{CMIP}6 models might be wrongly caused by missing processes that cancel
-out the effects of the newly included processes. Thus, to assess the
-credibility of \ac{ESM} results it is vital to take other sources of
-information into account.
+this question is \enquote{not necessarily}. Even the \acs{CMIP}6 models are far
+from fully simulating all aspects and processes of the full vastly complex
+Earth system. Therefore, the addition of new processes to these models could
+introduce new biases which have not been present in earlier \ac{CMIP} models.
+For example, the apparent increase in climate sensitivity in the \acs{CMIP}6
+models might be wrongly caused by missing processes that cancel out the effects
+of the newly included processes. Thus, it is vital to take other sources of
+information into account in order to assess the credibility of \ac{ESM}
+results.
 
 One of the most important sources of information for this purpose is
 undoubtedly observational data. As presented in
@@ -100,9 +101,9 @@ perform out-of-sample testing using the previously unseen data.
     midlatitudinal cloud fraction [$\si{\%}$] & \tabitem \emph{clt} (ISCCP
     D-2) \\
     \midrule
-    ZHA* & \textcite{Zhai2015} & Seasonal response of \acl{MBLC} cloud
-    fraction to changes in \acs{SST} [$\si{\pctK{}}$] &
-    \makecell{\tabitem \emph{cl} (Cloudsat/CALIPSO) \\ \tabitem \emph{tos}
+    ZHA* & \textcite{Zhai2015} & Seasonal response of \acl{MBLC} fraction to
+    changes in \acs{SST} [$\si{\pctK{}}$] &
+    \makecell{\tabitem \emph{cl} (CloudSat/CALIPSO) \\ \tabitem \emph{tos}
       (AMSRE \ac{SST}) \\ \tabitem \emph{wap} (ERA-Interim)} \\
     \bottomrule
   \end{tabular}
@@ -538,7 +539,7 @@ profiles of relative humidity from the surface to $100 \unit{hPa}$. These
 profiles are then used to define the \xaxis{} of the SU constraint by
 calculating a performance metric based on the slope of the linear regression
 between a climate model's relative humidity profile and the corresponding
-observational reference. Similarly to the original publication, we use humidity
+observational reference. Similar to the original publication, we use humidity
 observations from AIRS \autocite{Aumann2003} for pressure levels greater than
 $300 \unit{hPa}$ and MLS-Aura data \autocite{Beer2006} for pressure levels of
 less than $300 \unit{hPa}$. Our analysis yields a constrained $66 \unit{\%}$
@@ -710,7 +711,7 @@ fraction to changes in the \ac{SST} in subtropical oceanic subsidence regions
 for both hemispheres ($\rangeunit{20}{40}{\degree}$). On short (seasonal) and
 long (centennial under a forcing) time scales, this quantity is well correlated
 with \ac{ECS} among an ensemble of \acs{CMIP}3 and \acs{CMIP}5 models. Together
-with observations of cloud fraction from Cloudsat/CALIPSO \autocite{Mace2009},
+with observations of cloud fraction from CloudSat/CALIPSO \autocite{Mace2009},
 \ac{SST} from AMSRE \ac{SST} \autocite{AMSRE2011}, and vertical velocity from
 ERA-Interim \autocite{Dee2011}, the seasonal response of \ac{MBLC} fraction to
 changes in \ac{SST} forms an emergent constraint on \ac{ECS}. We assess a $66
