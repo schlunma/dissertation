@@ -16,18 +16,14 @@
 
 Examples
 --------
-python search_in_tex.py '(?i).{25}\.\s*\\.{0,12}cite\{.{25}'
-python search_in_tex.py '(?i).{25}\)\s*\\.{0,12}cite\{.{25}'
+python search_in_tex.py '(?i).{25}[\.\)]\s*\\.{0,12}cite\{.{25}'
+python search_in_tex.py '(?i).{25}[\.\)]\s*\\.{0,12}ac.{0,12}\{.{25}'
+python search_in_tex.py '(?i).{25}[\.\)]\s*\\.{0,12}ref.{0,12}\{.{25}'
 
-python search_in_tex.py '(?i).{25}\.\s*\\.{0,12}ac.{0,12}\{.{25}'
-python search_in_tex.py '(?i).{25}\)\s*\\.{0,12}ac.{0,12}\{.{25}'
+python search_in_tex.py '(?i)\\caption\[.*?\]\{.*?\\label' | egrep -iC 999 '\\ac\{'
+python search_in_tex.py '(?i)\\begin\{tabular.*?\}.*?\\end\{tabular.*?\}' | egrep -iC 999 '\\ac\{'
 
-python search_in_tex.py '(?i).{25}\.\s*\\.{0,12}ref.{0,12}\{.{25}'
-python search_in_tex.py '(?i).{25}\)\s*\\.{0,12}ref.{0,12}\{.{25}'
-
-python search_in_tex.py '(?i)\\caption\[.*?\]\{.*?\\label' | egrep '\\ac\{'
-
-python utils/search_in_tex.py '.{20}\\ac\{[^\}]+\}[^\s,\.\)\}\:]+?.{20}'
+python search_in_tex.py '.{20}\\[aA]{1}c[fl]?[p]?\{[^\}]+\}[^\s,\.\)\}\:;'']+?.{20}'
 
 """
 
