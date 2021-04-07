@@ -27,6 +27,8 @@ python search_in_tex.py '(?i).{25}\)\s*\\.{0,12}ref.{0,12}\{.{25}'
 
 python search_in_tex.py '(?i)\\caption\[.*?\]\{.*?\\label' | egrep '\\ac\{'
 
+python utils/search_in_tex.py '.{20}\\ac\{[^\}]+\}[^\s,\.\)\}\:]+?.{20}'
+
 """
 
 

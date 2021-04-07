@@ -31,7 +31,7 @@ been contributed that improve the routine evaluation of climate models, which
 is beneficial for the entire scientific community. This led to co-authorship in
 the scientific documentation of the \ac{ESMValTool}, which is published in four
 peer-reviewed studies \autocite{Eyring2020, Lauer2020, Righi2020, Weigel2020}.
-After a brief overview of the \ac{ESMValTool}'s structure
+After a brief overview of the \acs{ESMValTool}'s structure
 (\cref{sec:03:esmvaltool}), this \namecref{ch:03:esmvaltool} presents all these
 contributions that are not documented in other
 \namecrefs{ch:04:papers_ecs_tcr_assessment} of this thesis and puts them into
@@ -120,7 +120,7 @@ which is a configuration file in which the user can specify the desired input
 datasets, preprocessing operations, and diagnostic scripts. Implementing a new
 scientific assessment into the \ac{ESMValTool} usually includes writing a new
 recipe and one or more diagnostic scripts. A third major element of the
-\ac{ESMValTool} is the \emph{\ac{CMOR}ization} (\ie{} the reformatting of data
+\ac{ESMValTool} is the \emph{\acs{CMOR}ization} (\ie{} the reformatting of data
 so it adheres to \ac{CMOR} standards) of raw observational datasets (not shown
 in \cref{fig:03:esmvaltool_schematic}). This ensures that the \ac{ESMValTool}
 can process arbitrary observational datasets, which can for example be used to
@@ -311,7 +311,7 @@ Southern Hemisphere between $80 \unit{\degree S}$ and $30 \unit{\degree S}$.
 
 In addition to the analyses presented in
 \cref{ch:04:papers_ecs_tcr_assessment,ch:05:paper_ecs,ch:06:paper_gpp}, several
-more recipes and \ac{CMOR}ization scripts for observational data have been
+more recipes and \acs{CMOR}ization scripts for observational data have been
 added to the main \ac{ESMValTool} repository on GitHub. A summary of these is
 given in \cref{tab:03:changes_to_esmvaltool}. Moreover, multiple minor changes
 and additions have been implemented to improve the code base and/or to fix
@@ -340,7 +340,7 @@ regional evaluation \autocite{Weigel2020}.
     & \emph{schlund20jgr\_gpp\_change\_rcp85} & \autocite{Schlund2020} \\
     & \emph{tcr} & \autocite{Gregory2008} \\
     \midrule
-    \ac{CMOR}izer & CRU & \autocite{Harris2014} \\
+    \acs{CMOR}izer & CRU & \autocite{Harris2014} \\
     & CT2019 & \autocite{Jacobson2020} \\
     & GCP & \autocite{Friedlingstein2020} \\
     & HWSD & \autocite{Wieder2014} \\
@@ -453,7 +453,7 @@ description of the calculation of $\Psi$ in \cref{subsec:05:cox}.
 An important class of recipes in the \ac{ESMValTool} covers international
 climate assessments. One such example is \emph{recipe\_flato13ipcc.yml}, which
 reproduces large parts of the climate model evaluation performed in chapter 9
-of the \ac{IPCC}'s Fifth \acl{AR} (\acs{AR}5) \autocite{Flato2013}. For this
+of the \acs{IPCC}'s Fifth \acl{AR} (\acs{AR}5) \autocite{Flato2013}. For this
 recipe, the two-panel figure 9.42 has been added, which shows the relationship
 between the historical and pre-industrial \ac{GSAT} and \ac{ECS}
 (\cref{fig:03:flato13:a}) and the relationship between \ac{TCR} and \ac{ECS}
@@ -501,15 +501,15 @@ provided useful input for the analysis of the climate sensitivity in
   \label{fig:03:flato13}
 \end{figure}
 
-The implemented \ac{CMOR}ization scripts (also referred to as
-\emph{\ac{CMOR}izers}) allow the processing of arbitrary observational data
+The implemented \acs{CMOR}ization scripts (also referred to as
+\emph{\acs{CMOR}izers}) allow the processing of arbitrary observational data
 with the \ac{ESMValTool}. For this, the raw observational datasets are
 reformatted in such way that they adhere to the \ac{CMOR} standards. Since the
-\ac{CMOR}ization scripts are publicly available like any other code in the
+\acs{CMOR}ization scripts are publicly available like any other code in the
 \ac{ESMValTool} and \ac{ESMValCore} repositories, the entire scientific
-community can use them to \ac{CMOR}ize the observational data. A complete list
-of all eleven newly implemented \ac{CMOR}izers including the main reference for
-the corresponding observational datasets is shown in
+community can use them to \acs{CMOR}ize the observational data. A complete list
+of all eleven newly implemented \acs{CMOR}izers including the main reference
+for the corresponding observational datasets is shown in
 \cref{tab:03:changes_to_esmvaltool}. The majority of these datasets are used
 for analysis presented in this thesis (\eg{} see
 \cref{tab:05:overview_emergent_constraints,tab:06:predictors}).
