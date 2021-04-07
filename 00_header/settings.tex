@@ -39,7 +39,7 @@
 
 % Tables
 \tymin = 0.2\columnwidth
-\renewcommand{\cellalign}{tl}
+\renewcommand*{\cellalign}{tl}
 
 % Biblatex
 \newcommand*{\boldname}[3]{% Make my name bold in list of references
@@ -47,21 +47,21 @@
   \def\firstname{#2}%
   \def\firstinit{#3}%
 }
-\renewcommand{\mkbibnamegiven}[1]{%
+\renewcommand*{\mkbibnamegiven}[1]{%
   \ifboolexpr{
     (test {\ifdefequal{\firstname}{\namepartgiven}} or
      test {\ifdefequal{\firstinit}{\namepartgiven}}) and
     test {\ifdefequal{\lastname}{\namepartfamily}}
   }{\mkbibbold{#1}}{#1}%
 }
-\renewcommand{\mkbibnamefamily}[1]{%
+\renewcommand*{\mkbibnamefamily}[1]{%
   \ifboolexpr{
     (test {\ifdefequal{\firstname}{\namepartgiven}} or
      test {\ifdefequal{\firstinit}{\namepartgiven}}) and
     test {\ifdefequal{\lastname}{\namepartfamily}}
   }{\mkbibbold{#1}}{#1}%
 }
-\newcommand{\apashortdash}{-} % Necessary when apa and authoryear-comp are used
+\newcommand*{\apashortdash}{-} % Necessary with apa and authoryear-comp
 \DeclareLabelalphaTemplate{% Sorting of bibliography (first author -> year)
   \labelelement{\field[names=1, lowercase]{labelname}}
   \labelelement{\field{year}}
@@ -73,12 +73,18 @@
 
 % Acronyms
 \makeatletter
-\AtBeginDocument{% Do not use hyperref color for links
-  \renewcommand*{\AC@hyperlink}[2]{%
+\AtBeginDocument{%
+  \renewcommand*{\AC@hyperlink}[2]{% Do not use hyperref color for links
     \begingroup%
     \hypersetup{hidelinks}%
     \hyperlink{#1}{#2}%
     \endgroup%
+  }%
+  \renewcommand*{\AC@hyperref}[2][]{% Remove links from acronym list entries
+    #2%
+  }%
+  \renewcommand*{\AC@pageref}[1]{% Put links to pages in list of acronyms
+    \pageref{#1}%
   }%
 }
 \newcommand*{\org@overidelabel}{} % No warning about multiply-defined labels
@@ -90,7 +96,6 @@
   \@esphack%
 }%
 \makeatother
-\renewcommand{\aclabelfont}[1]{\textrm{#1}} % Font for acronyms in list
 
 % Hyperref
 \hypersetup{
@@ -114,7 +119,7 @@
 
 % Cleveref
 \crefname{question}{key science question}{key science questions}
-\newcommand{\crefrangeconjunction}{--}
+\newcommand*{\crefrangeconjunction}{--}
 
 % PDF version of document
 \pdfminorversion = 7
