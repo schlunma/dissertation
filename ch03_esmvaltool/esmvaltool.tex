@@ -16,7 +16,7 @@
 \chapter{Improving Routine Climate Model Evaluation}
 \label{ch:03:esmvaltool}
 
-In order to answer the \namecrefs{enum:01:question_1} of this thesis posed in
+To address the \namecrefs{enum:01:question_1} of this thesis posed in
 \cref{sec:01:key_science_questions}, a reliable and efficient tool to read,
 process, and evaluate climate model output and observational data is necessary.
 A valuable software that fits these criteria is the \ac{ESMValTool}. The
@@ -216,15 +216,14 @@ are reported in units of \enquote{per square meter of land/sea} and not in
 \enquote{per square meter of grid cell}. After the weighting, the grid cell
 areas can be used to integrate the flux-related variable over a desired region.
 In this thesis, \emph{land/sea fraction weighting} is applied to \ac{GPP}
-fields given by observational products and models in order to compute the
-corresponding global mean results (see \cref{ch:06:paper_gpp}). The
-\emph{trend} preprocessor calculates the linear trend of a variable along an
-arbitrary coordinate. The linear trend is defined as the slope of an ordinary
-least squares linear regression of the variable against the selected
-coordinate. For example, this can be used to calculate the historical trend of
-the \ac{GSAT}, which is used as a predictor for \ac{ECS} in several
-recently-published emergent constraints \autocite{JimenezdelaCuesta2019,
-  Nijsse2020, Tokarska2020}.
+fields given by observational products and models to compute the corresponding
+global mean results (see \cref{ch:06:paper_gpp}). The \emph{trend} preprocessor
+calculates the linear trend of a variable along an arbitrary coordinate. The
+linear trend is defined as the slope of an ordinary least squares linear
+regression of the variable against the selected coordinate. For example, this
+can be used to calculate the historical trend of the \ac{GSAT}, which is used
+as a predictor for \ac{ECS} in several recently published emergent constraints
+\autocite{JimenezdelaCuesta2019, Nijsse2020, Tokarska2020}.
 
 \begin{figure}[t]
   \centering

@@ -16,32 +16,31 @@
 \chapter{Assessment of Climate Sensitivity in the \acs{CMIP}6 Ensemble}
 \label{ch:04:papers_ecs_tcr_assessment}
 
-In order to reduce uncertainties in multi-model climate projections, a first
-important step is the assessment of the desired target variables in the
-corresponding climate model ensemble. This is particularly relevant when a new
-generation of \acp{ESM} is published that includes considerable modifications
-compared to the respective predecessor model versions. Currently, we are in a
-situation like this with the \acs{CMIP}6 ensemble, for which new data is still
-released every day (as of \TheMonth{}). In light of the upcoming international
-climate assessment of the \ac{IPCC}'s \acs{AR}6, the evaluation of
-policy-relevant metrics like \ac{ECS} or \ac{TCR} for these new \acs{CMIP}6
-models is crucial since they provide vital information about the future climate
-of planet Earth. As the \ac{ESMValTool} is an excellent tool that allows for a
-quick and robust evaluation of new \ac{CMIP} data as soon as it gets published
-on the \ac{ESGF} servers (see \cref{sec:03:esmvaltool}), it is used here to
-assess and analyze \ac{ECS} and \ac{TCR} of the \acs{CMIP}6 models and compare
-it to corresponding results of predecessor model generations and international
-climate assessments. This work is already published in two scientific papers:
-\textcite{Bock2020} and \textcite{Meehl2020}. For \textcite{Bock2020}, the
-author of this thesis contributed their figure 8 (a bar chart showing the
-\ac{ECS} for several \acs{CMIP}3, \acs{CMIP}5, and \acs{CMIP}6 models), their
-figure 10 (map plots showing cloud-related feedback parameters for the
-\acs{CMIP}5 and \acs{CMIP}6 \acp{MMM}; see
-\cref{fig:04:cloud_feedback_parameters}), code to create these figures with the
-\ac{ESMValTool}, and text for the manuscript (in particular a section about the
-evaluation of \ac{ECS}). For \textcite{Meehl2020}, the author of this thesis
-contributed all figures and tables, code to produce these with the
-\ac{ESMValTool}, and text for the manuscript. This
+To reduce uncertainties in multi-model climate projections, a first important
+step is the assessment of the desired target variables in the corresponding
+climate model ensemble. This is particularly relevant when a new generation of
+\acp{ESM} is published that includes considerable modifications compared to the
+respective predecessor model versions. Currently, we are in a situation like
+this with the \acs{CMIP}6 ensemble, for which new data is still released every
+day (as of \TheMonth{}). In light of the upcoming international climate
+assessment of the \ac{IPCC}'s \acs{AR}6, the evaluation of policy-relevant
+metrics like \ac{ECS} or \ac{TCR} for these new \acs{CMIP}6 models is crucial
+since they provide vital information about the future climate of planet Earth.
+As the \ac{ESMValTool} is an excellent tool that allows for a quick and robust
+evaluation of new \ac{CMIP} data as soon as it gets published on the \ac{ESGF}
+servers (see \cref{sec:03:esmvaltool}), it is used here to assess and analyze
+\ac{ECS} and \ac{TCR} of the \acs{CMIP}6 models and compare it to corresponding
+results of predecessor model generations and international climate assessments.
+This work is already published in two scientific papers: \textcite{Bock2020}
+and \textcite{Meehl2020}. For \textcite{Bock2020}, the author of this thesis
+contributed their figure 8 (a bar chart showing the \ac{ECS} for several
+\acs{CMIP}3, \acs{CMIP}5, and \acs{CMIP}6 models), their figure 10 (map plots
+showing cloud-related feedback parameters for the \acs{CMIP}5 and \acs{CMIP}6
+\acp{MMM}; see \cref{fig:04:cloud_feedback_parameters}), code to create these
+figures with the \ac{ESMValTool}, and text for the manuscript (in particular a
+section about the evaluation of \ac{ECS}). For \textcite{Meehl2020}, the author
+of this thesis contributed all figures and tables, code to produce these with
+the \ac{ESMValTool}, and text for the manuscript. This
 \namecref{ch:04:papers_ecs_tcr_assessment} first presents the evaluation of
 climate sensitivity for the \acs{CMIP}5 and \acs{CMIP}6 ensembles
 (\cref{sec:04:evaluation_ecs_and_tcr}) and puts the corresponding \ac{ECS} and
@@ -256,37 +255,37 @@ this \namecref{sec:04:possible_reasons_high_ecs_cmip6} discusses possible
 reasons for the increased climate sensitivity in \acs{CMIP}6.
 
 Various improvements of the underlying physical, biological, and chemical
-processes have been introduced to the \acs{CMIP}6 \acp{ESM} in order to
-represent the coupled Earth system in more detail. Since many of these
-processes directly influence the models' \ac{ECS} \autocite{Forster2020},
-determining reasons for the increased \ac{ECS} in the \acs{CMIP}6 ensemble is
-highly non-trivial. As discussed in detail by \textcite{Meehl2020}, one
-possible reason is the consideration of aerosol-cloud interactions. New
-prognostic aerosol schemes added to some \acs{CMIP}6 models that include
-aerosol-cloud interactions could have produced overly large negative radiative
-forcing, which then required a stronger model response to \ac{GHG} forcing in
-order to reproduce the observed historical temperature trend. In fact,
-\textcite{Meehl2020} find a weak inter-model relationship between the aerosol
-forcing and \ac{ECS} for some \acs{CMIP}6 models, with larger negative
-present-day aerosol forcing associated with higher \ac{ECS}. Such relationships
-have also been found for previous climate model generations
-\autocite{Kiehl2007, Forster2013}. However, due to the varying aerosol forcing
-over time, these relations cannot be used to tune \ac{ECS} based on the models'
-responses to aerosols over the different periods of the \nth{20} century
-\autocite{Dittus2020}. Further aerosol-cloud interactions that are relevant in
-the context of high climate sensitivity in \acs{CMIP}6 are found for example in
-the \ac{HadGEM} version 3. The new aerosol scheme in this model suppresses a
-strong negative cloud feedback over the Southern Ocean that is found in the
-model's predecessor versions \autocite{BodasSalcedo2019}. The Southern Ocean is
-one of the most pristine aerosol regions in the world \autocite{Hamilton2014},
-where aerosols predominantly originate from natural sources like marine
-emissions of gaseous dimethyl sulfide. Earlier \ac{HadGEM} versions show a
-large reduction in cloud droplet size with warming over the Southern Ocean,
-which increases the cloud albedo and thus produces a negative shortwave cloud
-feedback. On the contrary, in \acs{HadGEM}3, this negative feedback is
-completely suppressed or even positive due to a small increase of the cloud
-droplet size with warming, which eventually increases \ac{ECS} due to an
-increased net cloud feedback \autocite{BodasSalcedo2019}.
+processes have been introduced to the \acs{CMIP}6 \acp{ESM} to represent the
+coupled Earth system in more detail. Since many of these processes directly
+influence the models' \ac{ECS} \autocite{Forster2020}, determining reasons for
+the increased \ac{ECS} in the \acs{CMIP}6 ensemble is highly non-trivial. As
+discussed in detail by \textcite{Meehl2020}, one possible reason is the
+consideration of aerosol-cloud interactions. New prognostic aerosol schemes
+added to some \acs{CMIP}6 models that include aerosol-cloud interactions could
+have produced overly large negative radiative forcing, which then required a
+stronger model response to \ac{GHG} forcing to reproduce the observed
+historical temperature trend. In fact, \textcite{Meehl2020} find a weak
+inter-model relationship between the aerosol forcing and \ac{ECS} for some
+\acs{CMIP}6 models, with larger negative present-day aerosol forcing associated
+with higher \ac{ECS}. Such relationships have also been found for previous
+climate model generations \autocite{Kiehl2007, Forster2013}. However, due to
+the varying aerosol forcing over time, these relations cannot be used to tune
+\ac{ECS} based on the models' responses to aerosols over the different periods
+of the \nth{20} century \autocite{Dittus2020}. Further aerosol-cloud
+interactions that are relevant in the context of high climate sensitivity in
+\acs{CMIP}6 are found for example in the \ac{HadGEM} version 3. The new aerosol
+scheme in this model suppresses a strong negative cloud feedback over the
+Southern Ocean that is found in the model's predecessor versions
+\autocite{BodasSalcedo2019}. The Southern Ocean is one of the most pristine
+aerosol regions in the world \autocite{Hamilton2014}, where aerosols
+predominantly originate from natural sources like marine emissions of gaseous
+dimethyl sulfide. Earlier \ac{HadGEM} versions show a large reduction in cloud
+droplet size with warming over the Southern Ocean, which increases the cloud
+albedo and thus produces a negative shortwave cloud feedback. On the contrary,
+in \acs{HadGEM}3, this negative feedback is completely suppressed or even
+positive due to a small increase of the cloud droplet size with warming, which
+eventually increases \ac{ECS} due to an increased net cloud feedback
+\autocite{BodasSalcedo2019}.
 
 Another possible reason for the high climate sensitivity in the \acs{CMIP}6
 ensemble is related to cloud feedbacks \autocite{Bock2020}. As already

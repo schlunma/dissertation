@@ -25,6 +25,10 @@ python search_in_tex.py '(?i)\\begin\{tabular.*?\}.*?\\end\{tabular.*?\}' | egre
 
 python search_in_tex.py '.{20}\\[aA]{1}c[fl]?[p]?\{[^\}]+\}[^\s,\.\)\}\:;'']+?.{20}'
 
+python search_in_tex.py '.{20}ly-.{20}'
+
+python search_in_tex.py '.{20}\s+[Aa][n]?\s+\\[Aa]c.{20}'
+
 """
 
 

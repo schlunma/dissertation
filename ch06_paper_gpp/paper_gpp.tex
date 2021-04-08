@@ -26,8 +26,8 @@ explore an alternative approach that expands the \acf{MDER} method (see
 emergent constraints, this approach considers (1) multiple process-based
 predictors, (2) multi-dimensional (gridded) target variables, and (3)
 non-linear relationships between the predictors and the target variable. Since
-the new technique relies on a large number of data points in order to train the
-\ac{ML} algorithm, \ac{ECS} as a scalar climate sensitivity metric is not an
+the new technique relies on a large number of data points to train the \ac{ML}
+algorithm, \ac{ECS} as a scalar climate sensitivity metric is not an
 appropriate target variable. Thus, this analysis does not focus on reducing
 uncertainties in climate sensitivity itself, but rather on a selected process
 that contributes to it: \ac{GPP}. As described in detail in
@@ -212,7 +212,7 @@ models).
 Therefore, our target variable in step 1 is the global mean fractional
 \acs{GPP} change over the \nth{21} century $f$ in the \acs{RCP}8.5 scenario,
 which is calculated from the 10-year mean \ac{GPP} at the end of the \nth{21}
-century in the emission-driven fully-coupled \acs{RCP}8.5 simulations
+century in the emission-driven fully coupled \acs{RCP}8.5 simulations
 (\range{2091}{2100}) and the 10-year mean \ac{GPP} at the end of the \nth{20}
 century (\range{1991}{2000}) in the emission-driven historical simulation:
 \begin{equation}
@@ -428,15 +428,15 @@ In the second phase (predicting with the trained \ac{GBRT} model), we use
 observational data products to constrain the \acs{RCP}8.5 \acs{CMIP}5
 projection of \ac{GPP}. To do this, observational data for all predictors
 $\bm{x}$ of the historical climate (for every grid cell/month) are fed into the
-trained \ac{GBRT} model in order to get a spatially constrained projection of
-\ac{GPP} (see black points in \cref{fig:06:mlr_concept}{\color{BrownRed} b}).
-Similar to the \ac{MDER} algorithm, our approach assumes that there exists an
-inter-model relationship between the predictors and the target variable which
-also holds for the true climate. This assumption may seem weak at first glance,
-but compared to the assumption of traditional weighting approaches (models that
-are better in simulating the present-day climate are also better in simulating
-the future climate and vice versa), the \ac{MDER} assumption is more reasonable
-and allows correcting models instead of just weighing
+trained \ac{GBRT} model to get a spatially constrained projection of \ac{GPP}
+(see black points in \cref{fig:06:mlr_concept}{\color{BrownRed} b}). Similar to
+the \ac{MDER} algorithm, our approach assumes that there exists an inter-model
+relationship between the predictors and the target variable which also holds
+for the true climate. This assumption may seem weak at first glance, but
+compared to the assumption of traditional weighting approaches (models that are
+better in simulating the present-day climate are also better in simulating the
+future climate and vice versa), the \ac{MDER} assumption is more reasonable and
+allows correcting models instead of just weighing
 \commentcite{Karpechko2013}{see \cref{subsec:02:mder}}. Following other
 \ac{MDER} studies \autocite{Karpechko2013, Senftleben2020, Wenzel2016a}, we
 also select diagnostics as predictor variables $\bm{x}$ that are related to
@@ -498,7 +498,7 @@ removed from the multi-model ensemble and considered as being the true climate.
 Our statistical model is then fitted on all remaining climate models and a
 prediction for the \enquote{true} model is created. This allows a simple
 evaluation of the predictive power by calculating the \ac{RMSEP}. The whole
-process is repeated for every climate model of the ensemble in order to get a
+process is repeated for every climate model of the ensemble to get a
 distribution of \acp{RMSEP}. Since this approach is not limited to \ac{GBRT},
 it allows a simple comparison of the predictive skill of different statistical
 models. We compare the \ac{GBRT} model to the simple \acs{CMIP}5 \acf{MMM} and
@@ -524,11 +524,11 @@ to $\pmrangeunit{32}{9}{\%}$ for extratropical ecosystems
 ($\rangeunit{30}{90}{\degree N}$). As mentioned in \cref{subsec:06:step_1}, we
 argue that due to the strong annual mixing of \ac{CO2} in the atmosphere, this
 emergent constraint can also be applied to the global mean \ac{GPP} change if
-the emergent relationship holds. In order to test this, we first use the
-idealized \acs{CMIP}5 simulations that were analyzed by \textcite{Wenzel2016}
-to calculate the emergent constraint (\cref{fig:06:step1:a}). The relationship
-is statistically significant at a $5 \unit{\%}$ significance level ($R^2 =
-0.79$, $p = 0.007$) and predicts a constrained global mean \acs{GPP} change of
+the emergent relationship holds. To test this, we first use the idealized
+\acs{CMIP}5 simulations that were analyzed by \textcite{Wenzel2016} to
+calculate the emergent constraint (\cref{fig:06:step1:a}). The relationship is
+statistically significant at a $5 \unit{\%}$ significance level ($R^2 = 0.79$,
+$p = 0.007$) and predicts a constrained global mean \acs{GPP} change of
 $\pmrangeunit{30}{9}{\%}$, which is consistent with the findings of
 \textcite{Wenzel2016}. This result gives us confidence that the emergent
 relationship holds for the global mean \ac{GPP}. Details on the mathematical
@@ -573,9 +573,9 @@ derivation of the constrained range are given in
     \acs{1BGC} run is $\pmrangeunit{30}{9}{\%}$. (b) Fractional global mean
     \acs{GPP} change over the \nth{21} century calculated from the 10-year mean
     \acs{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in the
-    emission-driven fully-coupled \acs{RCP}8.5 simulations and the 10-year mean
+    emission-driven fully coupled \acs{RCP}8.5 simulations and the 10-year mean
     \acs{GPP} at the end of the \nth{20} century (\range{1991}{2000}) in the
-    emission-driven fully-coupled historical run (see \cref{eq:06:f}). In
+    emission-driven fully coupled historical run (see \cref{eq:06:f}). In
     contrast to \textcite{Wenzel2016}, the sensitivity of the \acs{CO2}
     amplitude is calculated from the years \range{1979}{2019} for climate
     models and observations for better comparability (the historical
@@ -594,10 +594,10 @@ since the carbon cycle components of the \acp{ESM} only see the increasing
 \ac{CO2} concentration. However, since the magnitude of the
 concentration-carbon feedback is believed to be four times the size of the
 climate-carbon feedback \autocite{Gregory2009}, the \ac{CO2} fertilization
-effect is still the dominant driver of \ac{GPP} change in the fully-coupled
+effect is still the dominant driver of \ac{GPP} change in the fully coupled
 simulations \autocite{Huntzinger2017}. This is also supported by
 \textcite{Wenzel2016}, who show that the \ac{GPP} increase due to rising
-atmospheric \ac{CO2} concentrations in the fully-coupled historical simulations
+atmospheric \ac{CO2} concentrations in the fully coupled historical simulations
 is proportional to the same quantity in the \ac{1BGC} run. Additional lines of
 evidence suggest that the modeled \ac{CO2} sensitivity of photosynthesis is the
 main source of uncertainty of future \ac{GPP} \autocite{Arora2013, Haverd2020,
@@ -1371,7 +1371,7 @@ further analysis and needs to be treated with care.
 
 Our \ac{GBRT} approach (step 2) is mathematically similar to \ac{MDER}
 \autocite{Karpechko2013, Senftleben2020, Wenzel2016a}: We establish a
-relationship between process-oriented, physically-relevant diagnostics and
+relationship between process-oriented, physically relevant diagnostics and
 future projections and then utilize this to project today's observed conditions
 into the future. We emphasize that the exact nature of this relationship is
 strongly dependent on the climate model ensemble considered. Although derived
@@ -1428,7 +1428,7 @@ The presented approach based on \ac{ML} is not limited to projections of the
 future carbon cycle, which is used as an illustrative example. Indeed, since
 its only prerequisites are the availability of gridded climate model data and
 gridded observation-based data, the \ac{GBRT} algorithm can be applied to any
-variable of interest if physically-relevant diagnostics that influence the
+variable of interest if physically relevant diagnostics that influence the
 target variable are known. This opens a wide range of possibilities for
 constraining uncertainties in projected variable scenarios. In addition, maps
 of the local relative feature importance as shown in

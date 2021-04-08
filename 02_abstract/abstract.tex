@@ -15,8 +15,8 @@
 
 \chapter{\abstractname}
 
-A precise quantification of climate change is crucial in order to assess
-optimal mitigation and adaptation strategies. \AcfpAbstract{ESM}, which are
+A precise quantification of climate change is crucial to assess optimal
+mitigation and adaptation strategies. \AcfpAbstract{ESM}, which are
 state-of-the-art climate models that allow numerical simulations of the complex
 physical, biological, and chemical processes of the Earth system, are common
 tools to understand and project climate change. Due to the chaotic nature of
@@ -64,13 +64,13 @@ size of the constrained \acs{ECS} ranges ($66 \unit{\%}$ confidence intervals)
 widens by $51 \unit{\%}$ on average in \acs{CMIP}6 compared to \acs{CMIP}5.
 This is likely related to the increased multi-model spread of \acs{ECS} in
 \acs{CMIP}6, but may in some cases also be due to spurious statistical
-relationships or a too small number of models in the ensemble that the emergent
+relationships or a too-small number of models in the ensemble that the emergent
 constraint was originally derived from. The corresponding best estimates of
 \acs{ECS} given by the emergent constraints also increase from \acs{CMIP}5 to
 \acs{CMIP}6 by $12 \unit{\%}$ on average. This can at least be partly explained
 by the increased number of high-\acs{ECS} models in \acs{CMIP}6 without a
 corresponding change in the constraint predictors, suggesting the emergence of
-new feedback processes rather than changes in strength of those previously
+new feedback processes rather than changes in the strength of those previously
 dominant. The results support previous studies concluding that emergent
 constraints should be based on an independently verifiable physical mechanism
 and that process-based emergent constraints on \acs{ECS} should rather be
@@ -79,25 +79,25 @@ targeting.
 
 To overcome these issues of single-process-oriented emergent constraints, an
 alternative approach based on \acfAbstract{ML} is introduced. Since this new
-technique relies on a large number of data points in order to train the
-\acs{ML} algorithm, the scalar climate sensitivity expressed as \acs{ECS} or
-\acs{TCR} is not an appropriate target variable. Therefore, \acfAbstract{GPP}
-as a process that contributes to climate sensitivity is studied as an
-alternative. \acs{GPP} is the largest flux of the terrestrial carbon uptake and
-slows down global warming by removing \acs{CO2} from the atmosphere. In this
-analysis, an existing emergent constraint on \acs{CO2} fertilization is
-combined with a \acs{ML} approach to constrain the spatial variations of
-multi-model \acs{GPP} projections. In the first step of the two-step approach,
-observed changes in the \acs{CO2} seasonal cycle at \acl{KUM} are used to
-constrain the global mean \acs{GPP} at the end of the \nth{21} century
-(\range{2091}{2100}) in \acl{RCP} 8.5 simulations with \acsp{ESM} participating
-in \acs{CMIP}5 to $\pmrangeunit{171}{12}{\GtCyr{}}$, compared to the
-unconstrained model range $\rangeunit{156}{247}{\GtCyr{}}$. In a second step, a
-\acs{ML} model is used to constrain gridded future absolute \acs{GPP} and
-gridded fractional \acs{GPP} change in two independent approaches. For this,
-observational data is fed into the \acs{ML} algorithm that has been trained on
-\acs{CMIP}5 data to learn relationships between present-day physically-relevant
-diagnostics and the target variable. In a leave-one-model-out \acl{CV}
-approach, the \acs{ML} model shows superior performance to the \acs{CMIP}5
-\acs{MMM}. The new approach predicts a higher \acs{GPP} increase in high
-latitudes and a lower \acs{GPP} increase in regions closer to the equator.
+technique relies on a large number of data points to train the \acs{ML}
+algorithm, the scalar climate sensitivity expressed as \acs{ECS} or \acs{TCR}
+is not an appropriate target variable. Therefore, \acfAbstract{GPP} as a
+process that contributes to climate sensitivity is studied as an alternative.
+\acs{GPP} is the largest flux of the terrestrial carbon uptake and slows down
+global warming by removing \acs{CO2} from the atmosphere. In this analysis, an
+existing emergent constraint on \acs{CO2} fertilization is combined with a
+\acs{ML} approach to constrain the spatial variations of multi-model \acs{GPP}
+projections. In the first step of the two-step approach, observed changes in
+the \acs{CO2} seasonal cycle at \acl{KUM} are used to constrain the global mean
+\acs{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in \acl{RCP}
+8.5 simulations with \acsp{ESM} participating in \acs{CMIP}5 to
+$\pmrangeunit{171}{12}{\GtCyr{}}$, compared to the unconstrained model range
+$\rangeunit{156}{247}{\GtCyr{}}$. In a second step, a \acs{ML} model is used to
+constrain gridded future absolute \acs{GPP} and gridded fractional \acs{GPP}
+change in two independent approaches. For this, observational data is fed into
+the \acs{ML} algorithm that has been trained on \acs{CMIP}5 data to learn
+relationships between present-day physically relevant diagnostics and the
+target variable. In a leave-one-model-out \acl{CV} approach, the \acs{ML} model
+shows superior performance to the \acs{CMIP}5 \acs{MMM}. The new approach
+predicts a higher \acs{GPP} increase in high latitudes and a lower \acs{GPP}
+increase in regions closer to the equator.
