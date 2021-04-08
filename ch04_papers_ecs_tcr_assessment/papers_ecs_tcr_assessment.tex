@@ -25,22 +25,23 @@ this with the \acs{CMIP}6 ensemble, for which new data is still released every
 day (as of \TheMonth{}). In light of the upcoming international climate
 assessment of the \ac{IPCC}'s \acs{AR}6, the evaluation of policy-relevant
 metrics like \ac{ECS} or \ac{TCR} for these new \acs{CMIP}6 models is crucial
-since they provide vital information about the future climate of planet Earth.
-As the \ac{ESMValTool} is an excellent tool that allows for a quick and robust
-evaluation of new \ac{CMIP} data as soon as it gets published on the \ac{ESGF}
-servers (see \cref{sec:03:esmvaltool}), it is used here to assess and analyze
-\ac{ECS} and \ac{TCR} of the \acs{CMIP}6 models and compare it to corresponding
-results of predecessor model generations and international climate assessments.
-This work is already published in two scientific papers: \textcite{Bock2020}
-and \textcite{Meehl2020}. For \textcite{Bock2020}, the author of this thesis
-contributed their figure 8 (a bar chart showing the \ac{ECS} for several
-\acs{CMIP}3, \acs{CMIP}5, and \acs{CMIP}6 models), their figure 10 (map plots
-showing cloud-related feedback parameters for the \acs{CMIP}5 and \acs{CMIP}6
-\acp{MMM}; see \cref{fig:04:cloud_feedback_parameters}), code to create these
-figures with the \ac{ESMValTool}, and text for the manuscript (in particular a
-section about the evaluation of \ac{ECS}). For \textcite{Meehl2020}, the author
-of this thesis contributed all figures and tables, code to produce these with
-the \ac{ESMValTool}, and text for the manuscript. This
+since they provide vital information about the future climate of the planet
+Earth. As the \ac{ESMValTool} is an excellent tool that allows for a quick and
+robust evaluation of new \ac{CMIP} data as soon as it gets published on the
+\ac{ESGF} servers (see \cref{sec:03:esmvaltool}), it is used here to assess and
+analyze \ac{ECS} and \ac{TCR} of the \acs{CMIP}6 models and compare it to
+corresponding results of predecessor model generations and international
+climate assessments. This work is already published in two scientific papers:
+\textcite{Bock2020} and \textcite{Meehl2020}. For \textcite{Bock2020}, the
+author of this thesis contributed their figure 8 (a bar chart showing the
+\ac{ECS} for several \acs{CMIP}3, \acs{CMIP}5, and \acs{CMIP}6 models), their
+figure 10 (map plots showing cloud-related feedback parameters for the
+\acs{CMIP}5 and \acs{CMIP}6 \acp{MMM}; see
+\cref{fig:04:cloud_feedback_parameters}), code to create these figures with the
+\ac{ESMValTool}, and text for the manuscript (in particular a section about the
+evaluation of \ac{ECS}). For \textcite{Meehl2020}, the author of this thesis
+contributed all figures and tables, code to produce these with the
+\ac{ESMValTool}, and text for the manuscript. This
 \namecref{ch:04:papers_ecs_tcr_assessment} first presents the evaluation of
 climate sensitivity for the \acs{CMIP}5 and \acs{CMIP}6 ensembles
 (\cref{sec:04:evaluation_ecs_and_tcr}) and puts the corresponding \ac{ECS} and
@@ -73,8 +74,8 @@ considered. In contrast to that, the transient response of the climate system
 a \onepctcotwo{} run \commentcite{Bindoff2013}{see \cref{subsec:02:tcr}}. Using
 these two definitions and the \ac{ESMValTool}, \ac{ECS} and \ac{TCR} are
 assessed for all \acs{CMIP}5 and \acs{CMIP}6 models where the necessary
-temperature and radiation data is available (as of \TheMonth{}).
-\Cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6} give an overview over the
+temperature and radiation data are available (as of \TheMonth{}).
+\Cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6} give an overview of the
 results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
 
 \begin{figure}[t]
@@ -119,7 +120,7 @@ results for the \acs{CMIP}5 and \acs{CMIP}6 models, respectively.
     method using the \acs{MMM} net \acf{TOA} radiation and the \acs{MMM} change
     in \acf{GSAT} similar to \cref{fig:04:gregory_regression_cmip6_mmm}. The
     multi-model standard deviation is given by the sample standard deviation of
-    \acs{ECS} evaluated over all climate models (using the normalization $1 /
+    \acs{ECS} calculated over all climate models (using the normalization $1 /
     M$, where $M$ is the number of models). Corresponding references for each
     model are given in \cref{tab:app:a:cmip5_models}. \AdaptedFrom{Meehl2020}.
   }
@@ -153,13 +154,13 @@ deviation) shows an even larger increase in the \acs{CMIP}6 ensemble: For
 difference is about $17 \unit{\%}$ ($0.36 \unit{K}$ in \acs{CMIP}5 to $0.42
 \unit{K}$ in \acs{CMIP}6). The main reason for the increased \ac{MMM} and
 spread in the \acs{CMIP}6 ensemble is the existence of several models with very
-high values of \ac{ECS} and \ac{TCR}. In addition to that, there also exist a
-number of models with very low values of \ac{ECS}. Therefore, the \acs{CMIP}6
-model ranges of \ac{ECS} and \ac{TCR} are well outside the corresponding
-assessed ranges given by the latest published \ac{AR} of the \ac{IPCC} from
-2013 \autocite{Stocker2013} with $\rangeunit{1.8}{5.6}{K}$ for \ac{ECS}
-(\acs{AR}5: $\rangeunit{1.5}{4.5}{K}$) and $\rangeunit{1.3}{3.0}{K}$
-(\acs{AR}5: $\rangeunit{1.0}{2.5}{K}$) for \ac{TCR}.
+high values of \ac{ECS} and \ac{TCR}. In addition to that, there also exist
+some models with very low values of \ac{ECS}. Therefore, the \acs{CMIP}6 model
+ranges of \ac{ECS} and \ac{TCR} are well outside the corresponding assessed
+ranges given by the latest published \ac{AR} of the \ac{IPCC} from 2013
+\autocite{Stocker2013} with $\rangeunit{1.8}{5.6}{K}$ for \ac{ECS} (\acs{AR}5:
+$\rangeunit{1.5}{4.5}{K}$) and $\rangeunit{1.3}{3.0}{K}$ (\acs{AR}5:
+$\rangeunit{1.0}{2.5}{K}$) for \ac{TCR}.
 
 
 \section{Comparison to Previous \acs{CMIP} Generations and International
@@ -175,7 +176,7 @@ corresponding modeled ranges from the different \ac{CMIP} generations. Since
 the Charney report in 1979, the assessed range of \ac{ECS} of
 $\rangeunit{1.5}{4.5}{K}$ has almost remained unchanged during the last 40
 years \autocite{Charney1979, Mitchell1990, Kattenberg1996, Albritton2001,
-  Stocker2013} with the exception of \acs{AR}4, where the lower bound was
+  Stocker2013}, with the exception of \acs{AR}4, where the lower bound was
 temporarily increased to $2.0 \unit{K}$ \autocite{Solomon2007}. For \acs{AR}2,
 \acs{AR}4, and \acs{AR}5, the corresponding climate model generations from
 \acs{CMIP}1, \acs{CMIP}3, and \acs{CMIP}5 more or less agree with this assessed
@@ -216,9 +217,10 @@ the shortwave cloud feedback over the Southern Ocean is given in
     green bars represent the modeled ranges of \acs{ECS} and \acs{TCR},
     respectively, from the different climate model ensembles of the \acf{CMIP}
     with the corresponding \acf{MMM} illustrated with the horizontal black
-    lines (the green circle represents output from a single climate model). The
-    numbers correspond to individual \acs{CMIP}5 and \acs{CMIP}6 models (see
-    \cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6}). \AdaptedFrom{Meehl2020}.
+    lines (the green circle represents the output from a single climate
+    model). The numbers correspond to individual \acs{CMIP}5 and \acs{CMIP}6
+    models (see \cref{tab:04:ecs_tcr_cmip5,tab:04:ecs_tcr_cmip6}).
+    \AdaptedFrom{Meehl2020}.
   }
   \label{fig:04:historical_ecs_tcr_ranges}
 \end{figure}
@@ -241,8 +243,8 @@ bound of the \acs{CMIP}6 model range increased compared to the \acs{CMIP}5
 ensemble, leading to a similar \ac{TCR} model spread in both climate model
 generations. Due to the correlation of \ac{TCR} and \ac{ECS} given by
 \cref{eq:02:tcr_vs_ecs}, the increase of \ac{TCR} in many \acs{CMIP}6 models is
-not surprising in light of the many high \ac{ECS} models that are present the
-\acs{CMIP}6 ensemble.
+not surprising in light of the many high \ac{ECS} models that are present in
+the \acs{CMIP}6 ensemble.
 
 
 \section{Possible Reasons for High Climate Sensitivity in \acs{CMIP}6}
@@ -302,7 +304,7 @@ warms, the predominantly ice clouds over the Southern Ocean in these climate
 models become liquid clouds \autocite{McCoy2015}. As a result, the cloud will
 get more reflective to the incoming solar radiation since a cloud consisting of
 smaller liquid droplets reflects more sunlight than a cloud consisting of
-larger ice crystals (for a fixed water content), which has a cooling effect on
+larger ice crystals (for fixed water content), which has a cooling effect on
 the climate system. In addition, predominantly liquid clouds tend to
 precipitate less than mixed-phase clouds (composed of liquid water and ice).
 This leads to a higher liquid water content of the cloud and a further
@@ -326,7 +328,7 @@ previous \ac{CMIP} generations.
     clouds over the present-day Southern Ocean than their corresponding
     predecessor models \autocite{BodasSalcedo2019, Gettelman2019}. Thus, in the
     affected \acs{CMIP}6 models, the strong negative cloud feedback that
-    results from a cloud phase change from ice clouds in the present-day to
+    results from a cloud phase change from ice clouds in the present day to
     liquid clouds in the future is substantially reduced (orange arrows). This
     leads to an increase in the global net cloud feedback
     \autocite{BodasSalcedo2019, Tan2016} and the \acf{ECS}
@@ -358,8 +360,8 @@ feedback. Since the new scheme also reduces significant cloud phase biases over
 the Southern Ocean that are present in the old scheme, the reduced negative
 cloud phase change feedback is thought to be more consistent with observations
 of the current climate \autocite{Gettelman2019}. Another example is the
-\acs{HadGEM}3 model, for which a new cloud scheme that accounts for turbulent
-production of liquid water in mixed-phase clouds has been implemented
+\acs{HadGEM}3 model, for which a new cloud scheme that accounts for the
+turbulent production of liquid water in mixed-phase clouds has been implemented
 \autocite{BodasSalcedo2019}. The new scheme parameterizes the role of
 subgrid-scale turbulence in the production and maintenance of supercooled
 liquid water \autocite{Furtado2016}. As a consequence, the cloud liquid water
@@ -378,7 +380,7 @@ agreement of the \acs{CMIP}6 \ac{MMM} of the \ac{TOA} shortwave \ac{CRE} with
 observations resulting in higher average pattern correlations of the model
 output with satellite observations \autocite{Bock2020}. Moreover, the strong
 negative cloud feedback described above that results from a cloud phase change
-from ice clouds in the present-day to liquid clouds in the future is
+from ice clouds in the present day to liquid clouds in the future is
 substantially reduced in those \acs{CMIP}6 models that simulate a higher
 fraction of (supercooled) liquid water in the clouds over the present-day
 Southern Ocean than their corresponding \acs{CMIP}5 predecessors. This is
@@ -466,7 +468,7 @@ negative shortwave cloud feedback in this region as liquid clouds tend to be
 more reflective than ice clouds with a similar cloud water content.
 \Cref{fig:04:cloud_feedback_parameters:b,fig:04:cloud_feedback_parameters:d}
 show a higher shortwave and net \ac{CRE} feedback parameter over the Southern
-Ocean in \acs{CMIP}6 compared to \acs{CMIP}5. This is consistent to the
+Ocean in \acs{CMIP}6 compared to \acs{CMIP}5. This is consistent with the
 hypothesis presented in the paragraph above, which claims that the reduced
 negative cloud phase change feedback over the Southern Ocean in \acs{CMIP}6
 leads to an increased net cloud feedback parameter in comparison to older
