@@ -85,8 +85,8 @@ structure of the \ac{ESMValTool} is illustrated in
 an extensive preprocessing of the input data. For this, the Python-based
 \acf{ESMValCore} provide a set of operators (\emph{preprocessors}) that are
 applied to the input data. There are two classes of preprocessors: non-optional
-and optional ones. Examples for non-optional preprocessors are the input/output
-operations \emph{load} (loading input data from climate models and
+and optional preprocessors. Examples for non-optional preprocessors are the
+input/output operations \emph{load} (loading input data from climate models and
 observations) and \emph{save} (saving the preprocessed data), which utilize the
 \ac{NetCDF} format (a self-describing, machine-independent binary file format
 used for the storage of array-based scientific data). Further non-optional
@@ -99,13 +99,13 @@ operations on spatiotemporal datasets, like spatial and temporal
 \emph{subsetting}, the calculation of \emph{spatial and temporal statistics},
 horizontal and vertical \emph{interpolation}, land/sea/ice \emph{masking},
 \emph{unit conversion}, and the calculation of \emph{multi-model statistics}. A
-further example is the \emph{variable derivation}, which can be used to derive
-non-\ac{CMOR} variables from the input data. The aim of the preprocessor is to
-facilitate the routine evaluation of climate models by providing a set of
-commonly used data operations. To reduce computation times, \ac{ESMValCore}
-allows parallel preprocessing of different datasets. However, since this leads
-to a higher memory usage, a compromise has to be found in practice to optimize
-the use of time and memory resources.
+further example is \emph{variable derivation}, which can be used to derive
+non-\ac{CMOR} variables from the input data. The preprocessing functions of
+\ac{ESMValCore} aim to facilitate the routine evaluation of climate models by
+providing a set of commonly used data operations. To reduce computation times,
+\ac{ESMValCore} allows parallel preprocessing of different datasets. However,
+since this leads to higher memory usage, a compromise has to be found in
+practice to optimize the use of time and memory resources.
 
 The second main element of the \ac{ESMValTool} workflow is the calculation of
 \emph{diagnostics}. This task is performed by the diagnostic scripts, which can
@@ -155,11 +155,11 @@ at Zenodo \autocite{Andela2020}.
 \label{sec:03:contributions_to_esmvalcore}
 
 As of \TheMonth{}, 40408 lines of code have been added and 21050 lines of code
-have been removed from to the GitHub repository of \ac{ESMValCore} by the
-author of this thesis. Apart from general improvements of the code base, these
-changes and additions mainly include new preprocessor functions that can be
-applied to the input data and derivation scripts for new non-\ac{CMOR}
-variables. \Cref{tab:03:changes_to_esmvalcore} shows a summary of these main
+have been removed from the GitHub repository of \ac{ESMValCore} by the author
+of this thesis. Apart from general improvements of the code base, these changes
+and additions mainly include new preprocessor functions that can be applied to
+the input data and derivation scripts for new non-\ac{CMOR} variables.
+\Cref{tab:03:changes_to_esmvalcore} shows a summary of these main
 contributions, which are partly published in the scientific documentation of
 \ac{ESMValCore} \autocite{Righi2020}.
 
@@ -179,7 +179,7 @@ contributions, which are partly published in the scientific documentation of
     \midrule
     Derived variable & asr & Absorbed shortwave radiation \\
     \cmidrule(l){2-3}
-    & co2s & Atmospheric \acs{CO2} concentration at surface \\
+    & co2s & Atmospheric \acs{CO2} concentration at the surface \\
     \cmidrule(l){2-3}
     & et & Evapotranspiration \\
     \cmidrule(l){2-3}
@@ -214,16 +214,17 @@ fields with the land or sea fraction of the respective grid cells. For example,
 this is necessary for the spatial integration of flux-related variables which
 are reported in units of \enquote{per square meter of land/sea} and not in
 \enquote{per square meter of grid cell}. After the weighting, the grid cell
-areas can be used to integrate the flux-related variable over a desired region.
-In this thesis, \emph{land/sea fraction weighting} is applied to \ac{GPP}
-fields given by observational products and models to compute the corresponding
-global mean results (see \cref{ch:06:paper_gpp}). The \emph{trend} preprocessor
-calculates the linear trend of a variable along an arbitrary coordinate. The
-linear trend is defined as the slope of an ordinary least squares linear
-regression of the variable against the selected coordinate. For example, this
-can be used to calculate the historical trend of the \ac{GSAT}, which is used
-as a predictor for \ac{ECS} in several recently published emergent constraints
-\autocite{JimenezdelaCuesta2019, Nijsse2020, Tokarska2020}.
+areas can be used to integrate the flux-related variable over any desired
+region. In this thesis, \emph{land/sea fraction weighting} is applied to
+\ac{GPP} fields given by observational products and models to compute the
+corresponding global mean results (see \cref{ch:06:paper_gpp}). The
+\emph{trend} preprocessor calculates the linear trend of a variable along an
+arbitrary coordinate. The linear trend is defined as the slope of an ordinary
+least squares linear regression of the variable against the selected
+coordinate. For example, this can be used to calculate the historical trend of
+the \ac{GSAT}, which is used as a predictor for \ac{ECS} in several recently
+published emergent constraints \autocite{JimenezdelaCuesta2019, Nijsse2020,
+  Tokarska2020}.
 
 \begin{figure}[t]
   \centering
@@ -241,10 +242,10 @@ as a predictor for \ac{ECS} in several recently published emergent constraints
     \label{fig:03:co2s:b}
   \end{subfigure}
   \caption[
-    Illustration of the atmospheric \acs{CO2} concentration at surface
+    Illustration of the atmospheric \acs{CO2} concentration at the surface
     (\emph{co2}) for \acs{CMIP}6 models.
   ]{
-    (a) \acs{CMIP}6 \acf{MMM} of the atmospheric \acs{CO2} concentration at
+    (a) \acs{CMIP}6 \acf{MMM} of the atmospheric \acs{CO2} concentration at the
     surface (\emph{co2s}) averaged over the months \acf{JJA} of the year 2014
     in the emission-driven historical simulation. The \acs{CMIP}6 \acs{MMM}
     includes the four climate models that provide all data needed for the
@@ -261,7 +262,7 @@ as a predictor for \ac{ECS} in several recently published emergent constraints
 In addition to new preprocessor functions, six derivation scripts for the
 non-\ac{CMOR} variables \emph{asr}, \emph{co2s}, \emph{et}, \emph{rlntcs},
 \emph{rsntcs}, and \emph{uajet} have been implemented into the \ac{ESMValCore}.
-Apart from the atmospheric \ac{CO2} concentration at surface (\emph{co2s}),
+Apart from the atmospheric \ac{CO2} concentration at the surface (\emph{co2s}),
 which is used in \cref{ch:06:paper_gpp} to derive the predictor variable of the
 emergent constraint by \textcite{Wenzel2016}, these variables are not directly
 used in this thesis but have been added to reproduce the \ac{MDER} analysis of
@@ -270,28 +271,28 @@ earlier versions of the studies presented in this thesis (\emph{et} for the
 study presented in \cref{ch:06:paper_gpp}; \emph{rlntcs} and \emph{rsntcs} for
 the studies presented in \cref{ch:04:papers_ecs_tcr_assessment}).
 
-The absorbed shortwave radiation (\emph{asr}) is defined as the difference in
-the incoming \ac{TOA} shortwave radiation and the outgoing \ac{TOA} shortwave
-radiation. The atmospheric \ac{CO2} concentration at surface (\emph{co2s}) can
-be calculated from the pressure level--dependent atmospheric \ac{CO2}
-concentration and the surface air pressure using interpolation. An example
-illustrating \emph{co2s} is given in \cref{fig:03:co2s}. \Cref{fig:03:co2s:a}
-shows the \acs{CMIP}6 \ac{MMM} of the global \emph{co2s} for the months
-\acf{JJA} of the year 2014 in the emission-driven historical simulation. As
-expected, the map shows high atmospheric \ac{CO2} concentrations over large
-metropolitan areas with high \ac{CO2} emissions (\eg{} over North America, the
-Arabian Peninsula, and East Asia). Moreover, regions with high photosynthetic
-activity (\eg{} the boreal forests in the Northern Hemisphere summer and the
-tropical rainforests in South America) exhibit smaller \ac{CO2} concentrations.
-\Cref{fig:03:co2s:b} shows the monthly mean \emph{co2s} at Mauna Loa, Hawaii
-from 1958 to 2014 for observations performed at the Mauna Loa Observatory
-\autocite{Keeling2005} (thick black line) and emission-driven historical
-simulations from four \acs{CMIP}6 models (remaining colored lines). Apart from
-the model CNRM-ESM2-1, the simulated atmospheric \ac{CO2} concentrations show
-the expected seasonal cycle present in the Keeling Curve (see
-\cref{fig:02:keeling_curve}). All \acp{ESM} correctly simulate the increase in
-\emph{co2s} over the years. However, there are some differences in the absolute
-values with the model BCC-CSM2-MR showing the largest deviations.
+The absorbed shortwave radiation (\emph{asr}) is defined as the difference
+between the incoming \ac{TOA} shortwave radiation and the outgoing \ac{TOA}
+shortwave radiation. The atmospheric \ac{CO2} concentration at the surface
+(\emph{co2s}) can be calculated from the pressure level--dependent atmospheric
+\ac{CO2} concentration and the surface air pressure using interpolation. An
+example illustrating \emph{co2s} is given in \cref{fig:03:co2s}.
+\Cref{fig:03:co2s:a} shows the \acs{CMIP}6 \ac{MMM} of the global \emph{co2s}
+for the months \acf{JJA} of the year 2014 in the emission-driven historical
+simulation. As expected, the map shows high atmospheric \ac{CO2} concentrations
+over large metropolitan areas with high \ac{CO2} emissions (\eg{} over North
+America, the Arabian Peninsula, and East Asia). Moreover, regions with high
+photosynthetic activity (\eg{} the boreal forests in the Northern Hemisphere
+summer and the tropical rainforests in South America) exhibit smaller \ac{CO2}
+concentrations. \Cref{fig:03:co2s:b} shows the monthly mean \emph{co2s} at
+Mauna Loa, Hawaii from 1958 to 2014 for observations performed at the Mauna Loa
+Observatory \autocite{Keeling2005} (thick black line) and emission-driven
+historical simulations from four \acs{CMIP}6 models (remaining colored lines).
+Apart from the model CNRM-ESM2-1, the simulated atmospheric \ac{CO2}
+concentrations show the expected seasonal cycle present in the Keeling Curve
+(see \cref{fig:02:keeling_curve}). All \acp{ESM} correctly simulate the
+increase in \emph{co2s} over the years. However, there are some differences in
+the absolute values with the model BCC-CSM2-MR showing the largest deviations.
 
 The evapotranspiration (\emph{et}) defined as the sum of evaporation and plant
 transpiration can be calculated from the surface latent heat flux and the
@@ -437,14 +438,14 @@ shown in \cref{fig:02:gregory_regression,fig:02:tcr}.
 \emph{recipe\_cox18nature.yml} reproduces the analysis of \textcite{Cox2018},
 who introduce an emergent constraint in \ac{ECS} based on a global temperature
 variability metric $\Psi$. \Cref{fig:03:cox18:a} shows $\Psi$ over the past 85
-years for \acs{CMIP}5 models and observations form HadCRUT4
+years for \acs{CMIP}5 models and observations from HadCRUT4
 \autocite{Morice2012}. Since high-sensitivity climate models exhibit higher
 values of $\Psi$ than low-sensitivity models, an emergent relationship between
 \ac{ECS} and $\Psi$ can be established (\cref{fig:03:cox18:b}). With
 observations of $\Psi$, \ac{ECS} can eventually be constrained to $\left( 2.8
 \pm 0.6 \right) \unit{K}$ ($66 \unit{\%}$ confidence range). The emergent
 constraint by \textcite{Cox2018} is, together with ten other emergent
-constraint on \ac{ECS}, analyzed in great detail for the \acs{CMIP}5 and
+constraints on \ac{ECS}, analyzed in great detail for the \acs{CMIP}5 and
 \acs{CMIP}6 ensemble in \cref{ch:05:paper_ecs}, which also includes a
 description of the calculation of $\Psi$ in \cref{subsec:05:cox}.
 
@@ -460,9 +461,9 @@ between the historical and pre-industrial \ac{GSAT} and \ac{ECS}
 \ac{ECS} and the historical or pre-industrial \ac{GSAT}, \ie{} models with high
 temperatures in the historical or pre-industrial period do not necessarily
 exhibit a high equilibrium warming in the future or vice versa. On the other
-hand, \ac{TCR} and \ac{ECS} are in fact well correlated within the \acs{CMIP}5
-ensemble as theoretically expected from \cref{eq:02:tcr_vs_ecs}. However, this
-figure only shows a linear regression fit between the two variables and not the
+hand, \ac{TCR} and \ac{ECS} are well correlated within the \acs{CMIP}5 ensemble
+as theoretically expected from \cref{eq:02:tcr_vs_ecs}. However, this figure
+only shows a linear regression fit between the two variables and not the
 expected reciprocal relation. The output of \emph{recipe\_flato13ipcc.yml}
 provided useful input for the analysis of climate sensitivity in \acs{CMIP}6
 performed in \textcite{Meehl2020}, which is also presented in
@@ -502,12 +503,12 @@ performed in \textcite{Meehl2020}, which is also presented in
 The implemented \acs{CMOR}ization scripts (also referred to as
 \emph{\acs{CMOR}izers}) allow the processing of arbitrary observational data
 with the \ac{ESMValTool}. For this, the raw observational datasets are
-reformatted in such way that they adhere to the \ac{CMOR} standards. Since the
-\acs{CMOR}ization scripts are publicly available like any other code in the
+reformatted in such a way that they adhere to the \ac{CMOR} standards. Since
+the \acs{CMOR}ization scripts are publicly available like any other code in the
 \ac{ESMValTool} and \ac{ESMValCore} repositories, the entire scientific
 community can use them to \acs{CMOR}ize the observational data. A complete list
 of all eleven newly implemented \acs{CMOR}izers including the main reference
 for the corresponding observational datasets is shown in
 \cref{tab:03:changes_to_esmvaltool}. The majority of these datasets are used
-for analysis presented in this thesis (\eg{} see
+for analyses presented in this thesis (\eg{} see
 \cref{tab:05:overview_emergent_constraints,tab:06:predictors}).
