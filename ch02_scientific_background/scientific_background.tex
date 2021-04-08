@@ -22,7 +22,7 @@ and associated uncertainties are introduced (\cref{sec:02:esms}). Next,
 important metrics describing climate sensitivity
 (\cref{sec:02:climate_sensitivity}) and fundamental biogeochemical processes of
 the global carbon cycle (\cref{sec:02:esms}) are presented. Finally,
-state-of-the art techniques that can be used to reduce uncertainties in
+state-of-the-art techniques that can be used to reduce uncertainties in
 projections of the future climate with observations are shown
 (\cref{sec:02:reducing_uncertainties}). These methods form the basis for new
 techniques developed in this thesis.
@@ -54,8 +54,8 @@ an atmospheric grid cell in modern-day global climate models is about $100
 \unit{km}$ along the vertical dimension (pressure level or height). In
 addition, also the temporal evolution of the Earth system is discretized using
 time steps that are typically about $30 \unit{min}$ long in modern-day global
-climate models. For each grid cell and time step, usually a single value per
-model variable is given. Examples for such variables provided by a climate
+climate models. For each grid cell and time step, a single value per model
+variable is usually given. Examples for such variables provided by a climate
 model are the atmospheric prognostic variables velocity (horizontal and
 vertical), temperature, specific humidity, pressure, and density. These
 prognostic variables are related to each other via the \emph{primitive
@@ -77,12 +77,12 @@ the radiative forcing.
     Historical evolution of coupled climate models over the last 45 years.
   ]{
     Historical evolution of coupled climate models over the last 45 years. In
-    early days, these models were so-called \acfp{AOGCM}, which only included
-    three components: the atmosphere, the land surface, and the ocean. Over the
-    time, the individual components grew in complexity and included a wider
-    range of processes (illustrated by the growing cylinders). Eventually, more
-    and more components (aerosols, carbon cycle, \etc{}) were added to the
-    coupled system, forming the modern \acfp{ESM}.
+    the early days, these models were so-called \acfp{AOGCM}, which only
+    included three components: the atmosphere, the land surface, and the ocean.
+    Over time, the individual components grew in complexity and included a
+    wider range of processes (illustrated by the growing cylinders).
+    Eventually, more and more components (aerosols, carbon cycle, \etc{}) were
+    added to the coupled system, forming the modern \acfp{ESM}.
     \IPCCReproducedFrom{Cubasch2013}{their figure 1.13}.
   }
   \label{fig:02:esms_historical_evolution}
@@ -99,7 +99,7 @@ parameterizations aim to represent the effect of that process at the grid scale
 of the climate model by generating the appropriate forcing terms for the rest
 of the system and the rest of the processes \autocite{Gettelman2016}.
 Parameterizations are necessary to simulate many processes of the Earth system,
-for example surface heat and moisture fluxes, moist convection, turbulent
+for example, surface heat and moisture fluxes, moist convection, turbulent
 mixing, and radiation \autocite{Holton2004}.
 
 The first numerical climate models came up in the 1960s and were based on
@@ -110,7 +110,7 @@ These models are called \emph{\acfp{AOGCM}} \autocite{Flato2013}. Over the
 course of the years, climate models became more and more complex by including a
 wider range of processes within the components, but also by introducing new
 components to the coupled system. Examples of these are aerosols, the carbon
-cycle, a dynamic vegetation, atmospheric chemistry, and land ice (see
+cycle, dynamic vegetation, atmospheric chemistry, and land ice (see
 \cref{fig:02:esms_historical_evolution}). \Acp{AOGCM} coupled to these
 additional components are called \emph{\acfp{ESM}}, which are the current
 state-of-the-art models that allow the most sophisticated simulations of the
@@ -123,8 +123,8 @@ the Earth system directly influences the various biogeochemical cycles of the
 Earth. For example, the emission of the most prominent \ac{GHG}, \ac{CO2},
 immediately impacts the global carbon cycle by inserting additional carbon into
 the system (see \cref{sec:02:carbon_cycle} for details). Further examples
-include land use changes like the deforestation of tropical rainforests, which
-also directly influences several biogeochemical cycles (\eg{} carbon cycle,
+include land-use changes like the deforestation of tropical rainforests, which
+also directly influence several biogeochemical cycles (\eg{} carbon cycle,
 nitrogen cycle, phosphorus cycle, \etc{}) by altering respective sinks and
 sources.
 
@@ -133,7 +133,7 @@ system, these changes in the biogeochemical processes also affect the physical
 properties of the climate system. For example, due to the global carbon cycle,
 only about $50 \unit{\%}$ of the emitted \ac{CO2} by humankind remains in the
 atmosphere \autocite{Friedlingstein2020}. The residual part is absorbed by the
-two other main carbon sinks of the planet, the terrestrial biosphere and the
+two other main carbon sinks of the planet: the terrestrial biosphere and the
 ocean. Since only atmospheric \ac{CO2} can act as \ac{GHG} by introducing an
 additional radiative forcing to the Earth System leading to increasing surface
 temperatures, this uptake of \ac{CO2} by the carbon cycle slows down global
@@ -148,13 +148,13 @@ consist of hundreds of thousands of lines of computer code. Thus, a
 standardization of the experimental setup and model output to a certain degree
 is crucial for the various research groups developing \acp{ESM} all around the
 world to obtain comparable output and to facilitate model analysis. For this
-reason, the \ac{WGCM} of the \ac{WCRP} initiated the \acf{CMIP} in 1995, with
-the objective to \enquote{better understand past, present and future climate
-  changes arising from natural, unforced variability or in response to changes
-  in radiative forcing in a multi-model context} \autocite{WCRP2020}. One major
-element of \ac{CMIP} is to establish common standards, coordination,
-infrastructure, and documentation to facilitate the distribution of climate
-model output \autocite{Eyring2016, Juckes2020}.
+reason, the \ac{WGCM} of the \ac{WCRP} initiated the \acf{CMIP} in 1995 to
+\enquote{better understand past, present and future climate changes arising
+  from natural, unforced variability or in response to changes in radiative
+  forcing in a multi-model context} \autocite{WCRP2020}. One major element of
+\ac{CMIP} is to establish common standards, coordination, infrastructure, and
+documentation to facilitate the distribution of climate model output
+\autocite{Eyring2016, Juckes2020}.
 
 A further main aspect is to provide a set of standardized experiments for
 global climate model simulations. To participate in the latest phase of
@@ -195,24 +195,25 @@ system, like the \ac{C4MIP} which focuses on the carbon cycle
 \autocite{Collins2017}. Other \acp{MIP} allow the assessment of future climate
 change. An example is the \ac{ScenarioMIP}, which provides common experiments
 that simulate different possible futures \autocite{ONeill2016}. These
-experiments are based on the so-called \acp{SSP}, a set of alternative pathways
-of future societal development \autocite{ONeill2013, ONeill2017}. For each
-experiment, specific emissions and land use changes are calculated from the
-\acp{SSP} \autocite{Riahi2017} which are then used to force the global climate
-models. For \ac{ScenarioMIP}, five different \acp{SSP} are considered, ranging
-from \acs{SSP}1 (sustainability) to \acs{SSP}5 (fossil fuel--based
+experiments are based on the so-called \emph{\acp{SSP}}, a set of alternative
+pathways of future societal development \autocite{ONeill2013, ONeill2017}. For
+each experiment, specific emissions and land-use changes are calculated from
+the \acp{SSP} \autocite{Riahi2017} which are then used to force the global
+climate models. For \ac{ScenarioMIP}, five different \acp{SSP} are considered,
+ranging from \acs{SSP}1 (sustainability) to \acs{SSP}5 (fossil fuel--based
 development). Each \ac{SSP} is combined with a climate outcome (measured as
 radiative forcing in the year 2100) based on a particular forcing pathway that
 \acp{IAM} have shown to be feasible. For example, \acs{SSP}5-8.5 represents a
 scenario based on a fossil fuel--based development with a radiative forcing of
 $8.5 \unit{W m^{-2}}$ in 2100 while \acs{SSP}1-2.6 represents a sustainable
 future with a radiative forcing of $2.6 \unit{W m^{-2}}$ in the year 2100. The
-two scenarios in the main category of \ac{ScenarioMIP}, the \emph{Tier 1}
-experiments, are the \acs{SSP}2-4.5 and \acs{SSP}3-7.0 scenarios. In contrast
-to the \ac{ScenarioMIP} experiments, the corresponding \acs{CMIP}5 counterparts
-\autocite{Taylor2012}, the so-called \acp{RCP}, only used the radiative forcing
-in 2100 as only dimension to describe the possible futures (\eg{} \acs{RCP}8.5,
-\acs{RCP}4.5, \acs{RCP}2.6, \etc{}).
+four scenarios in the main category of \ac{ScenarioMIP}, the \emph{Tier 1}
+experiments, are the \acs{SSP}1-2.6, \acs{SSP}2-4.5, \acs{SSP}3-7.0, and
+\acs{SSP}5-8.5 scenarios. In contrast to the \ac{ScenarioMIP} experiments, the
+corresponding \acs{CMIP}5 counterparts \autocite{Taylor2012}, the so-called
+\emph{\acp{RCP}}, only used the radiative forcing in 2100 as single dimension
+to describe the possible futures (\eg{} \acs{RCP}8.5, \acs{RCP}4.5,
+\acs{RCP}2.6, \etc{}).
 
 In this thesis, climate model data from the two most recent \ac{CMIP}
 generations is used, \acs{CMIP}5 and \acs{CMIP}6. More detailed information
@@ -224,20 +225,20 @@ corresponding \namecrefs{ch:04:papers_ecs_tcr_assessment}.
 \label{subsec:02:source_of_uncertainties}
 
 Simulations from climate model ensembles of \ac{CMIP} allow us to assess future
-climate change in a consistent and transparent way. Especially the
-\ac{ScenarioMIP} experiments can give valuable insights into possible
-developments of the Earth system by providing future \emph{climate
-  projections}. In contrast to climate predictions, climate projections run
-over multiple decades and depend upon the future scenario considered, which are
-based on assumptions that may or may not turn out to be correct. On the
-contrary, climate predictions are attempts to predict the actual evolution of
-the climate on much shorter time scales from seasons to years. Similar to any
-other scientific experiment, climate model projections suffer from associated
-uncertainties. There are three major sources of uncertainties in climate model
-projections we can distinguish: natural variability, climate response
-uncertainty, and emission uncertainty \autocite{Hawkins2009, Hawkins2010}.
-\Cref{fig:02:sources_of_uncertainty} shows these three sources for the
-projected global mean surface temperature anomaly over the \nth{21} century.
+climate change consistently and transparently. Especially the \ac{ScenarioMIP}
+experiments can give valuable insights into possible developments of the Earth
+system by providing future \emph{climate projections}. In contrast to climate
+predictions, climate projections run over multiple decades and depend upon the
+future scenario considered, which are based on assumptions that may or may not
+turn out to be correct. On the contrary, climate predictions are attempts to
+predict the actual evolution of the climate on much shorter time scales from
+seasons to years. Similar to any other scientific experiment, climate model
+projections suffer from associated uncertainties. There are three major sources
+of uncertainties in climate model projections we can distinguish: natural
+variability, climate response uncertainty, and emission uncertainty
+\autocite{Hawkins2009, Hawkins2010}. \Cref{fig:02:sources_of_uncertainty} shows
+these three sources for the projected global mean surface temperature anomaly
+over the \nth{21} century.
 
 \begin{figure}[t]
   \centering
@@ -279,13 +280,13 @@ variations in the solar activity. Natural variability can be seen as the
 
 The second source of uncertainty in climate model projections is \emph{emission
   uncertainty}. This arises from the different possible trajectories in terms
-of future forcing (\acp{GHG}, aerosols, land use changes, \etc{}) humankind
+of future forcing (\acp{GHG}, aerosols, land-use changes, \etc{}) humankind
 might take. Examples for these are the \acs{SSP}-based experiments given by
 \ac{ScenarioMIP} that include a variety of different scenarios from a
 sustainable future to a full fossil fuel--based development (see
 \cref{subsec:02:cmip}). A possible approach to quantify emission uncertainty is
 to assess the climate impact of these different trajectories. Since the
-emission uncertainty strongly depends on the future development of the human
+emission uncertainty strongly depends on the future development of human
 society, it cannot be reduced by improving climate models. In contrast to
 natural variability, the emission uncertainty increases over time in climate
 projections, since estimating forcings for the near future is simpler than for
@@ -310,14 +311,14 @@ climate feedback is a mechanism that either amplifies (\emph{positive
   feedback}) or diminishes (\emph{negative feedback}) the effect of an external
 forcing. An example of a strong positive feedback is the water vapor feedback,
 in which the increased surface temperature (caused by anthropogenic forcing)
-leads to an enhanced evaporation of water which increases the amount of water
+leads to enhanced evaporation of water which increases the amount of water
 vapor in the atmosphere. Since water vapor itself is a powerful \ac{GHG}, this
 amplifies the effect of the anthropogenic forcing by further increasing the
 surface temperatures \autocite{Cubasch2013}. Further examples and a
 mathematical framework for the analysis of feedbacks are given in
 \cref{subsec:02:climate_feedbacks}.
 
-As sciences evolves, representations of already included processes can be
+As science evolves, representations of already included processes can be
 improved in climate models. Moreover, new geophysical and biogeochemical
 processes can be added to them. On the one hand, this can increase the climate
 response uncertainty when a new process is discovered to be relevant
@@ -329,7 +330,7 @@ cloud representation of the models the spread in the projected \ac{GSAT} caused
 by a doubling of the atmospheric \ac{CO2} concentration has substantially
 increased in \acs{CMIP}6 compared to older \ac{CMIP} generations
 \autocite{Zelinka2020}. On the other hand, the climate response uncertainty can
-decrease with additional model improvements and better understanding of the
+decrease with additional model improvements and a better understanding of the
 Earth system (see \cref{fig:02:sources_of_uncertainty}{\color{BrownRed} c}).
 Moreover, it can also be reduced by observational constraints, which is the
 main topic of this thesis.
@@ -344,9 +345,9 @@ sensitivity refers to the change in \ac{GSAT} that results from a change in the
 radiative forcing. In other words, it describes how sensitive the climate
 system is to an external forcing. The source of this forcing might either be
 natural (changes in the solar activity, volcanic eruptions, \etc{}) or
-anthropogenic (emissions of \acp{GHG}, land use changes, \etc{}). Thus, the
+anthropogenic (emissions of \acp{GHG}, land-use changes, \etc{}). Thus, the
 assessment of climate sensitivity is essential for a precise quantification of
-the human-made climate change to determine optimal mitigation and adaptation
+human-made climate change to determine optimal mitigation and adaptation
 strategies.
 
 
@@ -360,13 +361,13 @@ strategies.
   \caption[
     Climate feedbacks and corresponding time scales.
   ]{
-    Climate feedbacks and corresponding time scales. The different sings refer
+    Climate feedbacks and corresponding time scales. The different signs refer
     to the signs of the different feedbacks. Positive feedbacks amplify the
     effect of the external forcing (\eg{} the water vapor feedback) and
     negative feedbacks diminish the effect of the external forcing (\eg{} the
-    longwave radiation feedback). An example for a feedback that might be
-    either positive or negative is the cloud feedback. The smaller box
-    highlights the large differences in time scales for the various feedbacks.
+    longwave radiation feedback). An example of a feedback that might be either
+    positive or negative is the cloud feedback. The smaller box highlights the
+    large differences in time scales for the various feedbacks.
     \IPCCReproducedFrom{Cubasch2013}{their figure 1.2}.
   }
   \label{fig:02:feedbacks_overview}
@@ -375,19 +376,19 @@ strategies.
 As already described in \cref{subsec:02:source_of_uncertainties}, the effects
 of an external forcing acting on the climate system can additionally be
 amplified or diminished by climate feedbacks. Thus, feedback processes play a
-crucial role determining the magnitude of climate sensitivity.
+crucial role in determining the magnitude of climate sensitivity.
 \Cref{fig:02:feedbacks_overview} shows an overview of important feedbacks in
 the Earth system with their corresponding time scales on which they operate.
 
-An example for a positive feedback is the already mentioned \emph{water vapor
+An example of a positive feedback is the already mentioned \emph{water vapor
   feedback}. Being the primary \ac{GHG} in the Earth's atmosphere, water vapor
 is the largest contributor to the natural greenhouse effect. Since its amount
 in the atmosphere is mainly controlled by the air temperature, and
 anthropogenic emissions of water vapor are negligible, the influence of water
 vapor on the climate system is described as a feedback mechanism and not as an
-external forcing \autocite{Myhre2013}. Basis of this feedback is the enhanced
-evaporation of water with increasing air temperatures. Each degree of warming
-allows the atmosphere to retain about $7 \unit{\%}$ more water vapor
+external forcing \autocite{Myhre2013}. The basis of this feedback is the
+enhanced evaporation of water with increasing air temperatures. Each degree of
+warming allows the atmosphere to retain about $7 \unit{\%}$ more water vapor
 \autocite{Myhre2013}, which closes the positive feedback loop by further
 increasing air temperatures through the greenhouse effect. With a typical
 residence time of water vapor in the atmosphere of several days, the water
@@ -395,14 +396,14 @@ vapor feedback operates on relatively short time scales. As the largest
 positive feedback in the Earth system \autocite{Soden2006}, the water vapor
 feedback amplifies any initial forcing (\eg{} caused by anthropogenic \ac{CO2}
 emissions) by a typical factor between $2$ and $3$, rendering water vapor a
-fundamental agent of climate change \autocite{Myhre2013}. An example for a
+fundamental agent of climate change \autocite{Myhre2013}. An example of a
 positive feedback that operates on longer time scales (several years) is the
-\emph{snow/ice albedo feedback}, in which the surface albedo decreases as
+\emph{snow/ice-albedo feedback}, in which the surface albedo decreases as
 highly reflective ice and snow surfaces melt with global warming, exposing the
 darker and more absorbing surfaces below \autocite{Cubasch2013}.
 
 In contrast to positive feedbacks, negative feedbacks diminish the effect of an
-external forcing. An example for this is the \emph{blackbody feedback} (also
+external forcing. An example of this is the \emph{blackbody feedback} (also
 known as \emph{Planck feedback} or \emph{longwave radiation feedback}), which
 is the strongest negative feedback in the Earth system \autocite{Cubasch2013}.
 It is based on the thermal electromagnetic radiation that any object with a
@@ -413,7 +414,7 @@ radiation flux from the surface which reduces the effect of the external
 forcing and cools the planet.
 
 For some domains of the Earth system, feedbacks can be positive and/or
-negative, since a variety of different mechanisms are involved. An example for
+negative, since a variety of different mechanisms are involved. An example of
 this is the cloud feedback. Changes in the clouds induced by climate change can
 cause changes in their longwave (greenhouse warming) and shortwave (reflective
 cooling) effects on the Earth's radiation budget, which both need to be
@@ -430,7 +431,7 @@ of incoming solar radiation and also increases the surface warming
 feedback shows a large range with positive and negative values, but tends to be
 slightly positive on average \autocite{Soden2006, Dufresne2008, Vial2013,
   Zelinka2020}. This large uncertainty in the cloud feedback is a major reason
-for uncertainties in climate sensitivity of climate models
+for uncertainties in the climate sensitivity of climate models
 \autocite{Boucher2013, Flato2013}.
 
 Further examples of feedbacks with positive and negative contributions are
@@ -438,7 +439,7 @@ biogeochemical feedbacks. Negative contributions come from increased \ac{CO2}
 fluxes into the land and ocean carbon reservoirs due to increased
 photosynthesis rates and \ac{CO2} dissolution in the sea, respectively, which
 decrease the atmospheric \ac{CO2} content and diminish global warming. An
-example for a positive contribution is the decreased solubility of \ac{CO2} in
+example of a positive contribution is the decreased solubility of \ac{CO2} in
 water in a warmer climate, which reduces the atmosphere-ocean \ac{CO2} flux and
 enhances climate change. More details on this are given in
 \cref{subsec:02:carbon_cycle_perturbations}.
@@ -462,9 +463,9 @@ forcing with a climate response $R$, leading to a net energy flux of
 into the system. Positive values of $N$, $F$, and $R$ indicate incoming fluxes;
 usually $F > 0$ and $R < 0$. On long time scales (multiple years), the net
 incoming radiative flux at the \ac{TOA} and the net heat flux into the ocean
-are basically equal definitions of $N$ since nearly all of the Earth's heat
-capacity resides in the ocean \autocite{Gregory2009}. While $N \neq 0$, the
-climate system evolves; when $N = 0$ a new steady state has been reached.
+are equal definitions of $N$ since nearly all of the Earth's heat capacity
+resides in the ocean \autocite{Gregory2009}. While $N \neq 0$, the climate
+system evolves; when $N = 0$ a new steady state has been reached.
 
 To quantify the effects of different feedbacks, a reference system with a basic
 response needs to be defined, which is a crucial aspect of feedback analysis
@@ -518,7 +519,7 @@ proportional to $\Delta T$ \autocite{Gregory2008a},
   \label{eq:02:linear_response}
 \end{equation}
 $\lambda_\mathtxt{WV}$ refers to the water vapor feedback,
-$\lambda_\mathtxt{Albedo}$ to the snow/ice albedo feedback, and
+$\lambda_\mathtxt{Albedo}$ to the snow/ice-albedo feedback, and
 $\lambda_\mathtxt{Cloud}$ to the cloud feedback. Thus, the overall climate
 feedback parameter $\lambda$ can be written as the sum of the individual
 feedback parameters $\lambda_i$:
@@ -542,10 +543,10 @@ pre-industrial conditions once the climate system reaches radiative equilibrium
 \autocite{Bindoff2013}. Being already used in one of the first assessments of
 the anthropogenic climate change, the \emph{Charney Report} from 1979
 \autocite{Charney1979}, the equilibrium climate sensitivity is one of the
-oldest metrics describing climate change. However, in practice this traditional
-definition of is not always useful. Running fully coupled \acp{ESM} into
-equilibrium is computationally expensive as it would require thousands of model
-years \autocite{Rugenstein2020}.
+oldest metrics describing climate change. However, in practice, this
+traditional definition is not always useful. Running fully coupled \acp{ESM}
+into equilibrium is computationally expensive as it would require thousands of
+model years \autocite{Rugenstein2020}.
 
 \begin{figure}[t]
   \centering
@@ -584,7 +585,7 @@ equilibrium ($N = 0$), \cref{eq:02:N,eq:02:linear_response} imply
   \label{eq:02:delta_t_eq}
 \end{equation} Thus, the change in \ac{GSAT} in radiative equilibrium can be
 easily calculated from the external forcing $F$ and the climate feedback
-parameter $\lambda$. The steady state values for $F$ and $\lambda$ can be
+parameter $\lambda$. The steady-state values for $F$ and $\lambda$ can be
 estimated from a \nxcotwo{4} simulation that is not in equilibrium by
 extrapolation with a linear regression \autocite{Gregory2004}. For this
 so-called \emph{Gregory regression} (see \cref{fig:02:gregory_regression}), the
@@ -620,7 +621,7 @@ whereas here a simulation with an abrupt quadrupling is considered.
     considered in the Gregory regression resulting in different values for the
     \acf{ECS} and the climate feedback parameter $\lambda$. Dark gray, blue,
     red, and orange colors correspond to the \acf{CESM} of the \acf{NCAR} for
-    different time periods of a long running simulation (see legend). The
+    different time periods of a long-running simulation (see legend). The
     initial years are simulated many times for different initial conditions.
     Light gray colors correspond to the \acs{CMIP}5 ensemble (150 years each).
     \SpringerAdaptedFrom{Knutti2017}.
@@ -633,28 +634,29 @@ approximation of the true equilibrium climate sensitivity. One major reason for
 this is the state and time dependence of the global feedbacks
 \autocite{Knutti2015, Knutti2017}. As
 \cref{fig:02:gregory_regression_different_years} shows, the slope in the
-Gregory regression is not constant, but rather decreases over time when a long
-running \nxcotwo{4} simulation with more than 1000 model years is considered.
-As a result, the climate feedback parameter $\lambda$ decreases over time,
-resulting in a higher \ac{ECS}. Major reasons for this are temperature
-dependencies of the feedbacks, atmospheric and oceanic adjustments over time,
-changing warming patterns over time, non-additive feedbacks, and dependencies
-on the type and magnitude of the external forcings \autocite{Knutti2017}. All
-in all, this demonstrates the limits of the linear feedback framework
-introduced in \cref{subsec:02:mathematical_framework_feedbacks} that is not
-capable of describing non-linear effects. A second major reason for the
-discrepancies between the equilibrium climate sensitivity and \ac{ECS} is the
-use of a \nxcotwo{4} instead of a \nxcotwo{2} simulation. The factor of $2$ in
-the denominator of \cref{eq:02:ecs} only partly compensates this difference
+Gregory regression is not constant but rather decreases over time when a
+long-running \nxcotwo{4} simulation with more than 1000 model years is
+considered. As a result, the climate feedback parameter $\lambda$ decreases
+over time, resulting in a higher \ac{ECS}. Major reasons for this are
+temperature dependencies of the feedbacks, atmospheric and oceanic adjustments
+over time, changing warming patterns over time, non-additive feedbacks, and
+dependencies on the type and magnitude of the external forcings
+\autocite{Knutti2017}. All in all, this demonstrates the limits of the linear
+feedback framework introduced in
+\cref{subsec:02:mathematical_framework_feedbacks} that is not capable of
+describing non-linear effects. A second major reason for the discrepancies
+between the equilibrium climate sensitivity and \ac{ECS} is the use of a
+\nxcotwo{4} instead of a \nxcotwo{2} simulation. The factor of $2$ in the
+denominator of \cref{eq:02:ecs} only partly compensates for this difference
 since the radiative forcing logarithmically depends on the atmospheric \ac{CO2}
 concentration \autocite{Huang2014}.
 
-However, despite these deficiencies the \ac{ECS} is still a practical estimate
+However, despite these deficiencies, the \ac{ECS} is still a practical estimate
 of the equilibrium climate sensitivity. With the help of climate models,
 \textcite{Sherwood2020} showed that the \ac{ECS} is only about $6 \unit{\%}$
 lower than the best estimate of the true equilibrium warming obtained from
 integrating climate models until a new steady state is reached. Nevertheless,
-for \acs{CMIP}6 long running simulations from the \ac{LongRunMIP}
+for \acs{CMIP}6 long-running simulations from the \ac{LongRunMIP}
 \autocite{Rugenstein2019} can be a promising way forward to estimate the true
 equilibrium climate sensitivity for \acp{ESM}.
 
@@ -663,7 +665,7 @@ equilibrium climate sensitivity for \acp{ESM}.
 \label{subsec:02:cloud_feedback_parameters}
 
 In addition to the calculation of the external forcing $F$, the overall climate
-feedback parameter $\lambda$ and the \ac{ECS}, the Gregory regression can also
+feedback parameter $\lambda$, and the \ac{ECS}, the Gregory regression can also
 be used to estimate cloud-related feedback parameters. For this, the net
 \ac{TOA} radiation $N$ on the \yaxis{} in \cref{fig:02:gregory_regression} is
 replaced with the \ac{CRE}, which is defined as the difference between the
@@ -731,7 +733,7 @@ where $\kappa$ is the ocean heat uptake efficiency \autocite{Gregory2008}.
 Since there is a net energy flux into the climate system ($N > 0$) due to the
 external forcing $F$, $\kappa$ is positive. This approximation becomes less
 accurate as the deeper ocean warms up and cannot be applied to simulations with
-a steady state climate change in which $N \to 0$ \autocite{Gregory2009}. By
+a steady-state climate change in which $N \to 0$ \autocite{Gregory2009}. By
 applying the definition of \ac{TCR} (transient \ac{GSAT} change $\Delta T$ at
 the time of \ac{CO2} doubling) and combining
 \cref{eq:02:N_vs_delta_t,eq:02:ocean_heat_uptake}, \ac{TCR} can be estimated as
@@ -763,7 +765,7 @@ expected) larger than transient response \ac{TCR}, \ie{} $\mathtxt{ECS} >
 
 Currently, only about $50 \unit{\%}$ of the emitted \ac{CO2} by humankind
 remains in the atmosphere \autocite{Friedlingstein2020}. The residual part is
-absorbed by the two other main carbon sinks of the planet, the terrestrial
+absorbed by the two other main carbon sinks of the planet: the terrestrial
 biosphere and the ocean. These exchange fluxes of carbon are part of the global
 carbon cycle of planet Earth. Since only atmospheric \ac{CO2} can act as
 \ac{GHG}, this removal of \ac{CO2} from the atmosphere substantially slows down
@@ -776,7 +778,7 @@ sensitivity metrics \ac{ECS} and \ac{TCR} introduced in the previous
 cycle--related effects, since both of them are defined in terms of a doubling
 of the atmospheric \ac{CO2} concentration, not in terms of \ac{CO2} emissions.
 Nevertheless, to assess policy-relevant metrics like the allowable fossil fuel
-emissions to meet particular warming targets, for example the $1.5
+emissions to meet particular warming targets, for example, the $1.5
 \unit{\degreeCelsius}$ of the Paris Agreement \autocite{UNFCCC2015}, it is
 crucial to take the global carbon cycle into account. This
 \namecref{sec:02:carbon_cycle} introduces the scientific background of the
@@ -797,7 +799,7 @@ domain. The slow domain with turnover times (reservoir mass of carbon divided
 by exchange flux) of more than 10000 years consists of the large carbon stores
 in rocks and sediments which are connected to the rapid domain of the carbon
 cycle through volcanic emissions of \ac{CO2}, chemical weathering, erosion, and
-sediment formation on the sea floor. These natural exchange fluxes between the
+sediment formation on the seafloor. These natural exchange fluxes between the
 slow and the fast domain are comparatively small ($< 0.3 \unit{\GtCyr{}}$) and
 can be assumed as approximately constant in time over the last few centuries
 \autocite{Ciais2013}.
@@ -847,15 +849,15 @@ released back into the atmosphere by autotrophic (plant) and heterotrophic
 like fires \autocite{Ciais2013}. Since the land \ac{CO2} uptake by
 photosynthesis occurs only during the growing season, whereas respiration
 occurs nearly all year, the larger amount of vegetation in the Northern
-Hemisphere (due to the larger land mass) gives rise to a seasonal cycle of the
+Hemisphere (due to the larger landmass) gives rise to a seasonal cycle of the
 atmospheric \ac{CO2} concentration \autocite{Keeling1995}. This seasonal cycle
 reflects the phase of the global carbon cycle and shows a maximum of the
 atmospheric \ac{CO2} concentration in the Northern Hemisphere winter (net
-\ac{CO2} flux into atmosphere due to respiration) and a minimum during the
+\ac{CO2} flux into the atmosphere due to respiration) and a minimum during the
 Northern Hemisphere summer (net \ac{CO2} flux into the land due to
 photosynthesis). Another major carbon exchange process connects the atmosphere
 and the ocean. Atmospheric \ac{CO2} is exchanged with the surface ocean through
-gas exchange, which is driven by the partial \ac{CO2} pressure difference
+a gas exchange, which is driven by the partial \ac{CO2} pressure difference
 between the air and the sea \autocite{Ciais2013}.
 
 
@@ -915,7 +917,7 @@ anthropogenic activities caused net carbon fluxes of $3.4 \unit{\GtCyr{}}$ from
 the atmosphere into the terrestrial biosphere due to increased plant
 photosynthesis and $2.5 \unit{\GtCyr{}}$ from the atmosphere into the ocean due
 to increased dissolution of \ac{CO2} into the sea
-\autocite{Friedlingstein2020}. In the same time, the amount of carbon in the
+\autocite{Friedlingstein2020}. At the same time, the amount of carbon in the
 atmosphere reservoir increased with a rate of $5.1 \unit{\GtCyr{}}$, indicating
 that only about half of the anthropogenic \ac{CO2} emissions in the last decade
 remained in the atmosphere \autocite{Friedlingstein2020} where they can act as
@@ -945,9 +947,9 @@ physical climate system and the global carbon cycle: the
 \emph{concentration-carbon feedback} and the \emph{climate-carbon feedback}
 \autocite{Friedlingstein2006, Gregory2009, Collins2013}. For the terrestrial
 biosphere, the concentration-carbon feedback is connected to the \emph{\ac{CO2}
-  fertilization effect} \autocite{Walker2020}, that causes an increase of
+  fertilization effect} \autocite{Walker2020}, which causes an increase in
 photosynthesis rates when the atmospheric \ac{CO2} concentration increases,
-which in turns removes \ac{CO2} from the atmosphere, forming a negative
+which in turn removes \ac{CO2} from the atmosphere, forming a negative
 feedback. For the ocean, the concentration-carbon feedback is negative as well.
 In this case, an elevated atmospheric \ac{CO2} concentration causes an
 increased dissolution of \ac{CO2} into the sea, which increases the ocean
@@ -1000,11 +1002,11 @@ fires ($\Ld{}$).
 
 The different land carbon cycle models integrated into modern \acp{ESM} use a
 variety of different parameterizations for the different processes
-\autocite{Arora2020}. Examples for the photosynthesis (\ac{GPP}) are given by
+\autocite{Arora2020}. Examples for photosynthesis (\ac{GPP}) are given by
 \textcite{Farquhar1980} for \ch{C3} plants and \textcite{Collatz1992} for
 \ch{C4} plants. The terms \enquote{\ch{C3}} and \enquote{\ch{C4}} refer to the
-different metabolic pathways used in the carbon fixation during photosynthesis.
-In both cases, the enzyme \ac{RuBisCO} is an important catalyst for the
+different metabolic pathways used in carbon fixation during photosynthesis. In
+both cases, the enzyme \ac{RuBisCO} is an important catalyst for the
 corresponding chemical reactions. Both parameterizations utilize variables that
 are known to affect photosynthesis, such as the availability of light, the
 \ac{CO2} concentration, the soil moisture, and the temperature.
@@ -1043,17 +1045,16 @@ forcing. In a multi-model ensemble (\eg{} from \ac{CMIP}), the climate response
 uncertainty is expressed in the different responses of the different climate
 models to a given forcing. A common approach to distill information about a
 projected quantity from multi-model ensembles is to treat the arithmetic
-\ac{MMM} and the multi-model range as best estimate and uncertainty measure of
-this quantity \autocite{Collins2013}. This \emph{model democracy} approach
-basically assumes that all climate models are independent, equally plausible,
-distributed around reality, and that the projected multi-model range is
-representative for the uncertainty in the projected quantity
-\autocite{Knutti2017a}. However, since the \ac{CMIP} ensembles, sometimes
-referred to as \emph{ensembles of opportunity}, have not been designed to
-represent a true statistical sample of the reality composed of independent
-climate models \autocite{Tebaldi2007}, these assumptions do not hold in
-practice. The main reasons for this are that different climate models (even for
-different modeling institutions) share parts of their code
+\ac{MMM} as best estimate and the multi-model range as uncertainty measure
+\autocite{Collins2013}. This \emph{model democracy} approach assumes that all
+climate models are independent, equally plausible, distributed around reality,
+and that the projected multi-model range is representative for the uncertainty
+in the projected quantity \autocite{Knutti2017a}. However, since the \ac{CMIP}
+ensembles, sometimes referred to as \emph{ensembles of opportunity}, have not
+been designed to represent a true statistical sample of the reality composed of
+independent climate models \autocite{Tebaldi2007}, these assumptions do not
+hold in practice. The main reasons for this are that different climate models
+(even for different modeling institutions) share parts of their code
 \autocite{Abramowitz2019, Knutti2013}, that models do not equally well
 represent the observed past and present-day climate \autocite{Gleckler2008,
   Knutti2013}, and that models might suffer from common structural limitations
@@ -1085,18 +1086,18 @@ The \emph{emergent constraint} approach tackles this problem by
 \autocite{Eyring2019}. An illustration of the concept of emergent constraints
 is shown in \cref{fig:02:emergent_constraint}. Each emergent constraint
 requires two key components: an \emph{emergent relationship} and a
-corresponding observation of the real world \autocite{Eyring2019}. The emergent
-relationship (red line in \cref{fig:02:emergent_constraint}) is a robust and
-physically interpretable inter-model relationship between a target variable $y$
-related to the future climate and an observable $x$ of the past or present-day
-climate. Basis for the relationship is output of the different climate models
-of a multi-model ensemble (blue circles in \cref{fig:02:emergent_constraint}).
-Using an observation of $x$, this emergent relationship can then be used to
-derive an emergent constraint on $y$ (gray shaded area in
-\cref{fig:02:emergent_constraint}) that considers uncertainties in the emergent
-relationship itself (red shaded area in \cref{fig:02:emergent_constraint}) and
-uncertainties in the observation (blue shaded area in
-\cref{fig:02:emergent_constraint}).
+corresponding observation of the real world \autocite{Eyring2019}. The
+emergent relationship (red line in \cref{fig:02:emergent_constraint}) is a
+robust and physically interpretable inter-model relationship between a target
+variable $y$ related to the future climate and an observable $x$ of the past
+or present-day climate. The basis for the relationship is output from the
+different climate models of a multi-model ensemble (blue circles in
+\cref{fig:02:emergent_constraint}). Using an observation of $x$, this
+emergent relationship can then be used to derive an emergent constraint on
+$y$ (gray shaded area in \cref{fig:02:emergent_constraint}) that considers
+uncertainties in the emergent relationship itself (red shaded area in
+\cref{fig:02:emergent_constraint}) and uncertainties in the observation (blue
+shaded area in \cref{fig:02:emergent_constraint}).
 
 \begin{figure}[t]
   \centering
@@ -1149,11 +1150,11 @@ to fit the regression line is given by the \ac{SPE} $\sigma_{\hat{y}}(x)$:
     \right)^2}{\sum_{m=1}^M \left( x_m - \bar{x} \right)^2} \right].
   \label{eq:02:spe}
 \end{equation}
-Here, $\bar{x}$ indicates the arithmetic mean of $x$ over all climate models.
-Assuming Gaussian errors and a mean of $\hat{y}(x)$ (\ie{} the best estimate of
-the target variable $y$ is given by the regression line), \cref{eq:02:spe} can
-be used to define a conditional \acf{PDF} for predicting a target variable of
-$y$ given $x$:
+Here, $\bar{x}$ indicates the arithmetic mean of $x$ calculated over all
+climate models. Assuming Gaussian errors and a mean of $\hat{y}(x)$ (\ie{} the
+best estimate of the target variable $y$ is given by the regression line),
+\cref{eq:02:spe} can be used to define a conditional \acf{PDF} for predicting a
+target variable of $y$ given $x$:
 \begin{equation}
   \cond{y}{x} = \frac{1}{\sqrt{2 \pi \sigma_{\hat{y}}^2(x)}} \exp \left[
     -\frac{\left( y - \hat{y}(x) \right)^2}{2 \sigma_{\hat{y}}^2(x)} \right].
@@ -1166,7 +1167,7 @@ emergent relationship itself (red line in \cref{fig:02:emergent_constraint}).
 The conditional \ac{PDF} can be interpreted as the posterior distribution of
 the regression model based on the climate model output but constrained on the
 observable $x$. However, the observed value of $x$, called $x_0$, also has
-uncertainties associated with it (blue shaded are in
+uncertainties associated with it (blue shaded area in
 \cref{fig:02:emergent_constraint}). Assuming again a Gaussian distribution, the
 observational \ac{PDF} for observing $x_0$ given the true value $x$ can be
 written as
@@ -1188,7 +1189,7 @@ numerical integration:
 \end{equation}
 Posterior estimates of the target variable are influenced by the way the
 statistical inference has been performed. Alternative methods that can be used
-include Bayesian frameworks \autocite{Renoult2020}, information theoretic
+include Bayesian frameworks \autocite{Renoult2020}, information-theoretic
 approaches based on the Kullback-Leibler divergence between the models'
 \acp{PDF} of $x$ and the observational \ac{PDF} \autocite{Brient2016}, and
 linear regression models based on hierarchical Bayesian models
@@ -1221,7 +1222,7 @@ significance and vice versa.
 
 One limitation of the presented framework is the assumption that the individual
 data points from the different climate models are independent. As already noted
-in the beginning of \cref{sec:02:reducing_uncertainties}, this is not the case
+at the beginning of \cref{sec:02:reducing_uncertainties}, this is not the case
 for typical climate model ensembles, as some modeling groups provide output for
 multiple climate models and some climate models from different modeling
 institutions share components and code \autocite{Knutti2013}. The duplicated
@@ -1245,7 +1246,7 @@ A crucial aspect for every emergent constraint is a verifiable physical process
 explaining the correlation between $x$ and $y$ \autocite{Hall2019}. Only if the
 underlying emergent relationship can be derived from a robust and plausible
 physical mechanism, an emergent constraint can be considered credible. The
-reason for this is the occurrence spurious relationships: Due to the large
+reason for this is the occurrence of spurious relationships: Due to the large
 number of possible observables provided by modern \acp{ESM} and the
 comparatively small number of climate models, spurious relationships are
 possible just by chance \autocite{Caldwell2014}. Furthermore, out-of-sample
@@ -1260,8 +1261,8 @@ constraints on \ac{ECS} are evaluated on the new \acs{CMIP}6 ensemble.
 
 In the last two decades, many emergent constraints on various aspects of the
 Earth system have been published. Early studies tackled the hydrological cycle
-\autocite{Allen2002} and the snow-albedo feedback \autocite{Hall2006}. Over the
-years, climate sensitivity expressed by the \ac{ECS} has been a prominent
+\autocite{Allen2002} and the snow/ice-albedo feedback \autocite{Hall2006}. Over
+the years, climate sensitivity expressed by the \ac{ECS} has been a prominent
 target variable. Since cloud feedbacks are a major source of uncertainty for
 climate sensitivity, a variety of scientific papers focus on constraining
 \ac{ECS} with cloud-related processes \autocite{Brient2015, Brient2016,
@@ -1271,7 +1272,7 @@ climate sensitivity, a variety of scientific papers focus on constraining
 constrain \ac{ECS} with the historical temperature variability
 \autocite{Cox2018} or the historical warming trend
 \autocite{JimenezdelaCuesta2019, Nijsse2020, Tokarska2020}. Emergent
-constraints are not only limited to physical processes, but can also be applied
+constraints are not only limited to physical processes but can also be applied
 to other domains, like the global carbon cycle \autocite{Cox2013,
   Kwiatkowski2017, Wenzel2014, Wenzel2016, Winkler2019}. An extensive
 discussion on the emergent constraint by \textcite{Wenzel2016}, which focuses
@@ -1281,7 +1282,7 @@ on the concentration-carbon feedback, is given in \cref{subsec:06:step_1}.
 \subsection{Performance- and Interdependence-based Weighting of Climate Models}
 \label{subsec:02:model_weighting}
 
-A further technique to reduce uncertainties in climate model projections with
+Further techniques to reduce uncertainties in climate model projections with
 observations are model weighting schemes. Their basic idea is to abandon model
 democracy by replacing the arithmetic mean used to calculate the \acp{MMM} by a
 weighted mean of the form
@@ -1293,10 +1294,9 @@ with normalized weights $w_m$. Similar to the notation introduced in the
 previous \namecref{subsec:02:emergent_constraints}, $y$ is a target variable
 (\eg{} a projection of the future climate) and $m$ indexes the $M$ different
 climate models. To address two major issues of model democracy (different
-climate models are not equally plausible and not independent; see beginning of
-\cref{sec:02:reducing_uncertainties}), \textcite{Knutti2017a} propose a
-weighting scheme based on climate model performance and interdependence with
-the following weights:
+climate models are not equally plausible and not independent),
+\textcite{Knutti2017a} propose a weighting scheme based on climate model
+performance and interdependence with the following weights:
 \begin{equation}
   w_m \propto \frac{\exp \left( -\frac{D_m^2}{\sigma_D^2} \right)}{1 + \sum_{n
     \neq m}^{M} \exp \left( -\frac{S_{mn}^2}{\sigma_S^2} \right)}.
@@ -1376,9 +1376,9 @@ An alternative climate model weighting scheme is the \emph{\ac{MDER}} approach
 climate model projections with observations. The basis of \ac{MDER} is a set of
 $K$ predictor diagnostics $\left\{ x^{(1)}, x^{(2)}, \ldots, x^{(K)} \right\}$
 which are relevant for the projection of the target variable $y$. The reasoning
-for this choice of the diagnostics is similar to the one presented in the
-previous \namecref{subsec:02:model_weighting}: Weighting schemes should address
-the question \enquote{which climate model is adequate for predicting the target
+for this choice of diagnostics is similar to the one presented in the previous
+\namecref{subsec:02:model_weighting}: Weighting schemes should address the
+question \enquote{which climate model is adequate for predicting the target
   variable?} and not \enquote{which climate model is the best?}.
 
 The concept of \ac{MDER} is mathematically similar to the concept of emergent
