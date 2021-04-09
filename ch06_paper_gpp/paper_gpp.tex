@@ -17,7 +17,7 @@
   Learning}
 \label{ch:06:paper_gpp}
 
-As argued in detail in the previous \namecref{ch:05:paper_ecs},
+As argued in detail in the previous \lcnamecref{ch:05:paper_ecs},
 single-process-oriented emergent constraints do not seem to be beneficial in
 constraining climate projections from the vastly complex modern-day \acp{ESM}
 since they might overly simplify the problem. To overcome this issue, we
@@ -75,7 +75,7 @@ evapotranspiration in \acp{ESM} \autocite{Lian2018}.
 This work is already published in \textcite{Schlund2020}. For this paper, the
 author of this thesis led the writing and the analysis and implemented the code
 to reproduce this study with all figures and tables using the \ac{ESMValTool}.
-\Cref{sec:06:data_and_methods} of this \namecref{ch:06:paper_gpp} provides an
+\Cref{sec:06:data_and_methods} of this \lcnamecref{ch:06:paper_gpp} provides an
 overview of the data and methods used in this paper. The results are presented
 in \cref{sec:06:results} and \cref{sec:06:summary_and_discussion} closes with a
 summary and discussion.
@@ -128,7 +128,7 @@ More details on the methods and the experimental setup are given in
   Effect (Step 1)}
 \label{subsec:06:step_1}
 
-In this \namecref{subsec:06:step_1}, we present the observational emergent
+In this \lcnamecref{subsec:06:step_1}, we present the observational emergent
 constraint on the \ac{CO2} fertilization effect by \textcite{Wenzel2016} which
 we use to globally rescale the models for their individual bias in the
 sensitivity of \ac{GPP} to an increase in atmospheric \ac{CO2} concentration.
@@ -263,7 +263,7 @@ between the models' global mean \ac{GPP} change and the constrained global mean
 using the observed change in the \ac{CO2} cycle amplitude. Models that simulate
 a too high global mean \ac{GPP} change are nudged toward smaller values and
 vice versa. The rescaled target variables are then fed into the \ac{ML} model
-(step 2) presented in the following \namecref{subsec:06:step_2}. We note that
+(step 2) presented in the following \lcnamecref{subsec:06:step_2}. We note that
 this global rescaling assumes that the relative biases in the fractional
 \ac{GPP} change of the individual \acp{ESM} are constant over the whole globe.
 
@@ -387,7 +387,7 @@ local prediction of the target variable $y$.
   \label{tab:06:predictors}
 \end{table}
 
-As already described in the previous \namecref{subsec:06:step_1}, we analyze
+As already described in the previous \lcnamecref{subsec:06:step_1}, we analyze
 two different target variables in this study: the monthly climatology of
 absolute \ac{GPP} at the end of the \nth{21} century (step 2a) and the
 fractional \ac{GPP} change over the \nth{21} century (step 2b). A schematic
@@ -623,10 +623,10 @@ the unconstrained\acs{CMIP}5 ensemble has a model range of
 $\rangeunit{156}{247}{\GtCyr{}}$ for future \ac{GPP} in the \acs{RCP}8.5
 scenario (\range{2091}{2100}). The resulting global mean \ac{GPP} change is
 used to rescale the gridded output of the different climate models with
-\cref{eq:06:y}. The following two \namecrefs{subsec:06:results_step2a} show the
-results for the rescaled absolute future \ac{GPP} (step 2a) and the rescaled
-fractional \ac{GPP} change (step 2b) further constrained by the \ac{GBRT}
-model.
+\cref{eq:06:y}. The following two \lcnamecrefs{subsec:06:results_step2a} show
+the results for the rescaled absolute future \ac{GPP} (step 2a) and the
+rescaled fractional \ac{GPP} change (step 2b) further constrained by the
+\ac{GBRT} model.
 
 
 \subsection{Constraining Gridded Absolute \acs{GPP} Projections (Step 2a)}
@@ -768,7 +768,7 @@ on the whole are approximately unbiased (see \cref{fig:app:b:residuals:a}).
 \subsubsection{Observation-Based \acs{GBRT} Prediction of Absolute \acs{GPP}}
 \label{subsubsec:06:results_step2a_obs}
 
-In this \namecref{subsubsec:06:results_step2a_obs}, we use the different
+In this \lcnamecref{subsubsec:06:results_step2a_obs}, we use the different
 statistical models to predict absolute \ac{GPP} at the end of the \nth{21}
 century. For this, we feed observation-based data (see
 \cref{tab:06:predictors}) into the regression models \ac{GBRT}, \acs{GBRT}-1D,
@@ -1314,7 +1314,7 @@ step 1.
 \section{Summary and Discussion}
 \label{sec:06:summary_and_discussion}
 
-In this \namecref{ch:06:paper_gpp}, a two-step approach to constrain the
+In this \lcnamecref{ch:06:paper_gpp}, a two-step approach to constrain the
 projected \ac{GPP} at the end of the \nth{21} century (\range{2091}{2100}) in
 the \acs{RCP}8.5 scenario is developed. In the first step, we constrain the
 global mean \ac{GPP} to $\pmrangeunit{171}{12}{\GtCyr{}}$ using a published
