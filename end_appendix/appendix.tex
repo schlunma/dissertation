@@ -341,7 +341,7 @@ recursively built by
   \label{eq:app:b:f_x_recursion}
 \end{equation}
 The minimization procedure of the loss function (mean square error with
-additional sample weights determined by the grid cell areas) is called
+additional sample weights determined by the grid-cell areas) is called
 \emph{stochastic gradient boosting} and is explained in detail by
 \textcite{Friedman2001, Friedman2002}. Fitting the \ac{GBRT} model involves
 building the decision trees by splitting the data at points with maximum
@@ -353,7 +353,7 @@ training process.
 A crucial criterion for the successful application of any \ac{GBRT} algorithm
 is the choice of several hyperparameters. The three main control parameters of
 the learning procedure are the total number of decision trees $H$, the
-complexity of the individual trees (for example measured by the maximum tree
+complexity of the individual trees (for example, measured by the maximum tree
 depth), and the learning rate $\nu \ll 1$. The latter parameter is used for
 regularization and dramatically reduces the risk of overfitting by scaling down
 the contribution of each added weak learner \autocite{Death2007, Elith2008,
@@ -420,8 +420,8 @@ errors presented above (assuming all of them are independent):
   \sigma_{i, \mathtxt{OBS}}^2.
   \label{eq:app:b:sigma_sum}
 \end{equation}
-The specified error ranges for the \ac{MMM} approaches are calculated in a
-similar way: The constant \ac{SPE} per grid cell is estimated by the mean
+The specified error ranges for the \ac{MMM} approaches are calculated
+similarly: The constant \ac{SPE} per grid cell is estimated by the mean
 \ac{RMSEP} given in the leave-one-model-out \ac{CV} experiment (see
 \cref{subsec:02:model_weighting}). For the plain \ac{MMM}, this is the only
 source of uncertainty. For the rescaled \ac{MMM}, the total error can be
@@ -446,7 +446,7 @@ A common way to visualize the residuals is to plot their \acfp{PDF} (see
 training data and the independent hold-out data are very similar. Moreover, the
 \acp{PDF} do not show significant biases, as the residuals are approximately
 unbiased (zero mean) for the training and the test dataset. This justifies the
-use of the \ac{RMSEP} to estimate the \ac{SPE}, since for unbiased residuals
+use of the \ac{RMSEP} to estimate the \ac{SPE} since for unbiased residuals
 the \ac{RMSEP} is equal to the standard deviation of the residuals.
 
 \begin{table}[p]
@@ -623,8 +623,8 @@ the \ac{RMSEP} is equal to the standard deviation of the residuals.
     \nth{21} century in the \acs{RCP}8.5 scenario (Step 2a) for different
     statistical models. (a) \acs{CMIP}5 \acf{MMM}. (b) Rescaled \acs{CMIP}5
     \acs{MMM} using \cref{eq:06:y}. (c) \Acf{LASSO} model using only the
-    historical \acs{GPP} as single predictor. (d) \Acf{GBRT} model using only
-    the historical \acs{GPP} as single predictor. (e) \acs{LASSO} model using
+    historical \acs{GPP} as a single predictor. (d) \Acf{GBRT} model using only
+    the historical \acs{GPP} as a single predictor. (e) \acs{LASSO} model using
     all predictors. (f) \acs{GBRT} model using all predictors.
     \AdaptedFrom{Schlund2020}.
   }
@@ -678,8 +678,8 @@ the \ac{RMSEP} is equal to the standard deviation of the residuals.
     different statistical models. Details on the calculation of the \acs{SPE}
     are given in \cref{subsec:app:b:uncertainty}. (a) \acs{CMIP}5 \acf{MMM}.
     (b) Rescaled \acs{CMIP}5 \acs{MMM} using \cref{eq:06:y}. (c) \Acf{LASSO}
-    model using only the historical \acs{GPP} as single predictor. (d)
-    \Acf{GBRT} model using only the historical \acs{GPP} as single predictor.
+    model using only the historical \acs{GPP} as a single predictor. (d)
+    \Acf{GBRT} model using only the historical \acs{GPP} as a single predictor.
     (e) \acs{LASSO} model using all predictors. (f) \acs{GBRT} model using all
     predictors. The \acs{SPE} is minimal for the \acs{GBRT} model using all
     predictors. \AdaptedFrom{Schlund2020}.

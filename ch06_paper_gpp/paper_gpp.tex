@@ -44,10 +44,10 @@ Due to complex feedback processes connected to the global carbon cycle
 \cref{subsec:02:carbon_cycle_perturbations}), the response of the terrestrial
 carbon cycle to changes in the atmospheric \ac{CO2} concentration and climate
 is a major source of uncertainty in climate projections \autocite{Bodman2013,
-  Booth2012, Collins2013}. This applies for example to multi-model projections
-of future \ac{GPP} of the \acs{CMIP}5 ensemble. Thus, the aim of this study is
-to reduce uncertainties in multi-model projections of future \ac{GPP} in the
-\acs{CMIP}5 \acs{RCP}8.5 scenario at the end of the \nth{21} century with a new
+  Booth2012, Collins2013}. For example, this applies to multi-model projections
+of future \ac{GPP} of the \acs{CMIP}5 ensemble. Thus, this study aims to reduce
+uncertainties in multi-model projections of future \ac{GPP} in the \acs{CMIP}5
+\acs{RCP}8.5 scenario at the end of the \nth{21} century with a new
 \acs{ML}-based weighting technique and appropriate observations. The new
 two-step approach utilizes aspects of emergent constraints and the \ac{MDER}
 technique in combination with \iac{ML} algorithm. In the first step, we apply
@@ -92,7 +92,7 @@ discussion of the caveats that are associated with this emergent constraint
 that attributes changes in the observed increase in the \ac{CO2} seasonal cycle
 amplitude at \ac{KUM} entirely to the increase in atmospheric \ac{CO2}
 concentration, yet other studies provide indications that part of this increase
-is due to climate and land use changes \autocite{Bastos2019, Forkel2016,
+is due to climate and land-use changes \autocite{Bastos2019, Forkel2016,
   Piao2018, Zhao2016}. In \cref{subsec:06:step_2} the \ac{ML} technique used in
 Step 2 to constrain gridded \ac{GPP} projections is presented.
 \Cref{fig:06:schematic_steps} shows an overview of our two-step approach.
@@ -144,19 +144,19 @@ amplitude to rising atmospheric \ac{CO2} concentrations, defined as the slope
 of the linear regression between the \ac{CO2} seasonal cycle amplitude and the
 annual mean atmospheric \ac{CO2} concentrations (see \cref{fig:app:b:co2} for
 details). The emergent constraint is physically motivated by the hypothesis
-that increasing terrestrial \ac{GPP} is a main driver for the observed changes
-in the \ac{CO2} seasonal cycle amplitude \autocite{Gray2014, Keeling1996,
-  Zhao2014}. This hypothesis is based on the fact that the seasonal cycle in
-atmospheric \ac{CO2} concentration originates from photosynthesis and
-decomposition processes: in summer, photosynthesis removes \ac{CO2} from the
-atmosphere; in winter, additional \ac{CO2} is added to the atmosphere due to
-the decomposition of organic matter \autocite{Keeling1995}. Thus, \ac{CO2}
-fertilization leads to an increase of the \acs{CO2} seasonal cycle amplitude
-due to increased \acs{CO2} removal from the atmosphere. We note that this
-emergent constraint implicitly assumes that there is no temperature-driven
-increase in respiration over time. Therefore, this approach most likely
-overestimates the true sensitivity of \ac{GPP} to an increase in the
-atmospheric \ac{CO2} concentration.
+that increasing terrestrial \ac{GPP} is the main driver for the observed
+changes in the \ac{CO2} seasonal cycle amplitude \autocite{Gray2014,
+  Keeling1996, Zhao2014}. This hypothesis is based on the fact that the
+seasonal cycle in atmospheric \ac{CO2} concentration originates from
+photosynthesis and decomposition processes: in summer, photosynthesis removes
+\ac{CO2} from the atmosphere; in winter, additional \ac{CO2} is added to the
+atmosphere due to the decomposition of organic matter \autocite{Keeling1995}.
+Thus, \ac{CO2} fertilization leads to an increase of the \acs{CO2} seasonal
+cycle amplitude due to increased \acs{CO2} removal from the atmosphere. We note
+that this emergent constraint implicitly assumes that there is no
+temperature-driven increase in respiration over time. Therefore, this approach
+most likely overestimates the true sensitivity of \ac{GPP} to an increase in
+the atmospheric \ac{CO2} concentration.
 
 However, we note that this emergent constraint is not undisputed. In other
 studies, the observed change in the \ac{CO2} seasonal cycle amplitude is
@@ -167,17 +167,17 @@ plants to global warming instead of \ac{CO2}. Similarly, \textcite{Piao2018}
 show that elevated atmospheric \acs{CO2} concentration and climate change
 equally contribute to the increase in the \ac{CO2} seasonal cycle in northern
 high latitudes with additional smaller contributions from air-sea carbon fluxes
-and land use changes. For their analysis, \textcite{Piao2018} use \ac{CO2}
+and land-use changes. For their analysis, \textcite{Piao2018} use \ac{CO2}
 records from 26 stations and nine terrestrial ecosystem models. An evaluation
 of two atmospheric inversions and 11 land surface models shows contrasting
 effects of \ac{CO2} fertilization (positive) and global warming (negative) on
 the \ac{CO2} seasonal cycle amplitude increase in northern high latitudes with
-negligible contributions from land use changes \autocite{Bastos2019}. A further
+negligible contributions from land-use changes \autocite{Bastos2019}. A further
 study by \textcite{Zhao2016} finds that for seven out of nine dynamic
 vegetation models, the \ac{CO2} fertilization effect is the strongest driver
 for the observed changes in the \ac{CO2} seasonal cycle amplitude, while the
 two remaining models equally attribute this to \ac{CO2} fertilization, climate
-change, and land use changes. Moreover, \textcite{Winkler2019a} discuss
+change, and land-use changes. Moreover, \textcite{Winkler2019a} discuss
 limitations of carbon cycle emergent constraints related to the calculation of
 the predictor from observation-based data and the inter-model relationship. As
 a case study, they adopt a further emergent constraint by
@@ -199,11 +199,11 @@ simulation where forcings other than \ac{CO2} also change. Moreover, we
 consider the global mean \ac{GPP} change instead of the \ac{GPP} change in the
 northern extratropics as in \textcite{Wenzel2016}. Due to the strong annual
 mixing of \ac{CO2} in the atmosphere, the change in the \ac{CO2} seasonal cycle
-amplitude at \ac{KUM} is representative for the whole globe. Thus, we apply
-this emergent constraint to the global mean \ac{GPP} change. However, we note
-that this approach might introduce errors since the \ac{CO2} fertilization
-effect could be different for tropical and extratropical ecosystems due to
-nutrient limitations and the temperature dependence of \ac{RuBisCO} kinetics
+amplitude at \ac{KUM} is representative of the whole globe. Thus, we apply this
+emergent constraint to the global mean \ac{GPP} change. However, we note that
+this approach might introduce errors since the \ac{CO2} fertilization effect
+could be different for tropical and extratropical ecosystems due to nutrient
+limitations and the temperature dependence of \ac{RuBisCO} kinetics
 \autocite{CraftsBrandner2000} in the tropics. Nevertheless, we argue that we
 can use the constraint if the emergent relationship still holds within our
 considered framework (the \acs{RCP}8.5 scenario simulated by the \acs{CMIP}5
@@ -225,9 +225,9 @@ decrease in \ac{GPP}, positive values to an increase in \ac{GPP}, and a value
 of $0 \unit{\%}$ to no \ac{GPP} change. The \ac{CO2} amplitude sensitivity is
 calculated for the years \range{1979}{2019}, which is the full available time
 range for the observed \ac{CO2} record at \ac{KUM} \autocite{Keeling2005}.
-Similar \textcite{Wenzel2016}, we extract the observed \ac{CO2} amplitude from
-smoothed atmospheric \ac{CO2} concentrations (using a stiff cubic spline
-function plus a four-harmonics functions with linear gain) as provided by
+Similar to \textcite{Wenzel2016}, we extract the observed \ac{CO2} amplitude
+from smoothed atmospheric \ac{CO2} concentrations (using a stiff cubic spline
+function plus a four-harmonics function with linear gain) as provided by
 \textcite{Keeling2005}. For the \acs{CMIP}5 models, the respective grid cell
 closest to \ac{KUM} ($19.5 \unit{\degree N}$, $154.8 \unit{\degree W}$) is
 extracted. Additionally, the emission-driven historical simulations are
@@ -237,7 +237,7 @@ in \cref{fig:app:b:co2}.
 
 Since the global constraint above cannot be used directly as a predictor in the
 \ac{ML} approach which operates on gridded values (see
-\cref{subsec:06:step_2}), we use it as first step to globally rescale the
+\cref{subsec:06:step_2}), we use it as a first step to globally rescale the
 \ac{ESM} output. This important first step allows us to constrain the large
 uncertainty in the global \ac{CO2} fertilization effect of the \acs{CMIP}5
 models. In this study, two different gridded target variables are examined (see
@@ -288,10 +288,10 @@ selected subsample of the training data $\left\{ \left( \bm{x}_i, y_i \right)
 function, \eg{} the mean square error). Then, further decision trees are
 linearly added to the regression function $F$ (scaled by a regularization
 parameter $\nu \ll 1$ called \emph{learning rate}) and the model is fitted
-again in the same manner. This ensures that the prediction for poorly modeled
-training points in the beginning will gradually improve during the training.
-The whole procedure is repeated until the loss function does not improve
-anymore, as evaluated on an independent validation dataset. Relevant
+again in the same manner. This ensures that the prediction for training points
+that are poorly modeled in the beginning will gradually improve during the
+training. The whole procedure is repeated until the loss function does not
+improve anymore, as evaluated on an independent validation dataset. Relevant
 hyperparameters of this algorithm (maximum number of decision trees, maximum
 depth of the decision trees, learning rate, and the subsample ratio) are
 optimized by $5$-fold \acf{CV} using the training data. More details on the
@@ -332,13 +332,13 @@ local prediction of the target variable $y$.
     cell/month of a single climate model (the different colors correspond to
     different climate models). (b) In the prediction phase, observation-based
     values of the diagnostic (black points) are fed into the trained \acs{ML}
-    model to constrain \acs{GPP} for every grid cell/month to a value which
-    best agrees with the observations. (c) For an independent validation of our
-    method, we use an out-of-sample testing setup based on a
-    leave-one-model-out \acl{CV} approach (see \cref{subsec:02:model_weighting}
-    for details). The schematic illustration of Step 2b differs only in the
-    target variable used (fractional \acs{GPP} change instead of absolute
-    \acs{GPP}). \AdaptedFrom{Schlund2020}.
+    model to constrain \acs{GPP} for every grid cell/month to a value that best
+    agrees with the observations. (c) For independent validation of our method,
+    we use an out-of-sample testing setup based on a leave-one-model-out
+    \acl{CV} approach (see \cref{subsec:02:model_weighting} for details). The
+    schematic illustration of Step 2b differs only in the target variable used
+    (fractional \acs{GPP} change instead of absolute \acs{GPP}).
+    \AdaptedFrom{Schlund2020}.
   }
   \label{fig:06:mlr_concept}
 \end{figure}
@@ -446,14 +446,14 @@ physical explanations of the links between the predictors and \ac{GPP}).
 The raw \acs{CMIP}5 and observation-driven datasets are preprocessed before
 entering the \ac{ML} algorithm (see \cref{subsec:app:b:data_preprocessing}). In
 particular, increases greater than $300 \unit{\%}$ in the fractional \ac{GPP}
-change that is used as target variable in Step 2b are removed. These
+change that is used as the target variable in Step 2b are removed. These
 unrealistically high values (making up about $5.9 \unit{\%}$ of the data) occur
 in places with very small absolute \ac{GPP} values in the historical simulation
 that are used in the denominator of the derivation of the fractional \ac{GPP}
 change (see \cref{eq:06:f}). In addition, we randomly select $25 \unit{\%}$ of
 the training data and use it as hold-out test data. This dataset is excluded
-from the training and can therefore be used for an independent validation of
-our statistical model.
+from the training and can therefore be used for independent validation of our
+statistical model.
 
 
 \subsection{Assessment of Uncertainty and Predictive Skill}
@@ -564,7 +564,7 @@ derivation of the constrained range are given in
     linear regression fit and its corresponding \acl{SPE}, and the dashed black
     lines to the observational constraint. (a) Similar to
     \textcite{Wenzel2016}: The global mean fractional \acs{GPP} change after
-    \acs{CO2} doubling in a \acf{1BGC} defined as 10-year mean of the
+    \acs{CO2} doubling in a \acf{1BGC} defined as the 10-year mean of the
     \acs{1BGC} run centered at the time of \acs{CO2} doubling relative to the
     10-year mean of pre-industrial control conditions at the beginning of the
     \acs{1BGC} run. The sensitivity of the \acs{CO2} amplitude for the
@@ -611,12 +611,12 @@ significant ($R^2 = 0.65$, $p = 0.029$).
 Using the emergent relationship, the global mean \ac{GPP} change over the
 \nth{21} century can be constrained to $\pmrangeunit{39}{7}{\%}$ (standard
 error), which is at the lower end of the original \acs{CMIP}5 range
-($\rangeunit{31}{57}{\%}$). Moreover, the best estimate $39 \unit{\%}$ is also
-slightly lower than the \acs{CMIP}5 \ac{MMM} of $43 \unit{\%}$. The observed
-\ac{GPP} averaged over the years \range{1991}{2000} from the FLUXNET-MTE
-product is $\pmrangeunit{123}{6}{\GtCyr{}}$ \autocite{Jung2011}. Assuming
-independent errors and using Gaussian error propagation, the constrained
-fractional change corresponds to a global mean \ac{GPP} of
+($\rangeunit{31}{57}{\%}$). Moreover, the best estimate of $39 \unit{\%}$ is
+also slightly lower than the \acs{CMIP}5 \ac{MMM} of $43 \unit{\%}$. The
+observed \ac{GPP} averaged over the years \range{1991}{2000} from the
+FLUXNET-MTE product is $\pmrangeunit{123}{6}{\GtCyr{}}$ \autocite{Jung2011}.
+Assuming independent errors and using Gaussian error propagation, the
+constrained fractional change corresponds to a global mean \ac{GPP} of
 $\pmrangeunit{171}{12}{\GtCyr{}}$ (standard error) at the end of the \nth{21}
 century (\range{2091}{2100}) in the \acs{RCP}8.5 scenario. In contrast to that,
 the unconstrained\acs{CMIP}5 ensemble has a model range of
@@ -635,7 +635,7 @@ rescaled fractional \ac{GPP} change (Step 2b) further constrained by the
 In the second step, the objective is to constrain the spatial distribution of
 the projected \ac{GPP}. We use the grid-wise monthly mean climatology of
 absolute \ac{GPP} at the end of the \nth{21} century (\range{2091}{2100}) as
-target variable, rescaled using \cref{eq:06:y} to reduce the large
+the target variable, rescaled using \cref{eq:06:y} to reduce the large
 uncertainties in the \acs{CO2} fertilization effect in the models. In the first
 part, we evaluate the GBRT model using the leave-one-model-out \ac{CV} approach
 and compare it to other statistical approaches and the unweighted \ac{MMM}. In
@@ -653,7 +653,7 @@ compare it to five other statistical models: the unweighted \acs{CMIP}5
 (r\acs{MMM}), a linear \ac{LASSO} regression model using all features as
 defined in \cref{tab:06:predictors}, a single-predictor \ac{LASSO} model
 (\acs{LASSO}-1D), and a single-predictor \ac{GBRT} model (\acs{GBRT}-1D). Both
-single-predictor models use the historical \ac{GPP} as only feature. The
+single-predictor models use the historical \ac{GPP} as the only feature. The
 predictive power (in terms of \ac{RMSEP}) of each statistical model is assessed
 using the leave-one-model-out \ac{CV} approach (see
 \cref{subsec:06:uncertainty_and_skill}). This allows us to create \iac{RMSEP}
@@ -762,7 +762,7 @@ not show the plot of the local feature importance using \ac{LIME}. We can get
 further insights into our \ac{GBRT} model by analyzing the residuals of the
 prediction using an independent test dataset. The resulting plots show that the
 algorithm is not overfitting the training data and that the prediction errors
-on the whole are approximately unbiased (see \cref{fig:app:b:residuals:a}).
+are approximately unbiased (see \cref{fig:app:b:residuals:a}).
 
 
 \subsubsection{Observation-Based \acs{GBRT} Prediction of Absolute \acs{GPP}}
@@ -780,7 +780,7 @@ The result of Step 1 on the gridded data is illustrated in
 surprising due to the global nature of the rescaling (see \cref{eq:06:y}). The
 use of the global emergent constraint predicts a slightly lower \ac{GPP}
 increase over the \nth{21} century ($39 \unit{\%}$) than the unweighted
-\acs{CMIP}5 ensemble mean ($43 \unit{\%}$). The corresponding ratio $39
+\acs{CMIP}5 ensemble mean ($43 \unit{\%}$). The corresponding ratio of $39
 \unit{\%} / 43 \unit{\%} \approx 0.91$ is approximately equal to the mean value
 of r\acs{MMM}/\acs{MMM} ($0.92$). Consequently, the global estimate of
 r\acs{MMM} gives a lower \ac{GPP} at the end of the century ($179
@@ -864,7 +864,7 @@ to changes in the atmospheric \ac{CO2} concentration.
     absolute \acf{GPP} at the end of the \nth{21} century with observations in
     Step 2a and comparison to other statistical models.
   ]{
-    Difference (a) and ratio (b) of the both biases shown in
+    Difference (a) and ratio (b) of the biases shown in
     \cref{fig:06:step2a_results:b,fig:06:step2a_results:c}. For panel (b), all
     values close to $0$ for the dataset in the denominator have been masked to
     avoid divisions by $0$. Both panels show that our approach is only to first
@@ -872,7 +872,7 @@ to changes in the atmospheric \ac{CO2} concentration.
     values. (c) Comparison of the \acf{GBRT} versus \acs{GBRT}-1D projections
     of future \acf{GPP}. This panel indicates a clear difference between the
     full \acs{GBRT} model using all predictors and the \acs{GBRT} model using
-    only historical \acs{GPP} as single predictor. (d) Comparison of the
+    only historical \acs{GPP} as a single predictor. (d) Comparison of the
     \acs{GBRT} versus the \acf{LASSO} projections of future \acs{GPP}. This
     panel shows that there is a clear difference between using the non-linear
     \acs{GBRT} model and the linear \acs{LASSO} model. The results of the
@@ -920,7 +920,7 @@ observations (Step 2a).
 Further illustrations of these results including the uncertainties can be found
 in \cref{fig:app:b:cmip5_hist_mte,fig:app:b:step2a_results,%
   fig:app:b:step2a_results_errors}. Analogous to the results from the
-leave-one-model-out \ac{CV} approach, the uncertainties on grid cell level
+leave-one-model-out \ac{CV} approach, the uncertainties on grid-cell level
 are significantly reduced for the \ac{GBRT} prediction compared to the
 \ac{MMM} results. These errors consider all three sources of uncertainty that
 we present in \cref{subsec:06:uncertainty_and_skill} (error in the \ac{GBRT}
@@ -951,7 +951,7 @@ the other regression models that use only the historical \ac{GPP} as single
 predictors. Thus, we conclude that the bias correction of our \ac{GBRT} model
 originates from the observation of the historical \ac{GPP}, which is also
 supported by \cref{fig:06:step2a_ml_inference:b}, which shows historical
-\ac{GPP} as by far most important feature. On the contrary, second-order
+\ac{GPP} as the by far most important feature. On the contrary, second-order
 corrections originate from the observations in the remaining predictors. These
 second-order corrections are also visible as the non-zero values in
 \Cref{fig:06:step2a_results_biases:c,fig:06:step2a_results_biases:d}. This
@@ -971,7 +971,7 @@ $\pmrangeunit{171}{12}{\GtCyr{}}$.
 
 In Step 2b, we constrain the gridded fractional \ac{GPP} change over the
 \nth{21} century (2100 versus 2000) in the emission-driven \acs{RCP}8.5
-scenario (rescaled using \cref{eq:06:y}). This step is independent from Step 2a
+scenario (rescaled using \cref{eq:06:y}). This step is independent of Step 2a
 and only differs in the target variable (\ac{GPP} change instead of absolute
 \ac{GPP}). The remaining setup including the predictors, the \ac{GBRT} model
 itself, and the datasets are similar.
@@ -991,7 +991,7 @@ $16 \unit{\%}$ and $9 \unit{\%}$, respectively. Moreover, the non-linear
 \ac{GBRT} model also outperforms the linear \ac{LASSO} model (mean reduced by
 $3 \unit{\%}$). In contrast to Step 2a, there is not a single predictor which
 heavily dominates the feature importance of the \ac{GBRT} model. Thus, using
-single-predictor models (\acs{GBRT}-1D and \acs{LASSO}-1D) is not necessary in
+single-predictor models (\acs{GBRT}-1D and \acs{LASSO}-1D) is not necessary for
 Step 2b. \Cref{fig:06:step2b_ml_inference:b,fig:06:step2b_ml_inference:d} show
 the global feature importance for the \ac{LASSO} and \ac{GBRT} model,
 respectively. Both models agree that the \acf{T} and \ac{LAI} are the two
@@ -1057,7 +1057,7 @@ obtain a constrained fractional \ac{GPP} change over the \nth{21} century.
     approach \autocite{Ribeiro2016} for the three dominant features \acf{T},
     \acf{LAI}, and \acs{GPP}. The relative influence of these three features
     (ignoring all other features) is color-coded according to the triangle in
-    the lower left corner. Over large parts of the globe, \acs{T} is the
+    the lower-left corner. Over large parts of the globe, \acs{T} is the
     dominant feature. (d) Relative global feature importance for the different
     features used in the \acs{GBRT} model to predict the fractional \acs{GPP}
     change (Step 2b). The blue bars for the two global feature importance plots
@@ -1175,7 +1175,7 @@ concentration.
   \label{fig:06:step2b_results_biases}
 \end{figure}
 
-All four patterns of \cref{fig:06:step2b_results} show very similar
+All four patterns in \cref{fig:06:step2b_results} show very similar
 geographical patterns. Obvious exceptions are the Sahara Desert and the Arabian
 Peninsula, which show a noisy behavior for the \aclp{MMM} (\ac{MMM} and
 r\acs{MMM}) and a small \ac{GPP} increase for the two regression models
@@ -1199,8 +1199,8 @@ the \ac{CO2} seasonal cycle amplitude \autocite{Forkel2016}. This is consistent
 with the feature map in \cref{fig:06:step2b_ml_inference:c}, which shows an
 increased relative importance of the \ac{LAI} (a quantity directly related to
 the greening) in the high-latitude regions with high \ac{GPP} changes. On the
-contrary, in the tropical ecosystems the growing season already covers the
-whole year. Thus, a further climate change--induced extension is not possible,
+contrary, in tropical ecosystems, the growing season already covers the whole
+year. Thus, a further climate change--induced extension is not possible,
 leading to a smaller fractional \ac{GPP} change in regions closer to the
 equator. For most parts of the remaining globe, \ac{T} is the dominant
 predictor, with some areas in northern Africa, the Middle East, India, and
@@ -1219,7 +1219,7 @@ a_i / b_i \right) \neq \left( \sum_i a_i \right) / \left( \sum_i b_i \right)$.
 Thus, a direct comparison to other studies that give locally or globally
 aggregated results is not possible.
 
-To get further insights in the \ac{GBRT} algorithm, we compare it directly to
+To get further insights into the \ac{GBRT} algorithm, we compare it directly to
 the rescaled \acs{CMIP}5 \ac{MMM} (r\acs{MMM}), which is illustrated in
 \cref{fig:06:step2b_results_biases:b,fig:06:step2b_results_biases:c}. The
 mismatch between \ac{GBRT} and r\acs{MMM} can be interpreted as additional
@@ -1339,32 +1339,33 @@ Both approaches give consistent results (see
 \ac{GPP} increase in high latitudes and a lower \ac{GPP} increase closer to the
 equator, which might be attributed to an additional greening trend in the high
 latitudes as supported by the feature map in
-\cref{fig:06:step2b_ml_inference:c} that shows \ac{LAI} as dominant predictor
-in this region. However, in the absence of a robust physical mechanism this
-connection cannot be proven. For both target variables, the \ac{GBRT} algorithm
-is superior to all other considered statistical models in terms of prediction
-uncertainty evaluated in a leave-one-model-out \ac{CV} approach among different
-statistical models. Compared to the unweighted \acs{CMIP}5 \ac{MMM} the mean
-prediction error is reduced by $48 \unit{\%}$ (Step 2a) and $16 \unit{\%}$
-(Step 2b); compared to a linear \ac{LASSO} regression model the mean prediction
-error is reduced by approximately $3 \unit{\%}$ for both cases. However, local
-standard errors are still large for both target variables, even for the
-\ac{GBRT} model. Due to the unknown covariance structure a global aggregation
-of these errors is not possible. Step 2a mainly corrects the bias of the
-simulated absolute historical \ac{GPP} relative to observations
-\autocite{Anav2013}. Consequently, the historical \ac{GPP} is by far the most
-important predictor for future absolute \ac{GPP} (regions with high \ac{GPP} in
-the past are likely to have high \ac{GPP} in the future and vice versa).
-However, as we show in \cref{fig:06:step2a_results_biases}, the \ac{GBRT} model
-expands this bias correction by taking more predictors than the historical
-\ac{GPP} into account. A similar result is provided by Step 2b:
+\cref{fig:06:step2b_ml_inference:c} that shows \ac{LAI} as the dominant
+predictor in this region. However, in the absence of a robust physical
+mechanism, this connection cannot be proven. For both target variables, the
+\ac{GBRT} algorithm is superior to all other considered statistical models in
+terms of prediction uncertainty evaluated in a leave-one-model-out \ac{CV}
+approach among different statistical models. Compared to the unweighted
+\acs{CMIP}5 \ac{MMM} the mean prediction error is reduced by $48 \unit{\%}$
+(Step 2a) and $16 \unit{\%}$ (Step 2b); compared to a linear \ac{LASSO}
+regression model the mean prediction error is reduced by approximately $3
+\unit{\%}$ for both cases. However, local standard errors are still large for
+both target variables, even for the \ac{GBRT} model. Due to the unknown
+covariance structure, a global aggregation of these errors is not possible.
+Step 2a mainly corrects the bias of the simulated absolute historical \ac{GPP}
+relative to observations \autocite{Anav2013}. Consequently, the historical
+\ac{GPP} is by far the most important predictor for future absolute \ac{GPP}
+(regions with high \ac{GPP} in the past are likely to have high \ac{GPP} in the
+future and vice versa). However, as we show in
+\cref{fig:06:step2a_results_biases}, the \ac{GBRT} model expands this bias
+correction by taking more predictors than the historical \ac{GPP} into account.
+A similar result is provided by Step 2b:
 \cref{fig:06:step2b_results_biases:b,fig:06:step2b_results_biases:c} show the
 impact of the additional predictors as difference between the \acs{CMIP}5
 \ac{MMM} and the \ac{GBRT} prediction of the \ac{GPP} change. In this case, the
 target variable (fractional \ac{GPP} change) is already normalized with the
-historical \ac{GPP}. Therefore, \ac{T} (second most important feature in Step
-2a) is now the most important predictor instead of historical \ac{GPP} (see
-\cref{fig:06:step2b_ml_inference:d}). As shown in
+historical \ac{GPP}. Therefore, \ac{T} (the second most important feature in
+Step 2a) is now the most important predictor instead of historical \ac{GPP}
+(see \cref{fig:06:step2b_ml_inference:d}). As shown in
 \cref{fig:06:step2b_ml_inference:c}, the different features have also different
 dominant regional impacts; but again, since there is no distinct physical
 mechanism relating the predictors to the target variable this map requires
@@ -1392,38 +1393,37 @@ multivariate relations in the statistical model, including the information
 encoded in spatial variation. The prediction phase of our approach (feeding
 observation-based data into the trained \ac{GBRT} model) can be interpreted as
 an implicit performance weighting: The \ac{GBRT} model creates predictions
-based on today's conditions (in form of variables which are physically
-connected to \ac{GPP}). However, unlike other performance weighting techniques
+based on today's conditions (in form of variables that are physically connected
+to \ac{GPP}). However, unlike other performance weighting techniques
 \autocite{Knutti2017a, Sanderson2017}, we do not assign constant weights to the
-different climate models. On the contrary, since the algorithm works on grid
-cell level, it is able to adapt to regional climate characteristics and thus
-applies an implicit local and climate-dependent weighting. Moreover, the
+different climate models. On the contrary, since the algorithm works on
+grid-cell level, it is able to adapt to regional climate characteristics and
+thus applies an implicit local and climate-dependent weighting. Moreover, the
 algorithm adds another level of weighting by assigning a relative relevance
 score to the different predictors. We emphasize that this is only an implicit
-weighting, since it is not possible to extract specific values for the
+weighting since it is not possible to extract specific values for the
 individual weights due to the complex structure of the \ac{GBRT} model.
 
 Yet, like emergent constraints and performance weighting techniques, our
 \ac{GBRT} approach in Step 2 hinges on the assumption that the climate models
-reflect the real world. This is certainly only partially true, since there are
-processes like \ac{CO2} fertilization, land use and land cover changes,
+reflect the real world. This is certainly only partially true since there are
+processes like \ac{CO2} fertilization, land-use and land-cover changes,
 nutrient cycles and limitations \autocite{Du2020,Fleischer2019}, disturbances,
-and induced vegetation dynamics which may strongly alter the future
-trajectories of \ac{GPP} without this being fully encoded in today's
-observational products. Moreover, all \acs{CO2}-related effects are only
-implicitly incorporated in our approach by the target period we are using and
-the global rescaling using the emergent constraint in Step 1. Thus, our
-reduction of uncertainty only applies to the specific setup we are considering
-here: the future \ac{GPP} in the \acs{CMIP}5 \acs{RCP}8.5 scenario at the end
-of the \nth{21} century. It has to be viewed as a nominal reduction, while the
-real uncertainty remains unknown and is likely larger than the nominal one.
-These issues could be tested in the future by including other (even offline)
-models, which account for the aforementioned processes. A true validation will
-only be possible once we experience the changed condition or could be based on
-paleo data. In summary, our approach does not address the coupled system
-directly but hinges on the climate predictions of the individual \acp{ESM} and
-hence is not able to implicitly correct respective biases of the \acs{CMIP}5
-ensemble.
+and induced vegetation dynamics that may strongly alter the future trajectories
+of \ac{GPP} without this being fully encoded in today's observational products.
+Moreover, all \acs{CO2}-related effects are only implicitly incorporated in our
+approach by the target period we are using and the global rescaling using the
+emergent constraint in Step 1. Thus, our reduction of uncertainty only applies
+to the specific setup we are considering here: the future \ac{GPP} in the
+\acs{CMIP}5 \acs{RCP}8.5 scenario at the end of the \nth{21} century. It has to
+be viewed as a nominal reduction, while the real uncertainty remains unknown
+and is likely larger than the nominal one. These issues could be tested in the
+future by including other (even offline) models, which account for the
+aforementioned processes. A true validation will only be possible once we
+experience the changed condition or could be based on paleo data. In summary,
+our approach does not address the coupled system directly but hinges on the
+climate predictions of the individual \acp{ESM} and hence is not able to
+implicitly correct respective biases of the \acs{CMIP}5 ensemble.
 
 The presented approach based on \ac{ML} is not limited to projections of the
 future carbon cycle, which is used as an illustrative example. Indeed, since

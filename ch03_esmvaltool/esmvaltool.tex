@@ -123,9 +123,9 @@ recipe and one or more diagnostic scripts. A third major element of the
 \ac{ESMValTool} is the \emph{\acs{CMOR}ization} (\ie{} the reformatting of data
 so it adheres to \ac{CMOR} standards) of raw observational datasets (not shown
 in \cref{fig:03:esmvaltool_schematic}). This ensures that the \ac{ESMValTool}
-can process arbitrary observational datasets, which can for example be used to
-assess the skill of climate model simulations. More details on the structure of
-the \ac{ESMValTool} are given in its extensive documentation
+can process arbitrary observational datasets, which can, for example, be used
+to assess the skill of climate model simulations. More details on the structure
+of the \ac{ESMValTool} are given in its extensive documentation
 (\url{https://docs.esmvaltool.org}).
 
 To ensure a rapid evaluation of the \acs{CMIP}6 models, the \ac{ESMValTool} is
@@ -135,9 +135,9 @@ as new model data is published on the \ac{ESGF} servers, it can be accessed
 with the \ac{ESMValTool} and analyzed. This instantaneous evaluation of the
 \ac{CMIP} models is urgently needed since there is a growing dependency on
 \ac{CMIP} products by a broad research community and by national and
-international climate assessments. For this reason, the \ac{ESMValTool} is for
-example used to evaluate climate model output and observational data in several
-chapters of the upcoming Sixth \acl{AR} (\acs{AR}6) of the \ac{IPCC}.
+international climate assessments. For this reason, the \ac{ESMValTool} is used
+to evaluate climate model output and observational data in several chapters of
+the upcoming Sixth \acl{AR} (\acs{AR}6) of the \ac{IPCC}.
 
 The \ac{ESMValTool} is developed open-source on GitHub, a web service that
 provides hosting for version control with \emph{git}
@@ -146,9 +146,8 @@ License, Version 2.0. The source code of the latest released version of the
 \ac{ESMValCore} package, which includes the core functionalities of the
 \ac{ESMValTool}, is publicly available at Zenodo \autocite{Andela2020a}.
 Similarly, the source code of the latest released version of the
-\ac{ESMValTool} package, which includes the recipe and diagnostic scripts that
-can for example be used to reproduce scientific assessments, is also available
-at Zenodo \autocite{Andela2020}.
+\ac{ESMValTool} package, which includes all publicly available recipes and
+diagnostic scripts, is also available at Zenodo \autocite{Andela2020}.
 
 
 \section{Contributions to \acs{ESMValCore}}
@@ -205,15 +204,15 @@ In total, three new preprocessor functions have been added: \emph{amplitude},
 preprocessor calculates the peak-to-peak amplitude of periodic phenomena along
 an arbitrary coordinate, which is usually time. A common application of this
 preprocessor is the computation of a variable's diurnal or seasonal cycle
-amplitude, which is for example necessary for the calculation of the predictor
-variable (\ac{CO2} seasonal cycle amplitude) of the emergent constraint on
-\ac{CO2} fertilization by \textcite{Wenzel2016} that is also used in
+amplitude. For instance, this is necessary to calculate the predictor variable
+(\ac{CO2} seasonal cycle amplitude) of the emergent constraint on \ac{CO2}
+fertilization by \textcite{Wenzel2016} that is also used in
 \cref{ch:06:paper_gpp} to constrain the global mean \ac{GPP} at the end of the
 \nth{21} century. The \emph{land/sea fraction weighting} preprocessor weights
 fields with the land or sea fraction of the respective grid cells. For example,
 this is necessary for the spatial integration of flux-related variables which
 are reported in units of \enquote{per square meter of land/sea} and not in
-\enquote{per square meter of grid cell}. After the weighting, the grid cell
+\enquote{per square meter of grid cell}. After the weighting, the grid-cell
 areas can be used to integrate the flux-related variable over any desired
 region. In this thesis, \emph{land/sea fraction weighting} is applied to
 \ac{GPP} fields given by observational products and models to compute the
