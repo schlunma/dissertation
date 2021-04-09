@@ -279,13 +279,13 @@
 
 The raw monthly mean output of every participating climate model and
 observation-driven dataset is regridded to a $\ang{2} \times \ang{2}$ grid and
-masked with a common mask to remove all oceans and Antarctica. For step 2a
+masked with a common mask to remove all oceans and Antarctica. For Step 2a
 (target variable: absolute \acf{GPP} at the end of the \nth{21} century),
 monthly climatologies are calculated for every dataset by averaging over all
-available years for every month. For step 2b (target variable: fractional
+available years for every month. For Step 2b (target variable: fractional
 \ac{GPP} change over the \nth{21} century), temporal means are calculated for
 every dataset by averaging over the full time dimension. In addition, values
-greater than $300 \unit{\%}$ in the target variable in step 2b (fractional
+greater than $300 \unit{\%}$ in the target variable in Step 2b (fractional
 \ac{GPP} change over the \nth{21} century) are masked to avoid numerical
 inconsistencies caused by the division of small numbers in the derivation of
 the target variable. In the next step, the multi-dimensional data is flattened
@@ -295,7 +295,7 @@ the different predictors, all of them are linearly scaled by their respective
 means and standard deviations so that they have a mean of zero and unit
 variance. In total, 237852 (16503) training data points, 79284 (5501) hold-out
 test data points, and 46344 (3727) points for the prediction are used in the
-machine learning model for step 2a (step 2b).
+machine learning model for Step 2a (Step 2b).
 
 
 \subsection{Gradient Boosted Regression Tree (\acs{GBRT}) Algorithm}
@@ -386,7 +386,7 @@ dataset allows an assessment of the prediction residuals, which is useful to
 detect overfitting (see \cref{fig:app:b:residuals}).
 
 A second source of uncertainty is the error in the rescaling of the target
-variable in step 1 of our approach. Analogous to \cref{eq:06:y}, we estimate
+variable in Step 1 of our approach. Analogous to \cref{eq:06:y}, we estimate
 this error as
 \begin{equation}
   \sigma_{i, \mathtxt{RESC}} = \bar{y}_i \cdot \frac{\sigma_{f'}}{\bar{f}}
@@ -394,10 +394,10 @@ this error as
 \end{equation}
 for each prediction input point $i$ ($i$ runs over all grid cells and months).
 $\bar{y}_i$ is the \acs{CMIP}5 \acf{MMM} of the target variable at prediction
-input point $i$ (step 2a: absolute \ac{GPP} at the end of the \nth{21} century;
-step 2b: fractional \ac{GPP} change over the \nth{21} century), $\sigma_{f'}$
+input point $i$ (Step 2a: absolute \ac{GPP} at the end of the \nth{21} century;
+Step 2b: fractional \ac{GPP} change over the \nth{21} century), $\sigma_{f'}$
 the standard error in the global mean fractional \acs{GPP} change given by the
-emergent constraint from step 1, and $\bar{f}$ the \acs{CMIP}5 \ac{MMM} global
+emergent constraint from Step 1, and $\bar{f}$ the \acs{CMIP}5 \ac{MMM} global
 mean fractional \ac{GPP} change over the \nth{21} century.
 
 The final source of uncertainty is the error of the prediction input data
@@ -519,7 +519,7 @@ the \ac{RMSEP} is equal to the standard deviation of the residuals.
     each dataset. The slopes of these linear fits define the sensitivity of the
     seasonal \acs{CO2} cycle amplitude to atmospheric \acs{CO2} concentrations,
     which is used as predictor for the emergent constraint step of our approach
-    (step 1). \AdaptedFrom{Schlund2020}.
+    (Step 1). \AdaptedFrom{Schlund2020}.
   }
   \label{fig:app:b:co2}
 \end{figure}
@@ -539,11 +539,11 @@ the \ac{RMSEP} is equal to the standard deviation of the residuals.
   \end{subfigure}
   \caption[
     Distribution of the residuals of the \acf{GBRT} model for the two different
-    target variables used in step 2a and step 2b.
+    target variables used in Step 2a and Step 2b.
   ]{
     Distribution of the residuals of the \acf{GBRT} model for the two different
-    target variables used in step 2a (absolute \acf{GPP} at the end of the
-    \nth{21} century) and step 2b (fractional \acs{GPP} change over the
+    target variables used in Step 2a (absolute \acf{GPP} at the end of the
+    \nth{21} century) and Step 2b (fractional \acs{GPP} change over the
     \nth{21} century). The distributions are derived by kernel density
     estimation using training (blue) and test (green) data. The plots show
     approximately unbiased distributions for the training and the test
@@ -616,11 +616,11 @@ the \ac{RMSEP} is equal to the standard deviation of the residuals.
   \end{subfigure}
   \caption[
     Geographical distributions of the absolute \acf{GPP} at the end of the
-    \nth{21} century in the \acs{RCP}8.5 scenario (step 2a) for different
+    \nth{21} century in the \acs{RCP}8.5 scenario (Step 2a) for different
     statistical models.
   ]{
     Geographical distributions of the absolute \acf{GPP} at the end of the
-    \nth{21} century in the \acs{RCP}8.5 scenario (step 2a) for different
+    \nth{21} century in the \acs{RCP}8.5 scenario (Step 2a) for different
     statistical models. (a) \acs{CMIP}5 \acf{MMM}. (b) Rescaled \acs{CMIP}5
     \acs{MMM} using \cref{eq:06:y}. (c) \Acf{LASSO} model using only the
     historical \acs{GPP} as single predictor. (d) \Acf{GBRT} model using only
@@ -670,11 +670,11 @@ the \ac{RMSEP} is equal to the standard deviation of the residuals.
   \end{subfigure}
   \caption[
     Geographical distributions of the \aclp{SPE} of the absolute \acf{GPP} at
-    the end of the \nth{21} century in the \acs{RCP}8.5 scenario (step 2a) for
+    the end of the \nth{21} century in the \acs{RCP}8.5 scenario (Step 2a) for
     different statistical models.
   ]{
     Geographical distributions of the \acfp{SPE} of the absolute \acf{GPP} at
-    the end of the \nth{21} century in the \acs{RCP}8.5 scenario (step 2a) for
+    the end of the \nth{21} century in the \acs{RCP}8.5 scenario (Step 2a) for
     different statistical models. Details on the calculation of the \acs{SPE}
     are given in \cref{subsec:app:b:uncertainty}. (a) \acs{CMIP}5 \acf{MMM}.
     (b) Rescaled \acs{CMIP}5 \acs{MMM} using \cref{eq:06:y}. (c) \Acf{LASSO}
@@ -714,11 +714,11 @@ the \ac{RMSEP} is equal to the standard deviation of the residuals.
   \end{subfigure}
   \caption[
     Geographical distributions of the \aclp{SPE} of the fractional change in
-    \acf{GPP} over the \nth{21} century in the \acs{RCP}8.5 scenario (step 2b)
+    \acf{GPP} over the \nth{21} century in the \acs{RCP}8.5 scenario (Step 2b)
     for different statistical models.
   ]{
     Geographical distributions of the \acfp{SPE} of the fractional change in
-    \acf{GPP} over the \nth{21} century in the \acs{RCP}8.5 scenario (step 2b)
+    \acf{GPP} over the \nth{21} century in the \acs{RCP}8.5 scenario (Step 2b)
     for different statistical models. Details on the calculation of the
     \acs{SPE} are given in \cref{subsec:app:b:uncertainty}. (a) \acs{CMIP}5
     \acf{MMM}. (b) Rescaled \acs{CMIP}5 \acs{MMM} using \cref{eq:06:y}. (c)
