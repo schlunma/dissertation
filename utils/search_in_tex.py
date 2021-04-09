@@ -31,6 +31,8 @@ python search_in_tex.py '.{20}\s+[Aa][n]?\s+\\[Aa]c.{20}'
 
 python search_in_tex.py '\\.{0,7}ref.?\{' | sort -u
 
+python search_in_tex.py '.{50}figure[s]?[^\}A-Za-z]+.{50}'
+
 """
 
 
