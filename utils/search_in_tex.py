@@ -29,6 +29,8 @@ python search_in_tex.py '.{20}ly-.{20}'
 
 python search_in_tex.py '.{20}\s+[Aa][n]?\s+\\[Aa]c.{20}'
 
+python search_in_tex.py '\\.{0,7}ref.?\{' | sort -u
+
 """
 
 
