@@ -559,7 +559,7 @@ model years \autocite{Rugenstein2020}.
     Global and annual mean net \acf{TOA} radiation $N$ versus the change in
     global and annual mean \acl{T} $\Delta T$ for 150 years of a simulation
     with an abrupt quadrupling of the atmospheric \acs{CO2} concentration
-    (\nxcotwo{4}) for the \acs{CMIP}5 \acl{MMM} (blue circles). To account for
+    (\nxcotwo{4}) for the \acs{CMIP}5 \acl{MMM} (blue points). To account for
     energy leakage and model drift, a linear fit of the corresponding
     pre-industrial control run is subtracted from the \nxcotwo{4} simulation.
     As given by \cref{eq:02:N_vs_delta_t}, the slope of the linear regression
@@ -707,7 +707,7 @@ is shown in \cref{fig:02:tcr}.
     Global and annual mean \acl{T} change $\Delta T$ for 140 years of a
     simulation with a $1 \unit{\%}$ per year increase of the atmospheric
     \acs{CO2} concentration (\onepctcotwo{}) for the \acf{CESM} of the
-    \acf{NCAR} (blue circles). The temperature change is calculated relative to
+    \acf{NCAR} (blue points). The temperature change is calculated relative to
     a corresponding pre-industrial control simulation smoothed with a linear
     fit over all 140 years. The \acf{TCR} is defined as the temperature change
     $\Delta T$ at the time of \acs{CO2} doubling averaged over a 20-year period
@@ -1091,7 +1091,7 @@ emergent relationship (red line in \cref{fig:02:emergent_constraint}) is a
 robust and physically interpretable inter-model relationship between a target
 variable $y$ related to the future climate and an observable $x$ of the past
 or present-day climate. The basis for the relationship is output from the
-different climate models of a multi-model ensemble (blue circles in
+different climate models of a multi-model ensemble (blue points in
 \cref{fig:02:emergent_constraint}). Using an observation of $x$, this
 emergent relationship can then be used to derive an emergent constraint on
 $y$ (gray shaded area in \cref{fig:02:emergent_constraint}) that considers
@@ -1111,7 +1111,7 @@ shaded area in \cref{fig:02:emergent_constraint}).
     relationship (red line) between a target variable $y$ (\eg{} Earth system
     sensitivity or projection of future climate change) and an observable $x$
     (\eg{} past or present-day trend or variation) for the climate models of a
-    multi-model ensemble (blue circles). With an observation of $x$,
+    multi-model ensemble (blue points). With an observation of $x$,
     uncertainties in $y$ in the multi-model ensemble, illustrated by the yellow
     \acf{PDF}, can be reduced (gray \acs{PDF}). Uncertainties in the target
     variable $y$ arise from two sources: uncertainties in the observation (blue
@@ -1411,7 +1411,7 @@ $\bm{\varepsilon} = \left( \varepsilon_1, \varepsilon_2, \ldots, \varepsilon_M
 \right)^T \in \mathbb{R}^M$ a vector of independent random variables
 representing the noise in the target variable. \Cref{fig:02:mder} shows a
 schematic that illustrates this linear relationship (gray surface) for the
-different climate models (colored circles) for two diagnostics ($K = 2$). Using
+different climate models (colored points) for two diagnostics ($K = 2$). Using
 ordinary least squares regression, the estimated linear coefficients
 $\hat{\bm{b}}$ are given by
 \begin{equation}
@@ -1437,9 +1437,9 @@ emergent relationships (see \cref{eq:02:linear_regression_y}).
     surface). Second, observations of the predictors (horizontal black lines)
     are fed into the regression model to calculate an observation-based best
     estimate of the target variable $\hat{y}_0$ following
-    \cref{eq:02:mder_best_estimate}. The black circle indicates the best
+    \cref{eq:02:mder_best_estimate}. The black point indicates the best
     estimate for the target variable $y$ given by the observed values of
-    $x^{(1)}$ and $x^{(2)}$. Each of the remaining colored circles represents a
+    $x^{(1)}$ and $x^{(2)}$. Each of the remaining colored points represents a
     single climate model of the multi-model ensemble. The vertical dashed lines
     visualize the distance between the climate model data and the linear
     regression surface, which represents the noise term $\bm{\varepsilon}$ in
@@ -1461,7 +1461,7 @@ $\hat{y}_0$
 This is mathematically similar to the calculation of the best estimate target
 variable $y$ for emergent constraints. In \cref{fig:02:mder}, the observations
 of the predictors $\bm{x}_0$ are illustrated with horizontal black lines, and
-the best estimate $\hat{y}_0$ is shown as a black circle. By combining
+the best estimate $\hat{y}_0$ is shown as a black point. By combining
 \cref{eq:02:linear_coefficients,eq:02:mder_best_estimate} and comparing this to
 the definition of weighted means in \cref{eq:02:weighted_mean}, climate model
 weights $\bm{w} = \left( w_1, w_2, \ldots, w_M \right)^T \in \mathbb{R}^M$ can
