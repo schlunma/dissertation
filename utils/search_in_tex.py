@@ -33,6 +33,8 @@ python search_in_tex.py '\\.{0,7}ref.?\{' | sort -u
 
 python search_in_tex.py '.{50}figure[s]?[^\}A-Za-z]+.{50}'
 
+python search_in_tex.py '\d{5,}'
+
 """
 
 
