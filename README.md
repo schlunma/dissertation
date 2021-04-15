@@ -1,13 +1,22 @@
-# Dissertation
-
-[![CC BY 4.0][cc-by-shield]][cc-by]
+# Constraining Uncertainties in Multi-Model Projections of the Future Climate with Observations
 
 This repository contains my doctoral dissertation.
 
 
-# Compilation From Source
+## Contents
 
-To compile the document from source, use the following commands:
+1. Introduction
+2. Scientific Background
+3. Improving Routine Climate Model Evaluation
+4. Assessment of Climate Sensitivity in the CMIP6 Ensemble
+5. Evaluation of Emergent Constraints on the Effective Climate Sensitivity (ECS) in CMIP6
+6. Constraining Future Gross Primary Production (GPP) with Machine Learning
+7. Conclusion
+
+
+## Compilation From Source
+
+To compile the document from source, use the following chain of commands:
 
     pdflatex -synctex=1 -interaction=nonstopmode Dissertation_Manuel_Schlund.tex
     biber Dissertation_Manuel_Schlund.tex
@@ -15,7 +24,7 @@ To compile the document from source, use the following commands:
     pdflatex -synctex=1 -interaction=nonstopmode Dissertation_Manuel_Schlund.tex
 
 
-# License
+## License
 
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
