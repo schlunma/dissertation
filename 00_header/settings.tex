@@ -42,6 +42,7 @@
 \renewcommand*{\cellalign}{tl}
 
 % Biblatex
+\newcommand*{\apashortdash}{-} % Necessary with apa and authoryear-comp
 \newcommand*{\boldname}[3]{% Make my name bold in list of references
   \def\lastname{#1}%
   \def\firstname{#2}%
@@ -61,11 +62,11 @@
     test {\ifdefequal{\lastname}{\namepartfamily}}
   }{\mkbibbold{#1}}{#1}%
 }
-\newcommand*{\apashortdash}{-} % Necessary with apa and authoryear-comp
 \DeclareLabelalphaTemplate{% Sorting of bibliography (first author -> year)
   \labelelement{\field[names=1, lowercase]{labelname}}
   \labelelement{\field{year}}
 }
+\DeclareFieldFormat{apacase}{#1} % Do not change capitalization of titles
 
 % Reduce space before and after equations
 % This removes issues of setspace package that result in many underfull vboxes
