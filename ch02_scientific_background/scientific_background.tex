@@ -67,7 +67,25 @@ Earth's large-scale atmospheric motions. Similar to this, many other processes
 of the Earth system are simulated by the climate models using other fundamental
 physical laws and principles. As opposed to these calculated variables that
 form the output of climate models, the corresponding input is mainly given by
-the radiative forcing.
+external forcings, which are incorporated as boundary conditions into the
+climate models. For example, the major driver of anthropogenic climate change,
+the \ac{GHG} \ac{CO2}, is either included with prescribed atmospheric \ac{CO2}
+concentrations (\emph{concentration-driven runs}) or prescribed \ac{CO2}
+emissions (\emph{emission-driven runs}).
+
+Many processes in the Earth system occur at spatial scales much smaller than
+the size of a typical grid cell. Illustrative examples for this are clouds,
+which are usually smaller than a $100 \unit{km} \times 100 \unit{km}$ grid
+cell, but still play an important role in the overall climate system by
+reflecting incoming and outgoing radiation \autocite{Boucher2013}. To
+reasonably approximate these subgrid-scale processes, a concept called
+\emph{parameterization} is used. Instead of simulating a process exactly,
+parameterizations aim to represent the effect of that process at the grid scale
+of the climate model by generating the appropriate forcing terms for the rest
+of the system and the rest of the processes \autocite{Gettelman2016}.
+Parameterizations are necessary to simulate many processes of the Earth system,
+for example, surface heat and moisture fluxes, moist convection, turbulent
+mixing, and radiation \autocite{Holton2004}.
 
 \begin{figure}[t]
   \centering
@@ -87,20 +105,6 @@ the radiative forcing.
   }
   \label{fig:02:esms_historical_evolution}
 \end{figure}
-
-Many processes in the Earth system occur at spatial scales much smaller than
-the size of a typical grid cell. Illustrative examples for this are clouds,
-which are usually smaller than a $100 \unit{km} \times 100 \unit{km}$ grid
-cell, but still play an important role in the overall climate system by
-reflecting incoming and outgoing radiation \autocite{Boucher2013}. To
-reasonably approximate these subgrid-scale processes, a concept called
-\emph{parameterization} is used. Instead of simulating a process exactly,
-parameterizations aim to represent the effect of that process at the grid scale
-of the climate model by generating the appropriate forcing terms for the rest
-of the system and the rest of the processes \autocite{Gettelman2016}.
-Parameterizations are necessary to simulate many processes of the Earth system,
-for example, surface heat and moisture fluxes, moist convection, turbulent
-mixing, and radiation \autocite{Holton2004}.
 
 The first numerical climate models came up in the 1960s and were based on
 weather prediction models \autocite{Flato2011}. Early models from the 1970s
@@ -354,25 +358,6 @@ strategies.
 \subsection{Climate Feedbacks}
 \label{subsec:02:climate_feedbacks}
 
-\begin{figure}[!t]
-  \centering
-  \includegraphics[width=\LargeFigureWidth{}]{
-    ch02_scientific_background/figs/feedbacks_overview.pdf}
-  \caption[
-    Climate feedbacks and corresponding time scales.
-  ]{
-    Climate feedbacks and corresponding time scales. The different signs refer
-    to the signs of the different feedbacks. Positive feedbacks amplify the
-    effect of the external forcing (\eg{} the water vapor feedback) and
-    negative feedbacks diminish the effect of the external forcing (\eg{} the
-    longwave radiation feedback). An example of a feedback that might be either
-    positive or negative is the cloud feedback. The smaller box highlights the
-    large differences in time scales for the various feedbacks.
-    \IPCCReproducedFrom{Cubasch2013}{their Figure 1.2}.
-  }
-  \label{fig:02:feedbacks_overview}
-\end{figure}
-
 As already described in \cref{subsec:02:source_of_uncertainties}, the effects
 of an external forcing acting on the climate system can additionally be
 amplified or diminished by climate feedbacks. Thus, feedback processes play a
@@ -402,6 +387,25 @@ positive feedback that operates on longer time scales (several years) is the
 highly reflective ice and snow surfaces melt with global warming, exposing the
 darker and more absorbing surfaces below \autocite{Cubasch2013}.
 
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\LargeFigureWidth{}]{
+    ch02_scientific_background/figs/feedbacks_overview.pdf}
+  \caption[
+    Climate feedbacks and corresponding time scales.
+  ]{
+    Climate feedbacks and corresponding time scales. The different signs refer
+    to the signs of the different feedbacks. Positive feedbacks amplify the
+    effect of the external forcing (\eg{} the water vapor feedback) and
+    negative feedbacks diminish the effect of the external forcing (\eg{} the
+    longwave radiation feedback). An example of a feedback that might be either
+    positive or negative is the cloud feedback. The smaller box highlights the
+    large differences in time scales for the various feedbacks.
+    \IPCCReproducedFrom{Cubasch2013}{their Figure 1.2}.
+  }
+  \label{fig:02:feedbacks_overview}
+\end{figure}
+
 In contrast to positive feedbacks, negative feedbacks diminish the effect of an
 external forcing. An example of this is the \emph{blackbody feedback} (also
 known as \emph{Planck feedback} or \emph{longwave radiation feedback}), which
@@ -422,7 +426,7 @@ considered for the overall cloud feedback \autocite{Boucher2013}. Relevant
 cloud properties that may change as a response to an external forcing and that
 may alter the Earth's radiative budget are cloud cover, cloud optical
 thickness, cloud top and cloud base height, vertical extent, and the
-geographical distribution of clouds. Examples for robust cloud feedback
+geographical distribution of clouds. Examples for possible cloud feedback
 processes are the increase in cloud top height of high-level clouds in a
 warming climate which traps longwave radiation and enhances global warming, and
 the reduction in mid- and low-level cloud cover which diminishes the reflection
@@ -470,16 +474,18 @@ system evolves; when $N = 0$ a new steady state has been reached.
 To quantify the effects of different feedbacks, a reference system with a basic
 response needs to be defined, which is a crucial aspect of feedback analysis
 \autocite{Roe2009}. Usually, the idealization of a blackbody Earth without an
-atmosphere is used for that: In equilibrium, the incoming solar irradiance is
-balanced with an outgoing thermal irradiance $J_0$ that solely depends on the
-global mean surface temperature $T_0$ following the Stefan-Boltzmann law
+atmosphere is used for that: In equilibrium, the absorbed incoming solar
+irradiance (after accounting for reflection) is balanced with an outgoing
+thermal irradiance $J_0$ that solely depends on the global mean surface
+temperature $T_0$ following the Stefan-Boltzmann law
 \begin{equation}
   J_0 = -\sigma T_0^4.
   \label{eq:02:stefan_boltzmann_law_eq}
 \end{equation}
-$\sigma \approx 5.67 \unit{W m^{-2} K^{-4}}$ is the Stefan-Boltzmann constant.
-To answer an external forcing $F$, the climate system reacts with a response
-$R$ expressed by a change in the global mean surface temperature $\Delta T$:
+$\sigma \approx 5.67 \cdot 10^{-8} \unit{W m^{-2} K^{-4}}$ is the
+Stefan-Boltzmann constant. To answer an external forcing $F$, the climate
+system reacts with a response $R$ expressed by a change in the global mean
+surface temperature $\Delta T$:
 \begin{equation}
   J_0 + R = -\sigma \left( T_0 + \Delta T \right)^4.
   \label{eq:02:stefan_boltzmann_law_non_eq}
@@ -541,7 +547,7 @@ An important metric describing climate sensitivity is the \emph{equilibrium
 instantaneous doubling of the atmospheric \ac{CO2} concentration from
 pre-industrial conditions once the climate system reaches radiative equilibrium
 \autocite{Bindoff2013}. Being already used in one of the first assessments of
-the anthropogenic climate change, the \emph{Charney Report} from 1979
+anthropogenic climate change, the \emph{Charney Report} from 1979
 \autocite{Charney1979}, the equilibrium climate sensitivity is one of the
 oldest metrics describing climate change. However, in practice, this
 traditional definition is not always useful. Running fully coupled \acp{ESM}
@@ -615,7 +621,7 @@ whereas here a simulation with an abrupt quadrupling is considered.
   \includegraphics[width=\FigureWidth{}]{
     ch02_scientific_background/figs/gregory_regression_different_years.png}
   \caption[
-  Gregory regression for different time periods.
+    Gregory regression for different time periods.
   ]{
     As in \cref{fig:02:gregory_regression} but for different time periods
     considered in the Gregory regression resulting in different values for the
@@ -653,7 +659,7 @@ concentration \autocite{Huang2014}.
 
 However, despite these deficiencies, the \ac{ECS} is still a practical estimate
 of the equilibrium climate sensitivity. With the help of climate models,
-\textcite{Sherwood2020} showed that the \ac{ECS} is only about $6 \unit{\%}$
+\textcite{Sherwood2020} show that the \ac{ECS} is only about $6 \unit{\%}$
 lower than the best estimate of the true equilibrium warming obtained from
 integrating climate models until a new steady state is reached. Nevertheless,
 for \acs{CMIP}6 long-running simulations from the \ac{LongRunMIP}
@@ -825,7 +831,7 @@ phytoplankton and other microorganisms) \autocite{Ciais2013,
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\FigureWidth{}]{
+  \includegraphics[width=\LargerFigureWidth{}]{
     ch02_scientific_background/figs/carbon_cycle_schematic.png}
   \caption[
     Simplified schematic of the global carbon cycle.
@@ -865,6 +871,24 @@ between the air and the sea \autocite{Ciais2013}.
 \subsection{Anthropogenic Perturbations}
 \label{subsec:02:carbon_cycle_perturbations}
 
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\EvenLargerFigureWidth{}]{
+    ch02_scientific_background/figs/keeling_curve.pdf}
+  \caption[
+    The Keeling Curve.
+  ]{
+    The Keeling Curve: monthly mean atmospheric \acs{CO2} concentration at the
+    Mauna Loa Observatory, Hawaii ($19.5 \unit{\degree N}$, $155.6
+    \unit{\degree W}$; elevation: $3397 \unit{m}$) from 1958 to 2019
+    \autocite{Keeling2005}. The steady increase of the atmospheric \acs{CO2}
+    concentration is superimposed with a pronounced seasonal oscillation caused
+    by the seasonal \acs{CO2} cycle (see
+    \cref{subsec:02:carbon_cycle_overview}).
+  }
+  \label{fig:02:keeling_curve}
+\end{figure}
+
 Before the Industrial Era, the global carbon cycle was roughly in a dynamic
 equilibrium, which means that exchange fluxes balanced each other and the
 amount of carbon in the different reservoirs did neither increase nor decrease.
@@ -889,24 +913,6 @@ offers perfect conditions for \ac{CO2} measurements by being far away from big
 population centers. Moreover, its elevation of more than $3000 \unit{m}$
 provides access to the free troposphere where \ac{CO2} is well mixed, which
 prevents any interference from the vegetation present on the Hawaiian Islands.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\EvenLargerFigureWidth{}]{
-    ch02_scientific_background/figs/keeling_curve.pdf}
-  \caption[
-    The Keeling Curve.
-  ]{
-    The Keeling Curve: monthly mean atmospheric \acs{CO2} concentration at the
-    Mauna Loa Observatory, Hawaii ($19.5 \unit{\degree N}$, $155.6
-    \unit{\degree W}$; elevation: $3397 \unit{m}$) from 1958 to 2019
-    \autocite{Keeling2005}. The steady increase of the atmospheric \acs{CO2}
-    concentration is superimposed with a pronounced seasonal oscillation caused
-    by the seasonal \acs{CO2} cycle (see
-    \cref{subsec:02:carbon_cycle_overview}).
-  }
-  \label{fig:02:keeling_curve}
-\end{figure}
 
 Apart from warming the Earth by altering its radiation budget, the
 anthropogenically emitted \ac{CO2} directly influences the carbon exchange
@@ -1009,15 +1015,15 @@ variety of different parameterizations for the different processes
 different metabolic pathways used in carbon fixation during photosynthesis. In
 both cases, the enzyme \ac{RuBisCO} is an important catalyst for the
 corresponding chemical reactions. Both parameterizations utilize variables that
-are known to affect photosynthesis, such as the availability of light, the
-\ac{CO2} concentration, the soil moisture, and the temperature.
+are known to affect photosynthesis, such as the availability of light, \ac{CO2}
+concentration, soil moisture, and temperature.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\LargeFigureWidth{}]{
+  \includegraphics[width=\EvenLargerFigureWidth{}]{
     ch02_scientific_background/figs/carbon_cycle_processes.pdf}
   \caption[
-  Schematic illustration of the processes of the terrestrial carbon uptake.
+    Schematic illustration of the processes of the terrestrial carbon uptake.
   ]{
     Schematic illustration of the processes of the terrestrial carbon uptake.
     The \acf{GPP} describes the total carbon uptake of the vegetation by
@@ -1456,7 +1462,7 @@ regression model to get an observation-based prediction of the target variable
 $\hat{y}_0$
 \autocite{Karpechko2013}:
 \begin{equation}
-  \hat{y}_0 = \bm{x}_0^T \hat{\bm{b}}
+  \hat{y}_0 = \bm{x}_0^T \hat{\bm{b}}.
   \label{eq:02:mder_best_estimate}
 \end{equation}
 This is mathematically similar to the calculation of the best estimate target
@@ -1495,7 +1501,7 @@ relationship between the process-based predictors and the target variable also
 holds for the true climate. This may seem weak at first glance, especially
 since it explicitly requires climate models that deviate from the observed
 climate to span the desired relationship (similar to emergent constraints).
-However, a much weaker assumption is made traditional in weighting approaches
+However, a much weaker assumption is made in traditional weighting approaches
 which assume that climate models that are better in simulating the past or
 present-day climate are necessarily better in simulating the future climate. In
 contrast to these other weighting approaches, \ac{MDER} explicitly establishes
