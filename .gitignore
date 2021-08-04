@@ -283,3 +283,6 @@ TSWLatexianTemp*
 
 # pychache
 __pycache__
+
+# XMPdata (used for PDF/A-1b metadata)
+*.xmpdata

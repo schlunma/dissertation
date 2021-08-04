@@ -103,19 +103,20 @@
   allcolors=BrownRed,
   colorlinks=true,
   linktocpage=true,
-  pdfauthor=\TheAuthor{},
-  pdfcreator=pdfLaTeX,
-  pdfkeywords={
-    Climate Modeling,
-    Climate Model Weighting,
-    Climate Projections,
-    Climate Sensitivity,
-    Emergent Constraints,
-    Machine Learning,
-  },
-  pdflang=en,
-  pdfsubject=\TheThesis{},
-  pdftitle=\TheTitle{},
+  % The following settings are only necessary for regular PDF (no PDF/A-2b)
+%  pdfauthor=\TheAuthor{},
+%  pdfcreator=pdfLaTeX,
+%  pdfkeywords={
+%    Climate Modeling,
+%    Climate Model Weighting,
+%    Climate Projections,
+%    Climate Sensitivity,
+%    Emergent Constraints,
+%    Machine Learning,
+%  },
+%  pdflang=en,
+%  pdfsubject=\TheThesis{},
+%  pdftitle=\TheTitle{},
 }
 
 % Cleveref
@@ -124,6 +125,5 @@
 \Crefname{question}{{Key Science Question}}{{Key Science Questions}}
 \newcommand*{\crefrangeconjunction}{--}
 
-% PDF version of document
-\pdfminorversion = 7
+% No warnings about multiple pdfs with page group included in a single page
 \pdfsuppresswarningpagegroup = 1

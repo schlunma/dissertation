@@ -1,0 +1,127 @@
+%=============================================================================%
+%                            Doctoral Dissertation                            %
+%                            (c) by Manuel Schlund                            %
+%=============================================================================%
+
+%=============================================================================%
+% This work is licensed under a
+% Creative Commons Attribution 4.0 International License.
+%
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+%=============================================================================%
+
+
+
+% Key science questions
+\newcommand*{\KeyScienceQuestionOne}{%
+  What is the range of climate sensitivity in the latest generation of
+  \acp{ESM} from \acs{CMIP}6 compared to previous multi-model ensembles, and
+  do we understand the processes that determine this uncertainty range?}
+\newcommand*{\KeyScienceQuestionTwo}{%
+  Can uncertainties in climate sensitivity be reduced with observations using
+  the emergent constraint approach?}
+\newcommand*{\KeyScienceQuestionThree}{%
+  Can uncertainties in multi-dimensional (gridded) climate projections be
+  reduced with \ac{ML} techniques and observations?}
+
+% Colors
+\colorlet{BrownRed}{red!50!black}
+
+% Figure scales
+\newcommand*{\FigureWidth}{0.70\columnwidth}
+\newcommand*{\LargerFigureWidth}{0.74\columnwidth}
+\newcommand*{\EvenLargerFigureWidth}{0.92\columnwidth}
+\newcommand*{\LargeFigureWidth}{0.97\columnwidth}
+\newcommand*{\SmallSubfigureWidth}{0.47\columnwidth}
+\newcommand*{\SubfigureWidth}{0.48\columnwidth}
+
+% Abbreviations
+\newcommand*{\eg}{\mbox{e.g.,}}
+\newcommand*{\etc}{\mbox{etc.\@}}
+\newcommand*{\ie}{\mbox{i.e.,}}
+\newcommand*{\stddev}{\mbox{std.\@ dev.\@}}
+\newcommand*{\onepctcotwo}{1\%\acs{CO2}}
+\newcommand*{\nxcotwo}[1]{#1x\acs{CO2}}
+\newcommand*{\xaxis}{$x$-axis}
+\newcommand*{\yaxis}{$y$-axis}
+\newcommand*{\xintercept}{$x$-intercept}
+\newcommand*{\yintercept}{$y$-intercept}
+
+% Copyright statements
+\newcommand*{\AdaptedFrom}[1]{Adapted with permission from \textcite{#1}}
+\newcommand*{\IPCCReproducedFrom}[2]{%
+  Reproduced with permission from \textcite{#1} (#2)}
+\newcommand*{\SpringerAdaptedFrom}[1]{%
+  Adapted by permission from Springer Nature Customer Service Centre GmbH:
+  \textcite{#1}}
+
+% Other commands
+\newcommand*{\range}[2]{#1\mathtxt{--}#2}
+\newcommand*{\commentcite}[2]{(\cite{#1}; #2)}
+\newcommand*{\tabitem}{~~\llap{\textbullet}~~}
+
+% Math commands
+\newcommand*{\unit}[1]{\ensuremath{\, \si{#1}}}
+\newcommand*{\pmrangeunit}[3]{\ensuremath{\left( #1 \pm #2 \right) \unit{#3}}}
+\newcommand*{\rangeunit}[3]{\range{#1}{#2} \unit{#3}}
+\newcommand*{\cond}[2]{\ensuremath{P(#1|#2)}}
+\newcommand*{\mathtxt}[1]{\textnormal{#1}}
+
+% Math-related abbreviations
+\newcommand*{\GtCyr}{\ensuremath{GtC \, yr^{-1}}}
+\newcommand*{\mmday}{\ensuremath{mm \, day^{-1}}}
+\newcommand*{\pctK}{\ensuremath{\% \, K^{-1}}}
+\newcommand*{\dd}{\ensuremath{\, d}}
+\newcommand*{\CA}{\ensuremath{C_\mathtxt{A}}}
+\newcommand*{\CE}{\ensuremath{C_\mathtxt{E}}}
+\newcommand*{\CL}{\ensuremath{C_\mathtxt{L}}}
+\newcommand*{\CO}{\ensuremath{C_\mathtxt{O}}}
+\newcommand*{\Ld}{\ensuremath{L_\mathtxt{d}}}
+\newcommand*{\Ra}{\ensuremath{R_\mathtxt{a}}}
+\newcommand*{\Rh}{\ensuremath{R_\mathtxt{h}}}
+
+% Tables
+\newcommand*{\ignorecolumntype}[2]{\multicolumn{1}{#1}{#2}}
+\newcommand*{\echead}[2]{\makecell[tc]{#1 \\ {[$\si{#2}$]}}}
+\newcommand*{\ecreshead}[2]{\ignorecolumntype{c}{\makecell[tc]{#1 \\ #2}}}
+\newcommand*{\predictor}[1]{\,\!\Acf{#1}}
+\newcolumntype{y}[1]{>{\raggedleft \arraybackslash $}p{#1\columnwidth}<{$}}
+
+% CSV table styles
+\csvstyle{ECSAndTCRTable}{
+  head to column names,
+  tabular=l l r r,
+  table head=\toprule Model & Index used in plots & \acs{ECS} {[$\si{K}$]} &
+  \acs{TCR} {[$\si{K}$]} \\ \midrule,
+  table foot=\bottomrule,
+  before line=\hspace{-0.5\tabcolsep}, % Avoid indentation for first two rows
+  late after line=\ifthenelse{\equal{\csvcoli}{Multi-model mean}}{\\
+    \midrule}{\\},
+}
+\csvstyle{EmergentConstraintsPart1Table}{
+  head to column names,
+  tabular=l l r r r r r r r,
+  table head=\toprule Model & Index & \echead{\acs{ECS}}{K} &
+  \echead{BRI}{\pctK{}} & \echead{COX}{K} & \echead{LIP}{\degree} &
+  \echead{SHD}{1} & \echead{SHL}{1} & \echead{SHS}{1} \\ \midrule,
+  table foot=\bottomrule,
+  before line=\hspace{-0.5\tabcolsep}, % Avoid indentation for first two rows
+}
+\csvstyle{EmergentConstraintsPart2Table}{
+  head to column names,
+  tabular=l l r r r r r r,
+  table head=\toprule Model & Index &\echead{\acs{ECS}}{K} & \echead{SU}{1} &
+  \echead{TIH}{\%} & \echead{TII}{\mmday{}} & \echead{VOL}{\%} &
+  \echead{ZHA}{\pctK{}} \\ \midrule,
+  table foot=\bottomrule,
+  before line=\hspace{-0.5\tabcolsep}, % Avoid indentation for first two rows
+}
+
+% Alternatives for \acf{} and \acfp{} for the use in the abstract, otherwise
+% this will result in a permanent warning "Label(s) may have changed. Re-run to
+% get cross-references right."
+\newcommand*{\acfAbstract}[1]{\acl{#1} (\acs{#1})}
+\newcommand*{\acfpAbstract}[1]{\aclp{#1} (\acsp{#1})}
+\newcommand*{\AcfAbstract}[1]{\Acl{#1} (\acs{#1})}
+\newcommand*{\AcfpAbstract}[1]{\Aclp{#1} (\acsp{#1})}

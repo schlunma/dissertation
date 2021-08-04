@@ -14,6 +14,22 @@
 
 
 %=============================================================================%
+% Metadata for PDF/A-2b format (necessary for publication)
+%=============================================================================%
+
+% Load commands that contain metadata information
+\input{00_header/metadata}
+
+% Create .xmpdata file that is used for PDF/A-2b metadata
+\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+  \Title{\TheTitle}
+  \Author{\TheAuthor}
+  \Language{\TheLanguage}
+  \Keywords{\TheKeywords}
+\end{filecontents*}
+
+
+%=============================================================================%
 % Header
 %=============================================================================%
 
@@ -26,9 +42,12 @@
   paper=a4,
 ]{scrbook}
 
-% Packages, makros, and settings
+% Use PDF 1.7 to prevent issues with included PDFs
+\pdfminorversion = 7
+
+% Packages, commands, and settings
 \input{00_header/packages}
-\input{00_header/makros}
+\input{00_header/commands}
 \input{00_header/settings}
 
 % Literature file
