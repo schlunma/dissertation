@@ -19,6 +19,7 @@ This repository contains my doctoral dissertation.
 To compile the document from source, use the following chain of commands:
 
     pdflatex -synctex=1 -interaction=nonstopmode Dissertation_Manuel_Schlund.tex
+    pdflatex -synctex=1 -interaction=nonstopmode Dissertation_Manuel_Schlund.tex
     biber Dissertation_Manuel_Schlund.tex
     pdflatex -synctex=1 -interaction=nonstopmode Dissertation_Manuel_Schlund.tex
     pdflatex -synctex=1 -interaction=nonstopmode Dissertation_Manuel_Schlund.tex
