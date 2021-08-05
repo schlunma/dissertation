@@ -33,7 +33,7 @@
 \newcommand*{\TheLicense}{%
   Creative Commons Attribution 4.0 International License%
 }
-\newcommand*{\TheLicenseLink}{https://creativecommons.org/licenses/by/4.0/}
+\newcommand*{\TheLicenseURL}{https://creativecommons.org/licenses/by/4.0/}
 \newcommand*{\TheMonth}{August 2021}
 \newcommand*{\ThePrimaryExaminer}{\Prof{} \Dr{} Veronika Eyring}
 \newcommand*{\TheSecondaryExaminer}{\Prof{} \Dr{} Pierre Gentine}
@@ -44,3 +44,87 @@
   with Observations%
 }
 \newcommand*{\TheUniversity}{University of Bremen}
+
+% Plain text of the abstract
+% Note: needs to be changed if abstract.tex changes!
+\newcommand*{\TheAbstract}{%
+  A precise quantification of climate change is crucial to assess optimal
+  mitigation and adaptation strategies. Earth system models (ESMs), which are
+  state-of-the-art climate models that allow numerical simulations of the
+  complex physical, biological, and chemical processes of the Earth system, are
+  common tools to understand and project climate change. Due to the chaotic
+  nature of the climate system, unknowns in future emission pathways, and
+  uncertainties in the climate models, projections of the future climate are
+  associated with large uncertainties. The main focus of this thesis is the
+  analysis of future climate projections from ESMs participating in the Coupled
+  Model Intercomparison Project (CMIP) with the aim to reduce uncertainties in
+  climate projections with observations. In a first step, climate sensitivity
+  (i.e., the temperature response of the climate system to an external forcing)
+  is evaluated in the latest generation of ESMs from CMIP6. For the effective
+  climate sensitivity (ECS), which is an estimation of the equilibrium
+  temperature response that follows a doubling of the atmospheric carbon
+  dioxide (CO2) concentration, a multimodel mean (MMM) of 3.74 K and a
+  multi-model range of 1.8–5.6 K are found. These values are higher than in any
+  previous CMIP ensemble before. Moreover, a third of the analyzed CMIP6 models
+  exceed the upper bound of the likely ECS range of 1.5–4.5 K assessed by the
+  Intergovernmental Panel on Climate Change (IPCC) Fifth Assessment Report
+  (AR5) from 2013. Similarly, the transient response of the climate system to a
+  doubling of CO2, also known as transient climate response (TCR), shows an
+  inter-model range of 1.3–3.0 K with an upper bound again higher than the
+  likely range assessed in AR5 of 1.0–2.5 K. Possible reasons for the increased
+  climate sensitivity in many CMIP6 models are the addition of new prognostic
+  aerosol schemes that include aerosol-cloud interactions and changes in the
+  microphysical representation of mixed-phase clouds. The changes in the
+  mixed-cloud representation reduce the strong negative shortwave cloud phase
+  change feedback over the Southern Ocean that is present in climate models
+  from previous CMIP generations. To reduce uncertainties in ECS projected by
+  the CMIP6 models, 11 published emergent constraints on ECS (mostly derived
+  from models participating in CMIP5, the predecessor generation of CMIP6) are
+  systematically analyzed. Emergent constraints are potentially promising
+  approaches to reduce uncertainties in climate model projections by combining
+  observations and output from ESMs. The focus of this analysis is on testing
+  if these emergent constraints hold for ESMs participating in CMIP6. Since
+  none of the emergent constraints considered here have been derived from the
+  CMIP6 ensemble, the CMIP6 models can be used for crosschecking the emergent
+  constraints on a new model ensemble. The application of the emergent
+  constraints to CMIP6 data shows a decrease in skill and statistical
+  significance of the emergent relationships for nearly all constraints, with
+  this decrease being large in many cases. Consequently, the sizes of the
+  constrained ECS ranges (66 \% confidence intervals) widen by 51 \% on average
+  in CMIP6 compared to CMIP5. This is likely related to the increased
+  multi-model spread of ECS in CMIP6, but may in some cases also be due to
+  spurious statistical relationships or a too-small number of models in the
+  ensemble that the emergent constraint was originally derived from. The
+  corresponding best estimates of ECS given by the emergent constraints also
+  increase from CMIP5 to CMIP6 by 12 \% on average. This can at least be partly
+  explained by the increased number of high-ECS models in CMIP6 without a
+  corresponding change in the constraint predictors, suggesting the emergence
+  of new feedback processes rather than changes in the strength of those
+  previously dominant. The results support previous studies concluding that
+  emergent constraints should be based on an independently verifiable physical
+  mechanism and that process-based emergent constraints on ECS should rather be
+  thought of as constraints for the process or feedback they are actually
+  targeting. To overcome these issues of single-process-oriented emergent
+  constraints, an alternative approach based on machine learning (ML) is
+  introduced. Since this new technique relies on a large number of data points
+  to train the ML algorithm, the scalar climate sensitivity expressed as ECS or
+  TCR is not an appropriate target variable. Therefore, gross primary
+  production (GPP) as a process that contributes to climate sensitivity is
+  studied as an alternative. GPP is the largest flux of the terrestrial carbon
+  uptake and slows down global warming by removing CO2 from the atmosphere. In
+  this analysis, an existing emergent constraint on CO2 fertilization is
+  combined with an ML approach to constrain the spatial variations of
+  multi-model GPP projections. In the first step of the two-step approach,
+  observed changes in the CO2 seasonal cycle at Cape Kumukahi, Hawaii are used
+  to constrain the global mean GPP at the end of the 21st century (2091–2100)
+  in Representative Concentration Pathway (RCP) 8.5 simulations with ESMs
+  participating in CMIP5 to (171 ± 12) GtC yr−1 , compared to the unconstrained
+  model range of 156–247 GtC yr−1 . In a second step, an ML model is used to
+  constrain gridded future absolute GPP and gridded fractional GPP change in
+  two independent approaches. For this, observational data is fed into the ML
+  algorithm that has been trained on CMIP5 data to learn relationships between
+  present-day physically relevant diagnostics and the target variable. In a
+  leave-one-model-out cross-validation approach, the ML model shows superior
+  performance to the CMIP5 MMM. The new approach predicts a higher GPP increase
+  in high latitudes and a lower GPP increase in regions closer to the equator.%
+}
