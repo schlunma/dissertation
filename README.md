@@ -1,4 +1,7 @@
-[![CC BY 4.0][cc-by-image]][cc-by] [![DOI][doi-image]][image]
+[![CC BY 4.0][cc-by-image]][cc-by] [![DOI][doi-image]][doi]
+
+
+---
 
 
 # Constraining Uncertainties in Multi-Model Projections of the Future Climate with Observations
@@ -30,7 +33,7 @@ To compile the document from source, use the following chain of commands:
 
 ## Citation
 
-[doi]
+DOI: https://doi.org/10.26092/elib/941
 
 
 ## License
