@@ -1,4 +1,4 @@
-[![CC BY 4.0][cc-by-image]][cc-by] [![DOI][doi-image]][doi]
+[![DOI][doi-image]][doi] [![LICENSE][cc-by-image]][cc-by]
 
 
 ---
@@ -41,8 +41,11 @@ DOI: https://doi.org/10.26092/elib/941
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
 
+[![CC BY 4.0][cc-by-image]][cc-by] 
+
 
 [doi]: https://doi.org/10.26092/elib/941
-[doi-image]: https://zenodo.org/badge/DOI/10.26092/elib/941.svg
+[doi-shield]: https://zenodo.org/badge/DOI/10.26092/elib/941.svg
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-shield]: https://img.shields.io/badge/License-CCBY%204.0-lightgrey.svg
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
