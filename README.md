@@ -1,4 +1,4 @@
-[![DOI][doi-image]][doi] [![LICENSE][cc-by-image]][cc-by]
+[![DOI][doi-shield]][doi] [![LICENSE][cc-by-shield]][cc-by]
 
 
 ---
