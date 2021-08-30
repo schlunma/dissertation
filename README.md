@@ -47,5 +47,5 @@ This work is licensed under a
 [doi]: https://doi.org/10.26092/elib/941
 [doi-shield]: https://zenodo.org/badge/DOI/10.26092/elib/941.svg
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
-[cc-by-shield]: https://img.shields.io/badge/License-CCBY%204.0-lightgrey.svg
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
