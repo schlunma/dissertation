@@ -62,7 +62,7 @@
 \newcommand*{\tabitem}{~~\llap{\textbullet}~~}
 
 % Math commands
-\newcommand*{\unit}[1]{\ensuremath{\, \si{#1}}}
+\renewcommand*{\unit}[1]{\ensuremath{\, \si{#1}}}
 \newcommand*{\pmrangeunit}[3]{\ensuremath{\left( #1 \pm #2 \right) \unit{#3}}}
 \newcommand*{\rangeunit}[3]{\range{#1}{#2} \unit{#3}}
 \newcommand*{\cond}[2]{\ensuremath{P(#1|#2)}}
